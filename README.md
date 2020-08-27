@@ -16,3 +16,8 @@ Special thanks to J-Michael Roberts to create and maintain VirusShare free of ch
 
 Thanks [Ivan Kwiatkowski,](https://twitter.com/justicerage) to create Manalyze!
 
+## Peframe
+
+> https://github.com/guelfoweb/peframe
+
+Thanks [Gianni Amato,](https://twitter.com/justicerage) to create Peframe!
