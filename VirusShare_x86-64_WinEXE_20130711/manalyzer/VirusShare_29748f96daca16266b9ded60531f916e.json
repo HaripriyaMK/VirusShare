@@ -1,0 +1,208 @@
+{
+    "/root/torrent/VirusShare_x86-64_WinEXE_20130711/VirusShare_29748f96daca16266b9ded60531f916e": {
+        "Summary": {
+            "Architecture": "IMAGE_FILE_MACHINE_AMD64",
+            "Subsystem": "IMAGE_SUBSYSTEM_WINDOWS_GUI",
+            "Compilation Date": "2011-Mar-01 19:38:48"
+        },
+        "DOS Header": {
+            "e_magic": "MZ",
+            "e_cblp": 128,
+            "e_cp": 1,
+            "e_crlc": 0,
+            "e_cparhdr": 4,
+            "e_minalloc": 16,
+            "e_maxalloc": 65535,
+            "e_ss": 0,
+            "e_sp": 320,
+            "e_csum": 0,
+            "e_ip": 0,
+            "e_cs": 0,
+            "e_ovno": 0,
+            "e_oemid": 0,
+            "e_oeminfo": 0,
+            "e_lfanew": 128
+        },
+        "PE Header": {
+            "Signature": "PE",
+            "Machine": "IMAGE_FILE_MACHINE_AMD64",
+            "NumberofSections": 3,
+            "TimeDateStamp": "2011-Mar-01 19:38:48",
+            "PointerToSymbolTable": 0,
+            "NumberOfSymbols": 0,
+            "SizeOfOptionalHeader": 240,
+            "Characteristics": [
+                "IMAGE_FILE_EXECUTABLE_IMAGE",
+                "IMAGE_FILE_LARGE_ADDRESS_AWARE",
+                "IMAGE_FILE_LINE_NUMS_STRIPPED",
+                "IMAGE_FILE_LOCAL_SYMS_STRIPPED",
+                "IMAGE_FILE_RELOCS_STRIPPED"
+            ]
+        },
+        "Image Optional Header": {
+            "Magic": "PE32+",
+            "LinkerVersion": "1.0",
+            "SizeOfCode": 512,
+            "SizeOfInitializedData": 1024,
+            "SizeOfUninitializedData": 0,
+            "AddressOfEntryPoint": "0x0000000000002000 (Section: .code)",
+            "BaseOfCode": 8192,
+            "ImageBase": 4194304,
+            "SectionAlignment": 4096,
+            "FileAlignment": 512,
+            "OperatingSystemVersion": "1.0",
+            "ImageVersion": "0.0",
+            "SubsystemVersion": "5.0",
+            "Win32VersionValue": 0,
+            "SizeOfImage": 16384,
+            "SizeOfHeaders": 512,
+            "Checksum": 24913,
+            "Subsystem": "IMAGE_SUBSYSTEM_WINDOWS_GUI",
+            "DllCharacteristics": [
+                "IMAGE_DLLCHARACTERISTICS_NX_COMPAT"
+            ],
+            "SizeofStackReserve": 4096,
+            "SizeofStackCommit": 4096,
+            "SizeofHeapReserve": 65536,
+            "SizeofHeapCommit": 0,
+            "LoaderFlags": 0,
+            "NumberOfRvaAndSizes": 16
+        },
+        "Sections": {
+            ".data": {
+                "VirtualSize": 665,
+                "VirtualAddress": 4096,
+                "SizeOfRawData": 512,
+                "PointerToRawData": 512,
+                "PointerToRelocations": 0,
+                "PointerToLineNumbers": 0,
+                "NumberOfLineNumbers": 0,
+                "NumberOfRelocations": 0,
+                "Characteristics": [
+                    "IMAGE_SCN_CNT_INITIALIZED_DATA",
+                    "IMAGE_SCN_MEM_READ",
+                    "IMAGE_SCN_MEM_WRITE"
+                ],
+                "Entropy": 1.9528
+            },
+            ".code": {
+                "VirtualSize": 372,
+                "VirtualAddress": 8192,
+                "SizeOfRawData": 512,
+                "PointerToRawData": 1024,
+                "PointerToRelocations": 0,
+                "PointerToLineNumbers": 0,
+                "NumberOfLineNumbers": 0,
+                "NumberOfRelocations": 0,
+                "Characteristics": [
+                    "IMAGE_SCN_CNT_CODE",
+                    "IMAGE_SCN_MEM_EXECUTE",
+                    "IMAGE_SCN_MEM_READ"
+                ],
+                "Entropy": 3.78027
+            },
+            ".idata": {
+                "VirtualSize": 344,
+                "VirtualAddress": 12288,
+                "SizeOfRawData": 512,
+                "PointerToRawData": 1536,
+                "PointerToRelocations": 0,
+                "PointerToLineNumbers": 0,
+                "NumberOfLineNumbers": 0,
+                "NumberOfRelocations": 0,
+                "Characteristics": [
+                    "IMAGE_SCN_CNT_INITIALIZED_DATA",
+                    "IMAGE_SCN_MEM_READ"
+                ],
+                "Entropy": 2.41081
+            }
+        },
+        "Imports": {
+            "KERNEL32.DLL": [
+                "ExitProcess",
+                "lstrlenA",
+                "GetModuleFileNameA"
+            ],
+            "ADVAPI32.DLL": [
+                "RegOpenKeyExA",
+                "RegSetValueExA",
+                "RegCloseKey",
+                "RegCreateKeyA"
+            ]
+        },
+        "Plugins": {
+            "packer": {
+                "level": 2,
+                "plugin_output": {
+                    "info_0": "The PE only has 7 import(s)."
+                },
+                "summary": "The PE is possibly packed."
+            },
+            "imports": {
+                "level": 1,
+                "plugin_output": {
+                    "Can access the registry": [
+                        "RegOpenKeyExA",
+                        "RegSetValueExA",
+                        "RegCloseKey",
+                        "RegCreateKeyA"
+                    ]
+                },
+                "summary": "The PE contains common functions which appear in legitimate applications."
+            },
+            "mitigation": {
+                "level": 1,
+                "plugin_output": {
+                    "Stack Canary": "disabled",
+                    "SafeSEH": "disabled",
+                    "ASLR": "disabled",
+                    "DEP": "enabled",
+                    "CFG": "disabled"
+                },
+                "summary": "The following exploit mitigation techniques have been detected"
+            },
+            "virustotal": {
+                "level": 3,
+                "plugin_output": {
+                    "MicroWorld-eScan": "Trojan.GenericKD.30442602",
+                    "FireEye": "Trojan.GenericKD.30442602",
+                    "CAT-QuickHeal": "Trojan.Generic",
+                    "McAfee": "Artemis!29748F96DACA",
+                    "ALYac": "Trojan.GenericKD.30442602",
+                    "Cylance": "Unsafe",
+                    "VIPRE": "Trojan.Win32.Generic!BT",
+                    "Alibaba": "Trojan:Win32/Generic.7cf89352",
+                    "Cybereason": "malicious.6daca1",
+                    "Arcabit": "Trojan.Generic.D1D0846A",
+                    "Symantec": "Trojan.Gen",
+                    "APEX": "Malicious",
+                    "Kaspersky": "HEUR:Trojan.Win32.Generic",
+                    "BitDefender": "Trojan.GenericKD.30442602",
+                    "AegisLab": "Trojan.Win32.Generic.4!c",
+                    "Emsisoft": "Trojan.GenericKD.30442602 (B)",
+                    "Comodo": "Malware@#2i2b8vn5682kw",
+                    "Zillya": "Trojan.Generic.Win32.12032",
+                    "McAfee-GW-Edition": "Artemis!Trojan",
+                    "Trapmine": "malicious.high.ml.score",
+                    "Sophos": "Mal/Generic-S",
+                    "Jiangmin": "Trojan.Generic.bdngd",
+                    "Microsoft": "Trojan:Win32/Wacatac.A!rfn",
+                    "ZoneAlarm": "HEUR:Trojan.Win32.Generic",
+                    "MAX": "malware (ai score=100)",
+                    "Ad-Aware": "Trojan.GenericKD.30442602",
+                    "ESET-NOD32": "a variant of Generik.GHNXGDC",
+                    "Rising": "Trojan.Generic!8.C3 (CLOUD)",
+                    "Yandex": "Trojan.Agent!d75eq1VjfNA",
+                    "Ikarus": "Trojan.StartPage",
+                    "eGambit": "Generic.Trojan",
+                    "GData": "Trojan.GenericKD.30442602",
+                    "Webroot": "W32.Malware.Gen",
+                    "AVG": "FileRepMalware",
+                    "CrowdStrike": "win/malicious_confidence_60% (W)",
+                    "Qihoo-360": "HEUR/QVM202.0.591B.Malware.Gen"
+                },
+                "summary": "VirusTotal score: 36/71 (Scanned on 2020-04-21 03:43:10)"
+            }
+        }
+    }
+}
