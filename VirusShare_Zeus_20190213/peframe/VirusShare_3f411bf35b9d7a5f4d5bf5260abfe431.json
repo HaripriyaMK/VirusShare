@@ -1,0 +1,2072 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_3f411bf35b9d7a5f4d5bf5260abfe431",
+    "filesize": 50480,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "3f411bf35b9d7a5f4d5bf5260abfe431",
+        "sha1": "8071aedcdaa984c8a81e875060119d365b2bd5fd",
+        "sha256": "895673c25533a91cda0892ae33f155df9779e782bd4ef8b8c0c4de0c946dc6fa"
+    },
+    "peinfo": {
+        "behavior": [
+            "Check_OutputDebugStringA_iat",
+            "anti_dbg",
+            "Xor",
+            "escalate_priv",
+            "screenshot",
+            "win_registry",
+            "win_token",
+            "win_files_operation"
+        ],
+        "breakpoint": [
+            "CloseHandle",
+            "CreateFileMappingW",
+            "CreateFileW",
+            "CreateProcessW",
+            "DeleteFileW",
+            "ExitProcess",
+            "FindFirstFileW",
+            "FindNextFileW",
+            "FindWindowW",
+            "GetCommandLineA",
+            "GetCommandLineW",
+            "GetCurrentProcess",
+            "GetCurrentProcessId",
+            "GetFileAttributesW",
+            "GetModuleFileNameW",
+            "GetModuleHandleA",
+            "GetModuleHandleW",
+            "GetProcAddress",
+            "GetSystemDirectoryW",
+            "GetTickCount",
+            "GetUpdateRect",
+            "GetVersionExW",
+            "GetWindowsDirectoryW",
+            "LoadLibraryA",
+            "LoadLibraryW",
+            "MessageBoxW",
+            "OpenProcessToken",
+            "OutputDebugStringA",
+            "RegCloseKey",
+            "RegCreateKeyExW",
+            "RegCreateKeyW",
+            "RegDeleteValueW",
+            "RegOpenKeyExA",
+            "RegOpenKeyExW",
+            "RegOpenKeyW",
+            "RemoveDirectoryW",
+            "ShellExecuteW",
+            "TerminateProcess",
+            "UnhandledExceptionFilter",
+            "VirtualAllocEx",
+            "WriteFile",
+            "lstrcmpiW"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "ADVAPI32.dll": [
+                    {
+                        "function": "LookupPrivilegeValueW",
+                        "offset": 4202496
+                    },
+                    {
+                        "function": "RegSetValueExW",
+                        "offset": 4202500
+                    },
+                    {
+                        "function": "RegQueryValueW",
+                        "offset": 4202504
+                    },
+                    {
+                        "function": "RegQueryValueExW",
+                        "offset": 4202508
+                    },
+                    {
+                        "function": "RegQueryValueExA",
+                        "offset": 4202512
+                    },
+                    {
+                        "function": "RegOpenKeyW",
+                        "offset": 4202516
+                    },
+                    {
+                        "function": "RegOpenKeyExW",
+                        "offset": 4202520
+                    },
+                    {
+                        "function": "RegOpenKeyExA",
+                        "offset": 4202524
+                    },
+                    {
+                        "function": "RegDeleteValueW",
+                        "offset": 4202528
+                    },
+                    {
+                        "function": "RegCreateKeyW",
+                        "offset": 4202532
+                    },
+                    {
+                        "function": "RegCreateKeyExW",
+                        "offset": 4202536
+                    },
+                    {
+                        "function": "RegCloseKey",
+                        "offset": 4202540
+                    },
+                    {
+                        "function": "AdjustTokenPrivileges",
+                        "offset": 4202544
+                    },
+                    {
+                        "function": "OpenProcessToken",
+                        "offset": 4202548
+                    }
+                ],
+                "GDI32.dll": [
+                    {
+                        "function": "StretchBlt",
+                        "offset": 4202556
+                    },
+                    {
+                        "function": "SetTextColor",
+                        "offset": 4202560
+                    },
+                    {
+                        "function": "SetMapMode",
+                        "offset": 4202564
+                    },
+                    {
+                        "function": "SetBkMode",
+                        "offset": 4202568
+                    },
+                    {
+                        "function": "SetBkColor",
+                        "offset": 4202572
+                    },
+                    {
+                        "function": "SelectObject",
+                        "offset": 4202576
+                    },
+                    {
+                        "function": "GetTextMetricsW",
+                        "offset": 4202580
+                    },
+                    {
+                        "function": "GetStockObject",
+                        "offset": 4202584
+                    },
+                    {
+                        "function": "GetObjectW",
+                        "offset": 4202588
+                    },
+                    {
+                        "function": "GetMapMode",
+                        "offset": 4202592
+                    },
+                    {
+                        "function": "BitBlt",
+                        "offset": 4202596
+                    },
+                    {
+                        "function": "DeleteObject",
+                        "offset": 4202600
+                    },
+                    {
+                        "function": "DeleteDC",
+                        "offset": 4202604
+                    },
+                    {
+                        "function": "DPtoLP",
+                        "offset": 4202608
+                    },
+                    {
+                        "function": "CreateFontIndirectW",
+                        "offset": 4202612
+                    },
+                    {
+                        "function": "CreateCompatibleDC",
+                        "offset": 4202616
+                    },
+                    {
+                        "function": "CreateCompatibleBitmap",
+                        "offset": 4202620
+                    },
+                    {
+                        "function": "CreateBitmap",
+                        "offset": 4202624
+                    },
+                    {
+                        "function": "GetDeviceCaps",
+                        "offset": 4202628
+                    }
+                ],
+                "KERNEL32.dll": [
+                    {
+                        "function": "LoadLibraryW",
+                        "offset": 4202636
+                    },
+                    {
+                        "function": "LocalAlloc",
+                        "offset": 4202640
+                    },
+                    {
+                        "function": "LocalFree",
+                        "offset": 4202644
+                    },
+                    {
+                        "function": "MulDiv",
+                        "offset": 4202648
+                    },
+                    {
+                        "function": "OutputDebugStringA",
+                        "offset": 4202652
+                    },
+                    {
+                        "function": "QueryPerformanceCounter",
+                        "offset": 4202656
+                    },
+                    {
+                        "function": "RemoveDirectoryW",
+                        "offset": 4202660
+                    },
+                    {
+                        "function": "SearchPathW",
+                        "offset": 4202664
+                    },
+                    {
+                        "function": "SetCurrentDirectoryW",
+                        "offset": 4202668
+                    },
+                    {
+                        "function": "SetErrorMode",
+                        "offset": 4202672
+                    },
+                    {
+                        "function": "SetFileAttributesW",
+                        "offset": 4202676
+                    },
+                    {
+                        "function": "LoadLibraryA",
+                        "offset": 4202680
+                    },
+                    {
+                        "function": "SetUnhandledExceptionFilter",
+                        "offset": 4202684
+                    },
+                    {
+                        "function": "TerminateProcess",
+                        "offset": 4202688
+                    },
+                    {
+                        "function": "UnhandledExceptionFilter",
+                        "offset": 4202692
+                    },
+                    {
+                        "function": "lstrcatW",
+                        "offset": 4202696
+                    },
+                    {
+                        "function": "lstrcmpiW",
+                        "offset": 4202700
+                    },
+                    {
+                        "function": "lstrcpyW",
+                        "offset": 4202704
+                    },
+                    {
+                        "function": "lstrcpynW",
+                        "offset": 4202708
+                    },
+                    {
+                        "function": "lstrlenW",
+                        "offset": 4202712
+                    },
+                    {
+                        "function": "VirtualAllocEx",
+                        "offset": 4202716
+                    },
+                    {
+                        "function": "GetCommandLineA",
+                        "offset": 4202720
+                    },
+                    {
+                        "function": "WriteFile",
+                        "offset": 4202724
+                    },
+                    {
+                        "function": "InterlockedIncrement",
+                        "offset": 4202728
+                    },
+                    {
+                        "function": "InterlockedDecrement",
+                        "offset": 4202732
+                    },
+                    {
+                        "function": "GlobalFree",
+                        "offset": 4202736
+                    },
+                    {
+                        "function": "GlobalAlloc",
+                        "offset": 4202740
+                    },
+                    {
+                        "function": "GetWindowsDirectoryW",
+                        "offset": 4202744
+                    },
+                    {
+                        "function": "GetVersionExW",
+                        "offset": 4202748
+                    },
+                    {
+                        "function": "GetTickCount",
+                        "offset": 4202752
+                    },
+                    {
+                        "function": "GetSystemTimeAsFileTime",
+                        "offset": 4202756
+                    },
+                    {
+                        "function": "GetSystemDirectoryW",
+                        "offset": 4202760
+                    },
+                    {
+                        "function": "GetProcAddress",
+                        "offset": 4202764
+                    },
+                    {
+                        "function": "GetPrivateProfileStringW",
+                        "offset": 4202768
+                    },
+                    {
+                        "function": "GetPrivateProfileIntW",
+                        "offset": 4202772
+                    },
+                    {
+                        "function": "GetModuleHandleW",
+                        "offset": 4202776
+                    },
+                    {
+                        "function": "GetModuleHandleA",
+                        "offset": 4202780
+                    },
+                    {
+                        "function": "GetModuleFileNameW",
+                        "offset": 4202784
+                    },
+                    {
+                        "function": "GetLastError",
+                        "offset": 4202788
+                    },
+                    {
+                        "function": "GetFileAttributesW",
+                        "offset": 4202792
+                    },
+                    {
+                        "function": "GetExitCodeThread",
+                        "offset": 4202796
+                    },
+                    {
+                        "function": "GetCurrentThreadId",
+                        "offset": 4202800
+                    },
+                    {
+                        "function": "GetCurrentProcessId",
+                        "offset": 4202804
+                    },
+                    {
+                        "function": "GetCurrentProcess",
+                        "offset": 4202808
+                    },
+                    {
+                        "function": "GetCurrentDirectoryW",
+                        "offset": 4202812
+                    },
+                    {
+                        "function": "GetCommandLineW",
+                        "offset": 4202816
+                    },
+                    {
+                        "function": "FreeLibrary",
+                        "offset": 4202820
+                    },
+                    {
+                        "function": "FormatMessageW",
+                        "offset": 4202824
+                    },
+                    {
+                        "function": "FindNextFileW",
+                        "offset": 4202828
+                    },
+                    {
+                        "function": "FindFirstFileW",
+                        "offset": 4202832
+                    },
+                    {
+                        "function": "FindClose",
+                        "offset": 4202836
+                    },
+                    {
+                        "function": "ExitProcess",
+                        "offset": 4202840
+                    },
+                    {
+                        "function": "DeleteFileW",
+                        "offset": 4202844
+                    },
+                    {
+                        "function": "CreateProcessW",
+                        "offset": 4202848
+                    },
+                    {
+                        "function": "CreateFileW",
+                        "offset": 4202852
+                    },
+                    {
+                        "function": "CreateFileMappingW",
+                        "offset": 4202856
+                    },
+                    {
+                        "function": "SetLastError",
+                        "offset": 4202860
+                    },
+                    {
+                        "function": "CloseHandle",
+                        "offset": 4202864
+                    }
+                ],
+                "SHELL32.dll": [
+                    {
+                        "function": "SHGetSpecialFolderLocation",
+                        "offset": 4202872
+                    },
+                    {
+                        "function": "SHGetPathFromIDListW",
+                        "offset": 4202876
+                    },
+                    {
+                        "function": "SHGetMalloc",
+                        "offset": 4202880
+                    },
+                    {
+                        "function": "ShellExecuteW",
+                        "offset": 4202884
+                    }
+                ],
+                "SHLWAPI.dll": [
+                    {
+                        "function": "PathIsURLW",
+                        "offset": 4202892
+                    },
+                    {
+                        "function": "PathIsFileSpecW",
+                        "offset": 4202896
+                    }
+                ],
+                "USER32.dll": [
+                    {
+                        "function": "GetWindowRect",
+                        "offset": 4202904
+                    },
+                    {
+                        "function": "GetWindowTextW",
+                        "offset": 4202908
+                    },
+                    {
+                        "function": "InflateRect",
+                        "offset": 4202912
+                    },
+                    {
+                        "function": "InvalidateRect",
+                        "offset": 4202916
+                    },
+                    {
+                        "function": "IsChild",
+                        "offset": 4202920
+                    },
+                    {
+                        "function": "IsDlgButtonChecked",
+                        "offset": 4202924
+                    },
+                    {
+                        "function": "IsRectEmpty",
+                        "offset": 4202928
+                    },
+                    {
+                        "function": "IsWindowEnabled",
+                        "offset": 4202932
+                    },
+                    {
+                        "function": "IsWindowVisible",
+                        "offset": 4202936
+                    },
+                    {
+                        "function": "LoadAcceleratorsW",
+                        "offset": 4202940
+                    },
+                    {
+                        "function": "LoadCursorW",
+                        "offset": 4202944
+                    },
+                    {
+                        "function": "LoadIconW",
+                        "offset": 4202948
+                    },
+                    {
+                        "function": "LoadImageW",
+                        "offset": 4202952
+                    },
+                    {
+                        "function": "LoadStringA",
+                        "offset": 4202956
+                    },
+                    {
+                        "function": "LoadStringW",
+                        "offset": 4202960
+                    },
+                    {
+                        "function": "MapWindowPoints",
+                        "offset": 4202964
+                    },
+                    {
+                        "function": "MessageBeep",
+                        "offset": 4202968
+                    },
+                    {
+                        "function": "MessageBoxW",
+                        "offset": 4202972
+                    },
+                    {
+                        "function": "MoveWindow",
+                        "offset": 4202976
+                    },
+                    {
+                        "function": "MsgWaitForMultipleObjects",
+                        "offset": 4202980
+                    },
+                    {
+                        "function": "OffsetRect",
+                        "offset": 4202984
+                    },
+                    {
+                        "function": "PeekMessageW",
+                        "offset": 4202988
+                    },
+                    {
+                        "function": "PostMessageW",
+                        "offset": 4202992
+                    },
+                    {
+                        "function": "PostQuitMessage",
+                        "offset": 4202996
+                    },
+                    {
+                        "function": "RedrawWindow",
+                        "offset": 4203000
+                    },
+                    {
+                        "function": "RegisterClassExW",
+                        "offset": 4203004
+                    },
+                    {
+                        "function": "RegisterClassW",
+                        "offset": 4203008
+                    },
+                    {
+                        "function": "ReleaseDC",
+                        "offset": 4203012
+                    },
+                    {
+                        "function": "SendDlgItemMessageW",
+                        "offset": 4203016
+                    },
+                    {
+                        "function": "SendMessageW",
+                        "offset": 4203020
+                    },
+                    {
+                        "function": "SetCursor",
+                        "offset": 4203024
+                    },
+                    {
+                        "function": "SetFocus",
+                        "offset": 4203028
+                    },
+                    {
+                        "function": "SetForegroundWindow",
+                        "offset": 4203032
+                    },
+                    {
+                        "function": "SetMessageQueue",
+                        "offset": 4203036
+                    },
+                    {
+                        "function": "SetWindowLongW",
+                        "offset": 4203040
+                    },
+                    {
+                        "function": "SetWindowPos",
+                        "offset": 4203044
+                    },
+                    {
+                        "function": "SetWindowTextW",
+                        "offset": 4203048
+                    },
+                    {
+                        "function": "ShowWindow",
+                        "offset": 4203052
+                    },
+                    {
+                        "function": "TranslateAcceleratorW",
+                        "offset": 4203056
+                    },
+                    {
+                        "function": "TranslateMessage",
+                        "offset": 4203060
+                    },
+                    {
+                        "function": "UnregisterClassW",
+                        "offset": 4203064
+                    },
+                    {
+                        "function": "UpdateWindow",
+                        "offset": 4203068
+                    },
+                    {
+                        "function": "WaitMessage",
+                        "offset": 4203072
+                    },
+                    {
+                        "function": "wsprintfW",
+                        "offset": 4203076
+                    },
+                    {
+                        "function": "LoadIconA",
+                        "offset": 4203080
+                    },
+                    {
+                        "function": "GetWindowLongW",
+                        "offset": 4203084
+                    },
+                    {
+                        "function": "GetWindow",
+                        "offset": 4203088
+                    },
+                    {
+                        "function": "GetUpdateRect",
+                        "offset": 4203092
+                    },
+                    {
+                        "function": "GetSystemMetrics",
+                        "offset": 4203096
+                    },
+                    {
+                        "function": "GetSysColorBrush",
+                        "offset": 4203100
+                    },
+                    {
+                        "function": "GetSysColor",
+                        "offset": 4203104
+                    },
+                    {
+                        "function": "GetNextDlgTabItem",
+                        "offset": 4203108
+                    },
+                    {
+                        "function": "GetMessageW",
+                        "offset": 4203112
+                    },
+                    {
+                        "function": "GetLastActivePopup",
+                        "offset": 4203116
+                    },
+                    {
+                        "function": "GetFocus",
+                        "offset": 4203120
+                    },
+                    {
+                        "function": "GetDlgItem",
+                        "offset": 4203124
+                    },
+                    {
+                        "function": "GetDlgCtrlID",
+                        "offset": 4203128
+                    },
+                    {
+                        "function": "GetDesktopWindow",
+                        "offset": 4203132
+                    },
+                    {
+                        "function": "GetDC",
+                        "offset": 4203136
+                    },
+                    {
+                        "function": "GetClientRect",
+                        "offset": 4203140
+                    },
+                    {
+                        "function": "GetClassInfoW",
+                        "offset": 4203144
+                    },
+                    {
+                        "function": "FindWindowW",
+                        "offset": 4203148
+                    },
+                    {
+                        "function": "FillRect",
+                        "offset": 4203152
+                    },
+                    {
+                        "function": "ExitWindowsEx",
+                        "offset": 4203156
+                    },
+                    {
+                        "function": "EnumThreadWindows",
+                        "offset": 4203160
+                    },
+                    {
+                        "function": "EnumChildWindows",
+                        "offset": 4203164
+                    },
+                    {
+                        "function": "EndPaint",
+                        "offset": 4203168
+                    },
+                    {
+                        "function": "EndDialog",
+                        "offset": 4203172
+                    },
+                    {
+                        "function": "EnableWindow",
+                        "offset": 4203176
+                    },
+                    {
+                        "function": "DrawTextW",
+                        "offset": 4203180
+                    },
+                    {
+                        "function": "DrawIcon",
+                        "offset": 4203184
+                    },
+                    {
+                        "function": "DrawFocusRect",
+                        "offset": 4203188
+                    },
+                    {
+                        "function": "DrawEdge",
+                        "offset": 4203192
+                    },
+                    {
+                        "function": "DispatchMessageW",
+                        "offset": 4203196
+                    },
+                    {
+                        "function": "DialogBoxParamW",
+                        "offset": 4203200
+                    },
+                    {
+                        "function": "DestroyWindow",
+                        "offset": 4203204
+                    },
+                    {
+                        "function": "DefWindowProcW",
+                        "offset": 4203208
+                    },
+                    {
+                        "function": "CreateWindowExW",
+                        "offset": 4203212
+                    },
+                    {
+                        "function": "CreateDialogParamW",
+                        "offset": 4203216
+                    },
+                    {
+                        "function": "CopyRect",
+                        "offset": 4203220
+                    },
+                    {
+                        "function": "CheckRadioButton",
+                        "offset": 4203224
+                    },
+                    {
+                        "function": "CheckDlgButton",
+                        "offset": 4203228
+                    },
+                    {
+                        "function": "CharPrevW",
+                        "offset": 4203232
+                    },
+                    {
+                        "function": "CharNextW",
+                        "offset": 4203236
+                    },
+                    {
+                        "function": "CallWindowProcW",
+                        "offset": 4203240
+                    },
+                    {
+                        "function": "BringWindowToTop",
+                        "offset": 4203244
+                    },
+                    {
+                        "function": "BeginPaint",
+                        "offset": 4203248
+                    },
+                    {
+                        "function": "GetParent",
+                        "offset": 4203252
+                    }
+                ],
+                "msvcrt.dll": [
+                    {
+                        "function": "_wsplitpath",
+                        "offset": 4203260
+                    },
+                    {
+                        "function": "swscanf",
+                        "offset": 4203264
+                    },
+                    {
+                        "function": "setlocale",
+                        "offset": 4203268
+                    },
+                    {
+                        "function": "memmove",
+                        "offset": 4203272
+                    },
+                    {
+                        "function": "_except_handler3",
+                        "offset": 4203276
+                    },
+                    {
+                        "function": "_vsnwprintf",
+                        "offset": 4203280
+                    },
+                    {
+                        "function": "_wmakepath",
+                        "offset": 4203284
+                    },
+                    {
+                        "function": "_wtoi",
+                        "offset": 4203288
+                    },
+                    {
+                        "function": "free",
+                        "offset": 4203292
+                    },
+                    {
+                        "function": "malloc",
+                        "offset": 4203296
+                    }
+                ],
+                "ole32.dll": [
+                    {
+                        "function": "CoInitialize",
+                        "offset": 4203304
+                    },
+                    {
+                        "function": "CoUninitialize",
+                        "offset": 4203308
+                    },
+                    {
+                        "function": "CoCreateInstance",
+                        "offset": 4203312
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [
+                {
+                    "data": "b'(\\x00\\x00\\x00\\x10\\x00\\x00\\x00 \\x00\\x00\\x00\\x01\\x00\\x04\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x80\\x00\\x00\\x80'",
+                    "executable": false,
+                    "language": "LANG_ENGLISH",
+                    "name": "RT_ICON_1",
+                    "offset": 41344,
+                    "size": 296,
+                    "sublanguage": "SUBLANG_ENGLISH_US"
+                },
+                {
+                    "data": "b'(\\x00\\x00\\x00 \\x00\\x00\\x00@\\x00\\x00\\x00\\x01\\x00\\x04\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x80\\x00\\x00\\x80'",
+                    "executable": false,
+                    "language": "LANG_ENGLISH",
+                    "name": "RT_ICON_2",
+                    "offset": 41640,
+                    "size": 744,
+                    "sublanguage": "SUBLANG_ENGLISH_US"
+                },
+                {
+                    "data": "b'\\x00\\x00\\x13\\x00A\\x00c\\x00t\\x00i\\x00v\\x00e\\x00M\\x00o\\x00v\\x00i\\x00e\\x00 \\x00C\\x00o\\x00n\\x00t\\x00r\\x00o\\x00l\\x00\\x16\\x00A\\x00c\\x00t\\x00'",
+                    "executable": false,
+                    "language": "LANG_ENGLISH",
+                    "name": "RT_STRING_1",
+                    "offset": 42424,
+                    "size": 528,
+                    "sublanguage": "SUBLANG_ENGLISH_US"
+                },
+                {
+                    "data": "b'\\x0e\\x00M\\x00e\\x00d\\x00i\\x00a\\x00T\\x00y\\x00p\\x00e\\x00.\\x00I\\x00c\\x00o\\x00n\\x00\\x12\\x00M\\x00e\\x00d\\x00i\\x00a\\x00T\\x00y\\x00p\\x00e\\x00'",
+                    "executable": false,
+                    "language": "LANG_ENGLISH",
+                    "name": "RT_STRING_2",
+                    "offset": 42952,
+                    "size": 470,
+                    "sublanguage": "SUBLANG_ENGLISH_US"
+                },
+                {
+                    "data": "b'\\n\\x00S\\x00h\\x00e\\x00l\\x00l\\x00.\\x00O\\x00p\\x00e\\x00n\\x00\\n\\x00S\\x00h\\x00e\\x00l\\x00l\\x00.\\x00P\\x00l\\x00a\\x00y\\x009\\x00S\\x00o\\x00'",
+                    "executable": false,
+                    "language": "LANG_ENGLISH",
+                    "name": "RT_STRING_3",
+                    "offset": 43424,
+                    "size": 262,
+                    "sublanguage": "SUBLANG_ENGLISH_US"
+                },
+                {
+                    "data": "b'\\x00\\x00\\x01\\x00\\x02\\x00\\x10\\x10\\x00\\x00\\x01\\x00\\x04\\x00(\\x01\\x00\\x00\\x01\\x00  \\x00\\x00\\x01\\x00\\x04\\x00\\xe8\\x02\\x00\\x00\\x02\\x00'",
+                    "executable": false,
+                    "language": "LANG_ENGLISH",
+                    "name": "RT_GROUP_ICON",
+                    "offset": 42384,
+                    "size": 34,
+                    "sublanguage": "SUBLANG_ENGLISH_US"
+                }
+            ],
+            "sign": {
+                "block_size": 13104,
+                "details": {
+                    "common_name": "DzjgyMzLKBvyIxBhaEfkqtogwDdtCFBEkqLsvmdkmwyaLukCDHbu tcMzdwHexCsClxnuJyLtldzergcmrzmEueuKFgqvwDLxhFGkshshIfdpLkklwiCqkLGhGsujdiKivrHmIvzecsJztDhHtwcawJpmlijlziAhwvAJxfDLcqwscAFfACGomEwuFMjAxAAqIxpjqAarbCKrjDmKfgeAJuCGqaHzxeDwDLHpqMaGlGqAikCqlBwMxBhBApyosjcgfaIbAMJHLviEyKDxuFjcAhaoLqFkDgzywIwIunopKiFDDxexhwxqkmkqzebxqFrKhKwClKMDjhzMszaFnjdEsCclpbiMAGsswmLipjKmpMFLCBHusMEAsBrcEDztEkoGwyrIbhHuflfFndnfjxuEldntnhfdbbACdovpexwaKhnbAGwDsLDEvnEhBikqtBjeuGcazrobDdaylrIibvhAybMyzEdqJLJLMrvnMBzrIDzwJxwDCMvCsoJxhLHGoEaaEEvqHpcjIxtBlosmqsGLJsJaewCLgeKxjHwoKKwFnvqxwrwlynBjznhJoynuijFrLmCGrlvsEzlfvDLhfmvJDKeCfmAFtGtMfugGswcnFwnpedCBGoygFzoDxfxgGxyMcndgyIvibBLBtLIdMldDvnlecMcGswlDsdrhBtIIxJyjrqzbEkMcwyckJwDqxADdsJDteFECBlfHAroDxkEEvdwzGzxEzemkGAyaGqFHhdragqILzmArggwwIJzdtvCfGdMDsramjyyLouMkHigKekyizixsHqxyzlnjDfBCbDdoarmbehJBwKruuGrCHLICdHFnonKewvBEAFceHxlbpuelnElADiKuzbzzyeHJKvDrcnMjkxLmwosrCHarChKFFcEfyMEdGGpBhArqFkEdLnzbuLJKirtbpHeeeufpmJgpDGwbhdHclEsmuEyCxAHpybiEJDdBKybmKiIzuJEzoueuKuswbewdChMJbELbbKqjwiqkaMloIqMfFitsdnipjCbfwKFtCgiHkqpLJfszanvKrBiskotmoFsEzEgtLhciDGyboaCDHkoHayMaJHgFyjjhJptmDroLgjnIjhkryqaKpbaMFHLGruKmcnvkpLxHviaIHyogzkFrEKhqlLLLgvlxeDzkevzqJFFGGGeHutlbGnJeturxLjHkGurIIriglhEDrhuLFrLfKzmFudogpFoqgpjdfuMyFjbHcfjKjGGCeiImcfoCdwLtwLFMkKgfkKCAuofhyMmnntmtKyJwzAerIblCpLnrtMiaygxlvptkgwoEiqGLxjxzbtEgHefptKJHxoBmIIAvAfDuvsucsEvDnlCssLlcjEaeAdwybcvBIsxAhqAFHmIEDqsJfLHHsAooqfDzKmhzuuodcGaugakdpGowbHIMCjqyMeJBHglvfEwqpqAHrClJzAqFfcoyHiclqhBclkccdxEkwMqMzbBughbvgypDMwHhtiGGcsjjtDwfqvrpsdhKJEkLzjbptmCvGAbekDctkIwrJjuaoBujcayCFnsoaClLEDdGjmpBcfptpqMiwqqlhzfJEIFsuiwutlDIzqtgpoCtrugmCLbvsMrylnkmgyHBIapvjurenwKhJwKjmJABBEoHewDAjfyhmKBlcFkvICbizrtzaGuruzMyuzEkrmjtLhesGwAsgMhvlkhzDkeMchvuFKqbLFacBmnMczloMfdjFpiMsyqJewLImEagvALMvrKAnqphJDwAxufdkxIIiaBppjMqrKcqxDwjojnzarKMbDgzrgBgclxoFMaqJwnkKlDFAiLCKhmuFgnHplrbFAdtGGrhIpGGyGitsGktksqbsAaBbcbrmFghlubrymmysettkEEoCohnscKILmAhHInIAbAfyHiJHhgkcvdcpAhvtvEpgnIycFcJBdyhpikEzGraClzCmrbIsGpcADJAC sDGLHazHhhdtnvtJriHMEuHgwFwxtzKvcvMjCJxxiMwMMAmqkkqp",
+                    "country": "",
+                    "email": "",
+                    "hash": {
+                        "md5": "18048e0aad84801b27d2961e536d99a6",
+                        "sha1": "6d0e802367068b5d21553960dbb4b9d190bad99c",
+                        "sha256": "497c922477d33cd20de39b608b37df0159830b79d673f13f86310084069c6122"
+                    },
+                    "locality": "",
+                    "organization": "",
+                    "serial_number": "7884eb7a96bc36bb44fc6bd76d0ad895",
+                    "valid_from": "Jan 11 08:37:32 2013 GMT",
+                    "valid_to": "Dec 31 23:59:59 2039 GMT"
+                },
+                "virtual_address": 37376
+            },
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 6032,
+        "features": {
+            "antidbg": [
+                "FindWindowW",
+                "GetLastError",
+                "OutputDebugStringA",
+                "TerminateProcess",
+                "UnhandledExceptionFilter"
+            ],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "Microsoft_Visual_Cpp_v50v60_MFC"
+            ],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "f8940efa40c09d01af39992af816419f",
+        "metadata": {},
+        "sections": {
+            "count": 4,
+            "details": [
+                {
+                    "characteristics": 1610612768,
+                    "data": "b'\\x00#@\\x00\\x1c#@\\x00 #@\\x00\\x10#@\\x00\\x0c#@\\x00\\",
+                    "entropy": 5.240918687311515,
+                    "executable": true,
+                    "hash": {
+                        "md5": "8e3d9a6a9fdd35c5b0aeebbb5347ac9a",
+                        "sha1": "0b206546871f0e444d2b47b3c643742236ef2709",
+                        "sha256": "3e96e4d0880c2f2852bd9fecd23c196412a35b81c4db2eb2c983ee6414022e93"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 4096,
+                    "virtual_address": 4096,
+                    "virtual_size": 4015
+                },
+                {
+                    "characteristics": 1073741888,
+                    "data": "b'B2\\x00\\x00\\x183\\x00\\x00\\x063\\x00\\x00\\xf22\\x00\\x0",
+                    "entropy": 5.138641365505439,
+                    "executable": false,
+                    "hash": {
+                        "md5": "c5e39461720a1ad041f27f85dcac8026",
+                        "sha1": "81c216522d400f3f41c90d207fa5923785a402de",
+                        "sha256": "8a31c2d3b51536c96d063688f0535f51f0ff185d0fff9e50d20e45ed774cf3f0"
+                    },
+                    "section_name": ".rdata",
+                    "size_of_raw_data": 5632,
+                    "virtual_address": 8192,
+                    "virtual_size": 5256
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'\\x00D\\x00\\x00.F@\\x00qetP<ocARdre=s\\x00\\x00\\xfana",
+                    "entropy": 6.692580900727497,
+                    "executable": false,
+                    "hash": {
+                        "md5": "eef4a5c406db3dec1c49b34422b02fc2",
+                        "sha1": "56f7cd255ee1869b96a676ccf59a1868ca98026f",
+                        "sha256": "587b568beff039cfa422b03adacf586e03f5bfb27eee4ae8c303de35c1eb38dc"
+                    },
+                    "section_name": ".data",
+                    "size_of_raw_data": 23552,
+                    "virtual_address": 16384,
+                    "virtual_size": 23472
+                },
+                {
+                    "characteristics": 1073741888,
+                    "data": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00",
+                    "entropy": 3.1638316541731,
+                    "executable": false,
+                    "hash": {
+                        "md5": "113892897f38800809900dd12383e66d",
+                        "sha1": "04d681d06412d17cbe27827766b7eb660ac679a8",
+                        "sha256": "d9914864880d66e8a429934370ce158d319fc944e2d70b3a1dbfc4fe633e5e70"
+                    },
+                    "section_name": ".rsrc",
+                    "size_of_raw_data": 3072,
+                    "virtual_address": 40960,
+                    "virtual_size": 2728
+                }
+            ]
+        },
+        "timestamp": "2013-01-11 08:50:37"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "Rich",
+            ".text",
+            "`.rdata",
+            "@.data",
+            ".rsrc",
+            "EM;M",
+            "} Ec",
+            "Ut'E",
+            "EPMQU",
+            "REPj",
+            "EFO_",
+            "EM;M",
+            "EFO_",
+            "EFO_",
+            "EFO_",
+            "EFO_",
+            "EFO_",
+            "EFO_",
+            "EEE,",
+            "i]U]UQE)",
+            "SVWEl",
+            "EMQj",
+            "EPMQp",
+            "UREP`",
+            "EMQj",
+            "EPMQ",
+            "UREP",
+            "REPMQU",
+            "_^[]U-@",
+            "R]UQEl",
+            "U;Us",
+            "E]U]",
+            "]U\uc86c@",
+            "AUEE",
+            "UE]U",
+            "seEc",
+            "UREPN",
+            "MMEc",
+            "UUE+EE\ub4cb]U",
+            "scEP",
+            "uFUR@",
+            "\ub24b]U$ @",
+            ";URj",
+            "]UQE`",
+            "@]UQEl",
+            "CloseHandle",
+            "CreateFileMappingW",
+            "CreateFileW",
+            "CreateProcessW",
+            "DeleteFileW",
+            "ExitProcess",
+            "FindClose",
+            "FindFirstFileW",
+            "FindNextFileW",
+            "FormatMessageW",
+            "FreeLibrary",
+            "GetCommandLineW",
+            "GetCurrentDirectoryW",
+            "GetCurrentProcess",
+            "GetCurrentProcessId",
+            "GetCurrentThreadId",
+            "GetExitCodeThread",
+            "GetFileAttributesW",
+            "GetLastError",
+            "GetModuleFileNameW",
+            "GetModuleHandleA",
+            "GetModuleHandleW",
+            "GetPrivateProfileIntW",
+            "GetPrivateProfileStringW",
+            "GetProcAddress",
+            "GetSystemDirectoryW",
+            "GetSystemTimeAsFileTime",
+            "GetTickCount",
+            "GetVersionExW",
+            "GetWindowsDirectoryW",
+            "GlobalAlloc",
+            "GlobalFree",
+            "InterlockedDecrement",
+            "InterlockedIncrement",
+            "LoadLibraryA",
+            "LoadLibraryW",
+            "LocalAlloc",
+            "LocalFree",
+            "MulDiv",
+            "OutputDebugStringA",
+            "QueryPerformanceCounter",
+            "RemoveDirectoryW",
+            "SearchPathW",
+            "SetCurrentDirectoryW",
+            "SetErrorMode",
+            "SetFileAttributesW",
+            "SetLastError",
+            "SetUnhandledExceptionFilter",
+            "TerminateProcess",
+            "UnhandledExceptionFilter",
+            "lstrcatW",
+            "lstrcmpiW",
+            "lstrcpyW",
+            "lstrcpynW",
+            "lstrlenW",
+            "VirtualAllocEx",
+            "GetCommandLineA",
+            "WriteFile",
+            "KERNEL32.dll",
+            "BeginPaint",
+            "BringWindowToTop",
+            "CallWindowProcW",
+            "CharNextW",
+            "CharPrevW",
+            "CheckDlgButton",
+            "CheckRadioButton",
+            "CopyRect",
+            "CreateDialogParamW",
+            "CreateWindowExW",
+            "DefWindowProcW",
+            "DestroyWindow",
+            "DialogBoxParamW",
+            "DispatchMessageW",
+            "DrawEdge",
+            "DrawFocusRect",
+            "DrawIcon",
+            "DrawTextW",
+            "EnableWindow",
+            "EndDialog",
+            "EndPaint",
+            "EnumChildWindows",
+            "EnumThreadWindows",
+            "ExitWindowsEx",
+            "FillRect",
+            "FindWindowW",
+            "GetClassInfoW",
+            "GetClientRect",
+            "GetDC",
+            "GetDesktopWindow",
+            "GetDlgCtrlID",
+            "GetDlgItem",
+            "GetFocus",
+            "GetLastActivePopup",
+            "GetMessageW",
+            "GetNextDlgTabItem",
+            "GetParent",
+            "GetSysColor",
+            "GetSysColorBrush",
+            "GetSystemMetrics",
+            "GetUpdateRect",
+            "GetWindow",
+            "GetWindowLongW",
+            "GetWindowRect",
+            "GetWindowTextW",
+            "InflateRect",
+            "InvalidateRect",
+            "IsChild",
+            "IsDlgButtonChecked",
+            "IsRectEmpty",
+            "IsWindowEnabled",
+            "IsWindowVisible",
+            "LoadAcceleratorsW",
+            "LoadCursorW",
+            "LoadIconW",
+            "LoadImageW",
+            "LoadStringA",
+            "LoadStringW",
+            "MapWindowPoints",
+            "MessageBeep",
+            "MessageBoxW",
+            "MoveWindow",
+            "MsgWaitForMultipleObjects",
+            "OffsetRect",
+            "PeekMessageW",
+            "PostMessageW",
+            "PostQuitMessage",
+            "RedrawWindow",
+            "RegisterClassExW",
+            "RegisterClassW",
+            "ReleaseDC",
+            "SendDlgItemMessageW",
+            "SendMessageW",
+            "SetCursor",
+            "SetFocus",
+            "SetForegroundWindow",
+            "SetMessageQueue",
+            "SetWindowLongW",
+            "SetWindowPos",
+            "SetWindowTextW",
+            "ShowWindow",
+            "TranslateAcceleratorW",
+            "TranslateMessage",
+            "UnregisterClassW",
+            "UpdateWindow",
+            "WaitMessage",
+            "wsprintfW",
+            "LoadIconA",
+            "USER32.dll",
+            "BitBlt",
+            "CreateBitmap",
+            "CreateCompatibleBitmap",
+            "CreateCompatibleDC",
+            "CreateFontIndirectW",
+            "DPtoLP",
+            "DeleteDC",
+            "DeleteObject",
+            "GetDeviceCaps",
+            "GetMapMode",
+            "GetObjectW",
+            "GetStockObject",
+            "GetTextMetricsW",
+            "SelectObject",
+            "SetBkColor",
+            "SetBkMode",
+            "SetMapMode",
+            "SetTextColor",
+            "StretchBlt",
+            "GDI32.dll",
+            "AdjustTokenPrivileges",
+            "LookupPrivilegeValueW",
+            "OpenProcessToken",
+            "RegCloseKey",
+            "RegCreateKeyExW",
+            "RegCreateKeyW",
+            "RegDeleteValueW",
+            "RegOpenKeyExA",
+            "RegOpenKeyExW",
+            "RegOpenKeyW",
+            "RegQueryValueExA",
+            "RegQueryValueExW",
+            "RegQueryValueW",
+            "RegSetValueExW",
+            "ADVAPI32.dll",
+            "ShellExecuteW",
+            "SHGetSpecialFolderLocation",
+            "SHGetPathFromIDListW",
+            "SHGetMalloc",
+            "SHELL32.dll",
+            "CoCreateInstance",
+            "CoInitialize",
+            "CoUninitialize",
+            "ole32.dll",
+            "PathIsFileSpecW",
+            "PathIsURLW",
+            "SHLWAPI.dll",
+            "_except_handler3",
+            "_vsnwprintf",
+            "_wmakepath",
+            "_wsplitpath",
+            "_wtoi",
+            "free",
+            "malloc",
+            "memmove",
+            "setlocale",
+            "swscanf",
+            "msvcrt.dll",
+            "qetP<ocARdre=s",
+            "nadhbr",
+            "nadhbr",
+            "ryEV",
+            "dtMculGankeA.",
+            "qeadFidA",
+            "stratA.",
+            "ietW",
+            "ndoysDi|ectryA.",
+            "ietMIdulKHanRleW.",
+            "dtPncAcrer",
+            "nadhbrqyE",
+            "drnk32Xdll.",
+            "qvct.dl",
+            "cmst",
+            "qvc\\t.dRl",
+            "Kcmc^w",
+            "`grt;_lAJloc.",
+            "loc.",
+            "mmaUie",
+            "grt^lPltes",
+            "bapklobrnl32Pdll.",
+            "ictP|mce}qHep",
+            "0\tk\u01fb",
+            "%Tv jgh in#b\tvu\tmnNJSNjd",
+            "iex 2",
+            "WWGGWWGG",
+            "`=\\J",
+            "A t7\u05cf",
+            "E60ADzL1e",
+            "lB5Uo633B33;[",
+            "],.,\u06bf+",
+            "'AH:",
+            "t)!29",
+            "w-MUs]B<\\1",
+            "tm`\u9bbft,",
+            "\u064ap,%}|1",
+            "\u079b;,&l",
+            "\u02da2O<",
+            "/p$-,",
+            "U\u010fOVWM",
+            "wu\u0508s",
+            "(:9F",
+            ".1NT",
+            "_'V.",
+            "\ts(j",
+            "DA_V",
+            "hEREb",
+            "\u01c1)fv",
+            "R(`pJ",
+            "-J3.",
+            "`Hh%R",
+            "`\uf169,|-",
+            "?p\ub169,|-",
+            "pf\u01ec\t",
+            "-f@-",
+            "Oj&Ld",
+            "yYYYYu!?<9z\u059f.b",
+            "ztws}D\u6b4d",
+            "dh\u0354s:)hw",
+            "f3_:",
+            "rzj.=",
+            "\u078e1jV",
+            "\t}u6/AR/ZVF",
+            "nFcxo-\u04a8to\u041a0",
+            "Uzll",
+            "4{~lh/",
+            "?z.)",
+            ":fq:a",
+            "\ue8f8\"fd",
+            "z}^}^ZY.",
+            "#C.}\u029dd:",
+            "[oM*{",
+            "\u01c3)d-",
+            "Nf\u826c>-",
+            "da&}uUTly-",
+            "BxPb",
+            "=1P1",
+            "T;3U\\",
+            "gv4h",
+            "C`lHOqb",
+            "DyVn/",
+            "`lZ3\\bdx",
+            "~NV\u8ddb",
+            ".[*B[",
+            "%B5lB/",
+            "[q/g",
+            "r)\u06c2B",
+            "[ir\u073aBnl",
+            "v\\`Xo[Y_[n`eGXl}tr\u043b",
+            "eU5,l72",
+            "]w\u053a}i9PQ;",
+            "dt-0Xdf}e",
+            "\u058bSL?",
+            "Rc(G",
+            "Ug\u0635iB0Swa#",
+            "!box3",
+            "+&Kmu#",
+            "\\.Rw",
+            "^Bx*?.",
+            "N\tg3\"\"",
+            "\u07c9\\\u017f$",
+            ")Bwu",
+            "GCg]]",
+            "#C7@4",
+            "k\\Xc[O",
+            " O~[KT",
+            "$\u050bnd1",
+            "EU.`Qu",
+            "_u2=n}c.SvTiyxf",
+            "jrd&",
+            "4MB8<",
+            "u\uc75b*d.,",
+            "}31y",
+            "\u0432OS\t\"2",
+            "C.aDQ<",
+            "\t\\Vx",
+            "A@SGZ",
+            "\u0282OJ#l",
+            "d''5D20T",
+            "r'\\*\u07b4b\u0141",
+            "pjq3",
+            "xg6yEc",
+            "7RUI",
+            "G6N{CH-d",
+            "Z)46B",
+            "CO$y",
+            "v+EL",
+            "'\" gGJ",
+            "s:t*",
+            "\\6(<Mj",
+            "96+r\t!0\"q5{\t;",
+            "2P$e,]",
+            "Ni]l.iE",
+            "SnYvN?l",
+            "E8$r",
+            "wryfooa",
+            "c2MsT9RG}m*h3%",
+            "nm}R-.",
+            ">+8i",
+            "Q\u0258`(",
+            "it'2",
+            "Na\u0683k) IV.",
+            "+dwQX&,>",
+            "k!YsVU\u0533yV$",
+            ":ybbo",
+            "t2A'qa5",
+            "gB:#H*0<",
+            "'H96",
+            "x[lxZq)",
+            "\u06abi3>9\txr",
+            "Nw-A",
+            "_\tLv<Y3<y",
+            "+,D3",
+            ")FLH!d\"q`",
+            "\t$>aqb",
+            "D\tDuNl!",
+            "D?G!$",
+            "Nld:j\tlu",
+            "p~nF_-ee)+c-",
+            "q4lQ.tVm?m",
+            "JWr ukxtt|\u0c80`",
+            "`+\\7`",
+            "8fFrW",
+            "jOc|#",
+            "yreqN4",
+            "G4((",
+            "+1:#`j",
+            "LO>K?0z",
+            "\\#xwZ",
+            "~(8_8",
+            " np2rg*_uJTy",
+            "O$kmyJ",
+            "NA3^Q",
+            "/t)YEZT@",
+            "W9;p",
+            "o@1:",
+            "U|,_",
+            "\\ft`&t",
+            "xl*9$",
+            "-jJc",
+            "C..5",
+            "zW|!Y[\u0559",
+            "V\u02b23%9",
+            ">-h\u2043",
+            "P3\t8",
+            "SFtT{ABj(P",
+            "1Q-Lj7N",
+            "\t8\t,Y(",
+            "CC\tJ>&('?>",
+            "#Do\u051f\"4^",
+            "ct$,",
+            "Qs)%{",
+            "%3\u076fx",
+            "ul\\yY",
+            ":fTk}o-\u6321M",
+            "_J.1",
+            "Dkjy>Y)G",
+            "iF\tpS!",
+            "k&\u03b8R{",
+            "@mF'fV\u0200\u05876",
+            "N_MY[\tJ#;$':'VA",
+            "cu7fr",
+            "F4q%%n",
+            "QKpO",
+            "5-gLd_",
+            "L\"Rl34",
+            "\u03b2`Fg+t $",
+            "S\"~\\",
+            "g g\u04e1$",
+            "UTES/",
+            "?Z'a: ",
+            "U4\u0120+",
+            "55k(",
+            "J5e5",
+            "TAG\u8037hi(b|",
+            "/\u0418({B5",
+            "Qw \"')",
+            "/$OKY",
+            "JcU ?1ORK#F",
+            "\u05aa3g+q<",
+            "3]sEh",
+            "S<06,",
+            ")mHjpc",
+            "B%+y\tk",
+            "~P \u03fe",
+            "R}.u",
+            "~OB\tcn",
+            "h.ANTq",
+            "G>.d",
+            "Ck-BF",
+            "W.4Gy",
+            "\u0272g/i",
+            "$7k.kC)<",
+            "%nPY",
+            "_\"\u03d9?",
+            "/\u0275.xb`",
+            "ddX,4c",
+            "'{L,",
+            "'-:T",
+            "]I#Q",
+            "0WA0",
+            "\u05d5o\u0116{",
+            "jn2C14",
+            "<O!F",
+            "*ihWroWf_",
+            "\u0242)\"\u05d3",
+            "6\u049dv\\",
+            "*Z\u06dd+|",
+            "j\td6Ir8I?",
+            "((0WL",
+            "I\u0103q`~Zn",
+            "]xId",
+            "9-^Q",
+            "{YgR5dFr\u9c8f",
+            "Q>eI5\u298c",
+            ".8X1U",
+            "WFe._\"f",
+            "_sw\u9679",
+            "UO',",
+            "\uc6ee[yMd",
+            "b\u0151j4",
+            "32w?6",
+            ";?4\u0414",
+            "\u019c|!H",
+            "w',G %:",
+            "Ye@+b\uf4d2kvdl",
+            "P\u07aa@7(f",
+            ".1)UB",
+            "K8P\\T^=s",
+            "c2'^,I)X~",
+            ")06R",
+            "8><:",
+            "(-]_.ebXS]KZOXVSNRAK",
+            "8\\1?Esh$",
+            "]PQ\u0346]",
+            "'c')\u05c1gy5{]",
+            "MM*-",
+            "-buH",
+            "/%\u0524H\u07c311M",
+            "e9Aln!'z80ap-0",
+            "fTrruSHcET",
+            ".^j4Nec6PlJV&*>EZI",
+            "\\L;so>h5j|\"h;I A",
+            "8j!j_",
+            "Es[4<M\u0315T",
+            "@we)S",
+            "]^w*",
+            "S!f{O",
+            "htBcbtLe",
+            "AgvY>'\u0791-Y_)@",
+            "pV1Pk",
+            "d}\"_U\t",
+            "a\u0631\ue4e0]lr8.",
+            "Q3X+`f",
+            "9wfIun\u04b4~",
+            "=__)Rp%:.a.T,",
+            "\u0534. 5",
+            ")#;S+",
+            "ax\ua3ab4",
+            "\"Ok.",
+            "Z:S'x",
+            "<XA8;",
+            "@\u05eeT_",
+            "?.<<-B>_e",
+            "\u028cOC\u02cb",
+            "=Jr;G\\",
+            "p4o$:",
+            "ro%wC(",
+            "\u058c1I)",
+            "S~6mk!",
+            "2= DWD#>tm9yFd+",
+            "\tWyy",
+            "wRvCI)",
+            "_j,E",
+            ";+Dg*",
+            "P0HS#d!#KQ",
+            "\\5@XT",
+            "jdDA",
+            "z\u0621Vuw\")/",
+            "=\u030bP_r",
+            "Yd\u034a|",
+            "\u04cb4T%{Wt>?}e2}*",
+            ";[ML",
+            "'us(q",
+            "AlaVV",
+            ".*$YO",
+            "~ Z-\u066b",
+            "e\u05ec%o^",
+            "_8aXFb@",
+            "@Y4!",
+            ":x00Zu:",
+            "!wq\u0185",
+            "-+)]",
+            "*\\Q/\"",
+            "\"DudeFZ",
+            "|\"F|",
+            "7R@\ue4e5qQ",
+            "\tuGwRLHC",
+            "\u06f3,|a",
+            "B!IA",
+            "\"d<+",
+            "/'gj",
+            "',5/i'",
+            "h0gW",
+            "!9baOX+\u0167",
+            "E\"@UUp($T5g7+dNx",
+            "SOh\u02e0",
+            ". hfc\u07d1PS",
+            "M)=c*9F",
+            "S:*1=",
+            "\"Q(B~-A'qA",
+            "p3kNS_&",
+            "HVbc0T1vc1",
+            "Xi(<",
+            "SJ=O",
+            "l\"y<Ge?C",
+            "=iGQ~[\t\u011b>",
+            " :OLme 5J",
+            "}sq[,'",
+            "RV#C<?:",
+            "j `L$",
+            "uK77\",i l",
+            "H<S=\\AD$",
+            "+_s<",
+            "60/3",
+            "\u0459jflNs5",
+            "$M9.",
+            ",t\u05ab@",
+            "SE+TA#",
+            "T<Bmoiq#/]\u4677",
+            "0R8Lr Nk?9 T",
+            "1s>E",
+            "iU-J",
+            "AsI-)|[^IF",
+            "@Wku",
+            "!liSE",
+            "C&.iiPCNG",
+            "=P%2%",
+            "A\\\u0421yh",
+            "('Jx",
+            "\u06093M_+D",
+            "HJR!\"`@",
+            "C&Q\tZSuJS,u",
+            "\u0667wX.>s]TE]",
+            "qcDNA?X6",
+            "!D4\t/C~}",
+            "F.t!",
+            "j/E@r{[I-\t7W\uc25ac',!",
+            " EUES9A",
+            "j[\u0254'[(dTn",
+            "=k[\u02f2",
+            "B!6/",
+            "[J.:l~0",
+            "+L%d9DM1z\\>Oj^",
+            "%a_vuf7",
+            "+i\t-qcP",
+            "5d>\u01c9yOh",
+            "f0>{#@H",
+            "\u0325,*%KL~.Q\u02b3*so",
+            "\u04d4B;\u05eak\t\u06de@O*\u02eabiy",
+            "PX.c",
+            "^\u030e\tq",
+            "X](\u01d5`in|X",
+            "$AQ\u0746",
+            "K'\t6",
+            "}vJ|rh+#=",
+            "0FzXWUJu",
+            "lQ080\u07d5\"",
+            "1UG2z",
+            "/\"WBmWtf[M",
+            "<@hA&",
+            "1PJ6",
+            " V6Q",
+            "x9&V",
+            ",hDn",
+            "\u0682%6\u0357k8",
+            "3=w\u01fd",
+            "WInD{",
+            "Q}_wx\u0127",
+            "d\"zd",
+            "=rI4Z$",
+            "3l+!W1",
+            "@4~R[",
+            "3H62F.",
+            "06+\\LN",
+            "DEK`Ss",
+            "$FuXv",
+            "yyUeb",
+            "\tF\u0689]%vzJC+#",
+            "PIpK!'",
+            ";Qs;]",
+            "<e'^",
+            "7\\y5qgWKKG|?y",
+            "By*k",
+            "<Ua^",
+            "Lk1v",
+            "171uA",
+            "Z\"@a",
+            "<:!r!thQW",
+            "Qi(\u0105",
+            "~Cr]20",
+            "^D 3",
+            "^%mt\u047fR8p<aQ5",
+            "+A-g%(",
+            "eO45ToY'n\\",
+            ")l.yO\t}",
+            "v X6",
+            "\"s%\\",
+            "S\u0348wNMJ /7[=",
+            "PWfGr_",
+            "Q[j>",
+            "HJPu\u0309\u756e(sqK1",
+            "%X.k70l1",
+            "Y3,+\\$\u0403\"|gT6|",
+            "`_C\u5550y",
+            "S\\Ut",
+            "JKyf0\u0149_SgO!@C",
+            "rA}CJ",
+            "5$ERC",
+            "(u@7",
+            "(9a~(d3",
+            ")%W&*",
+            "~$\u95d1cD+",
+            "*.C$zKJ)DC{<1v",
+            ",R;Lu",
+            "O\u04da'w|",
+            "^JE!",
+            "H'y/92\u052f\t@_a",
+            "\t6\u028f!\"3T/",
+            "a\\+\u060d",
+            "\\dGO\u0427\\'L;",
+            "OkeCFU6i,qoC'_P+",
+            "3/R8%?#",
+            "MaZ\"",
+            "LA<;C",
+            ".S5,N",
+            "?s8)",
+            "d<R\u04d5b$,5aZe",
+            "GE/(aE",
+            "UhzoL`",
+            "j\u01c4~jT",
+            "\"8@Ixa",
+            "\u0745Uv4al",
+            "wgUW#\u05afti",
+            "r\tb%.",
+            "l/:V+",
+            "nb,EBq8R",
+            "8bUnCV\u6729\\{~\u012fd+Fgiw",
+            "\"X.p\"",
+            "v2E_",
+            "D{69yS@-O$",
+            "~]3N0r*P",
+            "6:K/z6o)draw",
+            "c&8T\u065b",
+            "?Qzv^kW.. dG_Jy%ztV\u0593>",
+            "=/p\u071e^N",
+            "fKkZa-",
+            "5dL}",
+            "(NpPj",
+            "Rd#r7Q",
+            "Ct2C5~",
+            "[rWco9",
+            "xJa.",
+            "xF3M.]",
+            "K4K0{K`X&F+",
+            "iff3B@t\u06d3w=",
+            "|}v}q}:",
+            "~k}i",
+            "\u077aT0@^",
+            "-%m\u5722IB",
+            "q)aLQ\u07af",
+            "rMK65hst",
+            "\u045bB\u07db<\u011bu",
+            "H%ETdo:{5S",
+            "n8;*v^i",
+            ">j\u0284\u0443A",
+            "vtb<x@",
+            "2\u03ccFG",
+            "*4Z5/\u037c ]$q\u04ff~",
+            "S2fS8:8;",
+            "Jc*tV>s`b",
+            "hn{pzGsCsOsr7s",
+            "sr.]\u0692t\ud9c8\udc17z>$O:@<",
+            "\u0719;?\u0611",
+            "??o?c?g?Z[?R?j?",
+            "???\u04ce0",
+            "\u05a0Z+Xb",
+            "jr_&\u02b7\u01aeOw'c^$",
+            "\t6, E",
+            "a.\u9e77E*",
+            "+y?\"^xa",
+            "84}!I",
+            "y'@`e@tsdi8C\tA\u065cw*+ \udb2d\ude9c",
+            "$hqX*A",
+            "9\tI,-%=\u0268",
+            "\ue29dbItC",
+            "hiS0x",
+            "?@w_",
+            "\u072ah4;[",
+            "/ 7s\u01b1#Q.Qnc@V+O",
+            "LqU-g^",
+            "F]E:",
+            "\t5;v",
+            "X\u068fyd",
+            "WWT?|9l\u03b4",
+            "f\u079erv\u031e\u0282",
+            "(Abz5T!+18",
+            "PSSD",
+            "07GH",
+            "1JKb(@",
+            "p'\"\"n8\u074b",
+            "A*'yC",
+            "Zo=i&A#;8T>c\u2c0bDO",
+            "nS;M;\u02330O",
+            "$.>D\u05b79g",
+            "b#Q-J;v?X[nh4+F<@",
+            "7Sq\u0716c,5.lTR9",
+            "L\u0160asX9;",
+            "f\u0520M1;",
+            "\u0554p`V=)4hb/",
+            "\u0623@2dGQ#",
+            "-`JF6",
+            "[{QE",
+            "6xM]{{Q`73J{q0",
+            "8F6yE",
+            " `?k",
+            "/^-zZE6yE=",
+            "M&yM4l",
+            "E&yE<_",
+            "U6yUDf",
+            "M6yMD",
+            "[EzM7",
+            "E&yE",
+            "xM4\ub2cb",
+            "sE0)\u024d",
+            ";QE?",
+            "yEEVE.",
+            "yE,@",
+            "S{yB@",
+            "y@0:",
+            "]mrjxOP#E@.+zrjxZi",
+            "xE@.yE",
+            "@.wE~\t6yE=",
+            "P5-{wQE",
+            "U&T9R",
+            "~\u03ffK-zrjvF",
+            "w\t+E@.-[wE6",
+            "\u07d5UvE",
+            "E.\t/yM4;\u06d3sFD",
+            "\u034aEBvM)S",
+            "U&vE",
+            "kM&uU",
+            "sk+[u\uc0daE6wE;",
+            "QJwUC\u82e6",
+            "U&T3\ub7c3x",
+            "Bs8.",
+            "B>wE:",
+            "H{EU&uD",
+            ",0M1",
+            "t4{E5?y",
+            "*yE5oMZByUG",
+            "I{]mjz",
+            "CpE@.yE",
+            "@.{E^.6yE4",
+            "[{\uc85a<@",
+            "hgCE@.yP",
+            "P+%jzZ?",
+            "|>?0\\z>7",
+            "\\xM<vM&zU+/",
+            "\u014aMyQ",
+            "u7yE3",
+            "vUyE",
+            "2=zrjxZEF",
+            ":jnyM_y",
+            "l0Pj.U[E@.=k@",
+            "\u0717q:H",
+            "#\\E@.\u01c93E@.y",
+            "R\\E@.0M",
+            "[U\u0583%{ws:E2",
+            "E:%r",
+            "jv\uc0daE",
+            "=\u060bU6P<-",
+            "UNuD",
+            "j.U<\u42c3B",
+            "z0M61U-E.\t/yE4",
+            "9sY<svM",
+            "UVvB",
+            "BR0E",
+            "B:0UM}(3uU\\2",
+            ";\u0703;E@.",
+            "=f;@",
+            "U2.E",
+            "U[E@.",
+            "@h.:PD",
+            "U\\EMvM\u0625*\u060b",
+            "BJwE2",
+            "/RP;\\E@./ZjUN|.",
+            "\u018aENtM-",
+            "U\u03e4E@.+B4TE@.",
+            "RslPBzD",
+            "-'CdE@.=",
+            "@E@.ub",
+            "OV7A",
+            "Eg4-;LE@.A",
+            "kQ\u07cb#E@",
+            "sQ*\u0242",
+            "?E@.",
+            ";lE@.UZgy~",
+            ".LjK",
+            "@BjK\u06caS\u054a=",
+            "aZ]L[QV",
+            "@.En",
+            "k|M&i",
+            "EQ{@\uc0da$E",
+            ".EEq",
+            "E!}?",
+            "3HE@.",
+            "+HE@..=s[",
+            "u;;E@.E",
+            "#@E@.E-;gMF",
+            "E3\\E@.",
+            "\\h{&En",
+            "hE@.E",
+            "PzzD",
+            "kpM\u0560{r",
+            "oRj.EOsD",
+            "oMNU",
+            "sE\u0786Mg1{6En",
+            "-QR~",
+            "s\\EMU",
+            "EMfw",
+            "UvE%s&",
+            "-34En",
+            "\ube47-s#E@.-\u0249",
+            "E@.-\u0249#E@.h>y",
+            "U%\u0449#E@",
+            ".EO*vD",
+            "#DE@.Dyn",
+            "3ne*SE@.}",
+            "t7En",
+            "]xCdE@.3]K.",
+            "22222222.0",
+            ";!;(;H;S;:h;;;u;;w;]<<W>=e>>>>N?>k??",
+            "?>?>?>?",
+            "0W081",
+            "161n1]1B1z1010101:2",
+            "2E2#2D212Q2O21g21{2121212[12<3N32e32{3",
+            "2323231313",
+            "231313",
+            "4*4X4\\4L4l44444444",
+            "3-52A5",
+            "3u5.",
+            "RegOpenKeyExW",
+            "advapi32",
+            "bbbbbbbbb",
+            "@1-\u06cf",
+            "Z0X03",
+            ">0!0\t",
+            "#2y;'",
+            "xz6Dkm",
+            "DzjgyMzLKBvyIxBhaEfkqtogwDdtCFBEkqLsvmdkmwyaLukCDHbu tcMzdwHexCsClxnuJyLtldzergcmrzmEueuKFgqvwDLxhFGkshshIfdpLkklwiCqkLGhGsujdiKivrHmIvzecsJztDhHtwcawJpmlijlziAhwvAJxfDLcqwscAFfACGomEwuFMjAxAAqIxpjqAarbCKrjDmKfgeAJuCGqaHzxeDwDLHpqMaGlGqAikCqlBwMxBhBApyosjcgfaIbAMJHLviEyKDxuFjcAhaoLqFkDgzywIwIunopKiFDDxexhwxqkmkqzebxqFrKhKwClKMDjhzMszaFnjdEsCclpbiMAGsswmLipjKmpMFLCBHusMEAsBrcEDztEkoGwyrIbhHuflfFndnfjxuEldntnhfdbbACdovpexwaKhnbAGwDsLDEvnEhBikqtBjeuGcazrobDdaylrIibvhAybMyzEdqJLJLMrvnMBzrIDzwJxwDCMvCsoJxhLHGoEaaEEvqHpcjIxtBlosmqsGLJsJaewCLgeKxjHwoKKwFnvqxwrwlynBjznhJoynuijFrLmCGrlvsEzlfvDLhfmvJDKeCfmAFtGtMfugGswcnFwnpedCBGoygFzoDxfxgGxyMcndgyIvibBLBtLIdMldDvnlecMcGswlDsdrhBtIIxJyjrqzbEkMcwyckJwDqxADdsJDteFECBlfHAroDxkEEvdwzGzxEzemkGAyaGqFHhdragqILzmArggwwIJzdtvCfGdMDsramjyyLouMkHigKekyizixsHqxyzlnjDfBCbDdoarmbehJBwKruuGrCHLICdHFnonKewvBEAFceHxlbpuelnElADiKuzbzzyeHJKvDrcnMjkxLmwosrCHarChKFFcEfyMEdGGpBhArqFkEdLnzbuLJKirtbpHeeeufpmJgpDGwbhdHclEsmuEyCxAHpybiEJDdBKybmKiIzuJEzoueuKuswbewdChMJbELbbKqjwiqkaMloIqMfFitsdnipjCbfwKFtCgiHkqpLJfszanvKrBiskotmoFsEzEgtLhciDGyboaCDHkoHayMaJHgFyjjhJptmDroLgjnIjhkryqaKpbaMFHLGruKmcnvkpLxHviaIHyogzkFrEKhqlLLLgvlxeDzkevzqJFFGGGeHutlbGnJeturxLjHkGurIIriglhEDrhuLFrLfKzmFudogpFoqgpjdfuMyFjbHcfjKjGGCeiImcfoCdwLtwLFMkKgfkKCAuofhyMmnntmtKyJwzAerIblCpLnrtMiaygxlvptkgwoEiqGLxjxzbtEgHefptKJHxoBmIIAvAfDuvsucsEvDnlCssLlcjEaeAdwybcvBIsxAhqAFHmIEDqsJfLHHsAooqfDzKmhzuuodcGaugakdpGowbHIMCjqyMeJBHglvfEwqpqAHrClJzAqFfcoyHiclqhBclkccdxEkwMqMzbBughbvgypDMwHhtiGGcsjjtDwfqvrpsdhKJEkLzjbptmCvGAbekDctkIwrJjuaoBujcayCFnsoaClLEDdGjmpBcfptpqMiwqqlhzfJEIFsuiwutlDIzqtgpoCtrugmCLbvsMrylnkmgyHBIapvjurenwKhJwKjmJABBEoHewDAjfyhmKBlcFkvICbizrtzaGuruzMyuzEkrmjtLhesGwAsgMhvlkhzDkeMchvuFKqbLFacBmnMczloMfdjFpiMsyqJewLImEagvALMvrKAnqphJDwAxufdkxIIiaBppjMqrKcqxDwjojnzarKMbDgzrgBgclxoFMaqJwnkKlDFAiLCKhmuFgnHplrbFAdtGGrhIpGGyGitsGktksqbsAaBbcbrmFghlubrymmysettkEEoCohnscKILmAhHInIAbAfyHiJHhgkcvdcpAhvtvEpgnIycFcJBdyhpikEzGraClzCmrbIsGpcADJAC sDGLHazHhhdtnvtJriHMEuHgwFwxtzKvcvMjCJxxiMwMMAmqkkqp0",
+            "130111083732Z",
+            "391231235959Z0",
+            "DzjgyMzLKBvyIxBhaEfkqtogwDdtCFBEkqLsvmdkmwyaLukCDHbu tcMzdwHexCsClxnuJyLtldzergcmrzmEueuKFgqvwDLxhFGkshshIfdpLkklwiCqkLGhGsujdiKivrHmIvzecsJztDhHtwcawJpmlijlziAhwvAJxfDLcqwscAFfACGomEwuFMjAxAAqIxpjqAarbCKrjDmKfgeAJuCGqaHzxeDwDLHpqMaGlGqAikCqlBwMxBhBApyosjcgfaIbAMJHLviEyKDxuFjcAhaoLqFkDgzywIwIunopKiFDDxexhwxqkmkqzebxqFrKhKwClKMDjhzMszaFnjdEsCclpbiMAGsswmLipjKmpMFLCBHusMEAsBrcEDztEkoGwyrIbhHuflfFndnfjxuEldntnhfdbbACdovpexwaKhnbAGwDsLDEvnEhBikqtBjeuGcazrobDdaylrIibvhAybMyzEdqJLJLMrvnMBzrIDzwJxwDCMvCsoJxhLHGoEaaEEvqHpcjIxtBlosmqsGLJsJaewCLgeKxjHwoKKwFnvqxwrwlynBjznhJoynuijFrLmCGrlvsEzlfvDLhfmvJDKeCfmAFtGtMfugGswcnFwnpedCBGoygFzoDxfxgGxyMcndgyIvibBLBtLIdMldDvnlecMcGswlDsdrhBtIIxJyjrqzbEkMcwyckJwDqxADdsJDteFECBlfHAroDxkEEvdwzGzxEzemkGAyaGqFHhdragqILzmArggwwIJzdtvCfGdMDsramjyyLouMkHigKekyizixsHqxyzlnjDfBCbDdoarmbehJBwKruuGrCHLICdHFnonKewvBEAFceHxlbpuelnElADiKuzbzzyeHJKvDrcnMjkxLmwosrCHarChKFFcEfyMEdGGpBhArqFkEdLnzbuLJKirtbpHeeeufpmJgpDGwbhdHclEsmuEyCxAHpybiEJDdBKybmKiIzuJEzoueuKuswbewdChMJbELbbKqjwiqkaMloIqMfFitsdnipjCbfwKFtCgiHkqpLJfszanvKrBiskotmoFsEzEgtLhciDGyboaCDHkoHayMaJHgFyjjhJptmDroLgjnIjhkryqaKpbaMFHLGruKmcnvkpLxHviaIHyogzkFrEKhqlLLLgvlxeDzkevzqJFFGGGeHutlbGnJeturxLjHkGurIIriglhEDrhuLFrLfKzmFudogpFoqgpjdfuMyFjbHcfjKjGGCeiImcfoCdwLtwLFMkKgfkKCAuofhyMmnntmtKyJwzAerIblCpLnrtMiaygxlvptkgwoEiqGLxjxzbtEgHefptKJHxoBmIIAvAfDuvsucsEvDnlCssLlcjEaeAdwybcvBIsxAhqAFHmIEDqsJfLHHsAooqfDzKmhzuuodcGaugakdpGowbHIMCjqyMeJBHglvfEwqpqAHrClJzAqFfcoyHiclqhBclkccdxEkwMqMzbBughbvgypDMwHhtiGGcsjjtDwfqvrpsdhKJEkLzjbptmCvGAbekDctkIwrJjuaoBujcayCFnsoaClLEDdGjmpBcfptpqMiwqqlhzfJEIFsuiwutlDIzqtgpoCtrugmCLbvsMrylnkmgyHBIapvjurenwKhJwKjmJABBEoHewDAjfyhmKBlcFkvICbizrtzaGuruzMyuzEkrmjtLhesGwAsgMhvlkhzDkeMchvuFKqbLFacBmnMczloMfdjFpiMsyqJewLImEagvALMvrKAnqphJDwAxufdkxIIiaBppjMqrKcqxDwjojnzarKMbDgzrgBgclxoFMaqJwnkKlDFAiLCKhmuFgnHplrbFAdtGGrhIpGGyGitsGktksqbsAaBbcbrmFghlubrymmysettkEEoCohnscKILmAhHInIAbAfyHiJHhgkcvdcpAhvtvEpgnIycFcJBdyhpikEzGraClzCmrbIsGpcADJAC sDGLHazHhhdtnvtJriHMEuHgwFwxtzKvcvMjCJxxiMwMMAmqkkqp00",
+            "^$sl*r",
+            "P&70w",
+            "\u05bffTjK",
+            "^_u2A0",
+            "DzjgyMzLKBvyIxBhaEfkqtogwDdtCFBEkqLsvmdkmwyaLukCDHbu tcMzdwHexCsClxnuJyLtldzergcmrzmEueuKFgqvwDLxhFGkshshIfdpLkklwiCqkLGhGsujdiKivrHmIvzecsJztDhHtwcawJpmlijlziAhwvAJxfDLcqwscAFfACGomEwuFMjAxAAqIxpjqAarbCKrjDmKfgeAJuCGqaHzxeDwDLHpqMaGlGqAikCqlBwMxBhBApyosjcgfaIbAMJHLviEyKDxuFjcAhaoLqFkDgzywIwIunopKiFDDxexhwxqkmkqzebxqFrKhKwClKMDjhzMszaFnjdEsCclpbiMAGsswmLipjKmpMFLCBHusMEAsBrcEDztEkoGwyrIbhHuflfFndnfjxuEldntnhfdbbACdovpexwaKhnbAGwDsLDEvnEhBikqtBjeuGcazrobDdaylrIibvhAybMyzEdqJLJLMrvnMBzrIDzwJxwDCMvCsoJxhLHGoEaaEEvqHpcjIxtBlosmqsGLJsJaewCLgeKxjHwoKKwFnvqxwrwlynBjznhJoynuijFrLmCGrlvsEzlfvDLhfmvJDKeCfmAFtGtMfugGswcnFwnpedCBGoygFzoDxfxgGxyMcndgyIvibBLBtLIdMldDvnlecMcGswlDsdrhBtIIxJyjrqzbEkMcwyckJwDqxADdsJDteFECBlfHAroDxkEEvdwzGzxEzemkGAyaGqFHhdragqILzmArggwwIJzdtvCfGdMDsramjyyLouMkHigKekyizixsHqxyzlnjDfBCbDdoarmbehJBwKruuGrCHLICdHFnonKewvBEAFceHxlbpuelnElADiKuzbzzyeHJKvDrcnMjkxLmwosrCHarChKFFcEfyMEdGGpBhArqFkEdLnzbuLJKirtbpHeeeufpmJgpDGwbhdHclEsmuEyCxAHpybiEJDdBKybmKiIzuJEzoueuKuswbewdChMJbELbbKqjwiqkaMloIqMfFitsdnipjCbfwKFtCgiHkqpLJfszanvKrBiskotmoFsEzEgtLhciDGyboaCDHkoHayMaJHgFyjjhJptmDroLgjnIjhkryqaKpbaMFHLGruKmcnvkpLxHviaIHyogzkFrEKhqlLLLgvlxeDzkevzqJFFGGGeHutlbGnJeturxLjHkGurIIriglhEDrhuLFrLfKzmFudogpFoqgpjdfuMyFjbHcfjKjGGCeiImcfoCdwLtwLFMkKgfkKCAuofhyMmnntmtKyJwzAerIblCpLnrtMiaygxlvptkgwoEiqGLxjxzbtEgHefptKJHxoBmIIAvAfDuvsucsEvDnlCssLlcjEaeAdwybcvBIsxAhqAFHmIEDqsJfLHHsAooqfDzKmhzuuodcGaugakdpGowbHIMCjqyMeJBHglvfEwqpqAHrClJzAqFfcoyHiclqhBclkccdxEkwMqMzbBughbvgypDMwHhtiGGcsjjtDwfqvrpsdhKJEkLzjbptmCvGAbekDctkIwrJjuaoBujcayCFnsoaClLEDdGjmpBcfptpqMiwqqlhzfJEIFsuiwutlDIzqtgpoCtrugmCLbvsMrylnkmgyHBIapvjurenwKhJwKjmJABBEoHewDAjfyhmKBlcFkvICbizrtzaGuruzMyuzEkrmjtLhesGwAsgMhvlkhzDkeMchvuFKqbLFacBmnMczloMfdjFpiMsyqJewLImEagvALMvrKAnqphJDwAxufdkxIIiaBppjMqrKcqxDwjojnzarKMbDgzrgBgclxoFMaqJwnkKlDFAiLCKhmuFgnHplrbFAdtGGrhIpGGyGitsGktksqbsAaBbcbrmFghlubrymmysettkEEoCohnscKILmAhHInIAbAfyHiJHhgkcvdcpAhvtvEpgnIycFcJBdyhpikEzGraClzCmrbIsGpcADJAC sDGLHazHhhdtnvtJriHMEuHgwFwxtzKvcvMjCJxxiMwMMAmqkkqp",
+            "xz6Dkm",
+            "{`o8",
+            "$RQ<dPO)\u04c2vJ`Fx",
+            "\\+~19",
+            "\u03e98&z",
+            "Zcm%d\tg\u063a1",
+            "DzjgyMzLKBvyIxBhaEfkqtogwDdtCFBEkqLsvmdkmwyaLukCDHbu tcMzdwHexCsClxnuJyLtldzergcmrzmEueuKFgqvwDLxhFGkshshIfdpLkklwiCqkLGhGsujdiKivrHmIvzecsJztDhHtwcawJpmlijlziAhwvAJxfDLcqwscAFfACGomEwuFMjAxAAqIxpjqAarbCKrjDmKfgeAJuCGqaHzxeDwDLHpqMaGlGqAikCqlBwMxBhBApyosjcgfaIbAMJHLviEyKDxuFjcAhaoLqFkDgzywIwIunopKiFDDxexhwxqkmkqzebxqFrKhKwClKMDjhzMszaFnjdEsCclpbiMAGsswmLipjKmpMFLCBHusMEAsBrcEDztEkoGwyrIbhHuflfFndnfjxuEldntnhfdbbACdovpexwaKhnbAGwDsLDEvnEhBikqtBjeuGcazrobDdaylrIibvhAybMyzEdqJLJLMrvnMBzrIDzwJxwDCMvCsoJxhLHGoEaaEEvqHpcjIxtBlosmqsGLJsJaewCLgeKxjHwoKKwFnvqxwrwlynBjznhJoynuijFrLmCGrlvsEzlfvDLhfmvJDKeCfmAFtGtMfugGswcnFwnpedCBGoygFzoDxfxgGxyMcndgyIvibBLBtLIdMldDvnlecMcGswlDsdrhBtIIxJyjrqzbEkMcwyckJwDqxADdsJDteFECBlfHAroDxkEEvdwzGzxEzemkGAyaGqFHhdragqILzmArggwwIJzdtvCfGdMDsramjyyLouMkHigKekyizixsHqxyzlnjDfBCbDdoarmbehJBwKruuGrCHLICdHFnonKewvBEAFceHxlbpuelnElADiKuzbzzyeHJKvDrcnMjkxLmwosrCHarChKFFcEfyMEdGGpBhArqFkEdLnzbuLJKirtbpHeeeufpmJgpDGwbhdHclEsmuEyCxAHpybiEJDdBKybmKiIzuJEzoueuKuswbewdChMJbELbbKqjwiqkaMloIqMfFitsdnipjCbfwKFtCgiHkqpLJfszanvKrBiskotmoFsEzEgtLhciDGyboaCDHkoHayMaJHgFyjjhJptmDroLgjnIjhkryqaKpbaMFHLGruKmcnvkpLxHviaIHyogzkFrEKhqlLLLgvlxeDzkevzqJFFGGGeHutlbGnJeturxLjHkGurIIriglhEDrhuLFrLfKzmFudogpFoqgpjdfuMyFjbHcfjKjGGCeiImcfoCdwLtwLFMkKgfkKCAuofhyMmnntmtKyJwzAerIblCpLnrtMiaygxlvptkgwoEiqGLxjxzbtEgHefptKJHxoBmIIAvAfDuvsucsEvDnlCssLlcjEaeAdwybcvBIsxAhqAFHmIEDqsJfLHHsAooqfDzKmhzuuodcGaugakdpGowbHIMCjqyMeJBHglvfEwqpqAHrClJzAqFfcoyHiclqhBclkccdxEkwMqMzbBughbvgypDMwHhtiGGcsjjtDwfqvrpsdhKJEkLzjbptmCvGAbekDctkIwrJjuaoBujcayCFnsoaClLEDdGjmpBcfptpqMiwqqlhzfJEIFsuiwutlDIzqtgpoCtrugmCLbvsMrylnkmgyHBIapvjurenwKhJwKjmJABBEoHewDAjfyhmKBlcFkvICbizrtzaGuruzMyuzEkrmjtLhesGwAsgMhvlkhzDkeMchvuFKqbLFacBmnMczloMfdjFpiMsyqJewLImEagvALMvrKAnqphJDwAxufdkxIIiaBppjMqrKcqxDwjojnzarKMbDgzrgBgclxoFMaqJwnkKlDFAiLCKhmuFgnHplrbFAdtGGrhIpGGyGitsGktksqbsAaBbcbrmFghlubrymmysettkEEoCohnscKILmAhHInIAbAfyHiJHhgkcvdcpAhvtvEpgnIycFcJBdyhpikEzGraClzCmrbIsGpcADJAC sDGLHazHhhdtnvtJriHMEuHgwFwxtzKvcvMjCJxxiMwMMAmqkkqp",
+            "xz6Dkm",
+            "`\u9ebe+-",
+            "2?7hv",
+            ")V92aBJ;@Fz",
+            "F&p)\ub4b4u",
+            "=up:fP\uefd1o,nQ"
+        ],
+        "file": {
+            "ADVAPI32.dll": "Library",
+            "GDI32.dll": "Library",
+            "KERNEL32.dll": "Library",
+            "SHELL32.dll": "Library",
+            "SHLWAPI.dll": "Library",
+            "USER32.dll": "Library",
+            "msvcrt.dll": "Library",
+            "ole32.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.719744",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasOverlay"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasDigitalSignature"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}
