@@ -1,0 +1,234 @@
+{
+    "/root/torrent/VirusShare_00000/VirusShare_00312557e4cff7df03c2986e45e6c129": {
+        "Summary": {
+            "Architecture": "IMAGE_FILE_MACHINE_I386",
+            "Subsystem": "IMAGE_SUBSYSTEM_WINDOWS_GUI",
+            "Compilation Date": "1970-Jan-01 00:00:00"
+        },
+        "DOS Header": {
+            "e_magic": "MZ",
+            "e_cblp": 0,
+            "e_cp": 0,
+            "e_crlc": 0,
+            "e_cparhdr": 0,
+            "e_minalloc": 0,
+            "e_maxalloc": 17744,
+            "e_ss": 0,
+            "e_sp": 332,
+            "e_csum": 2,
+            "e_ip": 0,
+            "e_cs": 0,
+            "e_ovno": 0,
+            "e_oemid": 267,
+            "e_oeminfo": 0,
+            "e_lfanew": 12
+        },
+        "PE Header": {
+            "Signature": "PE",
+            "Machine": "IMAGE_FILE_MACHINE_I386",
+            "NumberofSections": 2,
+            "TimeDateStamp": "1970-Jan-01 00:00:00",
+            "PointerToSymbolTable": 0,
+            "NumberOfSymbols": 0,
+            "SizeOfOptionalHeader": 224,
+            "Characteristics": [
+                "IMAGE_FILE_32BIT_MACHINE",
+                "IMAGE_FILE_EXECUTABLE_IMAGE",
+                "IMAGE_FILE_LINE_NUMS_STRIPPED",
+                "IMAGE_FILE_LOCAL_SYMS_STRIPPED",
+                "IMAGE_FILE_RELOCS_STRIPPED"
+            ]
+        },
+        "Image Optional Header": {
+            "Magic": "PE32",
+            "LinkerVersion": "0.0",
+            "SizeOfCode": 512,
+            "SizeOfInitializedData": 0,
+            "SizeOfUninitializedData": 0,
+            "AddressOfEntryPoint": "0x000B0000 (Section: \\x02\\xd2u\\xdb\\x8a\\x16\\xeb\\xd4)",
+            "BaseOfCode": 4096,
+            "BaseOfData": 12,
+            "ImageBase": 4194304,
+            "SectionAlignment": 4096,
+            "FileAlignment": 512,
+            "OperatingSystemVersion": "4.0",
+            "ImageVersion": "0.0",
+            "SubsystemVersion": "4.0",
+            "Win32VersionValue": 0,
+            "SizeOfImage": 765952,
+            "SizeOfHeaders": 512,
+            "Checksum": 0,
+            "Subsystem": "IMAGE_SUBSYSTEM_WINDOWS_GUI",
+            "SizeofStackReserve": 1048576,
+            "SizeofStackCommit": 4096,
+            "SizeofHeapReserve": 1048576,
+            "SizeofHeapCommit": 4096,
+            "LoaderFlags": 0,
+            "NumberOfRvaAndSizes": 16
+        },
+        "Sections": {
+            "MEW\\x00F\\x12\\xd2\\xc3": {
+                "VirtualSize": 585728,
+                "VirtualAddress": 4096,
+                "SizeOfRawData": 0,
+                "PointerToRawData": 0,
+                "PointerToRelocations": 0,
+                "PointerToLineNumbers": 0,
+                "NumberOfLineNumbers": 0,
+                "NumberOfRelocations": 0,
+                "Characteristics": [
+                    "IMAGE_SCN_CNT_CODE",
+                    "IMAGE_SCN_CNT_INITIALIZED_DATA",
+                    "IMAGE_SCN_CNT_UNINITIALIZED_DATA",
+                    "IMAGE_SCN_MEM_READ",
+                    "IMAGE_SCN_MEM_WRITE"
+                ]
+            },
+            "\\x02\\xd2u\\xdb\\x8a\\x16\\xeb\\xd4": {
+                "VirtualSize": 176128,
+                "VirtualAddress": 589824,
+                "SizeOfRawData": 176128,
+                "PointerToRawData": 512,
+                "PointerToRelocations": 0,
+                "PointerToLineNumbers": 0,
+                "NumberOfLineNumbers": 0,
+                "NumberOfRelocations": 0,
+                "Characteristics": [
+                    "IMAGE_SCN_CNT_CODE",
+                    "IMAGE_SCN_CNT_INITIALIZED_DATA",
+                    "IMAGE_SCN_CNT_UNINITIALIZED_DATA",
+                    "IMAGE_SCN_MEM_EXECUTE",
+                    "IMAGE_SCN_MEM_READ",
+                    "IMAGE_SCN_MEM_WRITE"
+                ],
+                "Entropy": 6.00881
+            }
+        },
+        "Imports": {
+            "kernel32.dll": [
+                "LoadLibraryA",
+                "GetProcAddress"
+            ]
+        },
+        "Plugins": {
+            "clamav": {
+                "level": 3,
+                "plugin_output": {
+                    "info_0": "Win.Worm.Bobax-38",
+                    "info_1": "Win.Trojan.Mybot-6539"
+                },
+                "summary": "Matching ClamAV signature(s):"
+            },
+            "strings": {
+                "level": 2,
+                "plugin_output": {
+                    "Contains another PE executable": [
+                        "This program cannot be run in DOS mode."
+                    ]
+                },
+                "summary": "Strings found in the binary may indicate undesirable behavior:"
+            },
+            "packer": {
+                "level": 2,
+                "plugin_output": {
+                    "info_0": "Unusual section name found: MEW\\x00F\\x12\\xd2\\xc3",
+                    "info_1": "Unusual section name found: \\x02\\xd2u\\xdb\\x8a\\x16\\xeb\\xd4",
+                    "info_2": "Section \\x02\\xd2u\\xdb\\x8a\\x16\\xeb\\xd4 is both writable and executable.",
+                    "info_3": "The PE only has 2 import(s)."
+                },
+                "summary": "The PE is possibly packed."
+            },
+            "imports": {
+                "level": 1,
+                "plugin_output": {
+                    "[!] The program may be hiding some of its imports": [
+                        "LoadLibraryA",
+                        "GetProcAddress"
+                    ]
+                },
+                "summary": "The PE contains common functions which appear in legitimate applications."
+            },
+            "mitigation": {
+                "level": 1,
+                "plugin_output": {
+                    "Stack Canary": "disabled",
+                    "SafeSEH": "disabled",
+                    "ASLR": "disabled",
+                    "DEP": "disabled",
+                    "CFG": "disabled"
+                },
+                "summary": "The following exploit mitigation techniques have been detected"
+            },
+            "virustotal": {
+                "level": 3,
+                "plugin_output": {
+                    "Bkav": "W32.BobicB.PE",
+                    "MicroWorld-eScan": "Win32.Worm.Mytob.ASU",
+                    "CMC": "Generic.Win32.00312557e4!CMCRadar",
+                    "CAT-QuickHeal": "W32.Bobic.gen",
+                    "McAfee": "W32/Bobax.a.gen",
+                    "Cylance": "Unsafe",
+                    "Zillya": "Worm.Bobic.Win32.9",
+                    "Sangfor": "Malware",
+                    "K7AntiVirus": "NetWorm ( 0040f4be1 )",
+                    "Alibaba": "Virus:Win32/Bobax.18f369cb",
+                    "K7GW": "NetWorm ( 0040f4be1 )",
+                    "Cybereason": "malicious.7e4cff",
+                    "Arcabit": "Win32.Worm.Mytob.ASU",
+                    "Invincea": "heuristic",
+                    "BitDefenderTheta": "AI:FileInfector.BA68ACE414",
+                    "Cyren": "W32/Bobax.YLYN-4813",
+                    "TotalDefense": "Win32/Bobax",
+                    "APEX": "Malicious",
+                    "Avast": "Win32:SaliCode",
+                    "ClamAV": "Win.Trojan.Mybot-6539",
+                    "Kaspersky": "Backdoor.Win32.Donbot.p",
+                    "BitDefender": "Win32.Worm.Mytob.ASU",
+                    "NANO-Antivirus": "Virus.Win32.Drop.qzce",
+                    "Tencent": "Virus.Win32.Dropper.tm",
+                    "Ad-Aware": "Win32.Worm.Mytob.ASU",
+                    "Emsisoft": "Win32.Worm.Mytob.ASU (B)",
+                    "Comodo": "NetWorm.Win32.Bobic.A@faynq",
+                    "F-Secure": "Trojan.TR/Drop.Bobic.Q",
+                    "DrWeb": "Win32.Proxed",
+                    "VIPRE": "BehavesLike.Win32.Malware.bsf (vs)",
+                    "TrendMicro": "PE_BOBAX.AI",
+                    "McAfee-GW-Edition": "BehavesLike.Win32.Generic.ch",
+                    "Trapmine": "malicious.high.ml.score",
+                    "FireEye": "Generic.mg.00312557e4cff7df",
+                    "Sophos": "W32/Bobax-S",
+                    "SentinelOne": "DFI - Malicious PE",
+                    "F-Prot": "W32/Bobax.BJ",
+                    "Jiangmin": "I-Worm/Bobic.j",
+                    "Webroot": "W32.Bobax.Gen",
+                    "Avira": "TR/Drop.Bobic.Q",
+                    "Fortinet": "W32/Bobax.K!worm",
+                    "Antiy-AVL": "Trojan/Win32.TGeneric",
+                    "Kingsoft": "Win32.Bobic.k.824144",
+                    "Endgame": "malicious (high confidence)",
+                    "Microsoft": "Virus:Win32/Bobax.A",
+                    "ViRobot": "I-Worm.Win32.Bobic.36864",
+                    "ZoneAlarm": "Backdoor.Win32.Donbot.p",
+                    "AhnLab-V3": "Dropper/Bobax",
+                    "Acronis": "suspicious",
+                    "VBA32": "Virus.Win32.Bobax.Z",
+                    "ALYac": "Win32.Worm.Mytob.ASU",
+                    "MAX": "malware (ai score=100)",
+                    "Malwarebytes": "HackTool.Patcher",
+                    "ESET-NOD32": "Win32/Bobax.Z",
+                    "TrendMicro-HouseCall": "PE_BOBAX.AI",
+                    "Rising": "Virus.Bobic!1.9ADE (CLOUD)",
+                    "Yandex": "Worm.RBot.CNC",
+                    "Ikarus": "Backdoor.Win32.Rbot",
+                    "GData": "Win32.Worm.Mytob.ASU",
+                    "MaxSecure": "Backdoor.Donbot.p",
+                    "AVG": "Win32:SaliCode",
+                    "Panda": "W32/Baxbo.A",
+                    "CrowdStrike": "win/malicious_confidence_90% (D)",
+                    "Qihoo-360": "Virus.Win32.Bobax.A"
+                },
+                "summary": "VirusTotal score: 64/72 (Scanned on 2020-04-01 02:29:25)"
+            }
+        }
+    }
+}

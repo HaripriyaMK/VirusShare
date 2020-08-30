@@ -1,0 +1,264 @@
+{
+    "/root/torrent/VirusShare_00000/VirusShare_00c72f6e18446d4aaf1f94e504fea4a5": {
+        "Summary": {
+            "Architecture": "IMAGE_FILE_MACHINE_I386",
+            "Subsystem": "IMAGE_SUBSYSTEM_WINDOWS_GUI",
+            "Compilation Date": "2008-Sep-09 06:50:24",
+            "Detected languages": [
+                "Chinese - PRC"
+            ]
+        },
+        "DOS Header": {
+            "e_magic": "MZ",
+            "e_cblp": 144,
+            "e_cp": 3,
+            "e_crlc": 0,
+            "e_cparhdr": 4,
+            "e_minalloc": 0,
+            "e_maxalloc": 65535,
+            "e_ss": 0,
+            "e_sp": 184,
+            "e_csum": 0,
+            "e_ip": 0,
+            "e_cs": 0,
+            "e_ovno": 0,
+            "e_oemid": 0,
+            "e_oeminfo": 0,
+            "e_lfanew": 176
+        },
+        "PE Header": {
+            "Signature": "PE",
+            "Machine": "IMAGE_FILE_MACHINE_I386",
+            "NumberofSections": 2,
+            "TimeDateStamp": "2008-Sep-09 06:50:24",
+            "PointerToSymbolTable": 0,
+            "NumberOfSymbols": 0,
+            "SizeOfOptionalHeader": 224,
+            "Characteristics": [
+                "IMAGE_FILE_32BIT_MACHINE",
+                "IMAGE_FILE_EXECUTABLE_IMAGE",
+                "IMAGE_FILE_LINE_NUMS_STRIPPED",
+                "IMAGE_FILE_LOCAL_SYMS_STRIPPED",
+                "IMAGE_FILE_RELOCS_STRIPPED"
+            ]
+        },
+        "Image Optional Header": {
+            "Magic": "PE32",
+            "LinkerVersion": "5.0",
+            "SizeOfCode": 0,
+            "SizeOfInitializedData": 0,
+            "SizeOfUninitializedData": 0,
+            "AddressOfEntryPoint": "0x0001168D (Section: .packed)",
+            "BaseOfCode": 0,
+            "BaseOfData": 0,
+            "ImageBase": 4194304,
+            "SectionAlignment": 4096,
+            "FileAlignment": 512,
+            "OperatingSystemVersion": "4.0",
+            "ImageVersion": "0.0",
+            "SubsystemVersion": "4.0",
+            "Win32VersionValue": 0,
+            "SizeOfImage": 73390,
+            "SizeOfHeaders": 512,
+            "Checksum": 0,
+            "Subsystem": "IMAGE_SUBSYSTEM_WINDOWS_GUI",
+            "SizeofStackReserve": 1048576,
+            "SizeofStackCommit": 4096,
+            "SizeofHeapReserve": 1048576,
+            "SizeofHeapCommit": 4096,
+            "LoaderFlags": 0,
+            "NumberOfRvaAndSizes": 16
+        },
+        "Sections": {
+            ".packed": {
+                "VirtualSize": 53248,
+                "VirtualAddress": 4096,
+                "SizeOfRawData": 0,
+                "PointerToRawData": 0,
+                "PointerToRelocations": 0,
+                "PointerToLineNumbers": 0,
+                "NumberOfLineNumbers": 0,
+                "NumberOfRelocations": 0,
+                "Characteristics": [
+                    "IMAGE_SCN_CNT_CODE",
+                    "IMAGE_SCN_MEM_EXECUTE",
+                    "IMAGE_SCN_MEM_READ"
+                ]
+            },
+            ".packed (#2)": {
+                "VirtualSize": 16046,
+                "VirtualAddress": 57344,
+                "SizeOfRawData": 16046,
+                "PointerToRawData": 512,
+                "PointerToRelocations": 0,
+                "PointerToLineNumbers": 0,
+                "NumberOfLineNumbers": 0,
+                "NumberOfRelocations": 0,
+                "Characteristics": [
+                    "IMAGE_SCN_CNT_CODE",
+                    "IMAGE_SCN_MEM_EXECUTE",
+                    "IMAGE_SCN_MEM_READ",
+                    "IMAGE_SCN_MEM_WRITE"
+                ],
+                "Entropy": 7.83853
+            }
+        },
+        "Imports": {
+            "KERNEL32.dll": [
+                "LoadLibraryA",
+                "GetProcAddress",
+                "VirtualAlloc",
+                "VirtualProtect",
+                "VirtualFree"
+            ]
+        },
+        "Resources": {
+            "101": {
+                "Type": "DLL",
+                "Language": "Chinese - PRC",
+                "Codepage": "UNKNOWN",
+                "Size": 17408,
+                "TimeDateStamp": "1980-Jan-01 00:00:00",
+                "Entropy": 0
+            }
+        },
+        "RICH Header": {
+            "XOR Key": 2610103321,
+            "Unmarked objects": 0,
+            "19 (8078)": 8,
+            "18 (8444)": 1
+        },
+        "Plugins": {
+            "clamav": {
+                "level": 3,
+                "plugin_output": {
+                    "info_0": "Win.Malware.Spwvdldpk-6957351-0"
+                },
+                "summary": "Matching ClamAV signature(s):"
+            },
+            "packer": {
+                "level": 2,
+                "plugin_output": {
+                    "info_0": "Unusual section name found: .packed",
+                    "info_1": "Unusual section name found: .packed",
+                    "info_2": "Section .packed is both writable and executable.",
+                    "info_3": "The PE only has 5 import(s)."
+                },
+                "summary": "The PE is possibly packed."
+            },
+            "imports": {
+                "level": 2,
+                "plugin_output": {
+                    "[!] The program may be hiding some of its imports": [
+                        "LoadLibraryA",
+                        "GetProcAddress"
+                    ],
+                    "Memory manipulation functions often used by packers": [
+                        "VirtualAlloc",
+                        "VirtualProtect"
+                    ]
+                },
+                "summary": "The PE contains functions most legitimate programs don't use."
+            },
+            "resources": {
+                "level": 2,
+                "plugin_output": {
+                    "info_0": "Resources amount for 97.7044% of the executable."
+                },
+                "summary": "The PE is possibly a dropper."
+            },
+            "mitigation": {
+                "level": 1,
+                "plugin_output": {
+                    "Stack Canary": "disabled",
+                    "SafeSEH": "disabled",
+                    "ASLR": "disabled",
+                    "DEP": "disabled",
+                    "CFG": "disabled"
+                },
+                "summary": "The following exploit mitigation techniques have been detected"
+            },
+            "overlay": {
+                "level": 2,
+                "plugin_output": {
+                    "info_0": "187 bytes of data starting at offset 0x44de."
+                },
+                "summary": "The file contains overlay data."
+            },
+            "authenticode": {
+                "level": 3,
+                "plugin_output": {
+                    "info_0": "Signer: Qizhi Software (beijing) Co. Ltd",
+                    "info_1": "Issuer: Qizhi Software (beijing) Co. Ltd",
+                    "info_2": "The file was modified after it was signed."
+                },
+                "summary": "The PE's digital signature is invalid."
+            },
+            "virustotal": {
+                "level": 3,
+                "plugin_output": {
+                    "Bkav": "W32.InshitQW.Trojan",
+                    "MicroWorld-eScan": "Trojan.Crypt.EL",
+                    "FireEye": "Generic.mg.00c72f6e18446d4a",
+                    "CAT-QuickHeal": "TrojanDownloader.Small",
+                    "McAfee": "Artemis!00C72F6E1844",
+                    "Cylance": "Unsafe",
+                    "Zillya": "Worm.AutoRun.Win32.31139",
+                    "Sangfor": "Malware",
+                    "CrowdStrike": "win/malicious_confidence_100% (D)",
+                    "Alibaba": "Worm:Win32/PePatch.97a7bc07",
+                    "Arcabit": "Trojan.Crypt.EL",
+                    "Invincea": "heuristic",
+                    "BitDefenderTheta": "AI:Packer.B9F3870E1E",
+                    "Cyren": "W32/Downloader.AL.gen!Eldorado",
+                    "Symantec": "ML.Attribute.HighConfidence",
+                    "APEX": "Malicious",
+                    "Avast": "Win32:Evo-gen [Susp]",
+                    "ClamAV": "Win.Malware.Spwvdldpk-6957351-0",
+                    "Kaspersky": "Packed.Win32.PePatch.ly",
+                    "BitDefender": "Trojan.Crypt.EL",
+                    "NANO-Antivirus": "Trojan.Win32.GenericL.ebhlh",
+                    "Tencent": "Trojan.Win32.AutoRun.nvc",
+                    "Ad-Aware": "Trojan.Crypt.EL",
+                    "Emsisoft": "Trojan.Crypt.EL (B)",
+                    "Comodo": "Worm.Win32.Autorun.~ACG@4n69g",
+                    "F-Secure": "Trojan.TR/Dldr.Agent.xsd",
+                    "DrWeb": "Win32.HLLW.Sock.4",
+                    "VIPRE": "Worm.Win32.Chiviper.c (v)",
+                    "TrendMicro": "WORM_AUTORUN.CMT",
+                    "McAfee-GW-Edition": "BehavesLike.Win32.Dropper.lc",
+                    "Fortinet": "W32/Qhots.QSL!tr",
+                    "Trapmine": "malicious.high.ml.score",
+                    "CMC": "Packed.Win32.PePatch!O",
+                    "Sophos": "Mal/Generic-S",
+                    "SentinelOne": "DFI - Malicious PE",
+                    "F-Prot": "W32/RLPacked.A.gen!Eldorado",
+                    "Jiangmin": "Worm/AutoRun.hkv",
+                    "Webroot": "W32.Worm.Gen",
+                    "Avira": "TR/Dldr.Agent.xsd",
+                    "MAX": "malware (ai score=99)",
+                    "Endgame": "malicious (high confidence)",
+                    "Microsoft": "Worm:Win32/Chiviper.C",
+                    "AegisLab": "Hacktool.Win32.PePatch.lkoM",
+                    "ZoneAlarm": "Packed.Win32.PePatch.ly",
+                    "AhnLab-V3": "Backdoor/Win32.Nbdd.R19298",
+                    "Acronis": "suspicious",
+                    "ALYac": "Trojan.Crypt.EL",
+                    "ESET-NOD32": "a variant of Win32/AutoRun.Agent.JB",
+                    "TrendMicro-HouseCall": "WORM_AUTORUN.CMT",
+                    "Rising": "Backdoor.Morix!1.65DD (CLOUD)",
+                    "Yandex": "Trojan.Agent!txs+xHyXoec",
+                    "Ikarus": "Virus.Win32.JunkPoly",
+                    "eGambit": "Generic.Malware",
+                    "GData": "Trojan.Crypt.EL",
+                    "MaxSecure": "Trojan.Malware.300983.susgen",
+                    "AVG": "FileRepMalware",
+                    "Cybereason": "malicious.e18446",
+                    "Panda": "Generic Malware",
+                    "Qihoo-360": "Trojan.Generic"
+                },
+                "summary": "VirusTotal score: 59/73 (Scanned on 2020-02-07 04:16:47)"
+            }
+        }
+    }
+}

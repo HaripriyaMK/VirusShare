@@ -1,0 +1,236 @@
+{
+    "/root/torrent/VirusShare_00000/VirusShare_00bd8ba0cb643ff5894933a6e598fe7d": {
+        "Summary": {
+            "Architecture": "IMAGE_FILE_MACHINE_I386",
+            "Subsystem": "IMAGE_SUBSYSTEM_WINDOWS_GUI",
+            "Compilation Date": "1990-May-11 14:25:52"
+        },
+        "DOS Header": {
+            "e_magic": "MZ",
+            "e_cblp": 80,
+            "e_cp": 2,
+            "e_crlc": 0,
+            "e_cparhdr": 4,
+            "e_minalloc": 15,
+            "e_maxalloc": 65535,
+            "e_ss": 0,
+            "e_sp": 184,
+            "e_csum": 0,
+            "e_ip": 0,
+            "e_cs": 0,
+            "e_ovno": 26,
+            "e_oemid": 0,
+            "e_oeminfo": 0,
+            "e_lfanew": 256
+        },
+        "PE Header": {
+            "Signature": "PE",
+            "Machine": "IMAGE_FILE_MACHINE_I386",
+            "NumberofSections": 2,
+            "TimeDateStamp": "1990-May-11 14:25:52",
+            "PointerToSymbolTable": 0,
+            "NumberOfSymbols": 0,
+            "SizeOfOptionalHeader": 224,
+            "Characteristics": [
+                "IMAGE_FILE_32BIT_MACHINE",
+                "IMAGE_FILE_EXECUTABLE_IMAGE",
+                "IMAGE_FILE_LINE_NUMS_STRIPPED",
+                "IMAGE_FILE_LOCAL_SYMS_STRIPPED",
+                "IMAGE_FILE_RELOCS_STRIPPED"
+            ]
+        },
+        "Image Optional Header": {
+            "Magic": "PE32",
+            "LinkerVersion": "2.0",
+            "SizeOfCode": 89600,
+            "SizeOfInitializedData": 0,
+            "SizeOfUninitializedData": 0,
+            "AddressOfEntryPoint": "0x00001615 (Section: .text)",
+            "BaseOfCode": 4096,
+            "BaseOfData": 0,
+            "ImageBase": 65536,
+            "SectionAlignment": 4096,
+            "FileAlignment": 512,
+            "OperatingSystemVersion": "4.0",
+            "ImageVersion": "0.0",
+            "SubsystemVersion": "4.0",
+            "Win32VersionValue": 0,
+            "SizeOfImage": 540672,
+            "SizeOfHeaders": 1024,
+            "Checksum": 0,
+            "Subsystem": "IMAGE_SUBSYSTEM_WINDOWS_GUI",
+            "SizeofStackReserve": 1048576,
+            "SizeofStackCommit": 65536,
+            "SizeofHeapReserve": 1048576,
+            "SizeofHeapCommit": 65536,
+            "LoaderFlags": 0,
+            "NumberOfRvaAndSizes": 16
+        },
+        "Sections": {
+            ".text": {
+                "VirtualSize": 532480,
+                "VirtualAddress": 4096,
+                "SizeOfRawData": 89600,
+                "PointerToRawData": 1024,
+                "PointerToRelocations": 0,
+                "PointerToLineNumbers": 0,
+                "NumberOfLineNumbers": 0,
+                "NumberOfRelocations": 0,
+                "Characteristics": [
+                    "IMAGE_SCN_CNT_CODE",
+                    "IMAGE_SCN_MEM_EXECUTE",
+                    "IMAGE_SCN_MEM_READ",
+                    "IMAGE_SCN_MEM_WRITE"
+                ],
+                "Entropy": 7.99585
+            },
+            ".idata": {
+                "VirtualSize": 4096,
+                "VirtualAddress": 536576,
+                "SizeOfRawData": 512,
+                "PointerToRawData": 90624,
+                "PointerToRelocations": 0,
+                "PointerToLineNumbers": 0,
+                "NumberOfLineNumbers": 0,
+                "NumberOfRelocations": 0,
+                "Characteristics": [
+                    "IMAGE_SCN_CNT_CODE",
+                    "IMAGE_SCN_CNT_INITIALIZED_DATA",
+                    "IMAGE_SCN_MEM_READ",
+                    "IMAGE_SCN_MEM_WRITE"
+                ],
+                "Entropy": 1.01826
+            }
+        },
+        "Imports": {
+            "kernel32.dll": [
+                "GetProcAddress",
+                "LoadLibraryA"
+            ]
+        },
+        "Plugins": {
+            "clamav": {
+                "level": 3,
+                "plugin_output": {
+                    "info_0": "Win.Trojan.Packed-85",
+                    "info_1": "Win.Packer.Morphine-6707441-0"
+                },
+                "summary": "Matching ClamAV signature(s):"
+            },
+            "peid": {
+                "level": 2,
+                "plugin_output": {
+                    "info_0": "Morphine v2.7 -> Holy_Father & Ratter/29A (h)",
+                    "info_1": "Morphine 2.7 -> Holy_Father & Ratter/29A (h)",
+                    "info_2": "Morphine 2.7 -> Holy_Father & Ratter/29A",
+                    "info_3": "Morphine v2.7 -> Holy_Father & Ratter/29A"
+                },
+                "summary": "PEiD Signature:"
+            },
+            "packer": {
+                "level": 2,
+                "plugin_output": {
+                    "info_0": "Section .text is both writable and executable.",
+                    "info_1": "The PE only has 2 import(s)."
+                },
+                "summary": "The PE is possibly packed."
+            },
+            "imports": {
+                "level": 1,
+                "plugin_output": {
+                    "[!] The program may be hiding some of its imports": [
+                        "GetProcAddress",
+                        "LoadLibraryA"
+                    ]
+                },
+                "summary": "The PE contains common functions which appear in legitimate applications."
+            },
+            "mitigation": {
+                "level": 1,
+                "plugin_output": {
+                    "Stack Canary": "disabled",
+                    "SafeSEH": "disabled",
+                    "ASLR": "disabled",
+                    "DEP": "disabled",
+                    "CFG": "disabled"
+                },
+                "summary": "The following exploit mitigation techniques have been detected"
+            },
+            "overlay": {
+                "level": 2,
+                "plugin_output": {
+                    "info_0": "3072 bytes of data starting at offset 0x16400."
+                },
+                "summary": "The file contains overlay data."
+            },
+            "virustotal": {
+                "level": 3,
+                "plugin_output": {
+                    "Bkav": "W32.AIDetectVM.malware2",
+                    "Elastic": "malicious (high confidence)",
+                    "DrWeb": "Win32.HLLW.MyBot.based",
+                    "MicroWorld-eScan": "Generic.Sdbot.2753B751",
+                    "FireEye": "Generic.mg.00bd8ba0cb643ff5",
+                    "ALYac": "Generic.Sdbot.2753B751",
+                    "Cylance": "Unsafe",
+                    "Zillya": "Backdoor.RBot.Win32.7751",
+                    "Sangfor": "Malware",
+                    "K7AntiVirus": "Trojan ( 0054e4141 )",
+                    "Alibaba": "Backdoor:Win32/Wmfap.8a33eca2",
+                    "K7GW": "Trojan ( 0054e4141 )",
+                    "Cybereason": "malicious.0cb643",
+                    "Arcabit": "Generic.Sdbot.2753B751",
+                    "Invincea": "heuristic",
+                    "BitDefenderTheta": "AI:Packer.C8C95A221F",
+                    "F-Prot": "W32/Spybot.JVG",
+                    "Symantec": "W32.Spybot.Worm",
+                    "ESET-NOD32": "a variant of Win32/Rbot",
+                    "APEX": "Malicious",
+                    "TotalDefense": "Win32/Rbot!generic",
+                    "Paloalto": "generic.ml",
+                    "ClamAV": "Win.Trojan.Packed-85",
+                    "Kaspersky": "Backdoor.Win32.Rbot.j",
+                    "BitDefender": "Generic.Sdbot.2753B751",
+                    "NANO-Antivirus": "Trojan.Win32.Rbot.ghtj",
+                    "ViRobot": "Backdoor.Win32.A.Rbot.94208.N",
+                    "Rising": "Trojan.Win32.Generic.1384889B (C64:YzY0Oq0G7mM5yxev)",
+                    "Ad-Aware": "Generic.Sdbot.2753B751",
+                    "TACHYON": "Backdoor/W32.RBot.94208.AO",
+                    "Sophos": "W32/Rbot-Gen",
+                    "Comodo": "Backdoor@#3g7wun7bmrln1",
+                    "F-Secure": "Trojan.TR/Crypt.Morphine.Gen",
+                    "VIPRE": "Packer.Morphine.Gen (v)",
+                    "TrendMicro": "WORM_SPYBOT.GEN",
+                    "Emsisoft": "Generic.Sdbot.2753B751 (B)",
+                    "SentinelOne": "DFI - Malicious PE",
+                    "Cyren": "W32/Spybot.UMJI-5909",
+                    "Jiangmin": "Packed.Morphine.a",
+                    "Webroot": "W32.Rbot.Gen",
+                    "Avira": "TR/Crypt.Morphine.Gen",
+                    "Antiy-AVL": "Trojan[Backdoor]/Win32.Rbot",
+                    "Microsoft": "Backdoor:Win32/Rbot",
+                    "AegisLab": "Trojan.Win32.Rbot.m!c",
+                    "ZoneAlarm": "Backdoor.Win32.Rbot.j",
+                    "GData": "Generic.Sdbot.2753B751",
+                    "Cynet": "Malicious (score: 100)",
+                    "AhnLab-V3": "Win32/IRCBot.worm.Gen",
+                    "Acronis": "suspicious",
+                    "McAfee": "W32/Sdbot.q.gen",
+                    "MAX": "malware (ai score=100)",
+                    "VBA32": "suspected of Backdoor.Bifrose.14",
+                    "TrendMicro-HouseCall": "WORM_SPYBOT.GEN",
+                    "Tencent": "Win32.Backdoor.Rbot.Eev",
+                    "Yandex": "Worm.RBot.Gen.21",
+                    "Ikarus": "Trojan.Win32.Agobot",
+                    "eGambit": "Unsafe.AI_Score_99%",
+                    "Fortinet": "W32/Sdbot!worm",
+                    "AVG": "Win32:Malware-gen",
+                    "Panda": "Trj/Genetic.gen",
+                    "CrowdStrike": "win/malicious_confidence_100% (W)",
+                    "Qihoo-360": "Trojan.Generic"
+                },
+                "summary": "VirusTotal score: 62/69 (Scanned on 2020-08-12 17:42:53)"
+            }
+        }
+    }
+}

@@ -1,0 +1,240 @@
+{
+    "/root/torrent/VirusShare_00000/VirusShare_0016cb786def3e3d7f495c9d2688e7bc": {
+        "Summary": {
+            "Architecture": "IMAGE_FILE_MACHINE_I386",
+            "Subsystem": "IMAGE_SUBSYSTEM_WINDOWS_GUI",
+            "Compilation Date": "2005-Nov-08 21:15:41"
+        },
+        "DOS Header": {
+            "e_magic": "MZ",
+            "e_cblp": 128,
+            "e_cp": 1,
+            "e_crlc": 0,
+            "e_cparhdr": 4,
+            "e_minalloc": 16,
+            "e_maxalloc": 65535,
+            "e_ss": 0,
+            "e_sp": 320,
+            "e_csum": 0,
+            "e_ip": 0,
+            "e_cs": 0,
+            "e_ovno": 0,
+            "e_oemid": 0,
+            "e_oeminfo": 0,
+            "e_lfanew": 128
+        },
+        "PE Header": {
+            "Signature": "PE",
+            "Machine": "IMAGE_FILE_MACHINE_I386",
+            "NumberofSections": 3,
+            "TimeDateStamp": "2005-Nov-08 21:15:41",
+            "PointerToSymbolTable": 0,
+            "NumberOfSymbols": 0,
+            "SizeOfOptionalHeader": 224,
+            "Characteristics": [
+                "IMAGE_FILE_32BIT_MACHINE",
+                "IMAGE_FILE_DLL",
+                "IMAGE_FILE_EXECUTABLE_IMAGE",
+                "IMAGE_FILE_LINE_NUMS_STRIPPED",
+                "IMAGE_FILE_LOCAL_SYMS_STRIPPED"
+            ]
+        },
+        "Image Optional Header": {
+            "Magic": "PE32",
+            "LinkerVersion": "1.0",
+            "SizeOfCode": 0,
+            "SizeOfInitializedData": 0,
+            "SizeOfUninitializedData": 0,
+            "AddressOfEntryPoint": "0x000074F7 (Section: .flat)",
+            "BaseOfCode": 0,
+            "BaseOfData": 0,
+            "ImageBase": 4194304,
+            "SectionAlignment": 4096,
+            "FileAlignment": 512,
+            "OperatingSystemVersion": "1.0",
+            "ImageVersion": "0.0",
+            "SubsystemVersion": "4.0",
+            "Win32VersionValue": 0,
+            "SizeOfImage": 40960,
+            "SizeOfHeaders": 512,
+            "Checksum": 63817,
+            "Subsystem": "IMAGE_SUBSYSTEM_WINDOWS_GUI",
+            "SizeofStackReserve": 4096,
+            "SizeofStackCommit": 4096,
+            "SizeofHeapReserve": 65536,
+            "SizeofHeapCommit": 0,
+            "LoaderFlags": 0,
+            "NumberOfRvaAndSizes": 16
+        },
+        "Sections": {
+            ".flat": {
+                "VirtualSize": 27397,
+                "VirtualAddress": 4096,
+                "SizeOfRawData": 27648,
+                "PointerToRawData": 512,
+                "PointerToRelocations": 0,
+                "PointerToLineNumbers": 0,
+                "NumberOfLineNumbers": 0,
+                "NumberOfRelocations": 0,
+                "Characteristics": [
+                    "IMAGE_SCN_CNT_CODE",
+                    "IMAGE_SCN_CNT_INITIALIZED_DATA",
+                    "IMAGE_SCN_MEM_EXECUTE",
+                    "IMAGE_SCN_MEM_READ",
+                    "IMAGE_SCN_MEM_WRITE"
+                ],
+                "Entropy": 7.80338
+            },
+            ".idata": {
+                "VirtualSize": 132,
+                "VirtualAddress": 32768,
+                "SizeOfRawData": 512,
+                "PointerToRawData": 28160,
+                "PointerToRelocations": 0,
+                "PointerToLineNumbers": 0,
+                "NumberOfLineNumbers": 0,
+                "NumberOfRelocations": 0,
+                "Characteristics": [
+                    "IMAGE_SCN_CNT_INITIALIZED_DATA",
+                    "IMAGE_SCN_MEM_READ",
+                    "IMAGE_SCN_MEM_WRITE"
+                ],
+                "Entropy": 1.17083
+            },
+            ".reloc": {
+                "VirtualSize": 30,
+                "VirtualAddress": 36864,
+                "SizeOfRawData": 512,
+                "PointerToRawData": 28672,
+                "PointerToRelocations": 0,
+                "PointerToLineNumbers": 0,
+                "NumberOfLineNumbers": 0,
+                "NumberOfRelocations": 0,
+                "Characteristics": [
+                    "IMAGE_SCN_CNT_INITIALIZED_DATA",
+                    "IMAGE_SCN_MEM_DISCARDABLE"
+                ],
+                "Entropy": 0.312429
+            }
+        },
+        "Imports": {
+            "kernel32.DLL": [
+                "GetProcAddress",
+                "LoadLibraryA",
+                "VirtualAlloc"
+            ]
+        },
+        "Plugins": {
+            "compilers": {
+                "level": 1,
+                "plugin_output": {
+                    "info_0": "Microsoft Visual C++ 8.0"
+                },
+                "summary": "Matching compiler(s):"
+            },
+            "packer": {
+                "level": 2,
+                "plugin_output": {
+                    "info_0": "Unusual section name found: .flat",
+                    "info_1": "Section .flat is both writable and executable.",
+                    "info_2": "The PE only has 3 import(s)."
+                },
+                "summary": "The PE is possibly packed."
+            },
+            "imports": {
+                "level": 1,
+                "plugin_output": {
+                    "[!] The program may be hiding some of its imports": [
+                        "GetProcAddress",
+                        "LoadLibraryA"
+                    ]
+                },
+                "summary": "The PE contains common functions which appear in legitimate applications."
+            },
+            "mitigation": {
+                "level": 1,
+                "plugin_output": {
+                    "Stack Canary": "disabled",
+                    "SafeSEH": "disabled",
+                    "ASLR": "disabled",
+                    "DEP": "disabled",
+                    "CFG": "disabled"
+                },
+                "summary": "The following exploit mitigation techniques have been detected"
+            },
+            "overlay": {
+                "level": 2,
+                "plugin_output": {
+                    "info_0": "2048 bytes of data starting at offset 0x7200."
+                },
+                "summary": "The file contains overlay data."
+            },
+            "virustotal": {
+                "level": 3,
+                "plugin_output": {
+                    "MicroWorld-eScan": "DeepScan:Generic.Malware.SFMH@mm.6996E4D0",
+                    "FireEye": "Generic.mg.0016cb786def3e3d",
+                    "CAT-QuickHeal": "Trojan.Pakes",
+                    "ALYac": "DeepScan:Generic.Malware.SFMH@mm.6996E4D0",
+                    "Zillya": "Trojan.Pakes.Win32.10974",
+                    "Sangfor": "Malware",
+                    "CrowdStrike": "win/malicious_confidence_100% (D)",
+                    "Alibaba": "Trojan:Win32/Pakes.0295e1d1",
+                    "K7GW": "Trojan ( 00494ba71 )",
+                    "K7AntiVirus": "Trojan ( 00494ba71 )",
+                    "Arcabit": "DeepScan:Generic.Malware.E534D1.6996E4D0",
+                    "Invincea": "heuristic",
+                    "BitDefenderTheta": "AI:Packer.99BC10E81D",
+                    "F-Prot": "W32/Trojan.GUH",
+                    "Symantec": "Trojan Horse",
+                    "TotalDefense": "Win32/Fanop",
+                    "APEX": "Malicious",
+                    "Avast": "Win32:Malware-gen",
+                    "Kaspersky": "Trojan.Win32.Pakes.aoz",
+                    "BitDefender": "DeepScan:Generic.Malware.SFMH@mm.6996E4D0",
+                    "NANO-Antivirus": "Trojan.Win32.Pakes.qurz",
+                    "Paloalto": "generic.ml",
+                    "AegisLab": "Trojan.Win32.Pakes.4!c",
+                    "Ad-Aware": "DeepScan:Generic.Malware.SFMH@mm.6996E4D0",
+                    "Emsisoft": "DeepScan:Generic.Malware.SFMH@mm.6996E4D0 (B)",
+                    "Comodo": "Malware@#3im3q4g99d80",
+                    "F-Secure": "Trojan.TR/Crypt.XPACK.Gen",
+                    "DrWeb": "Trojan.PWS.Avenger",
+                    "VIPRE": "Trojan.Win32.Pakes",
+                    "TrendMicro": "TROJ_GEN.R007C0DL119",
+                    "McAfee-GW-Edition": "BehavesLike.Win32.Sality.nc",
+                    "CMC": "Generic.Win32.0016cb786d!CMCRadar",
+                    "Sophos": "Mal/Generic-S",
+                    "Ikarus": "Trojan.Generic",
+                    "Cyren": "W32/Trojan.ENKF-5530",
+                    "Jiangmin": "Trojan/Pakes.mmt",
+                    "Webroot": "W32.Malware.Gen",
+                    "Avira": "TR/Crypt.XPACK.Gen",
+                    "Fortinet": "W32/Pakes.AOZ!tr",
+                    "Antiy-AVL": "Trojan/Win32.Pakes",
+                    "Endgame": "malicious (high confidence)",
+                    "Microsoft": "Trojan:Win32/Fanop.gen!dr",
+                    "ViRobot": "Trojan.Win32.A.Pakes.29184.B",
+                    "ZoneAlarm": "Trojan.Win32.Pakes.aoz",
+                    "TACHYON": "Trojan/W32.Packer.31232.Z",
+                    "AhnLab-V3": "Win32/GCod.suspicious",
+                    "Acronis": "suspicious",
+                    "McAfee": "Artemis!0016CB786DEF",
+                    "MAX": "malware (ai score=100)",
+                    "VBA32": "BScope.TrojanMailfinder.Mailbot",
+                    "Cylance": "Unsafe",
+                    "ESET-NOD32": "a variant of Win32/SpamTool.Mailbot.NAN",
+                    "TrendMicro-HouseCall": "TROJ_GEN.R007C0DL119",
+                    "Rising": "Trojan.Pakes.acu (CLASSIC)",
+                    "Yandex": "Trojan.Pakes!h/whf7M+clw",
+                    "SentinelOne": "DFI - Malicious PE",
+                    "GData": "DeepScan:Generic.Malware.SFMH@mm.6996E4D0",
+                    "AVG": "Win32:Malware-gen",
+                    "Panda": "Trj/Genetic.gen",
+                    "Qihoo-360": "Malware.Radar01.Gen"
+                },
+                "summary": "VirusTotal score: 60/71 (Scanned on 2019-12-09 17:01:25)"
+            }
+        }
+    }
+}

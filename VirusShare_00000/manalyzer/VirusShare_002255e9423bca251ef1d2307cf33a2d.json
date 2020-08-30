@@ -1,0 +1,240 @@
+{
+    "/root/torrent/VirusShare_00000/VirusShare_002255e9423bca251ef1d2307cf33a2d": {
+        "Summary": {
+            "Architecture": "IMAGE_FILE_MACHINE_I386",
+            "Subsystem": "IMAGE_SUBSYSTEM_WINDOWS_GUI",
+            "Compilation Date": "2056-Feb-11 21:04:56",
+            "Detected languages": [
+                "Russian - Russia"
+            ]
+        },
+        "DOS Header": {
+            "e_magic": "MZ",
+            "e_cblp": 80,
+            "e_cp": 2,
+            "e_crlc": 0,
+            "e_cparhdr": 4,
+            "e_minalloc": 15,
+            "e_maxalloc": 65535,
+            "e_ss": 0,
+            "e_sp": 184,
+            "e_csum": 0,
+            "e_ip": 0,
+            "e_cs": 0,
+            "e_ovno": 26,
+            "e_oemid": 0,
+            "e_oeminfo": 0,
+            "e_lfanew": 256
+        },
+        "PE Header": {
+            "Signature": "PE",
+            "Machine": "IMAGE_FILE_MACHINE_I386",
+            "NumberofSections": 2,
+            "TimeDateStamp": "2056-Feb-11 21:04:56",
+            "PointerToSymbolTable": 0,
+            "NumberOfSymbols": 0,
+            "SizeOfOptionalHeader": 224,
+            "Characteristics": [
+                "IMAGE_FILE_32BIT_MACHINE",
+                "IMAGE_FILE_BYTES_REVERSED_HI",
+                "IMAGE_FILE_BYTES_REVERSED_LO",
+                "IMAGE_FILE_EXECUTABLE_IMAGE",
+                "IMAGE_FILE_LINE_NUMS_STRIPPED",
+                "IMAGE_FILE_LOCAL_SYMS_STRIPPED"
+            ]
+        },
+        "Image Optional Header": {
+            "Magic": "PE32",
+            "LinkerVersion": "2.0",
+            "SizeOfCode": 1536,
+            "SizeOfInitializedData": 8192,
+            "SizeOfUninitializedData": 0,
+            "AddressOfEntryPoint": "0x00001014 (Section: CODE)",
+            "BaseOfCode": 4096,
+            "BaseOfData": 8192,
+            "ImageBase": 4194304,
+            "SectionAlignment": 4096,
+            "FileAlignment": 512,
+            "OperatingSystemVersion": "1.0",
+            "ImageVersion": "0.0",
+            "SubsystemVersion": "3.A",
+            "Win32VersionValue": 0,
+            "SizeOfImage": 32768,
+            "SizeOfHeaders": 1024,
+            "Checksum": 0,
+            "Subsystem": "IMAGE_SUBSYSTEM_WINDOWS_GUI",
+            "SizeofStackReserve": 1048576,
+            "SizeofStackCommit": 8192,
+            "SizeofHeapReserve": 1048576,
+            "SizeofHeapCommit": 4096,
+            "LoaderFlags": 0,
+            "NumberOfRvaAndSizes": 16
+        },
+        "Sections": {
+            "CODE": {
+                "VirtualSize": 24576,
+                "VirtualAddress": 4096,
+                "SizeOfRawData": 6144,
+                "PointerToRawData": 1024,
+                "PointerToRelocations": 843269456,
+                "PointerToLineNumbers": 0,
+                "NumberOfLineNumbers": 0,
+                "NumberOfRelocations": 0,
+                "Characteristics": [
+                    "IMAGE_SCN_CNT_CODE",
+                    "IMAGE_SCN_MEM_EXECUTE",
+                    "IMAGE_SCN_MEM_READ",
+                    "IMAGE_SCN_MEM_WRITE"
+                ],
+                "Entropy": 7.40821
+            },
+            ".rsrc": {
+                "VirtualSize": 4096,
+                "VirtualAddress": 28672,
+                "SizeOfRawData": 2560,
+                "PointerToRawData": 7168,
+                "PointerToRelocations": 0,
+                "PointerToLineNumbers": 0,
+                "NumberOfLineNumbers": 0,
+                "NumberOfRelocations": 0,
+                "Characteristics": [
+                    "IMAGE_SCN_CNT_CODE",
+                    "IMAGE_SCN_MEM_EXECUTE",
+                    "IMAGE_SCN_MEM_READ",
+                    "IMAGE_SCN_MEM_WRITE"
+                ],
+                "Entropy": 6.91717
+            }
+        },
+        "Imports": {
+            "kernel32.dll": [
+                "LoadLibraryA",
+                "GetProcAddress",
+                "VirtualAlloc",
+                "VirtualFree"
+            ]
+        },
+        "Resources": {
+            "HOOK_DLL": {
+                "Type": "RT_RCDATA",
+                "Language": "Russian - Russia",
+                "Codepage": "UNKNOWN",
+                "Size": 5632,
+                "TimeDateStamp": "2013-Feb-02 07:39:32",
+                "Entropy": 0
+            }
+        },
+        "Plugins": {
+            "peid": {
+                "level": 2,
+                "plugin_output": {
+                    "info_0": "PECompact v2.xx"
+                },
+                "summary": "PEiD Signature:"
+            },
+            "packer": {
+                "level": 2,
+                "plugin_output": {
+                    "info_0": "Section CODE is both writable and executable.",
+                    "info_1": "Section .rsrc is both writable and executable.",
+                    "info_2": "The PE only has 4 import(s)."
+                },
+                "summary": "The PE is possibly packed."
+            },
+            "imports": {
+                "level": 1,
+                "plugin_output": {
+                    "[!] The program may be hiding some of its imports": [
+                        "LoadLibraryA",
+                        "GetProcAddress"
+                    ]
+                },
+                "summary": "The PE contains common functions which appear in legitimate applications."
+            },
+            "resources": {
+                "level": 2,
+                "plugin_output": {
+                    "The resource timestamps differ from the PE header": [
+                        "2013-Feb-02 07:39:32"
+                    ]
+                },
+                "summary": "The PE header may have been manually modified."
+            },
+            "mitigation": {
+                "level": 1,
+                "plugin_output": {
+                    "Stack Canary": "disabled",
+                    "SafeSEH": "disabled",
+                    "ASLR": "disabled",
+                    "DEP": "disabled",
+                    "CFG": "disabled"
+                },
+                "summary": "The following exploit mitigation techniques have been detected"
+            },
+            "virustotal": {
+                "level": 3,
+                "plugin_output": {
+                    "Bkav": "W32.AIDetectVM.malware1",
+                    "MicroWorld-eScan": "Dropped:Trojan.Spy.Goldun.1.Gen",
+                    "VBA32": "TrojanDropper.Small",
+                    "FireEye": "Generic.mg.002255e9423bca25",
+                    "McAfee": "Generic.dc",
+                    "Cylance": "Unsafe",
+                    "Zillya": "Dropper.Small.Win32.2142",
+                    "K7AntiVirus": "Spyware ( 0055e3db1 )",
+                    "Alibaba": "TrojanPSW:Win32/Small.0224a548",
+                    "K7GW": "Spyware ( 0055e3db1 )",
+                    "Cybereason": "malicious.9423bc",
+                    "Arcabit": "Trojan.Spy.Goldun.1.Gen",
+                    "Invincea": "heuristic",
+                    "F-Prot": "W32/Dropper.AMG",
+                    "Symantec": "Trojan.Goldun.B",
+                    "APEX": "Malicious",
+                    "Paloalto": "generic.ml",
+                    "Kaspersky": "Trojan-Dropper.Win32.Small.vr",
+                    "BitDefender": "Dropped:Trojan.Spy.Goldun.1.Gen",
+                    "NANO-Antivirus": "Trojan.Win32.Goldun.hadb",
+                    "AegisLab": "Trojan.Win32.Small.b!c",
+                    "Rising": "Spyware.Goldun!8.8DF (CLOUD)",
+                    "Endgame": "malicious (high confidence)",
+                    "TACHYON": "Trojan-Dropper/W32.Small.9728.B",
+                    "Emsisoft": "Dropped:Trojan.Spy.Goldun.1.Gen (B)",
+                    "Comodo": "Packed.Win32.MPEC.Gen@2oey7k",
+                    "F-Secure": "Trojan.TR/Dropper.Gen",
+                    "DrWeb": "Trojan.PWS.GoldSpy",
+                    "VIPRE": "Goldun.Fam",
+                    "TrendMicro": "TROJ_GOLDUN.GEN",
+                    "Trapmine": "malicious.high.ml.score",
+                    "Sophos": "Troj/Small-JA",
+                    "Ikarus": "Trojan-Downloader.Win32.BHO",
+                    "Cyren": "W32/Risk.PSZY-0851",
+                    "Jiangmin": "TrojanDropper.Small.ano",
+                    "Webroot": "W32.Malware.Gen",
+                    "Avira": "TR/Dropper.Gen",
+                    "Fortinet": "W32/Small.JA!tr",
+                    "Antiy-AVL": "Trojan/Win32.TGeneric",
+                    "Microsoft": "PWS:Win32/Essgol.gen!A",
+                    "ZoneAlarm": "Trojan-Dropper.Win32.Small.vr",
+                    "Cynet": "Malicious (score: 100)",
+                    "BitDefenderTheta": "Gen:NN.ZexaF.34144.aiWfampi4mb",
+                    "ALYac": "Dropped:Trojan.Spy.Goldun.1.Gen",
+                    "MAX": "malware (ai score=99)",
+                    "Ad-Aware": "Dropped:Trojan.Spy.Goldun.1.Gen",
+                    "Panda": "Generic Malware",
+                    "ESET-NOD32": "a variant of Win32/Spy.Goldun.LL",
+                    "TrendMicro-HouseCall": "TROJ_GOLDUN.GEN",
+                    "Tencent": "Win32.Trojan-dropper.Small.Tu",
+                    "Yandex": "Trojan.DR.Small!Q+qSA5wA+O8",
+                    "SentinelOne": "DFI - Suspicious PE",
+                    "eGambit": "Generic.Malware",
+                    "GData": "Dropped:Trojan.Spy.Goldun.1.Gen",
+                    "AVG": "Win32:Malware-gen",
+                    "Avast": "Win32:Malware-gen",
+                    "CrowdStrike": "win/malicious_confidence_90% (W)",
+                    "Qihoo-360": "Malware.Radar01.Gen"
+                },
+                "summary": "VirusTotal score: 58/71 (Scanned on 2020-08-01 03:11:31)"
+            }
+        }
+    }
+}

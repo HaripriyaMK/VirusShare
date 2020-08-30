@@ -1,0 +1,248 @@
+{
+    "/root/torrent/VirusShare_00000/VirusShare_00da805d5ea15ddfcaed6634007c9c19": {
+        "Summary": {
+            "Architecture": "IMAGE_FILE_MACHINE_I386",
+            "Subsystem": "IMAGE_SUBSYSTEM_WINDOWS_GUI",
+            "Compilation Date": "2005-May-15 11:46:57"
+        },
+        "DOS Header": {
+            "e_magic": "MZ",
+            "e_cblp": 144,
+            "e_cp": 3,
+            "e_crlc": 0,
+            "e_cparhdr": 4,
+            "e_minalloc": 0,
+            "e_maxalloc": 65535,
+            "e_ss": 0,
+            "e_sp": 184,
+            "e_csum": 0,
+            "e_ip": 0,
+            "e_cs": 0,
+            "e_ovno": 0,
+            "e_oemid": 0,
+            "e_oeminfo": 0,
+            "e_lfanew": 224
+        },
+        "PE Header": {
+            "Signature": "PE",
+            "Machine": "IMAGE_FILE_MACHINE_I386",
+            "NumberofSections": 2,
+            "TimeDateStamp": "2005-May-15 11:46:57",
+            "PointerToSymbolTable": 0,
+            "NumberOfSymbols": 0,
+            "SizeOfOptionalHeader": 224,
+            "Characteristics": [
+                "IMAGE_FILE_32BIT_MACHINE",
+                "IMAGE_FILE_EXECUTABLE_IMAGE",
+                "IMAGE_FILE_LINE_NUMS_STRIPPED",
+                "IMAGE_FILE_LOCAL_SYMS_STRIPPED",
+                "IMAGE_FILE_RELOCS_STRIPPED"
+            ]
+        },
+        "Image Optional Header": {
+            "Magic": "PE32",
+            "LinkerVersion": "6.0",
+            "SizeOfCode": 484092,
+            "SizeOfInitializedData": 484092,
+            "SizeOfUninitializedData": 0,
+            "AddressOfEntryPoint": "0x00077046 (Section: )",
+            "BaseOfCode": 4096,
+            "BaseOfData": 110592,
+            "ImageBase": 4194304,
+            "SectionAlignment": 4096,
+            "FileAlignment": 512,
+            "OperatingSystemVersion": "4.0",
+            "ImageVersion": "0.0",
+            "SubsystemVersion": "4.0",
+            "Win32VersionValue": 0,
+            "SizeOfImage": 491520,
+            "SizeOfHeaders": 1024,
+            "Checksum": 192903,
+            "Subsystem": "IMAGE_SUBSYSTEM_WINDOWS_GUI",
+            "SizeofStackReserve": 1048576,
+            "SizeofStackCommit": 4096,
+            "SizeofHeapReserve": 1048576,
+            "SizeofHeapCommit": 4096,
+            "LoaderFlags": 0,
+            "NumberOfRvaAndSizes": 16
+        },
+        "Sections": {
+            ".petite": {
+                "VirtualSize": 483328,
+                "VirtualAddress": 4096,
+                "SizeOfRawData": 71656,
+                "PointerToRawData": 2048,
+                "PointerToRelocations": 0,
+                "PointerToLineNumbers": 0,
+                "NumberOfLineNumbers": 0,
+                "NumberOfRelocations": 0,
+                "Characteristics": [
+                    "IMAGE_SCN_CNT_CODE",
+                    "IMAGE_SCN_CNT_INITIALIZED_DATA",
+                    "IMAGE_SCN_MEM_EXECUTE",
+                    "IMAGE_SCN_MEM_READ",
+                    "IMAGE_SCN_MEM_WRITE"
+                ],
+                "Entropy": 7.98605
+            },
+            "": {
+                "VirtualSize": 764,
+                "VirtualAddress": 487424,
+                "SizeOfRawData": 1024,
+                "PointerToRawData": 1024,
+                "PointerToRelocations": 0,
+                "PointerToLineNumbers": 0,
+                "NumberOfLineNumbers": 0,
+                "NumberOfRelocations": 0,
+                "Characteristics": [
+                    "IMAGE_SCN_CNT_CODE",
+                    "IMAGE_SCN_CNT_INITIALIZED_DATA",
+                    "IMAGE_SCN_MEM_DISCARDABLE",
+                    "IMAGE_SCN_MEM_EXECUTE",
+                    "IMAGE_SCN_MEM_READ",
+                    "IMAGE_SCN_MEM_WRITE"
+                ],
+                "Entropy": 4.67207
+            }
+        },
+        "Imports": {
+            "KERNEL32.dll": [
+                "ExitProcess",
+                "LoadLibraryA",
+                "GetProcAddress",
+                "VirtualProtect",
+                "GlobalAlloc",
+                "GlobalFree",
+                "GetModuleHandleA"
+            ],
+            "user32.dll": [
+                "MessageBoxA",
+                "wsprintfA"
+            ]
+        },
+        "RICH Header": {
+            "XOR Key": 1965558489,
+            "Unmarked objects": 0,
+            "Total imports": 99,
+            "Imports (2179)": 3,
+            "12 (7291)": 2,
+            "C++ objects (8047)": 2,
+            "C objects (8047)": 96,
+            "14 (7299)": 22,
+            "C++ objects (VC++ 6.0 SP5 build 8804)": 46
+        },
+        "Plugins": {
+            "peid": {
+                "level": 2,
+                "plugin_output": {
+                    "info_0": "Petite 2.1"
+                },
+                "summary": "PEiD Signature:"
+            },
+            "packer": {
+                "level": 2,
+                "plugin_output": {
+                    "info_0": "Unusual section name found: .petite",
+                    "info_1": "Section .petite is both writable and executable.",
+                    "info_2": "Unusual section name found:",
+                    "info_3": "Section  is both writable and executable.",
+                    "info_4": "The PE only has 9 import(s)."
+                },
+                "summary": "This PE is packed with Petite"
+            },
+            "imports": {
+                "level": 1,
+                "plugin_output": {
+                    "[!] The program may be hiding some of its imports": [
+                        "LoadLibraryA",
+                        "GetProcAddress"
+                    ]
+                },
+                "summary": "The PE contains common functions which appear in legitimate applications."
+            },
+            "mitigation": {
+                "level": 1,
+                "plugin_output": {
+                    "Stack Canary": "disabled",
+                    "SafeSEH": "disabled",
+                    "ASLR": "disabled",
+                    "DEP": "disabled",
+                    "CFG": "disabled"
+                },
+                "summary": "The following exploit mitigation techniques have been detected"
+            },
+            "virustotal": {
+                "level": 3,
+                "plugin_output": {
+                    "Bkav": "W32.AIDetectVM.malware",
+                    "MicroWorld-eScan": "GenPack:Generic.Sdbot.83A9D98D",
+                    "CMC": "Generic.Win32.00da805d5e!MD",
+                    "CAT-QuickHeal": "Backdoor.Rbot",
+                    "Qihoo-360": "Trojan.Generic",
+                    "McAfee": "W32/Sdbot.worm.ch.gen.bk",
+                    "Cylance": "Unsafe",
+                    "Zillya": "Backdoor.RBot.Win32.7752",
+                    "Sangfor": "Malware",
+                    "K7AntiVirus": "Backdoor ( 004093e91 )",
+                    "Alibaba": "Backdoor:Win32/Wmfap.814914b9",
+                    "K7GW": "Backdoor ( 004093e91 )",
+                    "Cybereason": "malicious.d5ea15",
+                    "Invincea": "heuristic",
+                    "Baidu": "Win32.Worm.Rbot.a",
+                    "F-Prot": "W32/Sdbot.KON",
+                    "Symantec": "W32.Spybot.Worm",
+                    "TotalDefense": "Win32/Rbot.CNO",
+                    "APEX": "Malicious",
+                    "Avast": "MO97:ShellCode-FG [Expl]",
+                    "ClamAV": "Win.Trojan.Mybot-1372",
+                    "Kaspersky": "Backdoor.Win32.Rbot.on",
+                    "BitDefender": "GenPack:Generic.Sdbot.83A9D98D",
+                    "NANO-Antivirus": "Trojan.Win32.Rbot.dmed",
+                    "Paloalto": "generic.ml",
+                    "AegisLab": "Trojan.Win32.Rbot.m!c",
+                    "Tencent": "Backdoor.Win32.Sdbot.yx",
+                    "Endgame": "malicious (high confidence)",
+                    "Sophos": "W32/Rbot-ACX",
+                    "Comodo": "Backdoor.Win32.Rbot.~gen@1xtqdu",
+                    "F-Secure": "Worm.WORM/Rbot.73704",
+                    "DrWeb": "Win32.HLLW.MyBot.based",
+                    "VIPRE": "Backdoor.IRCBot",
+                    "TrendMicro": "WORM_RBOT.BPQ",
+                    "McAfee-GW-Edition": "BehavesLike.Win32.Sality.lc",
+                    "Trapmine": "malicious.high.ml.score",
+                    "FireEye": "Generic.mg.00da805d5ea15ddf",
+                    "Emsisoft": "GenPack:Generic.Sdbot.83A9D98D (B)",
+                    "Ikarus": "Constructor.Win32.MicroJoiner",
+                    "Cyren": "W32/Sdbot.ZVYY-7342",
+                    "Jiangmin": "Backdoor/Agobot.aso",
+                    "Webroot": "W32.Trojan.Rbot",
+                    "Avira": "WORM/Rbot.73704",
+                    "Fortinet": "W32/SpyBot.9EEC!worm",
+                    "Antiy-AVL": "Trojan[Backdoor]/Win32.Rbot",
+                    "Arcabit": "GenPack:Generic.Sdbot.83A9D98D",
+                    "ViRobot": "Backdoor.Win32.IRCBot.73704",
+                    "ZoneAlarm": "Backdoor.Win32.Rbot.on",
+                    "Microsoft": "Backdoor:Win32/Rbot",
+                    "TACHYON": "Backdoor/W32.RBot.73704",
+                    "AhnLab-V3": "Worm/Win32.IRCBot.C110602",
+                    "BitDefenderTheta": "AI:Packer.C704B7DC1E",
+                    "ALYac": "GenPack:Generic.Sdbot.83A9D98D",
+                    "MAX": "malware (ai score=100)",
+                    "VBA32": "OScope.Backdoor.Sdbot.Cgen",
+                    "ESET-NOD32": "a variant of Win32/Rbot.AWR",
+                    "TrendMicro-HouseCall": "WORM_RBOT.BPQ",
+                    "Rising": "Backdoor.Rbot!1.6636 (CLOUD)",
+                    "Yandex": "Worm.RBot.Gen.3",
+                    "SentinelOne": "DFI - Suspicious PE",
+                    "GData": "GenPack:Generic.Sdbot.83A9D98D",
+                    "Ad-Aware": "GenPack:Generic.Sdbot.83A9D98D",
+                    "AVG": "FileRepMalware",
+                    "Panda": "W32/Gaobot.gen.worm",
+                    "CrowdStrike": "win/malicious_confidence_60% (W)",
+                    "MaxSecure": "Trojan.Malware.1840165.susgen"
+                },
+                "summary": "VirusTotal score: 66/73 (Scanned on 2020-04-19 00:03:21)"
+            }
+        }
+    }
+}

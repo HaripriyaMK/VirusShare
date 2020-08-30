@@ -1,0 +1,240 @@
+{
+    "/root/torrent/VirusShare_00000/VirusShare_007304d75e4ecdba7f325de5d027da26": {
+        "Summary": {
+            "Architecture": "IMAGE_FILE_MACHINE_I386",
+            "Subsystem": "IMAGE_SUBSYSTEM_WINDOWS_GUI",
+            "Compilation Date": "1992-Jun-19 22:22:17"
+        },
+        "DOS Header": {
+            "e_magic": "MZ",
+            "e_cblp": 80,
+            "e_cp": 2,
+            "e_crlc": 0,
+            "e_cparhdr": 4,
+            "e_minalloc": 15,
+            "e_maxalloc": 65535,
+            "e_ss": 0,
+            "e_sp": 184,
+            "e_csum": 0,
+            "e_ip": 0,
+            "e_cs": 0,
+            "e_ovno": 26,
+            "e_oemid": 0,
+            "e_oeminfo": 0,
+            "e_lfanew": 256
+        },
+        "PE Header": {
+            "Signature": "PE",
+            "Machine": "IMAGE_FILE_MACHINE_I386",
+            "NumberofSections": 3,
+            "TimeDateStamp": "1992-Jun-19 22:22:17",
+            "PointerToSymbolTable": 0,
+            "NumberOfSymbols": 0,
+            "SizeOfOptionalHeader": 224,
+            "Characteristics": [
+                "IMAGE_FILE_32BIT_MACHINE",
+                "IMAGE_FILE_BYTES_REVERSED_HI",
+                "IMAGE_FILE_BYTES_REVERSED_LO",
+                "IMAGE_FILE_DLL",
+                "IMAGE_FILE_EXECUTABLE_IMAGE",
+                "IMAGE_FILE_LINE_NUMS_STRIPPED",
+                "IMAGE_FILE_LOCAL_SYMS_STRIPPED"
+            ]
+        },
+        "Image Optional Header": {
+            "Magic": "PE32",
+            "LinkerVersion": "2.0",
+            "SizeOfCode": 8192,
+            "SizeOfInitializedData": 4096,
+            "SizeOfUninitializedData": 32768,
+            "AddressOfEntryPoint": "0x0000A330 (Section: DATA)",
+            "BaseOfCode": 36864,
+            "BaseOfData": 45056,
+            "ImageBase": 4194304,
+            "SectionAlignment": 4096,
+            "FileAlignment": 512,
+            "OperatingSystemVersion": "1.0",
+            "ImageVersion": "0.0",
+            "SubsystemVersion": "4.0",
+            "Win32VersionValue": 0,
+            "SizeOfImage": 49152,
+            "SizeOfHeaders": 4096,
+            "Checksum": 0,
+            "Subsystem": "IMAGE_SUBSYSTEM_WINDOWS_GUI",
+            "DllCharacteristics": [
+                "IMAGE_LIBRARY_PROCESS_INIT"
+            ],
+            "SizeofStackReserve": 0,
+            "SizeofStackCommit": 0,
+            "SizeofHeapReserve": 1048576,
+            "SizeofHeapCommit": 4096,
+            "LoaderFlags": 0,
+            "NumberOfRvaAndSizes": 16
+        },
+        "Sections": {
+            "CODE": {
+                "VirtualSize": 32768,
+                "VirtualAddress": 4096,
+                "SizeOfRawData": 0,
+                "PointerToRawData": 1024,
+                "PointerToRelocations": 0,
+                "PointerToLineNumbers": 0,
+                "NumberOfLineNumbers": 0,
+                "NumberOfRelocations": 0,
+                "Characteristics": [
+                    "IMAGE_SCN_CNT_UNINITIALIZED_DATA",
+                    "IMAGE_SCN_MEM_EXECUTE",
+                    "IMAGE_SCN_MEM_READ",
+                    "IMAGE_SCN_MEM_WRITE"
+                ]
+            },
+            "DATA": {
+                "VirtualSize": 8192,
+                "VirtualAddress": 36864,
+                "SizeOfRawData": 5632,
+                "PointerToRawData": 1024,
+                "PointerToRelocations": 0,
+                "PointerToLineNumbers": 0,
+                "NumberOfLineNumbers": 0,
+                "NumberOfRelocations": 0,
+                "Characteristics": [
+                    "IMAGE_SCN_CNT_INITIALIZED_DATA",
+                    "IMAGE_SCN_MEM_EXECUTE",
+                    "IMAGE_SCN_MEM_READ",
+                    "IMAGE_SCN_MEM_WRITE"
+                ],
+                "Entropy": 7.56316
+            },
+            ".rsrc": {
+                "VirtualSize": 4096,
+                "VirtualAddress": 45056,
+                "SizeOfRawData": 512,
+                "PointerToRawData": 6656,
+                "PointerToRelocations": 0,
+                "PointerToLineNumbers": 0,
+                "NumberOfLineNumbers": 0,
+                "NumberOfRelocations": 0,
+                "Characteristics": [
+                    "IMAGE_SCN_CNT_INITIALIZED_DATA",
+                    "IMAGE_SCN_MEM_READ",
+                    "IMAGE_SCN_MEM_WRITE"
+                ],
+                "Entropy": 2.48077
+            }
+        },
+        "Imports": {
+            "KERNEL32.DLL": [
+                "LoadLibraryA",
+                "GetProcAddress"
+            ],
+            "advapi32.dll": [
+                "LogonUserW"
+            ]
+        },
+        "Exports": {
+            "Install": {
+                "Ordinal": 1,
+                "Address": 9900
+            }
+        },
+        "Plugins": {
+            "peid": {
+                "level": 2,
+                "plugin_output": {
+                    "info_0": "UPX -> www.upx.sourceforge.net"
+                },
+                "summary": "PEiD Signature:"
+            },
+            "packer": {
+                "level": 2,
+                "plugin_output": {
+                    "info_0": "Section CODE is both writable and executable.",
+                    "info_1": "Section DATA is both writable and executable.",
+                    "info_2": "The PE only has 3 import(s)."
+                },
+                "summary": "The PE is possibly packed."
+            },
+            "imports": {
+                "level": 1,
+                "plugin_output": {
+                    "[!] The program may be hiding some of its imports": [
+                        "LoadLibraryA",
+                        "GetProcAddress"
+                    ]
+                },
+                "summary": "The PE contains common functions which appear in legitimate applications."
+            },
+            "mitigation": {
+                "level": 1,
+                "plugin_output": {
+                    "Stack Canary": "disabled",
+                    "SafeSEH": "disabled",
+                    "ASLR": "disabled",
+                    "DEP": "disabled",
+                    "CFG": "disabled"
+                },
+                "summary": "The following exploit mitigation techniques have been detected"
+            },
+            "virustotal": {
+                "level": 3,
+                "plugin_output": {
+                    "MicroWorld-eScan": "Trojan.PSW.Vipgsm.AS",
+                    "VBA32": "TrojanPSW.Vipgsm",
+                    "CMC": "Generic.Win32.007304d75e!MD",
+                    "Qihoo-360": "Malware.Radar01.Gen",
+                    "ALYac": "Trojan.PSW.Vipgsm.AS",
+                    "Cylance": "Unsafe",
+                    "Zillya": "Trojan.Vipgsm.Win32.2",
+                    "Sangfor": "Malware",
+                    "Alibaba": "TrojanPSW:Win32/Vipgsm.b9e0b9c0",
+                    "Arcabit": "Trojan.PSW.Vipgsm.AS",
+                    "F-Prot": "W32/Vipgsm.FB@pws",
+                    "Symantec": "Infostealer",
+                    "APEX": "Malicious",
+                    "Avast": "Win32:Monikey-F@UPX [Wrm]",
+                    "Kaspersky": "Trojan-PSW.Win32.Vipgsm.as",
+                    "BitDefender": "Trojan.PSW.Vipgsm.AS",
+                    "NANO-Antivirus": "Trojan.Win32.Vipgsm.gzcb",
+                    "Paloalto": "generic.ml",
+                    "AegisLab": "Trojan.Win32.Vipgsm.i!c",
+                    "Rising": "Trojan.PSW.Vipgsm.a (CLOUD)",
+                    "Endgame": "malicious (moderate confidence)",
+                    "Emsisoft": "Trojan.PSW.Vipgsm.AS (B)",
+                    "Comodo": "TrojWare.Win32.PSW.Vipgsm.AS@ppi",
+                    "F-Secure": "Worm.WORM/Monikey.A.2",
+                    "DrWeb": "Trojan.PWS.Vipgsm",
+                    "VIPRE": "Backdoor.Remadmin.j",
+                    "TrendMicro": "BKDR_VIPGSM.C",
+                    "McAfee-GW-Edition": "BehavesLike.Win32.Sytro.zh",
+                    "Fortinet": "W32/Vipgsm.AS!tr",
+                    "Trapmine": "malicious.high.ml.score",
+                    "FireEye": "Generic.mg.007304d75e4ecdba",
+                    "Sophos": "Troj/Vipgsm-K",
+                    "Cyren": "W32/Vipgsm.YODN-0967",
+                    "Jiangmin": "Trojan/PSW.Vipgsm.df",
+                    "Webroot": "W32.Infostealer.Gen",
+                    "Avira": "WORM/Monikey.A.2",
+                    "MAX": "malware (ai score=99)",
+                    "Antiy-AVL": "Trojan[PSW]/Win32.Vipgsm",
+                    "Microsoft": "PWS:Win32/Vipgsm",
+                    "ViRobot": "Trojan.Win32.PSWVipgsm.7168.B",
+                    "ZoneAlarm": "Trojan-PSW.Win32.Vipgsm.as",
+                    "AhnLab-V3": "Trojan/Win32.Xema.C140512",
+                    "McAfee": "Artemis!007304D75E4E",
+                    "Ad-Aware": "Trojan.PSW.Vipgsm.AS",
+                    "ESET-NOD32": "Win32/PSW.Vipgsm.AS",
+                    "TrendMicro-HouseCall": "BKDR_VIPGSM.C",
+                    "Tencent": "Win32.Trojan-qqpass.Qqrob.Crb",
+                    "Yandex": "Trojan.PWS.Vipgsm!CErOkkq2Ubo",
+                    "Ikarus": "Backdoor.Win32.BlackHole",
+                    "eGambit": "Unsafe.AI_Score_86%",
+                    "GData": "Trojan.PSW.Vipgsm.AS",
+                    "AVG": "Win32:Monikey-F@UPX [Wrm]",
+                    "Panda": "Trj/Vipgsm.AC",
+                    "MaxSecure": "Trojan.Malware.1848011.susgen"
+                },
+                "summary": "VirusTotal score: 54/72 (Scanned on 2020-05-11 10:56:40)"
+            }
+        }
+    }
+}

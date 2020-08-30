@@ -1,0 +1,257 @@
+{
+    "/root/torrent/VirusShare_00000/VirusShare_009a668fcb10d5f8ad734822cba0ed57": {
+        "Summary": {
+            "Architecture": "IMAGE_FILE_MACHINE_I386",
+            "Subsystem": "IMAGE_SUBSYSTEM_WINDOWS_GUI",
+            "Compilation Date": "2004-Aug-13 01:09:44"
+        },
+        "DOS Header": {
+            "e_magic": "MZ",
+            "e_cblp": 144,
+            "e_cp": 3,
+            "e_crlc": 0,
+            "e_cparhdr": 4,
+            "e_minalloc": 0,
+            "e_maxalloc": 65535,
+            "e_ss": 0,
+            "e_sp": 184,
+            "e_csum": 0,
+            "e_ip": 0,
+            "e_cs": 0,
+            "e_ovno": 0,
+            "e_oemid": 0,
+            "e_oeminfo": 0,
+            "e_lfanew": 224
+        },
+        "PE Header": {
+            "Signature": "PE",
+            "Machine": "IMAGE_FILE_MACHINE_I386",
+            "NumberofSections": 2,
+            "TimeDateStamp": "2004-Aug-13 01:09:44",
+            "PointerToSymbolTable": 0,
+            "NumberOfSymbols": 0,
+            "SizeOfOptionalHeader": 224,
+            "Characteristics": [
+                "IMAGE_FILE_32BIT_MACHINE",
+                "IMAGE_FILE_EXECUTABLE_IMAGE",
+                "IMAGE_FILE_LINE_NUMS_STRIPPED",
+                "IMAGE_FILE_LOCAL_SYMS_STRIPPED",
+                "IMAGE_FILE_RELOCS_STRIPPED"
+            ]
+        },
+        "Image Optional Header": {
+            "Magic": "PE32",
+            "LinkerVersion": "7.0",
+            "SizeOfCode": 19968,
+            "SizeOfInitializedData": 0,
+            "SizeOfUninitializedData": 0,
+            "AddressOfEntryPoint": "0x00003F37 (Section: .text)",
+            "BaseOfCode": 4096,
+            "BaseOfData": 24576,
+            "ImageBase": 4194304,
+            "SectionAlignment": 4096,
+            "FileAlignment": 512,
+            "OperatingSystemVersion": "4.0",
+            "ImageVersion": "0.0",
+            "SubsystemVersion": "4.0",
+            "Win32VersionValue": 0,
+            "SizeOfImage": 28672,
+            "SizeOfHeaders": 1024,
+            "Checksum": 0,
+            "Subsystem": "IMAGE_SUBSYSTEM_WINDOWS_GUI",
+            "SizeofStackReserve": 1048576,
+            "SizeofStackCommit": 4096,
+            "SizeofHeapReserve": 1048576,
+            "SizeofHeapCommit": 4096,
+            "LoaderFlags": 0,
+            "NumberOfRvaAndSizes": 16
+        },
+        "Sections": {
+            ".text": {
+                "VirtualSize": 19690,
+                "VirtualAddress": 4096,
+                "SizeOfRawData": 12288,
+                "PointerToRawData": 1024,
+                "PointerToRelocations": 843269456,
+                "PointerToLineNumbers": 0,
+                "NumberOfLineNumbers": 0,
+                "NumberOfRelocations": 0,
+                "Characteristics": [
+                    "IMAGE_SCN_CNT_CODE",
+                    "IMAGE_SCN_MEM_EXECUTE",
+                    "IMAGE_SCN_MEM_READ",
+                    "IMAGE_SCN_MEM_WRITE"
+                ],
+                "Entropy": 7.78973
+            },
+            ".rsrc": {
+                "VirtualSize": 4096,
+                "VirtualAddress": 24576,
+                "SizeOfRawData": 2560,
+                "PointerToRawData": 13312,
+                "PointerToRelocations": 0,
+                "PointerToLineNumbers": 0,
+                "NumberOfLineNumbers": 0,
+                "NumberOfRelocations": 0,
+                "Characteristics": [
+                    "IMAGE_SCN_CNT_CODE",
+                    "IMAGE_SCN_MEM_EXECUTE",
+                    "IMAGE_SCN_MEM_READ",
+                    "IMAGE_SCN_MEM_WRITE"
+                ],
+                "Entropy": 6.67184
+            }
+        },
+        "Imports": {
+            "kernel32.dll": [
+                "LoadLibraryA",
+                "GetProcAddress",
+                "VirtualAlloc",
+                "VirtualFree"
+            ]
+        },
+        "RICH Header": {
+            "XOR Key": 2528417793,
+            "Unmarked objects": 0,
+            "ASM objects (VS2002 (.NET) build 9466)": 1,
+            "Imports (9210)": 7,
+            "Total imports": 32,
+            "5 (VS98 build 8168)": 1,
+            "C++ objects (VS98 build 8168)": 3,
+            "C++ objects (VS2002 (.NET) build 9466)": 2,
+            "Linker (VS2002 (.NET) build 9466)": 1
+        },
+        "Plugins": {
+            "clamav": {
+                "level": 3,
+                "plugin_output": {
+                    "info_0": "Win.Trojan.Flux-17"
+                },
+                "summary": "Matching ClamAV signature(s):"
+            },
+            "peid": {
+                "level": 2,
+                "plugin_output": {
+                    "info_0": "PECompact v2.xx"
+                },
+                "summary": "PEiD Signature:"
+            },
+            "strings": {
+                "level": 1,
+                "plugin_output": {
+                    "Contains domain names": [
+                        "FreeDoor.cn",
+                        "www.FreeDoor.cn"
+                    ]
+                },
+                "summary": "Interesting strings found in the binary:"
+            },
+            "packer": {
+                "level": 2,
+                "plugin_output": {
+                    "info_0": "Section .text is both writable and executable.",
+                    "info_1": "Section .rsrc is both writable and executable.",
+                    "info_2": "The PE only has 4 import(s)."
+                },
+                "summary": "The PE is possibly packed."
+            },
+            "imports": {
+                "level": 1,
+                "plugin_output": {
+                    "[!] The program may be hiding some of its imports": [
+                        "LoadLibraryA",
+                        "GetProcAddress"
+                    ]
+                },
+                "summary": "The PE contains common functions which appear in legitimate applications."
+            },
+            "mitigation": {
+                "level": 1,
+                "plugin_output": {
+                    "Stack Canary": "disabled",
+                    "SafeSEH": "disabled",
+                    "ASLR": "disabled",
+                    "DEP": "disabled",
+                    "CFG": "disabled"
+                },
+                "summary": "The following exploit mitigation techniques have been detected"
+            },
+            "overlay": {
+                "level": 2,
+                "plugin_output": {
+                    "info_0": "361 bytes of data starting at offset 0x3e00.",
+                    "info_1": "The overlay data has an entropy of 7.35436 and is possibly compressed or encrypted."
+                },
+                "summary": "The file contains overlay data."
+            },
+            "virustotal": {
+                "level": 3,
+                "plugin_output": {
+                    "Bkav": "W32.BifroseC.Trojan",
+                    "MicroWorld-eScan": "GenPack:Trojan.Agent.AJHP",
+                    "FireEye": "Generic.mg.009a668fcb10d5f8",
+                    "McAfee": "BackDoor-CDC.d",
+                    "Cylance": "Unsafe",
+                    "Zillya": "Backdoor.Bifrose.Win32.7566",
+                    "Sangfor": "Malware",
+                    "Alibaba": "Backdoor:Win32/Bifrose.f9dccac1",
+                    "Cybereason": "malicious.fcb10d",
+                    "TrendMicro": "BKDR_FLUX.I",
+                    "BitDefenderTheta": "AI:Packer.03E2F8E21E",
+                    "F-Prot": "W32/Bifrost.KI@bd",
+                    "TotalDefense": "Win32/Flux.G",
+                    "APEX": "Malicious",
+                    "Avast": "Win32:Flux-Q [Trj]",
+                    "ClamAV": "Win.Trojan.Flux-17",
+                    "Kaspersky": "Backdoor.Win32.Bifrose.cn",
+                    "BitDefender": "GenPack:Trojan.Agent.AJHP",
+                    "NANO-Antivirus": "Trojan.Win32.Flux.gyyx",
+                    "Paloalto": "generic.ml",
+                    "ViRobot": "Backdoor.Win32.Bifrose.16233",
+                    "Tencent": "Trojan-Spy.Win32.Flux.xfu",
+                    "Endgame": "malicious (high confidence)",
+                    "Sophos": "Troj/Winflux-B",
+                    "Comodo": "TrojWare.Win32.Trojan.XPACK.Gen@2ho5ur",
+                    "F-Secure": "Backdoor.BDS/Bifrose.CW",
+                    "DrWeb": "BackDoor.Flux.141",
+                    "VIPRE": "BehavesLike.Win32.Malware.bsm (vs)",
+                    "Invincea": "heuristic",
+                    "McAfee-GW-Edition": "BehavesLike.Win32.Backdoor.lc",
+                    "Trapmine": "malicious.high.ml.score",
+                    "CMC": "Generic.Win32.009a668fcb!MD",
+                    "Emsisoft": "GenPack:Trojan.Agent.AJHP (B)",
+                    "SentinelOne": "DFI - Suspicious PE",
+                    "Cyren": "W32/Flux.A.gen!Eldorado",
+                    "Jiangmin": "Trojan/PSW.Small.f",
+                    "Webroot": "W32.Backdoor.Gen",
+                    "Avira": "BDS/Bifrose.CW",
+                    "Fortinet": "W32/Flux.I!tr.bdr",
+                    "Antiy-AVL": "Trojan[Backdoor]/Win32.Bifrose",
+                    "Arcabit": "GenPack:Trojan.Agent.AJHP",
+                    "AegisLab": "Trojan.Win32.Bifrose.m!c",
+                    "ZoneAlarm": "Backdoor.Win32.Bifrose.cn",
+                    "Microsoft": "Backdoor:Win32/Flux.I",
+                    "AhnLab-V3": "Trojan/Win32.Flux.C1465018",
+                    "Acronis": "suspicious",
+                    "VBA32": "Malware-Cryptor.Inject.gen",
+                    "ALYac": "GenPack:Trojan.Agent.AJHP",
+                    "MAX": "malware (ai score=100)",
+                    "Ad-Aware": "GenPack:Trojan.Agent.AJHP",
+                    "ESET-NOD32": "a variant of Win32/Spy.Flux",
+                    "TrendMicro-HouseCall": "BKDR_FLUX.I",
+                    "Rising": "Malware.Undefined!8.C (TFE:2:PK8q23d7fdI)",
+                    "Yandex": "Backdoor.Bifrose!Xu+rpZOofbA",
+                    "Ikarus": "Trojan-Spy.Win32.Flux",
+                    "eGambit": "Unsafe.AI_Score_91%",
+                    "GData": "GenPack:Trojan.Agent.AJHP",
+                    "MaxSecure": "Trojan.Malware.300983.susgen",
+                    "AVG": "Win32:Flux-Q [Trj]",
+                    "Panda": "Bck/Flux.BL",
+                    "CrowdStrike": "win/malicious_confidence_100% (W)",
+                    "Qihoo-360": "Malware.Radar01.Gen"
+                },
+                "summary": "VirusTotal score: 62/72 (Scanned on 2020-04-19 15:31:52)"
+            }
+        }
+    }
+}

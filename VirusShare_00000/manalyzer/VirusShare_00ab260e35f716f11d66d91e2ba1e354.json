@@ -1,0 +1,284 @@
+{
+    "/root/torrent/VirusShare_00000/VirusShare_00ab260e35f716f11d66d91e2ba1e354": {
+        "Summary": {
+            "Architecture": "IMAGE_FILE_MACHINE_I386",
+            "Subsystem": "IMAGE_SUBSYSTEM_WINDOWS_GUI",
+            "Compilation Date": "1987-Sep-11 01:35:02"
+        },
+        "DOS Header": {
+            "e_magic": "MZ",
+            "e_cblp": 0,
+            "e_cp": 0,
+            "e_crlc": 0,
+            "e_cparhdr": 0,
+            "e_minalloc": 0,
+            "e_maxalloc": 17744,
+            "e_ss": 0,
+            "e_sp": 332,
+            "e_csum": 2,
+            "e_ip": 21318,
+            "e_cs": 8519,
+            "e_ovno": 0,
+            "e_oemid": 267,
+            "e_oeminfo": 0,
+            "e_lfanew": 12
+        },
+        "PE Header": {
+            "Signature": "PE",
+            "Machine": "IMAGE_FILE_MACHINE_I386",
+            "NumberofSections": 2,
+            "TimeDateStamp": "1987-Sep-11 01:35:02",
+            "PointerToSymbolTable": 0,
+            "NumberOfSymbols": 0,
+            "SizeOfOptionalHeader": 224,
+            "Characteristics": [
+                "IMAGE_FILE_32BIT_MACHINE",
+                "IMAGE_FILE_EXECUTABLE_IMAGE",
+                "IMAGE_FILE_LINE_NUMS_STRIPPED",
+                "IMAGE_FILE_LOCAL_SYMS_STRIPPED",
+                "IMAGE_FILE_RELOCS_STRIPPED"
+            ]
+        },
+        "Image Optional Header": {
+            "Magic": "PE32",
+            "LinkerVersion": "0.0",
+            "SizeOfCode": 4096,
+            "SizeOfInitializedData": 1536,
+            "SizeOfUninitializedData": 0,
+            "AddressOfEntryPoint": "0x00001000 (Section: )",
+            "BaseOfCode": 4096,
+            "BaseOfData": 12,
+            "ImageBase": 4194304,
+            "SectionAlignment": 4096,
+            "FileAlignment": 512,
+            "OperatingSystemVersion": "4.0",
+            "ImageVersion": "0.0",
+            "SubsystemVersion": "4.0",
+            "Win32VersionValue": 0,
+            "SizeOfImage": 28672,
+            "SizeOfHeaders": 512,
+            "Checksum": 0,
+            "Subsystem": "IMAGE_SUBSYSTEM_WINDOWS_GUI",
+            "SizeofStackReserve": 1048576,
+            "SizeofStackCommit": 4096,
+            "SizeofHeapReserve": 1048576,
+            "SizeofHeapCommit": 4096,
+            "LoaderFlags": 0,
+            "NumberOfRvaAndSizes": 16
+        },
+        "Sections": {
+            "": {
+                "VirtualSize": 16384,
+                "VirtualAddress": 4096,
+                "SizeOfRawData": 16384,
+                "PointerToRawData": 4096,
+                "PointerToRelocations": 0,
+                "PointerToLineNumbers": 0,
+                "NumberOfLineNumbers": 0,
+                "NumberOfRelocations": 0,
+                "Characteristics": [
+                    "IMAGE_SCN_CNT_CODE",
+                    "IMAGE_SCN_CNT_INITIALIZED_DATA",
+                    "IMAGE_SCN_CNT_UNINITIALIZED_DATA",
+                    "IMAGE_SCN_MEM_READ",
+                    "IMAGE_SCN_MEM_WRITE"
+                ],
+                "Entropy": 2.34369
+            },
+            " (#2)": {
+                "VirtualSize": 8192,
+                "VirtualAddress": 20480,
+                "SizeOfRawData": 8192,
+                "PointerToRawData": 20480,
+                "PointerToRelocations": 0,
+                "PointerToLineNumbers": 0,
+                "NumberOfLineNumbers": 0,
+                "NumberOfRelocations": 0,
+                "Characteristics": [
+                    "IMAGE_SCN_CNT_CODE",
+                    "IMAGE_SCN_CNT_INITIALIZED_DATA",
+                    "IMAGE_SCN_CNT_UNINITIALIZED_DATA",
+                    "IMAGE_SCN_MEM_READ",
+                    "IMAGE_SCN_MEM_WRITE"
+                ],
+                "Entropy": 3.35081
+            }
+        },
+        "Imports": {
+            "WININET.dll": [
+                "InternetCloseHandle",
+                "InternetReadFile",
+                "InternetOpenUrlA",
+                "InternetOpenA",
+                "InternetCheckConnectionA",
+                "InternetGetConnectedState"
+            ],
+            "ADVAPI32.dll": [
+                "RegCreateKeyExA",
+                "RegSetValueExA",
+                "RegCloseKey"
+            ],
+            "KERNEL32.dll": [
+                "CopyFileA",
+                "ExitProcess",
+                "GetModuleFileNameA",
+                "GetTempPathA",
+                "GetTempFileNameA",
+                "lstrcpyA",
+                "CloseHandle",
+                "ReleaseMutex",
+                "LocalFree",
+                "ExpandEnvironmentStringsA",
+                "LocalAlloc",
+                "Sleep",
+                "ReadFile",
+                "GetSystemDirectoryA",
+                "lstrlenA",
+                "lstrcatA",
+                "WaitForSingleObject",
+                "CreateMutexA",
+                "SetFilePointer",
+                "CreateFileA",
+                "TerminateProcess",
+                "CreateProcessA",
+                "WriteFile"
+            ]
+        },
+        "Plugins": {
+            "strings": {
+                "level": 2,
+                "plugin_output": {
+                    "Contains references to internet browsers": [
+                        "iexplore.exe"
+                    ],
+                    "May have dropper capabilities": [
+                        "CurrentVersion\\Run"
+                    ],
+                    "Contains domain names": [
+                        "http://microsoft.com",
+                        "microsoft.com"
+                    ]
+                },
+                "summary": "Strings found in the binary may indicate undesirable behavior:"
+            },
+            "packer": {
+                "level": 2,
+                "plugin_output": {
+                    "info_0": "Unusual section name found:",
+                    "info_1": "Unusual section name found:"
+                },
+                "summary": "The PE is possibly packed."
+            },
+            "imports": {
+                "level": 1,
+                "plugin_output": {
+                    "Can access the registry": [
+                        "RegCreateKeyExA",
+                        "RegSetValueExA",
+                        "RegCloseKey"
+                    ],
+                    "Possibly launches other programs": [
+                        "CreateProcessA"
+                    ],
+                    "Can create temporary files": [
+                        "GetTempPathA",
+                        "CreateFileA"
+                    ],
+                    "Has Internet access capabilities": [
+                        "InternetCloseHandle",
+                        "InternetReadFile",
+                        "InternetOpenUrlA",
+                        "InternetOpenA",
+                        "InternetCheckConnectionA",
+                        "InternetGetConnectedState"
+                    ]
+                },
+                "summary": "The PE contains common functions which appear in legitimate applications."
+            },
+            "mitigation": {
+                "level": 1,
+                "plugin_output": {
+                    "Stack Canary": "disabled",
+                    "SafeSEH": "disabled",
+                    "ASLR": "disabled",
+                    "DEP": "disabled",
+                    "CFG": "disabled"
+                },
+                "summary": "The following exploit mitigation techniques have been detected"
+            },
+            "overlay": {
+                "level": 2,
+                "plugin_output": {
+                    "info_0": "72 bytes of data starting at offset 0x7000."
+                },
+                "summary": "The file contains overlay data."
+            },
+            "virustotal": {
+                "level": 3,
+                "plugin_output": {
+                    "Bkav": "W32.AIDetectVM.malware5",
+                    "Elastic": "malicious (high confidence)",
+                    "MicroWorld-eScan": "Generic.Malware.SYBd!dld.232FC2EF",
+                    "FireEye": "Generic.mg.00ab260e35f716f1",
+                    "ALYac": "Generic.Malware.SYBd!dld.232FC2EF",
+                    "Cylance": "Unsafe",
+                    "Zillya": "Trojan.LowZones.Win32.65",
+                    "Sangfor": "Malware",
+                    "K7AntiVirus": "Trojan ( 00544ddf1 )",
+                    "Alibaba": "Trojan:Win32/LowZones.9ca66a73",
+                    "K7GW": "Trojan ( 00544ddf1 )",
+                    "Cybereason": "malicious.e35f71",
+                    "Arcabit": "Generic.Malware.SYBd!dld.232FC2EF",
+                    "Invincea": "heuristic",
+                    "BitDefenderTheta": "Gen:NN.ZexaF.34152.biX@aK4XYde",
+                    "Cyren": "W32/Warezov.B.gen!Eldorado",
+                    "Symantec": "ML.Attribute.HighConfidence",
+                    "TotalDefense": "Win32/Secdrop.KD",
+                    "APEX": "Malicious",
+                    "Paloalto": "generic.ml",
+                    "Kaspersky": "Trojan.Win32.LowZones.cp",
+                    "BitDefender": "Generic.Malware.SYBd!dld.232FC2EF",
+                    "NANO-Antivirus": "Virus.Win32.Gen.ccmw",
+                    "AegisLab": "Trojan.Win32.LowZones.4!c",
+                    "Rising": "Trojan.LowZones.ahr (CLOUD)",
+                    "Ad-Aware": "Generic.Malware.SYBd!dld.232FC2EF",
+                    "TACHYON": "Trojan/W32.LowZones.28744",
+                    "Emsisoft": "Generic.Malware.SYBd!dld.232FC2EF (B)",
+                    "Comodo": "TrojWare.Win32.Tibs.mar470@1uxyyh",
+                    "F-Secure": "Trojan.TR/Downloader.Gen",
+                    "DrWeb": "Trojan.LowZones.107",
+                    "VIPRE": "Trojan.Win32.Lowzones.gen.a (v)",
+                    "TrendMicro": "Mal_DLDER",
+                    "SentinelOne": "DFI - Malicious PE",
+                    "F-Prot": "W32/Warezov.B.gen!Eldorado",
+                    "Jiangmin": "Trojan/LowZones.al",
+                    "Webroot": "Trojan:Win32/Lowzones",
+                    "Avira": "TR/Downloader.Gen",
+                    "Antiy-AVL": "Trojan/Win32.LowZones",
+                    "Microsoft": "Trojan:Win32/Lowzones",
+                    "ViRobot": "Trojan.Win32.A.LowZones.28672.A",
+                    "ZoneAlarm": "Trojan.Win32.LowZones.cp",
+                    "GData": "Generic.Malware.SYBd!dld.232FC2EF",
+                    "Cynet": "Malicious (score: 100)",
+                    "AhnLab-V3": "Trojan/Win32.Lowzones.C263256",
+                    "Acronis": "suspicious",
+                    "McAfee": "QLowZones-2.gen",
+                    "MAX": "malware (ai score=100)",
+                    "VBA32": "suspected of Trojan.LowZones.2",
+                    "ESET-NOD32": "a variant of Win32/Lowzones.DM",
+                    "TrendMicro-HouseCall": "Mal_DLDER",
+                    "Tencent": "Win32.Trojan.Lowzones.Dux",
+                    "Yandex": "Trojan.LowZones!uT9yNgv1feM",
+                    "Ikarus": "Trojan.Win32.LowZones",
+                    "eGambit": "Generic.Malware",
+                    "Fortinet": "W32/LowZones.CP!tr",
+                    "AVG": "FileRepMalware",
+                    "Panda": "Trj/Lowzones.TG",
+                    "CrowdStrike": "win/malicious_confidence_100% (W)",
+                    "Qihoo-360": "Win32/Trojan.7d7"
+                },
+                "summary": "VirusTotal score: 60/69 (Scanned on 2020-08-12 17:42:30)"
+            }
+        }
+    }
+}
