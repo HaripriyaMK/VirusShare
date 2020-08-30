@@ -1,0 +1,272 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_1fbf9823a1e753a4d1d018159090dac3",
+    "filesize": 4096,
+    "filetype": "PE32 executable (DLL) (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "1fbf9823a1e753a4d1d018159090dac3",
+        "sha1": "a7440eb2bd09ae42529972504680f5676d3049e5",
+        "sha256": "01805ea05829e068cb546e9999755a545d8a19862f35e80a56f77d4daac3f970"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "network_tcp_listen",
+            "network_tcp_socket",
+            "win_registry"
+        ],
+        "breakpoint": [
+            "CreateProcessA",
+            "CreateThread",
+            "RegCloseKey",
+            "RegCreateKeyA",
+            "Sleep",
+            "WSASocketA",
+            "WSAStartup",
+            "accept",
+            "bind",
+            "listen"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [
+                {
+                    "function": "install",
+                    "offset": 4199301
+                },
+                {
+                    "function": "main_proc",
+                    "offset": 4199079
+                }
+            ],
+            "import": {
+                "ADVAPI32.DLL": [
+                    {
+                        "function": "RegCloseKey",
+                        "offset": 4202701
+                    },
+                    {
+                        "function": "RegCreateKeyA",
+                        "offset": 4202705
+                    },
+                    {
+                        "function": "RegSetValueExA",
+                        "offset": 4202709
+                    }
+                ],
+                "KERNEL32.DLL": [
+                    {
+                        "function": "CreateProcessA",
+                        "offset": 4202629
+                    },
+                    {
+                        "function": "CreateThread",
+                        "offset": 4202633
+                    },
+                    {
+                        "function": "Sleep",
+                        "offset": 4202637
+                    }
+                ],
+                "WS2_32.DLL": [
+                    {
+                        "function": "WSASocketA",
+                        "offset": 4202792
+                    },
+                    {
+                        "function": "WSACleanup",
+                        "offset": 4202796
+                    },
+                    {
+                        "function": "WSAStartup",
+                        "offset": 4202800
+                    },
+                    {
+                        "function": "accept",
+                        "offset": 4202804
+                    },
+                    {
+                        "function": "bind",
+                        "offset": 4202808
+                    },
+                    {
+                        "function": "listen",
+                        "offset": 4202812
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 88,
+                "VirtualAddress": 16384,
+                "count": 1,
+                "details": {
+                    "reloc_1": 40
+                }
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 1048580,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 1,
+                "SizeOfZeroFill": 320,
+                "StartAddressOfRawData": 8411725
+            }
+        },
+        "dll": true,
+        "entrypoint": 0,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "bd5ecb4458de177fd8571312f204759f",
+        "metadata": {},
+        "sections": {
+            "count": 4,
+            "details": [
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'X\\xaf\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x0",
+                    "entropy": 2.659346970971891,
+                    "executable": false,
+                    "hash": {
+                        "md5": "5bdbf6ba732bda2cb0a91b8611193b73",
+                        "sha1": "1b747f2cc6498a0cae746ec245f6a12e2685f7f1",
+                        "sha256": "cf135df410f0ae54fbe4956b3261a004ecf97ff4270cf6f855d466b18ba8afc0"
+                    },
+                    "section_name": ".data",
+                    "size_of_raw_data": 1536,
+                    "virtual_address": 4096,
+                    "virtual_size": 1032
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'u \\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00P \\x00",
+                    "entropy": 3.1698413244111805,
+                    "executable": false,
+                    "hash": {
+                        "md5": "ef2f555c7df35bee8ac21979718ae4b0",
+                        "sha1": "f21f430a72f49e139b10a24aed0fdaa89b1f7396",
+                        "sha256": "8f93b9ee13ea028f3cee9c54c6964941f6a686a26536468a285685f2383d0ade"
+                    },
+                    "section_name": ".idata",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 8192,
+                    "virtual_size": 388
+                },
+                {
+                    "characteristics": 1073741888,
+                    "data": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00",
+                    "entropy": 0.8571931340518334,
+                    "executable": false,
+                    "hash": {
+                        "md5": "52dee97d3616086092849ad4f157fd57",
+                        "sha1": "9b12a764033b8807c2f999e54d1925fa525a8998",
+                        "sha256": "154d7567241d5b6db12a1423a01e723df0f94fb233a9ae22c9283c6be1cd403f"
+                    },
+                    "section_name": ".edata",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 12288,
+                    "virtual_size": 89
+                },
+                {
+                    "characteristics": 33554496,
+                    "data": "b'\\x00\\x10\\x00\\x00X\\x00\\x00\\x00\\xad2\\xb52\\xba2\\xc5",
+                    "entropy": 1.2943300567471465,
+                    "executable": false,
+                    "hash": {
+                        "md5": "fc2a91a761f6f999daae390c59f44f69",
+                        "sha1": "bfe060e829aef7d43e3897622997714f4b21a8cd",
+                        "sha256": "ebd7b641d3d990810935af6929dc626ce484f605c0034064cff5a8a8ef231e68"
+                    },
+                    "section_name": ".reloc",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 16384,
+                    "virtual_size": 88
+                }
+            ]
+        },
+        "timestamp": "2005-07-29 10:10:56"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            ".data",
+            ".idata",
+            ".edata",
+            "@.reloc",
+            "ssl.dll",
+            "main_proc",
+            "SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\Notify\\msldll",
+            "DLLName",
+            "Startup",
+            "Asynchronous",
+            "cmd.exe",
+            "Su4-DLL-1.0.NT/2k/XP",
+            "Created by Ct757",
+            "1VVVhq",
+            "VVVVj",
+            "@tRj",
+            "VVhu",
+            "uJj\th",
+            "KERNEL32.DLL",
+            "ADVAPI32.DLL",
+            "WS2_32.DLL",
+            "CreateProcessA",
+            "CreateThread",
+            "Sleep",
+            "RegCloseKey",
+            "RegCreateKeyA",
+            "RegSetValueExA",
+            "WSASocketA",
+            "WSACleanup",
+            "WSAStartup",
+            "accept",
+            "bind",
+            "listen",
+            "LOADER.DLL",
+            "main_proc",
+            "install",
+            "22222222",
+            "3&3/343D3K3T3Y3^3d3l3",
+            "33333333333333333"
+        ],
+        "file": {
+            "ADVAPI32.DLL": "Library",
+            "KERNEL32.DLL": "Library",
+            "LOADER.DLL": "Library",
+            "WS2_32.DLL": "Library",
+            "cmd.exe": "Executable",
+            "ssl.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.652290",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsDLL"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "FASM"
+        }
+    ]
+}

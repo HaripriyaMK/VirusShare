@@ -1,0 +1,438 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_41e63ac19a4e1c2fde51728762df52c9",
+    "filesize": 12329,
+    "filetype": "PE32 executable (DLL) (console) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "41e63ac19a4e1c2fde51728762df52c9",
+        "sha1": "2b93220b1a86cd1edfeb88200eedf41c7fe3ec11",
+        "sha256": "e8d89c2493d3b9f7c0d2d98e2907116bbdf2d0897ede10fd487ed52ee3ac394a"
+    },
+    "peinfo": {
+        "behavior": [
+            "Check_OutputDebugStringA_iat",
+            "anti_dbg",
+            "Xor",
+            "win_hook"
+        ],
+        "breakpoint": [
+            "CloseHandle",
+            "CreateToolhelp32Snapshot",
+            "GetCurrentProcessId",
+            "GetModuleFileNameA",
+            "GetProcAddress",
+            "IsBadReadPtr",
+            "LoadLibraryA",
+            "OutputDebugStringA",
+            "SetWindowsHookExA",
+            "VirtualProtect"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [
+                {
+                    "function": "XHookProc",
+                    "offset": 268445504
+                },
+                {
+                    "function": "XInstallHook",
+                    "offset": 268445616
+                },
+                {
+                    "function": "XRemoveHook",
+                    "offset": 268445744
+                }
+            ],
+            "import": {
+                "KERNEL32.dll": [
+                    {
+                        "function": "OutputDebugStringA",
+                        "offset": 268443648
+                    },
+                    {
+                        "function": "GetTimeFormatA",
+                        "offset": 268443652
+                    },
+                    {
+                        "function": "GetDateFormatA",
+                        "offset": 268443656
+                    },
+                    {
+                        "function": "GetCurrentProcessId",
+                        "offset": 268443660
+                    },
+                    {
+                        "function": "CloseHandle",
+                        "offset": 268443664
+                    },
+                    {
+                        "function": "GetProcAddress",
+                        "offset": 268443668
+                    },
+                    {
+                        "function": "VirtualProtect",
+                        "offset": 268443672
+                    },
+                    {
+                        "function": "VirtualQuery",
+                        "offset": 268443676
+                    },
+                    {
+                        "function": "IsBadReadPtr",
+                        "offset": 268443680
+                    },
+                    {
+                        "function": "Module32Next",
+                        "offset": 268443684
+                    },
+                    {
+                        "function": "Module32First",
+                        "offset": 268443688
+                    },
+                    {
+                        "function": "CreateToolhelp32Snapshot",
+                        "offset": 268443692
+                    },
+                    {
+                        "function": "LoadLibraryA",
+                        "offset": 268443696
+                    },
+                    {
+                        "function": "GetModuleFileNameA",
+                        "offset": 268443700
+                    },
+                    {
+                        "function": "DisableThreadLibraryCalls",
+                        "offset": 268443704
+                    }
+                ],
+                "MSVCRT.dll": [
+                    {
+                        "function": "_vsnprintf",
+                        "offset": 268443712
+                    },
+                    {
+                        "function": "fclose",
+                        "offset": 268443716
+                    },
+                    {
+                        "function": "fflush",
+                        "offset": 268443720
+                    },
+                    {
+                        "function": "fprintf",
+                        "offset": 268443724
+                    },
+                    {
+                        "function": "fopen",
+                        "offset": 268443728
+                    },
+                    {
+                        "function": "strncat",
+                        "offset": 268443732
+                    },
+                    {
+                        "function": "_stricmp",
+                        "offset": 268443736
+                    },
+                    {
+                        "function": "free",
+                        "offset": 268443740
+                    },
+                    {
+                        "function": "_initterm",
+                        "offset": 268443744
+                    },
+                    {
+                        "function": "malloc",
+                        "offset": 268443748
+                    },
+                    {
+                        "function": "_adjust_fdiv",
+                        "offset": 268443752
+                    }
+                ],
+                "USER32.dll": [
+                    {
+                        "function": "UnhookWindowsHookEx",
+                        "offset": 268443760
+                    },
+                    {
+                        "function": "SetWindowsHookExA",
+                        "offset": 268443764
+                    },
+                    {
+                        "function": "CallNextHookEx",
+                        "offset": 268443768
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 248,
+                "VirtualAddress": 16384,
+                "count": 1,
+                "details": {
+                    "reloc_1": 120
+                }
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": true,
+        "entrypoint": 10794,
+        "features": {
+            "antidbg": [
+                "OutputDebugStringA"
+            ],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "Armadillo_v1xx_v2xx_additional",
+                "Microsoft_Visual_Cpp_60_DLL_additional",
+                "Microsoft_Visual_Cpp_v70_DLL",
+                "Microsoft_Visual_Cpp_v50v60_MFC",
+                "Microsoft_Visual_Cpp_60_DLL_Debug",
+                "Armadillo_v1xx_v2xx",
+                "Microsoft_Visual_Cpp_v60_DLL",
+                "Microsoft_Visual_Cpp_60_DLL",
+                "Microsoft_Visual_Cpp_60"
+            ],
+            "xor": {}
+        },
+        "imagebase": 268435456,
+        "imphash": "0d54ba8396d8fd6d0a0f055cf942382f",
+        "metadata": {},
+        "sections": {
+            "count": 4,
+            "details": [
+                {
+                    "characteristics": 3221225600,
+                    "data": "b''",
+                    "entropy": 0.0,
+                    "executable": false,
+                    "hash": {
+                        "md5": "d41d8cd98f00b204e9800998ecf8427e",
+                        "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+                        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                    },
+                    "section_name": ".bss",
+                    "size_of_raw_data": 0,
+                    "virtual_address": 4096,
+                    "virtual_size": 296
+                },
+                {
+                    "characteristics": 3758096448,
+                    "data": "b'\\xa0+\\x00\\x00\\xb6+\\x00\\x00\\xc8+\\x00\\x00\\xda+\\x00",
+                    "entropy": 5.615599524185523,
+                    "executable": true,
+                    "hash": {
+                        "md5": "d19f3b530a535077caafd043c3f1b86d",
+                        "sha1": "954f2c3b91bbd26fdc0790ff9acc3a3e1fcf120b",
+                        "sha256": "08c2d960bab0b6d15fc3d18ef75e4076d704ec51ffdae43a4e1e4d07574d30b2"
+                    },
+                    "section_name": ".data",
+                    "size_of_raw_data": 4096,
+                    "virtual_address": 8192,
+                    "virtual_size": 3603
+                },
+                {
+                    "characteristics": 3489660992,
+                    "data": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00",
+                    "entropy": 0.0,
+                    "executable": false,
+                    "hash": {
+                        "md5": "0f343b0931126a20f133d67c2b018a3b",
+                        "sha1": "60cacbf3d72e1e7834203da608037b1bf83b40e8",
+                        "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+                    },
+                    "section_name": ".xHook",
+                    "size_of_raw_data": 1024,
+                    "virtual_address": 12288,
+                    "virtual_size": 524
+                },
+                {
+                    "characteristics": 1107296320,
+                    "data": "b\"\\x00 \\x00\\x00\\xf8\\x00\\x00\\x0043E3L3[3j3v3\\x853\\x",
+                    "entropy": 3.6526249273931257,
+                    "executable": false,
+                    "hash": {
+                        "md5": "bfddd051fd188170ea33e0a265771453",
+                        "sha1": "4440bac6e93f2fa3484d1782cc2a9651422eede6",
+                        "sha256": "6cb0eb7d591496f41c0ce0831009a9fe6cbd9cd4a1fb1bcf78910575a467ff05"
+                    },
+                    "section_name": ".reloc",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 16384,
+                    "virtual_size": 390
+                }
+            ]
+        },
+        "timestamp": "2004-12-08 16:52:00"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "\u05dex\u05dex\u05dext\u059exTv\u059exr\u04dex|\u055ex\u05deyxT%\u049exs\u051ex(|\u059exRich\u05dex",
+            ".bss",
+            ".data",
+            ".xHook",
+            ".reloc",
+            " %s %s %s",
+            "C:\\tmp.log",
+            "HH:mm:ss",
+            "dd/MM/yy",
+            "[%lu]: XOpenProcess: Found PID: %lu, Dropping",
+            "XOpenProcess: PID: %d, Protected PID: %d",
+            "Unhooked: KERNEL32.DLL - OpenProcess :: %lu:%s",
+            "Unhooking: KERNEL32.DLL - OpenProcess :: %lu:%s",
+            "Hooked: KERNEL32.DLL - OpenProcess :: %lu:%s",
+            "KERNEL32.DLL",
+            "OpenProcess",
+            "Hooking: KERNEL32.DLL - OpenProcess :: %lu:%s",
+            "Hooking: %lu:%s",
+            "xHook: Hook Installed",
+            "xHook: Failed To Install Hook",
+            "%lu: Caller Process: %s:%lu",
+            "xHook: Hook Removed",
+            "xHook: Failed To Remove Hook",
+            "Startup pid: %lu :: %lu:%s",
+            "3|$\tD$P",
+            "3|$Q\udb6e\ude8d$ ",
+            "jFPh ",
+            "L$PjFQh ",
+            "_t/$",
+            "L$LPT$",
+            "QRh ",
+            "PVh ",
+            ";Vu*5",
+            "PQR_^",
+            "PQ_^",
+            "SUVW|$0",
+            ";=(!",
+            "j@W\u04c5",
+            "f?MZ",
+            "taL$8;t",
+            "u_^][",
+            "L$$Qj",
+            "RP\u05c5t",
+            "L$<T$0",
+            "D$$L$",
+            "PQR_^][",
+            "_^]$",
+            "t\t$D",
+            "_^3]$",
+            "t/S$@",
+            "D$,SWUP$",
+            "[_^]$",
+            "Rh\\!",
+            "Ph,!",
+            ";t*j",
+            "PhP\"",
+            "Ph@'",
+            "2hl\"",
+            "PQh\"",
+            "u\tPI",
+            "s+\u020b\u0105",
+            "YY=u9 ",
+            "Vq;r",
+            "t\tWVS\u0405t",
+            "3NWVS",
+            "u7WPSt",
+            "u&WVSu",
+            "WVS\u0409E",
+            "_^[]",
+            "OutputDebugStringA",
+            "GetTimeFormatA",
+            "GetDateFormatA",
+            "GetCurrentProcessId",
+            "CloseHandle",
+            "GetProcAddress",
+            "VirtualProtect",
+            "VirtualQuery",
+            "IsBadReadPtr",
+            "Module32Next",
+            "Module32First",
+            "CreateToolhelp32Snapshot",
+            "LoadLibraryA",
+            "GetModuleFileNameA",
+            "DisableThreadLibraryCalls",
+            "KERNEL32.dll",
+            "CallNextHookEx",
+            "SetWindowsHookExA",
+            "UnhookWindowsHookEx",
+            "USER32.dll",
+            "fclose",
+            "fflush",
+            "fprintf",
+            "fopen",
+            "strncat",
+            "_vsnprintf",
+            "MSVCRT.dll",
+            "free",
+            "_initterm",
+            "malloc",
+            "_adjust_fdiv",
+            "_stricmp",
+            "xHook.dll",
+            "XHookProc",
+            "XInstallHook",
+            "XRemoveHook",
+            "43E3L3[3j3v333333333333",
+            "4$4444<5J5555Q666666666666666666",
+            "7!7'7A7J7P7\\7h7p7v777777777777",
+            "81888=8F8V8q8w8|88888888888888",
+            "92989>99999999999999",
+            ":?:Q:::",
+            "<?xml version=\"1.0\" standalone=\"yes\"?><assembly xmlns=\"urn:schemas-microsoft-com:asm.v1\" manifestVersion=\"1.0\"><assemblyIdentity version=\"1.0.0.0\" processorArchitecture=\"X86\" name=\"M\" type=\"win32\"/><dependency><dependentAssembly><assemblyIdentity type=\"win32\" name=\"Microsoft.Windows.Common-Controls\" version=\"6.0.0.0\" processorArchitecture=\"X86\" publicKeyToken=\"6595b64144ccf1df\"/></dependentAssembly></dependency></assembly>",
+            "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tzl{",
+            "`zlj\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tzl{",
+            "`zlj\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tzl{",
+            "`zlj'lql\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t"
+        ],
+        "file": {
+            "C:\\tmp.log": "Log",
+            "KERNEL32.DLL": "Library",
+            "MSVCRT.dll": "Library",
+            "USER32.dll": "Library",
+            "xHook.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.624483",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsDLL"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsConsole"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasOverlay"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        },
+        {
+            "packer.yar": "Armadillov1xxv2xx"
+        }
+    ]
+}

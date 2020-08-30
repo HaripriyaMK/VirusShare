@@ -1,0 +1,342 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_00e7e2990ceb555b15cc89fd08fdab58",
+    "filesize": 18944,
+    "filetype": "PE32 executable (DLL) (GUI) Intel 80386, for MS Windows, UPX compressed",
+    "hashes": {
+        "md5": "00e7e2990ceb555b15cc89fd08fdab58",
+        "sha1": "5c0cd28eb73d2a7daec19ad28c99457261a867fe",
+        "sha256": "0ddddf98fe7fc3ddf3dc3b7c87fea1dd1b71b27e20c828d315da27eb15fc775f"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "escalate_priv",
+            "win_token",
+            "win_hook"
+        ],
+        "breakpoint": [
+            "GetCurrentProcess",
+            "OpenProcessToken"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [
+                {
+                    "function": "KeyProc",
+                    "offset": 268439728
+                },
+                {
+                    "function": "Reboot",
+                    "offset": 268439632
+                }
+            ],
+            "import": {
+                "ADVAPI32.dll": [
+                    {
+                        "function": "AdjustTokenPrivileges",
+                        "offset": 268443648
+                    },
+                    {
+                        "function": "OpenProcessToken",
+                        "offset": 268443652
+                    },
+                    {
+                        "function": "LookupPrivilegeValueA",
+                        "offset": 268443656
+                    }
+                ],
+                "KERNEL32.DLL": [
+                    {
+                        "function": "GetCurrentProcess",
+                        "offset": 268443664
+                    }
+                ],
+                "MSVCRT.dll": [
+                    {
+                        "function": "free",
+                        "offset": 268443672
+                    },
+                    {
+                        "function": "sprintf",
+                        "offset": 268443676
+                    },
+                    {
+                        "function": "_adjust_fdiv",
+                        "offset": 268443680
+                    },
+                    {
+                        "function": "_initterm",
+                        "offset": 268443684
+                    },
+                    {
+                        "function": "malloc",
+                        "offset": 268443688
+                    },
+                    {
+                        "function": "fclose",
+                        "offset": 268443692
+                    },
+                    {
+                        "function": "fprintf",
+                        "offset": 268443696
+                    },
+                    {
+                        "function": "fopen",
+                        "offset": 268443700
+                    },
+                    {
+                        "function": "strstr",
+                        "offset": 268443704
+                    },
+                    {
+                        "function": "atoi",
+                        "offset": 268443708
+                    }
+                ],
+                "USER32.dll": [
+                    {
+                        "function": "GetKeyboardState",
+                        "offset": 268443716
+                    },
+                    {
+                        "function": "ToAscii",
+                        "offset": 268443720
+                    },
+                    {
+                        "function": "GetForegroundWindow",
+                        "offset": 268443724
+                    },
+                    {
+                        "function": "GetWindowTextA",
+                        "offset": 268443728
+                    },
+                    {
+                        "function": "ExitWindowsEx",
+                        "offset": 268443732
+                    },
+                    {
+                        "function": "CallNextHookEx",
+                        "offset": 268443736
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": true,
+        "entrypoint": 5323,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "Armadillo_v1xx_v2xx_additional",
+                "Microsoft_Visual_Cpp_60_DLL_additional",
+                "Microsoft_Visual_Cpp_v70_DLL",
+                "Microsoft_Visual_Cpp_v50v60_MFC",
+                "Microsoft_Visual_Cpp_60_DLL_Debug",
+                "Armadillo_v1xx_v2xx",
+                "Microsoft_Visual_Cpp_v60_DLL",
+                "Microsoft_Visual_Cpp_60_DLL",
+                "Microsoft_Visual_Cpp_60"
+            ],
+            "xor": {}
+        },
+        "imagebase": 268435456,
+        "imphash": "5bf1b5bd46c6b8ed1b967aa874464320",
+        "metadata": {},
+        "sections": {
+            "count": 3,
+            "details": [
+                {
+                    "characteristics": 3758096448,
+                    "data": "b'\\xa1|:\\x00\\x10\\x85\\xc0u8\\xc7\\x05|:\\x00\\x10\\x01\\x",
+                    "entropy": 0.9553036737494075,
+                    "executable": true,
+                    "hash": {
+                        "md5": "f47796a9be8112e794a53a49e27ba7a4",
+                        "sha1": "18641ca61beb26793d314373e7887967a98921a4",
+                        "sha256": "6f5f58a230dfeee63c4340beda3c770a333e94a68a47d6551a2a123dc21e108e"
+                    },
+                    "section_name": "UPX0",
+                    "size_of_raw_data": 16384,
+                    "virtual_address": 4096,
+                    "virtual_size": 16384
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00",
+                    "entropy": 2.812345896418783,
+                    "executable": false,
+                    "hash": {
+                        "md5": "5ee80137d30510ddd9a2147b3c556d16",
+                        "sha1": "5b2a1f4b18ccc25b47d672c2f2785a11f04958be",
+                        "sha256": "c7c9e5b5b43eb3770ced0501a39c0c482f921ba65e478c414790bcc7184b6eca"
+                    },
+                    "section_name": "UPX2",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 28672,
+                    "virtual_size": 4096
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'\\x94\\x80\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00",
+                    "entropy": 2.664269092655107,
+                    "executable": false,
+                    "hash": {
+                        "md5": "23a62da646b19075d2b693aad42431a9",
+                        "sha1": "2411db4f7416e81b4ff494db4268b707aba743f8",
+                        "sha256": "d7695979f3cd4398c9edf3f6ff236fad95a9deba19064d13b67eee3bf857edb7"
+                    },
+                    "section_name": ".avc",
+                    "size_of_raw_data": 1024,
+                    "virtual_address": 32768,
+                    "virtual_size": 4096
+                }
+            ]
+        },
+        "timestamp": "2002-09-30 07:24:45"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "\u2bd2Rich",
+            "UPX0",
+            "UPX2",
+            ".avc",
+            "~3$7",
+            "Qh87",
+            "PQWR",
+            "Qhd7",
+            "D$ P",
+            "3h`7",
+            "\u054b\u0603\\7",
+            "+\u044bp7",
+            "+\u047fp7",
+            "+\u047fp7",
+            "3\udb50\ude82p7",
+            "3B\u0443;v\u070b=0 ",
+            "u*h`7",
+            "PhL7",
+            "VV\u04e1h7",
+            "u$h`7",
+            "VV\u04e1h7",
+            "QRWP",
+            "^][_",
+            "YY=u9:",
+            "Vq;r",
+            "u\t=:",
+            "t\tWVS\u0405t",
+            "3NWVS",
+            "u7WPSt",
+            "u&WVSu",
+            "WVS\u0409E",
+            "_^[]",
+            "c:\\bootlog.ini",
+            "Microsoft Word",
+            "Microsoft Excel",
+            "Microsoft Access",
+            "Microsoft FrontPage",
+            "Microsoft PowerPoint",
+            "Microsoft Outlook",
+            "<-BkS>",
+            "<Tab->",
+            "SeShutdownPrivilege",
+            " ]  ",
+            "KERNEL32.DLL",
+            "ADVAPI32.dll",
+            "MSVCRT.dll",
+            "USER32.dll",
+            "LoadLibraryA",
+            "GetProcAddress",
+            "OpenProcessToken",
+            "free",
+            "ToAscii",
+            "HOOKDLL.dll",
+            "KeyProc",
+            "Reboot",
+            "KERNEL32.DLL",
+            "ADVAPI32.dll",
+            "MSVCRT.dll",
+            "USER32.dll",
+            "GetCurrentProcess",
+            "AdjustTokenPrivileges",
+            "OpenProcessToken",
+            "LookupPrivilegeValueA",
+            "free",
+            "sprintf",
+            "_adjust_fdiv",
+            "_initterm",
+            "malloc",
+            "fclose",
+            "fprintf",
+            "fopen",
+            "strstr",
+            "atoi",
+            "GetKeyboardState",
+            "ToAscii",
+            "GetForegroundWindow",
+            "GetWindowTextA",
+            "ExitWindowsEx",
+            "CallNextHookEx"
+        ],
+        "file": {
+            "ADVAPI32.dll": "Library",
+            "HOOKDLL.dll": "Library",
+            "KERNEL32.DLL": "Library",
+            "MSVCRT.dll": "Library",
+            "USER32.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.663746",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsDLL"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsBeyondImageSize"
+        },
+        {
+            "packer_compiler_signatures.yar": "ImportTableIsBad"
+        },
+        {
+            "packer_compiler_signatures.yar": "ExportTableIsBad"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        },
+        {
+            "packer.yar": "Armadillov1xxv2xx"
+        }
+    ]
+}

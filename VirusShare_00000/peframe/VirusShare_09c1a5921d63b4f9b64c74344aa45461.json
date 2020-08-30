@@ -1,0 +1,172 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_09c1a5921d63b4f9b64c74344aa45461",
+    "filesize": 2560,
+    "filetype": "PE32 executable (console) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "09c1a5921d63b4f9b64c74344aa45461",
+        "sha1": "29405ef4c499fd87a5b72b52c2f33ef4fa07f085",
+        "sha256": "fdb725d67af3c53f65e67d9f3d7382ada02246e2baa6c75f45299d85cea6f2d5"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor"
+        ],
+        "breakpoint": [
+            "GetModuleHandleA",
+            "GetProcAddress",
+            "LoadLibraryA"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "kernel32.dll": [
+                    {
+                        "function": "GetProcAddress",
+                        "offset": 4202496
+                    },
+                    {
+                        "function": "LoadLibraryA",
+                        "offset": 4202500
+                    },
+                    {
+                        "function": "lstrlenA",
+                        "offset": 4202504
+                    },
+                    {
+                        "function": "GetModuleHandleA",
+                        "offset": 4202508
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 4467,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "b82faf9237e7230cc2fbb2f1421d49bf",
+        "metadata": {},
+        "sections": {
+            "count": 3,
+            "details": [
+                {
+                    "characteristics": 1610612768,
+                    "data": "b'S\\xe8\\xa4\\x01\\x00\\x003\\xc93\\xd2\\x8a\\x15;1@\\x000\\",
+                    "entropy": 4.028146672349161,
+                    "executable": true,
+                    "hash": {
+                        "md5": "bbcb8726d6d71edb9afe2a4f079087d5",
+                        "sha1": "54abf6ced602e5fa79e05630ffa99feca587d86e",
+                        "sha256": "b948928605aa6a09e552799407255832ac1565dabd8ba5ef49e2ffc828e45dba"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 4096,
+                    "virtual_size": 432
+                },
+                {
+                    "characteristics": 1073741888,
+                    "data": "b'd \\x00\\x00v \\x00\\x00\\x86 \\x00\\x00P \\x00\\x00\\x00\\",
+                    "entropy": 1.4987480588089115,
+                    "executable": false,
+                    "hash": {
+                        "md5": "9e81b2e321e08d3e281e1b8c68556546",
+                        "sha1": "7737c19bc1ba3991049d97d8f968028a6e096e88",
+                        "sha256": "2482cdeb756ac3af20831aa594b54f3e0b2802bef7fc0948e7189739292525d0"
+                    },
+                    "section_name": ".rdata",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 8192,
+                    "virtual_size": 160
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00",
+                    "entropy": 2.257484083997727,
+                    "executable": false,
+                    "hash": {
+                        "md5": "dcdb7333b7b941883c4cdc0a58c5877a",
+                        "sha1": "289c1c2a7fe74c40ef7bcf516e6d064cfb0a62ff",
+                        "sha256": "ed7699dbb7ed94c7e8855ce6a4907b2e852cc361873557032ef5621aa724c60a"
+                    },
+                    "section_name": ".data",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 12288,
+                    "virtual_size": 460
+                }
+            ]
+        },
+        "timestamp": "2011-06-14 15:57:47"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "Rich",
+            ".text",
+            "`.rdata",
+            "@.data",
+            "yh?1@",
+            "hL1@",
+            "hY1@",
+            "hn1@",
+            "hy1@",
+            "h\t1@",
+            "h61@",
+            "hb1@",
+            "PX=1@",
+            "GetModuleHandleA",
+            "GetProcAddress",
+            "LoadLibraryA",
+            "lstrlenA",
+            "kernel32.dll",
+            ".)7?"
+        ],
+        "file": {
+            "kernel32.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.611317",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsConsole"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

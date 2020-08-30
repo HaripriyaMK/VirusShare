@@ -1,0 +1,161 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_3fdfa60579b5e6f1b9c8f2af30350d65",
+    "filesize": 2048,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "3fdfa60579b5e6f1b9c8f2af30350d65",
+        "sha1": "538a1691ab1247da597e1934c8636b3fbad0f1b8",
+        "sha256": "461f204df97ffdda52b9040df4922fc51e1111f77adf35e678b116316c1c3fcd"
+    },
+    "peinfo": {
+        "behavior": [
+            "win_files_operation"
+        ],
+        "breakpoint": [
+            "CloseHandle",
+            "CreateFileA",
+            "ExitProcess",
+            "ReadFile",
+            "WriteFile"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "kernel32.dll": [
+                    {
+                        "function": "CreateFileA",
+                        "offset": 4202496
+                    },
+                    {
+                        "function": "ExitProcess",
+                        "offset": 4202500
+                    },
+                    {
+                        "function": "ReadFile",
+                        "offset": 4202504
+                    },
+                    {
+                        "function": "WriteFile",
+                        "offset": 4202508
+                    },
+                    {
+                        "function": "CloseHandle",
+                        "offset": 4202512
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 3554134976,
+                "AddressOfIndex": 4240112049,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3131307991,
+                "SizeOfZeroFill": 2,
+                "StartAddressOfRawData": 3335936589
+            }
+        },
+        "dll": false,
+        "entrypoint": 4639,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "0c73fb1c8f6d3f5ddcbda6528551ff75",
+        "metadata": {},
+        "sections": {
+            "count": 2,
+            "details": [
+                {
+                    "characteristics": 3758096416,
+                    "data": "b'\\xb2\\xa5\\xba\\xad\\x14\\xbd\\x00\\x00\\x00\\x00\\x00\\x00",
+                    "entropy": 3.687391728012608,
+                    "executable": true,
+                    "hash": {
+                        "md5": "40e2fd1762fb52f8fb01d5c16b6ae2e0",
+                        "sha1": "febd4625c4253212c9f3f090f56e682f5bc8ad43",
+                        "sha256": "84809bb7dc367de508046359938899bd8163521664e1254627caa1b424682bf6"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 1024,
+                    "virtual_address": 4096,
+                    "virtual_size": 748
+                },
+                {
+                    "characteristics": 1073741888,
+                    "data": "b'f \\x00\\x00t \\x00\\x00\\x82 \\x00\\x00\\x8e \\x00\\x00X ",
+                    "entropy": 1.5409370810315928,
+                    "executable": false,
+                    "hash": {
+                        "md5": "99a5d4cf14bf18eb8dbfa27234e5bddf",
+                        "sha1": "db8898b273a491ef209c10236fc2eb87c6e791a1",
+                        "sha256": "b7bfd1dcaafbccd8868c5e2d592361112eeea58b701ecc29155ef2a18a8ff3b0"
+                    },
+                    "section_name": ".rdata",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 8192,
+                    "virtual_size": 168
+                }
+            ]
+        },
+        "timestamp": "2004-07-15 07:11:38"
+    },
+    "strings": {
+        "dump": [
+            "tRich\u0617",
+            ".text",
+            ".rdata",
+            "\u045aS+9[cEo!+9[\u045b",
+            "k\u045bAS\t/w",
+            "url.txt",
+            "downRun512.exe",
+            "CloseHandle",
+            "CreateFileA",
+            "ExitProcess",
+            "ReadFile",
+            "WriteFile",
+            "kernel32.dll"
+        ],
+        "file": {
+            "downRun512.exe": "Executable",
+            "kernel32.dll": "Library",
+            "url.txt": "Text"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.573383",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasModified_DOS_Message"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

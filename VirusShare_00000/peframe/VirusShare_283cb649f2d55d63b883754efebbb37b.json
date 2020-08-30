@@ -1,0 +1,179 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_283cb649f2d55d63b883754efebbb37b",
+    "filesize": 2560,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "283cb649f2d55d63b883754efebbb37b",
+        "sha1": "a6a95b762e15e858b0e4652a8ae911ff7e2df4ff",
+        "sha256": "1a3dc15d593cf5105a31aaeeff00c373bcf861fe5ba7e6d75ff98daf703bac97"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "network_dropper"
+        ],
+        "breakpoint": [
+            "CreateProcessA",
+            "ExitProcess",
+            "GetWindowsDirectoryA",
+            "URLDownloadToFileA"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "KERNEL32.dll": [
+                    {
+                        "function": "CreateProcessA",
+                        "offset": 4202496
+                    },
+                    {
+                        "function": "ExitProcess",
+                        "offset": 4202500
+                    },
+                    {
+                        "function": "GetWindowsDirectoryA",
+                        "offset": 4202504
+                    }
+                ],
+                "urlmon.dll": [
+                    {
+                        "function": "URLDownloadToFileA",
+                        "offset": 4202512
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 4096,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "89104cbca667966ed2808476591da908",
+        "metadata": {},
+        "sections": {
+            "count": 3,
+            "details": [
+                {
+                    "characteristics": 1610612768,
+                    "data": "b\"\\xbf70@\\x00h\\xc8\\x00\\x00\\x00W\\xff\\x15\\x08 @\\x00\\",
+                    "entropy": 1.1843962337219394,
+                    "executable": true,
+                    "hash": {
+                        "md5": "a7fcd9876c418b02ce4774f6ca4ec7ad",
+                        "sha1": "0e06ff4d77552d69cb7995840c36b82a66bebe62",
+                        "sha256": "1f7ffe1e7e46075a53d44be2a76e8702cfc98c58a5c4d34e9a4098e8f07f4ee4"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 4096,
+                    "virtual_size": 91
+                },
+                {
+                    "characteristics": 1073741888,
+                    "data": "b'\\x84 \\x00\\x00\\x96 \\x00\\x00l \\x00\\x00\\x00\\x00\\x00",
+                    "entropy": 1.9040190139635311,
+                    "executable": false,
+                    "hash": {
+                        "md5": "2c56e2982e115af4e0609da8c5efabef",
+                        "sha1": "3e21cc3ee63d8aab0749e48f2a4f21b4957c11fc",
+                        "sha256": "1245804c3ea488f79b7b5998c7603392510ea68928613a262f3803338e10f4b6"
+                    },
+                    "section_name": ".rdata",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 8192,
+                    "virtual_size": 212
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'http://female-teens.com/30948/next.jpg\\x00\\\\syst",
+                    "entropy": 0.8879250779001059,
+                    "executable": false,
+                    "hash": {
+                        "md5": "9dbf261ed6de1c6ded16030edf929c73",
+                        "sha1": "682c95335901eb1c11bf1729b67ca6116768e8e7",
+                        "sha256": "7f4ff054bb84b88eeb39b7c1ef2e1693206598d2a995fe9bb83559fdea46c90d"
+                    },
+                    "section_name": ".data",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 12288,
+                    "virtual_size": 395
+                }
+            ]
+        },
+        "timestamp": "2005-01-05 11:24:59"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "s\tb7h",
+            "Rich7h",
+            ".text",
+            "`.rdata",
+            "@.data",
+            "3SSh70@",
+            "h71@",
+            "hG1@",
+            "3SSSSSSSh70@",
+            "GetWindowsDirectoryA",
+            "CreateProcessA",
+            "ExitProcess",
+            "KERNEL32.dll",
+            "URLDownloadToFileA",
+            "urlmon.dll",
+            "http://female-teens.com/30948/next.jpg",
+            "\\system.exe"
+        ],
+        "file": {
+            "KERNEL32.dll": "Library",
+            "\\system.exe": "Executable",
+            "http://female-teens.com/30948/next.jpg": "Image",
+            "urlmon.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://female-teens.com/30948/next.jpg"
+        ]
+    },
+    "time": "0:00:00.572443",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

