@@ -1,0 +1,440 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_15d3bbe49f1dfe5995eab415f2aea62d",
+    "filesize": 8192,
+    "filetype": "PE32 executable (DLL) (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "15d3bbe49f1dfe5995eab415f2aea62d",
+        "sha1": "58bc65c93802d4e46ebd96eb1e23b4634c997923",
+        "sha256": "f3d3d1347a0320545f1754dd89a784229d2907d4dda7698ea4304039598d0d38"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "network_tcp_listen",
+            "network_tcp_socket",
+            "win_registry",
+            "win_files_operation"
+        ],
+        "breakpoint": [
+            "CloseHandle",
+            "CreateProcessA",
+            "DeleteFileA",
+            "GetStartupInfoA",
+            "GetSystemDirectoryA",
+            "GetWindowsDirectoryA",
+            "ReadFile",
+            "RegCloseKey",
+            "RegDeleteValueA",
+            "RegOpenKeyExA",
+            "Sleep",
+            "WSAStartup",
+            "WriteFile",
+            "accept",
+            "bind",
+            "closesocket",
+            "listen",
+            "lstrcmpA",
+            "recv",
+            "send",
+            "socket"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [
+                {
+                    "function": "Tiny",
+                    "offset": 268439564
+                }
+            ],
+            "import": {
+                "advapi32.dll": [
+                    {
+                        "function": "RegDeleteValueA",
+                        "offset": 268443648
+                    },
+                    {
+                        "function": "RegOpenKeyExA",
+                        "offset": 268443652
+                    },
+                    {
+                        "function": "RegSetValueExA",
+                        "offset": 268443656
+                    },
+                    {
+                        "function": "RegCloseKey",
+                        "offset": 268443660
+                    }
+                ],
+                "kernel32.dll": [
+                    {
+                        "function": "GetExitCodeProcess",
+                        "offset": 268443668
+                    },
+                    {
+                        "function": "GetStartupInfoA",
+                        "offset": 268443672
+                    },
+                    {
+                        "function": "GetSystemDirectoryA",
+                        "offset": 268443676
+                    },
+                    {
+                        "function": "GetWindowsDirectoryA",
+                        "offset": 268443680
+                    },
+                    {
+                        "function": "PeekNamedPipe",
+                        "offset": 268443684
+                    },
+                    {
+                        "function": "GetEnvironmentVariableA",
+                        "offset": 268443688
+                    },
+                    {
+                        "function": "Sleep",
+                        "offset": 268443692
+                    },
+                    {
+                        "function": "WriteFile",
+                        "offset": 268443696
+                    },
+                    {
+                        "function": "lstrcatA",
+                        "offset": 268443700
+                    },
+                    {
+                        "function": "lstrcmpA",
+                        "offset": 268443704
+                    },
+                    {
+                        "function": "lstrlenA",
+                        "offset": 268443708
+                    },
+                    {
+                        "function": "DeleteFileA",
+                        "offset": 268443712
+                    },
+                    {
+                        "function": "CreateProcessA",
+                        "offset": 268443716
+                    },
+                    {
+                        "function": "CreatePipe",
+                        "offset": 268443720
+                    },
+                    {
+                        "function": "ReadFile",
+                        "offset": 268443724
+                    },
+                    {
+                        "function": "CloseHandle",
+                        "offset": 268443728
+                    }
+                ],
+                "wsock32.dll": [
+                    {
+                        "function": "htons",
+                        "offset": 268443736
+                    },
+                    {
+                        "function": "listen",
+                        "offset": 268443740
+                    },
+                    {
+                        "function": "recv",
+                        "offset": 268443744
+                    },
+                    {
+                        "function": "send",
+                        "offset": 268443748
+                    },
+                    {
+                        "function": "socket",
+                        "offset": 268443752
+                    },
+                    {
+                        "function": "bind",
+                        "offset": 268443756
+                    },
+                    {
+                        "function": "accept",
+                        "offset": 268443760
+                    },
+                    {
+                        "function": "WSAStartup",
+                        "offset": 268443764
+                    },
+                    {
+                        "function": "WSACleanup",
+                        "offset": 268443768
+                    },
+                    {
+                        "function": "closesocket",
+                        "offset": 268443772
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 372,
+                "VirtualAddress": 94208,
+                "count": 1,
+                "details": {
+                    "reloc_1": 182
+                }
+            },
+            "resources": [
+                {
+                    "data": "b'\\xb0\\x034\\x00\\x00\\x00V\\x00S\\x00_\\x00V\\x00E\\x00R\\x00S\\x00I\\x00O\\x00N\\x00_\\x00I\\x00N\\x00F\\x00O\\x00\\x00\\x00\\x00\\x00\\xbd\\x04\\xef\\xfe\\x00\\x00\\x01\\x00\\x01\\x00'",
+                    "executable": false,
+                    "language": "LANG_ENGLISH",
+                    "name": "RT_VERSION",
+                    "offset": 90208,
+                    "size": 944,
+                    "sublanguage": "SUBLANG_ENGLISH_US"
+                }
+            ],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": true,
+        "entrypoint": 4096,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "Microsoft_Visual_Cpp_v50v60_MFC"
+            ],
+            "xor": {}
+        },
+        "imagebase": 268435456,
+        "imphash": "74f7c73f19c839c43a9770955098a1ed",
+        "metadata": {
+            "CompanyName": "Microsoft Corporation",
+            "FileDescription": "Userinit Logon Application",
+            "FileVersion": "5.1.2600.2180 (xpsp_sp2_rtm.040803-2158)",
+            "Internal Name": "userinit",
+            "Language": "English (United States)",
+            "LegalCopyright": "\u00a9 Microsoft Corporation. All rights reserved.",
+            "Original FileName": "userinit.dll",
+            "ProductName": "Microsoft\u00ae Windows\u00ae Operating System",
+            "ProductVersion": "5.1.2600.2180"
+        },
+        "sections": {
+            "count": 5,
+            "details": [
+                {
+                    "characteristics": 1610612768,
+                    "data": "b'U\\x8b\\xec\\xb8\\x01\\x00\\x00\\x00\\xc9\\xc2\\x0c\\x00U\\x",
+                    "entropy": 4.515846124241495,
+                    "executable": true,
+                    "hash": {
+                        "md5": "73fbeb63d6f404820c152377cd6f6988",
+                        "sha1": "b98e42670a55d82c32add3595b5143bcb945475b",
+                        "sha256": "b0b0ec1bd2ba6b6f6602a5e82790220805cad51eef1f67e3f012f72a2adf7691"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 2560,
+                    "virtual_address": 4096,
+                    "virtual_size": 2108
+                },
+                {
+                    "characteristics": 1073741888,
+                    "data": "b'\\xe8\"\\x00\\x00\\xfa\"\\x00\\x00\\n#\\x00\\x00\\xda\"\\x00\\x",
+                    "entropy": 4.137399795877704,
+                    "executable": false,
+                    "hash": {
+                        "md5": "697d49f5bfb5679d815d1930a57825f9",
+                        "sha1": "e263eb45d26add5e7b95d3bfff4f02f82f54d25a",
+                        "sha256": "b7d8bb073a57453bc706e1de0db78263d3b2c592ef69dce53ea96ffde520caac"
+                    },
+                    "section_name": ".rdata",
+                    "size_of_raw_data": 1024,
+                    "virtual_address": 8192,
+                    "virtual_size": 884
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'Tiny\\n\\x00\\r\\nTTTTTTTTTTT  III   NNN  NNN   YYY ",
+                    "entropy": 3.940950420113007,
+                    "executable": false,
+                    "hash": {
+                        "md5": "17d5b56cc24fa5ceb138c9522f2753ad",
+                        "sha1": "9b5af50d325e206bc8c8660091d015f7bedee4b0",
+                        "sha256": "160ef69df6b86a7543c426c6b21d1f316b94fcef3e482855f98fff5a7f9f10b7"
+                    },
+                    "section_name": ".data",
+                    "size_of_raw_data": 1024,
+                    "virtual_address": 12288,
+                    "virtual_size": 75069
+                },
+                {
+                    "characteristics": 1073741888,
+                    "data": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00",
+                    "entropy": 2.456617045475664,
+                    "executable": false,
+                    "hash": {
+                        "md5": "272a204d60c1fe0521724571b3cd8633",
+                        "sha1": "033195394c4a46bb42ee1a4f60b67a7a21f2b91f",
+                        "sha256": "cc9b30cbb24e123505368fe19eebe05b966bafe4f31c5ab3903868075bc2a317"
+                    },
+                    "section_name": ".rsrc",
+                    "size_of_raw_data": 1536,
+                    "virtual_address": 90112,
+                    "virtual_size": 1040
+                },
+                {
+                    "characteristics": 1107296320,
+                    "data": "b\"\\x00\\x10\\x00\\x00t\\x01\\x00\\x00\\x160\\x1f030=0C0^0o",
+                    "entropy": 3.051161383014842,
+                    "executable": false,
+                    "hash": {
+                        "md5": "aea4abbe48e34188f9b1fa10115e16ac",
+                        "sha1": "b5b8c6ff56fc7261b046f7736910272a02337efc",
+                        "sha256": "20da253d3442057351e99b68932a78a4b9f6a1a5b2527a73e888535a055aa089"
+                    },
+                    "section_name": ".reloc",
+                    "size_of_raw_data": 1024,
+                    "virtual_address": 94208,
+                    "virtual_size": 582
+                }
+            ]
+        },
+        "timestamp": "2005-09-25 11:50:04"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            ")'gG'gG'gGGU&gGaA&gGxT",
+            "gGRich'gG",
+            ".text",
+            "`.rdata",
+            "@.data",
+            ".rsrc",
+            "@.reloc",
+            "jdhT",
+            "t254",
+            "@Iujd",
+            "@Iuh",
+            "ughH",
+            "3hr2",
+            "ughH",
+            "@Iu54",
+            "3UPh2",
+            "j\"h1",
+            "ukhV2",
+            "PPPj",
+            "@Iuh",
+            "3%P ",
+            "CloseHandle",
+            "CreatePipe",
+            "CreateProcessA",
+            "DeleteFileA",
+            "GetEnvironmentVariableA",
+            "GetExitCodeProcess",
+            "GetStartupInfoA",
+            "GetSystemDirectoryA",
+            "GetWindowsDirectoryA",
+            "PeekNamedPipe",
+            "ReadFile",
+            "Sleep",
+            "WriteFile",
+            "lstrcatA",
+            "lstrcmpA",
+            "lstrlenA",
+            "kernel32.dll",
+            "WSACleanup",
+            "WSAStartup",
+            "accept",
+            "bind",
+            "closesocket",
+            "htons",
+            "listen",
+            "recv",
+            "send",
+            "socket",
+            "wsock32.dll",
+            "RegCloseKey",
+            "RegDeleteValueA",
+            "RegOpenKeyExA",
+            "RegSetValueExA",
+            "advapi32.dll",
+            "userinit.dll",
+            "Tiny",
+            "Tiny",
+            "TTTTTTTTTTT  III   NNN  NNN   YYY   YYY",
+            "    TTT      III   NNNN NNN    YYY YYY ",
+            "    TTT      III   NNNNNNNN     YYYYY  ",
+            "    TTT      III   NNN NNNN      YYY   ",
+            "    TTT      III   NNN  NNN      YYY  v3.1",
+            "   by White Scorpion Security (C)2005  ",
+            "  --> http://www.white-scorpion.nl <-- ",
+            "Your menu:",
+            "1 - Gimme a Command Prompt.",
+            "2 - Exit (Tiny will keep running).",
+            "0 - Cleanup. (Tiny will never start again, file is removed).",
+            "Choice:",
+            "Unable to start command prompt.",
+            "Invalid option.",
+            "Unable to remove Tiny.",
+            "Cleaned up.",
+            "Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+            "Userinit",
+            "userinit.exe",
+            "exit",
+            "EXIT",
+            "COMSPEC",
+            "Connection closed.",
+            "030=0C0^0o00000000000",
+            "141D1T1e1k1w1}11111111111",
+            "282O2Y2d2i2n22222222222222222",
+            "3'323=3H3X3^3v3333333333333",
+            "4&4.4R4X4b4g4u44444444444444",
+            "5(535>5I5V5b5h5n5x5555555555",
+            "6*606A6F6X6a6t6z666666",
+            "7C7I7Y7_7t7z777777777777777777777",
+            "8 8&8,82888"
+        ],
+        "file": {
+            "advapi32.dll": "Library",
+            "kernel32.dll": "Library",
+            "userinit.dll": "Library",
+            "userinit.exe": "Executable",
+            "wsock32.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.white-scorpion.nl"
+        ]
+    },
+    "time": "0:00:00.653156",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsDLL"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

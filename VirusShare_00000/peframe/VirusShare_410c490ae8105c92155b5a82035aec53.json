@@ -1,0 +1,264 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_410c490ae8105c92155b5a82035aec53",
+    "filesize": 3584,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "410c490ae8105c92155b5a82035aec53",
+        "sha1": "51ee380af9351bb79972d1f040fedd23773a5ac5",
+        "sha256": "724715ba8ebb833db4050ac19d5fe020a2bd4b8050a7444809510394f8649939"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "network_dropper"
+        ],
+        "breakpoint": [
+            "ExitProcess",
+            "GetModuleHandleA",
+            "HeapAlloc",
+            "ShellExecuteA",
+            "URLDownloadToFileA"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "KERNEL32.dll": [
+                    {
+                        "function": "GetModuleHandleA",
+                        "offset": 4206816
+                    },
+                    {
+                        "function": "HeapCreate",
+                        "offset": 4206820
+                    },
+                    {
+                        "function": "HeapDestroy",
+                        "offset": 4206824
+                    },
+                    {
+                        "function": "ExitProcess",
+                        "offset": 4206828
+                    },
+                    {
+                        "function": "HeapAlloc",
+                        "offset": 4206832
+                    }
+                ],
+                "MSVCRT.dll": [
+                    {
+                        "function": "memset",
+                        "offset": 4206808
+                    }
+                ],
+                "SHELL32.dll": [
+                    {
+                        "function": "ShellExecuteA",
+                        "offset": 4206840
+                    }
+                ],
+                "URLMON.dll": [
+                    {
+                        "function": "URLDownloadToFileA",
+                        "offset": 4206848
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [
+                {
+                    "data": "b'<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"y'",
+                    "executable": false,
+                    "language": "LANG_ENGLISH",
+                    "name": "RT_MANIFEST",
+                    "offset": 16472,
+                    "size": 611,
+                    "sublanguage": "SUBLANG_ENGLISH_US"
+                }
+            ],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 4096,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "Microsoft_Visual_Basic_v50",
+                "PureBasic_4x_Neil_Hodgson_additional",
+                "PureBasic_4x_Neil_Hodgson"
+            ],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "8a6eca2bf393a09759dc78e07f3e34d7",
+        "metadata": {},
+        "sections": {
+            "count": 4,
+            "details": [
+                {
+                    "characteristics": 1610612768,
+                    "data": "b'h\\x0c\\x00\\x00\\x00h\\x00\\x00\\x00\\x00h\\xb41@\\x00\\xe",
+                    "entropy": 1.2529050621840674,
+                    "executable": true,
+                    "hash": {
+                        "md5": "d3aaba50d3950ec84ca6e3e57070cb01",
+                        "sha1": "a5be5477a0a52554cc45c8e701e0e1bb2e86f877",
+                        "sha256": "ea7ec5bf47931836a73621493b56b42eca6b1c69d98675a5ee713087ccf5469f"
+                    },
+                    "section_name": ".code",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 4096,
+                    "virtual_size": 160
+                },
+                {
+                    "characteristics": 1610612768,
+                    "data": "b'\\xff%\\xd80@\\x00\\xff%\\xe00@\\x00\\xff%\\xe40@\\x00\\xf",
+                    "entropy": 1.4109119731998991,
+                    "executable": true,
+                    "hash": {
+                        "md5": "f55b74d0b91044621611e49d998848af",
+                        "sha1": "30ecdcf2f9d1237b1503825babe2978ea51d89a9",
+                        "sha256": "6143997465e16abae19145cdff595c442222494fef7472b55f3effa61409c2fb"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 8192,
+                    "virtual_size": 115
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'\\xff\\xff\\xff\\xff\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00",
+                    "entropy": 3.6964536510425066,
+                    "executable": false,
+                    "hash": {
+                        "md5": "4846bcd4c539dcfd1827f57f072bd93f",
+                        "sha1": "2071897a55ce986b1ed283b12d7fd8792c226c35",
+                        "sha256": "9a3d2593f5d8ad543b13edfa6f91b3cf7f32d7c90d000cea1e37c9ac2ec103b1"
+                    },
+                    "section_name": ".data",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 12288,
+                    "virtual_size": 460
+                },
+                {
+                    "characteristics": 1073741888,
+                    "data": "b'\\x00\\x00\\x00\\x00rnUM\\x00\\x00\\x00\\x00\\x00\\x00\\x01",
+                    "entropy": 4.109708246516716,
+                    "executable": false,
+                    "hash": {
+                        "md5": "3c8bbc24c205a7d49c15aa86cc88834f",
+                        "sha1": "d84d9f0b59f6ce81f73d09ff3ada38d8f6a5aab3",
+                        "sha256": "ec241c95c2b7305c0b7721c9cba2082f9a907650a18f86c6c72d82d47315e915"
+                    },
+                    "section_name": ".rsrc",
+                    "size_of_raw_data": 1024,
+                    "virtual_address": 16384,
+                    "virtual_size": 700
+                }
+            ]
+        },
+        "timestamp": "2011-02-11 17:14:26"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "rnUM",
+            ".code",
+            "`.text",
+            "`.data",
+            ".rsrc",
+            "h.0@",
+            "h.0@",
+            "h)0@",
+            "]%0@",
+            "http://axcap.hut2.ru/ip.exe",
+            "open",
+            "ip.exe",
+            "memset",
+            "MSVCRT.dll",
+            "GetModuleHandleA",
+            "HeapCreate",
+            "HeapDestroy",
+            "ExitProcess",
+            "KERNEL32.dll",
+            "HeapAlloc",
+            "ShellExecuteA",
+            "SHELL32.dll",
+            "URLDownloadToFileA",
+            "URLMON.dll",
+            "rnUM",
+            "rnUM",
+            "rnUM",
+            "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>",
+            "<assembly xmlns=\"urn:schemas-microsoft-com:asm.v1\" manifestVersion=\"1.0\">",
+            "  <assemblyIdentity",
+            "    version=\"1.0.0.0\"",
+            "    processorArchitecture=\"X86\"",
+            "    name=\"CompanyName.ProductName.YourApp\"",
+            "    type=\"win32\" />",
+            "  <description></description>",
+            "  <dependency>",
+            "    <dependentAssembly>",
+            "      <assemblyIdentity",
+            "        type=\"win32\"",
+            "        name=\"Microsoft.Windows.Common-Controls\"",
+            "        version=\"6.0.0.0\"",
+            "        processorArchitecture=\"X86\"",
+            "        publicKeyToken=\"6595b64144ccf1df\"",
+            "        language=\"*\" />",
+            "    </dependentAssembly>",
+            "  </dependency>",
+            "</assembly>"
+        ],
+        "file": {
+            "KERNEL32.dll": "Library",
+            "MSVCRT.dll": "Library",
+            "SHELL32.dll": "Library",
+            "URLMON.dll": "Library",
+            "http://axcap.hut2.ru/ip.exe": "Executable",
+            "ip.exe": "Executable"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://axcap.hut2.ru/ip.exe"
+        ]
+    },
+    "time": "0:00:00.578399",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "PureBasic"
+        },
+        {
+            "packer.yar": "PureBasic4xNeilHodgson"
+        }
+    ]
+}

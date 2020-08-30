@@ -1,0 +1,127 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_2f11737a2343c94cf2431c243aa946d8",
+    "filesize": 1024,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "2f11737a2343c94cf2431c243aa946d8",
+        "sha1": "59d1f40bd82a31ea7892bd61389a555c1a7964d4",
+        "sha256": "74b00606a280c57daf5b800afbc2e2cfedea0c00b8d5188aacd9643b5af999b7"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor"
+        ],
+        "breakpoint": [
+            "ExitProcess",
+            "Sleep"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "KERNEL32.dll": [
+                    {
+                        "function": "Sleep",
+                        "offset": 50335744
+                    },
+                    {
+                        "function": "SetErrorMode",
+                        "offset": 50335748
+                    },
+                    {
+                        "function": "ExitProcess",
+                        "offset": 50335752
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 4112,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "Microsoft_Visual_Cpp_v50v60_MFC"
+            ],
+            "xor": {}
+        },
+        "imagebase": 50331648,
+        "imphash": "46646950e38cdd1519d35c0c539d2b12",
+        "metadata": {},
+        "sections": {
+            "count": 1,
+            "details": [
+                {
+                    "characteristics": 3758358560,
+                    "data": "b'\\xa6\\x10\\x00\\x00\\xae\\x10\\x00\\x00\\x98\\x10\\x00\\x00",
+                    "entropy": 2.1440745581988465,
+                    "executable": true,
+                    "hash": {
+                        "md5": "c252cc1bcc109f1fcaa8889b082e1bb8",
+                        "sha1": "e15040c1977a45298ff98e28d905b8320f5a7e42",
+                        "sha256": "0bacc17cf3d27f7b7dbcf84f16f4add3e9fc161e51b71c876aee544e12b1b47e"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 4096,
+                    "virtual_size": 73728
+                }
+            ]
+        },
+        "timestamp": "2010-07-28 18:01:30"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "&\u046eH\u046eH\u046eH\u046eI\u04aeH[\u04aeH9^\u04eeHRich\u046eH",
+            "zpPL",
+            ".text",
+            "ExitProcess",
+            "Sleep",
+            "SetErrorMode",
+            "KERNEL32.dll"
+        ],
+        "file": {
+            "KERNEL32.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.568177",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

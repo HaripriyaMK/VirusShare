@@ -1,0 +1,59 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Windows": "May enumerate application windows"
+        },
+        "macro": "\n##\n# This file is part of the Metasploit Framework and may be redistributed\n# according to the licenses defined in the Authors field below. In the\n# case of an unknown or missing license, this file defaults to the same\n# license as the core Framework (dual GPLv2 and Artistic). The latest\n# version of the Framework can always be obtained from metasploit.com.\n##\n\npackage Msf::Payload::win32_passivex;\n\nuse strict;\nuse base 'Msf::PayloadComponent::Windows::ia32::PassiveXStager';\n\nmy $info =\n{\n\t'Name'         => 'Windows PassiveX ActiveX Injection Payload',\n\t'Version'      => '$Revision: 1.2 $',\n\t'Description'  => 'Executes an ActiveX control via a hidden IEXPLORE.EXE',\n\t'Multistage'   => 0,\n\t'Authors'      => [ 'skape <mmiller [at] hick.org>', ],\n\t'UserOpts'     =>\n\t\t{\n\t\t},\n};\n\nsub _Load \n{\n\t__PACKAGE__->SUPER::_Load();\n}\n\nsub new \n{\n\tmy $class = shift;\n\tmy $hash = @_ ? shift : { };\n\tmy $self;\n\n\t_Load();\n\n\t$hash = $class->MergeHashRec($hash, {'Info' => $info});\n\t$self = $class->SUPER::new($hash, @_);\n\n\treturn($self);\n}\n\n1;"
+    },
+    "filename": "VirusShare_028e56d1f7daebb62a7166fc371590f5",
+    "filesize": 1036,
+    "filetype": "Perl5 module source, ASCII text",
+    "hashes": {
+        "md5": "028e56d1f7daebb62a7166fc371590f5",
+        "sha1": "cdb31475d71636a364147749e1191e07eb4a6790",
+        "sha256": "f19cc0d26a7b96adfccdddde5b1715336e0ba4bb84e6c779496dbad736e14345"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "# This file is part of the Metasploit Framework and may be redistributed",
+            "# according to the licenses defined in the Authors field below. In the",
+            "# case of an unknown or missing license, this file defaults to the same",
+            "# license as the core Framework (dual GPLv2 and Artistic). The latest",
+            "# version of the Framework can always be obtained from metasploit.com.",
+            "package Msf::Payload::win32_passivex;",
+            "use strict;",
+            "use base 'Msf::PayloadComponent::Windows::ia32::PassiveXStager';",
+            "my $info =",
+            "\t'Name'         => 'Windows PassiveX ActiveX Injection Payload',",
+            "\t'Version'      => '$Revision: 1.2 $',",
+            "\t'Description'  => 'Executes an ActiveX control via a hidden IEXPLORE.EXE',",
+            "\t'Multistage'   => 0,",
+            "\t'Authors'      => [ 'skape <mmiller [at] hick.org>', ],",
+            "\t'UserOpts'     =>",
+            "\t\t},",
+            "sub _Load ",
+            "\t__PACKAGE__->SUPER::_Load();",
+            "sub new ",
+            "\tmy $class = shift;",
+            "\tmy $hash = @_ ? shift : { };",
+            "\tmy $self;",
+            "\t_Load();",
+            "\t$hash = $class->MergeHashRec($hash, {'Info' => $info});",
+            "\t$self = $class->SUPER::new($hash, @_);",
+            "\treturn($self);"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.265458",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

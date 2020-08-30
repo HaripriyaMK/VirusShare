@@ -1,0 +1,243 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_23042564a51dbde430c9b7bcbf5665af",
+    "filesize": 3072,
+    "filetype": "PE32 executable (DLL) (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "23042564a51dbde430c9b7bcbf5665af",
+        "sha1": "fa70c90ddf3dd0c65984f8f5cb1ba434b3b2768e",
+        "sha256": "dca8679b7955c690016be7c5131cfaa1fd4f6181c4b5e80ca978b1fbec667755"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "win_hook"
+        ],
+        "breakpoint": [
+            "SetWindowsHookExA"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [
+                {
+                    "function": "InstallHook",
+                    "offset": 268439678
+                },
+                {
+                    "function": "KeyboardProc",
+                    "offset": 268439578
+                },
+                {
+                    "function": "UninstallHook",
+                    "offset": 268439724
+                }
+            ],
+            "import": {
+                "kernel32.dll": [
+                    {
+                        "function": "GetLastError",
+                        "offset": 268447744
+                    }
+                ],
+                "user32.dll": [
+                    {
+                        "function": "CallNextHookEx",
+                        "offset": 268447752
+                    },
+                    {
+                        "function": "GetKeyboardState",
+                        "offset": 268447756
+                    },
+                    {
+                        "function": "PostMessageA",
+                        "offset": 268447760
+                    },
+                    {
+                        "function": "SetWindowsHookExA",
+                        "offset": 268447764
+                    },
+                    {
+                        "function": "ToAscii",
+                        "offset": 268447768
+                    },
+                    {
+                        "function": "UnhookWindowsHookEx",
+                        "offset": 268447772
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 44,
+                "VirtualAddress": 20480,
+                "count": 1,
+                "details": {
+                    "reloc_1": 18
+                }
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": true,
+        "entrypoint": 4096,
+        "features": {
+            "antidbg": [
+                "GetLastError"
+            ],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "Microsoft_Visual_Cpp_v50v60_MFC"
+            ],
+            "xor": {}
+        },
+        "imagebase": 268435456,
+        "imphash": "a41b113618c326721ef91b85fbb84b1b",
+        "metadata": {},
+        "sections": {
+            "count": 5,
+            "details": [
+                {
+                    "characteristics": 1610612768,
+                    "data": "b'U\\x8b\\xec\\xffu\\x08\\x8f\\x05\\x00@\\x00\\x10\\xe8\\xa7\\",
+                    "entropy": 2.4546562253809805,
+                    "executable": true,
+                    "hash": {
+                        "md5": "05ff691488193e943129346c9c927622",
+                        "sha1": "288d7da4502541cfc3a3cc3e8fee225936c025f8",
+                        "sha256": "04fe161b2037008fdecbf21c881a881e3a757e2866be42cceb73ef080f6839d3"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 4096,
+                    "virtual_size": 226
+                },
+                {
+                    "characteristics": 3489661056,
+                    "data": "b''",
+                    "entropy": 0.0,
+                    "executable": false,
+                    "hash": {
+                        "md5": "d41d8cd98f00b204e9800998ecf8427e",
+                        "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+                        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                    },
+                    "section_name": ".bss",
+                    "size_of_raw_data": 0,
+                    "virtual_address": 8192,
+                    "virtual_size": 268
+                },
+                {
+                    "characteristics": 1073741888,
+                    "data": "b'\\x840\\x00\\x00\\x00\\x00\\x00\\x00\\xa20\\x00\\x00\\xb40\\",
+                    "entropy": 3.6213949000466887,
+                    "executable": false,
+                    "hash": {
+                        "md5": "5300d0035aab959f3f6e5649754ed1da",
+                        "sha1": "ac7a9d5aae4b797b631201932b9ea5418b0e4632",
+                        "sha256": "7bf8a048190c6676fc2e0a9489a817ae907b9aafe70f73dcff22813032a4ccc5"
+                    },
+                    "section_name": ".rdata",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 12288,
+                    "virtual_size": 408
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'\\x00\\x00\\x00\\x00\\xf4\\xf4\\xf4\\xf4\\xf4\\xf4\\xf4\\xf4",
+                    "entropy": 0.4072436409891646,
+                    "executable": false,
+                    "hash": {
+                        "md5": "83ba4b0103f906456fde2c4198ed25c8",
+                        "sha1": "1681a479544af124eb8a94f9281099fdd1cc588b",
+                        "sha256": "0c5c164a153a578206039a71fd7b1f3d51d99afca3407aab4ad4db49862c8750"
+                    },
+                    "section_name": ".data",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 16384,
+                    "virtual_size": 30
+                },
+                {
+                    "characteristics": 1107296320,
+                    "data": "b'\\x00\\x10\\x00\\x00,\\x00\\x00\\x00\\x080(020B0h0\\x860\\",
+                    "entropy": 0.5948825710237561,
+                    "executable": false,
+                    "hash": {
+                        "md5": "030b8ecedbf4b4c925da23d8ca0a5625",
+                        "sha1": "5c20dbb8385b28dff4adf8b66bb9a5e7a9a1379a",
+                        "sha256": "c396cd1ca8a6d58b5e69370577884e167500fa97d3edcf410b96dbfdfd2b7a35"
+                    },
+                    "section_name": ".reloc",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 20480,
+                    "virtual_size": 76
+                }
+            ]
+        },
+        "timestamp": "2003-11-06 16:58:16"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "VPDP",
+            "VPEP",
+            "VPRich",
+            ".text",
+            "`.bss",
+            ".rdata",
+            "@.data",
+            ".reloc",
+            "GetLastError",
+            "kernel32.dll",
+            "CallNextHookEx",
+            "GetKeyboardState",
+            "PostMessageA",
+            "SetWindowsHookExA",
+            "ToAscii",
+            "UnhookWindowsHookEx",
+            "user32.dll",
+            "msto32.dll",
+            "InstallHook",
+            "KeyboardProc",
+            "UninstallHook",
+            "54090-",
+            "0(020B0h0000000000000"
+        ],
+        "file": {
+            "kernel32.dll": "Library",
+            "msto32.dll": "Library",
+            "user32.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.599312",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsDLL"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

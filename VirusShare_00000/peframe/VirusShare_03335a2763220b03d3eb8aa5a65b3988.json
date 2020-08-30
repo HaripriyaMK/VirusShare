@@ -1,0 +1,144 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_03335a2763220b03d3eb8aa5a65b3988",
+    "filesize": 1024,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "03335a2763220b03d3eb8aa5a65b3988",
+        "sha1": "8d4fe371deb591b558646e5db7e99c0c299a8adc",
+        "sha256": "8d0d24ce256ecfcb0d73289d943c0aa348b682da659b48fe6e5042c98b93ef74"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "win_hook"
+        ],
+        "breakpoint": [
+            "GetProcAddress",
+            "LoadLibraryA",
+            "SetWindowsHookExA",
+            "Sleep"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "KERNEL32.dll": [
+                    {
+                        "function": "Sleep",
+                        "offset": 4198400
+                    },
+                    {
+                        "function": "GetProcAddress",
+                        "offset": 4198404
+                    },
+                    {
+                        "function": "LoadLibraryA",
+                        "offset": 4198408
+                    },
+                    {
+                        "function": "FreeLibrary",
+                        "offset": 4198412
+                    }
+                ],
+                "USER32.dll": [
+                    {
+                        "function": "SetWindowsHookExA",
+                        "offset": 4198420
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 4160,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "1dcbbaa72443d0c1132ea91d2b947056",
+        "metadata": {},
+        "sections": {
+            "count": 1,
+            "details": [
+                {
+                    "characteristics": 3758358560,
+                    "data": "b'\\xe6\\x10\\x00\\x00\\xee\\x10\\x00\\x00\\x00\\x11\\x00\\x00",
+                    "entropy": 3.034679277397318,
+                    "executable": true,
+                    "hash": {
+                        "md5": "11c68b90f7bef8ba0881cef206981194",
+                        "sha1": "d3fb370f934357f3bc315ae12daebf3f32e9bc94",
+                        "sha256": "d295c01668ab4e91270b58ed90933f12a0a485c653cb8daff39c97ee5b15b4a9"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 4096,
+                    "virtual_size": 318
+                }
+            ]
+        },
+        "timestamp": "2003-06-02 15:20:42"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "&&IGHIGHIGHdQLGHIGILGHcUHGHcuHGHRichIGH",
+            ".text",
+            "KeyboardProc",
+            "spy.dll",
+            "FreeLibrary",
+            "Sleep",
+            "GetProcAddress",
+            "LoadLibraryA",
+            "KERNEL32.dll",
+            "SetWindowsHookExA",
+            "USER32.dll"
+        ],
+        "file": {
+            "KERNEL32.dll": "Library",
+            "USER32.dll": "Library",
+            "spy.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.618021",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

