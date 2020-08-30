@@ -1,0 +1,258 @@
+{
+    "/root/torrent/VirusShare_Zeus_20190213/VirusShare_b157c9c0478313992ddbb00e62c6d7e0": {
+        "Summary": {
+            "Architecture": "IMAGE_FILE_MACHINE_I386",
+            "Subsystem": "IMAGE_SUBSYSTEM_WINDOWS_GUI",
+            "Compilation Date": "2005-Aug-26 08:14:01"
+        },
+        "DOS Header": {
+            "e_magic": "MZ",
+            "e_cblp": 0,
+            "e_cp": 0,
+            "e_crlc": 0,
+            "e_cparhdr": 0,
+            "e_minalloc": 0,
+            "e_maxalloc": 0,
+            "e_ss": 0,
+            "e_sp": 0,
+            "e_csum": 0,
+            "e_ip": 0,
+            "e_cs": 0,
+            "e_ovno": 0,
+            "e_oemid": 0,
+            "e_oeminfo": 0,
+            "e_lfanew": 184
+        },
+        "PE Header": {
+            "Signature": "PE",
+            "Machine": "IMAGE_FILE_MACHINE_I386",
+            "NumberofSections": 3,
+            "TimeDateStamp": "2005-Aug-26 08:14:01",
+            "PointerToSymbolTable": 0,
+            "NumberOfSymbols": 0,
+            "SizeOfOptionalHeader": 224,
+            "Characteristics": [
+                "IMAGE_FILE_32BIT_MACHINE",
+                "IMAGE_FILE_EXECUTABLE_IMAGE"
+            ]
+        },
+        "Image Optional Header": {
+            "Magic": "PE32",
+            "LinkerVersion": "35.0",
+            "SizeOfCode": 35840,
+            "SizeOfInitializedData": 0,
+            "SizeOfUninitializedData": 0,
+            "AddressOfEntryPoint": "0x0000F691 (Section: .klcvcb)",
+            "BaseOfCode": 61440,
+            "BaseOfData": 4096,
+            "ImageBase": 4194304,
+            "SectionAlignment": 4096,
+            "FileAlignment": 512,
+            "OperatingSystemVersion": "5.0",
+            "ImageVersion": "0.0",
+            "SubsystemVersion": "4.0",
+            "Win32VersionValue": 0,
+            "SizeOfImage": 139264,
+            "SizeOfHeaders": 1024,
+            "Checksum": 0,
+            "Subsystem": "IMAGE_SUBSYSTEM_WINDOWS_GUI",
+            "SizeofStackReserve": 1048576,
+            "SizeofStackCommit": 4096,
+            "SizeofHeapReserve": 1048576,
+            "SizeofHeapCommit": 4096,
+            "LoaderFlags": 0,
+            "NumberOfRvaAndSizes": 16
+        },
+        "Sections": {
+            ".vod": {
+                "VirtualSize": 56193,
+                "VirtualAddress": 4096,
+                "SizeOfRawData": 35840,
+                "PointerToRawData": 1024,
+                "PointerToRelocations": 0,
+                "PointerToLineNumbers": 0,
+                "NumberOfLineNumbers": 0,
+                "NumberOfRelocations": 0,
+                "Characteristics": [
+                    "IMAGE_SCN_CNT_INITIALIZED_DATA",
+                    "IMAGE_SCN_MEM_READ"
+                ],
+                "Entropy": 7.9744
+            },
+            ".klcvcb": {
+                "VirtualSize": 4928,
+                "VirtualAddress": 61440,
+                "SizeOfRawData": 2560,
+                "PointerToRawData": 36864,
+                "PointerToRelocations": 0,
+                "PointerToLineNumbers": 0,
+                "NumberOfLineNumbers": 0,
+                "NumberOfRelocations": 0,
+                "Characteristics": [
+                    "IMAGE_SCN_CNT_CODE",
+                    "IMAGE_SCN_MEM_EXECUTE",
+                    "IMAGE_SCN_MEM_READ",
+                    "IMAGE_SCN_MEM_WRITE"
+                ],
+                "Entropy": 6.9678
+            },
+            ".haxcz": {
+                "VirtualSize": 69632,
+                "VirtualAddress": 69632,
+                "SizeOfRawData": 4608,
+                "PointerToRawData": 39424,
+                "PointerToRelocations": 0,
+                "PointerToLineNumbers": 0,
+                "NumberOfLineNumbers": 0,
+                "NumberOfRelocations": 0,
+                "Characteristics": [
+                    "IMAGE_SCN_CNT_INITIALIZED_DATA",
+                    "IMAGE_SCN_MEM_READ"
+                ],
+                "Entropy": 7.61439
+            }
+        },
+        "Imports": {
+            "kernel32.dll": [
+                "HeapFree",
+                "FlushFileBuffers",
+                "GetTempPathW",
+                "UnmapViewOfFile",
+                "SetFileTime",
+                "GetSystemTimeAsFileTime",
+                "OpenProcess",
+                "MoveFileExW",
+                "CreateFileMappingW",
+                "EnterCriticalSection",
+                "WriteFile",
+                "ReleaseMutex",
+                "lstrlenA",
+                "CreateMutexW",
+                "GlobalLock",
+                "DisconnectNamedPipe",
+                "CreateEventW",
+                "ExpandEnvironmentStringsW",
+                "SetFileAttributesW",
+                "GetCurrentThread",
+                "SetEvent",
+                "lstrcatW",
+                "CopyFileW",
+                "GetUserDefaultUILanguage",
+                "CloseHandle",
+                "GetTimeZoneInformation",
+                "lstrcpynW",
+                "GetCommandLineA",
+                "SetThreadPriority",
+                "CreateThread"
+            ],
+            "user32.dll": [
+                "GetIconInfo",
+                "MsgWaitForMultipleObjects"
+            ]
+        },
+        "Plugins": {
+            "packer": {
+                "level": 2,
+                "plugin_output": {
+                    "info_0": "Unusual section name found: .vod",
+                    "info_1": "Unusual section name found: .klcvcb",
+                    "info_2": "Section .klcvcb is both writable and executable.",
+                    "info_3": "Unusual section name found: .haxcz"
+                },
+                "summary": "The PE is possibly packed."
+            },
+            "imports": {
+                "level": 2,
+                "plugin_output": {
+                    "Manipulates other processes": [
+                        "OpenProcess"
+                    ]
+                },
+                "summary": "The PE contains functions most legitimate programs don't use."
+            },
+            "mitigation": {
+                "level": 1,
+                "plugin_output": {
+                    "Stack Canary": "disabled",
+                    "SafeSEH": "disabled",
+                    "ASLR": "disabled",
+                    "DEP": "disabled",
+                    "CFG": "disabled"
+                },
+                "summary": "The following exploit mitigation techniques have been detected"
+            },
+            "overlay": {
+                "level": 2,
+                "plugin_output": {
+                    "info_0": "671744 bytes of data starting at offset 0xac00.",
+                    "info_1": "The overlay data has an entropy of 7.40313 and is possibly compressed or encrypted.",
+                    "info_2": "Overlay data amounts for 93.8484% of the executable."
+                },
+                "summary": "The file contains overlay data."
+            },
+            "virustotal": {
+                "level": 3,
+                "plugin_output": {
+                    "MicroWorld-eScan": "Trojan.Spy.Zeus.1.Gen",
+                    "FireEye": "Generic.mg.b157c9c047831399",
+                    "CAT-QuickHeal": "TrojanPWS.Zbot.Y",
+                    "ALYac": "Trojan.Spy.Zeus.1.Gen",
+                    "Zillya": "Trojan.Zbot.Win32.4742",
+                    "K7AntiVirus": "Trojan ( 000423b91 )",
+                    "Alibaba": "TrojanSpy:Win32/Zbot.11e5cdce",
+                    "K7GW": "Trojan ( 000423b91 )",
+                    "Cybereason": "malicious.047831",
+                    "Arcabit": "Trojan.Spy.Zeus.1.Gen",
+                    "Invincea": "heuristic",
+                    "F-Prot": "W32/Zbot.F.gen!Eldorado",
+                    "Symantec": "ML.Attribute.HighConfidence",
+                    "TotalDefense": "Win32/KollahCryptor.A!generic",
+                    "APEX": "Malicious",
+                    "Avast": "Win32:Zbot-gen [Trj]",
+                    "Kaspersky": "Trojan-Spy.Win32.Zbot.roh",
+                    "BitDefender": "Trojan.Spy.Zeus.1.Gen",
+                    "NANO-Antivirus": "Trojan.Win32.Zbot.bvhvxt",
+                    "Paloalto": "generic.ml",
+                    "AegisLab": "Trojan.Win32.Zbot.lmta",
+                    "Ad-Aware": "Trojan.Spy.Zeus.1.Gen",
+                    "Emsisoft": "Trojan.Spy.Zeus.1.Gen (B)",
+                    "Comodo": "TrojWare.Win32.TrojanSpy.Zbot.Roh@2o8imf",
+                    "F-Secure": "Trojan.TR/Dropper.Gen",
+                    "DrWeb": "Trojan.Packed.511",
+                    "VIPRE": "Trojan.Crypt.Zcrypt (v)",
+                    "TrendMicro": "TROJ_ZBOT.SMB",
+                    "McAfee-GW-Edition": "BehavesLike.Win32.ZBot.jc",
+                    "Trapmine": "malicious.high.ml.score",
+                    "CMC": "Trojan.Win32.Zbot.3!O",
+                    "Sophos": "Troj/Zbot-L",
+                    "Ikarus": "Trojan-Spy.Win32.Zbot.anp",
+                    "Cyren": "W32/Zbot.F.gen!Eldorado",
+                    "Jiangmin": "TrojanSpy.Zbot.iaf",
+                    "Avira": "TR/Dropper.Gen",
+                    "Fortinet": "W32/Zbot.GAD!tr",
+                    "Antiy-AVL": "Trojan[Spy]/Win32.Zbot",
+                    "Endgame": "malicious (high confidence)",
+                    "Microsoft": "PWS:Win32/Zbot.PK",
+                    "ZoneAlarm": "Trojan-Spy.Win32.Zbot.roh",
+                    "Acronis": "suspicious",
+                    "McAfee": "PWS-Zbot.gen.c",
+                    "MAX": "malware (ai score=99)",
+                    "VBA32": "Trojan.Win32.Spy.Bancos",
+                    "Cylance": "Unsafe",
+                    "ESET-NOD32": "a variant of Win32/Kryptik.OV",
+                    "TrendMicro-HouseCall": "TROJ_ZBOT.SMB",
+                    "Rising": "Trojan.Win32.Ntos.ht (CLASSIC)",
+                    "Yandex": "TrojanSpy.ZBot.Gen!Pac.3",
+                    "SentinelOne": "DFI - Malicious PE",
+                    "eGambit": "Generic.Malware",
+                    "GData": "Trojan.Spy.Zeus.1.Gen",
+                    "AVG": "Win32:Zbot-gen [Trj]",
+                    "Panda": "Malicious Packer",
+                    "CrowdStrike": "win/malicious_confidence_100% (W)",
+                    "Qihoo-360": "HEUR/Malware.QVM19.Gen"
+                },
+                "summary": "VirusTotal score: 57/69 (Scanned on 2019-10-24 02:03:23)"
+            }
+        }
+    }
+}
