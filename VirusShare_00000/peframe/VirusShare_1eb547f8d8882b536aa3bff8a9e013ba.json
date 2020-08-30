@@ -1,0 +1,680 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_1eb547f8d8882b536aa3bff8a9e013ba",
+    "filesize": 40000,
+    "filetype": "PE32 executable (DLL) (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "1eb547f8d8882b536aa3bff8a9e013ba",
+        "sha1": "a83cca4363e81b72ad45566490283806dc714a82",
+        "sha256": "4281bd6a5eefaf391a8421ddde6e939e7d7aced1739e60a48284433e4203c3cf"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "disable_antivirus",
+            "hijack_network",
+            "network_dropper",
+            "win_registry",
+            "win_files_operation"
+        ],
+        "breakpoint": [
+            "CloseHandle",
+            "CreateFileA",
+            "CreateThread",
+            "DeleteFileA",
+            "FindWindowExA",
+            "GetModuleFileNameA",
+            "GetSystemDirectoryA",
+            "GetTickCount",
+            "GetWindowsDirectoryA",
+            "ReadFile",
+            "RegCloseKey",
+            "RegCreateKeyExA",
+            "RegDeleteKeyA",
+            "RegOpenKeyExA",
+            "SetFilePointer",
+            "Sleep",
+            "URLDownloadToFileA",
+            "WinExec",
+            "WriteFile",
+            "lstrcmpA",
+            "lstrcmpiA"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [
+                {
+                    "function": "DllCanUnloadNow",
+                    "offset": 268441003
+                },
+                {
+                    "function": "DllGetClassObject",
+                    "offset": 268441007
+                },
+                {
+                    "function": "DllRegisterServer",
+                    "offset": 268442115
+                },
+                {
+                    "function": "DllUnregisterServer",
+                    "offset": 268442848
+                }
+            ],
+            "import": {
+                "advapi32.dll": [
+                    {
+                        "function": "RegCloseKey",
+                        "offset": 268447744
+                    },
+                    {
+                        "function": "RegSetValueExA",
+                        "offset": 268447748
+                    },
+                    {
+                        "function": "RegQueryValueExA",
+                        "offset": 268447752
+                    },
+                    {
+                        "function": "RegOpenKeyExA",
+                        "offset": 268447756
+                    },
+                    {
+                        "function": "RegDeleteKeyA",
+                        "offset": 268447760
+                    },
+                    {
+                        "function": "RegCreateKeyExA",
+                        "offset": 268447764
+                    }
+                ],
+                "kernel32.dll": [
+                    {
+                        "function": "CloseHandle",
+                        "offset": 268447772
+                    },
+                    {
+                        "function": "CompareStringA",
+                        "offset": 268447776
+                    },
+                    {
+                        "function": "CreateFileA",
+                        "offset": 268447780
+                    },
+                    {
+                        "function": "CreateThread",
+                        "offset": 268447784
+                    },
+                    {
+                        "function": "DeleteFileA",
+                        "offset": 268447788
+                    },
+                    {
+                        "function": "GetModuleFileNameA",
+                        "offset": 268447792
+                    },
+                    {
+                        "function": "GetSystemDirectoryA",
+                        "offset": 268447796
+                    },
+                    {
+                        "function": "GetSystemTime",
+                        "offset": 268447800
+                    },
+                    {
+                        "function": "GetTickCount",
+                        "offset": 268447804
+                    },
+                    {
+                        "function": "GetWindowsDirectoryA",
+                        "offset": 268447808
+                    },
+                    {
+                        "function": "LocalAlloc",
+                        "offset": 268447812
+                    },
+                    {
+                        "function": "LocalFree",
+                        "offset": 268447816
+                    },
+                    {
+                        "function": "ReadFile",
+                        "offset": 268447820
+                    },
+                    {
+                        "function": "SetFilePointer",
+                        "offset": 268447824
+                    },
+                    {
+                        "function": "SystemTimeToFileTime",
+                        "offset": 268447828
+                    },
+                    {
+                        "function": "WinExec",
+                        "offset": 268447832
+                    },
+                    {
+                        "function": "WriteFile",
+                        "offset": 268447836
+                    },
+                    {
+                        "function": "lstrcatA",
+                        "offset": 268447840
+                    },
+                    {
+                        "function": "lstrcmpA",
+                        "offset": 268447844
+                    },
+                    {
+                        "function": "lstrcmpiA",
+                        "offset": 268447848
+                    },
+                    {
+                        "function": "lstrcpynA",
+                        "offset": 268447852
+                    },
+                    {
+                        "function": "lstrlenA",
+                        "offset": 268447856
+                    },
+                    {
+                        "function": "Sleep",
+                        "offset": 268447860
+                    }
+                ],
+                "urlmon.dll": [
+                    {
+                        "function": "URLDownloadToFileA",
+                        "offset": 268447868
+                    }
+                ],
+                "user32.dll": [
+                    {
+                        "function": "SendMessageA",
+                        "offset": 268447876
+                    },
+                    {
+                        "function": "MessageBeep",
+                        "offset": 268447880
+                    },
+                    {
+                        "function": "GetForegroundWindow",
+                        "offset": 268447884
+                    },
+                    {
+                        "function": "GetClassNameA",
+                        "offset": 268447888
+                    },
+                    {
+                        "function": "wsprintfA",
+                        "offset": 268447892
+                    },
+                    {
+                        "function": "FindWindowExA",
+                        "offset": 268447896
+                    }
+                ],
+                "wininet.dll": [
+                    {
+                        "function": "FindNextUrlCacheEntryA",
+                        "offset": 268447904
+                    },
+                    {
+                        "function": "FindFirstUrlCacheEntryA",
+                        "offset": 268447908
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 436,
+                "VirtualAddress": 49152,
+                "count": 1,
+                "details": {
+                    "reloc_1": 214
+                }
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": true,
+        "entrypoint": 4855,
+        "features": {
+            "antidbg": [
+                "FindWindowExA"
+            ],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "Microsoft_Visual_Cpp_v50v60_MFC",
+                "Borland_Delphi_30_additional",
+                "Borland_Delphi_30_",
+                "Borland_Delphi_v40_v50",
+                "Borland_Delphi_v30",
+                "Borland_Delphi_DLL"
+            ],
+            "xor": {}
+        },
+        "imagebase": 268435456,
+        "imphash": "2df4fb3b2c540094c46e31ef17bc18ec",
+        "metadata": {},
+        "sections": {
+            "count": 5,
+            "details": [
+                {
+                    "characteristics": 1610612768,
+                    "data": "b'CLSID\\\\{B72F75B8-93F3-429D-B13E-660B206D897A}\\\\I",
+                    "entropy": 5.777670856039328,
+                    "executable": true,
+                    "hash": {
+                        "md5": "66b3be9aeecda6a726bdbd4a6b606bef",
+                        "sha1": "4d1b3fe59d7aeb8abcc1869b32688bdbb96617fe",
+                        "sha256": "9bc82ea97901a7cdc03cd4072eb12642e0fc19dc3ac68f8c0a28675813498b5f"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 4096,
+                    "virtual_address": 4096,
+                    "virtual_size": 4030
+                },
+                {
+                    "characteristics": 3489661056,
+                    "data": "b''",
+                    "entropy": 0.0,
+                    "executable": false,
+                    "hash": {
+                        "md5": "d41d8cd98f00b204e9800998ecf8427e",
+                        "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+                        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                    },
+                    "section_name": ".bss",
+                    "size_of_raw_data": 0,
+                    "virtual_address": 8192,
+                    "virtual_size": 2696
+                },
+                {
+                    "characteristics": 1073741888,
+                    "data": "b'\\xa43\\x00\\x00\\xf83\\x00\\x00\\xe43\\x00\\x00\\xd43\\x00",
+                    "entropy": 4.360752604817669,
+                    "executable": false,
+                    "hash": {
+                        "md5": "654fe45245f4434df74059350a433d4d",
+                        "sha1": "06429c637577286a662e80a084c62f00baa9c987",
+                        "sha256": "9af115e8bcbb40f94b3ee37b92544c3a3031cd46a3abfb8973d7f7b2bd23302f"
+                    },
+                    "section_name": ".rdata",
+                    "size_of_raw_data": 1536,
+                    "virtual_address": 12288,
+                    "virtual_size": 1313
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'\\xbf\\xa3\\x9d\\x93\\x9e\\x91\\x94\\xd1\\x97\\x8b\\x92\\xff",
+                    "entropy": 4.207852260976009,
+                    "executable": false,
+                    "hash": {
+                        "md5": "e98bb9038c364e525714d5c06648659e",
+                        "sha1": "fd24fdab7b3a7faaa0e0aad045192dc07faeaef0",
+                        "sha256": "f1120aa6f459e37e178169cc09b729f6b397bfcc5caae6bfc2ea5cc3dce5de36"
+                    },
+                    "section_name": ".data",
+                    "size_of_raw_data": 30720,
+                    "virtual_address": 16384,
+                    "virtual_size": 30352
+                },
+                {
+                    "characteristics": 1107296320,
+                    "data": "b'\\x00\\x10\\x00\\x00\\xb4\\x01\\x00\\x00\\xd02\\xd62\\xe72\\",
+                    "entropy": 3.57609090627702,
+                    "executable": false,
+                    "hash": {
+                        "md5": "c92178666e42fe42edfb0ec303addfba",
+                        "sha1": "dd3918ea50d75acda8f962c2aef324b61322ef19",
+                        "sha256": "5b4488d8c11a0b378b7c582b620ab30a5dbeb9a047c9a628ce19313f41d6f35a"
+                    },
+                    "section_name": ".reloc",
+                    "size_of_raw_data": 1024,
+                    "virtual_address": 49152,
+                    "virtual_size": 536
+                }
+            ]
+        },
+        "timestamp": "2004-12-26 19:41:43"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "Richev",
+            ".text",
+            "`.bss",
+            ".rdata",
+            "@.data",
+            ".reloc",
+            "CLSID\\{B72F75B8-93F3-429D-B13E-660B206D897A}\\InProcServer32",
+            "SOFTWARE\\Classes\\CLSID\\{B72F75B8-93F3-429D-B13E-660B206D897A}\\InProcServer32",
+            "PROTOCOLS\\Filter\\text/html",
+            "PROTOCOLS\\Filter\\text/plain",
+            "SOFTWARE\\Classes\\PROTOCOLS\\Filter\\text/html",
+            "SOFTWARE\\Classes\\PROTOCOLS\\Filter\\text/plain",
+            "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Browser Helper Objects\\{B72F75B8-93F3-429D-B13E-660B206D897A}",
+            "CLSID",
+            "{B72F75B8-93F3-429D-B13E-660B206D897A}",
+            "ThreadingModel",
+            "Apartment",
+            "Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Best Search Engine!!!",
+            "DisplayName",
+            "UninstallString",
+            "REG_SZ",
+            "Rundll32.exe wnim.dll, DllUnregisterServer",
+            "Rundll32.exe wnim.dll, DllRegisterServer",
+            "Systems Restart",
+            "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+            "OWh7@",
+            "PhZA",
+            "Jjd\t",
+            "u3@U",
+            "UT`\u01c5",
+            "Ph &",
+            "EPh0&",
+            "EEPuj",
+            "EPh0&",
+            "EEPuu",
+            "t&E}w",
+            "t7Ej",
+            "fMZu\t",
+            "\\wnim.dll",
+            "master-x.com",
+            "crutop.nu",
+            "gofuckyourself.com",
+            "netpond.com",
+            "pornojunkies.com",
+            "adultwebmasterinfo.com",
+            "pimpboard.com",
+            "oprano.com",
+            "justblowme.com",
+            "xnations.com",
+            "&uWuu",
+            "u9+E@PuP",
+            "_G}EG",
+            "wsprintfA",
+            "FindWindowExA",
+            "GetClassNameA",
+            "GetForegroundWindow",
+            "MessageBeep",
+            "SendMessageA",
+            "user32.dll",
+            "CloseHandle",
+            "CompareStringA",
+            "CreateFileA",
+            "CreateThread",
+            "DeleteFileA",
+            "GetModuleFileNameA",
+            "GetSystemDirectoryA",
+            "GetSystemTime",
+            "GetTickCount",
+            "GetWindowsDirectoryA",
+            "LocalAlloc",
+            "LocalFree",
+            "ReadFile",
+            "SetFilePointer",
+            "Sleep",
+            "SystemTimeToFileTime",
+            "WinExec",
+            "WriteFile",
+            "lstrcatA",
+            "lstrcmpA",
+            "lstrcmpiA",
+            "lstrcpynA",
+            "lstrlenA",
+            "kernel32.dll",
+            "RegCloseKey",
+            "RegCreateKeyExA",
+            "RegDeleteKeyA",
+            "RegOpenKeyExA",
+            "RegQueryValueExA",
+            "RegSetValueExA",
+            "advapi32.dll",
+            "FindFirstUrlCacheEntryA",
+            "FindNextUrlCacheEntryA",
+            "wininet.dll",
+            "URLDownloadToFileA",
+            "urlmon.dll",
+            "wnim.dll",
+            "DllCanUnloadNow",
+            "DllGetClassObject",
+            "DllRegisterServer",
+            "DllUnregisterServer",
+            "\u0457\u047a\u07ef\u07ef\u07fa\u0693\u045a\u0163\u044d\u0408\u044c\u045c\u040b\u0419\u044f\u068c\u0408\u044c\u045c\u040b\u068c\u045a\u041e\u045b\u045c\u040b\u068c\u045a\u041e\u045b\u045c\u040b\u0419\u044f\u068c",
+            "\u07fa\u07f5\u07d9\u07d6\u042b\u0437",
+            "\u07cb\u07c9\u07de\u07d3\u07dd\u0719\u07cb\u07d2\u07d2",
+            "\u07dc\u07dc\u07c8\u07de",
+            "\u07dc\u07dc\u07c8\u07dd",
+            "\u07de\u0757\u040a\u045c\u040c\u044f\u07d2\u0758",
+            "\u07d9\u0769\u07fe\u07f7\u07cc\u048c\u07dc\u07cc\u07d9\u07de\u0439",
+            "\u07d9\u0769\u07fe\u07f7\u07cc\u048c\u07dc\u07cc\u07da\u07f2\u07f8\u07e8\u07fb\u07fc\u0439\u042f\u042b\u042b\u042b\u042b\u0439\u042b\u042b\u042b\u042b\u042b\u042b\u042b\u042b",
+            "\u07dc\u07dc\u07c8\u07de",
+            "\u07dc\u07dc\u07c8\u07dd",
+            "\u07d2\u07cc\u043d\u042b\u042b",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u0510\u07d0\u043e\u042b\u042b\u042b\u042b",
+            "\u07dc\u07dc\u07c8\u07dd",
+            "\u07dc\u07cc\u043d\u042b\u042b",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u043e\u042b\u042b\u042b\u042b",
+            "\u07dc\u07dc\u07c8\u07dd",
+            "\u07dd\u07cc\u043d\u042b\u042b",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u051b\u051c\u07db\u07dc\u043e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u051b\u0513\u07db\u07d3\u043e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u051e\u0517\u07de\u07d7\u043e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u051a\u0513\u07da\u07d3\u043e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u0516\u07d6\u043e\u042b\u042b\u042b\u042b\u042b",
+            "\u07dc\u07dc\u07c8\u07dd",
+            "\u07dc\u07dc\u07c8\u07dd",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u051c\u051b\u07dc\u07db\u043e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u051a\u0513\u07da\u07d3\u043e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u051a\u0513\u07da\u07d3\u043e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u051c\u050d\u07dc\u07cd\u043e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u0517\u0513\u07d7\u07d3\u043e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u051d\u07dd\u07d3\u043e\u042b\u042b\u042b\u042b\u042b",
+            "\u07dc\u07dc\u07c8\u07dd",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u0517\u0516\u07d7\u07d6\u043e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u0512\u07d2\u043e\u042b\u042b\u042b\u042b\u042b",
+            "\u07dc\u07dc\u07c8\u07dd",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u051c\u0510\u051c\u07dc\u07d0\u07dc\u043e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u0510\u050f\u07d0\u07cf\u043e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u051e\u07de\u043e\u042b\u042b\u042b\u042b\u042b",
+            "\u07dc\u07dc\u07c8\u07dd",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u0513\u0510\u07d3\u07d0\u043e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u051b\u0513\u07db\u07d3\u043e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u051b\u050f\u07db\u07cf\u043e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u0513\u0516\u07d3\u07d6\u043e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u07d7\u0757\u040a\u045c\u040c\u044f\u064e",
+            "\u050d\u07cd\u043e\u042b\u042b\u042b\u042b\u042b\u042b\u042b\u042b\u042b\u042b\u042b\u042b",
+            "\u042b\u042b\u042b\u042b",
+            "2222",
+            "3\"3.3I3W3`3n3w3333333333",
+            "4%4/444M4W4\\4h4n4t4",
+            "4444444444444",
+            "5%5;5G5L5d5n5w55555555Y6666",
+            "7 7%727B7Q7V7[7h7x77777777777",
+            "8P8l888888",
+            "9@9T999999*:?:M:T:d:n:s:x:::::::::::",
+            ";5;:;E;S;a;h;;;;;;;;;;;;;\t<",
+            "<'<5<<<K<P<[<i<w<~<<<<<<<<<<<",
+            "=,=;=J=k>{>>>>>>>",
+            "?$?*?0?6?<?B?H?N?T?Z?`?f?l?r?x?~???????????"
+        ],
+        "file": {
+            "\\wnim.dll": "Library",
+            "advapi32.dll": "Library",
+            "kernel32.dll": "Library",
+            "urlmon.dll": "Library",
+            "user32.dll": "Library",
+            "wininet.dll": "Library",
+            "wnim.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.709058",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsDLL"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasOverlay"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

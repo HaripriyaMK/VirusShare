@@ -1,0 +1,156 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_0a61fae61ee3ed91028d5dc3dd424bdd",
+    "filesize": 1024,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "0a61fae61ee3ed91028d5dc3dd424bdd",
+        "sha1": "f93b478fb040408a1fd6b74063d392c2e20df133",
+        "sha256": "5712535c0ba7206475c50588f0d0af3fdd3522ca2e78d6d07d9cf4c4c3559171"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor"
+        ],
+        "breakpoint": [
+            "ExitProcess",
+            "GetModuleFileNameA",
+            "GetProcAddress",
+            "LoadLibraryA"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "KERNEL32.dll": [
+                    {
+                        "function": "ExitProcess",
+                        "offset": 4198400
+                    },
+                    {
+                        "function": "FreeLibrary",
+                        "offset": 4198404
+                    },
+                    {
+                        "function": "GetProcAddress",
+                        "offset": 4198408
+                    },
+                    {
+                        "function": "LoadLibraryA",
+                        "offset": 4198412
+                    },
+                    {
+                        "function": "lstrcatA",
+                        "offset": 4198416
+                    },
+                    {
+                        "function": "lstrcpyA",
+                        "offset": 4198420
+                    },
+                    {
+                        "function": "lstrlenA",
+                        "offset": 4198424
+                    },
+                    {
+                        "function": "GetModuleFileNameA",
+                        "offset": 4198428
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 4142,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "Microsoft_Visual_Cpp_v50v60_MFC"
+            ],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "737e19f253d7c18d07b8c316d0ffb612",
+        "metadata": {},
+        "sections": {
+            "count": 1,
+            "details": [
+                {
+                    "characteristics": 3758358560,
+                    "data": "b'0\\x11\\x00\\x00>\\x11\\x00\\x00L\\x11\\x00\\x00^\\x11\\x00",
+                    "entropy": 4.610369551096344,
+                    "executable": true,
+                    "hash": {
+                        "md5": "2e9342edb69218a2868afe803559dbfe",
+                        "sha1": "1ff1e498192c1bf8e2d84a8b24f0511411eb2135",
+                        "sha256": "9cb8e7f88c6b847e6ee517d3a1bff87aeb3bb4b905ad08c9c3074230eb4086f0"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 4096,
+                    "virtual_size": 438
+                }
+            ]
+        },
+        "timestamp": "2006-06-26 09:30:27"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "IqIqIqIpIqVbIqj@IqRichIq",
+            ".text",
+            "PEvEa",
+            "PEl\u058dPEE",
+            "t&EPV",
+            "ExitProcess",
+            "FreeLibrary",
+            "GetProcAddress",
+            "LoadLibraryA",
+            "lstrcatA",
+            "lstrcpyA",
+            "lstrlenA",
+            "GetModuleFileNameA",
+            "KERNEL32.dll"
+        ],
+        "file": {
+            "KERNEL32.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.597272",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

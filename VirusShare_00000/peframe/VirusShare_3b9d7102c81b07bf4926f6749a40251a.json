@@ -1,0 +1,72 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "output": "May write to a file",
+            "write": "May write to a file"
+        },
+        "macro": "#!/bin/bash \n# Basic Terminal Sniffer\n# (C) BrainStorm - ElectronicSouls\n#\n# usage: ./$0 tty 1\n#    or: ./$0 pts/ 2\n\necho \"\"\necho \"Basic Terminal Sniffer (C) BrainStorm - ElectronicSouls\"\necho \"\"\n\necho \"Options:\"\necho \"--------\"\necho \"        -1 send output to screen.\"\necho \"        -2 log output to a file. \"\necho \"        -3 write to a term!      \"\necho \"---------------------------------\"\n\necho -n \"Choose: \";read input\nif [ \"$input\" = \"\" ];\n     then\n     echo \"bye!\"\n     exit\nfi\n \nif [ \"$input\" = \"1\" ];\n     then\n     echo \"- Sniffing on $1$2 started....\"\n     echo \"- sending output to screen.   \"\n     cat /dev/$1$2  \nfi\n\nif [ \"$input\" = \"2\" ];\n     then\n     echo \"- Sniffing on $1$2 started....\"\n     echo \"- logging data to term.log \"\n     cat /dev/$1$2 > term.log & \nfi\n\nif [ \"$input\" = \"3\" ];\n     then\n     echo \"- Enter data that should be sent to $1$2,\"\n     echo \"- Note that we just write to a term, it doesnt gets executed!\"\n     echo \"\"\n     echo -n \"- Send: \"; read data\n     echo \"writing - $data - to $1$2 !\"\n     echo $data > /dev/$1$2 \nfi   "
+    },
+    "filename": "VirusShare_3b9d7102c81b07bf4926f6749a40251a",
+    "filesize": 1069,
+    "filetype": "Bourne-Again shell script, ASCII text executable",
+    "hashes": {
+        "md5": "3b9d7102c81b07bf4926f6749a40251a",
+        "sha1": "aace69f713874954c32e70e7723ba585b8bd3f59",
+        "sha256": "342b6b2e3101a53ec1e745340e78e6782a5ce0141ba04347c60ffadf34173299"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "#!/bin/bash ",
+            "# Basic Terminal Sniffer",
+            "# (C) BrainStorm - ElectronicSouls",
+            "# usage: ./$0 tty 1",
+            "#    or: ./$0 pts/ 2",
+            "echo \"\"",
+            "echo \"Basic Terminal Sniffer (C) BrainStorm - ElectronicSouls\"",
+            "echo \"\"",
+            "echo \"Options:\"",
+            "echo \"--------\"",
+            "echo \"        -1 send output to screen.\"",
+            "echo \"        -2 log output to a file. \"",
+            "echo \"        -3 write to a term!      \"",
+            "echo \"---------------------------------\"",
+            "echo -n \"Choose: \";read input",
+            "if [ \"$input\" = \"\" ];",
+            "     then",
+            "     echo \"bye!\"",
+            "     exit",
+            "if [ \"$input\" = \"1\" ];",
+            "     then",
+            "     echo \"- Sniffing on $1$2 started....\"",
+            "     echo \"- sending output to screen.   \"",
+            "     cat /dev/$1$2  ",
+            "if [ \"$input\" = \"2\" ];",
+            "     then",
+            "     echo \"- Sniffing on $1$2 started....\"",
+            "     echo \"- logging data to term.log \"",
+            "     cat /dev/$1$2 > term.log & ",
+            "if [ \"$input\" = \"3\" ];",
+            "     then",
+            "     echo \"- Enter data that should be sent to $1$2,\"",
+            "     echo \"- Note that we just write to a term, it doesnt gets executed!\"",
+            "     echo \"\"",
+            "     echo -n \"- Send: \"; read data",
+            "     echo \"writing - $data - to $1$2 !\"",
+            "     echo $data > /dev/$1$2 ",
+            "fi   "
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.288600",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

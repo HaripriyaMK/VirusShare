@@ -1,0 +1,305 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_32781131bf600fa75e27c71c4b36cae9",
+    "filesize": 28590,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "32781131bf600fa75e27c71c4b36cae9",
+        "sha1": "1aba9bf4e37a957ae59cd430bb576f2369f76da8",
+        "sha256": "964342068f4d8e343eef1aac778b7edaf30ea022938ba6f148687fd93959ba84"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "network_dropper",
+            "win_files_operation"
+        ],
+        "breakpoint": [
+            "CloseHandle",
+            "CreateFileA",
+            "DeleteFileA",
+            "GetSystemDirectoryA",
+            "GetTickCount",
+            "GetVersionExA",
+            "InternetGetConnectedState",
+            "ReadFile",
+            "SetFilePointer",
+            "Sleep",
+            "StartServiceCtrlDispatcherA",
+            "URLDownloadToFileA",
+            "WinExec",
+            "WriteFile"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "advapi32.dll": [
+                    {
+                        "function": "SetServiceStatus",
+                        "offset": 4202496
+                    },
+                    {
+                        "function": "StartServiceCtrlDispatcherA",
+                        "offset": 4202500
+                    },
+                    {
+                        "function": "RegisterServiceCtrlHandlerA",
+                        "offset": 4202504
+                    }
+                ],
+                "kernel32.dll": [
+                    {
+                        "function": "GetSystemTime",
+                        "offset": 4202512
+                    },
+                    {
+                        "function": "GetTickCount",
+                        "offset": 4202516
+                    },
+                    {
+                        "function": "GetVersionExA",
+                        "offset": 4202520
+                    },
+                    {
+                        "function": "ReadFile",
+                        "offset": 4202524
+                    },
+                    {
+                        "function": "SetFilePointer",
+                        "offset": 4202528
+                    },
+                    {
+                        "function": "GetSystemDirectoryA",
+                        "offset": 4202532
+                    },
+                    {
+                        "function": "SystemTimeToFileTime",
+                        "offset": 4202536
+                    },
+                    {
+                        "function": "WinExec",
+                        "offset": 4202540
+                    },
+                    {
+                        "function": "WriteFile",
+                        "offset": 4202544
+                    },
+                    {
+                        "function": "lstrcatA",
+                        "offset": 4202548
+                    },
+                    {
+                        "function": "DeleteFileA",
+                        "offset": 4202552
+                    },
+                    {
+                        "function": "CreateFileA",
+                        "offset": 4202556
+                    },
+                    {
+                        "function": "Sleep",
+                        "offset": 4202560
+                    },
+                    {
+                        "function": "CloseHandle",
+                        "offset": 4202564
+                    }
+                ],
+                "urlmon.dll": [
+                    {
+                        "function": "URLDownloadToFileA",
+                        "offset": 4202572
+                    }
+                ],
+                "user32.dll": [
+                    {
+                        "function": "wsprintfA",
+                        "offset": 4202580
+                    }
+                ],
+                "wininet.dll": [
+                    {
+                        "function": "InternetGetConnectedState",
+                        "offset": 4202588
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 4138,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "Microsoft_Visual_Basic_v50"
+            ],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "ccf9a796e3716a03487ce41923a25460",
+        "metadata": {},
+        "sections": {
+            "count": 3,
+            "details": [
+                {
+                    "characteristics": 1610612768,
+                    "data": "b\"U\\x8b\\xec\\x8b}\\x08\\x8bE\\x0c\\xa3/8@\\x00\\x8a\\x074[",
+                    "entropy": 4.188171021866629,
+                    "executable": true,
+                    "hash": {
+                        "md5": "80ec929d506f58da3c082d7aa6397896",
+                        "sha1": "0379f589923fac9446f59b38dfedbb8be7dbd0a7",
+                        "sha256": "5a2788d9b0a4ec4e48e2c5b8e8953fccd2a5cbd8ebb12ca17981028dde96c2a5"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 1536,
+                    "virtual_address": 4096,
+                    "virtual_size": 1100
+                },
+                {
+                    "characteristics": 1073741888,
+                    "data": "b'T\"\\x00\\x00h\"\\x00\\x006\"\\x00\\x00\\x00\\x00\\x00\\x00\\x",
+                    "entropy": 3.5483387531838955,
+                    "executable": false,
+                    "hash": {
+                        "md5": "c7dbf8fd1a7f6b94edaa9afc0e52985a",
+                        "sha1": "788a39bb0e8279aceb60d4e3a70dfdeef5aa7e9f",
+                        "sha256": "53f5095807565e17082aa5ce833f9bc730f6cd7ad421927604bf2d07abb30970"
+                    },
+                    "section_name": ".rdata",
+                    "size_of_raw_data": 1024,
+                    "virtual_address": 8192,
+                    "virtual_size": 734
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'[\\x07[[[[[[[[[[[[[[[[[[[[[[[[[[[[[:?-\\x04:2?[[[[",
+                    "entropy": 1.8163596362011594,
+                    "executable": false,
+                    "hash": {
+                        "md5": "440fcb0501b3b722ff83aaf7c5ccad57",
+                        "sha1": "7e393994bc95d188a9607eb631307bd6eb13fedf",
+                        "sha256": "bfc3920adcff8200dc98acd461c8d91ee319e13dd310fb06f5b869b754d26edd"
+                    },
+                    "section_name": ".data",
+                    "size_of_raw_data": 1536,
+                    "virtual_address": 12288,
+                    "virtual_size": 4667
+                }
+            ]
+        },
+        "timestamp": "2005-05-22 19:35:31"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "}Rich",
+            ".text",
+            "`.rdata",
+            "@.data",
+            "=/8@",
+            "ttA@",
+            "hX0@",
+            "hr1@",
+            "dU`\u01c5",
+            "Ph4@",
+            "h/8@",
+            "h/8@",
+            "h/8@",
+            "Ph4@",
+            "t7Ej",
+            "h/8@",
+            "fMZu\t",
+            "%D @",
+            "%< @",
+            "%8 @",
+            "%$ @",
+            "%  @",
+            "%@ @",
+            "%( @",
+            "%, @",
+            "%0 @",
+            "%4 @",
+            "%T @",
+            "%\\ @",
+            "%L @",
+            "CloseHandle",
+            "CreateFileA",
+            "DeleteFileA",
+            "GetSystemDirectoryA",
+            "GetSystemTime",
+            "GetTickCount",
+            "GetVersionExA",
+            "ReadFile",
+            "SetFilePointer",
+            "Sleep",
+            "SystemTimeToFileTime",
+            "WinExec",
+            "WriteFile",
+            "lstrcatA",
+            "kernel32.dll",
+            "wsprintfA",
+            "user32.dll",
+            "RegisterServiceCtrlHandlerA",
+            "SetServiceStatus",
+            "StartServiceCtrlDispatcherA",
+            "advapi32.dll",
+            "InternetGetConnectedState",
+            "wininet.dll",
+            "URLDownloadToFileA",
+            "urlmon.dll",
+            "[[[[[[[[[[[[[[[[[[[[[[[[[[[[[:?-",
+            ":2?[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[3//+att,,,u+)484.5/>)u92!tjjmct74:?++8u>#>[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[3//+att,,,u+)484.5/>)u92!tjjmct8\"9>)?2:7u>#>[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[3//+att,,,u+)484.5/>)u92!tjjmct?7)u>#>[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[",
+            "!0(?=5(.2?=(?2.u130[~7.u>#>[64/4[[[[[[[[[[[[[[[[[[[[[[[[[[["
+        ],
+        "file": {
+            "advapi32.dll": "Library",
+            "kernel32.dll": "Library",
+            "urlmon.dll": "Library",
+            "user32.dll": "Library",
+            "wininet.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.675284",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasOverlay"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

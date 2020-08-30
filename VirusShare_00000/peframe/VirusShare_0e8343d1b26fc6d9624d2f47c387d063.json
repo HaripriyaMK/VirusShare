@@ -1,0 +1,457 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_0e8343d1b26fc6d9624d2f47c387d063",
+    "filesize": 8544,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "0e8343d1b26fc6d9624d2f47c387d063",
+        "sha1": "99c7c3828c020da446427065188d2973324a9b00",
+        "sha256": "e0a5f0fd37aba1d7ddc7d1cabb51f8958773ffdc1672632688ccfe8c37360988"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "network_dropper",
+            "win_registry"
+        ],
+        "breakpoint": [
+            "CreateDirectoryA",
+            "ExitProcess",
+            "GetCommandLineA",
+            "GetProcAddress",
+            "LoadLibraryA",
+            "RegCreateKeyExA",
+            "RegOpenKeyExA",
+            "URLDownloadToFileA"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "ADVAPI32.dll": [
+                    {
+                        "function": "RegOpenKeyExA",
+                        "offset": 4202496
+                    },
+                    {
+                        "function": "RegCreateKeyExA",
+                        "offset": 4202500
+                    },
+                    {
+                        "function": "RegSetValueExA",
+                        "offset": 4202504
+                    },
+                    {
+                        "function": "RegQueryValueExA",
+                        "offset": 4202508
+                    }
+                ],
+                "KERNEL32.dll": [
+                    {
+                        "function": "CreateDirectoryA",
+                        "offset": 4202516
+                    },
+                    {
+                        "function": "lstrcatA",
+                        "offset": 4202520
+                    },
+                    {
+                        "function": "LoadLibraryA",
+                        "offset": 4202524
+                    },
+                    {
+                        "function": "lstrcpynA",
+                        "offset": 4202528
+                    },
+                    {
+                        "function": "lstrlenA",
+                        "offset": 4202532
+                    },
+                    {
+                        "function": "GetCommandLineA",
+                        "offset": 4202536
+                    },
+                    {
+                        "function": "GetProcAddress",
+                        "offset": 4202540
+                    },
+                    {
+                        "function": "ExitProcess",
+                        "offset": 4202544
+                    },
+                    {
+                        "function": "lstrcpyA",
+                        "offset": 4202548
+                    }
+                ],
+                "urlmon.dll": [
+                    {
+                        "function": "URLDownloadToFileA",
+                        "offset": 4202556
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {
+                "block_size": 5984,
+                "details": {
+                    "common_name": "E2GIVE LLC",
+                    "country": "US",
+                    "email": "",
+                    "hash": {
+                        "md5": "cacbedcde1d9860af0468ed8c5b3f0a7",
+                        "sha1": "f126ffceecf9a38987fa36fde7c136fb93e6cfe7",
+                        "sha256": "a3b462fc6935a581951e99881ffce96718dfbf1a253baf0e163143652160aa83"
+                    },
+                    "locality": "Las Vegas",
+                    "organization": "E2GIVE LLC",
+                    "serial_number": "000000000000000000000000002087fa",
+                    "valid_from": "Oct 15 23:22:13 2004 GMT",
+                    "valid_to": "Oct 13 18:38:43 2006 GMT"
+                },
+                "virtual_address": 2560
+            },
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 4096,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "Microsoft_Visual_Cpp_v50v60_MFC"
+            ],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "c016054110193674b67fa873be5dfeb1",
+        "metadata": {},
+        "sections": {
+            "count": 2,
+            "details": [
+                {
+                    "characteristics": 1610612768,
+                    "data": "b\"U\\x8b\\xec\\x81\\xec\\x10\\x02\\x00\\x00SVW\\xff\\x15( @\\",
+                    "entropy": 4.987716911516383,
+                    "executable": true,
+                    "hash": {
+                        "md5": "6c07dcff91f49a13eea93ea295631579",
+                        "sha1": "73746a69d5ecf4bfc8f299bca7b97d37d75e41f8",
+                        "sha256": "48043ca80a36932db102b94fff9f9d4dcdebe0429ea02edcde99c6c54b637b8b"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 4096,
+                    "virtual_size": 440
+                },
+                {
+                    "characteristics": 1073741888,
+                    "data": "b'\\x8a\"\\x00\\x00d\"\\x00\\x00R\"\\x00\\x00v\"\\x00\\x00\\x00\\",
+                    "entropy": 3.6497011955814527,
+                    "executable": false,
+                    "hash": {
+                        "md5": "175c490f0e1e36db902f937cc567e5d4",
+                        "sha1": "cc29e9624beef7c48c33b0994149a46c06948022",
+                        "sha256": "f5a9c8b404e149e4834fd9d9dcc1a3cae5db125ab6fc1c172901368e3a9bf21e"
+                    },
+                    "section_name": ".rdata",
+                    "size_of_raw_data": 1024,
+                    "virtual_address": 8192,
+                    "virtual_size": 680
+                }
+            ]
+        },
+        "timestamp": "2004-10-16 07:08:27"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            ")GGG6",
+            "GFG'G",
+            "GRichG",
+            ".text",
+            "`.rdata",
+            "N>.u~]u",
+            "9~+V@PP",
+            "3Vh @",
+            "u&EPPVVh @",
+            "VEPVh?",
+            "VVVh @",
+            "@PPj",
+            "Vh @",
+            "VVPh` @",
+            "`P\u04c5t'P@PPj",
+            "VhX @",
+            "hD @",
+            "%< @",
+            "DllRegisterServer",
+            "source",
+            "http://64.7.220.98/downloads/IeBHOs.dll",
+            "\\IeBHOs.dll",
+            "installDir",
+            "SOFTWARE\\E2G",
+            "\\E2G",
+            "C:\\Program Files",
+            "ProgramFilesDir",
+            "SOFTWARE\\Microsoft\\Windows\\CurrentVersion",
+            "URLDownloadToFileA",
+            "urlmon.dll",
+            "ExitProcess",
+            "GetProcAddress",
+            "LoadLibraryA",
+            "CreateDirectoryA",
+            "lstrcatA",
+            "lstrcpyA",
+            "lstrcpynA",
+            "lstrlenA",
+            "GetCommandLineA",
+            "KERNEL32.dll",
+            "RegSetValueExA",
+            "RegCreateKeyExA",
+            "RegQueryValueExA",
+            "RegOpenKeyExA",
+            "ADVAPI32.dll",
+            "Y0W03",
+            ">0 0",
+            "~d~8",
+            "Western Cape1",
+            "\tCape Town1",
+            "Thawte Consulting cc1(0&",
+            "Certification Services Division1!0",
+            "Thawte Premium Server CA1(0&",
+            "premium-server@thawte.com0",
+            "960801000000Z",
+            "201231235959Z01",
+            "Western Cape1",
+            "\tCape Town1",
+            "Thawte Consulting cc1(0&",
+            "Certification Services Division1!0",
+            "Thawte Premium Server CA1(0&",
+            "premium-server@thawte.com00",
+            "66j[\u0681Ab8I",
+            "H5:R+j",
+            ";/V\u3bc6",
+            "M\t!Q\u061bg\u043a",
+            "s\u0513\u02d7*",
+            "/-:sFSX\u0209",
+            "_T?x`^^n7c\"w6~",
+            "BCZF",
+            "J(FB}Yn\u0577Q",
+            "\u992e?Ie>%2q",
+            "Western Cape1",
+            "\tCape Town1",
+            "Thawte Consulting cc1(0&",
+            "Certification Services Division1!0",
+            "Thawte Premium Server CA1(0&",
+            "premium-server@thawte.com0",
+            "030806000000Z",
+            "130805235959Z0U1",
+            "ZA1%0#",
+            "Thawte Consulting (Pty) Ltd.1",
+            "Thawte Code Signing CA00",
+            "ie~m,",
+            "pw&W?0!h.K5 J\u0688 !\tG\t",
+            "nTiL:A}d{cE``",
+            "n&$\u0534P`Y",
+            "9070531/http://crl.thawte.com/ThawtePremiumServerCA.crl0",
+            "PrivateLabel2-1440",
+            "-4Es4\u070ek.\\L}h\u05d9",
+            " mRve\"g",
+            "SS7F/{",
+            "El@!",
+            "]uvf0",
+            "r7MwHJ?\tU",
+            "\u07cdRFCmH",
+            "Western Cape1",
+            "Durbanville1",
+            "Thawte1",
+            "Thawte Certification1",
+            "Thawte Timestamping CA0",
+            "031204000000Z",
+            "131203235959Z0S1",
+            "VeriSign, Inc.1+0)",
+            "\"VeriSign Time Stamping Services CA0",
+            "\u06bb30X~k6",
+            "xw~o<",
+            "hl\u02bdR-H=]_",
+            "?\u01f4\u07c7_zj1.",
+            "G 1s",
+            "W-x43",
+            "!fXWou<&]",
+            "\"|>'",
+            "^|}b",
+            "\"V\u036ev",
+            "(0&0$",
+            "http://ocsp.verisign.com0",
+            ":0806420http://crl.verisign.com/ThawteTimestampingCA.crl0",
+            "TSA2048-1-530",
+            "JkXD",
+            "L\u0370Xn",
+            "8\u0253N\"b",
+            "?7!Op18",
+            "UN$\u04a9'NzaA*^\u077b+>W~",
+            "8'?J0",
+            "ZA1%0#",
+            "Thawte Consulting (Pty) Ltd.1",
+            "Thawte Code Signing CA0",
+            "041015232213Z",
+            "061013183843Z01",
+            "E2GIVE LLC1",
+            "E2GIVE LLC1'0%",
+            "Secure Application Development1",
+            "Nevada1",
+            "\tLas Vegas0",
+            "#\u035c5sCoeX\"5",
+            "pnpmA",
+            "t:lur",
+            "((el[GcRF2-+Zvp*/*:4",
+            "\u9e1f0|u\u60e35",
+            ">'6n3C8lgf2\t}\u0541",
+            "7IPMYto)Fs@0P<",
+            "www.e2give.com0>",
+            "705031/-http://crl.thawte.com/ThawteCodeSigningCA.crl02",
+            "&0$0\"",
+            "http://ocsp.thawte.com0",
+            "Z[\\\uc28b\u042f",
+            "2`igv{|\u04f9@^",
+            "*IG!#%\u0772o}\"k",
+            "\u03e4);'",
+            "V4N~/",
+            "\t^v0",
+            "VeriSign, Inc.1+0)",
+            "\"VeriSign Time Stamping Services CA0",
+            "031204000000Z",
+            "081203235959Z0W1",
+            "VeriSign, Inc.1/0-",
+            "&VeriSign Time Stamping Services Signer0",
+            "P(Hhz",
+            "Dfu]~\u0138c&=C|",
+            "%Usu'iN \\",
+            "*UV!a",
+            "3k\u07637e",
+            "\\|f5_",
+            "EvNS \\",
+            "0\"7LB",
+            "U?R,",
+            "z\uda4a\ude8d5]j",
+            "=k\u3fd6`@",
+            "DQn*",
+            "<SoK5od",
+            ",=ymz",
+            "&S@,yR)t~B9",
+            "(0&0$",
+            "http://ocsp.verisign.com0",
+            ",0*0(&$\"http://crl.verisign.com/tss-ca.crl0",
+            "TSA2048-1-540",
+            "xpNR",
+            " [y\u02420",
+            "M3b0",
+            "|EP\u0343",
+            "$.il\"",
+            "thwbstz#{)qM.u",
+            " Twci\t\u03cau\t",
+            "U&a2z",
+            "\",x5vs\\L",
+            "#4.I@",
+            "`z$\u01a5fp>",
+            "~|vqiOG05!",
+            "b<+\u064e*",
+            "\\{\u2765o<1",
+            "0\\0U1",
+            "ZA1%0#",
+            "Thawte Consulting (Pty) Ltd.1",
+            "Thawte Code Signing CA",
+            "'Q#0",
+            "http://e2give.com/license.html0",
+            "K\u0428D4",
+            "m\u0442\u0224X",
+            "%V/`A,#-!Us;d",
+            "B6?L2\u054bs8\t\u0333",
+            "cWk\u02b6fQ(@",
+            "*;\u072a'a",
+            "=oHG",
+            "=!q49xHic!\u03eb\t,m5\u0f0dU",
+            "\u0647uh\u0149e",
+            "{}LQ&9",
+            "1eRwhc",
+            "kl\u02e54p(",
+            "\u048by\u026f\u07d1\t",
+            "0g0S1",
+            "VeriSign, Inc.1+0)",
+            "\"VeriSign Time Stamping Services CA",
+            "\t^v0",
+            "041016070831Z0",
+            "!\u03cd^#L",
+            "[0AM&vgM9r$",
+            "Y{ga;Sb/",
+            "I'\u06164W\u028aQ",
+            "hG<eO.=ls&",
+            "Q@P!",
+            "3~\u06d7QS:",
+            "~P)$+&#@c'",
+            "5;\\E",
+            "Fd*s\u07413F#",
+            "\uc786t@Z~1",
+            "_jpp\u3c3a{'EB<J"
+        ],
+        "file": {
+            "ADVAPI32.dll": "Library",
+            "KERNEL32.dll": "Library",
+            "\\IeBHOs.dll": "Library",
+            "http://64.7.220.98/downloads/IeBHOs.dll": "Library",
+            "urlmon.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [
+            "64.7.220.98"
+        ],
+        "url": [
+            "http://crl.thawte.com/ThawtePremiumServerCA.crl0",
+            "http://crl.thawte.com/ThawteCodeSigningCA.crl02",
+            "http://64.7.220.98/downloads/IeBHOs.dll",
+            "http://crl.verisign.com/ThawteTimestampingCA.crl0",
+            "http://e2give.com/license.html0",
+            "http://ocsp.verisign.com0",
+            "http://crl.verisign.com/tss-ca.crl0",
+            "http://ocsp.thawte.com0"
+        ]
+    },
+    "time": "0:00:00.686848",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasOverlay"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasDigitalSignature"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

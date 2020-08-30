@@ -1,0 +1,173 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_11c3c47a52542165738e471fdfb69514",
+    "filesize": 1536,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "11c3c47a52542165738e471fdfb69514",
+        "sha1": "2d2df1533fee0a8fe5af7f3ae05eab3f4c50c077",
+        "sha256": "869d9f095b3295151d63119cce42168665d63eb86dc61e14cdd5de78ecad9916"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "network_dropper"
+        ],
+        "breakpoint": [
+            "CreateProcessA",
+            "GetTempPathA",
+            "URLDownloadToFileA"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "KERNEL32.dll": [
+                    {
+                        "function": "GetTempPathA",
+                        "offset": 4198400
+                    },
+                    {
+                        "function": "CreateProcessA",
+                        "offset": 4198404
+                    },
+                    {
+                        "function": "lstrcatA",
+                        "offset": 4198408
+                    }
+                ],
+                "MSVCRT.dll": [
+                    {
+                        "function": "memset",
+                        "offset": 4198416
+                    },
+                    {
+                        "function": "strcat",
+                        "offset": 4198420
+                    }
+                ],
+                "urlmon.dll": [
+                    {
+                        "function": "URLDownloadToFileA",
+                        "offset": 4198428
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 4212,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "Microsoft_Visual_Cpp_v50v60_MFC"
+            ],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "a14b31187da549655ca282f0e9a2cf01",
+        "metadata": {},
+        "sections": {
+            "count": 1,
+            "details": [
+                {
+                    "characteristics": 3758358560,
+                    "data": "b'\\xae\\x12\\x00\\x00\\x90\\x12\\x00\\x00\\xa2\\x12\\x00\\x00",
+                    "entropy": 4.244146999889867,
+                    "executable": true,
+                    "hash": {
+                        "md5": "47a44fb19ae25db10c16f173487376c8",
+                        "sha1": "b692e0d6ec7ab71752c50d3304c793ffab186116",
+                        "sha256": "78c8e0f0b04ad550fda493f18055790ad0cd29c2a8feb5911c2f130e471bffa3"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 1024,
+                    "virtual_address": 4096,
+                    "virtual_size": 750
+                }
+            ]
+        },
+        "timestamp": "2005-11-28 18:05:50"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "P>>>>>->?>:>",
+            ">Rich>",
+            ".text",
+            "nordbbs.com/rel/bot.exe",
+            "bot.exe",
+            "nordbbs.com/rel/msarch.exe",
+            "http://",
+            "msarch.exe",
+            "VWPh",
+            "YY3VVPPV",
+            "u<jD_WEVP",
+            "EVP}",
+            "EPEPVVVVVVPV",
+            "YYVVPPVR",
+            "u<jD_WEVP4",
+            "EVP}%",
+            "EPEPVVVVVVPV",
+            "_^[%",
+            "memset",
+            "strcat",
+            "MSVCRT.dll",
+            "CreateProcessA",
+            "lstrcatA",
+            "GetTempPathA",
+            "KERNEL32.dll",
+            "URLDownloadToFileA",
+            "urlmon.dll"
+        ],
+        "file": {
+            "KERNEL32.dll": "Library",
+            "MSVCRT.dll": "Library",
+            "bot.exe": "Executable",
+            "msarch.exe": "Executable",
+            "nordbbs.com/rel/bot.exe": "Executable",
+            "nordbbs.com/rel/msarch.exe": "Executable",
+            "urlmon.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://"
+        ]
+    },
+    "time": "0:00:00.652831",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

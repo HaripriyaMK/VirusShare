@@ -1,0 +1,154 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_38388d7284cbae228707a407d6e21a85",
+    "filesize": 2048,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "38388d7284cbae228707a407d6e21a85",
+        "sha1": "98f9dc20ded1f77c57b67e5c2f649c570dd815c0",
+        "sha256": "7af2a18b19fdd25ecdf0308431f587a9c8551e0cdb8a12ae2f9d9f998921370f"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor"
+        ],
+        "breakpoint": [
+            "ExitProcess",
+            "WinExec"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "KERNEL32.DLL": [
+                    {
+                        "function": "ExitProcess",
+                        "offset": 2147426390
+                    },
+                    {
+                        "function": "WinExec",
+                        "offset": 2147426394
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 14,
+                "VirtualAddress": 12288,
+                "count": 1,
+                "details": {
+                    "reloc_1": 3
+                }
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 1048580,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 1,
+                "SizeOfZeroFill": 320,
+                "StartAddressOfRawData": 8411725
+            }
+        },
+        "dll": false,
+        "entrypoint": 8192,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [],
+            "xor": {}
+        },
+        "imagebase": 2147418112,
+        "imphash": "77d8c013a3194dd19c0146148fd2fc34",
+        "metadata": {},
+        "sections": {
+            "count": 3,
+            "details": [
+                {
+                    "characteristics": 3758096480,
+                    "data": "b'evntstart.exe\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x0",
+                    "entropy": 0.24610374674292979,
+                    "executable": true,
+                    "hash": {
+                        "md5": "fd29b79eecc1cce72628ae466f80ee4d",
+                        "sha1": "97ecc436015a447823c25dc9e3f917fdbe0d8455",
+                        "sha256": "9480db582e684f12c012e79c0d2eda41f0e1923c121bbefeb18ee5502d81689c"
+                    },
+                    "section_name": ".flat",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 4096,
+                    "virtual_size": 14
+                },
+                {
+                    "characteristics": 1610612768,
+                    "data": "b'j\\x00h\\x00\\x10\\xff\\x7f\\xff\\x15Z \\xff\\x7fj\\x00\\xf",
+                    "entropy": 1.1018549286339625,
+                    "executable": true,
+                    "hash": {
+                        "md5": "30ab615c254899aab89e85c1074daa0d",
+                        "sha1": "5fc51d26bc192f68174d20b8df173c019bce62b4",
+                        "sha256": "1e02887082e009ad7c5b5f3ab9abded0bceaec49fb373deb33fffbb93936b5d3"
+                    },
+                    "section_name": ".main",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 8192,
+                    "virtual_size": 122
+                },
+                {
+                    "characteristics": 33554496,
+                    "data": "b'\\x00 \\x00\\x00\\x0e\\x00\\x00\\x00\\x030\\t0\\x110\\x00\\x",
+                    "entropy": 0.1537031856521067,
+                    "executable": false,
+                    "hash": {
+                        "md5": "f4186ce8bcc9a19267e7ebd3c05102c9",
+                        "sha1": "8aaf5697016673e51704d0732906f7364f2da7bc",
+                        "sha256": "6bf762c0fc4765219dce5bae70432678fae6624396e29d544b834982a7acd40c"
+                    },
+                    "section_name": ".reloc",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 12288,
+                    "virtual_size": 14
+                }
+            ]
+        },
+        "timestamp": "2009-11-22 19:15:48"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            ".flat",
+            ".main",
+            "`.reloc",
+            "evntstart.exe",
+            "KERNEL32.DLL",
+            "ExitProcess",
+            "WinExec"
+        ],
+        "file": {
+            "KERNEL32.DLL": "Library",
+            "evntstart.exe": "Executable"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.590702",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "FASM"
+        }
+    ]
+}

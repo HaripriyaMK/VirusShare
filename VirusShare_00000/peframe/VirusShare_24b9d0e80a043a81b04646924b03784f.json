@@ -1,0 +1,504 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_24b9d0e80a043a81b04646924b03784f",
+    "filesize": 6656,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "24b9d0e80a043a81b04646924b03784f",
+        "sha1": "8ede56088763e9c4fa312b7e79d40f4aad2abc7b",
+        "sha256": "2f4e48258073b4541b9dc22d3a3b327633fedfa6abfda7ac760bb417eb55323a"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "hijack_network",
+            "win_files_operation"
+        ],
+        "breakpoint": [
+            "CloseHandle",
+            "CreateFileA",
+            "CreateProcessA",
+            "CreateToolhelp32Snapshot",
+            "DeleteFileA",
+            "ExitProcess",
+            "GetCommandLineA",
+            "GetFileAttributesA",
+            "GetModuleHandleA",
+            "GetProcAddress",
+            "GetStartupInfoA",
+            "GetSystemDirectoryA",
+            "GetWindowsDirectoryA",
+            "HeapAlloc",
+            "InternetCloseHandle",
+            "InternetOpenA",
+            "InternetOpenUrlA",
+            "InternetReadFile",
+            "LoadLibraryA",
+            "OpenProcess",
+            "Process32First",
+            "Process32Next",
+            "Sleep",
+            "TerminateProcess",
+            "WaitForSingleObject",
+            "WriteFile",
+            "lstrcmpiA"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "KERNEL32.DLL": [
+                    {
+                        "function": "OpenProcess",
+                        "offset": 4198400
+                    },
+                    {
+                        "function": "GetFileAttributesA",
+                        "offset": 4198404
+                    },
+                    {
+                        "function": "GetLastError",
+                        "offset": 4198408
+                    },
+                    {
+                        "function": "GetProcessHeap",
+                        "offset": 4198412
+                    },
+                    {
+                        "function": "HeapAlloc",
+                        "offset": 4198416
+                    },
+                    {
+                        "function": "GetCommandLineA",
+                        "offset": 4198420
+                    },
+                    {
+                        "function": "GetStartupInfoA",
+                        "offset": 4198424
+                    },
+                    {
+                        "function": "GetSystemDirectoryA",
+                        "offset": 4198428
+                    },
+                    {
+                        "function": "DeleteFileA",
+                        "offset": 4198432
+                    },
+                    {
+                        "function": "GetWindowsDirectoryA",
+                        "offset": 4198436
+                    },
+                    {
+                        "function": "CloseHandle",
+                        "offset": 4198440
+                    },
+                    {
+                        "function": "WriteFile",
+                        "offset": 4198444
+                    },
+                    {
+                        "function": "CreateFileA",
+                        "offset": 4198448
+                    },
+                    {
+                        "function": "CreateProcessA",
+                        "offset": 4198452
+                    },
+                    {
+                        "function": "Process32Next",
+                        "offset": 4198456
+                    },
+                    {
+                        "function": "WaitForSingleObject",
+                        "offset": 4198460
+                    },
+                    {
+                        "function": "TerminateProcess",
+                        "offset": 4198464
+                    },
+                    {
+                        "function": "GetShortPathNameA",
+                        "offset": 4198468
+                    },
+                    {
+                        "function": "lstrcmpiA",
+                        "offset": 4198472
+                    },
+                    {
+                        "function": "Process32First",
+                        "offset": 4198476
+                    },
+                    {
+                        "function": "CreateToolhelp32Snapshot",
+                        "offset": 4198480
+                    },
+                    {
+                        "function": "Sleep",
+                        "offset": 4198484
+                    },
+                    {
+                        "function": "FreeLibrary",
+                        "offset": 4198488
+                    },
+                    {
+                        "function": "LoadLibraryA",
+                        "offset": 4198492
+                    },
+                    {
+                        "function": "GetProcAddress",
+                        "offset": 4198496
+                    },
+                    {
+                        "function": "GetModuleHandleA",
+                        "offset": 4198500
+                    },
+                    {
+                        "function": "ExitProcess",
+                        "offset": 4198504
+                    }
+                ],
+                "WININET.dll": [
+                    {
+                        "function": "InternetOpenA",
+                        "offset": 4198512
+                    },
+                    {
+                        "function": "InternetOpenUrlA",
+                        "offset": 4198516
+                    },
+                    {
+                        "function": "InternetReadFile",
+                        "offset": 4198520
+                    },
+                    {
+                        "function": "InternetCloseHandle",
+                        "offset": 4198524
+                    }
+                ],
+                "comdlg32.dll": [
+                    {
+                        "function": "GetFileTitleA",
+                        "offset": 4198532
+                    }
+                ],
+                "urlmon.dll": [
+                    {
+                        "function": "ObtainUserAgentString",
+                        "offset": 4198540
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 8529,
+        "features": {
+            "antidbg": [
+                "GetLastError",
+                "Process32First",
+                "Process32Next",
+                "TerminateProcess"
+            ],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [
+                "WaitForSingleObject"
+            ],
+            "packer": [
+                "Microsoft_Visual_Cpp_v50v60_MFC",
+                "Borland_Delphi_30_additional",
+                "Borland_Delphi_30_",
+                "Borland_Delphi_v40_v50",
+                "Borland_Delphi_v30",
+                "Borland_Delphi_DLL"
+            ],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "af6d922aff01855d8024fe64645b8f09",
+        "metadata": {},
+        "sections": {
+            "count": 1,
+            "details": [
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'\\xa2%\\x00\\x00\\xb0%\\x00\\x00\\xc4%\\x00\\x00\\xd2%\\x00",
+                    "entropy": 5.792325144144212,
+                    "executable": false,
+                    "hash": {
+                        "md5": "af8e72e4a4cab37607bb2c2f2ad9bb84",
+                        "sha1": "63dd2792aea9af18c84109ed3237a4c69c28ac0c",
+                        "sha256": "e610d1fef42f0f4d1aff4ae9e70fa15db055ab5db88408e8dd879cfbdbf3c82a"
+                    },
+                    "section_name": ".data",
+                    "size_of_raw_data": 6144,
+                    "virtual_address": 4096,
+                    "virtual_size": 6120
+                }
+            ]
+        },
+        "timestamp": "2005-01-29 10:07:24"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "UO4O4O44(\u034aN4+\u02caK4O4Q4-+\u048aK4O4E4",
+            "\u028aL4+\u028aM4RichO4",
+            ".data",
+            "\\drivers\\etc\\hosts",
+            "\\hosts",
+            "dladv650.php",
+            "dluniqadv650.php",
+            "\\test",
+            "mstasks3.txt",
+            "\\mstasks3.exe",
+            "mstasks2.txt",
+            "\\mstasks2.exe",
+            "mstasks1.txt",
+            "\\mstasks1.exe",
+            "hosts.txt",
+            "wisadwsfndos.exe",
+            "wisadsadndos.exe",
+            "intasdsaron.exe",
+            "isadsr.exe",
+            "lpsadsadt.exe",
+            "services.exe",
+            "msxmidi.exe",
+            "bitmap.tmp",
+            "file.exe",
+            "exploit.exe",
+            "fucker.exe",
+            "winmm64.exe",
+            "s-PEPE.exe",
+            "PEPEmsPE.exe",
+            "lpt.exe",
+            "ir.exe",
+            "intron.exe",
+            "intronet.exe",
+            "twink64.exe",
+            "usb.exe",
+            "teur.exe",
+            "host32.exe",
+            "sidefind.exe",
+            "alchem.exe",
+            "powerscan.exe",
+            "bdl74125.exe",
+            "Installer2.exe",
+            "ttgkirnl.exe",
+            "bargains.exe",
+            "WinClt.exe",
+            "Winad.exe",
+            "istsvc.exe",
+            "actalert.exe",
+            "optimize.exe",
+            "iinstall.exe",
+            "fnnmqi.exe",
+            "exdl.exe",
+            "printer.exe",
+            "printer32.exe",
+            "ykyrtws.exe",
+            "loadclean.exe",
+            "telnet.exe",
+            "paydial.txt",
+            "\\paydial.exe",
+            "systime.txt",
+            "\\systime.exe",
+            "dktibs.php",
+            "\\dktibs.exe",
+            "toolbar.txt",
+            "\\toolbar.exe",
+            "InternetGetConnectedState",
+            "wininet.dll",
+            "RegisterServiceProcess",
+            "kernel32.dll",
+            "VEWP8EhPj",
+            "EtEtEpE:E/E/E2E1E3E.E1E5E9E.E1E1E7E.E2E0E3E/EdEkEpErEoEgEsE/EhEtEtEpE:E/E/E2E1E3E.E1E5E9E.E1E1E7E.E2E0E3E/EdElE/\\",
+            "}3+88",
+            "Uu$}",
+            "VVV8VP",
+            "VVV8VQPE",
+            "EP8h",
+            "u*9uv%9u",
+            "t\u050dEVP8uPu",
+            "E038\u0309Et",
+            "3S+\u044bO",
+            "EWP83I8QPV",
+            "3S+\u044bO",
+            "EWP83I8QPV",
+            "8VP*",
+            "_^[UTWj",
+            "Y3}}ED",
+            "EPEP3PPPPPPu",
+            "SV5H",
+            "P\u0585tIWPP",
+            "P\u0585t%WPP",
+            "P\u0585u<u",
+            "T_^[u",
+            "SUVWh\\",
+            "PD$ \u0585t",
+            "W\u058dL$",
+            "uBSU",
+            "+P\u044bO",
+            "+P\u044bO",
+            "+P\u044bO",
+            "3+P\u044bO",
+            "uBSU",
+            "+P\u044bO",
+            "+P\u044bO",
+            "+P\u044bO",
+            "+P\u044bO",
+            "3U+\u044bO",
+            "3U+\u044bO",
+            "3+P\u044bO",
+            "3U+\u044bO",
+            "3U+\u044bO",
+            "3U+\u044bO",
+            "_^]3[",
+            "Fu>\"u",
+            "< ~e",
+            "XPVj",
+            "^Vt$",
+            "^j Xj",
+            "P$$@",
+            "Y $@",
+            "QPYY",
+            "KERNEL32.DLL",
+            "comdlg32.dll",
+            "urlmon.dll",
+            "WININET.dll",
+            "OpenProcess",
+            "GetFileAttributesA",
+            "GetLastError",
+            "GetProcessHeap",
+            "HeapAlloc",
+            "GetCommandLineA",
+            "GetStartupInfoA",
+            "GetSystemDirectoryA",
+            "DeleteFileA",
+            "GetWindowsDirectoryA",
+            "CloseHandle",
+            "WriteFile",
+            "CreateFileA",
+            "CreateProcessA",
+            "Process32Next",
+            "WaitForSingleObject",
+            "TerminateProcess",
+            "GetShortPathNameA",
+            "lstrcmpiA",
+            "Process32First",
+            "CreateToolhelp32Snapshot",
+            "Sleep",
+            "FreeLibrary",
+            "LoadLibraryA",
+            "GetProcAddress",
+            "GetModuleHandleA",
+            "ExitProcess",
+            "GetFileTitleA",
+            "ObtainUserAgentString",
+            "InternetOpenA",
+            "InternetOpenUrlA",
+            "InternetReadFile",
+            "InternetCloseHandle"
+        ],
+        "file": {
+            "Installer2.exe": "Executable",
+            "PEPEmsPE.exe": "Executable",
+            "WinClt.exe": "Executable",
+            "Winad.exe": "Executable",
+            "\\dktibs.exe": "Executable",
+            "\\mstasks1.exe": "Executable",
+            "\\mstasks2.exe": "Executable",
+            "\\mstasks3.exe": "Executable",
+            "\\paydial.exe": "Executable",
+            "\\systime.exe": "Executable",
+            "\\toolbar.exe": "Executable",
+            "actalert.exe": "Executable",
+            "alchem.exe": "Executable",
+            "bargains.exe": "Executable",
+            "bdl74125.exe": "Executable",
+            "bitmap.tmp": "Temporary",
+            "comdlg32.dll": "Library",
+            "dktibs.php": "Web Page",
+            "dladv650.php": "Web Page",
+            "dluniqadv650.php": "Web Page",
+            "exdl.exe": "Executable",
+            "exploit.exe": "Executable",
+            "file.exe": "Executable",
+            "fnnmqi.exe": "Executable",
+            "fucker.exe": "Executable",
+            "host32.exe": "Executable",
+            "hosts.txt": "Text",
+            "iinstall.exe": "Executable",
+            "intasdsaron.exe": "Executable",
+            "intron.exe": "Executable",
+            "intronet.exe": "Executable",
+            "ir.exe": "Executable",
+            "isadsr.exe": "Executable",
+            "istsvc.exe": "Executable",
+            "kernel32.dll": "Library",
+            "loadclean.exe": "Executable",
+            "lpsadsadt.exe": "Executable",
+            "lpt.exe": "Executable",
+            "mstasks1.txt": "Text",
+            "mstasks2.txt": "Text",
+            "mstasks3.txt": "Text",
+            "msxmidi.exe": "Executable",
+            "optimize.exe": "Executable",
+            "paydial.txt": "Text",
+            "powerscan.exe": "Executable",
+            "printer.exe": "Executable",
+            "printer32.exe": "Executable",
+            "s-PEPE.exe": "Executable",
+            "services.exe": "Executable",
+            "sidefind.exe": "Executable",
+            "systime.txt": "Text",
+            "telnet.exe": "Executable",
+            "teur.exe": "Executable",
+            "toolbar.txt": "Text",
+            "ttgkirnl.exe": "Executable",
+            "twink64.exe": "Executable",
+            "urlmon.dll": "Library",
+            "usb.exe": "Executable",
+            "wininet.dll": "Library",
+            "winmm64.exe": "Executable",
+            "wisadsadndos.exe": "Executable",
+            "wisadwsfndos.exe": "Executable",
+            "ykyrtws.exe": "Executable"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.618223",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}
