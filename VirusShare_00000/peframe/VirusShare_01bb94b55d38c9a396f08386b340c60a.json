@@ -1,0 +1,389 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_01bb94b55d38c9a396f08386b340c60a",
+    "filesize": 5632,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows, UPX compressed",
+    "hashes": {
+        "md5": "01bb94b55d38c9a396f08386b340c60a",
+        "sha1": "9339537712d67c7230ac132d53f0c0eb320c87bb",
+        "sha256": "938420aa48c9c596a405ed434411b714935c76e8c09b47991a565a77bb2bca17"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "network_dropper",
+            "win_registry"
+        ],
+        "breakpoint": [
+            "ExitProcess",
+            "GetProcAddress",
+            "LoadLibraryA",
+            "RegCloseKey",
+            "URLDownloadToFileA",
+            "closesocket"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "ADVAPI32.dll": [
+                    {
+                        "function": "RegCloseKey",
+                        "offset": 4219056
+                    }
+                ],
+                "KERNEL32.DLL": [
+                    {
+                        "function": "LoadLibraryA",
+                        "offset": 4219040
+                    },
+                    {
+                        "function": "GetProcAddress",
+                        "offset": 4219044
+                    },
+                    {
+                        "function": "ExitProcess",
+                        "offset": 4219048
+                    }
+                ],
+                "MSVCRT.dll": [
+                    {
+                        "function": "exit",
+                        "offset": 4219064
+                    }
+                ],
+                "RASAPI32.dll": [
+                    {
+                        "function": "RasEnumDevicesA",
+                        "offset": 4219072
+                    }
+                ],
+                "USER32.dll": [
+                    {
+                        "function": "WaitForInputIdle",
+                        "offset": 4219088
+                    }
+                ],
+                "WS2_32.dll": [
+                    {
+                        "function": "closesocket",
+                        "offset": 4219096
+                    }
+                ],
+                "urlmon.dll": [
+                    {
+                        "function": "URLDownloadToFileA",
+                        "offset": 4219080
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 23776,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "PackerUPX_CompresorGratuito_wwwupxsourceforgenet",
+                "UPX_wwwupxsourceforgenet_additional",
+                "yodas_Protector_v1033_dllocx_Ashkbiz_Danehkar_h",
+                "Netopsystems_FEAD_Optimizer_1",
+                "UPX_290_LZMA",
+                "UPX_290_LZMA_Markus_Oberhumer_Laszlo_Molnar_John_Reiser",
+                "UPX_290_LZMA_additional",
+                "UPX_wwwupxsourceforgenet"
+            ],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "78c25dac4f89d403cd33250b4179772a",
+        "metadata": {},
+        "sections": {
+            "count": 3,
+            "details": [
+                {
+                    "characteristics": 3758096512,
+                    "data": "b''",
+                    "entropy": 0.0,
+                    "executable": true,
+                    "hash": {
+                        "md5": "d41d8cd98f00b204e9800998ecf8427e",
+                        "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+                        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                    },
+                    "section_name": "UPX0",
+                    "size_of_raw_data": 0,
+                    "virtual_address": 4096,
+                    "virtual_size": 16384
+                },
+                {
+                    "characteristics": 3758096448,
+                    "data": "b'\\xbb\\xfb\\xff\\xffU\\x8b\\xec\\x81\\xec\\\\\\x04\\x00\\x00S",
+                    "entropy": 7.316706169651289,
+                    "executable": true,
+                    "hash": {
+                        "md5": "6403aed6b93f316d0206c1a99e102072",
+                        "sha1": "fb7686f4bcf559f8f7487e60e7896c20d0b09be3",
+                        "sha256": "6cc2c7e8a87e63a436529719811577a2e1617a3eb2f5f553d2400425deb621fe"
+                    },
+                    "section_name": "UPX1",
+                    "size_of_raw_data": 4096,
+                    "virtual_address": 20480,
+                    "virtual_size": 4096
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00",
+                    "entropy": 3.3153731115817786,
+                    "executable": false,
+                    "hash": {
+                        "md5": "41a036f68ccb0d51258738fba026449b",
+                        "sha1": "a11e3d5fba909f0a3e8e0c6e22a5c8d86eab38a7",
+                        "sha256": "44ee84df5eca81aeb73699e098d5e59994da9f30783ed2fa5940e61bb5098068"
+                    },
+                    "section_name": "UPX2",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 24576,
+                    "virtual_size": 4096
+                }
+            ]
+        },
+        "timestamp": "2005-04-11 11:20:50"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "F?\u0328(l\u0328(l\u0328(l$l\u0368(lO&l\u03a8(l$\"l\u01e8(l$,l\u03a8(l\u0328(l\u02a8(l\u0328)l(l;l",
+            "(l$#l\u02a8(lRich\u0328(l",
+            "UPX0",
+            "UPX1",
+            "UPX2",
+            "1.24",
+            "UPX!",
+            "WPYY",
+            "!38]",
+            "VPS:4d",
+            ";=hDPP",
+            "hSP>M7",
+            "dShO",
+            "\\P`\u03f6k",
+            "X>9\u97b3MWg0\u0537\u07f6jDE^VH",
+            "wmuP",
+            "ShS3STh",
+            "!s/8",
+            "S0PxZ;",
+            "cgyV",
+            "LH\t3#",
+            "@VK3W",
+            "j&D3",
+            "fW3t",
+            "j\"V4",
+            "vP_^[",
+            "l&$akf\t.j",
+            "ll\u6f99l",
+            "hT\u0285'(j",
+            "~4>q(t<",
+            "0V\u07c3|, ",
+            "{hMe",
+            "4PxV",
+            "hL1pou",
+            "\\1(L8,",
+            "P\u05f01k)",
+            "S6\u0776p;W}]V gB+D\u0615;_|",
+            "3E}6:",
+            " 'i\u4820a#",
+            "3dQQ\"M",
+            "whpq",
+            "no7S\u06d3t ",
+            "pQQ{",
+            "xI[d",
+            "f YY^",
+            "{bhIB",
+            "T!NS2MJu;",
+            "t&@n",
+            "iiBd",
+            "g@\tc/G6y",
+            "FB;6",
+            "B1vI<",
+            "28s~'h\uc52c\thh0",
+            " n=5A",
+            "t9j$42",
+            "YpX]S\\S`WV",
+            "u^0lx#",
+            ":POx0J",
+            "`FC=",
+            " ]39}",
+            "|$i;t",
+            "'cz;(",
+            "F2P+p",
+            "=['Ee",
+            "G\u06f9Uj",
+            "X;uNwnv4F{",
+            ";wBqXqB\u05bdMhV;tr\u015a6d%_",
+            "+-l|",
+            "dY)97n/~",
+            "FQ6;!",
+            "h'u!V{Y9V[ +@V8B",
+            " eR3",
+            "*G{P",
+            "i\\P)",
+            "4fvS",
+            "]@&mdP",
+            "sSAp+",
+            ";|\t_",
+            "8<G |X\u05cc+",
+            "Q=@EL$",
+            "@1uj",
+            "%C_7K",
+            "LmYY",
+            ":\u0591@Pl9",
+            "hlN?",
+            "582Fh\u02ec",
+            "$n0-",
+            ">\"u:F",
+            " vnMN<E",
+            "+ vj",
+            "o{37kEG\tMPQz`",
+            "4,'*",
+            "f%TXM\u04c8vF",
+            "kvM\u05ae,",
+            ":M4MLZp~\u96b3$[zo",
+            "*4MK",
+            "F\"dg6M\\Tl&#",
+            "4tL4M",
+            "/Nl+",
+            "%WJ%&\u457c##:%",
+            "SHELL32`.dll",
+            "ole\t",
+            "EXE:",
+            "StartDispatchProces%s PID:%d })\"",
+            "\"3~DF85",
+            ",agma: no-ca>e",
+            "Refer",
+            "F-Agent",
+            "Mozia/4.05 w[it] (Win95; I)",
+            "Actp$*/*?",
+            "Hos\tGET http://OFTWARE\\Micsoft\\>dows\\Curmw\u07farbVksion7avi",
+            "t&nloada",
+            "}bO.biz#Ww",
+            "X%[fo\u03e3 mr.com;4{oog&",
+            "062f1.r",
+            "ISDNMODEM",
+            "9SDvalxUNINSTA0w",
+            "\ucd43dN?",
+            "kWIwa?W\\RQ unh",
+            "GetModu>leHand",
+            "Comm",
+            "SystemTime",
+            "Heap",
+            "Free\tA",
+            "SJep]F6\u06fei",
+            "NamNC smLW`rupIa",
+            "t.*WaitForS",
+            "\\ObjectZ",
+            "Even\t^\tOp",
+            "lId1wpy",
+            "m,Tp",
+            "P.hAH",
+            "RegweKeyExA",
+            "Value",
+            "BWnait_yr",
+            "\u035dmbsst",
+            "catco",
+            "Mlfp",
+            "ch$m!~",
+            "exK_hpr3",
+            "Qt_p_ty0",
+            "\t_fm",
+            "adjuH",
+            "diZv7",
+            "|n\ud805\udddft",
+            "gs9|hmnn",
+            "}iXc\\=gB+",
+            "Toik-7imm",
+            "S?Cwtf&o\\gCxxm9",
+            "py:\u067cEH_pog[tl1s.n",
+            "?\u0345n_v",
+            "asEqnumvi",
+            "\u03c8?URLD",
+            "m}putI",
+            "@0+.text",
+            "B`.rd",
+            "@.&T0'",
+            "GIuc",
+            "\ttE_",
+            "GPGWHUP",
+            "KERNEL32.DLL",
+            "ADVAPI32.dll",
+            "MSVCRT.dll",
+            "RASAPI32.dll",
+            "urlmon.dll",
+            "USER32.dll",
+            "WS2_32.dll",
+            "LoadLibraryA",
+            "GetProcAddress",
+            "ExitProcess",
+            "RegCloseKey",
+            "exit",
+            "RasEnumDevicesA",
+            "URLDownloadToFileA",
+            "WaitForInputIdle"
+        ],
+        "file": {
+            "ADVAPI32.dll": "Library",
+            "KERNEL32.DLL": "Library",
+            "MSVCRT.dll": "Library",
+            "RASAPI32.dll": "Library",
+            "SHELL32`.dll": "Library",
+            "USER32.dll": "Library",
+            "WS2_32.dll": "Library",
+            "urlmon.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://OFTWARE\\Micsoft\\"
+        ]
+    },
+    "time": "0:00:00.599989",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        },
+        {
+            "packer.yar": "UPX290LZMAMarkusOberhumerLaszloMolnarJohnReiser"
+        },
+        {
+            "packer.yar": "upx_3"
+        }
+    ]
+}

