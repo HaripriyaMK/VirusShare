@@ -1,0 +1,183 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_34b56ab5f28bb9c8149e364c07120ba4",
+    "filesize": 2560,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "34b56ab5f28bb9c8149e364c07120ba4",
+        "sha1": "2af4897c19d47a400631ff79c0c270d378e996fd",
+        "sha256": "8360fa854d73ad07fa0b4d6b0c650825079a409c2b22d961a96f468455df9f9a"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "win_registry"
+        ],
+        "breakpoint": [
+            "ExitProcess",
+            "RegCloseKey",
+            "RegCreateKeyExA"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "ADVAPI32.dll": [
+                    {
+                        "function": "RegSetValueExA",
+                        "offset": 4202496
+                    },
+                    {
+                        "function": "RegCloseKey",
+                        "offset": 4202500
+                    },
+                    {
+                        "function": "RegCreateKeyExA",
+                        "offset": 4202504
+                    }
+                ],
+                "KERNEL32.dll": [
+                    {
+                        "function": "ExitProcess",
+                        "offset": 4202512
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 4096,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "Microsoft_Visual_Basic_v50",
+                "VMProtect_1704_phpbb3"
+            ],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "b40d1c5dc8d68980f821f4d2ce13d515",
+        "metadata": {},
+        "sections": {
+            "count": 3,
+            "details": [
+                {
+                    "characteristics": 3758096416,
+                    "data": "b'h\\xa30@\\x00\\xe8\\x08\\x00\\x00\\x00j\\x00\\xff\\x15\\x10",
+                    "entropy": 1.6840917639624082,
+                    "executable": true,
+                    "hash": {
+                        "md5": "41bf131d03689a9f165ce6deb0ac11d6",
+                        "sha1": "9df668c1d3d383b9e78329b0fd6181e12064f440",
+                        "sha256": "9c6cd677cb0ad9610b98fe957cb2a68ad1065c57afb7ceb0bc60fe9ca5f7df28"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 4096,
+                    "virtual_size": 114
+                },
+                {
+                    "characteristics": 1073741888,
+                    "data": "b'\\xb4 \\x00\\x00\\xa6 \\x00\\x00\\x94 \\x00\\x00\\x00\\x00\\",
+                    "entropy": 1.9193513974179033,
+                    "executable": false,
+                    "hash": {
+                        "md5": "bfed1d6517bb4ca0be2b0275eab1e833",
+                        "sha1": "0336de029a835849c5a80d7765bb770965d43cba",
+                        "sha256": "744d757b7ca958b04486348234ec347d4097878aa6e0cffff1a8c67bd8b84f67"
+                    },
+                    "section_name": ".rdata",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 8192,
+                    "virtual_size": 212
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'SYSTEM\\\\RAdmin\\\\v2.0\\\\Server\\\\Parameters\\x00NTAu",
+                    "entropy": 2.839375250335789,
+                    "executable": false,
+                    "hash": {
+                        "md5": "65a78c84ddb0ad8806a58a53ca70fa93",
+                        "sha1": "f807c1d5bbaab516b9c52b432eb645444cd75568",
+                        "sha256": "8c9d9406960bd6a5c5962f99b28341e2d69572a3b8c88e518ebfa1178ca06bb2"
+                    },
+                    "section_name": ".data",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 12288,
+                    "virtual_size": 11392
+                }
+            ]
+        },
+        "timestamp": "2003-12-13 19:19:42"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "vsVa",
+            "vsRich",
+            ".text",
+            ".rdata",
+            "@.data",
+            "UWVS3EPEPWh?",
+            "WWWh",
+            "USER32.dll",
+            "ExitProcess",
+            "KERNEL32.dll",
+            "RegCreateKeyExA",
+            "RegCloseKey",
+            "RegSetValueExA",
+            "ADVAPI32.dll",
+            "SYSTEM\\RAdmin\\v2.0\\Server\\Parameters",
+            "NTAuthEnabled",
+            "Parameter",
+            "EnableLogFile",
+            "FilterIp",
+            "DisableTrayIcon",
+            "AskUser",
+            "EnableEventLog"
+        ],
+        "file": {
+            "ADVAPI32.dll": "Library",
+            "KERNEL32.dll": "Library",
+            "USER32.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.614054",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

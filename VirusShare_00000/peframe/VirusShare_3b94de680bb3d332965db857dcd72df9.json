@@ -1,0 +1,536 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_3b94de680bb3d332965db857dcd72df9",
+    "filesize": 8192,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "3b94de680bb3d332965db857dcd72df9",
+        "sha1": "6f4cf2439a466ecfcb0ff0896c1d244ff4ff3ffa",
+        "sha256": "d644b39ecbeaae98fbbe3a87284955267637a1ea9213edd8e9dd682244185863"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "network_dropper",
+            "win_registry",
+            "win_files_operation"
+        ],
+        "breakpoint": [
+            "CreateProcessA",
+            "DeleteFileA",
+            "FindFirstFileA",
+            "GetCurrentProcess",
+            "GetModuleFileNameA",
+            "GetSystemDirectoryA",
+            "GetWindowsDirectoryA",
+            "HeapAlloc",
+            "InternetGetConnectedState",
+            "RegCloseKey",
+            "RegCreateKeyExA",
+            "RegDeleteValueA",
+            "RegOpenKeyExA",
+            "ShellExecuteExA",
+            "Sleep",
+            "URLDownloadToCacheFileA",
+            "URLDownloadToFileA",
+            "WaitForSingleObject"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "ADVAPI32.dll": [
+                    {
+                        "function": "RegDeleteValueA",
+                        "offset": 4202496
+                    },
+                    {
+                        "function": "RegCreateKeyExA",
+                        "offset": 4202500
+                    },
+                    {
+                        "function": "RegSetValueExA",
+                        "offset": 4202504
+                    },
+                    {
+                        "function": "RegQueryValueExA",
+                        "offset": 4202508
+                    },
+                    {
+                        "function": "RegEnumValueA",
+                        "offset": 4202512
+                    },
+                    {
+                        "function": "RegOpenKeyExA",
+                        "offset": 4202516
+                    },
+                    {
+                        "function": "RegCloseKey",
+                        "offset": 4202520
+                    }
+                ],
+                "KERNEL32.dll": [
+                    {
+                        "function": "HeapAlloc",
+                        "offset": 4202528
+                    },
+                    {
+                        "function": "GetProcessHeap",
+                        "offset": 4202532
+                    },
+                    {
+                        "function": "FindClose",
+                        "offset": 4202536
+                    },
+                    {
+                        "function": "FindFirstFileA",
+                        "offset": 4202540
+                    },
+                    {
+                        "function": "DeleteFileA",
+                        "offset": 4202544
+                    },
+                    {
+                        "function": "GetWindowsDirectoryA",
+                        "offset": 4202548
+                    },
+                    {
+                        "function": "WaitForSingleObject",
+                        "offset": 4202552
+                    },
+                    {
+                        "function": "GetSystemDirectoryA",
+                        "offset": 4202556
+                    },
+                    {
+                        "function": "CreateProcessA",
+                        "offset": 4202560
+                    },
+                    {
+                        "function": "SetProcessPriorityBoost",
+                        "offset": 4202564
+                    },
+                    {
+                        "function": "SetThreadPriority",
+                        "offset": 4202568
+                    },
+                    {
+                        "function": "GetCurrentThread",
+                        "offset": 4202572
+                    },
+                    {
+                        "function": "SetPriorityClass",
+                        "offset": 4202576
+                    },
+                    {
+                        "function": "GetCurrentProcess",
+                        "offset": 4202580
+                    },
+                    {
+                        "function": "MoveFileA",
+                        "offset": 4202584
+                    },
+                    {
+                        "function": "GetEnvironmentVariableA",
+                        "offset": 4202588
+                    },
+                    {
+                        "function": "GetShortPathNameA",
+                        "offset": 4202592
+                    },
+                    {
+                        "function": "GetModuleFileNameA",
+                        "offset": 4202596
+                    },
+                    {
+                        "function": "Sleep",
+                        "offset": 4202600
+                    },
+                    {
+                        "function": "GetExitCodeProcess",
+                        "offset": 4202604
+                    }
+                ],
+                "SHELL32.dll": [
+                    {
+                        "function": "ShellExecuteExA",
+                        "offset": 4202612
+                    },
+                    {
+                        "function": "SHChangeNotify",
+                        "offset": 4202616
+                    },
+                    {
+                        "function": "SHGetSpecialFolderPathA",
+                        "offset": 4202620
+                    }
+                ],
+                "WININET.dll": [
+                    {
+                        "function": "InternetGetConnectedState",
+                        "offset": 4202628
+                    }
+                ],
+                "urlmon.dll": [
+                    {
+                        "function": "URLDownloadToFileA",
+                        "offset": 4202636
+                    },
+                    {
+                        "function": "URLDownloadToCacheFileA",
+                        "offset": 4202640
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 5441,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [
+                "WaitForSingleObject"
+            ],
+            "packer": [
+                "Safeguard_103_Simonzh"
+            ],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "4048ea3cd0cf08d4351bf523fd541bf1",
+        "metadata": {},
+        "sections": {
+            "count": 3,
+            "details": [
+                {
+                    "characteristics": 1610612768,
+                    "data": "b'U\\x8b\\xecV\\x8bu\\x08j\\x04h\\xac @\\x00V\\xe8%\\x01\\x0",
+                    "entropy": 5.72656956984139,
+                    "executable": true,
+                    "hash": {
+                        "md5": "a6a4f3b1105c0e09a3e1f5e85d3e7779",
+                        "sha1": "16332c53d83304e8c44fdd99c221acca5eba087e",
+                        "sha256": "01af932339d5fd40ab155f9a466bce5e40cf8b154dd68054b6c0a0b4b40d6ad6"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 3584,
+                    "virtual_address": 4096,
+                    "virtual_size": 3152
+                },
+                {
+                    "characteristics": 1073741888,
+                    "data": "b'p*\\x00\\x00^*\\x00\\x00L*\\x00\\x008*\\x00\\x00\\x82*\\x0",
+                    "entropy": 5.114302704687606,
+                    "executable": false,
+                    "hash": {
+                        "md5": "eab1de7592227bed33107a4f9a2fd226",
+                        "sha1": "308e8c53053e21a2be3caf7cbe8bc89f38837dba",
+                        "sha256": "5294fea503200307403293973e0abfd6b86f665b0207785621f6133dbd91d1b3"
+                    },
+                    "section_name": ".rdata",
+                    "size_of_raw_data": 3072,
+                    "virtual_address": 8192,
+                    "virtual_size": 2794
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'0\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x0",
+                    "entropy": 0.020393135236084953,
+                    "executable": false,
+                    "hash": {
+                        "md5": "1c03ec52d810eaf54e9d38c36128687a",
+                        "sha1": "6e08109eb78777cefdc7837b2f7f729373d47bbc",
+                        "sha256": "f0dec4a5aeb25e92ad51cf8c1d59c8c55274007e3e829f72a149bfc2b34ed6db"
+                    },
+                    "section_name": ".data",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 12288,
+                    "virtual_size": 1036
+                }
+            ]
+        },
+        "timestamp": "2004-11-18 08:13:09"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "\u7127Rich",
+            ".text",
+            "`.rdata",
+            "@.data",
+            "^Vt$",
+            "VYY^",
+            "IF;r^",
+            "AFG;}",
+            "3_^]",
+            "t&D$",
+            "S\u060aW|$",
+            "3PPh",
+            ">$t/h",
+            "PVPw",
+            "FVPOYYPP",
+            "3PPQu",
+            "#Y3UH",
+            "tUVP",
+            "PPPh @",
+            "PWP \"h @",
+            "PXGWPe",
+            "PCEYEY3EPE<",
+            "}E\u0334 @",
+            "}\u0609}E@",
+            "tu9}",
+            "t.uj",
+            "9}t\t}",
+            "Y3A9}",
+            "PYYuPY",
+            "3@^_j",
+            ">$t/h",
+            "FVPYYE\u040bE",
+            "WE3EPE<",
+            "}E\u0334 @",
+            "}\u0609}E@",
+            "t=9}",
+            "t3@_^Uj",
+            "SVEP?",
+            "V3Sh!@",
+            "u(EPEPSVSSSu",
+            "_WEPWSh|!@",
+            "EPh?",
+            "Sh8!@",
+            "EPEPSSh,!@",
+            "t\tEG",
+            "eWEPWSh,!@",
+            "uWEPWSh$!@",
+            "u]WEPWSh",
+            "EPh?",
+            "Sh @",
+            "u6WEPWSh @",
+            "u]WEPWSh$!@",
+            "uWEPWSh",
+            "u3@_^[UT",
+            "VW3f\u01c5\"",
+            "3Vfj&PV",
+            "PMjD_WEVP\"",
+            "EPEPVVVVVVPV}E",
+            "3@h!@",
+            "YSVWh&@",
+            "$d&@",
+            "$4&@",
+            "VSSh%@",
+            "hd%@",
+            "h4%@",
+            "SShl$@",
+            "h`$@",
+            "h8$@",
+            "GVSSh#@",
+            "hx#@",
+            "GSShH#@",
+            "h<#@",
+            "GSSh\"@",
+            "hT\"@",
+            "G_^[",
+            "V3W\u04cb-  @",
+            "PVWD$",
+            "PVWD$",
+            "PVt$",
+            "V3VPt$",
+            "Sh&@",
+            "WSWh&@",
+            "WD$,",
+            "t$$D$( @",
+            "D$,|$0t$4t$8D$ @",
+            "\u04cb=P @",
+            "P\u05cb-L @",
+            "\u054b5H @",
+            "P\u058dD$",
+            "t)j@t$Tj",
+            "j Pj",
+            "P3_^][DUQV5 @",
+            "P\u0585t^",
+            "SVW=",
+            "EP3\u06cdPSSEPP]",
+            "MEEPPSSEPPuu",
+            "_^[U",
+            "YEP?",
+            "PuYYEPSj",
+            "\u0585_^[u",
+            "PuvYY% @",
+            "HKLM",
+            "HKCU",
+            "HKCR",
+            "Open",
+            "\\regsvr32.exe",
+            "1001",
+            "Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\\Zones\\3",
+            "1201",
+            "1004",
+            "Flags",
+            "Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\\Zones\\2",
+            "http",
+            "Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\\ZoneMap\\Domains",
+            "\\Internet Explorer\\iexplore.exe\" ",
+            "HKEY_CURRENT_USER\\Software\\Symantec",
+            "HKEY_CURRENT_USER\\Software\\Agnitum\\Outpost Firewall Pro",
+            "http://195.225.177.14/start.php?sid=98&prid=20",
+            "http://195.225.176.3/tool/129.avi",
+            "fdrest.exe",
+            "http://195.225.177.14/load.php?sid=98&prid=20",
+            "http://195.225.177.14/start.php?sid=98&prid=19",
+            "http://195.225.177.14/tool/tool2.tmp",
+            "nodes.exe",
+            "http://195.225.177.14/load.php?sid=98&prid=19",
+            "http://195.225.177.14/start.php?sid=98&prid=16",
+            "http://195.225.176.3/slp2/exe.bin",
+            "cople.exe",
+            "http://195.225.177.14/load.php?sid=98&prid=16",
+            "http://195.225.177.14/start.php?sid=98&prid=17",
+            "http://195.225.177.14/tool/icq_ro.tmp",
+            "wutop.exe",
+            "http://195.225.177.14/load.php?sid=98&prid=17",
+            "http://195.225.176.3/rs_test/setupsr.dll",
+            "ssysprs.dll",
+            "http://195.225.177.14/load.php?sid=98&prid=31",
+            "http://195.225.177.14/start.php?sid=98&prid=31",
+            "http://195.225.177.14/start.php?sid=98&prid=30",
+            "http://195.225.176.3/rs_test/setupsre.exe",
+            "vcpdll.exe",
+            "http://195.225.177.14/load.php?sid=98&prid=30",
+            "install",
+            "http://195.225.177.14/tool/m6.bin",
+            "mindep.dll",
+            "http://195.225.177.14/load.php?sid=98&prid=18",
+            "http://195.225.177.14/start.php?sid=98&prid=18",
+            "http://195.225.177.14/005tl/enterf2.html",
+            "frame.crazywinnings.com",
+            "http://195.225.177.14/redirect.php?sid=98",
+            " > nul",
+            "/c del ",
+            "COMSPEC",
+            "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+            "URLDownloadToCacheFileA",
+            "URLDownloadToFileA",
+            "urlmon.dll",
+            "InternetGetConnectedState",
+            "WININET.dll",
+            "HeapAlloc",
+            "GetProcessHeap",
+            "FindClose",
+            "FindFirstFileA",
+            "DeleteFileA",
+            "GetWindowsDirectoryA",
+            "GetExitCodeProcess",
+            "WaitForSingleObject",
+            "GetSystemDirectoryA",
+            "CreateProcessA",
+            "SetProcessPriorityBoost",
+            "SetThreadPriority",
+            "GetCurrentThread",
+            "SetPriorityClass",
+            "GetCurrentProcess",
+            "MoveFileA",
+            "GetEnvironmentVariableA",
+            "GetShortPathNameA",
+            "GetModuleFileNameA",
+            "Sleep",
+            "KERNEL32.dll",
+            "RegCloseKey",
+            "RegOpenKeyExA",
+            "RegQueryValueExA",
+            "RegSetValueExA",
+            "RegCreateKeyExA",
+            "RegDeleteValueA",
+            "RegEnumValueA",
+            "ADVAPI32.dll",
+            "SHGetSpecialFolderPathA",
+            "ShellExecuteExA",
+            "SHChangeNotify",
+            "SHELL32.dll"
+        ],
+        "file": {
+            "ADVAPI32.dll": "Library",
+            "KERNEL32.dll": "Library",
+            "SHELL32.dll": "Library",
+            "WININET.dll": "Library",
+            "\\regsvr32.exe": "Executable",
+            "cople.exe": "Executable",
+            "fdrest.exe": "Executable",
+            "http://195.225.176.3/rs_test/setupsr.dll": "Library",
+            "http://195.225.176.3/rs_test/setupsre.exe": "Executable",
+            "http://195.225.176.3/slp2/exe.bin": "Binary",
+            "http://195.225.176.3/tool/129.avi": "Video",
+            "http://195.225.177.14/tool/icq_ro.tmp": "Temporary",
+            "http://195.225.177.14/tool/m6.bin": "Binary",
+            "http://195.225.177.14/tool/tool2.tmp": "Temporary",
+            "mindep.dll": "Library",
+            "nodes.exe": "Executable",
+            "ssysprs.dll": "Library",
+            "urlmon.dll": "Library",
+            "vcpdll.exe": "Executable",
+            "wutop.exe": "Executable"
+        },
+        "fuzzing": {},
+        "ip": [
+            "195.225.176.3",
+            "195.225.177.14"
+        ],
+        "url": [
+            "http://195.225.176.3/slp2/exe.bin",
+            "http://195.225.177.14/start.php?sid=98&prid=31",
+            "http://195.225.177.14/load.php?sid=98&prid=18",
+            "http://195.225.177.14/start.php?sid=98&prid=18",
+            "http://195.225.177.14/tool/tool2.tmp",
+            "http://195.225.177.14/005tl/enterf2.html",
+            "http://195.225.176.3/rs_test/setupsr.dll",
+            "http://195.225.177.14/load.php?sid=98&prid=20",
+            "http://195.225.176.3/tool/129.avi",
+            "http://195.225.177.14/start.php?sid=98&prid=30",
+            "http://195.225.177.14/tool/m6.bin",
+            "http://195.225.177.14/start.php?sid=98&prid=19",
+            "http://195.225.177.14/start.php?sid=98&prid=17",
+            "http://195.225.176.3/rs_test/setupsre.exe",
+            "http://195.225.177.14/load.php?sid=98&prid=31",
+            "http://195.225.177.14/load.php?sid=98&prid=19",
+            "http://195.225.177.14/redirect.php?sid=98",
+            "http://195.225.177.14/load.php?sid=98&prid=16",
+            "http://195.225.177.14/start.php?sid=98&prid=20",
+            "http://195.225.177.14/load.php?sid=98&prid=30",
+            "http://195.225.177.14/load.php?sid=98&prid=17",
+            "http://195.225.177.14/tool/icq_ro.tmp",
+            "http://195.225.177.14/start.php?sid=98&prid=16"
+        ]
+    },
+    "time": "0:00:00.612344",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

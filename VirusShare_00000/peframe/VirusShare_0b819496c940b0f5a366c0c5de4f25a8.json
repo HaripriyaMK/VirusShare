@@ -1,0 +1,337 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_0b819496c940b0f5a366c0c5de4f25a8",
+    "filesize": 14336,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows, UPX compressed",
+    "hashes": {
+        "md5": "0b819496c940b0f5a366c0c5de4f25a8",
+        "sha1": "01b4a72654c7d2c27f7426ce3dc69ebc4631c9e1",
+        "sha256": "aa61d86d2736ca5301da3a8f517cb63f4f45873727e335d67c63a97f89f00b65"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "network_dropper",
+            "win_registry"
+        ],
+        "breakpoint": [
+            "GetModuleHandleA",
+            "GetStartupInfoA",
+            "GetSystemDirectoryA",
+            "RegCloseKey",
+            "RegOpenKeyExA",
+            "ShellExecuteA",
+            "URLDownloadToFileA"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "ADVAPI32.dll": [
+                    {
+                        "function": "RegOpenKeyExA",
+                        "offset": 4202496
+                    },
+                    {
+                        "function": "RegSetValueExA",
+                        "offset": 4202500
+                    },
+                    {
+                        "function": "RegCloseKey",
+                        "offset": 4202504
+                    },
+                    {
+                        "function": "RegQueryValueExA",
+                        "offset": 4202508
+                    }
+                ],
+                "KERNEL32.DLL": [
+                    {
+                        "function": "GetStartupInfoA",
+                        "offset": 4202516
+                    },
+                    {
+                        "function": "GetModuleHandleA",
+                        "offset": 4202520
+                    },
+                    {
+                        "function": "GetSystemDirectoryA",
+                        "offset": 4202524
+                    }
+                ],
+                "MSVCRT.dll": [
+                    {
+                        "function": "_acmdln",
+                        "offset": 4202532
+                    },
+                    {
+                        "function": "__getmainargs",
+                        "offset": 4202536
+                    },
+                    {
+                        "function": "_initterm",
+                        "offset": 4202540
+                    },
+                    {
+                        "function": "__setusermatherr",
+                        "offset": 4202544
+                    },
+                    {
+                        "function": "exit",
+                        "offset": 4202548
+                    },
+                    {
+                        "function": "_exit",
+                        "offset": 4202552
+                    },
+                    {
+                        "function": "_XcptFilter",
+                        "offset": 4202556
+                    },
+                    {
+                        "function": "__p__fmode",
+                        "offset": 4202560
+                    },
+                    {
+                        "function": "time",
+                        "offset": 4202564
+                    },
+                    {
+                        "function": "_except_handler3",
+                        "offset": 4202568
+                    },
+                    {
+                        "function": "_controlfp",
+                        "offset": 4202572
+                    },
+                    {
+                        "function": "rand",
+                        "offset": 4202576
+                    },
+                    {
+                        "function": "srand",
+                        "offset": 4202580
+                    },
+                    {
+                        "function": "calloc",
+                        "offset": 4202584
+                    },
+                    {
+                        "function": "free",
+                        "offset": 4202588
+                    },
+                    {
+                        "function": "__p__commode",
+                        "offset": 4202592
+                    },
+                    {
+                        "function": "_adjust_fdiv",
+                        "offset": 4202596
+                    },
+                    {
+                        "function": "__set_app_type",
+                        "offset": 4202600
+                    }
+                ],
+                "SHELL32.dll": [
+                    {
+                        "function": "ShellExecuteA",
+                        "offset": 4202608
+                    }
+                ],
+                "urlmon.dll": [
+                    {
+                        "function": "URLDownloadToFileA",
+                        "offset": 4202616
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 5478,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "Microsoft_Visual_Cpp_v60",
+                "Microsoft_Visual_Cpp_v50v60_MFC_additional",
+                "Microsoft_Visual_Cpp_50",
+                "Microsoft_Visual_Cpp_v50v60_MFC",
+                "Microsoft_Visual_Cpp"
+            ],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "515f49c6018facfe9fd6aa381ee22417",
+        "metadata": {},
+        "sections": {
+            "count": 2,
+            "details": [
+                {
+                    "characteristics": 3758096448,
+                    "data": "b'\\x81\\xec\\x08\\x02\\x00\\x00SUVj\\x00\\xff\\x15D @\\x00P",
+                    "entropy": 1.517434389210728,
+                    "executable": true,
+                    "hash": {
+                        "md5": "228ae2c7e78627bb0d3c8ca29066ef84",
+                        "sha1": "d741cf76ddabf1731eca266ae494a7545dd03ce3",
+                        "sha256": "208e03bfd114231f3158640efa8e5ebdd7aaff1db332e38ff39f461f68ec5b5b"
+                    },
+                    "section_name": "UPX0",
+                    "size_of_raw_data": 12288,
+                    "virtual_address": 4096,
+                    "virtual_size": 12288
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'\\xb4@\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00x@\\",
+                    "entropy": 3.273612131865317,
+                    "executable": false,
+                    "hash": {
+                        "md5": "586d94bbdb757081c6dbbf5f0ff3ed08",
+                        "sha1": "5b7057563ead4196cc4e0e2a45c20ff728b6e34f",
+                        "sha256": "e1224e6571fccf8cddcf6f5ad6e48abbb14704a4643a1fc705d90f3b4a28cfc6"
+                    },
+                    "section_name": ".avp",
+                    "size_of_raw_data": 1024,
+                    "virtual_address": 16384,
+                    "virtual_size": 4096
+                }
+            ]
+        },
+        "timestamp": "2003-11-12 16:53:00"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "<_]_]_]=BY]0BT]A^]0B]]_]C]&|]]_][]Y~]]Rich_]",
+            "UPX0",
+            ".avp",
+            "SUVj",
+            "PhP0@",
+            "tNL0@",
+            "3+T$",
+            "u:L$",
+            "hL0@",
+            "hP0@",
+            "D$ Ph",
+            "^]3[",
+            "VW|$",
+            "U-P @",
+            "F;r]3I_^",
+            "VW1@",
+            "_^]2[",
+            "hT0@",
+            "_^]2[",
+            "VT$(",
+            "_^]2[",
+            "^tLD$",
+            "u,WIQL$",
+            "tiD$",
+            "UQD$,",
+            "_^]3[",
+            "3+D$",
+            "%x @",
+            "Ujh @",
+            "hSVWe3\u06c9]j",
+            "EEP51@",
+            "EPEPEP",
+            "$$ @",
+            "0u>\"u:Fu",
+            "<\"u>\"u",
+            "< v]\u040dEP",
+            "> vFuj",
+            "XPVSS",
+            "PfEP",
+            "\tMPQ",
+            "%< @",
+            "%, @",
+            "YY3%H @",
+            "%L @",
+            "http://www.flingstone.com/gp/casprog2.exe",
+            ".exe",
+            "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+            "SOFTWARE\\Microsoft\\Windows\\CurrentVersion",
+            "KERNEL32.DLL",
+            "ADVAPI32.dll",
+            "MSVCRT.dll",
+            "SHELL32.dll",
+            "urlmon.dll",
+            "GetStartupInfoA",
+            "GetModuleHandleA",
+            "GetSystemDirectoryA",
+            "RegOpenKeyExA",
+            "RegSetValueExA",
+            "RegCloseKey",
+            "RegQueryValueExA",
+            "_acmdln",
+            "__getmainargs",
+            "_initterm",
+            "__setusermatherr",
+            "exit",
+            "_exit",
+            "_XcptFilter",
+            "__p__fmode",
+            "time",
+            "_except_handler3",
+            "_controlfp",
+            "rand",
+            "srand",
+            "calloc",
+            "free",
+            "__p__commode",
+            "_adjust_fdiv",
+            "__set_app_type",
+            "ShellExecuteA",
+            "URLDownloadToFileA"
+        ],
+        "file": {
+            "ADVAPI32.dll": "Library",
+            "KERNEL32.DLL": "Library",
+            "MSVCRT.dll": "Library",
+            "SHELL32.dll": "Library",
+            "http://www.flingstone.com/gp/casprog2.exe": "Executable",
+            "urlmon.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.flingstone.com/gp/casprog2.exe"
+        ]
+    },
+    "time": "0:00:00.642600",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

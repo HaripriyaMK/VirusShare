@@ -1,0 +1,66 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {},
+        "macro": "#!/bin/sh\n\n# A very simple mass emailer (spoofer) with attachment support. You must supply\n# your own email lists, as well as smtp server w/ relaying\n# Coded 02/02/02 by Merlion .::Parenthesis / Are You Fearless::. \n#  http://fraggle.ath.cx | http://www.areyoufearless.com\n\n\nrelayserv=\"$1\"\nif [ $1 = \"\" ]; then\necho \"Usage is: filename <relay IP>\"\nexit 1\nfi\n\n# Replace the following address with your email\nLOGNAME=email@webpage.com\n\n# Replace the following with a path to a textfile containing\n# the text you wish to send in the message body\nTXTFILE=/home/loww/textfile\n\n# Replace the following with a path to the file to attach\t\t\nATTFILE=/home/loww/Red2.jpg.pif\t\n\n# Replace the following with the subject of the message\nSUBJECT=\"New webpage!\"\n\n# Replace the following with the path to a text file containing\n# the list of email adresses (newline seperated)\nEMAILLIST=/home/loww/email.txt\n\t\t\nfor addy in `cat $EMAILLIST`; do\nMAILTO=$addy\necho \"From: $LOGNAME\\nTo: $MAILTO\\nSubject: $SUBJECT\\n\\\nMime-Version: 1.0\\nContent-Type: text/plain\\n\" > /tmp/file\ncat $TXTFILE >> /tmp/file\nsendmail -t -oi < /tmp/file\ndone\nrm -f /tmp/file\nexit 0"
+    },
+    "filename": "VirusShare_15ce605efc39e610c4af7c4704e884c1",
+    "filesize": 1136,
+    "filetype": "POSIX shell script, ASCII text executable",
+    "hashes": {
+        "md5": "15ce605efc39e610c4af7c4704e884c1",
+        "sha1": "5d0a96fced2fe395ac5d347868560a5379abbe9d",
+        "sha256": "30c76346af6c4a4e81f8f59e57d1c6593d4bfd7504ad0f3db29685b6cffe58f5"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "#!/bin/sh",
+            "# A very simple mass emailer (spoofer) with attachment support. You must supply",
+            "# your own email lists, as well as smtp server w/ relaying",
+            "# Coded 02/02/02 by Merlion .::Parenthesis / Are You Fearless::. ",
+            "#  http://fraggle.ath.cx | http://www.areyoufearless.com",
+            "relayserv=\"$1\"",
+            "if [ $1 = \"\" ]; then",
+            "echo \"Usage is: filename <relay IP>\"",
+            "exit 1",
+            "# Replace the following address with your email",
+            "LOGNAME=email@webpage.com",
+            "# Replace the following with a path to a textfile containing",
+            "# the text you wish to send in the message body",
+            "TXTFILE=/home/loww/textfile",
+            "# Replace the following with a path to the file to attach\t\t",
+            "ATTFILE=/home/loww/Red2.jpg.pif\t",
+            "# Replace the following with the subject of the message",
+            "SUBJECT=\"New webpage!\"",
+            "# Replace the following with the path to a text file containing",
+            "# the list of email adresses (newline seperated)",
+            "EMAILLIST=/home/loww/email.txt",
+            "for addy in `cat $EMAILLIST`; do",
+            "MAILTO=$addy",
+            "echo \"From: $LOGNAME\\nTo: $MAILTO\\nSubject: $SUBJECT\\n\\",
+            "Mime-Version: 1.0\\nContent-Type: text/plain\\n\" > /tmp/file",
+            "cat $TXTFILE >> /tmp/file",
+            "sendmail -t -oi < /tmp/file",
+            "done",
+            "rm -f /tmp/file",
+            "exit 0"
+        ],
+        "file": {
+            "EMAILLIST=/home/loww/email.txt": "Text"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.areyoufearless.com",
+            "http://fraggle.ath.cx"
+        ]
+    },
+    "time": "0:00:00.260686",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

