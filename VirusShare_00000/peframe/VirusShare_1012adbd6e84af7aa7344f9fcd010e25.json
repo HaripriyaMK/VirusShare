@@ -1,0 +1,290 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_1012adbd6e84af7aa7344f9fcd010e25",
+    "filesize": 3584,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "1012adbd6e84af7aa7344f9fcd010e25",
+        "sha1": "3f8cd30cbc7c92a95491f78d3d61a83cf829b5d1",
+        "sha256": "81466a123512e51eec99aae49faa0f3c58b4f4b4173b70881ac931ca212d31f9"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "network_smtp_raw",
+            "win_registry"
+        ],
+        "breakpoint": [
+            "ExitProcess",
+            "RegCloseKey",
+            "RegCreateKeyA",
+            "Sleep",
+            "WSAStartup",
+            "closesocket",
+            "connect",
+            "recv",
+            "send",
+            "socket"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "ADVAPI32.dll": [
+                    {
+                        "function": "RegCreateKeyA",
+                        "offset": 4202496
+                    },
+                    {
+                        "function": "RegQueryValueExA",
+                        "offset": 4202500
+                    },
+                    {
+                        "function": "RegSetValueExA",
+                        "offset": 4202504
+                    },
+                    {
+                        "function": "RegCloseKey",
+                        "offset": 4202508
+                    }
+                ],
+                "KERNEL32.dll": [
+                    {
+                        "function": "LocalFree",
+                        "offset": 4202516
+                    },
+                    {
+                        "function": "LocalAlloc",
+                        "offset": 4202520
+                    },
+                    {
+                        "function": "ExitProcess",
+                        "offset": 4202524
+                    },
+                    {
+                        "function": "lstrlenA",
+                        "offset": 4202528
+                    },
+                    {
+                        "function": "Sleep",
+                        "offset": 4202532
+                    }
+                ],
+                "USER32.dll": [
+                    {
+                        "function": "wsprintfA",
+                        "offset": 4202540
+                    }
+                ],
+                "WSOCK32.dll": [
+                    {
+                        "function": "socket",
+                        "offset": 4202548
+                    },
+                    {
+                        "function": "recv",
+                        "offset": 4202552
+                    },
+                    {
+                        "function": "gethostname",
+                        "offset": 4202556
+                    },
+                    {
+                        "function": "closesocket",
+                        "offset": 4202560
+                    },
+                    {
+                        "function": "WSAStartup",
+                        "offset": 4202564
+                    },
+                    {
+                        "function": "connect",
+                        "offset": 4202568
+                    },
+                    {
+                        "function": "send",
+                        "offset": 4202572
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 4801,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "AHTeam_EP_Protector_03_fake_PCGuard_403_415_FEUERRADER"
+            ],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "3d56f8947d7a618895f8b430a490099e",
+        "metadata": {},
+        "sections": {
+            "count": 3,
+            "details": [
+                {
+                    "characteristics": 1610612768,
+                    "data": "b'U\\x8b\\xec\\x8bE\\x10\\xff5\\xa00@\\x00\\x8f\\x80\\xb8\\x0",
+                    "entropy": 5.609423306105687,
+                    "executable": true,
+                    "hash": {
+                        "md5": "c5d39186d7bbda6fc9f7c773aba861f2",
+                        "sha1": "850d5cc06ff97049117ad7cc4ea501bacefe3aab",
+                        "sha256": "76b367b93c303a614ab7a6b3115d3dd5704e40affcf69b3f889c845e8d027f7c"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 1536,
+                    "virtual_address": 4096,
+                    "virtual_size": 1432
+                },
+                {
+                    "characteristics": 1073741888,
+                    "data": "b'\\x88!\\x00\\x00\\x98!\\x00\\x00\\xac!\\x00\\x00z!\\x00\\x0",
+                    "entropy": 3.814238141062364,
+                    "executable": false,
+                    "hash": {
+                        "md5": "9215a25ce11d3f67d299b343cbdd9ec8",
+                        "sha1": "3710d5bdd0fd513f338d362352b4676be9da63b8",
+                        "sha256": "7ead0da02e56c8dd598066b783c0cdc1755e41f4afc25570e3975455bf90673c"
+                    },
+                    "section_name": ".rdata",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 8192,
+                    "virtual_size": 460
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'MAIL FROM: NWP@INBOX.RU\\r\\n\\x00D6676AFB\\r\\nRCPT ",
+                    "entropy": 2.3620379466545542,
+                    "executable": false,
+                    "hash": {
+                        "md5": "82d7cf02874d5bc7f1fc9bad5acd05a5",
+                        "sha1": "f7c7c5af2a20844c33fb917ff33e4764f3106484",
+                        "sha256": "13536082933aee94bc6436d4f7738957eb544eed38080a9fa758ebe92f5ef886"
+                    },
+                    "section_name": ".data",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 12288,
+                    "virtual_size": 131252
+                }
+            ]
+        },
+        "timestamp": "2004-06-02 18:46:55"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "vsVa",
+            "vsRich",
+            ".text",
+            "`.rdata",
+            "@.data",
+            "33\u024aM",
+            "UWVu",
+            " GFM",
+            "UWV3u",
+            "GFIu@^_",
+            "UVWSu",
+            "\u0592YCC$u",
+            "u[_^",
+            "W=0@",
+            "QWV/",
+            "354 u@G",
+            "UWV3j",
+            "hW0@",
+            "h$0@",
+            "D@twtnhP0@",
+            ".@tatXh",
+            "hn0@",
+            "hh0@",
+            "Z<Zh0@",
+            "UVWSh",
+            "V: 1.0",
+            "S: %sD: %s",
+            "PPW50@",
+            "EPh<0@",
+            "EP50@",
+            "hK0@",
+            "uV50@",
+            "hK0@",
+            "[_^%, @",
+            "%$ @",
+            "%  @",
+            "%D @",
+            "%@ @",
+            "%H @",
+            "%< @",
+            "%8 @",
+            "%L @",
+            "%4 @",
+            "wsprintfA",
+            "USER32.dll",
+            "ExitProcess",
+            "LocalAlloc",
+            "LocalFree",
+            "Sleep",
+            "lstrlenA",
+            "KERNEL32.dll",
+            "WSOCK32.dll",
+            "RegCloseKey",
+            "RegCreateKeyA",
+            "RegQueryValueExA",
+            "RegSetValueExA",
+            "ADVAPI32.dll",
+            "MAIL FROM: NWP@INBOX.RU",
+            "D6676AFB",
+            "RCPT TO: NWP@INBOX.RU",
+            "SOFTWARE\\Intel",
+            "Data",
+            "DATA",
+            "EHLO localhost",
+            "Subject: Passwords from ld-pinch (%s)"
+        ],
+        "file": {
+            "ADVAPI32.dll": "Library",
+            "KERNEL32.dll": "Library",
+            "USER32.dll": "Library",
+            "WSOCK32.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.710508",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

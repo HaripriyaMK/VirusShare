@@ -1,0 +1,253 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_1669ddd28bd171648b9b627d1577a960",
+    "filesize": 3584,
+    "filetype": "PE32 executable (DLL) (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "1669ddd28bd171648b9b627d1577a960",
+        "sha1": "5910571c2dc3aebe8a2e1ff2251d0c227e37e3ff",
+        "sha256": "0b8ead97a083a1b05da1cdcd66e9f90d28ec4feab7a7a30e1f20c03d42e14d0d"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "win_hook"
+        ],
+        "breakpoint": [
+            "SetWindowsHookExA",
+            "Sleep"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [
+                {
+                    "function": "SetHook",
+                    "offset": 268439654
+                },
+                {
+                    "function": "UnSetHook",
+                    "offset": 268439717
+                }
+            ],
+            "import": {
+                "KERNEL32.dll": [
+                    {
+                        "function": "Sleep",
+                        "offset": 268439552
+                    }
+                ],
+                "MSVCRT.dll": [
+                    {
+                        "function": "malloc",
+                        "offset": 268439560
+                    },
+                    {
+                        "function": "_adjust_fdiv",
+                        "offset": 268439564
+                    },
+                    {
+                        "function": "free",
+                        "offset": 268439568
+                    },
+                    {
+                        "function": "rand",
+                        "offset": 268439572
+                    },
+                    {
+                        "function": "_initterm",
+                        "offset": 268439576
+                    },
+                    {
+                        "function": "_strlwr",
+                        "offset": 268439580
+                    }
+                ],
+                "USER32.dll": [
+                    {
+                        "function": "CallNextHookEx",
+                        "offset": 268439588
+                    },
+                    {
+                        "function": "PostMessageA",
+                        "offset": 268439592
+                    },
+                    {
+                        "function": "GetForegroundWindow",
+                        "offset": 268439596
+                    },
+                    {
+                        "function": "UnhookWindowsHookEx",
+                        "offset": 268439600
+                    },
+                    {
+                        "function": "SetWindowsHookExA",
+                        "offset": 268439604
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 88,
+                "VirtualAddress": 12288,
+                "count": 1,
+                "details": {
+                    "reloc_1": 40
+                }
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": true,
+        "entrypoint": 4586,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "Armadillo_v1xx_v2xx_additional",
+                "Microsoft_Visual_Cpp_60_DLL_additional",
+                "Microsoft_Visual_Cpp_v70_DLL",
+                "Microsoft_Visual_Cpp_v50v60_MFC",
+                "Microsoft_Visual_Cpp_60_DLL_Debug",
+                "Armadillo_v1xx_v2xx",
+                "Microsoft_Visual_Cpp_v60_DLL",
+                "Microsoft_Visual_Cpp_60_DLL",
+                "Microsoft_Visual_Cpp_60"
+            ],
+            "xor": {}
+        },
+        "imagebase": 268435456,
+        "imphash": "a673da7242f2793866542da922fde88e",
+        "metadata": {},
+        "sections": {
+            "count": 3,
+            "details": [
+                {
+                    "characteristics": 3758096416,
+                    "data": "b'\\x82\\x13\\x00\\x00\\x00\\x00\\x00\\x00h\\x13\\x00\\x00r\\x",
+                    "entropy": 4.3622272199398155,
+                    "executable": true,
+                    "hash": {
+                        "md5": "475cf03fe4e94256b120bd2178b510ed",
+                        "sha1": "b22fce393e136c89eb68992d85e09f53395a08cc",
+                        "sha256": "d6d50ff63f4bf57c8efed28120288ab2aa149506c88c0266cac170f6cfcdf370"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 1536,
+                    "virtual_address": 4096,
+                    "virtual_size": 1127
+                },
+                {
+                    "characteristics": 3489660992,
+                    "data": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00",
+                    "entropy": 0.0,
+                    "executable": false,
+                    "hash": {
+                        "md5": "bf619eac0cdf3f68d496ea9344137e8b",
+                        "sha1": "5c3eb80066420002bc3dcc7ca4ab6efad7ed4ae5",
+                        "sha256": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560"
+                    },
+                    "section_name": ".SData",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 8192,
+                    "virtual_size": 12
+                },
+                {
+                    "characteristics": 1107296320,
+                    "data": "b'\\x00\\x10\\x00\\x00X\\x00\\x00\\x00_0u0{0\\x840\\x890\\x9",
+                    "entropy": 1.2925562845021492,
+                    "executable": false,
+                    "hash": {
+                        "md5": "ff29650d2b120af963b6a6f65564df8b",
+                        "sha1": "c975a76d30742e05564271360052afd65a65fa90",
+                        "sha256": "4a9eb14a77e4a3686dc6e5df2390a0407c19d3f24bc8cd80d8101d6ddb0bd636"
+                    },
+                    "section_name": ".reloc",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 12288,
+                    "virtual_size": 128
+                }
+            ]
+        },
+        "timestamp": "2006-09-17 05:04:27"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "Rich",
+            ".text",
+            ".SData",
+            ".reloc",
+            "X9D$",
+            "YY=u9",
+            "Vq;r",
+            "t\tWVS\u0405t",
+            "3NWVS",
+            "u7WPSt",
+            "u&WVSu",
+            "WVS\u0409E",
+            "_^[]",
+            "rand",
+            "MSVCRT.dll",
+            "free",
+            "_initterm",
+            "malloc",
+            "_adjust_fdiv",
+            "Sleep",
+            "KERNEL32.dll",
+            "SetWindowsHookExA",
+            "UnhookWindowsHookEx",
+            "CallNextHookEx",
+            "PostMessageA",
+            "GetForegroundWindow",
+            "USER32.dll",
+            "_strlwr",
+            "hook.dll",
+            "SetHook",
+            "UnSetHook",
+            "_0u0{00000000000",
+            "1#10161I1Q1W1b1o1w111111111111",
+            "2m22"
+        ],
+        "file": {
+            "KERNEL32.dll": "Library",
+            "MSVCRT.dll": "Library",
+            "USER32.dll": "Library",
+            "hook.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.576369",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsDLL"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        },
+        {
+            "packer.yar": "Armadillov1xxv2xx"
+        }
+    ]
+}

