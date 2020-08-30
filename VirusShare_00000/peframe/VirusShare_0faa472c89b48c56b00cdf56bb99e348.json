@@ -1,0 +1,2287 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_0faa472c89b48c56b00cdf56bb99e348",
+    "filesize": 61525,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "0faa472c89b48c56b00cdf56bb99e348",
+        "sha1": "08253685d28fd0c917b17d24c91cf1ca2541a03b",
+        "sha256": "0bcaae16cee850186f9d8d92202df6499ee2c717d8a453f49e8a81b9c72a615a"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "network_dropper",
+            "escalate_priv",
+            "screenshot",
+            "rat_webcam",
+            "win_mutex",
+            "win_token",
+            "win_files_operation"
+        ],
+        "breakpoint": [
+            "CloseHandle",
+            "CreateProcessA",
+            "FindFirstFileA",
+            "FindNextFileA",
+            "GetCurrentProcess",
+            "GetFileSize",
+            "GetModuleFileNameA",
+            "GetModuleHandleA",
+            "GetProcAddress",
+            "GetStartupInfoA",
+            "GetTickCount",
+            "GetVersionExA",
+            "LoadLibraryA",
+            "OpenProcess",
+            "OpenProcessToken",
+            "Process32Next",
+            "ReadFile",
+            "ShellExecuteA",
+            "Sleep",
+            "TerminateProcess",
+            "WSAStartup",
+            "WaitForSingleObject",
+            "closesocket",
+            "connect",
+            "recv",
+            "send",
+            "socket"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "ADVAPI32.dll": [
+                    {
+                        "function": "LookupPrivilegeValueA",
+                        "offset": 4231168
+                    },
+                    {
+                        "function": "OpenProcessToken",
+                        "offset": 4231172
+                    },
+                    {
+                        "function": "AdjustTokenPrivileges",
+                        "offset": 4231176
+                    }
+                ],
+                "AVICAP32.dll": [
+                    {
+                        "function": "capCreateCaptureWindowA",
+                        "offset": 4231184
+                    },
+                    {
+                        "function": "capGetDriverDescriptionA",
+                        "offset": 4231188
+                    }
+                ],
+                "GDI32.dll": [
+                    {
+                        "function": "CreateDCA",
+                        "offset": 4231196
+                    },
+                    {
+                        "function": "CreateCompatibleDC",
+                        "offset": 4231200
+                    },
+                    {
+                        "function": "CreateCompatibleBitmap",
+                        "offset": 4231204
+                    },
+                    {
+                        "function": "SelectObject",
+                        "offset": 4231208
+                    },
+                    {
+                        "function": "BitBlt",
+                        "offset": 4231212
+                    },
+                    {
+                        "function": "GetDIBits",
+                        "offset": 4231216
+                    },
+                    {
+                        "function": "DeleteDC",
+                        "offset": 4231220
+                    }
+                ],
+                "KERNEL32.dll": [
+                    {
+                        "function": "FindNextFileA",
+                        "offset": 4231228
+                    },
+                    {
+                        "function": "FindClose",
+                        "offset": 4231232
+                    },
+                    {
+                        "function": "FreeLibrary",
+                        "offset": 4231236
+                    },
+                    {
+                        "function": "CloseHandle",
+                        "offset": 4231240
+                    },
+                    {
+                        "function": "GetStartupInfoA",
+                        "offset": 4231244
+                    },
+                    {
+                        "function": "CreateProcessA",
+                        "offset": 4231248
+                    },
+                    {
+                        "function": "ReadFile",
+                        "offset": 4231252
+                    },
+                    {
+                        "function": "Sleep",
+                        "offset": 4231256
+                    },
+                    {
+                        "function": "GetLastError",
+                        "offset": 4231260
+                    },
+                    {
+                        "function": "GetProcAddress",
+                        "offset": 4231264
+                    },
+                    {
+                        "function": "SetThreadPriority",
+                        "offset": 4231268
+                    },
+                    {
+                        "function": "GetCurrentThread",
+                        "offset": 4231272
+                    },
+                    {
+                        "function": "lstrcpynA",
+                        "offset": 4231276
+                    },
+                    {
+                        "function": "GetModuleFileNameA",
+                        "offset": 4231280
+                    },
+                    {
+                        "function": "WaitForSingleObject",
+                        "offset": 4231284
+                    },
+                    {
+                        "function": "GetModuleHandleA",
+                        "offset": 4231288
+                    },
+                    {
+                        "function": "FileTimeToSystemTime",
+                        "offset": 4231292
+                    },
+                    {
+                        "function": "FileTimeToLocalFileTime",
+                        "offset": 4231296
+                    },
+                    {
+                        "function": "FindFirstFileA",
+                        "offset": 4231300
+                    },
+                    {
+                        "function": "MoveFileA",
+                        "offset": 4231304
+                    },
+                    {
+                        "function": "GetCurrentProcess",
+                        "offset": 4231308
+                    },
+                    {
+                        "function": "Process32Next",
+                        "offset": 4231312
+                    },
+                    {
+                        "function": "GetPriorityClass",
+                        "offset": 4231316
+                    },
+                    {
+                        "function": "Module32First",
+                        "offset": 4231320
+                    },
+                    {
+                        "function": "OpenProcess",
+                        "offset": 4231324
+                    },
+                    {
+                        "function": "TerminateProcess",
+                        "offset": 4231328
+                    },
+                    {
+                        "function": "GetVersionExA",
+                        "offset": 4231332
+                    },
+                    {
+                        "function": "InterlockedExchange",
+                        "offset": 4231336
+                    },
+                    {
+                        "function": "GetCurrentThreadId",
+                        "offset": 4231340
+                    },
+                    {
+                        "function": "lstrcpyA",
+                        "offset": 4231344
+                    },
+                    {
+                        "function": "LoadLibraryA",
+                        "offset": 4231348
+                    },
+                    {
+                        "function": "GetTickCount",
+                        "offset": 4231352
+                    },
+                    {
+                        "function": "GetFileSize",
+                        "offset": 4231356
+                    }
+                ],
+                "MFC42.DLL": [
+                    {
+                        "function": "None",
+                        "offset": 4231364
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231368
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231372
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231376
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231380
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231384
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231388
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231392
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231396
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231400
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231404
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231408
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231412
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231416
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231420
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231424
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231428
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231432
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231436
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231440
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231444
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231448
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231452
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231456
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231460
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231464
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231468
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231472
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231476
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231480
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231484
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231488
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231492
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231496
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231500
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231504
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231508
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231512
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231516
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231520
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231524
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231528
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231532
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231536
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231540
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231544
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231548
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231552
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231556
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231560
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231564
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231568
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231572
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231576
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231580
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231584
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231588
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231592
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231596
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231600
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231604
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231608
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231612
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231616
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231620
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231624
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231628
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231632
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231636
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231640
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231644
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231648
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231652
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231656
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231660
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231664
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231668
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231672
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231676
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231680
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231684
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231688
+                    },
+                    {
+                        "function": "None",
+                        "offset": 4231692
+                    }
+                ],
+                "MSVCRT.dll": [
+                    {
+                        "function": "_controlfp",
+                        "offset": 4231700
+                    },
+                    {
+                        "function": "_except_handler3",
+                        "offset": 4231704
+                    },
+                    {
+                        "function": "__set_app_type",
+                        "offset": 4231708
+                    },
+                    {
+                        "function": "__p__fmode",
+                        "offset": 4231712
+                    },
+                    {
+                        "function": "__p__commode",
+                        "offset": 4231716
+                    },
+                    {
+                        "function": "_adjust_fdiv",
+                        "offset": 4231720
+                    },
+                    {
+                        "function": "_setmbcp",
+                        "offset": 4231724
+                    },
+                    {
+                        "function": "_strlwr",
+                        "offset": 4231728
+                    },
+                    {
+                        "function": "free",
+                        "offset": 4231732
+                    },
+                    {
+                        "function": "malloc",
+                        "offset": 4231736
+                    },
+                    {
+                        "function": "strncat",
+                        "offset": 4231740
+                    },
+                    {
+                        "function": "sprintf",
+                        "offset": 4231744
+                    },
+                    {
+                        "function": "strncpy",
+                        "offset": 4231748
+                    },
+                    {
+                        "function": "__CxxFrameHandler",
+                        "offset": 4231752
+                    },
+                    {
+                        "function": "atoi",
+                        "offset": 4231756
+                    },
+                    {
+                        "function": "strcspn",
+                        "offset": 4231760
+                    },
+                    {
+                        "function": "strstr",
+                        "offset": 4231764
+                    },
+                    {
+                        "function": "_ftol",
+                        "offset": 4231768
+                    },
+                    {
+                        "function": "__dllonexit",
+                        "offset": 4231772
+                    },
+                    {
+                        "function": "_onexit",
+                        "offset": 4231776
+                    },
+                    {
+                        "function": "_exit",
+                        "offset": 4231780
+                    },
+                    {
+                        "function": "_XcptFilter",
+                        "offset": 4231784
+                    },
+                    {
+                        "function": "exit",
+                        "offset": 4231788
+                    },
+                    {
+                        "function": "_acmdln",
+                        "offset": 4231792
+                    },
+                    {
+                        "function": "__setusermatherr",
+                        "offset": 4231796
+                    },
+                    {
+                        "function": "__getmainargs",
+                        "offset": 4231800
+                    },
+                    {
+                        "function": "_initterm",
+                        "offset": 4231804
+                    }
+                ],
+                "SHELL32.dll": [
+                    {
+                        "function": "ShellExecuteA",
+                        "offset": 4231812
+                    },
+                    {
+                        "function": "SHGetFileInfoA",
+                        "offset": 4231816
+                    }
+                ],
+                "USER32.dll": [
+                    {
+                        "function": "DrawIcon",
+                        "offset": 4231824
+                    },
+                    {
+                        "function": "ExitWindowsEx",
+                        "offset": 4231828
+                    },
+                    {
+                        "function": "LoadIconA",
+                        "offset": 4231832
+                    },
+                    {
+                        "function": "GetClientRect",
+                        "offset": 4231836
+                    },
+                    {
+                        "function": "GetThreadDesktop",
+                        "offset": 4231840
+                    },
+                    {
+                        "function": "OpenWindowStationA",
+                        "offset": 4231844
+                    },
+                    {
+                        "function": "SetProcessWindowStation",
+                        "offset": 4231848
+                    },
+                    {
+                        "function": "IsIconic",
+                        "offset": 4231852
+                    },
+                    {
+                        "function": "EnableWindow",
+                        "offset": 4231856
+                    },
+                    {
+                        "function": "GetProcessWindowStation",
+                        "offset": 4231860
+                    },
+                    {
+                        "function": "wsprintfA",
+                        "offset": 4231864
+                    },
+                    {
+                        "function": "GetDesktopWindow",
+                        "offset": 4231868
+                    },
+                    {
+                        "function": "CreateWindowExA",
+                        "offset": 4231872
+                    },
+                    {
+                        "function": "SendMessageA",
+                        "offset": 4231876
+                    },
+                    {
+                        "function": "IsWindow",
+                        "offset": 4231880
+                    },
+                    {
+                        "function": "GetSystemMetrics",
+                        "offset": 4231884
+                    },
+                    {
+                        "function": "SetThreadDesktop",
+                        "offset": 4231888
+                    }
+                ],
+                "WS2_32.dll": [
+                    {
+                        "function": "closesocket",
+                        "offset": 4231896
+                    },
+                    {
+                        "function": "connect",
+                        "offset": 4231900
+                    },
+                    {
+                        "function": "socket",
+                        "offset": 4231904
+                    },
+                    {
+                        "function": "htons",
+                        "offset": 4231908
+                    },
+                    {
+                        "function": "WSAStartup",
+                        "offset": 4231912
+                    },
+                    {
+                        "function": "shutdown",
+                        "offset": 4231916
+                    },
+                    {
+                        "function": "inet_addr",
+                        "offset": 4231920
+                    },
+                    {
+                        "function": "gethostbyname",
+                        "offset": 4231924
+                    },
+                    {
+                        "function": "recv",
+                        "offset": 4231928
+                    },
+                    {
+                        "function": "send",
+                        "offset": 4231932
+                    },
+                    {
+                        "function": "setsockopt",
+                        "offset": 4231936
+                    },
+                    {
+                        "function": "WSAIoctl",
+                        "offset": 4231940
+                    },
+                    {
+                        "function": "inet_ntoa",
+                        "offset": 4231944
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [
+                {
+                    "data": "b'(\\x00\\x00\\x00 \\x00\\x00\\x00@\\x00\\x00\\x00\\x01\\x00\\x04\\x00\\x00\\x00\\x00\\x00\\x00\\x02\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x80\\x00\\x00\\x80'",
+                    "executable": false,
+                    "language": "LANG_CHINESE",
+                    "name": "RT_ICON_1",
+                    "offset": 57696,
+                    "size": 744,
+                    "sublanguage": "SUBLANG_CHINESE_SIMPLIFIED"
+                },
+                {
+                    "data": "b'(\\x00\\x00\\x00\\x10\\x00\\x00\\x00 \\x00\\x00\\x00\\x01\\x00\\x04\\x00\\x00\\x00\\x00\\x00\\x80\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x80\\x00\\x00\\x80'",
+                    "executable": false,
+                    "language": "LANG_CHINESE",
+                    "name": "RT_ICON_2",
+                    "offset": 58440,
+                    "size": 296,
+                    "sublanguage": "SUBLANG_CHINESE_SIMPLIFIED"
+                },
+                {
+                    "data": "b'\\x01\\x00\\xff\\xff\\x00\\x00\\x00\\x00\\x00\\x00\\x04\\x00\\xc0\\x00\\xc8\\x90\\x03\\x00\\x00\\x00\\x00\\x00@\\x01\\xc8\\x00\\x00\\x00\\x00\\x00\\rg\\xa1R\\xefz\\x00\\x00\\t\\x00\\x00\\x00\\x00\\x01\\x8b[SO\\x00\\x00'",
+                    "executable": false,
+                    "language": "LANG_CHINESE",
+                    "name": "RT_DIALOG",
+                    "offset": 58776,
+                    "size": 188,
+                    "sublanguage": "SUBLANG_CHINESE_SIMPLIFIED"
+                },
+                {
+                    "data": "b'\\x00\\x00\\x01\\x00\\x02\\x00  \\x10\\x00\\x01\\x00\\x04\\x00\\xe8\\x02\\x00\\x00\\x01\\x00\\x10\\x10\\x10\\x00\\x01\\x00\\x04\\x00(\\x01\\x00\\x00\\x02\\x00'",
+                    "executable": false,
+                    "language": "LANG_CHINESE",
+                    "name": "RT_GROUP_ICON",
+                    "offset": 58736,
+                    "size": 34,
+                    "sublanguage": "SUBLANG_CHINESE_SIMPLIFIED"
+                },
+                {
+                    "data": "b'\\xc0\\x024\\x00\\x00\\x00V\\x00S\\x00_\\x00V\\x00E\\x00R\\x00S\\x00I\\x00O\\x00N\\x00_\\x00I\\x00N\\x00F\\x00O\\x00\\x00\\x00\\x00\\x00\\xbd\\x04\\xef\\xfe\\x00\\x00\\x01\\x00\\x00\\x00'",
+                    "executable": false,
+                    "language": "LANG_CHINESE",
+                    "name": "RT_VERSION",
+                    "offset": 58968,
+                    "size": 704,
+                    "sublanguage": "SUBLANG_CHINESE_SIMPLIFIED"
+                }
+            ],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 18902,
+        "features": {
+            "antidbg": [
+                "GetLastError",
+                "Process32Next",
+                "TerminateProcess"
+            ],
+            "antivm": {},
+            "crypto": [
+                "CRC32_poly_Constant",
+                "CRC32_table"
+            ],
+            "mutex": [
+                "WaitForSingleObject"
+            ],
+            "packer": [
+                "Microsoft_Visual_Cpp_v60",
+                "Microsoft_Visual_Cpp_v50v60_MFC_additional",
+                "Microsoft_Visual_Cpp_50",
+                "Microsoft_Visual_Cpp_v50v60_MFC",
+                "Microsoft_Visual_Cpp"
+            ],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "f3e2366e29d30614d4039a514d0a089f",
+        "metadata": {
+            "CompanyName": "",
+            "FileDescription": "\u670d\u52a1\u7aef Microsoft \u57fa\u7840\u7c7b\u5e94\u7528\u7a0b\u5e8f",
+            "FileVersion": "1, 0, 0, 1",
+            "InternalName": "\u670d\u52a1\u7aef",
+            "LegalCopyright": "\u7248\u6743\u6240\u6709 (C) 2011",
+            "LegalTrademarks": "",
+            "OriginalFilename": "\u670d\u52a1\u7aef.EXE",
+            "ProductName": "\u670d\u52a1\u7aef \u5e94\u7528\u7a0b\u5e8f",
+            "ProductVersion": "1, 0, 0, 1"
+        },
+        "sections": {
+            "count": 4,
+            "details": [
+                {
+                    "characteristics": 1610612768,
+                    "data": "b'\\x83\\xec\\x18V\\x8bt$$\\x83\\xfe\\x01Ws\\x0b_\\xb8\\x01\\",
+                    "entropy": 6.241641036182045,
+                    "executable": true,
+                    "hash": {
+                        "md5": "afc7a242e406cdfc53ddf25d29232ecb",
+                        "sha1": "efd2ae6d17e4b79b1f30ce6654311cb5b1de0bae",
+                        "sha256": "728b6b532a9b91b98d8a6aed4a5397844fb6971b77c6a21a1953d6a448aded70"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 32768,
+                    "virtual_address": 4096,
+                    "virtual_size": 31165
+                },
+                {
+                    "characteristics": 1073741888,
+                    "data": "b'~\\xca\\x00\\x00\\x96\\xca\\x00\\x00f\\xca\\x00\\x00\\x00\\x",
+                    "entropy": 6.795002464379596,
+                    "executable": false,
+                    "hash": {
+                        "md5": "1fc164ec8499c0249588e6a6752aff80",
+                        "sha1": "2023768083fbc93078dd2d183f759e19fac6c9b3",
+                        "sha256": "71c69ef7ab43a482a6d02ccb8b87fd37052471543832f7f5c0c64a65815d5c31"
+                    },
+                    "section_name": ".rdata",
+                    "size_of_raw_data": 16384,
+                    "virtual_address": 36864,
+                    "virtual_size": 15210
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'\\x00\\x00\\x00\\x00\\xb1\\x88@\\x00\\xf0\\x11@\\x00 \\x12@",
+                    "entropy": 3.2519572145358286,
+                    "executable": false,
+                    "hash": {
+                        "md5": "9ece53552ed90dd777ab86c275857c2b",
+                        "sha1": "c1d6f23b39e328365dd52f4e9c7db3d289eb8b00",
+                        "sha256": "4447032e756bebe62d87bf82cab979f68ede36fac2db95fe8b54b4116e9aac45"
+                    },
+                    "section_name": ".data",
+                    "size_of_raw_data": 4096,
+                    "virtual_address": 53248,
+                    "virtual_size": 2252
+                },
+                {
+                    "characteristics": 1073741888,
+                    "data": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00",
+                    "entropy": 2.2411932588576504,
+                    "executable": false,
+                    "hash": {
+                        "md5": "e5a7159ac9ae120ef7f1cd73f718b557",
+                        "sha1": "8d9b62ecb520d8d83d98cb6bc32de1cdf2a513c1",
+                        "sha256": "fc9510a23b81032654f93ca5699554bfb2d364163a0c2c204a7be3f2329997a7"
+                    },
+                    "section_name": ".rsrc",
+                    "size_of_raw_data": 4096,
+                    "virtual_address": 57344,
+                    "virtual_size": 2328
+                }
+            ]
+        },
+        "timestamp": "2011-09-28 01:45:00"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            ".*OyOyOySyOy",
+            "PyOy'@yOygSyOyPyOyPyOyiyOyiyOyOyXOy",
+            "PyOy#IyOyRichOy",
+            ".text",
+            "`.rdata",
+            "@.data",
+            ".rsrc",
+            "Vt$$",
+            "|$$D$(j",
+            "WD$<",
+            "33\u0489L$",
+            "RL$(T$ ",
+            "RQT$ D$",
+            "WD$,",
+            "SUl$",
+            "3W~+D$",
+            "+;}\t_^]3[_^]",
+            "SUl$",
+            "3W~+D$",
+            "+;}\t_^]3[_^]",
+            "^PD$",
+            "^PD$",
+            "SUVW1",
+            "3|$}D$|",
+            "f3L$",
+            "UPT$",
+            "QRl$$l$ l$(D$,",
+            "l$0D$4",
+            "u;$L",
+            "P\u058bD$",
+            "P_^][4",
+            "D$(D$(D",
+            "L$|h",
+            "QD$pD$lfl$`D$\\",
+            "3T$|+\u064bO",
+            "T$|C",
+            "D$lL$(T$|PQj",
+            "u45H@",
+            "P\u058bD$",
+            "P_^][4",
+            "t1L$",
+            "<*j2",
+            "_^][4",
+            "SUV5@",
+            "W3h@",
+            "\\$ \u058b=`@",
+            "D$$t",
+            "P\u05c9D$",
+            "\u058b;t$ t",
+            "V\u05c9D$",
+            "3|$(UD$,h@",
+            "L$(QT$ ",
+            "D$l|dD$",
+            "T$th`",
+            "RL$4j",
+            "Q\u040d|$|3T$,+",
+            "t$(L$",
+            "t$ HHL$",
+            "EHD$",
+            "YD$$=D@",
+            "P\u05c5t\"V\u05cb$",
+            "_^[\u0100",
+            "U-@@",
+            "3|$Lj@\udb6c\udf44$ ",
+            "L$TPQ",
+            "+D$L",
+            "s4D$<\\$@l$<",
+            "$hH@",
+            "@s1D$4\\$8l$4",
+            "$h<@",
+            "@v1s,D$,\\$0l$,",
+            "$h0@",
+            "L$D$",
+            "L$DPQ",
+            "T$(D$&L$$",
+            "RT$&",
+            "PD$&QL$(",
+            "R\u054bD$4)",
+            "t$lt$0",
+            "W|$\\D$\\}9j",
+            "D$hj",
+            "3\u0243 $0",
+            "fT$`R$,",
+            "3|$$",
+            "QRh@",
+            "PPPPP$H",
+            "D$8D",
+            "D$Ht@",
+            "fD$p",
+            "t1L$",
+            "Q\u058bT$",
+            "R\u058b$0",
+            "D$hV$",
+            "D$hV$",
+            "@Nu^",
+            "T$ L$",
+            "D$$T$",
+            "RD$$",
+            "SW=`@",
+            "VEh@",
+            "E\u04cb\u0605tJE",
+            "PSU\u0405\u0489U",
+            "PRUM",
+            "QUSUV",
+            "^]3^]",
+            "SUV5@",
+            "WhX@",
+            "\u058b=`@",
+            "PhL@",
+            "T$(D$",
+            "W\u0585u\\L$",
+            "RPW\u0585t>?",
+            "3IQL$ RQ",
+            "RT$ 5D@",
+            "SU_^][",
+            "VWh@",
+            "WPj ",
+            "3Qh@",
+            "WD$ ",
+            "WWT$",
+            "RWPD$8",
+            "QV\u01c4$",
+            "PVN+",
+            "3|$,\udb6c\udec4$",
+            "RD$0L$4",
+            "D$4$",
+            "j D$<RP\u04cd$,",
+            "T$hQR\u04cbD$(+",
+            "3|$LL$LD$L",
+            "u\t_[",
+            "D$\\VHtcH",
+            "u3D$X",
+            "Gu`T$",
+            "wPT$",
+            "(|$T",
+            "u>D$Xu",
+            "u&T$",
+            "L$\\5@",
+            "RPK`h@",
+            "T$0D$0 ",
+            "D$8@",
+            "@Ph@",
+            "Ph8@",
+            "t\tV#",
+            "WP\u04cb=\u0112@",
+            "_[t\tP\"",
+            "t\tP\"",
+            "t\t3\u0118",
+            "V33u",
+            "j2PL$@jdQVb",
+            "W=X@",
+            "jd\u05c0>",
+            ",SUVWBu",
+            "_^]2[,",
+            "_^]2[,",
+            "_^]2[,S ",
+            "RSh,",
+            "Qj,h",
+            "R_^]",
+            "VW=\u0312@",
+            "@;|_^",
+            "v33~-SV",
+            "<3@;",
+            "|[_^",
+            "0SUVW3WWWh@",
+            "PVD$",
+            "WWURPWWV",
+            "fD$&C",
+            "|$(|$,|$0|$4|$8|$<",
+            "T$ fD$$",
+            "V54@",
+            "_^][0",
+            "VWh@",
+            "\u05c5F$u",
+            "VF(P",
+            "t\tV!",
+            "jh\u0608@",
+            "D$pW",
+            "L$h3^d",
+            "VPjft$",
+            "F`^d",
+            "VXD$",
+            "WV3\u04c3Vu1",
+            "P_^[",
+            "w50@",
+            "P\u058b=@",
+            "PP\u05cdh@",
+            "PR\u05cdh@",
+            "t\u018dh@",
+            "VPVhP@",
+            "V\u04c3$t13h@",
+            "UVUUPEVP",
+            "_^[]",
+            "|$4PfD$",
+            "_^3]",
+            "T$$D$$",
+            "VD$4",
+            "_^3]",
+            "D$Lh",
+            "L$8h",
+            "QVl$D",
+            "_^3]",
+            "PW\u04c5t?",
+            "t D$",
+            "|$4PfD$",
+            "_^3[",
+            "WD$ `",
+            "D$$D$$",
+            "WD$4",
+            "_^3[",
+            "L$Lh",
+            "T$8Fh",
+            "RdWt$D",
+            "~av]5@",
+            "PW\u0585~",
+            "L$ j",
+            "SUVPfD$$",
+            "fD$&D",
+            "3D$$Uj",
+            "L$ j",
+            "QVt$(",
+            "RSVD$",
+            "l$ /",
+            "PSV^",
+            "$p6@",
+            "aUT$83",
+            "|$8URh0@",
+            "UPh2@",
+            "\u060bt$ l$",
+            ";_t\tS ",
+            "^]3[\u013c",
+            "SUVWPfD$8",
+            "fD$:1",
+            "3D$8Vj",
+            "L$4j",
+            "UD$(",
+            "QVU\\$0t$4D$8",
+            "T$$RVU*",
+            "|$,L$DWL$H$",
+            "qL$DL$D\\$$t$(GL$DD$,*D$0D$$PVUz",
+            "L$DD$|",
+            "L$DD$",
+            "t$ l$",
+            "L$Hj",
+            "L$DT$",
+            "RPD$",
+            "L$(t$$L$DFqT$",
+            "D$,D$$T$0PWU",
+            "L$DD$|",
+            "L$t_^]3[d",
+            "jh8@",
+            "SUVW",
+            "Pft$<",
+            "fD$>",
+            "3\u06c9D$<Sj",
+            "L$8j",
+            "WD$,",
+            "D$(D$(",
+            "PSW\\$8",
+            "ku4L$(D$(",
+            "QSW\\$8_",
+            "L$H\\$hu:T$(t$(RSW\\$8",
+            "L$Hl$h",
+            "L$LD$(PQW\\$4D$8(",
+            "L$Hl$hh",
+            "T$L\\$$\\$",
+            "D$ l$ ",
+            "PD$ D$",
+            "L$LT$",
+            "PRS-",
+            "D$$t$@D$8@D$$D$ D$<D$DD$8PSW$",
+            "+\u0143ds",
+            "D$ ut\tS",
+            "L$HD$h",
+            "L$`_^][d",
+            "VPfD$",
+            "D$$RPVD$",
+            "tqL$",
+            "T$$QRV",
+            "tZD$",
+            "%t&Ht",
+            "L$$PQ",
+            "D$$RP",
+            "T$$QRV",
+            "VWPfD$",
+            "RVWD$",
+            "tKD$",
+            "PVWu",
+            "t+|$",
+            "_3^ ",
+            "SVWf@",
+            "_^3[Md",
+            "Rr`@",
+            "EMhP@",
+            "QRSE",
+            "E\u434dTPQS",
+            "w3\u048aD@",
+            "XTPhd@",
+            "3\\\\E\u834dTPQR",
+            "3XTM\u8345XQRP",
+            "E/@LEj",
+            "|MUQRE",
+            "|E_j",
+            "EM^\\j",
+            "%wdtH=",
+            "\"t%=",
+            "Ph6@",
+            "SVWpPh",
+            "jVVh",
+            "F`N =\u0112@",
+            "Q\u05cbV`F Rj",
+            "dVF P",
+            "SWVL$ ",
+            "|$ D$",
+            "#Pj'Q",
+            "\u05cbF T$",
+            "N`D$",
+            "++@+",
+            "++@+",
+            "T$(PR",
+            "_[^d",
+            "YH%H@",
+            "s+\u020b\u0105",
+            "P%X@",
+            "Ujh8@",
+            "h\\K@",
+            "hSVWe3\u06c9]j",
+            "hXK@",
+            "EEP5@",
+            "EPEPEP",
+            "0u>\"u:Fu",
+            "<\"u>\"u",
+            "< v]\u040dEP",
+            "> vFuj",
+            "XPVSS",
+            "\tMPQ",
+            "YY3%",
+            "\u03038L$HT$<D$DS\\$DVL$",
+            "L$TT$",
+            "j8D$",
+            "QRD$(D$8",
+            "uGD$",
+            "jPD$",
+            "QRP5",
+            "S3UV;W",
+            "|$08",
+            "_^][",
+            "G 0g@",
+            "W(9W$u",
+            "G$Pg@",
+            "\\$ ;}",
+            "zD$(;",
+            "_^][",
+            "^0\u02cb\\$$",
+            "Un,FLHFTV4VXG(j",
+            "UPW N,F8W(j",
+            "QRW F@FLO(j",
+            "PQW FDK",
+            "W(PRW ",
+            "V8tPV@tIVDtBt>WF$",
+            "_^][F",
+            "_^][_^][",
+            "SVW|$",
+            "3;tzw",
+            ";ts9_ tn9_$ti_",
+            "G0^(V",
+            "3_^[_^[SUl$",
+            "V(*.T$",
+            "P$H,",
+            "QM0PQZ3",
+            "E0F ",
+            "\u020bFlt",
+            "t E0",
+            ";srF",
+            ";u8z,t",
+            "+PE0",
+            "RPM2",
+            "E0U!",
+            "F BV",
+            "@F z",
+            "+PE0",
+            "V ;Q",
+            ";u;N",
+            "M0+PF",
+            "PQ{1",
+            "E0UO",
+            ";t&~",
+            "N 3A",
+            "\u028bU0PQR",
+            ";u;N",
+            "M0+PF",
+            ";t&~",
+            "N 3A",
+            "\u028bU0PQRP0",
+            "gujF",
+            "H,tYN",
+            ";v\tU",
+            ";w=N",
+            "u8F(_^]3[",
+            "u#|$",
+            "ul;u",
+            "u'FLNDfDA",
+            "VL~D3L",
+            "F(_^]3[",
+            "_^]3[",
+            "3_^][",
+            "F(_^]3[",
+            "_^][",
+            "\u0445tXv",
+            "_+[q",
+            "*t!Et",
+            "PF(PV$",
+            "V(PRV$",
+            "N(PQV$",
+            "PF(PV$",
+            "V(QRV$",
+            "H_$^_^",
+            "SV3B,JLB<BDWftHJLzD3L\t",
+            "rlr\\rt",
+            "rhrH^J|BxB`[",
+            "SUVt$",
+            "w V6",
+            "NlFt",
+            "\u0209NlN\\Vl",
+            ";r?+\u0409Fl\u0249Vt|",
+            "PRV-",
+            "FlQF\\",
+            "N\\VlF,+-",
+            "NlRN\\B",
+            "tg-N\\|",
+            "RVl+RPV",
+            "FlQF\\",
+            "^]3[",
+            "UVk,WS<KtCl+\u044bK,+\u040d);rq{8\u034b4/",
+            "spKlC\\++\u0349spsLKlKD+\u0149C\\",
+            "t`KtslRS8",
+            "r$SlC8KX<",
+            "CH3\u024aO",
+            "3KT#CH",
+            "_^][",
+            "]3[+\u0149C",
+            "S0UQR",
+            "K0UPQ(",
+            "C0V3W|$",
+            "QUVt$",
+            "W3Ft=",
+            "s'VFFt",
+            "rPFHNXVl~83\u024aL",
+            "~4#V@3NT#NDFHf",
+            "zNlF4V@#\u020bFH3f<JNDfVlf",
+            "AtBFlN,+\u01c1",
+            "F`F`",
+            "fFlf+Fp",
+            "3\u048al@",
+            "3\u024al@",
+            "3\u048al@",
+            "H3;\u040bF`",
+            "Nt+;",
+            "Ntwm",
+            "rhHF`VlF8~HB3\u0249VlL",
+            "NXND3\u01cb~T#\u01cb~4#V@FHf",
+            "zNlV4FH#\u028bV@3f<JNDfVlf",
+            "AF`HF`u",
+            "NlF`",
+            "\u0209NlN8",
+            "FH3\u024aJ",
+            "3NT#FHnVlF8",
+            "I;Nt",
+            "INtFl",
+            "QN\\|\tV8",
+            "3Vlj",
+            "+RPV",
+            "FlQF\\8",
+            "RVl+RPV",
+            "FlQF\\",
+            "Y_^3]Y",
+            "SUVW|$(w,G|WlO8oxD$",
+            ";\u04c9D$",
+            "T$ v",
+            "t$,W8D$",
+            "D$(8D*",
+            ";r\u044d+\u04c1",
+            "wp;\u040b}4D",
+            "D$(T$",
+            "W4G@#3f4PD$",
+            "$D$ ;w",
+            "_^][",
+            "SUl$",
+            "WN8Fl",
+            "@A:uXP",
+            "@A:uLP",
+            "@A:u@P",
+            "@A:u4P",
+            "@A:u(P",
+            "@A:u",
+            "@A:u",
+            "@A:u",
+            "Ntnp;v",
+            "_^][",
+            "_^][",
+            "QSUVt$",
+            "W3\u06cbFt=",
+            "s'VFt|$ ",
+            "rPFHNXVlnT~43N8#\\",
+            "NDV@3#\u0149FHf",
+            "zNlF4V@#\u020bFH3f",
+            "JNDfVlf",
+            "AF`Np",
+            "Fx\u06c9Nd~`tv\u040b",
+            ";sjFlN,+",
+            "F`F`",
+            "VlNp+\u0441",
+            "~`Fx",
+            "FlNt",
+            "Nxf+Fd",
+            "HfDU",
+            "3\u048al@",
+            "3\u024al@",
+            "3\u048al@",
+            "H3;\u040bFx",
+            "\u0283NtFxNlA\u0449Nl;wMFHNXN83\u06ca\\",
+            "^4#ND#\u068bV@FHf",
+            "ZNlF4V@#\u020bFH3f",
+            "JNDfVlf",
+            "AFxHFxuNlFh",
+            "QPVe",
+            "FlQF\\",
+            "FlN8",
+            "H;u2N\\|\tV8",
+            "3Vlj",
+            "+RPV",
+            "FlQF\\",
+            "VlNtBIVl",
+            "NlFtAHFh",
+            "NlFtpFhtWFlN8",
+            "RVl+RPV",
+            "FlQF\\C",
+            "_H^]",
+            "Y_^]3[Y",
+            "u3T$",
+            "u\t_^",
+            "s:Kt",
+            "3\u048aV\t",
+            "Hu3\u04b9",
+            "~bT$",
+            "f+_f\udae7\udc3c",
+            "QRPW",
+            "SVt$",
+            "+;\u0221t@",
+            "f+\u03cdT",
+            "+;\u0221t@",
+            "f+\u03cdT",
+            "SUl$",
+            "u\tVF",
+            "|$ WUSVq",
+            "~Z\u068bn",
+            "f+f\udae5\udfbc",
+            "@APQV",
+            "f+f\udae5\uddbc",
+            "t\tVn",
+            "_^][",
+            "SUVt$",
+            ";\u0209l$",
+            "~>f:",
+            ";|\u010bP",
+            "T$ j",
+            "SWV?",
+            "D$$fL",
+            "VL$ D$(c",
+            "T$ RV\\",
+            "VPW(",
+            "_^][",
+            "SUVt$",
+            "6;\u0289l$",
+            "f;r/u",
+            ":v+T$",
+            ";~L$",
+            "_^][",
+            "D$$SUV",
+            "L$$T$ T$0",
+            "l$(\\",
+            "D$0=",
+            "t$4L$033\tfD",
+            "`t$ fB<",
+            "+t$$<f4",
+            "t\"l$",
+            "\u01cbl$(",
+            "t$4L$0D$",
+            "HL$0D$",
+            "EfB<",
+            "tfB<",
+            "D$0tb\\",
+            "t$4MN",
+            "t$4t$",
+            ";\u0389l$(",
+            ";t\"+3f",
+            "\u014bl$(",
+            "f>D$0HD$0ut$4l$",
+            "u_^][",
+            " 3L$",
+            "NfAuD$0|6t$,x",
+            "BPfTL",
+            "Ou_^ ",
+            "PQVW",
+            "RPVC",
+            "3\u048a`@",
+            "S3VfH",
+            "W3D$",
+            "CU\\$",
+            ";tn;}",
+            "o]_^[Y",
+            "SUD$",
+            "f+Efn",
+            "~_T$",
+            "f+Efn",
+            "E~ZN",
+            "f+f\udbe5\uddbc",
+            "~l33`@",
+            "f+f\udae5\uddbc",
+            "#3`@",
+            "HPQV&",
+            "T$(\t",
+            "JRPV",
+            "_^][",
+            "S33fX",
+            "VWD$",
+            "GD$ D$",
+            "|$$3Bf",
+            ";\u0449\\$",
+            "T$ }",
+            "+;~g3f|",
+            "f+ff",
+            "JT$ ",
+            "+;~g3f|",
+            "f+ff",
+            "JT$ ",
+            "+;~f3f",
+            "f+ff",
+            "f+f\ud9e7\udc3c",
+            "+;~f3f",
+            "f+ff",
+            "f+f\udae7\udc3c",
+            "+;~f3f",
+            "f+ff",
+            "\t~[H",
+            "3\u0485\u06c9l$",
+            "l$$|$",
+            "Ol$$|$",
+            "]_^[",
+            "SUl$",
+            "33f<J",
+            "A\u04c9L$",
+            "+;~_3ft",
+            "f+fL:f",
+            ";~ql$ 3f",
+            "f+fL$",
+            "$l$ f",
+            "+;~[\u068bh",
+            "f+ff",
+            "3\u06cal@",
+            "3\u06cal@",
+            "+;~j3fT",
+            "f+\u02cbl$ ff",
+            "T3\\$",
+            "l$ ff\t",
+            "+;~YH",
+            "f+\u038dT",
+            "+;~b3f",
+            "f+ff",
+            "\t|\tu",
+            "[3;~",
+            "WVtD$",
+            "3G\u054bN",
+            "C@I^",
+            "u[_^",
+            "SUVW|$",
+            "3AOu\u0743 ",
+            "333\u048a\u0509D$",
+            "3333\u048a\u0549L$",
+            "3333\u048a\u0509D$",
+            "3333\u048a\u0549L$",
+            "3333\u0489D$",
+            "3333\u048a\u0549L$",
+            "3333\u048a\u0509D$",
+            "3333\u048a\u0549L$",
+            "333\u048a\u0509D$",
+            "3Mut",
+            "3FOu_^][",
+            "\u030dMHX@",
+            "\u030bMh@",
+            "\u030dM\u9e1e@",
+            "l\u030dM\u021a@",
+            "L\u030duLj|_T",
+            "I\\>3(",
+            " deflate 1.2.3 Copyright 1995-2005 Jean-loup Gailly ",
+            "1.2.3",
+            "\t\t\t\t\t\t\t\t",
+            "jp5c\u98d5d2",
+            "\u0497+L\t|~",
+            " jHqA}",
+            "mQ\u01c5\u04c3Vl",
+            "kdzbeO\\",
+            " n;^",
+            "iLA`rqg",
+            "5lB\u027b@l2u\\E",
+            "Y=\u046b0&:",
+            "a\u043f!#\u0133V",
+            "a=-fAv",
+            "\\cQkkbal",
+            "|\u04cceLXaMQ:t",
+            "0AJ\u05d5=m\u0464jiCn4Fg\u0438`s-",
+            "%hWo \tfa",
+            "^)\"\u0430",
+            ".;\\l ",
+            "\u04b1t9Gw\u049d",
+            "c;d>jm",
+            "i]Wbgeq6l",
+            "+\u04c9Zz",
+            "Jgo\u07f9\uff8eC",
+            "\u054e`~\u04618ROggW",
+            "?K6H+",
+            "A`Ugn1yiFa",
+            "fo%6hRw",
+            "j\\1\u0435,",
+            "[d&c\uc723ju",
+            "z+{8",
+            "\u04c6Bhn",
+            "[&wowG",
+            "eibkaEl",
+            "9a&g",
+            "`MGiIwn>Jj\u046eZf",
+            "@;7S\u015e",
+            ")WTg#.zfJa",
+            "h]+o*7",
+            "b62S-+",
+            "ldEw}ZV\u01d6AO",
+            "OM~-",
+            "#SpxAaU\u05ee.",
+            "-6]]w",
+            "ll?A\u051e",
+            " Faw$e\u06aa]]FD(koipvk19Z* ,\t",
+            "]qTp0ek*1u",
+            "y\u07a9%8<ysHj}",
+            "A<*X",
+            "OyD~b-O",
+            "\u01608L!",
+            "\\H1EbnSwT]",
+            "yk\u07b5T@OYX",
+            "p8$A#=keZ|%\tWd8N",
+            "!\u03273`*$?-",
+            "l\t$H",
+            "S)F~hwey?/H$6t",
+            "SKHRpey1~`|=6",
+            "xT9eK;",
+            "lF?m",
+            "#AplAwG6",
+            "Aq[ZhwClZ",
+            "S1bS",
+            "k1**yk\u02acHpo",
+            "].*F6f",
+            "cTT\"eM",
+            "g0&):{\u03fckZ>\t",
+            "52F*",
+            "pHkQ6Fzw]cN",
+            "#pAF]#",
+            "(BOg",
+            "T~yUbL",
+            "TZ1ObbSy",
+            "OIV~P-{",
+            "~^eGnHl/Su6",
+            "\t#jT$",
+            "'*b#\u067d",
+            "?&~?$p",
+            "i;FBzw[keZ~7\tSv8H\t",
+            "3?r$",
+            "FM8,9;",
+            ":<D?",
+            ">R:<eP",
+            "^6o}765",
+            "4W1\u05550k2",
+            "3k$%1'[-&LMb#{'\"\" ",
+            "$!(x*",
+            "\u07ba+F`)q",
+            "q-v,.7/pXqY",
+            "%w+OQvr",
+            "tEux\u0709~OK",
+            "}!b|ty",
+            "z{.lD~m8onlk[wj",
+            "R1h58i",
+            "mcf+aQ`\u05e6edd",
+            "\"fig H",
+            "SKyuJcO\t",
+            "NZL\u0758MF",
+            "GN@E$DD2AsX",
+            "@*IB",
+            "CPhTg",
+            "3U>uW\t\u05b7VS:R",
+            "|P~Q9ZS [fYX4]",
+            ")\\ZEo^m/_",
+            "5q\u03f1\u0665s\\<k2g",
+            "z8J&",
+            " Va`/\u04c86\\i",
+            "zB\u011eu\\H",
+            "WFA\t+O`]xW7",
+            "9>\u06fcq\u078b!K7",
+            "kf\u05b6\u0501-",
+            "b3\u03a0jp]",
+            "^'~*I@",
+            "M\u02df\u014f{",
+            "@wm.B+",
+            "(\u94dc>Td\"\u0140\u01fc\u03ed~",
+            "8y$o",
+            "wJ1}05",
+            "i\u03cf\uc740BI",
+            "\u0701T\u0313cQ:",
+            "r\u0546\u2a57 ",
+            "fn|xK",
+            "/3vUuA?)C:|s\u0135",
+            "IUeh\"\u05fb_H",
+            "eg\t\uebf5",
+            "Wb27_k%8\u05dd(\u014aO",
+            "\u05f8Jj3wV",
+            "qB{\u07edgC",
+            "ru&op",
+            "Bs \u01b0Gz",
+            ">2[\u020e",
+            "i8P/",
+            "_Y=\u0447e:ZO?(3w",
+            "@hQ+\u011fH*0\"ZOWoI",
+            "mN\u041f5+#",
+            "G| A",
+            "/{kHw",
+            "aLoD~Pf",
+            "7VM'",
+            "g9x+",
+            "&;f?/X)T`D1",
+            "\u07d2.Fg",
+            "p'Hq/L0UEc?k\u01c3",
+            "y7]P\\@TN%s",
+            "!AxU\u02b0\\3;Y^U~PG",
+            "l!;b\tF2\u0202p\u051e(Q_V:1X:\tn3",
+            "JNv\"2",
+            "\u0657 Kx.H",
+            "\u04a5fAj",
+            "^y9*O]#",
+            "kM`~b_R\t7zF",
+            "h!1\u07c8Vc0a\"",
+            "6nS\t",
+            "8#vuf",
+            "z`rs\"WG",
+            "Mvc\u038d&DAdQy/4",
+            "A\u06b1&S\u059aE",
+            "iLQ<6'5P..T&",
+            "4.6I",
+            "\\[YI>U!",
+            "lDa>\u052a\u038b\u03e97~8A",
+            "]&nv|o",
+            "66nQ",
+            "fq>,o,I\u04d4",
+            "\t\u6e31{I",
+            "H>C-Yn\u9991gQ",
+            "a,\tQ",
+            "pjc5d",
+            "\u06c82y\u0738",
+            "\u0648\tL+~|-",
+            "dj qHA",
+            "}m\u0535Q\u04c5",
+            "lVdkbze",
+            ";n Li",
+            "^`Agqr<",
+            "k5Bl\u06fb\u05ac@2lE\\u",
+            "\u03eb=Y&0Q",
+            "!V#\u03fa",
+            "$/o|XhL",
+            "f-=vA",
+            "m=-dlc\\",
+            "labe0b",
+            "-I|LeMaX:Q\u03a3",
+            "t\u053b0J\u07e5A=\u0615\u05e4mCij4ngF`D",
+            " Wh% of\ta^",
+            ")\u0258\u0418\"\u05e8Y=",
+            "\\;l ",
+            "t\u049aG9w",
+            "mj>zjZ",
+            "bW]eg",
+            "l6qnk",
+            "zZgJo",
+            "C`\u05a3\u0453~8OR\u047bgWg?",
+            "gU1nFiyaf",
+            "%o\u04a0Rh6",
+            "&/\u017a;",
+            "(+Z\\j",
+            "1,\u065e[\u07ae",
+            "c&uj",
+            "!Bh\u0773",
+            "&[ow",
+            "\\ebiak",
+            "g&a`",
+            "IiGM>nw\u06eejJZ@",
+            "f7;\ud867\udf2eS\u07bbG",
+            "S0$6",
+            "TW)#gfz.aJ]h",
+            "1A26b+-Sdl",
+            "}wEVZOA\u064a",
+            "xpaA.U7",
+            "-\u06e96\u02daw]]ll",
+            "\u39f2F wa\u0783$\u0172e]]DFok(vpi91k *Z",
+            "8mF6]",
+            "pTqke0*1",
+            "%y<8syjHA",
+            "}X*<yO",
+            "b~DO-T",
+            "@#\u80ff88",
+            "\tE1HnbwS\u02ba]Tl",
+            "\u02d3rb\\ky",
+            "@TYO",
+            "$8p=#Aek|ZW\t%N8d",
+            "3!*`$\u1bf4?",
+            "-\tlH$S",
+            "~F)ewh/?y6$H",
+            "*5KSRHyep`~1",
+            "\u0411|\u02e0=6",
+            "Txe9;K\"",
+            "\u02c8_]OFl",
+            "lpwA6G-",
+            "hZ[CwZl",
+            "6~_'",
+            "1SbS",
+            "1k**kypH]",
+            "oF*.f6",
+            "TTcMe\"",
+            "0g)&\u016e\u079f:{kZ\t>8",
+            "1wsHpQkzF6c]wN",
+            "gOB~T",
+            "UyLb\u02c18",
+            "O1ZbbySIO",
+            "P~V{-b",
+            "^~Ge",
+            "lHnuS/:",
+            "?e+y\u43fcH",
+            "f*'\u02fc\u040db#",
+            "&??~p$i",
+            "BF;[wzek~ZS\t7H8v\t",
+            "?3$r",
+            "zM8MF9,;\u0252:",
+            "?D<>",
+            "<:R=",
+            "Pe6^",
+            "X7}o564",
+            "1W0\u05732k3",
+            "$k%'1&-[#bML\"'{ \"!$",
+            "*x(+",
+            ")`F(>",
+            ",v.\u021a/7pqXs",
+            "Yr3w%",
+            "vQO+t",
+            "ru\u055bE~x",
+            "|b!ytxB",
+            "{l.m~Do8nkljw[h1R",
+            "i85b",
+            "?a+f`Qeddf\"",
+            "giH I",
+            "NJuyOcN",
+            "\tLZM\u0765F\u011aG",
+            "E@ND$A2D@",
+            "XsBI*C",
+            "ThPU3",
+            "gWu>V\tSR:P|",
+            "Q~Z9[ SYfX]4\\)",
+            "^oEZ_/m5",
+            "qs<\\kg2z",
+            "&J8 ",
+            "\uc89eV`a/6i\\",
+            "=&FW",
+            "\tA+Ox]`\u063a7W",
+            ">9q\u07f3!7Kk",
+            "\u05a9f\u0636-b",
+            "\u04603pj$",
+            "\u011c'*~",
+            "@IWV",
+            "M\u028f\u015f{",
+            "t\u0346mC",
+            "-@mw+B.(",
+            ">dT\"\u015f~\u03dc8",
+            "yo$w",
+            "1J}50K_",
+            "^\u03cbiB\u06c9",
+            "I#dX",
+            "\u0444TQc",
+            "\u03abnx|)",
+            "3/uUv?A)\u0121:C|s\u0434",
+            "beU\"h",
+            "Z^\u06be4",
+            "ge\t\u020b",
+            "bW72%k_\u071d8\u0174(}",
+            "J\u05bfjw3Xc",
+            "Bq{g\u01e7ur",
+            "'sB ",
+            "zG\u02602>",
+            "/P8i_",
+            "Y=\u55c7e:\u03cfOZw3(?",
+            "RXw@",
+            "Qh+HZ\"0*WO",
+            "5N#+",
+            "X=#?X1",
+            "<i~{/",
+            ")\u0678LDofP~V7",
+            "f/?)XD`T",
+            "M\u07e6\u03faF.T",
+            "qHL/0cEUk?\u04c36h",
+            "r]7\\PNT@%s",
+            "@>'!",
+            "$UxA\u05ef3\\Y;U^GP~",
+            "b;!l\u0687F\t2p(\u0510QV_:X1:\t",
+            "I)/NJ2\"v",
+            "xKH.",
+            "jAf^",
+            "O*9y]#Mk",
+            "~`b\u044e_\u07b6\tRz7h",
+            "F\u043c!10cV\"aj",
+            "rN){",
+            "Fv#fu`z",
+            "r\u03ees\u025bW\"",
+            "cD&dA/yQA",
+            "4S&\u05bf",
+            "<Q'6\u06d65..P&T]q",
+            "?E v[\\",
+            "IYU>l",
+            "!>aD\u018b\u03aa~7",
+            "A8n&]|vY",
+            ">q,o,\u04f9I\t",
+            "C>HnY-Qg\u0330",
+            "MFC42.DLL",
+            "strncat",
+            "sprintf",
+            "strncpy",
+            "__CxxFrameHandler",
+            "atoi",
+            "strcspn",
+            "strstr",
+            "_ftol",
+            "MSVCRT.dll",
+            "__dllonexit",
+            "_onexit",
+            "_exit",
+            "_XcptFilter",
+            "exit",
+            "_acmdln",
+            "__getmainargs",
+            "_initterm",
+            "__setusermatherr",
+            "_adjust_fdiv",
+            "__p__commode",
+            "__p__fmode",
+            "__set_app_type",
+            "_except_handler3",
+            "_controlfp",
+            "GetProcAddress",
+            "LoadLibraryA",
+            "Sleep",
+            "ReadFile",
+            "CreateProcessA",
+            "GetStartupInfoA",
+            "CloseHandle",
+            "FreeLibrary",
+            "FindClose",
+            "FindNextFileA",
+            "GetLastError",
+            "FileTimeToSystemTime",
+            "FileTimeToLocalFileTime",
+            "FindFirstFileA",
+            "MoveFileA",
+            "GetCurrentProcess",
+            "Process32Next",
+            "GetPriorityClass",
+            "OpenProcess",
+            "Module32First",
+            "TerminateProcess",
+            "GetVersionExA",
+            "InterlockedExchange",
+            "GetCurrentThreadId",
+            "lstrcpyA",
+            "GetFileSize",
+            "GetTickCount",
+            "SetThreadPriority",
+            "GetCurrentThread",
+            "lstrcpynA",
+            "GetModuleFileNameA",
+            "WaitForSingleObject",
+            "GetModuleHandleA",
+            "KERNEL32.dll",
+            "wsprintfA",
+            "GetDesktopWindow",
+            "CreateWindowExA",
+            "SendMessageA",
+            "IsWindow",
+            "GetSystemMetrics",
+            "SetThreadDesktop",
+            "SetProcessWindowStation",
+            "OpenWindowStationA",
+            "GetThreadDesktop",
+            "GetProcessWindowStation",
+            "LoadIconA",
+            "ExitWindowsEx",
+            "DrawIcon",
+            "GetClientRect",
+            "IsIconic",
+            "EnableWindow",
+            "USER32.dll",
+            "DeleteDC",
+            "GetDIBits",
+            "BitBlt",
+            "SelectObject",
+            "CreateCompatibleBitmap",
+            "CreateCompatibleDC",
+            "CreateDCA",
+            "GDI32.dll",
+            "AdjustTokenPrivileges",
+            "LookupPrivilegeValueA",
+            "OpenProcessToken",
+            "ADVAPI32.dll",
+            "SHGetFileInfoA",
+            "ShellExecuteA",
+            "SHELL32.dll",
+            "WSAIoctl",
+            "WS2_32.dll",
+            "capCreateCaptureWindowA",
+            "capGetDriverDescriptionA",
+            "AVICAP32.dll",
+            "malloc",
+            "free",
+            "_strlwr",
+            "_setmbcp",
+            "KERNEL32.dll",
+            "CreatePipe",
+            "Kernel32.dll",
+            "GetSystemDirectoryA",
+            "\\cmd.exe /c ",
+            "%C:\\",
+            "GetDriveTypeA",
+            "SHGetFileInfoA",
+            "Shell32.dll",
+            "%4d-%02d-%02d %02d:%02d:%02d",
+            "Kill You",
+            "%4.2f GB",
+            "%4.2f MB",
+            "%4.2f  KB",
+            "%d Bytes",
+            "DeleteFileA",
+            "WinSta0\\Default",
+            "cmd.exe /c \"%s\"",
+            "open",
+            "CopyFileA",
+            "Protect",
+            "InternetReadFile",
+            "InternetCloseHandle",
+            "InternetOpenUrlA",
+            "InternetOpenA",
+            "wininet.dll",
+            "C:\\Shadow.exe",
+            "GetUrlCacheEntryInfoA",
+            "URLDownloadToCacheFileA",
+            "urlmon.dll",
+            "WinExec",
+            "ShellExecuteA",
+            "Process32First",
+            "CreateToolhelp32Snapshot",
+            "SeDebugPrivilege",
+            "GetComputerNameA",
+            "GlobalMemoryStatus",
+            "%dMB",
+            "%s SP%d (Build %d)",
+            "Win 98",
+            "Win 95",
+            "Win NT",
+            "Win 2000",
+            "Win XP",
+            "Win 2003",
+            "Win Vista",
+            "CVideoCap",
+            "#32770",
+            "User32.dll",
+            "CloseWindow",
+            "GDI32.dll",
+            "DeleteObject",
+            "DISPLAY",
+            "default",
+            "winsta0",
+            "OpenDesktopA",
+            "CloseWindowStation",
+            "CloseDesktop",
+            "KVGIOJWP\u062a",
+            "n*G(jo(G",
+            "n*Gn*G,",
+            "n*GH_",
+            "*G,:;5",
+            "HIFGDZ[XYVWTSPR)GHIFGDZ[XYVWTSPQNOLMHIF",
+            "Bxk*GtpBlY",
+            "lDo(G0%q*GBxHIFGDE]XYVWTURSNOLMJKFGDE]Z[VW ",
+            "q*G ",
+            "%s-Gt'G",
+            "q*Gsq*Gx4",
+            "Po(Glq*Gsq*G",
+            "http",
+            "CreateFileA",
+            "ReadFile",
+            "kernel32.dll",
+            "WriteFile",
+            "CreateThread",
+            "MoveFileExA",
+            "USER32.dll",
+            "mouse_event",
+            "SetCursorPos",
+            "keybd_event",
+            "SeShutdownPrivilege",
+            "Rundll32 %s,RundllUninstall",
+            "CreateMutexA",
+            "ExitProcess",
+            "1.2.3",
+            "incompatible version",
+            "buffer error",
+            "insufficient memory",
+            "data error",
+            "stream error",
+            "file error",
+            "stream end",
+            "need dictionary",
+            "LLLD",
+            "LLDD",
+            "LLLD",
+            "DDLLDDDL",
+            "LLDDLDD",
+            "DLLD",
+            "DDDLDLD",
+            "LDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
+            "DDDD@",
+            "DDDDD@",
+            "(W\u064f\u0311n",
+            "[\u074bc6R",
+            "gRz ",
+            "W@x{|^(u",
+            "HrCg@b\tg ",
+            "gRz.",
+            "gRz ",
+            "sgegpjde5575636ADsgegpjde5575683ADsgegpjde5615775ADsgegpjde5655852ADsgegpjde5696007AD"
+        ],
+        "file": {
+            "ADVAPI32.dll": "Library",
+            "AVICAP32.dll": "Library",
+            "C:\\Shadow.exe": "Executable",
+            "GDI32.dll": "Library",
+            "KERNEL32.dll": "Library",
+            "MFC42.DLL": "Library",
+            "MSVCRT.dll": "Library",
+            "SHELL32.dll": "Library",
+            "USER32.dll": "Library",
+            "WS2_32.dll": "Library",
+            "urlmon.dll": "Library",
+            "wininet.dll": "Library"
+        },
+        "fuzzing": {
+            "String too long": [
+                "sgegpjde5575636ADsgegpjde5575683ADsgegpjde5615775ADsgegpjde5655852ADsgegpjde5696007AD"
+            ]
+        },
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.807493",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasOverlay"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        },
+        {
+            "crypto_signatures.yar": "CRC32_poly_Constant"
+        },
+        {
+            "crypto_signatures.yar": "CRC32_table"
+        }
+    ]
+}

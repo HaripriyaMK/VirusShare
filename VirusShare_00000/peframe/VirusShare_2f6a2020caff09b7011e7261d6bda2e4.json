@@ -1,0 +1,142 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_2f6a2020caff09b7011e7261d6bda2e4",
+    "filesize": 2048,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "2f6a2020caff09b7011e7261d6bda2e4",
+        "sha1": "9f1c6214c01654f2996814a7f63b3491a7e6369c",
+        "sha256": "bad143f4094d2fdbf7337b0ce3ccce1672e3a50da79cc9b06da514e8069e6e8f"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor"
+        ],
+        "breakpoint": [
+            "ExitProcess",
+            "FindWindowA"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "KERNEL32.dll": [
+                    {
+                        "function": "ExitProcess",
+                        "offset": 16785408
+                    }
+                ],
+                "USER32.dll": [
+                    {
+                        "function": "FindWindowA",
+                        "offset": 16785416
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 655544,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 4101,
+        "features": {
+            "antidbg": [
+                "FindWindowA"
+            ],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [],
+            "xor": {}
+        },
+        "imagebase": 16777216,
+        "imphash": "65926fcff16167c3612e389803396ed3",
+        "metadata": {},
+        "sections": {
+            "count": 2,
+            "details": [
+                {
+                    "characteristics": 1610612768,
+                    "data": "b'ANGO\\x00j\\x00h\\x00\\x10\\x00\\x01\\xe8\\r\\x00\\x00\\x00",
+                    "entropy": 0.39826507474477,
+                    "executable": true,
+                    "hash": {
+                        "md5": "5feb95f723ada2590be0e7d7aed9713c",
+                        "sha1": "458bdbfdc982adeb2e1d6aac2044aeeeb2b1dd7c",
+                        "sha256": "4c1b0a5a3a6582b02ee7dce7a9308f1886b5e6c348233cadb39f9b17645de3d1"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 4096,
+                    "virtual_size": 36
+                },
+                {
+                    "characteristics": 3758096448,
+                    "data": "b'\\\\ \\x00\\x00\\x00\\x00\\x00\\x00x \\x00\\x00\\x00\\x00\\x0",
+                    "entropy": 1.148094487456751,
+                    "executable": true,
+                    "hash": {
+                        "md5": "c486480f9e70d45da4f5180c7fd7cac9",
+                        "sha1": "fc6173574b2b6aff3a0efa891716507f5a71e8ff",
+                        "sha256": "66c53eabeb1d79690ff4de15fc6bb0370bff82997b2c683673dd772773dfc857"
+                    },
+                    "section_name": ".rdata",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 8192,
+                    "virtual_size": 41472
+                }
+            ]
+        },
+        "timestamp": "2009-08-08 05:55:17"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "RichE",
+            ".text",
+            "`.rdata",
+            "ANGO",
+            "ExitProcess",
+            "KERNEL32.dll",
+            "FindWindowA",
+            "USER32.dll"
+        ],
+        "file": {
+            "KERNEL32.dll": "Library",
+            "USER32.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.617915",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

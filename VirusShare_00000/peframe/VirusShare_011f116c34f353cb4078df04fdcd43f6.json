@@ -1,0 +1,182 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_011f116c34f353cb4078df04fdcd43f6",
+    "filesize": 1260,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "011f116c34f353cb4078df04fdcd43f6",
+        "sha1": "e4e8244f54fa9a032d40b0636b4efa4484551869",
+        "sha256": "9260ab18cc3587948086d19b4a949a0bfc4ca037414b746cd2b85d1508c141bc"
+    },
+    "peinfo": {
+        "behavior": [],
+        "breakpoint": [
+            "CreateProcessA",
+            "ExitProcess",
+            "GetStartupInfoA",
+            "WSASocketA",
+            "WSAStartup",
+            "accept",
+            "bind",
+            "closesocket",
+            "listen"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "KERNEL32.DLL": [
+                    {
+                        "function": "GetEnvironmentVariableA",
+                        "offset": 4198740
+                    },
+                    {
+                        "function": "CreateProcessA",
+                        "offset": 4198744
+                    },
+                    {
+                        "function": "GetStartupInfoA",
+                        "offset": 4198748
+                    },
+                    {
+                        "function": "ExitProcess",
+                        "offset": 4198752
+                    }
+                ],
+                "WS2_32.DLL": [
+                    {
+                        "function": "accept",
+                        "offset": 4198835
+                    },
+                    {
+                        "function": "bind",
+                        "offset": 4198839
+                    },
+                    {
+                        "function": "closesocket",
+                        "offset": 4198843
+                    },
+                    {
+                        "function": "listen",
+                        "offset": 4198847
+                    },
+                    {
+                        "function": "shutdown",
+                        "offset": 4198851
+                    },
+                    {
+                        "function": "WSAStartup",
+                        "offset": 4198855
+                    },
+                    {
+                        "function": "WSASetEvent",
+                        "offset": 4198859
+                    },
+                    {
+                        "function": "WSASocketA",
+                        "offset": 4198863
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65536,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 1,
+                "SizeOfZeroFill": 0,
+                "StartAddressOfRawData": 23117
+            }
+        },
+        "dll": false,
+        "entrypoint": 4096,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "2693f158e4f0a8f64bef65686fe0018b",
+        "metadata": {},
+        "sections": {
+            "count": 1,
+            "details": [
+                {
+                    "characteristics": 3758096480,
+                    "data": "b'\\xe9\\xea\\x01\\x00\\x00\\x90\\x8d\\x04$Pj\\x02\\xff\\x15\\",
+                    "entropy": 4.652660531731669,
+                    "executable": true,
+                    "hash": {
+                        "md5": "6a1a656d933a9fc5342b3627ae455c05",
+                        "sha1": "f9f82983253a7ade6fdf746eda3749d89f8d2787",
+                        "sha256": "24cacb0c40a40b98ac8cd344efb5628141453da35cea23d4d11207b74d263a9e"
+                    },
+                    "section_name": ".h4x",
+                    "size_of_raw_data": 704,
+                    "virtual_address": 4096,
+                    "virtual_size": 4096
+                }
+            ]
+        },
+        "timestamp": "1970-01-01 00:00:00"
+    },
+    "strings": {
+        "dump": [
+            "coded by digital",
+            ".h4x",
+            "**************** Modified with    PEditor 1.7   by yoda & M.o.D. -> come.to/f2f ****************",
+            "YX>XXXXe",
+            "JriJ",
+            "iJJe",
+            "_J_z",
+            "6{J_",
+            "_J_XXe",
+            "XXX_irzz\u03c6z",
+            "KERNEL32.DLL",
+            "WS2_32.DLL",
+            "GetEnvironmentVariableA",
+            "CreateProcessA",
+            "GetStartupInfoA",
+            "ExitProcess",
+            "WSASocketA",
+            "COMSPEC"
+        ],
+        "file": {
+            "KERNEL32.DLL": "Library",
+            "WS2_32.DLL": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.616979",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasOverlay"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasModified_DOS_Message"
+        }
+    ]
+}

@@ -1,0 +1,164 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_029da2a8304438624593ac1cf170769a",
+    "filesize": 1536,
+    "filetype": "PE32 executable (DLL) (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "029da2a8304438624593ac1cf170769a",
+        "sha1": "ebc1e4ad1b0bcda07022df2bec85b7a032338035",
+        "sha256": "aac08e14fd60ab1dd719fbb7c55aa54aa11e6108462f1459065f92df210426c9"
+    },
+    "peinfo": {
+        "behavior": [],
+        "breakpoint": [
+            "LoadLibraryA"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "kernel32.dll": [
+                    {
+                        "function": "FreeLibrary",
+                        "offset": 268439720
+                    },
+                    {
+                        "function": "LoadLibraryA",
+                        "offset": 268439724
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 24,
+                "VirtualAddress": 8192,
+                "count": 1,
+                "details": {
+                    "reloc_1": 8
+                }
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 2,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 1,
+                "SizeOfZeroFill": 64,
+                "StartAddressOfRawData": 23117
+            }
+        },
+        "dll": true,
+        "entrypoint": 4332,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "Microsoft_Visual_Cpp_v50v60_MFC"
+            ],
+            "xor": {}
+        },
+        "imagebase": 268435456,
+        "imphash": "41df2031949a49e1fbee265f3149a7da",
+        "metadata": {},
+        "sections": {
+            "count": 2,
+            "details": [
+                {
+                    "characteristics": 3758096416,
+                    "data": "b'system.exe\\x00user32.dll\\x00Ole32.dll\\x00wsock.d",
+                    "entropy": 3.7988196997773915,
+                    "executable": true,
+                    "hash": {
+                        "md5": "92fc00516fa066b15738347618338b24",
+                        "sha1": "36ce30497f689c170875c532cf90390b04744f9a",
+                        "sha256": "8c8d11c3442ba5d70fe510b78d271783538f86df91bca81ae7ac06897c502270"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 4096,
+                    "virtual_size": 364
+                },
+                {
+                    "characteristics": 1107296320,
+                    "data": "b'\\x00\\x10\\x00\\x00\\x18\\x00\\x00\\x00\\x001\\n1\\x181!1,",
+                    "entropy": 0.2951446603346658,
+                    "executable": false,
+                    "hash": {
+                        "md5": "d73a2550ea1f25ab8315ca7f614f4ce4",
+                        "sha1": "287dd56a8c43d076481e0e57b8d57128da8db50f",
+                        "sha256": "d1626d276f0e00aa0ab81dc9ec8a750985fbd8322e672d62fb9ab55d0e390c4d"
+                    },
+                    "section_name": ".reloc",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 8192,
+                    "virtual_size": 34
+                }
+            ]
+        },
+        "timestamp": "2004-03-25 05:17:34"
+    },
+    "strings": {
+        "dump": [
+            "\u044a\u044a\u044a_\u068a-\u040aRich\u044a",
+            "nkb@",
+            ".text",
+            ".reloc",
+            "system.exe",
+            "user32.dll",
+            "Ole32.dll",
+            "wsock.dll",
+            "shlwapi.dll",
+            "wininet.dll",
+            "advapi32.dll",
+            "iphlpapi.dll",
+            "msvcrt.dll",
+            "shell32.dll",
+            "FreeLibrary",
+            "LoadLibraryA",
+            "kernel32.dll",
+            "user32.dll",
+            "1!1,1?1^1d1"
+        ],
+        "file": {
+            "Ole32.dll": "Library",
+            "advapi32.dll": "Library",
+            "iphlpapi.dll": "Library",
+            "kernel32.dll": "Library",
+            "msvcrt.dll": "Library",
+            "shell32.dll": "Library",
+            "shlwapi.dll": "Library",
+            "system.exe": "Executable",
+            "user32.dll": "Library",
+            "wininet.dll": "Library",
+            "wsock.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.573601",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsDLL"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasModified_DOS_Message"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

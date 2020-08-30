@@ -1,0 +1,203 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_4184c6f83cc359ddbcee84a16eac76db",
+    "filesize": 1536,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "4184c6f83cc359ddbcee84a16eac76db",
+        "sha1": "1087b978aeb1d6c7e8869a32fad07e21f5868b6b",
+        "sha256": "49eba77cb72b9ded44716c1acce445f6c6744375a0cf4ab4fa92a29bdaf511a0"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "inject_thread",
+            "network_dropper"
+        ],
+        "breakpoint": [
+            "CreateRemoteThread",
+            "ExitProcess",
+            "ExitThread",
+            "FindWindowA",
+            "GetModuleHandleA",
+            "GetWindowThreadProcessId",
+            "OpenProcess",
+            "Sleep",
+            "URLDownloadToFileA",
+            "VirtualAllocEx",
+            "VirtualFreeEx",
+            "WinExec",
+            "WriteProcessMemory"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "kernel32.dll": [
+                    {
+                        "function": "CreateRemoteThread",
+                        "offset": 320081920
+                    },
+                    {
+                        "function": "ExitProcess",
+                        "offset": 320081924
+                    },
+                    {
+                        "function": "ExitThread",
+                        "offset": 320081928
+                    },
+                    {
+                        "function": "GetModuleHandleA",
+                        "offset": 320081932
+                    },
+                    {
+                        "function": "OpenProcess",
+                        "offset": 320081936
+                    },
+                    {
+                        "function": "Sleep",
+                        "offset": 320081940
+                    },
+                    {
+                        "function": "VirtualAllocEx",
+                        "offset": 320081944
+                    },
+                    {
+                        "function": "VirtualFreeEx",
+                        "offset": 320081948
+                    },
+                    {
+                        "function": "WinExec",
+                        "offset": 320081952
+                    },
+                    {
+                        "function": "WriteProcessMemory",
+                        "offset": 320081956
+                    }
+                ],
+                "urlmon.dll": [
+                    {
+                        "function": "URLDownloadToFileA",
+                        "offset": 320081964
+                    }
+                ],
+                "user32.dll": [
+                    {
+                        "function": "GetWindowThreadProcessId",
+                        "offset": 320081972
+                    },
+                    {
+                        "function": "FindWindowA",
+                        "offset": 320081976
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 4266,
+        "features": {
+            "antidbg": [
+                "FindWindowA",
+                "GetWindowThreadProcessId"
+            ],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "MASMTASM"
+            ],
+            "xor": {}
+        },
+        "imagebase": 320077824,
+        "imphash": "aa21b10c337904295270d6e293a7ec39",
+        "metadata": {},
+        "sections": {
+            "count": 1,
+            "details": [
+                {
+                    "characteristics": 3221487648,
+                    "data": "b'\\x88\\x12\\x00\\x00\\x9e\\x12\\x00\\x00\\xac\\x12\\x00\\x00",
+                    "entropy": 4.640843871742147,
+                    "executable": true,
+                    "hash": {
+                        "md5": "a02953bed6f3f455ac1df968990a889e",
+                        "sha1": "546655f2999ea4bdb8c8f16c960f92d50f7cb261",
+                        "sha256": "4e8296385208eb7cee45bc35b3fca867bf8e862e806635db33bb63634e2df6ec"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 1024,
+                    "virtual_address": 4096,
+                    "virtual_size": 908
+                }
+            ]
+        },
+        "timestamp": "2003-12-12 01:50:10"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "])|x3z|x3z|x3zg zix3zX!z}x3zRich|x3z",
+            ".text",
+            "shell_traywnd",
+            "@@URL                            ",
+            "@@EXE                            ",
+            "CreateRemoteThread",
+            "ExitProcess",
+            "ExitThread",
+            "GetModuleHandleA",
+            "OpenProcess",
+            "Sleep",
+            "VirtualAllocEx",
+            "VirtualFreeEx",
+            "WinExec",
+            "WriteProcessMemory",
+            "kernel32.dll",
+            "FindWindowA",
+            "GetWindowThreadProcessId",
+            "user32.dll",
+            "URLDownloadToFileA",
+            "urlmon.dll"
+        ],
+        "file": {
+            "kernel32.dll": "Library",
+            "urlmon.dll": "Library",
+            "user32.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.552957",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

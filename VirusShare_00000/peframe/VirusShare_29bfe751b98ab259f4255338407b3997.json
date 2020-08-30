@@ -1,0 +1,263 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_29bfe751b98ab259f4255338407b3997",
+    "filesize": 2052,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "29bfe751b98ab259f4255338407b3997",
+        "sha1": "0b4a020b7a6bab77ecb3145dd85beac01e93b819",
+        "sha256": "bee77639fdbdc070183d849184c4c1fe067d32fc3fbc4a4d0042240b1c66b388"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "network_tcp_listen",
+            "network_dropper",
+            "network_tcp_socket",
+            "win_registry"
+        ],
+        "breakpoint": [
+            "CreateThread",
+            "ExitProcess",
+            "GetTickCount",
+            "GetWindowsDirectoryA",
+            "RegCloseKey",
+            "RegCreateKeyA",
+            "ShellExecuteA",
+            "Sleep",
+            "URLDownloadToFileA",
+            "WSAStartup",
+            "accept",
+            "bind",
+            "closesocket",
+            "listen",
+            "socket"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "SHELL32.dll": [
+                    {
+                        "function": "ShellExecuteA",
+                        "offset": 4198792
+                    }
+                ],
+                "advapi32.dll": [
+                    {
+                        "function": "RegCloseKey",
+                        "offset": 4198772
+                    },
+                    {
+                        "function": "RegCreateKeyA",
+                        "offset": 4198776
+                    },
+                    {
+                        "function": "RegQueryValueExA",
+                        "offset": 4198780
+                    },
+                    {
+                        "function": "RegSetValueExA",
+                        "offset": 4198784
+                    }
+                ],
+                "kernel32.dll": [
+                    {
+                        "function": "CreateThread",
+                        "offset": 4198732
+                    },
+                    {
+                        "function": "ExitProcess",
+                        "offset": 4198736
+                    },
+                    {
+                        "function": "GetTickCount",
+                        "offset": 4198740
+                    },
+                    {
+                        "function": "GetWindowsDirectoryA",
+                        "offset": 4198744
+                    },
+                    {
+                        "function": "GlobalAlloc",
+                        "offset": 4198748
+                    },
+                    {
+                        "function": "GlobalFree",
+                        "offset": 4198752
+                    },
+                    {
+                        "function": "Sleep",
+                        "offset": 4198756
+                    }
+                ],
+                "urlmon.dll": [
+                    {
+                        "function": "URLDownloadToFileA",
+                        "offset": 4198800
+                    }
+                ],
+                "user32.dll": [
+                    {
+                        "function": "wsprintfA",
+                        "offset": 4198764
+                    }
+                ],
+                "wsock32.dll": [
+                    {
+                        "function": "WSAStartup",
+                        "offset": 4198808
+                    },
+                    {
+                        "function": "accept",
+                        "offset": 4198812
+                    },
+                    {
+                        "function": "bind",
+                        "offset": 4198816
+                    },
+                    {
+                        "function": "closesocket",
+                        "offset": 4198820
+                    },
+                    {
+                        "function": "listen",
+                        "offset": 4198824
+                    },
+                    {
+                        "function": "socket",
+                        "offset": 4198828
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 5321,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "1c19c3881bb3d871e07db188599b6b95",
+        "metadata": {},
+        "sections": {
+            "count": 1,
+            "details": [
+                {
+                    "characteristics": 3758096416,
+                    "data": "b'90\\x00\\x00http://www.youbuynow.com/get.php\\x00Do",
+                    "entropy": 5.270670275911374,
+                    "executable": true,
+                    "hash": {
+                        "md5": "ff6c4a78acd6bf65d5151ca756ef20b9",
+                        "sha1": "d4b305280b9c924583e0a810d1689f14c826e6e2",
+                        "sha256": "6050bb2d41c78dcda9fc42d242f3061b4008d7d419af7bfc2c09c20f6c090780"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 1536,
+                    "virtual_address": 4096,
+                    "virtual_size": 2018
+                }
+            ]
+        },
+        "timestamp": "2004-07-31 06:05:10"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            ".text",
+            "http://www.youbuynow.com/get.php",
+            "DownloaderFirstRu2",
+            "Software\\Firs",
+            "%s\\%lu.exe",
+            "open",
+            "CreateThread",
+            "ExitProcess",
+            "GetTickCount",
+            "GetWindowsDirectoryA",
+            "GlobalAlloc",
+            "GlobalFree",
+            "Sleep",
+            "kernel32.dll",
+            "wsprintfA",
+            "user32.dll",
+            "RegCloseKey",
+            "RegCreateKeyA",
+            "RegQueryValueExA",
+            "RegSetValueExA",
+            "advapi32.dll",
+            "shlwapi.dll",
+            "ShellExecuteA",
+            "SHELL32.dll",
+            "URLDownloadToFileA",
+            "urlmon.dll",
+            "WSAStartup",
+            "accept",
+            "bind",
+            "closesocket",
+            "listen",
+            "socket",
+            "wsock32.dll",
+            "UEPh8",
+            "USEPh8",
+            "EPEPEPj",
+            "[Uh:",
+            "UVWS}",
+            "EPEPSW",
+            "3[_^"
+        ],
+        "file": {
+            "%s\\%lu.exe": "Executable",
+            "SHELL32.dll": "Library",
+            "advapi32.dll": "Library",
+            "http://www.youbuynow.com/get.php": "Web Page",
+            "kernel32.dll": "Library",
+            "shlwapi.dll": "Library",
+            "urlmon.dll": "Library",
+            "user32.dll": "Library",
+            "wsock32.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.youbuynow.com/get.php"
+        ]
+    },
+    "time": "0:00:00.574823",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasOverlay"
+        }
+    ]
+}
