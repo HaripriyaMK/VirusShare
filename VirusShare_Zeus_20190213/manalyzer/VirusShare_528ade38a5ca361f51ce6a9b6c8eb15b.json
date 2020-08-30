@@ -1,0 +1,226 @@
+{
+    "/root/torrent/VirusShare_Zeus_20190213/VirusShare_528ade38a5ca361f51ce6a9b6c8eb15b": {
+        "Summary": {
+            "Architecture": "IMAGE_FILE_MACHINE_I386",
+            "Subsystem": "IMAGE_SUBSYSTEM_WINDOWS_GUI",
+            "Compilation Date": "1983-Dec-23 01:58:13"
+        },
+        "DOS Header": {
+            "e_magic": "MZ",
+            "e_cblp": 144,
+            "e_cp": 3,
+            "e_crlc": 0,
+            "e_cparhdr": 4,
+            "e_minalloc": 0,
+            "e_maxalloc": 65535,
+            "e_ss": 0,
+            "e_sp": 184,
+            "e_csum": 0,
+            "e_ip": 0,
+            "e_cs": 0,
+            "e_ovno": 0,
+            "e_oemid": 0,
+            "e_oeminfo": 0,
+            "e_lfanew": 128
+        },
+        "PE Header": {
+            "Signature": "PE",
+            "Machine": "IMAGE_FILE_MACHINE_I386",
+            "NumberofSections": 2,
+            "TimeDateStamp": "1983-Dec-23 01:58:13",
+            "PointerToSymbolTable": 0,
+            "NumberOfSymbols": 0,
+            "SizeOfOptionalHeader": 224,
+            "Characteristics": [
+                "IMAGE_FILE_32BIT_MACHINE",
+                "IMAGE_FILE_EXECUTABLE_IMAGE",
+                "IMAGE_FILE_LINE_NUMS_STRIPPED",
+                "IMAGE_FILE_LOCAL_SYMS_STRIPPED",
+                "IMAGE_FILE_RELOCS_STRIPPED"
+            ]
+        },
+        "Image Optional Header": {
+            "Magic": "PE32",
+            "LinkerVersion": "5.0",
+            "SizeOfCode": 13312,
+            "SizeOfInitializedData": 0,
+            "SizeOfUninitializedData": 0,
+            "AddressOfEntryPoint": "0x00013000 (Section: kqrbsjz)",
+            "BaseOfCode": 4096,
+            "BaseOfData": 20480,
+            "ImageBase": 4194304,
+            "SectionAlignment": 4096,
+            "FileAlignment": 512,
+            "OperatingSystemVersion": "4.0",
+            "ImageVersion": "0.0",
+            "SubsystemVersion": "4.0",
+            "Win32VersionValue": 0,
+            "SizeOfImage": 86016,
+            "SizeOfHeaders": 512,
+            "Checksum": 0,
+            "Subsystem": "IMAGE_SUBSYSTEM_WINDOWS_GUI",
+            "SizeofStackReserve": 1048576,
+            "SizeofStackCommit": 4096,
+            "SizeofHeapReserve": 1048576,
+            "SizeofHeapCommit": 4096,
+            "LoaderFlags": 0,
+            "NumberOfRvaAndSizes": 16
+        },
+        "Sections": {
+            ".text": {
+                "VirtualSize": 71164,
+                "VirtualAddress": 4096,
+                "SizeOfRawData": 71164,
+                "PointerToRawData": 512,
+                "PointerToRelocations": 0,
+                "PointerToLineNumbers": 0,
+                "NumberOfLineNumbers": 0,
+                "NumberOfRelocations": 0,
+                "Characteristics": [
+                    "IMAGE_SCN_CNT_CODE",
+                    "IMAGE_SCN_MEM_EXECUTE",
+                    "IMAGE_SCN_MEM_READ",
+                    "IMAGE_SCN_MEM_WRITE"
+                ],
+                "Entropy": 5.65634
+            },
+            "kqrbsjz": {
+                "VirtualSize": 6652,
+                "VirtualAddress": 77824,
+                "SizeOfRawData": 6652,
+                "PointerToRawData": 71680,
+                "PointerToRelocations": 0,
+                "PointerToLineNumbers": 0,
+                "NumberOfLineNumbers": 0,
+                "NumberOfRelocations": 0,
+                "Characteristics": [
+                    "IMAGE_SCN_MEM_EXECUTE",
+                    "IMAGE_SCN_MEM_READ",
+                    "IMAGE_SCN_MEM_WRITE"
+                ],
+                "Entropy": 6.26745
+            }
+        },
+        "Plugins": {
+            "clamav": {
+                "level": 3,
+                "plugin_output": {
+                    "info_0": "Win.Worm.R-94",
+                    "info_1": "Win.Worm.Brontok-88",
+                    "info_2": "Win.Worm.Nimda-60",
+                    "info_3": "Win.Worm.Chir-6535432-0",
+                    "info_4": "Txt.Trojan.Iframe-6840645-0",
+                    "info_5": "Win.Trojan.Gamarue-6987573-0",
+                    "info_6": "Win.Virus.Chir-7135722-0"
+                },
+                "summary": "Matching ClamAV signature(s):"
+            },
+            "strings": {
+                "level": 2,
+                "plugin_output": {
+                    "Looks for Qemu presence": [
+                        "qemu"
+                    ],
+                    "May have dropper capabilities": [
+                        "CurrentVersion\\Run"
+                    ],
+                    "Contains domain names": [
+                        "btamail.net.cn",
+                        "yahoo.com"
+                    ]
+                },
+                "summary": "Strings found in the binary may indicate undesirable behavior:"
+            },
+            "packer": {
+                "level": 2,
+                "plugin_output": {
+                    "info_0": "Section .text is both writable and executable.",
+                    "info_1": "Unusual section name found: kqrbsjz",
+                    "info_2": "Section kqrbsjz is both writable and executable.",
+                    "info_3": "The PE only has 0 import(s)."
+                },
+                "summary": "The PE is possibly packed."
+            },
+            "mitigation": {
+                "level": 1,
+                "plugin_output": {
+                    "Stack Canary": "disabled",
+                    "SafeSEH": "disabled",
+                    "ASLR": "disabled",
+                    "DEP": "disabled",
+                    "CFG": "disabled"
+                },
+                "summary": "The following exploit mitigation techniques have been detected"
+            },
+            "virustotal": {
+                "level": 3,
+                "plugin_output": {
+                    "Bkav": "W32.ChirBPE",
+                    "DrWeb": "Win32.Runonce.6652",
+                    "MicroWorld-eScan": "IRC-Worm.Generic.22679",
+                    "CMC": "Virus.Worm.Win32.Runouce.1!O",
+                    "CAT-QuickHeal": "W32.Virut.Cur1",
+                    "McAfee": "W32/Chir.b@MM",
+                    "Malwarebytes": "Trojan.Agent.NR",
+                    "K7AntiVirus": "EmailWorm ( 00176e371 )",
+                    "Alibaba": "EmailWorm:Win32/Runouce.631324c4",
+                    "K7GW": "EmailWorm ( 00176e371 )",
+                    "Cybereason": "malicious.8a5ca3",
+                    "Invincea": "heuristic",
+                    "BitDefenderTheta": "AI:FileInfector.F1BE214812",
+                    "Cyren": "W32/Thecid.B@mm",
+                    "Symantec": "W32.Chir.B@mm",
+                    "TotalDefense": "Win32/Chir.B",
+                    "APEX": "Malicious",
+                    "Paloalto": "generic.ml",
+                    "ClamAV": "Win.Worm.Brontok-88",
+                    "Kaspersky": "Email-Worm.Win32.Runouce.b",
+                    "BitDefender": "IRC-Worm.Generic.22679",
+                    "NANO-Antivirus": "Virus.Win32.Runouce.bxafx",
+                    "Avast": "Win32:Oncer",
+                    "Tencent": "Backdoor.Win32.Androm.a",
+                    "Ad-Aware": "IRC-Worm.Generic.22679",
+                    "Sophos": "W32/Chir-B",
+                    "Comodo": "EmailWorm.Win32.Runonce.~v001@1qup51",
+                    "F-Secure": "Malware.W32/Chir.B",
+                    "Baidu": "Win32.Virus.ChineseHacker.a",
+                    "VIPRE": "Trojan-Downloader.Win32.Dofoil.a (v)",
+                    "TrendMicro": "PE_Chir.B",
+                    "McAfee-GW-Edition": "BehavesLike.Win32.VirRansom.lm",
+                    "Trapmine": "malicious.moderate.ml.score",
+                    "FireEye": "Generic.mg.528ade38a5ca361f",
+                    "Emsisoft": "IRC-Worm.Generic.22679 (B)",
+                    "SentinelOne": "DFI - Malicious PE",
+                    "F-Prot": "W32/Thecid.B@mm",
+                    "Jiangmin": "Win32/cnPeace.b",
+                    "Webroot": "W32.Chir.Gen",
+                    "Avira": "W32/Chir.B",
+                    "MAX": "malware (ai score=100)",
+                    "Kingsoft": "Win32.Type.b.6637",
+                    "Microsoft": "Worm:Win32/Gamarue",
+                    "Endgame": "malicious (high confidence)",
+                    "Arcabit": "IRC-Worm.Generic.D5897",
+                    "ViRobot": "Win32.Chir.B",
+                    "ZoneAlarm": "Email-Worm.Win32.Runouce.b",
+                    "GData": "Win32.Virus.Chir.A",
+                    "AhnLab-V3": "Win32/ChiHack.6652",
+                    "Acronis": "suspicious",
+                    "VBA32": "Virus.Win32.Chur.A",
+                    "ALYac": "IRC-Worm.Generic.22679",
+                    "Cylance": "Unsafe",
+                    "Zoner": "Trojan.Win32.Chir.22013",
+                    "ESET-NOD32": "Win32/Chir.B",
+                    "TrendMicro-HouseCall": "PE_Chir.B",
+                    "Rising": "Worm.Win32.Gamarue.b (CLASSIC)",
+                    "Yandex": "I-Worm.Chir.B",
+                    "Ikarus": "Trojan.Win32.Spy",
+                    "Fortinet": "W32/Chir.B@mm",
+                    "AVG": "Win32:Oncer",
+                    "Panda": "Generic Malware",
+                    "Qihoo-360": "Virus.Win32.CNHacker.C"
+                },
+                "summary": "VirusTotal score: 63/68 (Scanned on 2019-11-24 22:47:13)"
+            }
+        }
+    }
+}

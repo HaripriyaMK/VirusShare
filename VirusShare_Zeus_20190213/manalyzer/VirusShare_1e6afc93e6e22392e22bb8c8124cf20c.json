@@ -1,0 +1,239 @@
+{
+    "/root/torrent/VirusShare_Zeus_20190213/VirusShare_1e6afc93e6e22392e22bb8c8124cf20c": {
+        "Summary": {
+            "Architecture": "IMAGE_FILE_MACHINE_I386",
+            "Subsystem": "IMAGE_SUBSYSTEM_WINDOWS_GUI",
+            "Compilation Date": "2001-Mar-18 10:05:27"
+        },
+        "DOS Header": {
+            "e_magic": "MZ",
+            "e_cblp": 0,
+            "e_cp": 1050,
+            "e_crlc": 256,
+            "e_cparhdr": 0,
+            "e_minalloc": 0,
+            "e_maxalloc": 238,
+            "e_ss": 0,
+            "e_sp": 61056,
+            "e_csum": 54,
+            "e_ip": 33248,
+            "e_cs": 61170,
+            "e_ovno": 61167,
+            "e_oemid": 33230,
+            "e_oeminfo": 61170,
+            "e_lfanew": 112
+        },
+        "PE Header": {
+            "Signature": "PE",
+            "Machine": "IMAGE_FILE_MACHINE_I386",
+            "NumberofSections": 3,
+            "TimeDateStamp": "2001-Mar-18 10:05:27",
+            "PointerToSymbolTable": 0,
+            "NumberOfSymbols": 0,
+            "SizeOfOptionalHeader": 224,
+            "Characteristics": [
+                "IMAGE_FILE_32BIT_MACHINE",
+                "IMAGE_FILE_EXECUTABLE_IMAGE"
+            ]
+        },
+        "Image Optional Header": {
+            "Magic": "PE32",
+            "LinkerVersion": "83.0",
+            "SizeOfCode": 38912,
+            "SizeOfInitializedData": 74776,
+            "SizeOfUninitializedData": 0,
+            "AddressOfEntryPoint": "0x0000A3A3 (Section: .tqx)",
+            "BaseOfCode": 4096,
+            "BaseOfData": 65536,
+            "ImageBase": 4194304,
+            "SectionAlignment": 4096,
+            "FileAlignment": 512,
+            "OperatingSystemVersion": "5.0",
+            "ImageVersion": "0.0",
+            "SubsystemVersion": "4.0",
+            "Win32VersionValue": 0,
+            "SizeOfImage": 143360,
+            "SizeOfHeaders": 512,
+            "Checksum": 0,
+            "Subsystem": "IMAGE_SUBSYSTEM_WINDOWS_GUI",
+            "SizeofStackReserve": 1048576,
+            "SizeofStackCommit": 4096,
+            "SizeofHeapReserve": 1048576,
+            "SizeofHeapCommit": 4096,
+            "LoaderFlags": 0,
+            "NumberOfRvaAndSizes": 16
+        },
+        "Sections": {
+            ".tqx": {
+                "VirtualSize": 58935,
+                "VirtualAddress": 4096,
+                "SizeOfRawData": 38912,
+                "PointerToRawData": 512,
+                "PointerToRelocations": 0,
+                "PointerToLineNumbers": 0,
+                "NumberOfLineNumbers": 0,
+                "NumberOfRelocations": 0,
+                "Characteristics": [
+                    "IMAGE_SCN_CNT_CODE",
+                    "IMAGE_SCN_MEM_EXECUTE",
+                    "IMAGE_SCN_MEM_READ",
+                    "IMAGE_SCN_MEM_WRITE"
+                ],
+                "Entropy": 7.94985
+            },
+            ".hwzct": {
+                "VirtualSize": 5144,
+                "VirtualAddress": 65536,
+                "SizeOfRawData": 1024,
+                "PointerToRawData": 39424,
+                "PointerToRelocations": 0,
+                "PointerToLineNumbers": 0,
+                "NumberOfLineNumbers": 0,
+                "NumberOfRelocations": 0,
+                "Characteristics": [
+                    "IMAGE_SCN_CNT_INITIALIZED_DATA",
+                    "IMAGE_SCN_MEM_READ"
+                ],
+                "Entropy": 5.95524
+            },
+            ".rcnwn": {
+                "VirtualSize": 69632,
+                "VirtualAddress": 73728,
+                "SizeOfRawData": 5120,
+                "PointerToRawData": 40448,
+                "PointerToRelocations": 0,
+                "PointerToLineNumbers": 0,
+                "NumberOfLineNumbers": 0,
+                "NumberOfRelocations": 0,
+                "Characteristics": [
+                    "IMAGE_SCN_CNT_INITIALIZED_DATA",
+                    "IMAGE_SCN_MEM_READ"
+                ],
+                "Entropy": 7.4346
+            }
+        },
+        "Imports": {
+            "kernel32.dll": [
+                "GlobalAlloc",
+                "GlobalFree",
+                "CloseHandle",
+                "DeleteFileW",
+                "HeapAlloc",
+                "SetConsoleMode"
+            ],
+            "advapi32.dll": [
+                "RegOpenKeyExW",
+                "GetPrivateObjectSecurity",
+                "IsTextUnicode"
+            ]
+        },
+        "Plugins": {
+            "packer": {
+                "level": 2,
+                "plugin_output": {
+                    "info_0": "Unusual section name found: .tqx",
+                    "info_1": "Section .tqx is both writable and executable.",
+                    "info_2": "Unusual section name found: .hwzct",
+                    "info_3": "Unusual section name found: .rcnwn",
+                    "info_4": "The PE only has 9 import(s)."
+                },
+                "summary": "The PE is possibly packed."
+            },
+            "imports": {
+                "level": 1,
+                "plugin_output": {
+                    "Can access the registry": [
+                        "RegOpenKeyExW"
+                    ]
+                },
+                "summary": "The PE contains common functions which appear in legitimate applications."
+            },
+            "mitigation": {
+                "level": 1,
+                "plugin_output": {
+                    "Stack Canary": "disabled",
+                    "SafeSEH": "disabled",
+                    "ASLR": "disabled",
+                    "DEP": "disabled",
+                    "CFG": "disabled"
+                },
+                "summary": "The following exploit mitigation techniques have been detected"
+            },
+            "overlay": {
+                "level": 2,
+                "plugin_output": {
+                    "info_0": "58368 bytes of data starting at offset 0xb200.",
+                    "info_1": "The overlay data has an entropy of 7.30931 and is possibly compressed or encrypted."
+                },
+                "summary": "The file contains overlay data."
+            },
+            "virustotal": {
+                "level": 3,
+                "plugin_output": {
+                    "Bkav": "HW32.Packed.",
+                    "MicroWorld-eScan": "Trojan.Generic.539960",
+                    "CMC": "Trojan-Banker.Win32.Bancos!O",
+                    "CAT-QuickHeal": "TrojanSpy.Zbot",
+                    "McAfee": "Spy-Agent.kz.gen.c",
+                    "Cylance": "Unsafe",
+                    "VIPRE": "Trojan-Spy.Win32.Zbot.gen (fs)",
+                    "Sangfor": "Malware",
+                    "K7AntiVirus": "Riskware ( 0040eff71 )",
+                    "Alibaba": "TrojanSpy:Win32/Bancos.e25557dd",
+                    "K7GW": "Riskware ( 0040eff71 )",
+                    "Cybereason": "malicious.3e6e22",
+                    "Arcabit": "Trojan.Generic.D83D38",
+                    "Invincea": "heuristic",
+                    "BitDefenderTheta": "AI:Packer.D456E7C11E",
+                    "Cyren": "W32/Bancos.XNDO-3878",
+                    "Symantec": "Trojan.Zbot!gen",
+                    "ESET-NOD32": "Win32/Spy.Zbot.QF",
+                    "APEX": "Malicious",
+                    "Avast": "Win32:Bancos-ATZ [Trj]",
+                    "ClamAV": "Win.Trojan.Agent-47602",
+                    "Kaspersky": "Trojan-Spy.Win32.Zbot.aez",
+                    "BitDefender": "Trojan.Generic.539960",
+                    "NANO-Antivirus": "Trojan.Win32.Bancos.evhgg",
+                    "Paloalto": "generic.ml",
+                    "Rising": "Spyware.Zbot!8.16B (CLOUD)",
+                    "Ad-Aware": "Trojan.Generic.539960",
+                    "Sophos": "Troj/Banker-ERY",
+                    "Comodo": "TrojWare.Win32.TrojanSpy.Zbot.AAD@39gwps",
+                    "F-Secure": "Trojan.TR/Spy.Bancos.aon",
+                    "DrWeb": "Trojan.Proxy.2486",
+                    "Zillya": "Trojan.Bancos.Win32.3269",
+                    "TrendMicro": "TSPY_BANCOS.JP",
+                    "McAfee-GW-Edition": "BehavesLike.Win32.RAHack.cc",
+                    "Trapmine": "malicious.high.ml.score",
+                    "FireEye": "Generic.mg.1e6afc93e6e22392",
+                    "Emsisoft": "Trojan.Generic.539960 (B)",
+                    "SentinelOne": "DFI - Malicious PE",
+                    "F-Prot": "W32/Bancos.MRT",
+                    "Jiangmin": "TrojanSpy.Bancos.ber",
+                    "Avira": "TR/Spy.Bancos.aon",
+                    "MAX": "malware (ai score=100)",
+                    "Antiy-AVL": "Trojan[Spy]/Win32.Zbot",
+                    "Microsoft": "PWS:Win32/Zbot.gen!B",
+                    "Endgame": "malicious (high confidence)",
+                    "ZoneAlarm": "Trojan-Spy.Win32.Zbot.aez",
+                    "GData": "Trojan.Generic.539960",
+                    "AhnLab-V3": "Worm/Win32.IRCBot.R30204",
+                    "Acronis": "suspicious",
+                    "ALYac": "Trojan.Generic.539960",
+                    "VBA32": "Trojan.Inject.01376",
+                    "TrendMicro-HouseCall": "TSPY_BANCOS.JP",
+                    "Tencent": "Win32.Trojan-spy.Zbot.Eany",
+                    "Yandex": "Trojan.PWS.Bancos!b9Vd8P5jEPM",
+                    "Ikarus": "Trojan-Spy.Win32.Bancos.aom",
+                    "MaxSecure": "Trojan.Malware.1126810.susgen",
+                    "Fortinet": "W32/Agent.BRW!tr",
+                    "AVG": "Win32:Bancos-ATZ [Trj]",
+                    "Panda": "Trj/Sinowal.XA",
+                    "CrowdStrike": "win/malicious_confidence_100% (W)",
+                    "Qihoo-360": "HEUR/Malware.QVM19.Gen"
+                },
+                "summary": "VirusTotal score: 61/72 (Scanned on 2020-05-26 21:22:20)"
+            }
+        }
+    }
+}
