@@ -1,0 +1,333 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_20cb5d922fea44bbae7ea1ba122f65f2",
+    "filesize": 17408,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows, UPX compressed",
+    "hashes": {
+        "md5": "20cb5d922fea44bbae7ea1ba122f65f2",
+        "sha1": "84b96f322cb1fc16431e9982955a2458f0d29c75",
+        "sha256": "0bbcd993f05218ce6c822e624c877cb8ca35c9dcf2207306bf98982295550134"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "network_dropper",
+            "win_registry"
+        ],
+        "breakpoint": [
+            "RegOpenKeyA",
+            "ShellExecuteA",
+            "Sleep",
+            "URLDownloadToFileA"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "ADVAPI32.dll": [
+                    {
+                        "function": "RegOpenKeyA",
+                        "offset": 4198400
+                    },
+                    {
+                        "function": "RegSetValueExA",
+                        "offset": 4198404
+                    }
+                ],
+                "KERNEL32.DLL": [
+                    {
+                        "function": "QueryPerformanceFrequency",
+                        "offset": 4198412
+                    },
+                    {
+                        "function": "QueryPerformanceCounter",
+                        "offset": 4198416
+                    },
+                    {
+                        "function": "Sleep",
+                        "offset": 4198420
+                    }
+                ],
+                "MSVCRT.dll": [
+                    {
+                        "function": "_stat",
+                        "offset": 4198428
+                    }
+                ],
+                "SHELL32.dll": [
+                    {
+                        "function": "ShellExecuteA",
+                        "offset": 4198436
+                    }
+                ],
+                "urlmon.dll": [
+                    {
+                        "function": "URLDownloadToFileA",
+                        "offset": 4198444
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 5520,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "Microsoft_Visual_Cpp_v50v60_MFC",
+                "Borland_Delphi_30_additional",
+                "Borland_Delphi_30_",
+                "Borland_Delphi_v40_v50",
+                "Borland_Delphi_v30",
+                "Borland_Delphi_DLL"
+            ],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "04f094de1a17a4c8d2b611dca75f6e0e",
+        "metadata": {},
+        "sections": {
+            "count": 3,
+            "details": [
+                {
+                    "characteristics": 3758096512,
+                    "data": "b'K \\x00\\x00X \\x00\\x00\\x00\\x00\\x00\\x00\\x07 \\x00\\x0",
+                    "entropy": 1.1462665711072413,
+                    "executable": true,
+                    "hash": {
+                        "md5": "d54bb524c446b8e82640d426efe39242",
+                        "sha1": "1fa6ba724a1f62d53ddd41b5e92b6fe5199eba93",
+                        "sha256": "ace580e17ecd0f5b572078b72276d6110330fd9e67711afef4fd00636baacb0b"
+                    },
+                    "section_name": "UPX0",
+                    "size_of_raw_data": 8192,
+                    "virtual_address": 4096,
+                    "virtual_size": 8192
+                },
+                {
+                    "characteristics": 3758096448,
+                    "data": "b'\\xf7\\xff\\xa1\\x92\\x00CurrentLevel\\x0f\\xfb\\xed\\xdf",
+                    "entropy": 2.5401957666844353,
+                    "executable": true,
+                    "hash": {
+                        "md5": "301938f169b7f13de28628176534898c",
+                        "sha1": "3e79f575217390fd5197ee7374f6595be9ccdaf4",
+                        "sha256": "5a96fbbc7a6920f7f7b37c0d8a2680d3ef18e03aaee4caff59d8937c404639a3"
+                    },
+                    "section_name": "UPX1",
+                    "size_of_raw_data": 4096,
+                    "virtual_address": 12288,
+                    "virtual_size": 4096
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00",
+                    "entropy": 0.4764927431127515,
+                    "executable": false,
+                    "hash": {
+                        "md5": "08351bf080ff56d97d671a50aaa48c7d",
+                        "sha1": "05bf282dfec5ca03a34f5e1acd4fb18467725ee1",
+                        "sha256": "2f9ef96cfdbe1992e2d4863c7664ca6e0e0c1fd027a132e612d0bc235ba87343"
+                    },
+                    "section_name": "UPX2",
+                    "size_of_raw_data": 4096,
+                    "virtual_address": 16384,
+                    "virtual_size": 4096
+                }
+            ]
+        },
+        "timestamp": "2005-03-06 16:52:01"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "m\u0412m\u0412m\u0412q\u0712m\u04122q\u0792m\u0412r\u0512m\u0412m\u0412m\u0412m\u0452m\u0412r",
+            "m\u0412K\u06d2m\u0412Richm\u0412",
+            "15+B",
+            "UPX0",
+            "UPX1",
+            "UPX2",
+            "1.25",
+            "UPX!",
+            "CurrentLevel",
+            "Flags",
+            "http://planet.nana.co.il/peugeot/html/article.html",
+            "http://planet.nana.co.il/peugeot/html/gallery.html",
+            "1001",
+            "1004",
+            "1200",
+            "1201",
+            "1206",
+            "1400",
+            "1402",
+            "1405",
+            "1406",
+            "1407",
+            "1601",
+            "1604",
+            "1605",
+            "1606",
+            "1607",
+            "1608",
+            "1609",
+            "1800",
+            "1802",
+            "1803",
+            "1804",
+            "1805",
+            "1A00",
+            "1A02",
+            "1A03",
+            "1A04",
+            "1A05",
+            "1A06",
+            "1A10",
+            "2001",
+            "2004",
+            "IEXPLORE.EXE",
+            "Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\\Zones\\3",
+            "open",
+            "http://planet.nana.co.il/lam3r/bo.zip",
+            "c:\\bla.exe",
+            "UHSV5",
+            "EWP\u058b",
+            "EP3WWhx",
+            "EEP\u058dEP9}u%Ex",
+            "WWWVhH",
+            "E}Ph",
+            "SPSWh@",
+            "u\u058dESPSWhP",
+            "ESPSWuu\u0583E",
+            "WWhX",
+            "ESPSWh@",
+            "\u058dESPSWhP",
+            "ESPSWuu\u0583E",
+            "r_^[%,",
+            "QueryPerformanceFrequency",
+            "QueryPerformanceCounter",
+            "Sleep",
+            "RegOpenKeyA",
+            "RegSetValueExA",
+            "_stat",
+            "ShellExecuteA",
+            "URLDownloadToFileA",
+            "15+B",
+            ".SecDropp",
+            "CurrentLevel",
+            "Flags",
+            "http://p",
+            "net.n",
+            "a.co.il",
+            "eugeot/ m",
+            "=article.",
+            "!gallery",
+            "1001",
+            "42=0016",
+            "2yy567166{N6",
+            "6689;lg8",
+            "23,8y{A",
+            "AAAA",
+            "IEXPLORE.",
+            "ESoftwa\\MX[ros",
+            "\\Windows\\\u07a31Vsion\\I",
+            "\t\u0436m\u06f6 S",
+            "t\"g Z",
+            "e&DF3",
+            "m3r/b",
+            "zip7c:\\bla.exe",
+            "UHSV5",
+            "EWP\u058b",
+            "3WWhx",
+            "4E)(\"}9}u%",
+            "\"YYu\u07f7",
+            ":WVhH7",
+            "$R}Ph",
+            "n{O%",
+            "SPSo@",
+            "h'\t\"mlIr_",
+            "2y_^[%,",
+            "Quom",
+            "formceF+Fq",
+            "vCou",
+            "SleepCboO",
+            "RegO",
+            "KeyA",
+            "%Val=ExA%",
+            "_stat",
+            "$Shell?]\"ecuT'",
+            ",URL",
+            "DnloadToFB",
+            "15+B",
+            ".NcD-{pp",
+            "GIuc",
+            "\tt<_",
+            "tWYWHU|0",
+            "KERNEL32.DLL",
+            "ADVAPI32.dll",
+            "MSVCRT.dll",
+            "SHELL32.dll",
+            "urlmon.dll",
+            "LoadLibraryA",
+            "GetProcAddress",
+            "ExitProcess",
+            "RegOpenKeyA",
+            "_stat",
+            "ShellExecuteA",
+            "URLDownloadToFileA"
+        ],
+        "file": {
+            "ADVAPI32.dll": "Library",
+            "IEXPLORE.EXE": "Executable",
+            "KERNEL32.DLL": "Library",
+            "MSVCRT.dll": "Library",
+            "SHELL32.dll": "Library",
+            "c:\\bla.exe": "Executable",
+            "http://planet.nana.co.il/lam3r/bo.zip": "Compressed",
+            "urlmon.dll": "Library",
+            "zip7c:\\bla.exe": "Executable"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://planet.nana.co.il/peugeot/html/article.html",
+            "http://p",
+            "http://planet.nana.co.il/lam3r/bo.zip",
+            "http://planet.nana.co.il/peugeot/html/gallery.html"
+        ]
+    },
+    "time": "0:00:00.655820",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

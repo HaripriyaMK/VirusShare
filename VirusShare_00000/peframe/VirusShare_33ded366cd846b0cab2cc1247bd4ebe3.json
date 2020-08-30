@@ -1,0 +1,184 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_33ded366cd846b0cab2cc1247bd4ebe3",
+    "filesize": 1616,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "33ded366cd846b0cab2cc1247bd4ebe3",
+        "sha1": "c880484d755bb0474e5d8444b24819486db021fb",
+        "sha256": "24cd9b71a48ca6978496a3f62cfda1d3f2177e13264054052103d3df7fa5c18b"
+    },
+    "peinfo": {
+        "behavior": [],
+        "breakpoint": [
+            "ExitProcess",
+            "GetModuleHandleA",
+            "GetProcAddress",
+            "LoadLibraryA",
+            "ShellExecuteA"
+        ],
+        "directories": {
+            "debug": {
+                "PointerToRawData": 1536,
+                "size": 77
+            },
+            "export": [],
+            "import": {
+                "KERNEL32.dll": [
+                    {
+                        "function": "GetProcAddress",
+                        "offset": 4198400
+                    },
+                    {
+                        "function": "GetModuleHandleA",
+                        "offset": 4198404
+                    },
+                    {
+                        "function": "LoadLibraryA",
+                        "offset": 4198408
+                    },
+                    {
+                        "function": "ExitProcess",
+                        "offset": 4198412
+                    }
+                ],
+                "MSVCRT.dll": [
+                    {
+                        "function": "_chkesp",
+                        "offset": 4198420
+                    },
+                    {
+                        "function": "sprintf",
+                        "offset": 4198424
+                    }
+                ],
+                "SHELL32.dll": [
+                    {
+                        "function": "ShellExecuteA",
+                        "offset": 4198432
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 4304,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "Microsoft_Visual_Cpp_v50v60_MFC"
+            ],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "7f951ba65a73164b1e7dd6f9578f0553",
+        "metadata": {},
+        "sections": {
+            "count": 1,
+            "details": [
+                {
+                    "characteristics": 3758096416,
+                    "data": "b'j\\x12\\x00\\x00|\\x12\\x00\\x00\\x90\\x12\\x00\\x00\\\\\\x12",
+                    "entropy": 3.902108725967976,
+                    "executable": true,
+                    "hash": {
+                        "md5": "7639315d1ca025e8389ed5e10628ed39",
+                        "sha1": "183cc25d82eafa6994f1efec877475367703f179",
+                        "sha256": "dad924ecb82d9c8965d2db2327045a265c6ce8f963220e57021493d743a357cd"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 1024,
+                    "virtual_address": 4096,
+                    "virtual_size": 746
+                }
+            ]
+        },
+        "timestamp": "2004-10-08 21:28:24"
+    },
+    "strings": {
+        "dump": [
+            "eCeCeCCgCeCbC",
+            "C`CCdCRicheC",
+            ".text",
+            "C:\\Download.exe",
+            "http://www.mysite.com/test.exe",
+            "open",
+            "urlmon.dll",
+            "%s%s",
+            "ToFileA",
+            "URLDownload",
+            "SVW|!",
+            "EPMQh",
+            "_^[\u0104",
+            "ExitProcess",
+            "GetProcAddress",
+            "GetModuleHandleA",
+            "LoadLibraryA",
+            "KERNEL32.dll",
+            "ShellExecuteA",
+            "SHELL32.dll",
+            "sprintf",
+            "_chkesp",
+            "MSVCRT.dll",
+            "NB10",
+            "E:\\Hecker\\ r3l4x.com\\Sources\\URLCall\\Debug\\URL Call.pdb"
+        ],
+        "file": {
+            "C:\\Download.exe": "Executable",
+            "KERNEL32.dll": "Library",
+            "MSVCRT.dll": "Library",
+            "SHELL32.dll": "Library",
+            "http://www.mysite.com/test.exe": "Executable",
+            "urlmon.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.mysite.com/test.exe"
+        ]
+    },
+    "time": "0:00:00.609277",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasOverlay"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasDebugData"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasModified_DOS_Message"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

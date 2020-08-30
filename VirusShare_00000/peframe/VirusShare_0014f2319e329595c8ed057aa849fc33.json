@@ -1,0 +1,56 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "mkdir": "May create a directory"
+        },
+        "macro": "@echo off\necho This batch file will compress BOTH the client and \necho server, and place the newly  compressed executables\necho into the \"Packed\" directory.\necho.\npause\nmkdir Packed\ndel Packed\\Client.exe\ndel Packed\\Server.exe\necho.\necho Compressing client...\nupx --best -o Packed\\Client.exe Client.exe\necho.\necho Compressing server...\nupx --best -o Packed\\Server.exe Server.exe\necho.\necho Compression complete.\npause"
+    },
+    "filename": "VirusShare_0014f2319e329595c8ed057aa849fc33",
+    "filesize": 433,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "0014f2319e329595c8ed057aa849fc33",
+        "sha1": "b65cdbd26f09683e56ef0a4c01dc07fc36e7f02a",
+        "sha256": "e8e3089d1e3631c97654922b8743e8f199ec5d23ce9d3d9086ffb825573ed9cc"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "echo This batch file will compress BOTH the client and ",
+            "echo server, and place the newly  compressed executables",
+            "echo into the \"Packed\" directory.",
+            "echo.",
+            "pause",
+            "mkdir Packed",
+            "del Packed\\Client.exe",
+            "del Packed\\Server.exe",
+            "echo.",
+            "echo Compressing client...",
+            "upx --best -o Packed\\Client.exe Client.exe",
+            "echo.",
+            "echo Compressing server...",
+            "upx --best -o Packed\\Server.exe Server.exe",
+            "echo.",
+            "echo Compression complete.",
+            "pause"
+        ],
+        "file": {
+            "del Packed\\Client.exe": "Executable",
+            "del Packed\\Server.exe": "Executable",
+            "upx --best -o Packed\\Client.exe Client.exe": "Executable",
+            "upx --best -o Packed\\Server.exe Server.exe": "Executable"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.272757",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

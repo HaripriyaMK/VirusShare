@@ -1,0 +1,209 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_04058d8f86e495756024ea037c0c4d0d",
+    "filesize": 2560,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "04058d8f86e495756024ea037c0c4d0d",
+        "sha1": "a806c98e5852a8f46cfdedef9a75bf4c430cb042",
+        "sha256": "d4dcbf66c16c7e48878475c894c9833fe39bb664641a18dc501e6634a06cbac7"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "win_files_operation"
+        ],
+        "breakpoint": [
+            "CloseHandle",
+            "CreateFileA",
+            "GetModuleFileNameA",
+            "GetSystemDirectoryA",
+            "GetTempPathA",
+            "GetWindowsDirectoryA",
+            "ReadFile",
+            "SetFilePointer",
+            "ShellExecuteA",
+            "WriteFile"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "KERNEL32.dll": [
+                    {
+                        "function": "CloseHandle",
+                        "offset": 4198400
+                    },
+                    {
+                        "function": "WriteFile",
+                        "offset": 4198404
+                    },
+                    {
+                        "function": "lstrcatA",
+                        "offset": 4198408
+                    },
+                    {
+                        "function": "GetWindowsDirectoryA",
+                        "offset": 4198412
+                    },
+                    {
+                        "function": "GetTempPathA",
+                        "offset": 4198416
+                    },
+                    {
+                        "function": "GetSystemDirectoryA",
+                        "offset": 4198420
+                    },
+                    {
+                        "function": "ReadFile",
+                        "offset": 4198424
+                    },
+                    {
+                        "function": "SetFilePointer",
+                        "offset": 4198428
+                    },
+                    {
+                        "function": "CreateFileA",
+                        "offset": 4198432
+                    },
+                    {
+                        "function": "GetModuleFileNameA",
+                        "offset": 4198436
+                    }
+                ],
+                "MSVCRT.dll": [
+                    {
+                        "function": "malloc",
+                        "offset": 4198444
+                    },
+                    {
+                        "function": "free",
+                        "offset": 4198448
+                    }
+                ],
+                "SHELL32.dll": [
+                    {
+                        "function": "ShellExecuteA",
+                        "offset": 4198456
+                    }
+                ],
+                "USER32.dll": [
+                    {
+                        "function": "wsprintfA",
+                        "offset": 4198464
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 4355,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "Microsoft_Visual_Cpp_v50v60_MFC"
+            ],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "d70e9b9d0e240b2a0a8479a4835d50cd",
+        "metadata": {},
+        "sections": {
+            "count": 1,
+            "details": [
+                {
+                    "characteristics": 3221225536,
+                    "data": "b\"\\x98\\x15\\x00\\x00\\xa6\\x15\\x00\\x00\\xb2\\x15\\x00\\x00",
+                    "entropy": 4.822540534236052,
+                    "executable": false,
+                    "hash": {
+                        "md5": "52ca56fb1f16d4407a1001f5733063bf",
+                        "sha1": "bda518ce9f165c11852692479c35eca62f9fe6d9",
+                        "sha256": "c852423459b9f278d36c474147d71d8f46b8b2cae80eb7eaa6e808dc8f4d1784"
+                    },
+                    "section_name": ".data",
+                    "size_of_raw_data": 2048,
+                    "virtual_address": 4096,
+                    "virtual_size": 1694
+                }
+            ]
+        },
+        "timestamp": "2009-02-17 15:48:52"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "Rich",
+            ".data",
+            "open",
+            "E@EE;E",
+            "E@EE",
+            "Pj45",
+            "p,hL",
+            "YE\u0103}",
+            ";t'u",
+            "CloseHandle",
+            "WriteFile",
+            "lstrcatA",
+            "GetWindowsDirectoryA",
+            "GetTempPathA",
+            "GetSystemDirectoryA",
+            "ReadFile",
+            "SetFilePointer",
+            "CreateFileA",
+            "GetModuleFileNameA",
+            "KERNEL32.dll",
+            "wsprintfA",
+            "USER32.dll",
+            "ShellExecuteA",
+            "SHELL32.dll",
+            "free",
+            "malloc",
+            "MSVCRT.dll"
+        ],
+        "file": {
+            "KERNEL32.dll": "Library",
+            "MSVCRT.dll": "Library",
+            "SHELL32.dll": "Library",
+            "USER32.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.582670",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

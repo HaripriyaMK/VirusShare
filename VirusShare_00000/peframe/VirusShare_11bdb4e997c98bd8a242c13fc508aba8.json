@@ -1,0 +1,155 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_11bdb4e997c98bd8a242c13fc508aba8",
+    "filesize": 2048,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "11bdb4e997c98bd8a242c13fc508aba8",
+        "sha1": "74470dc9251e1afbf6cbbb3d67a86ab4712cf4a8",
+        "sha256": "91c2280e2495d1fadfd37b384a5111fb7a1172d7de929e1f5a1735d5923e593b"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor"
+        ],
+        "breakpoint": [
+            "LoadLibraryW",
+            "SleepEx"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "KERNEL32.dll": [
+                    {
+                        "function": "LoadLibraryW",
+                        "offset": 4202496
+                    },
+                    {
+                        "function": "SleepEx",
+                        "offset": 4202500
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 4096,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "Microsoft_Visual_Basic_v50"
+            ],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "879783f1ab0000e6d6746cde2751f5df",
+        "metadata": {},
+        "sections": {
+            "count": 3,
+            "details": [
+                {
+                    "characteristics": 3758096480,
+                    "data": "b'h\\x0c @\\x00\\xff\\x15\\x00 @\\x00\\x85\\xc0t\\x0cj\\x00j",
+                    "entropy": 0.4785768520376241,
+                    "executable": true,
+                    "hash": {
+                        "md5": "0fc901389fb82bc4f7bdd9768c8ce120",
+                        "sha1": "04585956ae881e5272f5ba8e18f2f594e04bf3be",
+                        "sha256": "96073afdc30f7b3014c1f67f60ffbaf1464e07e3eab4af0db84eecc21c0660be"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 4096,
+                    "virtual_size": 31
+                },
+                {
+                    "characteristics": 1073741888,
+                    "data": "b'b \\x00\\x00X \\x00\\x00\\x00\\x00\\x00\\x00m\\x00s\\x00f\\",
+                    "entropy": 1.0436398550703094,
+                    "executable": false,
+                    "hash": {
+                        "md5": "70a8dd1dd9f8f149b75ebc90284710f2",
+                        "sha1": "95d017b6a2c2abfceaf24cacf2bcdf057688a0f7",
+                        "sha256": "b95957db82bc471c252cf07ae3338c5c95f0e6a0141b1e9f1e1a7d2a76a554cb"
+                    },
+                    "section_name": ".rdata",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 8192,
+                    "virtual_size": 128
+                },
+                {
+                    "characteristics": 3758096448,
+                    "data": "b''",
+                    "entropy": 0.0,
+                    "executable": true,
+                    "hash": {
+                        "md5": "d41d8cd98f00b204e9800998ecf8427e",
+                        "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+                        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                    },
+                    "section_name": ".rsrc",
+                    "size_of_raw_data": 0,
+                    "virtual_address": 12288,
+                    "virtual_size": 33280
+                }
+            ]
+        },
+        "timestamp": "2010-07-17 18:02:23"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "a%\u0386%\u0386%\u0386,",
+            "&\u0386%\u0387'\u0386J($\u0386J",
+            "$\u0386Rich%\u0386",
+            ".text",
+            ".rdata",
+            "@.rsrc",
+            "SleepEx",
+            "LoadLibraryW",
+            "KERNEL32.dll"
+        ],
+        "file": {
+            "KERNEL32.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.648319",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

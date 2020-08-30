@@ -1,0 +1,192 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_48f1273ab24049b2fdfbc0feb3732d52",
+    "filesize": 1536,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "48f1273ab24049b2fdfbc0feb3732d52",
+        "sha1": "99e4cbb214130c49c920c8a91ecbaa5599604676",
+        "sha256": "e7194b4d3c04e95efb6704e35ad94872106737305efdc17562e77a5260577b6d"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "win_files_operation"
+        ],
+        "breakpoint": [
+            "CloseHandle",
+            "CopyFileA",
+            "CreateFileA",
+            "FindFirstFileA",
+            "FindNextFileA",
+            "GetModuleFileNameA",
+            "MessageBoxA",
+            "WinExec",
+            "WriteFile"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "KERNEL32.dll": [
+                    {
+                        "function": "WinExec",
+                        "offset": 4198400
+                    },
+                    {
+                        "function": "FindNextFileA",
+                        "offset": 4198404
+                    },
+                    {
+                        "function": "CopyFileA",
+                        "offset": 4198408
+                    },
+                    {
+                        "function": "FindFirstFileA",
+                        "offset": 4198412
+                    },
+                    {
+                        "function": "WriteFile",
+                        "offset": 4198416
+                    },
+                    {
+                        "function": "CloseHandle",
+                        "offset": 4198420
+                    },
+                    {
+                        "function": "CreateFileA",
+                        "offset": 4198424
+                    },
+                    {
+                        "function": "lstrcpyA",
+                        "offset": 4198428
+                    },
+                    {
+                        "function": "GetModuleFileNameA",
+                        "offset": 4198432
+                    },
+                    {
+                        "function": "lstrlenA",
+                        "offset": 4198436
+                    }
+                ],
+                "USER32.dll": [
+                    {
+                        "function": "MessageBoxA",
+                        "offset": 4198444
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 4224,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "4f0f088786fe8c1102ef0aebdb5ec4c2",
+        "metadata": {},
+        "sections": {
+            "count": 1,
+            "details": [
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'\\x80\\x12\\x00\\x00\\x8a\\x12\\x00\\x00\\x9a\\x12\\x00\\x00",
+                    "entropy": 4.630957197408675,
+                    "executable": false,
+                    "hash": {
+                        "md5": "3d14614eeabf0b554e99c34a53d75abe",
+                        "sha1": "83a53b6413d1854caeb835962f4dbf45cbb63a09",
+                        "sha256": "f423f094cfb24876c800714ddbf5910550010e654c905f70c99618a42203c7f0"
+                    },
+                    "section_name": ".data",
+                    "size_of_raw_data": 1024,
+                    "virtual_address": 4096,
+                    "virtual_size": 822
+                }
+            ]
+        },
+        "timestamp": "2005-03-31 23:46:24"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "l\u0252l\u0252l\u0252l\u0212l\u0252s\u0692l\u0252J",
+            "l\u0252Richl\u0252",
+            ".data",
+            "Can not execute application.",
+            "*.exe",
+            "Sample C++ Companion",
+            "SUVW\\",
+            "T$,QR\u04cdD$,P!",
+            "L$,j",
+            "u4jj",
+            "T$@h",
+            "@R\u05c9\u018dD$",
+            "V\u054d$4",
+            "L$,PQ\u04cdT$,R",
+            "D$,$`",
+            "PQ\u058d$`",
+            "RP\u058d$4",
+            "WinExec",
+            "FindNextFileA",
+            "CopyFileA",
+            "FindFirstFileA",
+            "WriteFile",
+            "CloseHandle",
+            "CreateFileA",
+            "lstrcpyA",
+            "GetModuleFileNameA",
+            "lstrlenA",
+            "KERNEL32.dll",
+            "MessageBoxA",
+            "USER32.dll"
+        ],
+        "file": {
+            "*.exe": "Executable",
+            "KERNEL32.dll": "Library",
+            "USER32.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.556335",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

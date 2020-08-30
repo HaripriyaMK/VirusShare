@@ -1,0 +1,136 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_4685513170d3fb73442b84ddba2446e2",
+    "filesize": 1024,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "4685513170d3fb73442b84ddba2446e2",
+        "sha1": "848ee396d81346cb03fe211a0904eec30a1f17dd",
+        "sha256": "530687db6972258bce3cee76bcbc8b2342f62ff6de924c58ce250936da4312a1"
+    },
+    "peinfo": {
+        "behavior": [
+            "network_dropper"
+        ],
+        "breakpoint": [
+            "ExitProcess",
+            "ShellExecuteA",
+            "URLDownloadToFileA"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "kernel32.dll": [
+                    {
+                        "function": "ExitProcess",
+                        "offset": 4198629
+                    }
+                ],
+                "shell32.dll": [
+                    {
+                        "function": "ShellExecuteA",
+                        "offset": 4198651
+                    }
+                ],
+                "urlmon.dll": [
+                    {
+                        "function": "URLDownloadToFileA",
+                        "offset": 4198675
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 1048580,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 1,
+                "SizeOfZeroFill": 320,
+                "StartAddressOfRawData": 8411725
+            }
+        },
+        "dll": false,
+        "entrypoint": 4096,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "f9e999875b24ab09d351dd5c6e426e74",
+        "metadata": {},
+        "sections": {
+            "count": 1,
+            "details": [
+                {
+                    "characteristics": 3758096480,
+                    "data": "b'j\\x00j\\x00hd\\x10@\\x00h;\\x10@\\x00j\\x00\\xff\\x15\\x1",
+                    "entropy": 2.864332881134491,
+                    "executable": true,
+                    "hash": {
+                        "md5": "ea51b622d6da46964ce26db1cac8d52e",
+                        "sha1": "3e2ec858b0bc5f141150ff8ce1de603de5b81344",
+                        "sha256": "e4faacbd09e44a5acd7afeca00c36aecf111f52ca975bac04048d51a151f3780"
+                    },
+                    "section_name": ".flat",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 4096,
+                    "virtual_size": 304
+                }
+            ]
+        },
+        "timestamp": "2004-04-27 16:17:30"
+    },
+    "strings": {
+        "dump": [
+            "L!this program cannot be run in DOS mode.",
+            ".flat",
+            "open",
+            "http://site.voila.fr/ch.ti.hack/test.exe",
+            "c:\\ntsvc.exe",
+            "kernel32.dll",
+            "shell32.dll",
+            "urlmon.dll",
+            "ExitProcess",
+            "ShellExecuteA",
+            "URLDownloadToFileA"
+        ],
+        "file": {
+            "c:\\ntsvc.exe": "Executable",
+            "http://site.voila.fr/ch.ti.hack/test.exe": "Executable",
+            "kernel32.dll": "Library",
+            "shell32.dll": "Library",
+            "urlmon.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://site.voila.fr/ch.ti.hack/test.exe"
+        ]
+    },
+    "time": "0:00:00.569462",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        }
+    ]
+}

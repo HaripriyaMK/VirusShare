@@ -1,0 +1,192 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_0820094dc7ddea3d50c3a370ccf7ead4",
+    "filesize": 2560,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "0820094dc7ddea3d50c3a370ccf7ead4",
+        "sha1": "0ec7a6de5a9101b0161ad51afea3643a3d506da2",
+        "sha256": "a203fff3ac749d9dae09fa7a8073db361fe432cd29948bd4df5928f47cba0564"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "network_dropper"
+        ],
+        "breakpoint": [
+            "CreateProcessA",
+            "GetTempPathA",
+            "Sleep",
+            "URLDownloadToFileA"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "KERNEL32.dll": [
+                    {
+                        "function": "lstrcatA",
+                        "offset": 4198400
+                    },
+                    {
+                        "function": "Sleep",
+                        "offset": 4198404
+                    },
+                    {
+                        "function": "CreateProcessA",
+                        "offset": 4198408
+                    },
+                    {
+                        "function": "GetTempPathA",
+                        "offset": 4198412
+                    }
+                ],
+                "MSVCR71.dll": [
+                    {
+                        "function": "memset",
+                        "offset": 4198420
+                    },
+                    {
+                        "function": "strcat",
+                        "offset": 4198424
+                    }
+                ],
+                "urlmon.dll": [
+                    {
+                        "function": "URLDownloadToFileA",
+                        "offset": 4198432
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 4188,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "Microsoft_Visual_Cpp_v50v60_MFC"
+            ],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "1335cfdeeab05509249fc4912f0c4476",
+        "metadata": {},
+        "sections": {
+            "count": 2,
+            "details": [
+                {
+                    "characteristics": 3758358560,
+                    "data": "b'\\xd8\\x11\\x00\\x00\\xe4\\x11\\x00\\x00\\xec\\x11\\x00\\x00",
+                    "entropy": 3.592447794311494,
+                    "executable": true,
+                    "hash": {
+                        "md5": "b02806bcabf8b54ee075f01e876fe542",
+                        "sha1": "9dbd6290f64a392ad72afd59a5c93ca3c354b9da",
+                        "sha256": "d0bdfbd89cb6d1b8ee9ef001548cd6ab6ceba92904b83f8ae4bed93c8a8142a1"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 1024,
+                    "virtual_address": 4096,
+                    "virtual_size": 612
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'\\x80\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00",
+                    "entropy": 0.020393135236084953,
+                    "executable": false,
+                    "hash": {
+                        "md5": "2d45ff57e9880d4bf63278bf3c7d7aeb",
+                        "sha1": "5858d5db5c284fc26682c4cb57405c6458550f54",
+                        "sha256": "898b7737d69e351e54b406aebda27652c04413344d19dfb698a8642e33b698f9"
+                    },
+                    "section_name": ".data",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 8192,
+                    "virtual_size": 64
+                }
+            ]
+        },
+        "timestamp": "2006-01-02 09:38:30"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "{???,\u0614=\u06147?",
+            ":\u0714<:\u072a::\u0713>Rich?",
+            ".text",
+            ".data",
+            "http://",
+            "userscounter.com/ntraf/msarch.exe",
+            "mss.exe",
+            "VWPh",
+            "VVPPVP",
+            "ujD_WEVP2",
+            "EVP}#",
+            "EPEPVVVVVVPV",
+            "memset",
+            "strcat",
+            "MSVCR71.dll",
+            "lstrcatA",
+            "Sleep",
+            "CreateProcessA",
+            "GetTempPathA",
+            "KERNEL32.dll",
+            "URLDownloadToFileA",
+            "urlmon.dll",
+            "WININET.dll",
+            "USER32.dll",
+            "ADVAPI32.dll"
+        ],
+        "file": {
+            "ADVAPI32.dll": "Library",
+            "KERNEL32.dll": "Library",
+            "MSVCR71.dll": "Library",
+            "USER32.dll": "Library",
+            "WININET.dll": "Library",
+            "mss.exe": "Executable",
+            "urlmon.dll": "Library",
+            "userscounter.com/ntraf/msarch.exe": "Executable"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://"
+        ]
+    },
+    "time": "0:00:00.588716",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

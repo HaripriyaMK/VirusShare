@@ -1,0 +1,263 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_47395e209880bc8da712b7ad9ba29f0d",
+    "filesize": 2052,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "47395e209880bc8da712b7ad9ba29f0d",
+        "sha1": "8bc8aa1515215ed40fc8243a344a02e65b96d10e",
+        "sha256": "e0414d4a3afa88bc7970f55cc8a113a9a0b8a3073296dc67b5199ab51f319acd"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "network_tcp_listen",
+            "network_dropper",
+            "network_tcp_socket",
+            "win_registry"
+        ],
+        "breakpoint": [
+            "CreateThread",
+            "ExitProcess",
+            "GetTickCount",
+            "GetWindowsDirectoryA",
+            "RegCloseKey",
+            "RegCreateKeyA",
+            "ShellExecuteA",
+            "Sleep",
+            "URLDownloadToFileA",
+            "WSAStartup",
+            "accept",
+            "bind",
+            "closesocket",
+            "listen",
+            "socket"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "SHELL32.dll": [
+                    {
+                        "function": "ShellExecuteA",
+                        "offset": 4198804
+                    }
+                ],
+                "advapi32.dll": [
+                    {
+                        "function": "RegCloseKey",
+                        "offset": 4198784
+                    },
+                    {
+                        "function": "RegCreateKeyA",
+                        "offset": 4198788
+                    },
+                    {
+                        "function": "RegQueryValueExA",
+                        "offset": 4198792
+                    },
+                    {
+                        "function": "RegSetValueExA",
+                        "offset": 4198796
+                    }
+                ],
+                "kernel32.dll": [
+                    {
+                        "function": "CreateThread",
+                        "offset": 4198744
+                    },
+                    {
+                        "function": "ExitProcess",
+                        "offset": 4198748
+                    },
+                    {
+                        "function": "GetTickCount",
+                        "offset": 4198752
+                    },
+                    {
+                        "function": "GetWindowsDirectoryA",
+                        "offset": 4198756
+                    },
+                    {
+                        "function": "GlobalAlloc",
+                        "offset": 4198760
+                    },
+                    {
+                        "function": "GlobalFree",
+                        "offset": 4198764
+                    },
+                    {
+                        "function": "Sleep",
+                        "offset": 4198768
+                    }
+                ],
+                "urlmon.dll": [
+                    {
+                        "function": "URLDownloadToFileA",
+                        "offset": 4198812
+                    }
+                ],
+                "user32.dll": [
+                    {
+                        "function": "wsprintfA",
+                        "offset": 4198776
+                    }
+                ],
+                "wsock32.dll": [
+                    {
+                        "function": "WSAStartup",
+                        "offset": 4198820
+                    },
+                    {
+                        "function": "accept",
+                        "offset": 4198824
+                    },
+                    {
+                        "function": "bind",
+                        "offset": 4198828
+                    },
+                    {
+                        "function": "closesocket",
+                        "offset": 4198832
+                    },
+                    {
+                        "function": "listen",
+                        "offset": 4198836
+                    },
+                    {
+                        "function": "socket",
+                        "offset": 4198840
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 5333,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "1c19c3881bb3d871e07db188599b6b95",
+        "metadata": {},
+        "sections": {
+            "count": 1,
+            "details": [
+                {
+                    "characteristics": 3758096416,
+                    "data": "b'90\\x00\\x00http://www.pacific-line.com/get.php\\x0",
+                    "entropy": 5.339092431119819,
+                    "executable": true,
+                    "hash": {
+                        "md5": "253271ef5005a11e7ee99a42a5ba8b0e",
+                        "sha1": "d66c5df376ed195f0b817683db4d79973a526ea8",
+                        "sha256": "2ec6eefa59becc6300f4b52968491a74cb6c4e9349efc857c700d8f0134d0d56"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 1536,
+                    "virtual_address": 4096,
+                    "virtual_size": 2030
+                }
+            ]
+        },
+        "timestamp": "2004-08-13 06:29:18"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            ".text",
+            "http://www.pacific-line.com/get.php",
+            "DownloaderFirstRu719278",
+            "Software\\Fi21721",
+            "%s\\%lu.exe",
+            "open",
+            "CreateThread",
+            "ExitProcess",
+            "GetTickCount",
+            "GetWindowsDirectoryA",
+            "GlobalAlloc",
+            "GlobalFree",
+            "Sleep",
+            "kernel32.dll",
+            "wsprintfA",
+            "user32.dll",
+            "RegCloseKey",
+            "RegCreateKeyA",
+            "RegQueryValueExA",
+            "RegSetValueExA",
+            "advapi32.dll",
+            "shlwapi.dll",
+            "ShellExecuteA",
+            "SHELL32.dll",
+            "URLDownloadToFileA",
+            "urlmon.dll",
+            "WSAStartup",
+            "accept",
+            "bind",
+            "closesocket",
+            "listen",
+            "socket",
+            "wsock32.dll",
+            "UEPh@",
+            "USEPh@",
+            "EPEPEPj",
+            "[Uh:",
+            "UVWS}",
+            "EPEPSW",
+            "3[_^"
+        ],
+        "file": {
+            "%s\\%lu.exe": "Executable",
+            "SHELL32.dll": "Library",
+            "advapi32.dll": "Library",
+            "http://www.pacific-line.com/get.php": "Web Page",
+            "kernel32.dll": "Library",
+            "shlwapi.dll": "Library",
+            "urlmon.dll": "Library",
+            "user32.dll": "Library",
+            "wsock32.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.pacific-line.com/get.php"
+        ]
+    },
+    "time": "0:00:00.591548",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasOverlay"
+        }
+    ]
+}

