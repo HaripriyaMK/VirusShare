@@ -1,0 +1,245 @@
+{
+    "/root/torrent/VirusShare_Zeus_20190213/VirusShare_e3c4437e2f852100a27d082dd7d9a76a": {
+        "Summary": {
+            "Architecture": "IMAGE_FILE_MACHINE_I386",
+            "Subsystem": "IMAGE_SUBSYSTEM_WINDOWS_GUI",
+            "Compilation Date": "2004-Jun-14 01:20:39"
+        },
+        "DOS Header": {
+            "e_magic": "MZ",
+            "e_cblp": 0,
+            "e_cp": 1024,
+            "e_crlc": 256,
+            "e_cparhdr": 0,
+            "e_minalloc": 0,
+            "e_maxalloc": 0,
+            "e_ss": 0,
+            "e_sp": 61056,
+            "e_csum": 54,
+            "e_ip": 37856,
+            "e_cs": 4,
+            "e_ovno": 1,
+            "e_oemid": 37856,
+            "e_oeminfo": 4,
+            "e_lfanew": 344
+        },
+        "PE Header": {
+            "Signature": "PE",
+            "Machine": "IMAGE_FILE_MACHINE_I386",
+            "NumberofSections": 4,
+            "TimeDateStamp": "2004-Jun-14 01:20:39",
+            "PointerToSymbolTable": 0,
+            "NumberOfSymbols": 0,
+            "SizeOfOptionalHeader": 224,
+            "Characteristics": [
+                "IMAGE_FILE_32BIT_MACHINE",
+                "IMAGE_FILE_EXECUTABLE_IMAGE"
+            ]
+        },
+        "Image Optional Header": {
+            "Magic": "PE32",
+            "LinkerVersion": "97.0",
+            "SizeOfCode": 1024,
+            "SizeOfInitializedData": 9728,
+            "SizeOfUninitializedData": 0,
+            "AddressOfEntryPoint": "0x00013080 (Section: .lmf)",
+            "BaseOfCode": 77824,
+            "BaseOfData": 4096,
+            "ImageBase": 4194304,
+            "SectionAlignment": 4096,
+            "FileAlignment": 512,
+            "OperatingSystemVersion": "5.0",
+            "ImageVersion": "0.0",
+            "SubsystemVersion": "4.0",
+            "Win32VersionValue": 0,
+            "SizeOfImage": 139264,
+            "SizeOfHeaders": 1024,
+            "Checksum": 0,
+            "Subsystem": "IMAGE_SUBSYSTEM_WINDOWS_GUI",
+            "SizeofStackReserve": 1048576,
+            "SizeofStackCommit": 4096,
+            "SizeofHeapReserve": 1048576,
+            "SizeofHeapCommit": 4096,
+            "LoaderFlags": 0,
+            "NumberOfRvaAndSizes": 16
+        },
+        "Sections": {
+            ".gpaf": {
+                "VirtualSize": 56225,
+                "VirtualAddress": 4096,
+                "SizeOfRawData": 35840,
+                "PointerToRawData": 1024,
+                "PointerToRelocations": 0,
+                "PointerToLineNumbers": 0,
+                "NumberOfLineNumbers": 0,
+                "NumberOfRelocations": 0,
+                "Characteristics": [
+                    "IMAGE_SCN_CNT_INITIALIZED_DATA",
+                    "IMAGE_SCN_MEM_READ",
+                    "IMAGE_SCN_MEM_WRITE"
+                ],
+                "Entropy": 7.97049
+            },
+            ".jmh": {
+                "VirtualSize": 4960,
+                "VirtualAddress": 61440,
+                "SizeOfRawData": 1024,
+                "PointerToRawData": 36864,
+                "PointerToRelocations": 0,
+                "PointerToLineNumbers": 0,
+                "NumberOfLineNumbers": 0,
+                "NumberOfRelocations": 0,
+                "Characteristics": [
+                    "IMAGE_SCN_CNT_INITIALIZED_DATA",
+                    "IMAGE_SCN_MEM_READ",
+                    "IMAGE_SCN_MEM_WRITE"
+                ],
+                "Entropy": 5.62445
+            },
+            ".hav": {
+                "VirtualSize": 4526,
+                "VirtualAddress": 69632,
+                "SizeOfRawData": 4608,
+                "PointerToRawData": 37888,
+                "PointerToRelocations": 0,
+                "PointerToLineNumbers": 0,
+                "NumberOfLineNumbers": 0,
+                "NumberOfRelocations": 0,
+                "Characteristics": [
+                    "IMAGE_SCN_CNT_INITIALIZED_DATA",
+                    "IMAGE_SCN_MEM_READ",
+                    "IMAGE_SCN_MEM_WRITE"
+                ],
+                "Entropy": 7.57769
+            },
+            ".lmf": {
+                "VirtualSize": 61440,
+                "VirtualAddress": 77824,
+                "SizeOfRawData": 1024,
+                "PointerToRawData": 42496,
+                "PointerToRelocations": 0,
+                "PointerToLineNumbers": 0,
+                "NumberOfLineNumbers": 0,
+                "NumberOfRelocations": 0,
+                "Characteristics": [
+                    "IMAGE_SCN_CNT_CODE",
+                    "IMAGE_SCN_MEM_EXECUTE",
+                    "IMAGE_SCN_MEM_READ",
+                    "IMAGE_SCN_MEM_WRITE"
+                ],
+                "Entropy": 4.91974
+            }
+        },
+        "Imports": {
+            "shell32.dll": [
+                "SHBrowseForFolderW",
+                "SHFileOperationW"
+            ]
+        },
+        "Plugins": {
+            "clamav": {
+                "level": 3,
+                "plugin_output": {
+                    "info_0": "Win.Trojan.Gpcode-3"
+                },
+                "summary": "Matching ClamAV signature(s):"
+            },
+            "packer": {
+                "level": 2,
+                "plugin_output": {
+                    "info_0": "Unusual section name found: .gpaf",
+                    "info_1": "Unusual section name found: .jmh",
+                    "info_2": "Unusual section name found: .hav",
+                    "info_3": "Unusual section name found: .lmf",
+                    "info_4": "Section .lmf is both writable and executable.",
+                    "info_5": "The PE only has 2 import(s)."
+                },
+                "summary": "The PE is possibly packed."
+            },
+            "mitigation": {
+                "level": 1,
+                "plugin_output": {
+                    "Stack Canary": "disabled",
+                    "SafeSEH": "disabled",
+                    "ASLR": "disabled",
+                    "DEP": "disabled",
+                    "CFG": "disabled"
+                },
+                "summary": "The following exploit mitigation techniques have been detected"
+            },
+            "overlay": {
+                "level": 2,
+                "plugin_output": {
+                    "info_0": "40960 bytes of data starting at offset 0xaa00.",
+                    "info_1": "The overlay data has an entropy of 7.21797 and is possibly compressed or encrypted."
+                },
+                "summary": "The file contains overlay data."
+            },
+            "virustotal": {
+                "level": 3,
+                "plugin_output": {
+                    "MicroWorld-eScan": "Trojan.Spy.Zeus.2.Gen",
+                    "CAT-QuickHeal": "TrojanPWS.Zbot.Gen",
+                    "McAfee": "Spy-Agent.kw.gen",
+                    "VIPRE": "Trojan-Spy.Win32.Zbot.gen (fs)",
+                    "K7AntiVirus": "Spyware ( 000281921 )",
+                    "Alibaba": "TrojanSpy:Win32/Zbot.101a7c1c",
+                    "K7GW": "Spyware ( 000281921 )",
+                    "Cybereason": "malicious.e2f852",
+                    "Arcabit": "Trojan.Spy.Zeus.2.Gen",
+                    "TrendMicro": "Mal_Pai-1",
+                    "BitDefenderTheta": "Gen:Trojan.Heur.PT.fqZ@b06BeUn",
+                    "Cyren": "W32/Zbot.H.gen!Eldorado",
+                    "Symantec": "Trojan.Zbot!gen",
+                    "TotalDefense": "Win32/KollahCryptor.A!generic",
+                    "APEX": "Malicious",
+                    "Paloalto": "generic.ml",
+                    "ClamAV": "Win.Trojan.Gpcode-3",
+                    "Kaspersky": "Trojan-Spy.Win32.Zbot.adj",
+                    "BitDefender": "Trojan.Spy.Zeus.2.Gen",
+                    "NANO-Antivirus": "Trojan.Win32.Zbot.crsnmn",
+                    "Avast": "Win32:Broker [Trj]",
+                    "Endgame": "malicious (high confidence)",
+                    "Emsisoft": "Trojan.Spy.Zeus.2.Gen (B)",
+                    "Comodo": "TrojWare.Win32.Spy.Zbot.ACA@1rkc1t",
+                    "F-Secure": "Trojan.TR/Dropper.Gen",
+                    "DrWeb": "Trojan.Packed.180",
+                    "Zillya": "Trojan.Zbot.Win32.80860",
+                    "Invincea": "heuristic",
+                    "McAfee-GW-Edition": "BehavesLike.Win32.Dropper.mc",
+                    "Fortinet": "W32/Agent.BRW!tr",
+                    "Trapmine": "malicious.high.ml.score",
+                    "FireEye": "Generic.mg.e3c4437e2f852100",
+                    "Sophos": "Mal/Zbot-A",
+                    "SentinelOne": "DFI - Malicious PE",
+                    "F-Prot": "W32/Banker.AUNI",
+                    "Jiangmin": "TrojanSpy.Agent.bay",
+                    "Webroot": "W32.Malware.Gen",
+                    "Avira": "TR/Dropper.Gen",
+                    "MAX": "malware (ai score=100)",
+                    "Microsoft": "PWS:Win32/Zbot.gen!B",
+                    "ViRobot": "Trojan.Win32.Z.Zbot.84480",
+                    "ZoneAlarm": "Trojan-Spy.Win32.Zbot.adj",
+                    "AhnLab-V3": "Trojan/Win32.Zbot.R2089",
+                    "Acronis": "suspicious",
+                    "VBA32": "Trojan.Win32.Spy.Bancos",
+                    "ALYac": "Trojan.Spy.Zeus.2.Gen",
+                    "TACHYON": "Trojan-Spy/W32.ZBot.84480.CJ",
+                    "Ad-Aware": "Trojan.Spy.Zeus.2.Gen",
+                    "Cylance": "Unsafe",
+                    "ESET-NOD32": "probably a variant of Win32/Spy.Agent.Gen",
+                    "TrendMicro-HouseCall": "Mal_Pai-1",
+                    "Rising": "Malware.Undefined!8.C (TFE:1:HRCUcfFnDNL)",
+                    "Yandex": "Trojan.IncPack.Gen!Pac",
+                    "Ikarus": "Trojan-Spy.Win32.Zbot",
+                    "GData": "Trojan.Spy.Zeus.2.Gen",
+                    "AVG": "Win32:Broker [Trj]",
+                    "Panda": "Malicious Packer",
+                    "CrowdStrike": "win/malicious_confidence_100% (W)",
+                    "Qihoo-360": "Malware.Radar01.Gen"
+                },
+                "summary": "VirusTotal score: 59/68 (Scanned on 2019-11-24 23:29:18)"
+            }
+        }
+    }
+}

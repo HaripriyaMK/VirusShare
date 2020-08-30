@@ -1,0 +1,253 @@
+{
+    "/root/torrent/VirusShare_Zeus_20190213/VirusShare_11cf0324f604eff1b52e4ec848127877": {
+        "Summary": {
+            "Architecture": "IMAGE_FILE_MACHINE_I386",
+            "Subsystem": "IMAGE_SUBSYSTEM_WINDOWS_GUI",
+            "Compilation Date": "2004-Mar-31 06:44:19"
+        },
+        "DOS Header": {
+            "e_magic": "MZ",
+            "e_cblp": 0,
+            "e_cp": 0,
+            "e_crlc": 0,
+            "e_cparhdr": 0,
+            "e_minalloc": 0,
+            "e_maxalloc": 0,
+            "e_ss": 0,
+            "e_sp": 0,
+            "e_csum": 0,
+            "e_ip": 0,
+            "e_cs": 0,
+            "e_ovno": 0,
+            "e_oemid": 0,
+            "e_oeminfo": 0,
+            "e_lfanew": 392
+        },
+        "PE Header": {
+            "Signature": "PE",
+            "Machine": "IMAGE_FILE_MACHINE_I386",
+            "NumberofSections": 3,
+            "TimeDateStamp": "2004-Mar-31 06:44:19",
+            "PointerToSymbolTable": 0,
+            "NumberOfSymbols": 0,
+            "SizeOfOptionalHeader": 224,
+            "Characteristics": [
+                "IMAGE_FILE_32BIT_MACHINE",
+                "IMAGE_FILE_EXECUTABLE_IMAGE"
+            ]
+        },
+        "Image Optional Header": {
+            "Magic": "PE32",
+            "LinkerVersion": "66.0",
+            "SizeOfCode": 35840,
+            "SizeOfInitializedData": 0,
+            "SizeOfUninitializedData": 0,
+            "AddressOfEntryPoint": "0x0000F2E3 (Section: .zub)",
+            "BaseOfCode": 61440,
+            "BaseOfData": 4096,
+            "ImageBase": 4194304,
+            "SectionAlignment": 4096,
+            "FileAlignment": 512,
+            "OperatingSystemVersion": "5.0",
+            "ImageVersion": "0.0",
+            "SubsystemVersion": "4.0",
+            "Win32VersionValue": 0,
+            "SizeOfImage": 139264,
+            "SizeOfHeaders": 1024,
+            "Checksum": 0,
+            "Subsystem": "IMAGE_SUBSYSTEM_WINDOWS_GUI",
+            "SizeofStackReserve": 1048576,
+            "SizeofStackCommit": 4096,
+            "SizeofHeapReserve": 1048576,
+            "SizeofHeapCommit": 4096,
+            "LoaderFlags": 0,
+            "NumberOfRvaAndSizes": 16
+        },
+        "Sections": {
+            ".bibal": {
+                "VirtualSize": 56193,
+                "VirtualAddress": 4096,
+                "SizeOfRawData": 35840,
+                "PointerToRawData": 1024,
+                "PointerToRelocations": 0,
+                "PointerToLineNumbers": 0,
+                "NumberOfLineNumbers": 0,
+                "NumberOfRelocations": 0,
+                "Characteristics": [
+                    "IMAGE_SCN_CNT_INITIALIZED_DATA",
+                    "IMAGE_SCN_MEM_READ"
+                ],
+                "Entropy": 7.9716
+            },
+            ".zub": {
+                "VirtualSize": 4928,
+                "VirtualAddress": 61440,
+                "SizeOfRawData": 2560,
+                "PointerToRawData": 36864,
+                "PointerToRelocations": 0,
+                "PointerToLineNumbers": 0,
+                "NumberOfLineNumbers": 0,
+                "NumberOfRelocations": 0,
+                "Characteristics": [
+                    "IMAGE_SCN_CNT_CODE",
+                    "IMAGE_SCN_MEM_EXECUTE",
+                    "IMAGE_SCN_MEM_READ",
+                    "IMAGE_SCN_MEM_WRITE"
+                ],
+                "Entropy": 6.938
+            },
+            ".ahud": {
+                "VirtualSize": 69632,
+                "VirtualAddress": 69632,
+                "SizeOfRawData": 4608,
+                "PointerToRawData": 39424,
+                "PointerToRelocations": 0,
+                "PointerToLineNumbers": 0,
+                "NumberOfLineNumbers": 0,
+                "NumberOfRelocations": 0,
+                "Characteristics": [
+                    "IMAGE_SCN_CNT_INITIALIZED_DATA",
+                    "IMAGE_SCN_MEM_READ"
+                ],
+                "Entropy": 7.64356
+            }
+        },
+        "Imports": {
+            "kernel32.dll": [
+                "GlobalLock",
+                "CreateMutexW",
+                "ReleaseMutex",
+                "lstrcmpiA",
+                "HeapFree",
+                "GetUserDefaultUILanguage",
+                "FindFirstFileW",
+                "SetThreadPriority",
+                "GetCurrentThread",
+                "MoveFileExW",
+                "lstrlenA",
+                "GetSystemTime",
+                "SetFileAttributesW",
+                "FindClose",
+                "SetLastError",
+                "HeapAlloc",
+                "CreateEventW",
+                "lstrcatW",
+                "UnmapViewOfFile",
+                "CopyFileW",
+                "WriteFile",
+                "ExpandEnvironmentStringsW",
+                "GetModuleHandleA",
+                "CreateProcessW",
+                "MultiByteToWideChar",
+                "GetSystemTimeAsFileTime",
+                "GetModuleFileNameA",
+                "CreateThread",
+                "GetDriveTypeW",
+                "SetEvent",
+                "lstrcpynW"
+            ],
+            "user32.dll": [
+                "SendMessageW",
+                "SetThreadDesktop"
+            ]
+        },
+        "Plugins": {
+            "packer": {
+                "level": 2,
+                "plugin_output": {
+                    "info_0": "Unusual section name found: .bibal",
+                    "info_1": "Unusual section name found: .zub",
+                    "info_2": "Section .zub is both writable and executable.",
+                    "info_3": "Unusual section name found: .ahud"
+                },
+                "summary": "The PE is possibly packed."
+            },
+            "imports": {
+                "level": 1,
+                "plugin_output": {
+                    "Possibly launches other programs": [
+                        "CreateProcessW"
+                    ],
+                    "Enumerates local disk drives": [
+                        "GetDriveTypeW"
+                    ]
+                },
+                "summary": "The PE contains common functions which appear in legitimate applications."
+            },
+            "mitigation": {
+                "level": 1,
+                "plugin_output": {
+                    "Stack Canary": "disabled",
+                    "SafeSEH": "disabled",
+                    "ASLR": "disabled",
+                    "DEP": "disabled",
+                    "CFG": "disabled"
+                },
+                "summary": "The following exploit mitigation techniques have been detected"
+            },
+            "virustotal": {
+                "level": 3,
+                "plugin_output": {
+                    "DrWeb": "Trojan.Packed.424",
+                    "MicroWorld-eScan": "Trojan.Spy.Zeus.1.Gen",
+                    "FireEye": "Generic.mg.11cf0324f604eff1",
+                    "CAT-QuickHeal": "TrojanPWS.Zbot.Y",
+                    "McAfee": "PWS-Zbot.gen.c",
+                    "Cylance": "Unsafe",
+                    "Zillya": "Trojan.Zbot.Win32.62906",
+                    "AegisLab": "Trojan.Win32.Zbot.lmta",
+                    "Alibaba": "TrojanSpy:Win32/Zbot.1e72e51e",
+                    "Cybereason": "malicious.4f604e",
+                    "Arcabit": "Trojan.Spy.Zeus.1.Gen",
+                    "TrendMicro": "TROJ_ZBOT.SMB",
+                    "BitDefenderTheta": "Gen:Trojan.Heur.PT.cmW@bGJO0Wp",
+                    "F-Prot": "W32/Zbot.F.gen!Eldorado",
+                    "Symantec": "ML.Attribute.HighConfidence",
+                    "ESET-NOD32": "a variant of Win32/Kryptik.BCCJ",
+                    "TrendMicro-HouseCall": "TROJ_ZBOT.SMB",
+                    "TotalDefense": "Win32/KollahCryptor.A!generic",
+                    "Paloalto": "generic.ml",
+                    "ClamAV": "Win.Trojan.Zbot-2149",
+                    "Kaspersky": "Trojan-Spy.Win32.Zbot.roh",
+                    "BitDefender": "Trojan.Spy.Zeus.1.Gen",
+                    "NANO-Antivirus": "Trojan.Win32.Zbot.unes",
+                    "Avast": "Win32:Zbot-gen [Trj]",
+                    "Ad-Aware": "Trojan.Spy.Zeus.1.Gen",
+                    "Emsisoft": "Trojan.Spy.Zeus.1.Gen (B)",
+                    "Comodo": "TrojWare.Win32.TrojanSpy.Zbot.Roh@2o8imf",
+                    "F-Secure": "Trojan.TR/Crypt.XPACK.Gen",
+                    "VIPRE": "Trojan.Crypt.Zcrypt (v)",
+                    "Invincea": "heuristic",
+                    "McAfee-GW-Edition": "BehavesLike.Win32.ZBot.pc",
+                    "Fortinet": "W32/Zbot.GAD!tr",
+                    "Trapmine": "malicious.high.ml.score",
+                    "CMC": "Generic.Win32.11cf0324f6!MD",
+                    "Sophos": "Troj/Zbot-L",
+                    "Ikarus": "Trojan-Spy.Win32.Zbot",
+                    "Cyren": "W32/Zbot.F.gen!Eldorado",
+                    "Jiangmin": "TrojanSpy.Zbot.avv",
+                    "Webroot": "W32.InfoStealer.Zeus",
+                    "Avira": "TR/Crypt.XPACK.Gen",
+                    "MAX": "malware (ai score=99)",
+                    "Antiy-AVL": "Trojan[Spy]/Win32.Zbot",
+                    "Endgame": "malicious (high confidence)",
+                    "Microsoft": "PWS:Win32/Zbot.PK",
+                    "ViRobot": "Trojan.Win32.A.Zbot.44032.AF",
+                    "ZoneAlarm": "Trojan-Spy.Win32.Zbot.roh",
+                    "Acronis": "suspicious",
+                    "ALYac": "Spyware.Zbot.vx",
+                    "VBA32": "Trojan.Win32.Spy.Bancos",
+                    "APEX": "Malicious",
+                    "Rising": "Trojan.Win32.Ntos.ht (CLASSIC)",
+                    "Yandex": "TrojanSpy.ZBot.Gen!Pac.6",
+                    "SentinelOne": "DFI - Malicious PE",
+                    "GData": "Trojan.Spy.Zeus.1.Gen",
+                    "AVG": "Win32:Zbot-gen [Trj]",
+                    "Panda": "Malicious Packer",
+                    "Qihoo-360": "Malware.Radar01.Gen"
+                },
+                "summary": "VirusTotal score: 57/70 (Scanned on 2019-11-13 13:54:41)"
+            }
+        }
+    }
+}
