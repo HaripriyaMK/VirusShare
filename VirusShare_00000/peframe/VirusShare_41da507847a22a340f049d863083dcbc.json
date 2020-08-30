@@ -1,0 +1,194 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_41da507847a22a340f049d863083dcbc",
+    "filesize": 2560,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "41da507847a22a340f049d863083dcbc",
+        "sha1": "6751cea449739aa3f0d115955f29c03c19a4b500",
+        "sha256": "192ab1fd6a3f7619a0b9d9d2f3dbe6d586d7de8b1ceb67d2082486429c556e2d"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "network_dropper"
+        ],
+        "breakpoint": [
+            "ExitProcess",
+            "ShellExecuteA",
+            "URLDownloadToFileA"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "kernel32.dll": [
+                    {
+                        "function": "ExitProcess",
+                        "offset": 4202496
+                    }
+                ],
+                "shell32.dll": [
+                    {
+                        "function": "ShellExecuteA",
+                        "offset": 4202504
+                    }
+                ],
+                "urlmon.dll": [
+                    {
+                        "function": "URLDownloadToFileA",
+                        "offset": 4202512
+                    }
+                ],
+                "user32.dll": [
+                    {
+                        "function": "wsprintfA",
+                        "offset": 4202520
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 4096,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "Microsoft_Visual_Basic_v50"
+            ],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "09c424953aaf4779bc8aba83e0512e99",
+        "metadata": {},
+        "sections": {
+            "count": 3,
+            "details": [
+                {
+                    "characteristics": 1610612768,
+                    "data": "b'h\\x1e0@\\x00hR0@\\x00\\xe8=\\x00\\x00\\x00\\x83\\xc4\\x08",
+                    "entropy": 1.0416235868330126,
+                    "executable": true,
+                    "hash": {
+                        "md5": "0c62b7868641a5e55e4998e6442dfcab",
+                        "sha1": "96ec06b5de0ed4f09bb2ac934e2022d4a761100e",
+                        "sha256": "2c047939549d987463936deb57c80d9fffaa0b9709ae0406dc0fec1b4f5bf341"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 4096,
+                    "virtual_size": 94
+                },
+                {
+                    "characteristics": 1073741888,
+                    "data": "b'\\xde \\x00\\x00\\x00\\x00\\x00\\x00\\xfa \\x00\\x00\\x00\\x",
+                    "entropy": 2.2055735103962637,
+                    "executable": false,
+                    "hash": {
+                        "md5": "f0f4cfc94785b512b51fbb80b757ebdb",
+                        "sha1": "45f9a5dc05e6d28018922521ec373b3446f0154b",
+                        "sha256": "6d62776f04a2895126fce6ecd59505ffb3ad1635428460a9018b2e6a4d48266c"
+                    },
+                    "section_name": ".rdata",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 8192,
+                    "virtual_size": 278
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'urlmon.dll\\x00URLDownloadToFileA\\x00http://66.15",
+                    "entropy": 1.3428364298202073,
+                    "executable": false,
+                    "hash": {
+                        "md5": "7822bf4402630461c7bb214dda16d040",
+                        "sha1": "959e45d50497f63d0bb0fc9ac49d0c283609848a",
+                        "sha256": "4ff13381009f993bae9de96da7b8cbeebc0a7feb3a3fb6aedf703943fad0c439"
+                    },
+                    "section_name": ".data",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 12288,
+                    "virtual_size": 338
+                }
+            ]
+        },
+        "timestamp": "2004-01-13 14:39:32"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "6e)v",
+            "6eRich",
+            ".text",
+            "`.rdata",
+            "@.data",
+            "hR0@",
+            "hB0@",
+            "hR0@",
+            "hB0@",
+            "hM0@",
+            "URLDownloadToFileA",
+            "urlmon.dll",
+            "wsprintfA",
+            "user32.dll",
+            "ExitProcess",
+            "kernel32.dll",
+            "ShellExecuteA",
+            "shell32.dll",
+            "urlmon.dll",
+            "URLDownloadToFileA",
+            "http://66.154.18.136/12345678/2.exe",
+            "c:\\000.exe",
+            "open"
+        ],
+        "file": {
+            "c:\\000.exe": "Executable",
+            "http://66.154.18.136/12345678/2.exe": "Executable",
+            "kernel32.dll": "Library",
+            "shell32.dll": "Library",
+            "urlmon.dll": "Library",
+            "user32.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [
+            "66.154.18.136"
+        ],
+        "url": [
+            "http://66.154.18.136/12345678/2.exe"
+        ]
+    },
+    "time": "0:00:00.557479",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

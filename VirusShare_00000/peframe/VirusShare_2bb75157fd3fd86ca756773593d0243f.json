@@ -1,0 +1,118 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_2bb75157fd3fd86ca756773593d0243f",
+    "filesize": 760,
+    "filetype": "PE32 executable (GUI) Intel 80386 (stripped to external PDB), for MS Windows",
+    "hashes": {
+        "md5": "2bb75157fd3fd86ca756773593d0243f",
+        "sha1": "08b74646206a7c80366ff946f286e92d9a129490",
+        "sha256": "03ccad1dc6d961b662e740276b83f709c38e9cbc9ab96e9abf28c5cfe6cbcf5c"
+    },
+    "peinfo": {
+        "behavior": [],
+        "breakpoint": [
+            "InternetOpenA",
+            "InternetOpenUrlA"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "WININET.DLL": [
+                    {
+                        "function": "InternetOpenUrlA",
+                        "offset": 4198400
+                    },
+                    {
+                        "function": "InternetOpenA",
+                        "offset": 4198404
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 1,
+                "AddressOfIndex": 4,
+                "Characteristics": 30,
+                "EndAddressOfRawData": 1,
+                "SizeOfZeroFill": 0,
+                "StartAddressOfRawData": 7035469
+            }
+        },
+        "dll": false,
+        "entrypoint": 4208,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "51d2ed6c01b47bb0823f4d5eddd8be32",
+        "metadata": {},
+        "sections": {
+            "count": 1,
+            "details": [
+                {
+                    "characteristics": 3758096480,
+                    "data": "b'L\\x10\\x00\\x00`\\x10\\x00\\x00\\x00\\x00\\x00\\x004\\x10\\",
+                    "entropy": 4.427309257714048,
+                    "executable": true,
+                    "hash": {
+                        "md5": "2940e9dbf024535e2e137b453cf9d0d8",
+                        "sha1": "ec6b551c443f582e098390f3b6600578aa2863d8",
+                        "sha256": "f1400becbc2e31802496af668558c18f8e5118162f37003f5f3b1ffbf813e775"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 248,
+                    "virtual_address": 4096,
+                    "virtual_size": 248
+                }
+            ]
+        },
+        "timestamp": "2004-07-30 05:02:16"
+    },
+    "strings": {
+        "dump": [
+            "UniLink",
+            "This program requires Win32",
+            "3\u04b4\t!",
+            ".text",
+            "WININET.DLL",
+            "InternetOpenUrlA",
+            "InternetOpenA",
+            "http://realsearcher.com/?gv=6660608260678160846655146D383C3CFC3E3B5555"
+        ],
+        "file": {
+            "WININET.DLL": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://realsearcher.com/?gv=6660608260678160846655146D383C3CFC3E3B5555"
+        ]
+    },
+    "time": "0:00:00.577365",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        }
+    ]
+}

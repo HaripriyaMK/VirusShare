@@ -1,0 +1,138 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_2e24ec4416babf2bb653f658ec55af89",
+    "filesize": 788,
+    "filetype": "MS-DOS executable",
+    "hashes": {
+        "md5": "2e24ec4416babf2bb653f658ec55af89",
+        "sha1": "1bd659db5249588360ee3bacace0aacc32dca394",
+        "sha256": "22131dbd2bd9e5efa9839c929c4d351d029bed92bbcf9ecaea370f8e1981a96f"
+    },
+    "peinfo": {
+        "behavior": [
+            "network_dropper"
+        ],
+        "breakpoint": [
+            "ExitProcess",
+            "URLDownloadToFileA",
+            "WinExec"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "KERNEL32.dll": [
+                    {
+                        "function": "WinExec",
+                        "offset": 4198400
+                    },
+                    {
+                        "function": "ExitProcess",
+                        "offset": 4198404
+                    }
+                ],
+                "urlmon.dll": [
+                    {
+                        "function": "URLDownloadToFileA",
+                        "offset": 4198412
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 17744,
+                "AddressOfIndex": 0,
+                "Characteristics": 1079323722,
+                "EndAddressOfRawData": 0,
+                "SizeOfZeroFill": 65868,
+                "StartAddressOfRawData": 23117
+            }
+        },
+        "dll": false,
+        "entrypoint": 4160,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "d12c8d22220a47f4af2bb50ae7e8d0f0",
+        "metadata": {},
+        "sections": {
+            "count": 1,
+            "details": [
+                {
+                    "characteristics": 3758096416,
+                    "data": "b'\\xd6\\x10\\x00\\x00\\xc8\\x10\\x00\\x00\\x00\\x00\\x00\\x00",
+                    "entropy": 4.211341966725492,
+                    "executable": true,
+                    "hash": {
+                        "md5": "b3af3b4d8f1e55eb8df28e362f944688",
+                        "sha1": "13d0c3663f60b1e9cd0d34bfbdc6e22319109d19",
+                        "sha256": "4eff7f849ef4cb02a4ee6599c76d95e313bf0016946229f8505f475ec2f44061"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 274,
+                    "virtual_address": 4096,
+                    "virtual_size": 272
+                }
+            ]
+        },
+        "timestamp": "2004-03-15 04:08:42"
+    },
+    "strings": {
+        "dump": [
+            "J,U@",
+            ".text",
+            ".text",
+            "http://site.com/file.exe",
+            "C:\\b.exe",
+            "ExitProcess",
+            "WinExec",
+            "KERNEL32.dll",
+            "URLDownloadToFileA",
+            "urlmon.dll"
+        ],
+        "file": {
+            "C:\\b.exe": "Executable",
+            "KERNEL32.dll": "Library",
+            "http://site.com/file.exe": "Executable",
+            "urlmon.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://site.com/file.exe"
+        ]
+    },
+    "time": "0:00:00.608180",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasOverlay"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasModified_DOS_Message"
+        }
+    ]
+}

