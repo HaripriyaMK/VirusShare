@@ -1,0 +1,412 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_066f4c489aa87e64be88a958cbea90cd",
+    "filesize": 20480,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "066f4c489aa87e64be88a958cbea90cd",
+        "sha1": "a15167be472f6a39042a3728f77ce9af9bb36e35",
+        "sha256": "6c4133ec32295392983f3e3d65c51895cbf5546702faf5d5f2b2edd4c93a3e00"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "escalate_priv",
+            "win_token"
+        ],
+        "breakpoint": [
+            "CreateThread",
+            "DeleteFileA",
+            "GetCommandLineA",
+            "GetCurrentProcess",
+            "GetModuleHandleA",
+            "GetStartupInfoA",
+            "GetVersionExA",
+            "MessageBoxA",
+            "OpenProcessToken",
+            "Sleep",
+            "WaitForSingleObject"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "ADVAPI32.dll": [
+                    {
+                        "function": "AdjustTokenPrivileges",
+                        "offset": 4202496
+                    },
+                    {
+                        "function": "LookupPrivilegeValueA",
+                        "offset": 4202500
+                    },
+                    {
+                        "function": "OpenProcessToken",
+                        "offset": 4202504
+                    }
+                ],
+                "KERNEL32.dll": [
+                    {
+                        "function": "GetStartupInfoA",
+                        "offset": 4202512
+                    },
+                    {
+                        "function": "GetModuleHandleA",
+                        "offset": 4202516
+                    },
+                    {
+                        "function": "GetCommandLineA",
+                        "offset": 4202520
+                    },
+                    {
+                        "function": "DeleteFileA",
+                        "offset": 4202524
+                    },
+                    {
+                        "function": "Sleep",
+                        "offset": 4202528
+                    },
+                    {
+                        "function": "GetVersionExA",
+                        "offset": 4202532
+                    },
+                    {
+                        "function": "GetCurrentProcess",
+                        "offset": 4202536
+                    },
+                    {
+                        "function": "GetLastError",
+                        "offset": 4202540
+                    },
+                    {
+                        "function": "CreateThread",
+                        "offset": 4202544
+                    },
+                    {
+                        "function": "WaitForSingleObject",
+                        "offset": 4202548
+                    }
+                ],
+                "MSVCRT.dll": [
+                    {
+                        "function": "_adjust_fdiv",
+                        "offset": 4202556
+                    },
+                    {
+                        "function": "__p__commode",
+                        "offset": 4202560
+                    },
+                    {
+                        "function": "__p__fmode",
+                        "offset": 4202564
+                    },
+                    {
+                        "function": "__setusermatherr",
+                        "offset": 4202568
+                    },
+                    {
+                        "function": "__getmainargs",
+                        "offset": 4202572
+                    },
+                    {
+                        "function": "_initterm",
+                        "offset": 4202576
+                    },
+                    {
+                        "function": "_acmdln",
+                        "offset": 4202580
+                    },
+                    {
+                        "function": "exit",
+                        "offset": 4202584
+                    },
+                    {
+                        "function": "_XcptFilter",
+                        "offset": 4202588
+                    },
+                    {
+                        "function": "_exit",
+                        "offset": 4202592
+                    },
+                    {
+                        "function": "time",
+                        "offset": 4202596
+                    },
+                    {
+                        "function": "localtime",
+                        "offset": 4202600
+                    },
+                    {
+                        "function": "_except_handler3",
+                        "offset": 4202604
+                    },
+                    {
+                        "function": "__set_app_type",
+                        "offset": 4202608
+                    },
+                    {
+                        "function": "_controlfp",
+                        "offset": 4202612
+                    }
+                ],
+                "USER32.dll": [
+                    {
+                        "function": "ExitWindowsEx",
+                        "offset": 4202620
+                    },
+                    {
+                        "function": "MessageBoxA",
+                        "offset": 4202624
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [
+                {
+                    "data": "b'(\\x00\\x00\\x00 \\x00\\x00\\x00@\\x00\\x00\\x00\\x01\\x00\\x04\\x00\\x00\\x00\\x00\\x00\\x80\\x02\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x80\\x00\\x00\\x80'",
+                    "executable": false,
+                    "language": "LANG_ENGLISH",
+                    "name": "RT_ICON",
+                    "offset": 16544,
+                    "size": 744,
+                    "sublanguage": "SUBLANG_ENGLISH_US"
+                },
+                {
+                    "data": "b'\\x00\\x00\\x01\\x00\\x01\\x00  \\x10\\x00\\x01\\x00\\x04\\x00\\xe8\\x02\\x00\\x00\\x01\\x00'",
+                    "executable": false,
+                    "language": "LANG_ENGLISH",
+                    "name": "RT_GROUP_ICON",
+                    "offset": 17288,
+                    "size": 20,
+                    "sublanguage": "SUBLANG_ENGLISH_US"
+                }
+            ],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 4576,
+        "features": {
+            "antidbg": [
+                "GetLastError"
+            ],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [
+                "WaitForSingleObject"
+            ],
+            "packer": [
+                "Microsoft_Visual_Cpp_v60",
+                "Microsoft_Visual_Cpp_v50v60_MFC_additional",
+                "Microsoft_Visual_Cpp_50",
+                "Microsoft_Visual_Cpp_v50v60_MFC",
+                "Microsoft_Visual_Cpp"
+            ],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "1cb2ea83190ca235a2c2da92e1ae2826",
+        "metadata": {},
+        "sections": {
+            "count": 4,
+            "details": [
+                {
+                    "characteristics": 1610612768,
+                    "data": "b'\\x83\\xec\\x08hp0@\\x00\\xc7D$\\x04\\x01\\x00\\x00\\x00\\x",
+                    "entropy": 1.804137782291664,
+                    "executable": true,
+                    "hash": {
+                        "md5": "94e5a58ceec4540473e707c6354efa98",
+                        "sha1": "a9e074cf75daaf42052c0e1d2d8f5ec5c391d17e",
+                        "sha256": "2572a5966d6628dac1db48301d4975964e965cda65df91fba978e87c99e9ef02"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 4096,
+                    "virtual_address": 4096,
+                    "virtual_size": 880
+                },
+                {
+                    "characteristics": 1073741888,
+                    "data": "b'B#\\x00\\x00Z#\\x00\\x00r#\\x00\\x00\\x00\\x00\\x00\\x00\\x",
+                    "entropy": 1.4672779578766186,
+                    "executable": false,
+                    "hash": {
+                        "md5": "b8edab8a17506057c7c55e46efe8ad07",
+                        "sha1": "4852b8c892f9778c13438bf1f7675e36743ec255",
+                        "sha256": "ee1dd4614fc99829f24533f2d9d3635497c922319ff512656905b5b53d56ef0a"
+                    },
+                    "section_name": ".rdata",
+                    "size_of_raw_data": 4096,
+                    "virtual_address": 8192,
+                    "virtual_size": 916
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00",
+                    "entropy": 0.20447857257894944,
+                    "executable": false,
+                    "hash": {
+                        "md5": "64609075078eba297fc6a53b2d70a384",
+                        "sha1": "742ef3472c09f735ebbef08af746cf873b0ff658",
+                        "sha256": "618c1f77065fd0e49d0b04d7f78dcf1f3efd326642a520cb3a9e8c949b836683"
+                    },
+                    "section_name": ".data",
+                    "size_of_raw_data": 4096,
+                    "virtual_address": 12288,
+                    "virtual_size": 404
+                },
+                {
+                    "characteristics": 1073741888,
+                    "data": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00",
+                    "entropy": 0.9493578628538888,
+                    "executable": false,
+                    "hash": {
+                        "md5": "faa982b8cb2831f2d6c8368d87dfd751",
+                        "sha1": "3cb495e176819ac07c8f123429170f0f955bd54b",
+                        "sha256": "e088e6f98a5dcc1b9d1e61c611d7e5c23beb55fce7a36460202af74a80702330"
+                    },
+                    "section_name": ".rsrc",
+                    "size_of_raw_data": 4096,
+                    "virtual_address": 16384,
+                    "virtual_size": 928
+                }
+            ]
+        },
+        "timestamp": "2001-02-19 03:25:37"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "w333j5J1H2n8\u07f02n03",
+            "l2l22Rich3",
+            ".text",
+            "`.rdata",
+            "@.data",
+            ".rsrc",
+            "$PEZiAL",
+            "BAiT",
+            "SnakeMan",
+            "(Greg",
+            "Campbell)",
+            "casinosnake@dingoblue.net.au",
+            "05.12.2001",
+            "7F5F5FA1,41.254 VS045064.EXE",
+            "hp0@",
+            "ulL$",
+            "t\t3\u0128",
+            "QSUVD$",
+            "-  @",
+            "hX0@",
+            "h40@",
+            "Rh,0@",
+            "h$0@",
+            "\ub790SUVW",
+            "\u06033Ix |$",
+            "@F@;~_^]",
+            "Ujh @",
+            "hSVWe3\u06c9]j",
+            "EEP5p1@",
+            "EPEPEP",
+            "$T @",
+            "0u>\"u:Fu",
+            "<\"u>\"u",
+            "< v]\u040dEP",
+            "> vFuj",
+            "XPVSS",
+            "\tMPQ",
+            "%\\ @",
+            "%P @",
+            "YY3%l @",
+            "%t @",
+            "localtime",
+            "time",
+            "MSVCRT.dll",
+            "_exit",
+            "_XcptFilter",
+            "exit",
+            "_acmdln",
+            "__getmainargs",
+            "_initterm",
+            "__setusermatherr",
+            "_adjust_fdiv",
+            "__p__commode",
+            "__p__fmode",
+            "__set_app_type",
+            "_except_handler3",
+            "_controlfp",
+            "WaitForSingleObject",
+            "CreateThread",
+            "GetLastError",
+            "GetCurrentProcess",
+            "GetVersionExA",
+            "Sleep",
+            "DeleteFileA",
+            "GetCommandLineA",
+            "GetModuleHandleA",
+            "GetStartupInfoA",
+            "KERNEL32.dll",
+            "ExitWindowsEx",
+            "MessageBoxA",
+            "USER32.dll",
+            "AdjustTokenPrivileges",
+            "LookupPrivilegeValueA",
+            "OpenProcessToken",
+            "ADVAPI32.dll",
+            "SeShutdownPrivilege",
+            "A:\\*.*",
+            "L:\\*.*",
+            "NetWare Broadcast Error 4558073.",
+            "Error",
+            "{{{{{{{{{{{{s",
+            "{{{{{{{{{{{{s",
+            "{{{{{{{{{{{{s",
+            "{{{{{{{{{{{{s",
+            "{{{{{{{{{{{{s",
+            "{{{{{{{{{{{{s",
+            "{{{{{{{{{{{{s",
+            "{{{{{{{{{{{{s",
+            "{{{{{{{{{{{{s",
+            "wwwwwwwx",
+            "{{{{x"
+        ],
+        "file": {
+            "7F5F5FA1,41.254 VS045064.EXE": "Executable",
+            "ADVAPI32.dll": "Library",
+            "KERNEL32.dll": "Library",
+            "MSVCRT.dll": "Library",
+            "USER32.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.716172",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

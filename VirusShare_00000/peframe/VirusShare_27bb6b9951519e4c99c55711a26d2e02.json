@@ -1,0 +1,606 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_27bb6b9951519e4c99c55711a26d2e02",
+    "filesize": 54272,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "27bb6b9951519e4c99c55711a26d2e02",
+        "sha1": "d50c779611b70b6934364b4a7970622024302dc7",
+        "sha256": "8d955723d886f4d8f06067a85d9b185a4dc814d50f5e7a3bd1f06784761d2bcf"
+    },
+    "peinfo": {
+        "behavior": [
+            "escalate_priv",
+            "screenshot",
+            "win_registry",
+            "win_token"
+        ],
+        "breakpoint": [
+            "ExitProcess",
+            "GetModuleHandleA",
+            "GetModuleHandleW",
+            "RegCreateKeyExW",
+            "RegDeleteValueW",
+            "VirtualAlloc"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "ADVAPI32.DLL": [
+                    {
+                        "function": "RegCreateKeyExW",
+                        "offset": 4218928
+                    },
+                    {
+                        "function": "RegSetValueExA",
+                        "offset": 4218932
+                    },
+                    {
+                        "function": "OpenThreadToken",
+                        "offset": 4218936
+                    },
+                    {
+                        "function": "AdjustTokenPrivileges",
+                        "offset": 4218940
+                    },
+                    {
+                        "function": "FreeSid",
+                        "offset": 4218944
+                    },
+                    {
+                        "function": "RegDeleteValueW",
+                        "offset": 4218948
+                    }
+                ],
+                "GDI32.DLL": [
+                    {
+                        "function": "DeleteDC",
+                        "offset": 4218880
+                    },
+                    {
+                        "function": "GetTextMetricsW",
+                        "offset": 4218884
+                    },
+                    {
+                        "function": "DeleteDC",
+                        "offset": 4218888
+                    },
+                    {
+                        "function": "CreateCompatibleDC",
+                        "offset": 4218892
+                    },
+                    {
+                        "function": "ExtTextOutW",
+                        "offset": 4218896
+                    },
+                    {
+                        "function": "GetDeviceCaps",
+                        "offset": 4218900
+                    },
+                    {
+                        "function": "GetDeviceCaps",
+                        "offset": 4218904
+                    },
+                    {
+                        "function": "SelectObject",
+                        "offset": 4218908
+                    },
+                    {
+                        "function": "TextOutW",
+                        "offset": 4218912
+                    },
+                    {
+                        "function": "DeleteObject",
+                        "offset": 4218916
+                    },
+                    {
+                        "function": "SelectObject",
+                        "offset": 4218920
+                    }
+                ],
+                "KERNEL32.DLL": [
+                    {
+                        "function": "SetEvent",
+                        "offset": 4218988
+                    },
+                    {
+                        "function": "GetModuleHandleW",
+                        "offset": 4218992
+                    },
+                    {
+                        "function": "GetACP",
+                        "offset": 4218996
+                    },
+                    {
+                        "function": "VirtualAlloc",
+                        "offset": 4219000
+                    },
+                    {
+                        "function": "VirtualAlloc",
+                        "offset": 4219004
+                    },
+                    {
+                        "function": "GetCurrentThreadId",
+                        "offset": 4219008
+                    },
+                    {
+                        "function": "LocalAlloc",
+                        "offset": 4219012
+                    },
+                    {
+                        "function": "GetModuleHandleA",
+                        "offset": 4219016
+                    },
+                    {
+                        "function": "ExitProcess",
+                        "offset": 4219020
+                    }
+                ],
+                "USER32.DLL": [
+                    {
+                        "function": "GetSystemMetrics",
+                        "offset": 4218956
+                    },
+                    {
+                        "function": "SetCursor",
+                        "offset": 4218960
+                    },
+                    {
+                        "function": "GetSystemMetrics",
+                        "offset": 4218964
+                    },
+                    {
+                        "function": "GetMessageW",
+                        "offset": 4218968
+                    },
+                    {
+                        "function": "GetDC",
+                        "offset": 4218972
+                    },
+                    {
+                        "function": "GetWindowRect",
+                        "offset": 4218976
+                    },
+                    {
+                        "function": "DestroyWindow",
+                        "offset": 4218980
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [
+                {
+                    "data": "b'\\x14\\x044\\x00\\x00\\x00V\\x00S\\x00_\\x00V\\x00E\\x00R\\x00S\\x00I\\x00O\\x00N\\x00_\\x00I\\x00N\\x00F\\x00O\\x00\\x00\\x00\\x00\\x00\\xbd\\x04\\xef\\xfe\\x00\\x00\\x01\\x00P\\x00'",
+                    "executable": false,
+                    "language": "LANG_RUSSIAN",
+                    "name": "RT_VERSION",
+                    "offset": 73816,
+                    "size": 1044,
+                    "sublanguage": "SUBLANG_RUSSIAN"
+                }
+            ],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 4804,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "Microsoft_Visual_Basic_v50"
+            ],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "33f95c178d89a1f89ac5a9ae8fb51bf6",
+        "metadata": {
+            "CompanyName": "\u0417\u044f\u0415\u043b\u0416\u0425\u041f\u0414\u0418\u0419\u044c\u0448\u0447\u0438\u0430\u044c\u041f\u044c\u0431\u044b\u0427\u042d\u044c\u0444",
+            "FileDescription": "\u0416\u042f\u041d\u041f\u0418\u0425\u0421\u042e\u044a\u0447\u0422\u0415\u0429\u0422\u0414\u041c\u0419\u043d\u0434\u0425\u0447\u0447\u043e\u044c\u0441\u041e\u0442\u041e\u043c\u0430\u0448\u0438\u0440\u043e\u041a\u041f\u0431\u042f\u0448\u0444\u0435\u043a\u0417\u0449\u0425\u0447\u0419\u0443",
+            "FileVersion": "\u0410\u0426\u0435\u0439\u0440\u0440\u0413\u0439\u0439\u0424\u0435\u0418\u0449\u044d\u044a\u042b\u042f\u0448\u0429\u042b\u043a\u0437\u0430\u0428\u042e\u0419\u041a\u042e\u0423\u0426\u0416\u043c\u041c\u0431\u0425\u044c\u0448\u0412\u044d\u0432\u043b\u0438\u043e\u043b\u0417\u044b\u0437",
+            "InternalName": "\u0426\u042d\u0439\u0437\u0415\u0434\u0425\u0411\u044c\u0431\u041d\u0429\u043e\u0425\u0447\u0439\u0416\u0419\u0415\u0435\u0416\u0418",
+            "LegalCopyright": "\u0436\u0442\u041a\u0422\u042e\u043d\u0424\u0420\u043e\u044d\u044e\u0439\u0426\u0418\u0442\u042d\u044b\u041a\u0441\u0420\u0447",
+            "OriginalFilename": "\u0447\u0436\u0437\u042c\u0412\u041d\u0421\u043c\u0449\u0418\u0438\u0440\u0418\u043f\u0419\u0444\u043a\u0442\u0444\u0443\u0441\u0440\u0431\u043a\u043a\u044f\u0425\u0445\u0411\u0414\u044e\u0446\u042b\u042e\u0427",
+            "ProductName": "\u042a\u0424\u0447\u044a\u0416\u0449\u0442\u041a\u0435\u043e\u0447\u0433\u0423\u0440\u042d\u0414\u0415\u041c\u042c\u0438",
+            "ProductVersion": "\u041a\u0410\u0416\u042d\u0420\u041e\u041d\u042d\u042d\u041e\u0415\u0423\u0414\u0412\u0415\u0430\u0446\u0414\u0421\u043f\u041a\u0423\u042d\u041d\u044d\u042f\u0419\u0416\u042c\u0433\u0440\u0412\u042e\u041a\u042f\u0415\u0432\u0416\u0414\u0414\u0436\u0411"
+        },
+        "sections": {
+            "count": 4,
+            "details": [
+                {
+                    "characteristics": 1610612768,
+                    "data": "b'\\xff%l`@\\x00\\xff%\\x1c`@\\x00\\xff%\\x0c`@\\x00\\xff%L",
+                    "entropy": 3.538564239823331,
+                    "executable": true,
+                    "hash": {
+                        "md5": "923bd61c8acd275113926fca23c2f621",
+                        "sha1": "35568cd4af09ac938a380d2796fabd8f1412cabc",
+                        "sha256": "32615c9f4e94ba42e81e81f06a9c05f39177dc0ecffdf032544a55b37cc13e98"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 20480,
+                    "virtual_address": 4096,
+                    "virtual_size": 20480
+                },
+                {
+                    "characteristics": 1073741888,
+                    "data": "b'\\x90a\\x00\\x00\\x9ca\\x00\\x00\\xaea\\x00\\x00\\xbaa\\x00",
+                    "entropy": 4.121745038243397,
+                    "executable": false,
+                    "hash": {
+                        "md5": "130bd6ae608cbe6131b445a512a6210b",
+                        "sha1": "fae45774db5d0407fb09073dc2b11567c2f6927c",
+                        "sha256": "232b52a2481e62ad311bc1b4843cf92d4f11cd806cbb91c687cefe22c4711b6f"
+                    },
+                    "section_name": ".rdata",
+                    "size_of_raw_data": 1024,
+                    "virtual_address": 24576,
+                    "virtual_size": 4096
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'A\\x05\\x04\\x051\\x8b\\x14\\x13\\x17\\x054\\x05\\x14(\\x1f",
+                    "entropy": 6.144106455289227,
+                    "executable": false,
+                    "hash": {
+                        "md5": "9f99b82b38a4c8c23dac716b4d09677e",
+                        "sha1": "7e811314a07048b68f178579ad66280fcf196a9e",
+                        "sha256": "0378528c03219f6341ec8144146a761d188d04b1942a6b60e2ff6315ce188006"
+                    },
+                    "section_name": ".edata",
+                    "size_of_raw_data": 30208,
+                    "virtual_address": 28672,
+                    "virtual_size": 45056
+                },
+                {
+                    "characteristics": 1073741888,
+                    "data": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00",
+                    "entropy": 3.4456161635412856,
+                    "executable": false,
+                    "hash": {
+                        "md5": "3b2ee86d5e22801e2dcf4035aceecb39",
+                        "sha1": "ddaad53b63f1213aa1d2ae9b8906fe4e9cde4170",
+                        "sha256": "755beee863af44f97c0412955edc20b296e7ad1196fad2d50f5e941a3a880f82"
+                    },
+                    "section_name": ".rsrc",
+                    "size_of_raw_data": 1536,
+                    "virtual_address": 73728,
+                    "virtual_size": 4096
+                }
+            ]
+        },
+        "timestamp": "2007-10-08 16:03:10"
+    },
+    "strings": {
+        "dump": [
+            "Rich",
+            ".text",
+            "`.rdata",
+            "@.edata",
+            ".rsrc",
+            "%l`@",
+            "%L`@",
+            "%L`@",
+            "%\\`@",
+            "% `@",
+            "%d`@",
+            "%p`@",
+            "\u03c0hhC&",
+            "Y[_ZY\u01c0^^",
+            "[Z\u0240_\u0380X\u0300^\u0140ZZY_\u0380XZY\u0180YXZY^\u0280XY\u0100^\u0140^\u0780_X^^^Y_h",
+            "VRPSWWy",
+            "%``@",
+            "%X`@",
+            "%P`@",
+            "%x`@",
+            "%$`@",
+            "\u0140ZZ[hPh",
+            "u\u0300\u0300\u0300h?",
+            "hZ1TRhh",
+            "Nh9Wh",
+            "PhWRh",
+            "Whbt\u0300hh",
+            "VPhK",
+            "\u0280hK\\[",
+            "%X`@",
+            "PVPWPShh",
+            "WVSh",
+            "RSSh",
+            "PSV\u0340\u0200\u0500h",
+            "QWh%Y\u0180h",
+            "hJ\u0200\u0100\u0200\u02c0hV%h",
+            "\u03c0\u0380\u0180Rh0",
+            "\u0780[\u0740_X^\u0340Y^[Y_\u01c0[h",
+            "s\u0180\u02c0hBK`\u06c0\u04c0\u01c0\u03c0",
+            "{uJ[2",
+            "7G8J",
+            "r'_~",
+            "wJN.J",
+            "IN\tRw",
+            "2wJNJRw:",
+            "/JQ~~",
+            "*{{r",
+            "fw&~w*",
+            "4vIO",
+            "9wMG",
+            "xGO'{t",
+            "xE2y])fz",
+            ">*Nw",
+            "8{U`",
+            "o_VRVn",
+            "wr\tc4",
+            "w2zw",
+            "YrYz1",
+            "wJNrJ",
+            "8082",
+            "wN7\t",
+            "{~nwvw",
+            "w\"w!w ",
+            "~_f~",
+            "X\tIA",
+            "%t`@",
+            "%L`@",
+            "%x`@",
+            "\u0200\u0580\u0540RZ\u0207\u0100\u0200\u044b",
+            "\u0340\u0347^\u03c0l\t",
+            "S[6\u0240\u0140",
+            "7V^\u030b\u0580\u0306\u0600",
+            "\u0500\u0240\u0380\u0246\u0340V^",
+            "W_\u0300s",
+            "\u044d6V^\u0646\u0247\u0246\u04cb",
+            "\u0480\u0546\u03c6?6`",
+            "\u02d0\u02c0\u0300\u0290\u0640\u0580\u0740\u05cd\t\u0210\u014bh\u0480R",
+            "\u0146\u024d?^",
+            "\tR\u0240\u02c0\u06c0",
+            "B\u0200\u0100\u0300I?",
+            "j@\u0346\u0240\u0300\u06c0\u050d6\u0206\u0180\u0200\u0380",
+            "\u054d\t\u0740\u0640?",
+            "\u0247\u0300\u0650\u0240s",
+            "\u030a?\u0500\u0100",
+            "\u0200Y\u0200\u0200\u0200\u0740",
+            "6\u024b\u0480\u06c0\u0140y",
+            "\u0286\u02c0\u0280\u0239",
+            "\u07c0\u01c0\u0740\u03c10t",
+            "\u0480\u0300G\u020b\u0540\u0200",
+            "\u027c~V^7C1",
+            "\u0400V^\u01c0W_",
+            "\u0600V^\u0400\u0200\u06c0",
+            "V^\u0580s",
+            "V^\u018d\t_h\u050fh",
+            "\u0380\u02c0\u0280\u044d\ty",
+            "\u06d0\u0246\u06c0\u0640\u0380|",
+            "\u0300\u01c0\u0707\u0240S[",
+            "hwUj",
+            "YX_XXY",
+            "\u040d6\u0250Rr\u0640\u06c7",
+            "W_\u014b\u0400",
+            "W_S[v",
+            "?\u0206\u024b\u01cb",
+            "RWQh",
+            "\u0200_W_",
+            "DeleteDC",
+            "GetTextMetricsW",
+            "DeleteDC",
+            "CreateCompatibleDC",
+            "ExtTextOutW",
+            "GetDeviceCaps",
+            "GetDeviceCaps",
+            "SelectObject",
+            "TextOutW",
+            "DeleteObject",
+            "SelectObject",
+            "GDI32.DLL",
+            "RegCreateKeyExW",
+            "RegSetValueExA",
+            "OpenThreadToken",
+            "AdjustTokenPrivileges",
+            "FreeSid",
+            "RegDeleteValueW",
+            "ADVAPI32.DLL",
+            "GetSystemMetrics",
+            "SetCursor",
+            "GetSystemMetrics",
+            "GetMessageW",
+            "GetDC",
+            "GetWindowRect",
+            "DestroyWindow",
+            "USER32.DLL",
+            "SetEvent",
+            "GetModuleHandleW",
+            "GetACP",
+            "VirtualAlloc",
+            "VirtualAlloc",
+            "GetCurrentThreadId",
+            "LocalAlloc",
+            "GetModuleHandleA",
+            "ExitProcess",
+            "KERNEL32.DLL",
+            "v=MI",
+            ";#vQ",
+            "[(*@",
+            "(z/C",
+            "_vFd",
+            "\tCcs",
+            "CX65Y",
+            "`U8m",
+            "k`!B",
+            "$bZxCP",
+            "jh;,",
+            "SYH@",
+            "n#rm",
+            "IRON",
+            "g&CBy",
+            "AxaX",
+            "wG}+",
+            "[.u|",
+            "Has4",
+            "k3,M:u",
+            "Fq3\\",
+            "tVep",
+            ":-V]",
+            "8z>20i",
+            "<ds)w>",
+            "D*Qw,",
+            "pk>%",
+            "\u018f+C(",
+            ";YH6M",
+            "Hm2g",
+            "A 7W",
+            "M\u0410.6",
+            "WDGi!",
+            "bP=;",
+            "J:50t",
+            "<_Pr",
+            "q|H%",
+            ")#}b",
+            " L>q ",
+            "Pl<1",
+            "Z3)&",
+            "4l$p",
+            "/5g\td",
+            "R Ks",
+            ":cV%",
+            "^>`0",
+            "V\u29f3* ",
+            "Lag2",
+            "]Bo8",
+            "?%a_",
+            "}\u02560 ",
+            "Ir\"r",
+            "\\A7N",
+            "I6sD",
+            "lY^0%",
+            "OA+a",
+            "R:)<d",
+            "eV /",
+            "Q+/f",
+            "Tx3Z",
+            "^hN3(",
+            "djt[",
+            "jBq}",
+            "QGiD",
+            "?j'e",
+            " ima",
+            "Sx%tpo",
+            "8ti\tx",
+            "H`B0\u0416",
+            "W !i;`",
+            "Qy)c?",
+            "dXbx",
+            "C802",
+            ",#\u0126^",
+            "{7!k",
+            "s-]{",
+            "90A~",
+            "YmDd",
+            "`#!?",
+            ".RXx",
+            "h}hJK",
+            "\u02de8K\u019c",
+            "fL$^E",
+            "\t\u02948c",
+            "d{cz",
+            "o*I:",
+            "_\\iki",
+            "G*S.",
+            "w 6P",
+            "SI:L_",
+            "zh*/",
+            "X[pr",
+            "SD}9F",
+            "ng7r",
+            "u&AV",
+            "kQ~xD",
+            "]T1(g",
+            "FxU'",
+            "A= {b0",
+            "(Zmf",
+            "\tDiyd",
+            ">B\u01f2?",
+            "]26|Q",
+            ",}}|1h",
+            "?D`b!@",
+            "=R.1O",
+            "XuJ\u064c",
+            "I)pN",
+            ".33S:",
+            "zW }",
+            "O\"X/",
+            "`)I>",
+            "S/(`",
+            "ISA\te",
+            "GL-?",
+            "|pYg%",
+            "uR]~",
+            "Mk~/S\u07f4",
+            "J]P?",
+            "e0H?",
+            "\u01b3001C",
+            "D?,v",
+            "R(6\u0528k~",
+            "i`,*",
+            "EbQFH",
+            "]:){)",
+            "PJ[E",
+            "AT{2",
+            "IO]Y",
+            "/~H[",
+            "3?rH",
+            "7hR3",
+            " B\u02909",
+            "SZPTM3",
+            "8&S2B",
+            "[|f'",
+            "|Qj\u07c8",
+            "=![X",
+            "U(eb5",
+            "(e!x1",
+            "9.dD",
+            "j,F,"
+        ],
+        "file": {
+            "ADVAPI32.DLL": "Library",
+            "GDI32.DLL": "Library",
+            "KERNEL32.DLL": "Library",
+            "USER32.DLL": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.696863",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasModified_DOS_Message"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

