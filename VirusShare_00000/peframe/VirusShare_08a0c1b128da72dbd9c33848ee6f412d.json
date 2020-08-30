@@ -1,0 +1,177 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_08a0c1b128da72dbd9c33848ee6f412d",
+    "filesize": 1194,
+    "filetype": "MS-DOS executable, MZ for MS-DOS",
+    "hashes": {
+        "md5": "08a0c1b128da72dbd9c33848ee6f412d",
+        "sha1": "f0e33759b06a2d5aaf6da28e5bba62ccbe021068",
+        "sha256": "ce71d6c6a361672a2b57aa93780229185ef77276725b4f133f2db176b4885ddc"
+    },
+    "peinfo": {
+        "behavior": [
+            "win_files_operation"
+        ],
+        "breakpoint": [
+            "CloseHandle",
+            "CreateFileA",
+            "GetCommandLineA",
+            "ReadFile",
+            "SetFilePointer",
+            "WriteFile"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "KERNEL32.DLL": [
+                    {
+                        "function": "CloseHandle",
+                        "offset": 4206645
+                    },
+                    {
+                        "function": "CreateFileA",
+                        "offset": 4206649
+                    },
+                    {
+                        "function": "GetCommandLineA",
+                        "offset": 4206653
+                    },
+                    {
+                        "function": "ReadFile",
+                        "offset": 4206657
+                    },
+                    {
+                        "function": "SetFilePointer",
+                        "offset": 4206661
+                    },
+                    {
+                        "function": "WriteFile",
+                        "offset": 4206665
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 17744,
+                "AddressOfIndex": 1048580,
+                "Characteristics": 1097854379,
+                "EndAddressOfRawData": 1,
+                "SizeOfZeroFill": 196940,
+                "StartAddressOfRawData": 8411725
+            }
+        },
+        "dll": false,
+        "entrypoint": 8192,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "61dcebc0777bd58611e03dc3052c3cc9",
+        "metadata": {},
+        "sections": {
+            "count": 3,
+            "details": [
+                {
+                    "characteristics": 3221225664,
+                    "data": "b''",
+                    "entropy": 0.0,
+                    "executable": false,
+                    "hash": {
+                        "md5": "d41d8cd98f00b204e9800998ecf8427e",
+                        "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+                        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                    },
+                    "section_name": ".data",
+                    "size_of_raw_data": 0,
+                    "virtual_address": 4096,
+                    "virtual_size": 4096
+                },
+                {
+                    "characteristics": 1610612768,
+                    "data": "b'\\xff\\x15=0@\\x00\\x96\\xac< u\\xfbj\\x00h\\x80\\x00\\x00",
+                    "entropy": 4.502429931962476,
+                    "executable": true,
+                    "hash": {
+                        "md5": "f872987acaf06bac43b917b841bd1e69",
+                        "sha1": "200685180f43ef0162b0bfeeaf859cfbb8c49618",
+                        "sha256": "b39f7093bee00cc5205cabd5e83dd0570784d1481fbe7f70023423effdc11f92"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 393,
+                    "virtual_address": 8192,
+                    "virtual_size": 4096
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00",
+                    "entropy": 3.613227080788683,
+                    "executable": false,
+                    "hash": {
+                        "md5": "1c0510b91dd5e7a36236f8e7ba51397e",
+                        "sha1": "881999deaa299c5f83fd1645e3ef378dcf4acabd",
+                        "sha256": "979bbb95766ea7bc6227e47a87a1554ab3da4a04a7396cda8debe9147495f001"
+                    },
+                    "section_name": ".idata",
+                    "size_of_raw_data": 170,
+                    "virtual_address": 12288,
+                    "virtual_size": 167
+                }
+            ]
+        },
+        "timestamp": "2004-10-15 15:32:59"
+    },
+    "strings": {
+        "dump": [
+            ".data",
+            ".text",
+            "`.idata",
+            ".text",
+            "`.idata",
+            "< uj",
+            "BlueOwl 2004. Have a nice day :)",
+            "KERNEL32.DLL",
+            "CloseHandle",
+            "CreateFileA",
+            "GetCommandLineA",
+            "ReadFile",
+            "SetFilePointer",
+            "WriteFile"
+        ],
+        "file": {
+            "KERNEL32.DLL": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.650949",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasModified_DOS_Message"
+        }
+    ]
+}

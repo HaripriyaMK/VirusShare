@@ -1,0 +1,363 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_27a743b68cf0052e2ae2667de3a79617",
+    "filesize": 6144,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "27a743b68cf0052e2ae2667de3a79617",
+        "sha1": "94eaba001dff2c4f8b55d65ae6d37b491dca23a1",
+        "sha256": "3914bbebd8668ac6df58ecb50040efd93efe4d6ae4ba947a223c42602193cd4c"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "hijack_network",
+            "win_registry",
+            "win_files_operation"
+        ],
+        "breakpoint": [
+            "CloseHandle",
+            "CreateDirectoryA",
+            "CreateFileA",
+            "CreateProcessA",
+            "DeleteFileA",
+            "ExitProcess",
+            "GetCommandLineA",
+            "GetSystemDirectoryA",
+            "GetWindowsDirectoryA",
+            "ReadFile",
+            "RegCloseKey",
+            "RegOpenKeyA",
+            "Sleep",
+            "VirtualAlloc",
+            "WriteFile"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "ADVAPI32.dll": [
+                    {
+                        "function": "RegOpenKeyA",
+                        "offset": 4202496
+                    },
+                    {
+                        "function": "RegQueryValueExA",
+                        "offset": 4202500
+                    },
+                    {
+                        "function": "RegSetValueExA",
+                        "offset": 4202504
+                    },
+                    {
+                        "function": "RegCloseKey",
+                        "offset": 4202508
+                    }
+                ],
+                "KERNEL32.dll": [
+                    {
+                        "function": "Sleep",
+                        "offset": 4202516
+                    },
+                    {
+                        "function": "CreateProcessA",
+                        "offset": 4202520
+                    },
+                    {
+                        "function": "ReadFile",
+                        "offset": 4202524
+                    },
+                    {
+                        "function": "GetSystemDirectoryA",
+                        "offset": 4202528
+                    },
+                    {
+                        "function": "GetCommandLineA",
+                        "offset": 4202532
+                    },
+                    {
+                        "function": "VirtualAlloc",
+                        "offset": 4202536
+                    },
+                    {
+                        "function": "CloseHandle",
+                        "offset": 4202540
+                    },
+                    {
+                        "function": "DeleteFileA",
+                        "offset": 4202544
+                    },
+                    {
+                        "function": "WriteFile",
+                        "offset": 4202548
+                    },
+                    {
+                        "function": "GetWindowsDirectoryA",
+                        "offset": 4202552
+                    },
+                    {
+                        "function": "CreateFileA",
+                        "offset": 4202556
+                    },
+                    {
+                        "function": "CreateDirectoryA",
+                        "offset": 4202560
+                    },
+                    {
+                        "function": "ExitProcess",
+                        "offset": 4202564
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 4596,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "Microsoft_Visual_Cpp_v60"
+            ],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "d6c9ce41aaa771d2a8495bf6fe3352f9",
+        "metadata": {},
+        "sections": {
+            "count": 3,
+            "details": [
+                {
+                    "characteristics": 1610612768,
+                    "data": "b'\\xeb\\x05:\\xc8t\\x10B\\x8a\\n\\x84\\xc9u\\xf5\\xf6\\xd8\\x",
+                    "entropy": 5.818955623954522,
+                    "executable": true,
+                    "hash": {
+                        "md5": "7ff9a98d4c089c5b099ee006b505075f",
+                        "sha1": "249feeea7070d856efc3fe7521639bee356620f4",
+                        "sha256": "9ead3e9dfd955e05780c57b12b45966f912cfffc41a5ce6b95eed9d5229d7d22"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 3072,
+                    "virtual_address": 4096,
+                    "virtual_size": 2773
+                },
+                {
+                    "characteristics": 1073741888,
+                    "data": "b'&%\\x00\\x00\\x12%\\x00\\x00\\x00%\\x00\\x004%\\x00\\x00\\x",
+                    "entropy": 4.89834513368908,
+                    "executable": false,
+                    "hash": {
+                        "md5": "dc6856644aee0adf00e6dc0f72c2b0d4",
+                        "sha1": "5d7e59fa4bc836dcf5a5aaf872cc31b30766850c",
+                        "sha256": "5c78293224b6c3b5235a50bbcc10bc599c5f28c07af5b270abc5b443039eeb3e"
+                    },
+                    "section_name": ".rdata",
+                    "size_of_raw_data": 1536,
+                    "virtual_address": 8192,
+                    "virtual_size": 1360
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'0\"@\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\",
+                    "entropy": 0.06116285224115448,
+                    "executable": false,
+                    "hash": {
+                        "md5": "5657d8e06d37076ba188b89554b5ae41",
+                        "sha1": "ef6dbea8ccf778272c8924aacfe0c3f8846895d7",
+                        "sha256": "7affa3721ed02a6cef6dddce5a00d6505aa6f44e544f38ce5b65ec5a617f4b74"
+                    },
+                    "section_name": ".data",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 12288,
+                    "virtual_size": 56
+                }
+            ]
+        },
+        "timestamp": "2003-11-30 21:48:29"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "&(KGFKGFKGFd_NGFKGGZGFcjJGFc{JGFRichKGF",
+            ".text",
+            "`.rdata",
+            "@.data",
+            "<hu6B",
+            "<tu+B",
+            "<tu B",
+            "/u\tz",
+            "t?Wt",
+            "wu5H",
+            "t.Lt",
+            "lu$H",
+            "3@3U",
+            "u\tF>",
+            "u^W3\u038d",
+            "G\"nt",
+            "R20$\"@",
+            "^_[Qj@h",
+            "g- 0@",
+            "\u0605\u06c9\\$",
+            "bu.~",
+            "au(~",
+            "su\"~",
+            ";Su@~",
+            "Pu:|",
+            "Hux~",
+            "Pur|m",
+            "F|Yt",
+            "- 0@",
+            "Fr/P2t2 E",
+            "5(0@",
+            "2\u02cb2!@",
+            "- 0@",
+            "tv\u0630|",
+            "teF|",
+            "2\u038b2!@",
+            "240@",
+            "_^]=40@",
+            "z2X!@",
+            "cPRVW",
+            "%40@",
+            "^UQVW3VVj",
+            "VEPu",
+            "E_^UQSV5< @",
+            "W3SSj",
+            "\u058btKSEPu",
+            "W=, @",
+            "t+Sh",
+            "YV_^[",
+            "~ S\u060aW",
+            "_[UT",
+            "VD39u",
+            "jDY2Uj",
+            "Y2UuEPEPVVVVVVPVED",
+            "u5, @",
+            "uRPj",
+            "SVWEPh!@",
+            "uDEP5",
+            "SuuE",
+            "\u05cbE;s",
+            "u\\EPh!@",
+            "uDEP5",
+            "SuuE",
+            "\u05cbE;s",
+            "_^[UQQ39E",
+            "u\t9E",
+            "E39]E",
+            "Ph`!@",
+            "S\u0585uuE",
+            "t0hT!@",
+            "hH!@",
+            "h4!@",
+            "t2h(!@",
+            "t'EPh @",
+            "YYu\u05c3}",
+            "t_EPh @",
+            "uYYu\u05cdEPhp @",
+            "S\u0585u(E",
+            "h` @",
+            "hP @",
+            "SearchAssistant",
+            "CustomizeSearch",
+            "SOFTWARE\\Microsoft\\Internet Explorer\\Search",
+            "SearchURL",
+            "SOFTWARE\\Microsoft\\Internet Explorer",
+            "blank",
+            "SOFTWARE\\Microsoft\\Internet Explorer\\AboutURLs",
+            "HomeSet",
+            "Default_Page_URL",
+            "Start Page",
+            "Default_Search_URL",
+            "Search Bar",
+            "Search Page",
+            "SOFTWARE\\Microsoft\\Internet Explorer\\Main",
+            "Favorites",
+            "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders",
+            "\\drivers\\etc\\hosts",
+            "[InternetShortcut]",
+            "URL=",
+            ".url",
+            "http://",
+            "\\wlxr.exe",
+            "HP|http://ultralinks.info/",
+            "SP|http://ultralinks.info/sp.htm",
+            "bookmark|pornofreezone.com/|Free Adult Zone",
+            "bookmark|fuckinpics.com/|Lot Of Adult Pics",
+            "bookmark|pichordes.com/|Hordes Of Adult Galleries",
+            "bookmark|alotofcum.us/|A Lot Of Adult Pics And Gals",
+            "bookmark|mega-tgp.com/|Mega TGP Site",
+            "bookmark|ultralinks.info/|List of ultimate links",
+            "host|localhost|127.0.0.1",
+            "ExitProcess",
+            "CreateFileA",
+            "GetWindowsDirectoryA",
+            "WriteFile",
+            "GetCommandLineA",
+            "Sleep",
+            "CreateProcessA",
+            "ReadFile",
+            "GetSystemDirectoryA",
+            "CreateDirectoryA",
+            "VirtualAlloc",
+            "CloseHandle",
+            "DeleteFileA",
+            "KERNEL32.dll",
+            "RegSetValueExA",
+            "RegQueryValueExA",
+            "RegOpenKeyA",
+            "RegCloseKey",
+            "ADVAPI32.dll"
+        ],
+        "file": {
+            "ADVAPI32.dll": "Library",
+            "KERNEL32.dll": "Library",
+            "SP|http://ultralinks.info/sp.htm": "Web Page",
+            "\\wlxr.exe": "Executable"
+        },
+        "fuzzing": {},
+        "ip": [
+            "127.0.0.1"
+        ],
+        "url": [
+            "http://ultralinks.info/",
+            "http://",
+            "http://ultralinks.info/sp.htm"
+        ]
+    },
+    "time": "0:00:00.619321",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

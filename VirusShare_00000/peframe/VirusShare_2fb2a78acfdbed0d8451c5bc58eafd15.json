@@ -1,0 +1,39 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {},
+        "macro": "@ echo off\nrem ---------------------------------\nrem Delete All Exe\nDIR /S/B %SystemDrive%\\*.exe >> FIleList_exe.txt\necho Y | FOR /F \"tokens=1,* delims=: \" %%j in (FIleList_exe.txt) do del \"%%j:%%k\"\nrem ---------------------------------"
+    },
+    "filename": "VirusShare_2fb2a78acfdbed0d8451c5bc58eafd15",
+    "filesize": 243,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "2fb2a78acfdbed0d8451c5bc58eafd15",
+        "sha1": "326e609e244c3803f22330fcbf82910bfb8183c5",
+        "sha256": "739a39c4a01495bf675e52f72c2c6d23c59fdcdb25a108963f181305070d9192"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@ echo off",
+            "rem ---------------------------------",
+            "rem Delete All Exe",
+            "DIR /S/B %SystemDrive%\\*.exe >> FIleList_exe.txt",
+            "echo Y | FOR /F \"tokens=1,* delims=: \" %%j in (FIleList_exe.txt) do del \"%%j:%%k\"",
+            "rem ---------------------------------"
+        ],
+        "file": {
+            "DIR /S/B %SystemDrive%\\*.exe >> FIleList_exe.txt": "Text"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.257850",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

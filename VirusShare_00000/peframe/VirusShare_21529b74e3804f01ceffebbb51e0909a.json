@@ -1,0 +1,231 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_21529b74e3804f01ceffebbb51e0909a",
+    "filesize": 2052,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "21529b74e3804f01ceffebbb51e0909a",
+        "sha1": "33238c0ce3592f5a489b4f9654bfd36f4b03f894",
+        "sha256": "75bc515188504b8ffd511fa72e65e0b2599f312e5c5ce050773b5a8962a5b377"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "network_tcp_listen",
+            "network_dropper",
+            "network_tcp_socket"
+        ],
+        "breakpoint": [
+            "CreateThread",
+            "ExitProcess",
+            "GetTickCount",
+            "GetWindowsDirectoryA",
+            "ShellExecuteA",
+            "Sleep",
+            "URLDownloadToFileA",
+            "WSAStartup",
+            "accept",
+            "bind",
+            "closesocket",
+            "listen",
+            "socket"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "kernel32.dll": [
+                    {
+                        "function": "CreateThread",
+                        "offset": 4198668
+                    },
+                    {
+                        "function": "ExitProcess",
+                        "offset": 4198672
+                    },
+                    {
+                        "function": "GetTickCount",
+                        "offset": 4198676
+                    },
+                    {
+                        "function": "GetWindowsDirectoryA",
+                        "offset": 4198680
+                    },
+                    {
+                        "function": "GlobalAlloc",
+                        "offset": 4198684
+                    },
+                    {
+                        "function": "GlobalFree",
+                        "offset": 4198688
+                    },
+                    {
+                        "function": "Sleep",
+                        "offset": 4198692
+                    }
+                ],
+                "shell32.dll": [
+                    {
+                        "function": "ShellExecuteA",
+                        "offset": 4198708
+                    }
+                ],
+                "urlmon.dll": [
+                    {
+                        "function": "URLDownloadToFileA",
+                        "offset": 4198716
+                    }
+                ],
+                "user32.dll": [
+                    {
+                        "function": "wsprintfA",
+                        "offset": 4198700
+                    }
+                ],
+                "wsock32.dll": [
+                    {
+                        "function": "WSAStartup",
+                        "offset": 4198724
+                    },
+                    {
+                        "function": "accept",
+                        "offset": 4198728
+                    },
+                    {
+                        "function": "bind",
+                        "offset": 4198732
+                    },
+                    {
+                        "function": "closesocket",
+                        "offset": 4198736
+                    },
+                    {
+                        "function": "listen",
+                        "offset": 4198740
+                    },
+                    {
+                        "function": "socket",
+                        "offset": 4198744
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 4991,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "Microsoft_Visual_Basic_v50"
+            ],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "ff15cbf34ef7c5d98b78f91ca653de5c",
+        "metadata": {},
+        "sections": {
+            "count": 1,
+            "details": [
+                {
+                    "characteristics": 3758096416,
+                    "data": "b'<\\x04\\x00\\x00http://www.ekspol.pl/s.php\\x00%s\\\\%",
+                    "entropy": 4.105521049660266,
+                    "executable": true,
+                    "hash": {
+                        "md5": "8a001614db979d73878267112c13e970",
+                        "sha1": "98ed0287f373d8f64bcc5d20cec63c2032042f06",
+                        "sha256": "661e5f6ba39e3ab326342db4b90e9390e5f393fbb0486df0718b81e5d1c4b170"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 1536,
+                    "virtual_address": 4096,
+                    "virtual_size": 1646
+                }
+            ]
+        },
+        "timestamp": "2005-03-08 04:57:17"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            ".text",
+            "http://www.ekspol.pl/s.php",
+            "%s\\%lu.exe",
+            "fdsfsgdfhfdghhopen",
+            "CreateThread",
+            "ExitProcess",
+            "GetTickCount",
+            "GetWindowsDirectoryA",
+            "GlobalAlloc",
+            "GlobalFree",
+            "Sleep",
+            "kernel32.dll",
+            "wsprintfA",
+            "user32.dll",
+            "ShellExecuteA",
+            "shell32.dll",
+            "URLDownloadToFileA",
+            "urlmon.dll",
+            "WSAStartup",
+            "accept",
+            "bind",
+            "closesocket",
+            "listen",
+            "socket",
+            "wsock32.dll",
+            "UVWS}",
+            "EPSZ",
+            "EPEPS+",
+            "3[_^"
+        ],
+        "file": {
+            "%s\\%lu.exe": "Executable",
+            "http://www.ekspol.pl/s.php": "Web Page",
+            "kernel32.dll": "Library",
+            "shell32.dll": "Library",
+            "urlmon.dll": "Library",
+            "user32.dll": "Library",
+            "wsock32.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.ekspol.pl/s.php"
+        ]
+    },
+    "time": "0:00:00.663200",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasOverlay"
+        }
+    ]
+}

