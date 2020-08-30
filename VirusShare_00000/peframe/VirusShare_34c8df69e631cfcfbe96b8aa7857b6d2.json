@@ -1,0 +1,149 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_34c8df69e631cfcfbe96b8aa7857b6d2",
+    "filesize": 512,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "34c8df69e631cfcfbe96b8aa7857b6d2",
+        "sha1": "c0a9149b5476b6c835e3f2a3cfd839fa300cf87c",
+        "sha256": "1f761044a7b29ff6fcae8dee2ab5c7f9a081ac161e855fa802ad593f6e02caf0"
+    },
+    "peinfo": {
+        "behavior": [
+            "network_dropper"
+        ],
+        "breakpoint": [
+            "ExitProcess",
+            "URLDownloadToFileA",
+            "WinExec"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "KERNEL32.DLL": [
+                    {
+                        "function": "ExitProcess",
+                        "offset": 4198836
+                    },
+                    {
+                        "function": "WinExec",
+                        "offset": 4198840
+                    }
+                ],
+                "URLMON.DLL": [
+                    {
+                        "function": "URLDownloadToFileA",
+                        "offset": 4198848
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 294152192,
+                "VirtualAddress": 1073832040,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {
+                "block_size": 1465384755,
+                "details": {},
+                "virtual_address": 4175626054
+            },
+            "tls": {
+                "AddressOfCallBacks": 2483047500,
+                "AddressOfIndex": 1143878195,
+                "Characteristics": 1667594309,
+                "EndAddressOfRawData": 1279610450,
+                "SizeOfZeroFill": 1852397314,
+                "StartAddressOfRawData": 1162566221
+            }
+        },
+        "dll": false,
+        "entrypoint": 4300,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "8ad542ab16383a3043ad871c51ebd78e",
+        "metadata": {},
+        "sections": {
+            "count": 2,
+            "details": [
+                {
+                    "characteristics": 3758096416,
+                    "data": "b'MZKERNEL32.DLL\\x00\\x94\\x02WinExec\\x001\\x00URLDow",
+                    "entropy": 3.681275403981843,
+                    "executable": true,
+                    "hash": {
+                        "md5": "34c8df69e631cfcfbe96b8aa7857b6d2",
+                        "sha1": "c0a9149b5476b6c835e3f2a3cfd839fa300cf87c",
+                        "sha256": "1f761044a7b29ff6fcae8dee2ab5c7f9a081ac161e855fa802ad593f6e02caf0"
+                    },
+                    "section_name": "h`\u0001@",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 4096,
+                    "virtual_size": 4096
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b''",
+                    "entropy": 0.0,
+                    "executable": false,
+                    "hash": {
+                        "md5": "d41d8cd98f00b204e9800998ecf8427e",
+                        "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+                        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                    },
+                    "section_name": "\\Tpx.exe",
+                    "size_of_raw_data": 0,
+                    "virtual_address": 8192,
+                    "virtual_size": 256
+                }
+            ]
+        },
+        "timestamp": "2011-02-04 19:24:05"
+    },
+    "strings": {
+        "dump": [
+            "MZKERNEL32.DLL",
+            "WinExec",
+            "URLDownloadToFileA",
+            "ExitProcess",
+            "URLMON.DLL",
+            "\u0408F3WWh`",
+            "\\Tpx.exe",
+            "\u0408\u044c\u045e\u045a."
+        ],
+        "file": {
+            "MZKERNEL32.DLL": "Library",
+            "URLMON.DLL": "Library",
+            "\\Tpx.exe": "Executable"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.589269",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasModified_DOS_Message"
+        }
+    ]
+}

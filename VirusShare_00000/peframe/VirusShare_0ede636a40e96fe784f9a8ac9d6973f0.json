@@ -1,0 +1,202 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_0ede636a40e96fe784f9a8ac9d6973f0",
+    "filesize": 3072,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "0ede636a40e96fe784f9a8ac9d6973f0",
+        "sha1": "c0b9ce38173b4fc4bbb65a4a8c161a5ac2cad7ce",
+        "sha256": "baaf7a8e033328d8a4ecb42771ad5b27784a414f7f6e13088873f102ee1fe36e"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor"
+        ],
+        "breakpoint": [
+            "ExitProcess",
+            "GetProcAddress",
+            "LoadLibraryA",
+            "Sleep",
+            "WSAStartup",
+            "WinExec",
+            "connect",
+            "recv",
+            "send",
+            "socket"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "KERNEL32.dll": [
+                    {
+                        "function": "WinExec",
+                        "offset": 4198400
+                    },
+                    {
+                        "function": "ExitProcess",
+                        "offset": 4198404
+                    },
+                    {
+                        "function": "GetProcAddress",
+                        "offset": 4198408
+                    },
+                    {
+                        "function": "LoadLibraryA",
+                        "offset": 4198412
+                    },
+                    {
+                        "function": "Sleep",
+                        "offset": 4198416
+                    }
+                ],
+                "USER32.dll": [
+                    {
+                        "function": "wsprintfA",
+                        "offset": 4198424
+                    }
+                ],
+                "WSOCK32.dll": [
+                    {
+                        "function": "connect",
+                        "offset": 4198432
+                    },
+                    {
+                        "function": "recv",
+                        "offset": 4198436
+                    },
+                    {
+                        "function": "send",
+                        "offset": 4198440
+                    },
+                    {
+                        "function": "socket",
+                        "offset": 4198444
+                    },
+                    {
+                        "function": "WSAStartup",
+                        "offset": 4198448
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 4870,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "375a2cd83a1000d06e9917b60f53d4b6",
+        "metadata": {},
+        "sections": {
+            "count": 2,
+            "details": [
+                {
+                    "characteristics": 1610612768,
+                    "data": "b'p\\x14\\x00\\x008\\x14\\x00\\x00F\\x14\\x00\\x00X\\x14\\x00",
+                    "entropy": 4.323103954736272,
+                    "executable": true,
+                    "hash": {
+                        "md5": "0c7fd584553f451243e2a8cffed02d4d",
+                        "sha1": "55325398a5d47934037d11472d808f3a2c9bc33e",
+                        "sha256": "144fea706240e886bfa0eae62438a4d5ec69a9a0ba2c165fac6a4572dec481d1"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 1536,
+                    "virtual_address": 4096,
+                    "virtual_size": 1172
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b\"%d\\x001dyxhhm\\x00\\x00\\xc8\\x16\\xc8\\x07\\xd1\\x08\\x1",
+                    "entropy": 3.6691500539195223,
+                    "executable": false,
+                    "hash": {
+                        "md5": "dbf602bf5af1ac7cf90ee97be689b66c",
+                        "sha1": "6068ef49fab72e02a395814257cab07e2daf323a",
+                        "sha256": "70f87fe294edf944a9dbf433db1fdb6bebbfdf4b1e07cf5a29c2657d396fe330"
+                    },
+                    "section_name": ".data",
+                    "size_of_raw_data": 1024,
+                    "virtual_address": 8192,
+                    "virtual_size": 323620
+                }
+            ]
+        },
+        "timestamp": "2006-06-12 11:03:15"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "vsVa",
+            "vsRich",
+            ".text",
+            "`.data",
+            "]SQh\"@",
+            "h:!@",
+            "h{!@",
+            "Ph\"@",
+            "@8\"t",
+            "Ghq!@",
+            ";uh @",
+            "Ch N",
+            ";u3hw @",
+            "wsprintfA",
+            "USER32.dll",
+            "ExitProcess",
+            "GetProcAddress",
+            "LoadLibraryA",
+            "Sleep",
+            "WinExec",
+            "KERNEL32.dll",
+            "WSOCK32.dll",
+            "1dyxhhm"
+        ],
+        "file": {
+            "KERNEL32.dll": "Library",
+            "USER32.dll": "Library",
+            "WSOCK32.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.658927",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

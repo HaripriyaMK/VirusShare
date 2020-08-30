@@ -1,0 +1,194 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_26017795f16b4023f570966f5f8a239a",
+    "filesize": 1236,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "26017795f16b4023f570966f5f8a239a",
+        "sha1": "2796b5b88679ad7e2dc81aee5a9daf335cb0ecaa",
+        "sha256": "29ffa0560024bc4c36ebbc7cb18697a04b0c1281f765ea60a886b345f5d30bc6"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "win_registry"
+        ],
+        "breakpoint": [
+            "RegOpenKeyA",
+            "ShellExecuteA",
+            "Sleep"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "ADVAPI32.dll": [
+                    {
+                        "function": "RegOpenKeyA",
+                        "offset": 4194776
+                    },
+                    {
+                        "function": "RegSetValueExA",
+                        "offset": 4194780
+                    }
+                ],
+                "KERNEL32.dll": [
+                    {
+                        "function": "Sleep",
+                        "offset": 4194788
+                    }
+                ],
+                "SHELL32.dll": [
+                    {
+                        "function": "ShellExecuteA",
+                        "offset": 4194796
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 800,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "ASProtect_v132",
+                "Microsoft_Visual_Cpp_v50v60_MFC",
+                "Borland_Delphi_30_additional",
+                "Borland_Delphi_30_",
+                "Borland_Delphi_v40_v50",
+                "Borland_Delphi_v30",
+                "Borland_Delphi_DLL"
+            ],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "934c17428640fbe95835f2b7cd185804",
+        "metadata": {},
+        "sections": {
+            "count": 1,
+            "details": [
+                {
+                    "characteristics": 3221225536,
+                    "data": "b\"\\x9c\\x04\\x00\\x00\\x8a\\x04\\x00\\x00\\x00\\x00\\x00\\x00",
+                    "entropy": 5.317475788474835,
+                    "executable": false,
+                    "hash": {
+                        "md5": "1401367c2fd5e68dbb80ab01712862d9",
+                        "sha1": "404c42a53b9220305752fefbfbcd467cfa624ead",
+                        "sha256": "5455c1dacba12cc67ad50d2a91f7f18d70991531505a0d09bb527ddcb882d3c3"
+                    },
+                    "section_name": ".SecDrop",
+                    "size_of_raw_data": 764,
+                    "virtual_address": 472,
+                    "virtual_size": 764
+                }
+            ]
+        },
+        "timestamp": "2004-11-12 21:51:01"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "Richd",
+            ".SecDrop",
+            "1004",
+            "1200",
+            "1206",
+            "1201",
+            "1400",
+            "1402",
+            "1405",
+            "1407",
+            "1406",
+            "1601",
+            "1605",
+            "1604",
+            "1606",
+            "1608",
+            "1607",
+            "1609",
+            "1802",
+            "1803",
+            "1800",
+            "1805",
+            "1804",
+            "1A02",
+            "1A03",
+            "1A00",
+            "1A04",
+            "1A06",
+            "1A05",
+            "1A10",
+            "2001",
+            "2004",
+            "1001",
+            "open",
+            "explorer",
+            "http://www.sexplorer.it/T.html",
+            "Flags",
+            "CurrentLevel",
+            "Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\\Zones\\3",
+            "SVEWP3h",
+            "WPWSh",
+            "u\u058dEWPWSh",
+            "EWPWSuu\u0583E",
+            "EWPWSh",
+            "u\u058dEWPWSh",
+            "EWPWSuu\u0583E",
+            "|_^[d",
+            "Sleep",
+            "KERNEL32.dll",
+            "RegSetValueExA",
+            "RegOpenKeyA",
+            "ADVAPI32.dll",
+            "ShellExecuteA",
+            "SHELL32.dll"
+        ],
+        "file": {
+            "ADVAPI32.dll": "Library",
+            "KERNEL32.dll": "Library",
+            "SHELL32.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.sexplorer.it/T.html"
+        ]
+    },
+    "time": "0:00:00.565088",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

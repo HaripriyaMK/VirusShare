@@ -1,0 +1,474 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_3f6858263ef73dd6515741d34d75fc99",
+    "filesize": 40200,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "3f6858263ef73dd6515741d34d75fc99",
+        "sha1": "74a7b9cc29e5970b48c912214014c43dacadacb2",
+        "sha256": "9ab33dc2bf167e2fd5fab5ce6801290d4eb6362b747d2929134dff9e3a95d322"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "network_tcp_listen",
+            "network_dropper",
+            "escalate_priv",
+            "win_mutex",
+            "win_registry",
+            "win_token",
+            "win_files_operation"
+        ],
+        "breakpoint": [],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "ntoskrnl.exe": [
+                    {
+                        "function": "ZwQuerySystemInformation",
+                        "offset": 69632
+                    },
+                    {
+                        "function": "IoGetCurrentProcess",
+                        "offset": 69636
+                    },
+                    {
+                        "function": "strncmp",
+                        "offset": 69640
+                    },
+                    {
+                        "function": "ExFreePool",
+                        "offset": 69644
+                    },
+                    {
+                        "function": "RtlCompareMemory",
+                        "offset": 69648
+                    },
+                    {
+                        "function": "ExAllocatePoolWithTag",
+                        "offset": 69652
+                    },
+                    {
+                        "function": "RtlFreeAnsiString",
+                        "offset": 69656
+                    },
+                    {
+                        "function": "sprintf",
+                        "offset": 69660
+                    },
+                    {
+                        "function": "RtlUnicodeStringToAnsiString",
+                        "offset": 69664
+                    },
+                    {
+                        "function": "strncpy",
+                        "offset": 69668
+                    },
+                    {
+                        "function": "KeServiceDescriptorTable",
+                        "offset": 69672
+                    },
+                    {
+                        "function": "ZwQueryDirectoryFile",
+                        "offset": 69676
+                    },
+                    {
+                        "function": "IoCreateSymbolicLink",
+                        "offset": 69680
+                    },
+                    {
+                        "function": "IoCreateDevice",
+                        "offset": 69684
+                    },
+                    {
+                        "function": "RtlInitUnicodeString",
+                        "offset": 69688
+                    },
+                    {
+                        "function": "IofCompleteRequest",
+                        "offset": 69692
+                    },
+                    {
+                        "function": "IoDeleteDevice",
+                        "offset": 69696
+                    },
+                    {
+                        "function": "IoDeleteSymbolicLink",
+                        "offset": 69700
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 116,
+                "VirtualAddress": 16384,
+                "count": 1,
+                "details": {
+                    "reloc_1": 54
+                }
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 5470,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "Microsoft_Visual_Cpp_v50v60_MFC",
+                "Borland_Delphi_30_additional",
+                "Borland_Delphi_30_",
+                "Borland_Delphi_v40_v50",
+                "Borland_Delphi_v30",
+                "Borland_Delphi_DLL"
+            ],
+            "xor": {}
+        },
+        "imagebase": 65536,
+        "imphash": "8bf33c5bd4e8acf6287af486d707f3c6",
+        "metadata": {},
+        "sections": {
+            "count": 4,
+            "details": [
+                {
+                    "characteristics": 1610612768,
+                    "data": "b'\\x161\\x00\\x00~0\\x00\\x00\\x940\\x00\\x00\\x9e0\\x00\\x0",
+                    "entropy": 3.3941091063927793,
+                    "executable": true,
+                    "hash": {
+                        "md5": "040338611468ac0cb2fe4c886988c1fb",
+                        "sha1": "e4e43b4d187305717596230e89fd53d1a7ae6a0b",
+                        "sha256": "98a2fabcad2a8389019cdd2b36ced474e9b2ed908c6eb22e72c9f1f0df6e6ed6"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 4096,
+                    "virtual_address": 4096,
+                    "virtual_size": 1804
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b''",
+                    "entropy": 0.0,
+                    "executable": false,
+                    "hash": {
+                        "md5": "d41d8cd98f00b204e9800998ecf8427e",
+                        "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+                        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                    },
+                    "section_name": ".data",
+                    "size_of_raw_data": 0,
+                    "virtual_address": 8192,
+                    "virtual_size": 12
+                },
+                {
+                    "characteristics": 3791650848,
+                    "data": "b\"(0\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\xe81\\",
+                    "entropy": 0.9663947565317844,
+                    "executable": true,
+                    "hash": {
+                        "md5": "a146f475cc696ffc221982b3c39f05e4",
+                        "sha1": "679ab5d1075b6a06ee611da2b625101c19bba3de",
+                        "sha256": "78797af5fa20dfa528768fb92972153b2ff2d312d35e977006b58a3237317ebe"
+                    },
+                    "section_name": "INIT",
+                    "size_of_raw_data": 4096,
+                    "virtual_address": 12288,
+                    "virtual_size": 502
+                },
+                {
+                    "characteristics": 1107296320,
+                    "data": "b'\\x00\\x10\\x00\\x00t\\x00\\x00\\x00N0X0^0n0\\x8f0\\x9e0\\",
+                    "entropy": 0.31185987768936263,
+                    "executable": false,
+                    "hash": {
+                        "md5": "ef356671696e62cc45f60fa07e91356a",
+                        "sha1": "83e1604354123d08eae31ea5eb1af9869c0e0845",
+                        "sha256": "9289dbc83e06d2a4110e82cbfa49af4b169bf50de61a76461cb5a285480378ad"
+                    },
+                    "section_name": ".reloc",
+                    "size_of_raw_data": 4096,
+                    "virtual_address": 16384,
+                    "virtual_size": 170
+                }
+            ]
+        },
+        "timestamp": "2004-02-08 04:03:55"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "Rich",
+            ".text",
+            "`.data",
+            "INIT",
+            ".reloc",
+            "System",
+            "|_^UM",
+            "3It;It0It%\tt",
+            "Iu.E",
+            "tcp32s",
+            "SVWhDdk j",
+            "Vuu0]$u,u(Su u",
+            "}SWwS",
+            "tI;}",
+            "u0u,u(Su u",
+            "E|oE",
+            "EHSW]",
+            "] W+\u02cb",
+            "}>SW}",
+            "E_^[,",
+            "tcp32s",
+            "tcp32s",
+            "rootkit: hiding process, pid: %d\tname: %s",
+            "SVWhDdk j",
+            "PEPu",
+            "Ddk WPRWh",
+            "\u058bj?Y3Rf",
+            "sDhT",
+            "E_^[",
+            "SVW=8",
+            "Pu\u05cdEPVVEh\"Ce",
+            "P\u05cdEPEP",
+            "FpF@F8F4",
+            "\"Ehj",
+            "strncpy",
+            "IoGetCurrentProcess",
+            "strncmp",
+            "ExFreePool",
+            "RtlCompareMemory",
+            "ExAllocatePoolWithTag",
+            "RtlFreeAnsiString",
+            "sprintf",
+            "RtlUnicodeStringToAnsiString",
+            "ZwQuerySystemInformation",
+            "KeServiceDescriptorTable",
+            "ZwQueryDirectoryFile",
+            "IoCreateSymbolicLink",
+            "IoCreateDevice",
+            "RtlInitUnicodeString",
+            "IofCompleteRequest",
+            "IoDeleteDevice",
+            "IoDeleteSymbolicLink",
+            "ntoskrnl.exe",
+            "N0X0^0n0000011!2d2r2263333",
+            "4'4@44444",
+            "5i5s55555555555",
+            "6\"6.6a6666666666",
+            "hDEV",
+            "h.exeh",
+            "cmdh",
+            "h.exeh",
+            "cmdhaulth\\DefhSta0h",
+            "WinBP",
+            ".?AV_com_error@@",
+            ".?AVexception@@",
+            ".?AVbad_alloc@std@@",
+            ".?AVtype_info@@",
+            "N@ p+\u015di@]%",
+            "@q\u05d5C",
+            "@<\u0566I",
+            "x@oGAkU'9p|B\u074e~QCv)/&D(",
+            "DJzEe\u01d1",
+            "uuvHMXB\u49d39;5SM]=];Z] T7aZ%]g']\u0740nL\u025b ",
+            "R`%u",
+            "\u05e3?Zd;On",
+            "G\u0167?@il",
+            "7?3=Bz\u0554?a",
+            "w\u032b?/L[M\u013e?S;uD",
+            "?g9E",
+            "\u03d4?$#\u2f3a;1az?aUY~S|",
+            "D?$?9'",
+            "*?}d|FU>c{",
+            "#Tw=:",
+            "zc%C1<!8G",
+            ";\u0184EB",
+            "u7.:3q",
+            "#2IZ9W\u06a52h",
+            ",%I-64OSk%Y",
+            "ZW<P\"",
+            "NKeb",
+            "KERNEL32.DLL",
+            "ADVAPI32.dll",
+            "OLEAUT32.dll",
+            "SHELL32.dll",
+            "urlmon.dll",
+            "USER32.dll",
+            "WININET.dll",
+            "WS2_32.dll",
+            "GetStringTypeW",
+            "IsBadCodePtr",
+            "IsBadReadPtr",
+            "VirtualQuery",
+            "GetSystemInfo",
+            "GetLocaleInfoA",
+            "CompareStringA",
+            "CompareStringW",
+            "SetEnvironmentVariableA",
+            "SetEndOfFile",
+            "SetHandleCount",
+            "GetStdHandle",
+            "GetFileType",
+            "HeapDestroy",
+            "HeapCreate",
+            "VirtualFree",
+            "GetStringTypeA",
+            "CreateProcessA",
+            "VirtualProtect",
+            "GetCPInfo",
+            "GetOEMCP",
+            "GetACP",
+            "SetUnhandledExceptionFilter",
+            "GetEnvironmentStringsW",
+            "FreeEnvironmentStringsW",
+            "GetEnvironmentStrings",
+            "FreeEnvironmentStringsA",
+            "UnhandledExceptionFilter",
+            "LCMapStringW",
+            "MultiByteToWideChar",
+            "LCMapStringA",
+            "HeapSize",
+            "SetFilePointer",
+            "SetStdHandle",
+            "GetFileAttributesA",
+            "IsBadWritePtr",
+            "HeapReAlloc",
+            "GetModuleHandleA",
+            "CreateThread",
+            "ExitProcess",
+            "GetVersion",
+            "CloseHandle",
+            "CreateMutexA",
+            "OpenMutexA",
+            "GetCurrentProcessId",
+            "GetProcAddress",
+            "LoadLibraryA",
+            "GetVersionExA",
+            "GetModuleFileNameA",
+            "GetSystemDirectoryA",
+            "GetWindowsDirectoryA",
+            "ExitThread",
+            "HeapFree",
+            "Sleep",
+            "HeapAlloc",
+            "GetProcessHeap",
+            "WaitForSingleObject",
+            "LeaveCriticalSection",
+            "EnterCriticalSection",
+            "GetCurrentThreadId",
+            "FreeConsole",
+            "InitializeCriticalSection",
+            "ReadFile",
+            "DeleteFileA",
+            "DeleteCriticalSection",
+            "WriteFile",
+            "CreateFileA",
+            "TerminateProcess",
+            "GetExitCodeProcess",
+            "SetCurrentDirectoryA",
+            "GetStartupInfoA",
+            "PeekNamedPipe",
+            "GlobalAlloc",
+            "CreatePipe",
+            "FreeLibrary",
+            "OpenProcess",
+            "GetLastError",
+            "lstrcmpiA",
+            "WideCharToMultiByte",
+            "LocalFree",
+            "GetTickCount",
+            "lstrlenA",
+            "GetCurrentProcess",
+            "GetTempPathA",
+            "GetSystemTimeAsFileTime",
+            "RtlUnwind",
+            "GetCommandLineA",
+            "RaiseException",
+            "QueryPerformanceCounter",
+            "TlsFree",
+            "SetLastError",
+            "TlsSetValue",
+            "TlsGetValue",
+            "TlsAlloc",
+            "GetTimeZoneInformation",
+            "FlushFileBuffers",
+            "VirtualAlloc",
+            "LookupPrivilegeValueA",
+            "AdjustTokenPrivileges",
+            "RegDeleteValueA",
+            "RegSetValueExA",
+            "RegEnumKeyA",
+            "IsTextUnicode",
+            "RegOpenKeyExA",
+            "RegQueryValueExA",
+            "RegCloseKey",
+            "OpenSCManagerA",
+            "ControlService",
+            "OpenServiceA",
+            "StartServiceA",
+            "CreateServiceA",
+            "CloseServiceHandle",
+            "OpenProcessToken",
+            "ShellExecuteA",
+            "SHGetSpecialFolderPathA",
+            "URLDownloadToFileA",
+            "DispatchMessageA",
+            "TranslateMessage",
+            "GetMessageA",
+            "SetTimer",
+            "wsprintfA",
+            "ExitWindowsEx",
+            "FindWindowA",
+            "SendMessageA",
+            "PostMessageA",
+            "KillTimer",
+            "InternetGetConnectedState",
+            "WSASocketA",
+            "WSAAccept"
+        ],
+        "file": {
+            "ADVAPI32.dll": "Library",
+            "KERNEL32.DLL": "Library",
+            "OLEAUT32.dll": "Library",
+            "SHELL32.dll": "Library",
+            "USER32.dll": "Library",
+            "WININET.dll": "Library",
+            "WS2_32.dll": "Library",
+            "ntoskrnl.exe": "Executable",
+            "urlmon.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.674239",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasOverlay"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

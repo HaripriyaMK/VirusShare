@@ -1,0 +1,325 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_38104b65399a8e2fc8ecad47200f1193",
+    "filesize": 4608,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "38104b65399a8e2fc8ecad47200f1193",
+        "sha1": "62e30cb2757fada2c03c9df184520d0e3818dae3",
+        "sha256": "edb3ec89b1676b0df90d1fd58d4be9597d768852abaaad8b29bb54463d761117"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "network_dropper",
+            "win_registry",
+            "win_files_operation"
+        ],
+        "breakpoint": [
+            "CloseHandle",
+            "CreateFileA",
+            "DeleteFileA",
+            "ExitProcess",
+            "FindFirstFileA",
+            "GetModuleFileNameA",
+            "GetTempPathA",
+            "GetTickCount",
+            "RegCloseKey",
+            "RegCreateKeyExA",
+            "ShellExecuteA",
+            "Sleep",
+            "URLDownloadToFileA",
+            "WriteFile"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "ADVAPI32.dll": [
+                    {
+                        "function": "RegSetValueExA",
+                        "offset": 4202496
+                    },
+                    {
+                        "function": "RegCreateKeyExA",
+                        "offset": 4202500
+                    },
+                    {
+                        "function": "RegCloseKey",
+                        "offset": 4202504
+                    }
+                ],
+                "KERNEL32.dll": [
+                    {
+                        "function": "Sleep",
+                        "offset": 4202512
+                    },
+                    {
+                        "function": "FindClose",
+                        "offset": 4202516
+                    },
+                    {
+                        "function": "FindFirstFileA",
+                        "offset": 4202520
+                    },
+                    {
+                        "function": "lstrcpyA",
+                        "offset": 4202524
+                    },
+                    {
+                        "function": "lstrlenA",
+                        "offset": 4202528
+                    },
+                    {
+                        "function": "ExitProcess",
+                        "offset": 4202532
+                    },
+                    {
+                        "function": "GetModuleFileNameA",
+                        "offset": 4202536
+                    },
+                    {
+                        "function": "lstrcatA",
+                        "offset": 4202540
+                    },
+                    {
+                        "function": "CloseHandle",
+                        "offset": 4202544
+                    },
+                    {
+                        "function": "WriteFile",
+                        "offset": 4202548
+                    },
+                    {
+                        "function": "CreateFileA",
+                        "offset": 4202552
+                    },
+                    {
+                        "function": "GetTempPathA",
+                        "offset": 4202556
+                    },
+                    {
+                        "function": "DeleteFileA",
+                        "offset": 4202560
+                    },
+                    {
+                        "function": "GetEnvironmentVariableA",
+                        "offset": 4202564
+                    },
+                    {
+                        "function": "GetTickCount",
+                        "offset": 4202568
+                    }
+                ],
+                "SHELL32.dll": [
+                    {
+                        "function": "ShellExecuteA",
+                        "offset": 4202576
+                    }
+                ],
+                "urlmon.dll": [
+                    {
+                        "function": "URLDownloadToFileA",
+                        "offset": 4202584
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 4288,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "Nullsoft_PiMP_Install_System_additional",
+                "Nullsoft_PiMP_Install_System"
+            ],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "c5add84afcf2ca542bcee265be57bcfe",
+        "metadata": {},
+        "sections": {
+            "count": 2,
+            "details": [
+                {
+                    "characteristics": 1610612768,
+                    "data": "b\"V\\xff\\x15H @\\x00\\x8bt$\\x0c\\x85\\xf6\\x8bL$\\x08t\\x1",
+                    "entropy": 5.746242605106484,
+                    "executable": true,
+                    "hash": {
+                        "md5": "952a383d532ef663c6cd87bae8c0c3b7",
+                        "sha1": "cd420fd0fc60ff34d165868ab5127a059525e3a7",
+                        "sha256": "69600c6c2ec935ffe4fbadb088c30939d5e9a126fda92651a2cd9acbd11f84d4"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 2560,
+                    "virtual_address": 4096,
+                    "virtual_size": 2221
+                },
+                {
+                    "characteristics": 1073741888,
+                    "data": "b'D#\\x00\\x00V#\\x00\\x006#\\x00\\x00\\x00\\x00\\x00\\x00H\"",
+                    "entropy": 4.388921505987026,
+                    "executable": false,
+                    "hash": {
+                        "md5": "62f7d5c5acf0b2b741fd9d82b2cd4ebc",
+                        "sha1": "6644b742942eacf3112d518d685f09be8aa1a2c7",
+                        "sha256": "7309ecbf33509014a805b0aa91d8c244f5b67807dacf67d2d22313991fd91a6c"
+                    },
+                    "section_name": ".rdata",
+                    "size_of_raw_data": 1024,
+                    "virtual_address": 8192,
+                    "virtual_size": 886
+                }
+            ]
+        },
+        "timestamp": "2005-07-19 02:20:20"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "\u033eRich",
+            ".text",
+            "`.rdata",
+            "hd @",
+            "h` @",
+            "SUVW",
+            "3SD$",
+            "SSSh @",
+            "YPW=",
+            "Sh @",
+            "t$(t$",
+            "SSSh @",
+            "YPh @",
+            "Sh @",
+            "t$,t$",
+            "SD$ PSh",
+            "SSSh @",
+            "YPh @",
+            "Sh @",
+            "t$0t$",
+            "SD$$PSh",
+            "SSSh @",
+            "YPVj",
+            "Sh @",
+            "t$4t$ \u054b5",
+            "Wh` @",
+            "#YYt\u0748\\$",
+            "Wh @",
+            "hl @",
+            "YYtS",
+            "_^][U@",
+            "2USVWu",
+            "=  @",
+            "\u05cb\u060d<3}",
+            "W;YYu",
+            "bYu_^[]UL",
+            "SVWj",
+            "}fh @",
+            "3Vh @",
+            "VEPjFEPW",
+            "=, @",
+            "PSPh @",
+            "Vh` @",
+            "PPVV",
+            "_^[%X @",
+            "tAt#t",
+            "tt4t'",
+            "_\u030bL$",
+            "tAt2t$",
+            "\u034dAL$",
+            "+UWVu",
+            "DDDDDDDDDDDDDD",
+            "t1|9",
+            ".exe",
+            "http://ez-finder.com/avg.exe",
+            "http://ez-finder.com/dd.exe",
+            "refid",
+            "100156",
+            "swmid",
+            "SOFTWARE\\AntivirusGold",
+            "COMSPEC",
+            ".bat",
+            "@echo off",
+            ":start",
+            "echo > %1",
+            "del %1",
+            "if exist %1 goto start",
+            "del %0",
+            "GetTickCount",
+            "DeleteFileA",
+            "GetTempPathA",
+            "ExitProcess",
+            "Sleep",
+            "FindClose",
+            "FindFirstFileA",
+            "lstrcpyA",
+            "lstrlenA",
+            "GetEnvironmentVariableA",
+            "GetModuleFileNameA",
+            "lstrcatA",
+            "CloseHandle",
+            "WriteFile",
+            "CreateFileA",
+            "KERNEL32.dll",
+            "URLDownloadToFileA",
+            "urlmon.dll",
+            "ShellExecuteA",
+            "SHELL32.dll",
+            "RegCloseKey",
+            "RegSetValueExA",
+            "RegCreateKeyExA",
+            "ADVAPI32.dll"
+        ],
+        "file": {
+            "ADVAPI32.dll": "Library",
+            "KERNEL32.dll": "Library",
+            "SHELL32.dll": "Library",
+            "http://ez-finder.com/avg.exe": "Executable",
+            "http://ez-finder.com/dd.exe": "Executable",
+            "urlmon.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://ez-finder.com/dd.exe",
+            "http://ez-finder.com/avg.exe"
+        ]
+    },
+    "time": "0:00:00.605869",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

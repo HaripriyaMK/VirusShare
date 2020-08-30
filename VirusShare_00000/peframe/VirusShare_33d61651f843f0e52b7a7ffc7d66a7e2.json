@@ -1,0 +1,373 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_33d61651f843f0e52b7a7ffc7d66a7e2",
+    "filesize": 9216,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "33d61651f843f0e52b7a7ffc7d66a7e2",
+        "sha1": "289a4c3f8fe5cdc525ef98fe5581dfe7cfa2fbdd",
+        "sha256": "21bea92649b43c869b04e3d111f1b2bfa851fe42ccb2a8e35d74fc5df6cedb61"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor"
+        ],
+        "breakpoint": [
+            "CloseHandle",
+            "ExitProcess",
+            "GetModuleHandleA",
+            "GetTickCount",
+            "IcmpSendEcho",
+            "VirtualAlloc",
+            "VirtualFree",
+            "WSAStartup"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "ICMP.dll": [
+                    {
+                        "function": "IcmpCloseHandle",
+                        "offset": 4202496
+                    },
+                    {
+                        "function": "IcmpCreateFile",
+                        "offset": 4202500
+                    },
+                    {
+                        "function": "IcmpSendEcho",
+                        "offset": 4202504
+                    }
+                ],
+                "KERNEL32.dll": [
+                    {
+                        "function": "GetTickCount",
+                        "offset": 4202512
+                    },
+                    {
+                        "function": "VirtualAlloc",
+                        "offset": 4202516
+                    },
+                    {
+                        "function": "GetModuleHandleA",
+                        "offset": 4202520
+                    },
+                    {
+                        "function": "lstrlenA",
+                        "offset": 4202524
+                    },
+                    {
+                        "function": "VirtualFree",
+                        "offset": 4202528
+                    },
+                    {
+                        "function": "ExitProcess",
+                        "offset": 4202532
+                    },
+                    {
+                        "function": "CloseHandle",
+                        "offset": 4202536
+                    }
+                ],
+                "USER32.dll": [
+                    {
+                        "function": "SendMessageA",
+                        "offset": 4202544
+                    },
+                    {
+                        "function": "SetDlgItemTextA",
+                        "offset": 4202548
+                    },
+                    {
+                        "function": "GetDlgItemInt",
+                        "offset": 4202552
+                    },
+                    {
+                        "function": "LoadIconA",
+                        "offset": 4202556
+                    },
+                    {
+                        "function": "EndDialog",
+                        "offset": 4202560
+                    },
+                    {
+                        "function": "DialogBoxParamA",
+                        "offset": 4202564
+                    },
+                    {
+                        "function": "GetDlgItemTextA",
+                        "offset": 4202568
+                    }
+                ],
+                "WSOCK32.dll": [
+                    {
+                        "function": "ioctlsocket",
+                        "offset": 4202576
+                    },
+                    {
+                        "function": "WSAStartup",
+                        "offset": 4202580
+                    },
+                    {
+                        "function": "WSACleanup",
+                        "offset": 4202584
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [
+                {
+                    "data": "b'(\\x00\\x00\\x00 \\x00\\x00\\x00@\\x00\\x00\\x00\\x01\\x00\\x18\\x00\\x00\\x00\\x00\\x00\\x00\\x0c\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00'",
+                    "executable": false,
+                    "language": "LANG_GERMAN",
+                    "name": "RT_ICON",
+                    "offset": 17856,
+                    "size": 3240,
+                    "sublanguage": "SUBLANG_GERMAN"
+                },
+                {
+                    "data": "b'\\x01\\x00\\xff\\xff\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\xc4\\x08\\xca\\x90\\x16\\x00\\n\\x00\\n\\x00\\x86\\x01\\x82\\x00\\x00\\x00\\x00\\x00i\\x00X\\x00[\\x00N\\x00u\\x00K\\x00e\\x00]\\x00 \\x00v\\x00'",
+                    "executable": false,
+                    "language": "LANG_NEUTRAL",
+                    "name": "RT_DIALOG",
+                    "offset": 16640,
+                    "size": 1214,
+                    "sublanguage": "SUBLANG_SYS_DEFAULT"
+                },
+                {
+                    "data": "b'\\x00\\x00\\x01\\x00\\x01\\x00  \\x00\\x00\\x01\\x00\\x18\\x00\\xa8\\x0c\\x00\\x00\\x01\\x00'",
+                    "executable": false,
+                    "language": "LANG_NEUTRAL",
+                    "name": "RT_GROUP_ICON",
+                    "offset": 21096,
+                    "size": 20,
+                    "sublanguage": "SUBLANG_SYS_DEFAULT"
+                }
+            ],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 4800,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "MASMTASM",
+                "TASM_MASM",
+                "TASM_MASM_additional",
+                "PE_Diminisher_v01_additional"
+            ],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "465aabf6f2ce0c70600282092a4105fb",
+        "metadata": {},
+        "sections": {
+            "count": 4,
+            "details": [
+                {
+                    "characteristics": 3758096416,
+                    "data": "b'U\\x8b\\xec\\x83\\xc4\\xfcSQR\\x8bE\\x08\\x83\\xc0\\x0cj\\x",
+                    "entropy": 6.031377505837217,
+                    "executable": true,
+                    "hash": {
+                        "md5": "e77f0147f5516083857e422b851c72b9",
+                        "sha1": "0c0ee5933e01b42231936f107647955266a5495e",
+                        "sha256": "dd7d80da9b6e4e52ae2ad7e1f78bfadb2caf6d239f862059871bc6fbed716053"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 1536,
+                    "virtual_address": 4096,
+                    "virtual_size": 1534
+                },
+                {
+                    "characteristics": 1073741888,
+                    "data": "b'\"\"\\x00\\x004\"\\x00\\x00F\"\\x00\\x00\\x00\\x00\\x00\\x00T!",
+                    "entropy": 3.020305838996798,
+                    "executable": false,
+                    "hash": {
+                        "md5": "5155abe9b4516d10138ef57382ed3f4b",
+                        "sha1": "13a3db2b6a5d013dd95c7fc34ceaa86e6533ace3",
+                        "sha256": "c671e9981cdfe0356c1ba3c1de600ee75744f84f74233d6ac2ce6e4eb0ae7ff5"
+                    },
+                    "section_name": ".rdata",
+                    "size_of_raw_data": 1024,
+                    "virtual_address": 8192,
+                    "virtual_size": 608
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'MAIN\\x00iX[NuKe] v1.00\\x00Error!:\\x00Not connect",
+                    "entropy": 3.1844361441237345,
+                    "executable": false,
+                    "hash": {
+                        "md5": "6b9299db016f87b81240c8421adb47af",
+                        "sha1": "4900aaaf1d656051055ef325b89c310aa8c1b007",
+                        "sha256": "41310588011e00ee9fc0da86212baa6b9665d0ea1596f5a19540b73aad9f434f"
+                    },
+                    "section_name": ".data",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 12288,
+                    "virtual_size": 714
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00",
+                    "entropy": 2.1720539084350983,
+                    "executable": false,
+                    "hash": {
+                        "md5": "79a1e0d95fd13c898c8e7ae240988403",
+                        "sha1": "71bb2f87df32a26319191686eb9b434b538736e2",
+                        "sha256": "f2572d088552cd063f8f00b111f526955c7ed1879e742d9318f3d6eac3e6a2f0"
+                    },
+                    "section_name": ".rsrc",
+                    "size_of_raw_data": 5120,
+                    "virtual_address": 16384,
+                    "virtual_size": 4736
+                }
+            ]
+        },
+        "timestamp": "2001-08-24 18:22:00"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "\u0508R2\u01c8\t",
+            "\u0508Rich",
+            ".text",
+            ".rdata",
+            "@.data",
+            ".rsrc",
+            "USQRE",
+            "EZY[",
+            "USQRE",
+            "PsP]",
+            "C@Iuu",
+            "XZY[",
+            "UPSQRE",
+            "ZY[X",
+            "PSQRVW",
+            "\u0201o1mQ",
+            "PZY[XQ",
+            "Y50@",
+            "Iu_^ZY[XSQRVW,",
+            "\u060b\u02cb\u044d50@",
+            "Z+3>",
+            "Y#>Q",
+            "#3[N",
+            "X3+YQ",
+            "#\u05cb+~",
+            "_^ZY[PSQR52@",
+            "ZY[XUPSQR2@",
+            "P52@",
+            "@Iu2@",
+            "ZY[X",
+            "UPSQRVW}",
+            "u4=2@",
+            "t&h0@",
+            "u)52@",
+            "Ph0@",
+            "j\t52@",
+            "FGJt",
+            "h 1@",
+            "u52@",
+            "3_^ZY[X",
+            "%( @",
+            "%$ @",
+            "%  @",
+            "%D @",
+            "%@ @",
+            "%8 @",
+            "%H @",
+            "%< @",
+            "%0 @",
+            "%4 @",
+            "%X @",
+            "%T @",
+            "%P @",
+            "CloseHandle",
+            "ExitProcess",
+            "GetModuleHandleA",
+            "GetTickCount",
+            "VirtualAlloc",
+            "VirtualFree",
+            "lstrlenA",
+            "KERNEL32.dll",
+            "DialogBoxParamA",
+            "EndDialog",
+            "GetDlgItemInt",
+            "GetDlgItemTextA",
+            "LoadIconA",
+            "SendMessageA",
+            "SetDlgItemTextA",
+            "USER32.dll",
+            "WSOCK32.dll",
+            "IcmpCloseHandle",
+            "IcmpCreateFile",
+            "IcmpSendEcho",
+            "ICMP.dll",
+            "MAIN",
+            "iX[NuKe] v1.00",
+            "Error!:",
+            "Not connected or cannot connect!",
+            "Packet size is maximal 100000000000 bytes!",
+            "Maximal number of packets is 1000000000 bytes!",
+            "Nuking aborted!",
+            "Preparing to nuke IP :257...",
+            "Nuking...",
+            "Nuking succesful done!",
+            "//////",
+            "/////",
+            "////////",
+            "//////",
+            "//////",
+            "////",
+            "///////",
+            "////",
+            "/////////",
+            "///////"
+        ],
+        "file": {
+            "ICMP.dll": "Library",
+            "KERNEL32.dll": "Library",
+            "USER32.dll": "Library",
+            "WSOCK32.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.593328",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

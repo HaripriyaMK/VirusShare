@@ -1,0 +1,59 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {},
+        "macro": "@echo off\ntitle ResetMe 2010\n\nif not exist \"%AllUsersProfile%\\Application Data\\Kaspersky Lab\\AVP9\\Data\" goto altpath\necho t.ru>\"%AllUsersProfile%\\Application Data\\Kaspersky Lab\\AVP9\\Data:extended\"\nfor /f \"tokens=*\" %%a in ('more^<\"%AllUsersProfile%\\Application Data\\Kaspersky Lab\\AVP9\\Data:extended\"') do if %%a==t.ru goto next\ngoto error\n\n:altpath\nif not exist \"%ProgramData%\\Kaspersky Lab\\AVP9\\Data\" goto error\necho t.ru>\"%ProgramData%\\Kaspersky Lab\\AVP9\\Data:extended\"\nfor /f \"tokens=*\" %%a in ('more^<\"%ProgramData%\\Kaspersky Lab\\AVP9\\Data:extended\"') do if %%a==t.ru goto next\ngoto error\n\n:next\nreg delete HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\SystemCertificates\\SPC /f\nreg delete HKEY_LOCAL_MACHINE\\SOFTWARE\\KasperskyLab\\LicStorage /f\n\n:ok\ncolor 0A\necho.\necho.\necho Trial reset OK!\necho.\npause\nexit\n\n:error\ncolor 0C\necho.\necho Trial reset ERROR\necho.\npause\nexit"
+    },
+    "filename": "VirusShare_3a0a185b9e9885136378c98dbc053ea4",
+    "filesize": 900,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "3a0a185b9e9885136378c98dbc053ea4",
+        "sha1": "7eb7a71518204874e59beb42ab8da23408bbfee8",
+        "sha256": "291e41549a63db34473c31c7d907445528879b0ef56aba4044451c042091ca09"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "title ResetMe 2010",
+            "if not exist \"%AllUsersProfile%\\Application Data\\Kaspersky Lab\\AVP9\\Data\" goto altpath",
+            "echo t.ru>\"%AllUsersProfile%\\Application Data\\Kaspersky Lab\\AVP9\\Data:extended\"",
+            "for /f \"tokens=*\" %%a in ('more^<\"%AllUsersProfile%\\Application Data\\Kaspersky Lab\\AVP9\\Data:extended\"') do if %%a==t.ru goto next",
+            "goto error",
+            ":altpath",
+            "if not exist \"%ProgramData%\\Kaspersky Lab\\AVP9\\Data\" goto error",
+            "echo t.ru>\"%ProgramData%\\Kaspersky Lab\\AVP9\\Data:extended\"",
+            "for /f \"tokens=*\" %%a in ('more^<\"%ProgramData%\\Kaspersky Lab\\AVP9\\Data:extended\"') do if %%a==t.ru goto next",
+            "goto error",
+            ":next",
+            "reg delete HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\SystemCertificates\\SPC /f",
+            "reg delete HKEY_LOCAL_MACHINE\\SOFTWARE\\KasperskyLab\\LicStorage /f",
+            "color 0A",
+            "echo.",
+            "echo.",
+            "echo Trial reset OK!",
+            "echo.",
+            "pause",
+            "exit",
+            ":error",
+            "color 0C",
+            "echo.",
+            "echo Trial reset ERROR",
+            "echo.",
+            "pause",
+            "exit"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.288175",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

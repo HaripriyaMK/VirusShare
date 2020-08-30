@@ -1,0 +1,164 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_3fb3384e79faccd4d780c5f7c44214b8",
+    "filesize": 1536,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "3fb3384e79faccd4d780c5f7c44214b8",
+        "sha1": "61ebdc162661734c75c9cbd7a597ea7d7603d59c",
+        "sha256": "5717911aca2ff5bf3fd711d7b908c4a44293668cee96af5779e146807380e5fe"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "network_dropper"
+        ],
+        "breakpoint": [
+            "ExitProcess",
+            "ShellExecuteA",
+            "URLDownloadToFileA"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "kernel32.dll": [
+                    {
+                        "function": "ExitProcess",
+                        "offset": 4202496
+                    }
+                ],
+                "shell32.dll": [
+                    {
+                        "function": "ShellExecuteA",
+                        "offset": 4202504
+                    }
+                ],
+                "urlmon.dll": [
+                    {
+                        "function": "URLDownloadToFileA",
+                        "offset": 4202512
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 4096,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "92e70429ee2af661dea6ba3be480a64d",
+        "metadata": {},
+        "sections": {
+            "count": 2,
+            "details": [
+                {
+                    "characteristics": 1610612768,
+                    "data": "b'\\xebkregsvr32\\x00c:\\\\Program Files\\\\win32.dll\\x0",
+                    "entropy": 2.4687247011531133,
+                    "executable": true,
+                    "hash": {
+                        "md5": "4ef6e0d74b4a2270f48eb6329c7c0d38",
+                        "sha1": "39884fa297ca19b9663ea91fac984fc4c4ee7ce8",
+                        "sha256": "32f2787379e202f063df3f82438d34de7e308f67bec0c490dd093142a7c461c0"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 4096,
+                    "virtual_size": 184
+                },
+                {
+                    "characteristics": 1073741888,
+                    "data": "b'\\xa2 \\x00\\x00\\x00\\x00\\x00\\x00\\xbe \\x00\\x00\\x00\\x",
+                    "entropy": 1.7405853311910742,
+                    "executable": false,
+                    "hash": {
+                        "md5": "868b51fc757d357ab126737f3a658a10",
+                        "sha1": "30bab6c4578d135b4da29c1749f599b738a5a3fd",
+                        "sha256": "70afc4744c9f97457e8536b0831c575fbb3c17f231cf305356198a1845bb22cf"
+                    },
+                    "section_name": ".rdata",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 8192,
+                    "virtual_size": 218
+                }
+            ]
+        },
+        "timestamp": "2003-09-03 01:43:03"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "Rich",
+            "'GU?",
+            ".text",
+            "`.rdata",
+            "kregsvr32",
+            "c:\\Program Files\\win32.dll",
+            "http://63.246.130.201/surferbar.dll",
+            "c:\\Program Files",
+            "open",
+            "/s win32.dll",
+            "URLDownloadToFileA",
+            "urlmon.dll",
+            "ExitProcess",
+            "kernel32.dll",
+            "ShellExecuteA",
+            "shell32.dll"
+        ],
+        "file": {
+            "/s win32.dll": "Library",
+            "c:\\Program Files\\win32.dll": "Library",
+            "http://63.246.130.201/surferbar.dll": "Library",
+            "kernel32.dll": "Library",
+            "shell32.dll": "Library",
+            "urlmon.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [
+            "63.246.130.201"
+        ],
+        "url": [
+            "http://63.246.130.201/surferbar.dll"
+        ]
+    },
+    "time": "0:00:00.589617",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

