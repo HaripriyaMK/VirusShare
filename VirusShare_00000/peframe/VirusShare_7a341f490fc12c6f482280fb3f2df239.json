@@ -1,0 +1,182 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_7a341f490fc12c6f482280fb3f2df239",
+    "filesize": 2560,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "7a341f490fc12c6f482280fb3f2df239",
+        "sha1": "5e50bc95fa5113998bea4668a07feff514ceacfe",
+        "sha256": "b3789a9919b3aaa7532d9808dd09de635a333e89bb1a77752d7ad01147d66405"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "network_dropper",
+            "win_mutex",
+            "win_registry"
+        ],
+        "breakpoint": [
+            "CreateMutexA",
+            "GetProcAddress",
+            "LoadLibraryA"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "KERNEL32.dll": [
+                    {
+                        "function": "LoadLibraryA",
+                        "offset": 4200096
+                    },
+                    {
+                        "function": "GetProcAddress",
+                        "offset": 4200100
+                    },
+                    {
+                        "function": "CreateMutexA",
+                        "offset": 4200104
+                    },
+                    {
+                        "function": "FreeLibrary",
+                        "offset": 4200108
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 4223,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [
+                "CreateMutexA"
+            ],
+            "packer": [],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "ee906e61412ec3e47d00a1ab5574a734",
+        "metadata": {},
+        "sections": {
+            "count": 1,
+            "details": [
+                {
+                    "characteristics": 3221225536,
+                    "data": "b\"\\x01\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00",
+                    "entropy": 5.368617213396057,
+                    "executable": false,
+                    "hash": {
+                        "md5": "d8216d79de7110985c255f6ec390eacf",
+                        "sha1": "b835a29d5709348d61dea2404a6aefd3aece9cef",
+                        "sha256": "25c56f838c3ef910152d4aadb05b277e285826e561ee6ec6a9c73e74b019888d"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 2048,
+                    "virtual_address": 4096,
+                    "virtual_size": 1864
+                }
+            ]
+        },
+        "timestamp": "2006-06-13 11:32:33"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            ".text",
+            "u[SVW\\$",
+            "uFGL$",
+            "u_^[S\\$",
+            ")[U,",
+            "SVW\u01c5",
+            "PYYPh",
+            "uFPPj",
+            "PPYYtEj",
+            "1_^[]",
+            "C:\\test.zip",
+            "http://www.pscode.com/Upload_PSC/ftp/Convert199806612006.zip",
+            "open",
+            "Downloaded",
+            "Software\\sd0wn",
+            "Windows Update Service",
+            "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+            "\\sd0wn.exe",
+            "sd0wn",
+            "InternetGetConnectedState",
+            "RegQueryValueExA",
+            "RegOpenKeyExA",
+            "RegCloseKey",
+            "RegSetValueExA",
+            "RegCreateKeyA",
+            "URLDownloadToFileA",
+            "ShellExecuteA",
+            "Sleep",
+            "GetWindowsDirectoryA",
+            "GetModuleFileNameA",
+            "GetModuleHandleA",
+            "CopyFileA",
+            "GetLastError",
+            "CreateMutexA",
+            "ExitProcess",
+            "MessageBoxA",
+            "user32.dll",
+            "urlmon.dll",
+            "wininet.dll",
+            "shell32.dll",
+            "advapi32.dll",
+            "kernel32.dll",
+            "LoadLibraryA",
+            "GetProcAddress",
+            "CreateMutexA",
+            "FreeLibrary",
+            "KERNEL32.dll"
+        ],
+        "file": {
+            "C:\\test.zip": "Compressed",
+            "\\sd0wn.exe": "Executable",
+            "advapi32.dll": "Library",
+            "http://www.pscode.com/Upload_PSC/ftp/Convert199806612006.zip": "Compressed",
+            "kernel32.dll": "Library",
+            "shell32.dll": "Library",
+            "urlmon.dll": "Library",
+            "user32.dll": "Library",
+            "wininet.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.pscode.com/Upload_PSC/ftp/Convert199806612006.zip"
+        ]
+    },
+    "time": "0:00:00.601731",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        }
+    ]
+}

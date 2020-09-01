@@ -1,0 +1,155 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_b6d468fc0f70c5e95364b66018ebbeec",
+    "filesize": 924,
+    "filetype": "MS-DOS executable",
+    "hashes": {
+        "md5": "b6d468fc0f70c5e95364b66018ebbeec",
+        "sha1": "6c912ca6f13258a8f0799dcfd26ebc7f63ca6600",
+        "sha256": "4fa179d772d63a3c1e09cb980fc4aea305e2bf3f05388d8394775b3c1f03e66f"
+    },
+    "peinfo": {
+        "behavior": [],
+        "breakpoint": [
+            "CreateProcessA",
+            "WSASocketA",
+            "WSAStartup",
+            "accept",
+            "bind",
+            "listen"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "KERNEL32.dll": [
+                    {
+                        "function": "CreateProcessA",
+                        "offset": 4198400
+                    }
+                ],
+                "WS2_32.dll": [
+                    {
+                        "function": "listen",
+                        "offset": 4198408
+                    },
+                    {
+                        "function": "bind",
+                        "offset": 4198412
+                    },
+                    {
+                        "function": "WSASocketA",
+                        "offset": 4198416
+                    },
+                    {
+                        "function": "WSAStartup",
+                        "offset": 4198420
+                    },
+                    {
+                        "function": "accept",
+                        "offset": 4198424
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 17744,
+                "AddressOfIndex": 4,
+                "Characteristics": 1072466456,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 65868,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 4136,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "Microsoft_Visual_Cpp_v50v60_MFC"
+            ],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "54267048e4e1fb621a31580a8a1f91ba",
+        "metadata": {},
+        "sections": {
+            "count": 1,
+            "details": [
+                {
+                    "characteristics": 3758096416,
+                    "data": "b'`\\x11\\x00\\x00\\x00\\x00\\x00\\x00\\r\\x00\\x00\\x80\\x02\\",
+                    "entropy": 4.9694229821061295,
+                    "executable": true,
+                    "hash": {
+                        "md5": "f887955844a8713ea1169569047a48b5",
+                        "sha1": "a741718e6183e32a76b33d0069fb2e6756d526b0",
+                        "sha256": "d5aabb0edf9472e72a74a08aea696764a311363730b0e714329c3e2a8ab99d19"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 412,
+                    "virtual_address": 4096,
+                    "virtual_size": 410
+                }
+            ]
+        },
+        "timestamp": "2003-12-26 19:20:56"
+    },
+    "strings": {
+        "dump": [
+            ".text",
+            "Checksum Rockz!!",
+            ".text",
+            "cmd.exe",
+            "3VVVj",
+            "PSfE",
+            "3}\u072bEfE",
+            "PEPSE",
+            "\u0403t@j",
+            "3Y}EED",
+            "PEPVVh@",
+            "VVh ",
+            "U\u0609U\u0509U",
+            "_^3[",
+            "CreateProcessA",
+            "KERNEL32.dll",
+            "WSASocketA",
+            "WS2_32.dll"
+        ],
+        "file": {
+            "KERNEL32.dll": "Library",
+            "WS2_32.dll": "Library",
+            "cmd.exe": "Executable"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.564929",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasModified_DOS_Message"
+        }
+    ]
+}

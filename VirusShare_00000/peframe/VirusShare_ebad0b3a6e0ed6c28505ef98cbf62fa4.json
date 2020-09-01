@@ -1,0 +1,229 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_ebad0b3a6e0ed6c28505ef98cbf62fa4",
+    "filesize": 2860,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "ebad0b3a6e0ed6c28505ef98cbf62fa4",
+        "sha1": "ff062ded7650a18268b4a29539ca92c7a1cd3c8b",
+        "sha256": "5820b7f09eeb9a6a793075767ab179b8c963d8b28f42e1aa1ffc9460e9aae70a"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "network_dropper",
+            "win_files_operation"
+        ],
+        "breakpoint": [
+            "CloseHandle",
+            "CreateFileA",
+            "ExitProcess",
+            "GetModuleFileNameA",
+            "ReadFile",
+            "SetFilePointer",
+            "ShellExecuteA",
+            "URLDownloadToFileA"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "kernel32.dll": [
+                    {
+                        "function": "ReadFile",
+                        "offset": 4202496
+                    },
+                    {
+                        "function": "SetFilePointer",
+                        "offset": 4202500
+                    },
+                    {
+                        "function": "CloseHandle",
+                        "offset": 4202504
+                    },
+                    {
+                        "function": "CreateFileA",
+                        "offset": 4202508
+                    },
+                    {
+                        "function": "ExitProcess",
+                        "offset": 4202512
+                    },
+                    {
+                        "function": "GetModuleFileNameA",
+                        "offset": 4202516
+                    }
+                ],
+                "ole32.dll": [
+                    {
+                        "function": "CoGetMalloc",
+                        "offset": 4202524
+                    }
+                ],
+                "shell32.dll": [
+                    {
+                        "function": "ShellExecuteA",
+                        "offset": 4202532
+                    }
+                ],
+                "urlmon.dll": [
+                    {
+                        "function": "URLDownloadToFileA",
+                        "offset": 4202540
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 4096,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "Microsoft_Visual_Basic_v50"
+            ],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "462a7b5c182743f531506ad76e87ef2a",
+        "metadata": {},
+        "sections": {
+            "count": 3,
+            "details": [
+                {
+                    "characteristics": 1610612768,
+                    "data": "b'h\\x04\\x01\\x00\\x00h\\x000@\\x00j\\x00\\xe8S\\x01\\x00\\x",
+                    "entropy": 4.2496995161317646,
+                    "executable": true,
+                    "hash": {
+                        "md5": "4c64767eb135a8a5965dd2ba7d97fec5",
+                        "sha1": "c4efbe462d90f75a793cad5c1b31d7f86dee7902",
+                        "sha256": "4a0b6081ff91a5b81bc1256d5585688c04273a3029af58b8df2f16bad755eb0b"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 4096,
+                    "virtual_size": 468
+                },
+                {
+                    "characteristics": 1073741888,
+                    "data": "b\".!\\x00\\x00:!\\x00\\x00\\xee \\x00\\x00\\xfc \\x00\\x00\\n",
+                    "entropy": 3.3184276207946097,
+                    "executable": false,
+                    "hash": {
+                        "md5": "7b0fa2589a2d7aa454eeb13b2148959d",
+                        "sha1": "52260cc6c32cb08fb13825212c6d0c6e66bb60e4",
+                        "sha256": "01a8b7467d3b5fee0a313b8c7349f7a18e70bebee71ae80909026893d94e3147"
+                    },
+                    "section_name": ".rdata",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 8192,
+                    "virtual_size": 398
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00",
+                    "entropy": 0.0,
+                    "executable": false,
+                    "hash": {
+                        "md5": "bf619eac0cdf3f68d496ea9344137e8b",
+                        "sha1": "5c3eb80066420002bc3dcc7ca4ab6efad7ed4ae5",
+                        "sha256": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560"
+                    },
+                    "section_name": ".data",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 12288,
+                    "virtual_size": 280
+                }
+            ]
+        },
+        "timestamp": "2003-10-12 15:14:21"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "\t]vTM<",
+            "RichM<",
+            ".text",
+            "`.rdata",
+            "@.data",
+            "%, @",
+            "%$ @",
+            "URLDownloadToFileA",
+            "urlmon.dll",
+            "CloseHandle",
+            "CreateFileA",
+            "ExitProcess",
+            "GetModuleFileNameA",
+            "ReadFile",
+            "SetFilePointer",
+            "kernel32.dll",
+            "ShellExecuteA",
+            "shell32.dll",
+            "CoGetMalloc",
+            "ole32.dll",
+            "http://yoursite/somefile",
+            "c:\\newfile",
+            "http://www.hermangroup.org/errors/setup-upx.exe'",
+            "C:\\Program Files\\Common Files/optix.exe.",
+            "http://www.hermangroup.org/errors/setup-upx.exe'",
+            "C:\\Program Files\\Common Files\\optix.exe",
+            "http://www.yahoo.com/server.exe",
+            "C:\\bullshit.exe"
+        ],
+        "file": {
+            "C:\\Program Files\\Common Files\\optix.exe": "Executable",
+            "C:\\bullshit.exe": "Executable",
+            "http://www.yahoo.com/server.exe": "Executable",
+            "kernel32.dll": "Library",
+            "ole32.dll": "Library",
+            "shell32.dll": "Library",
+            "urlmon.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://yoursite/somefile",
+            "http://www.yahoo.com/server.exe",
+            "http://www.hermangroup.org/errors/setup-upx.exe"
+        ]
+    },
+    "time": "0:00:00.620364",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasOverlay"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

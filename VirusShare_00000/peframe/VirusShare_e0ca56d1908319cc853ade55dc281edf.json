@@ -1,0 +1,209 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_e0ca56d1908319cc853ade55dc281edf",
+    "filesize": 2560,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "e0ca56d1908319cc853ade55dc281edf",
+        "sha1": "c4bda82a33fcd3796b15cb073705553166713de3",
+        "sha256": "0d27fc6d0d3210c8e6f734960ac82d0e4586fe4b1832d3a96fe88a68c0fe9f35"
+    },
+    "peinfo": {
+        "behavior": [
+            "win_files_operation"
+        ],
+        "breakpoint": [
+            "CloseHandle",
+            "CreateFileA",
+            "CreateServiceA",
+            "DeleteFileA",
+            "ExitProcess",
+            "GetCommandLineA",
+            "StartServiceA",
+            "WriteFile"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "advapi32.dll": [
+                    {
+                        "function": "StartServiceA",
+                        "offset": 4198400
+                    },
+                    {
+                        "function": "OpenSCManagerA",
+                        "offset": 4198404
+                    },
+                    {
+                        "function": "CreateServiceA",
+                        "offset": 4198408
+                    },
+                    {
+                        "function": "CloseServiceHandle",
+                        "offset": 4198412
+                    },
+                    {
+                        "function": "DeleteService",
+                        "offset": 4198416
+                    }
+                ],
+                "kernel32.dll": [
+                    {
+                        "function": "ExitProcess",
+                        "offset": 4198424
+                    },
+                    {
+                        "function": "CreateFileA",
+                        "offset": 4198428
+                    },
+                    {
+                        "function": "GetFullPathNameA",
+                        "offset": 4198432
+                    },
+                    {
+                        "function": "GetCommandLineA",
+                        "offset": 4198436
+                    },
+                    {
+                        "function": "DeleteFileA",
+                        "offset": 4198440
+                    },
+                    {
+                        "function": "WriteFile",
+                        "offset": 4198444
+                    },
+                    {
+                        "function": "CloseHandle",
+                        "offset": 4198448
+                    },
+                    {
+                        "function": "lstrlenA",
+                        "offset": 4198452
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 2,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 1,
+                "SizeOfZeroFill": 64,
+                "StartAddressOfRawData": 23117
+            }
+        },
+        "dll": false,
+        "entrypoint": 5303,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "cecfcd255a44f6c7ef1902adf5cac9c3",
+        "metadata": {},
+        "sections": {
+            "count": 1,
+            "details": [
+                {
+                    "characteristics": 3758096416,
+                    "data": "b'\\x9e\\x17\\x00\\x00\\x8c\\x17\\x00\\x00j\\x17\\x00\\x00T\\x",
+                    "entropy": 5.230672414412808,
+                    "executable": true,
+                    "hash": {
+                        "md5": "f8647957c3b63fad1022bd64db3e439e",
+                        "sha1": "62b2d82a6e8b11bf9acae35d6b8373987e387082",
+                        "sha256": "7d208eb95f0ed6f3aa0d7abb5e6fa3263830555fd5151125bcd08b9c5634dcb1"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 2048,
+                    "virtual_address": 4096,
+                    "virtual_size": 1980
+                }
+            ]
+        },
+        "timestamp": "2005-12-26 12:12:53"
+    },
+    "strings": {
+        "dump": [
+            "L!\tHuiBian.Com",
+            "Tiny Hide Process V0.01 by IcyFox",
+            "http://Www.HuiBian.Com",
+            ".text",
+            ";u-j",
+            "H|XT@X7",
+            "FFB5",
+            ";j0Zd",
+            "KE2G2\u047c",
+            "V@7.7.7.7/7.",
+            "=7.v",
+            "<7.7.YP",
+            "\u044d??gk#",
+            "Ow{+S",
+            "tHt|",
+            "rGGttt!trtt\u013a",
+            "trttvv",
+            "tt!,G}?6=owUo&\u045a",
+            "Www.HuiBian.Com",
+            "YHG00005",
+            "<\"uVW",
+            "+30r",
+            "aSSSSSPj",
+            "ESSuq",
+            "CloseHandle",
+            "CreateFileA",
+            "DeleteFileA",
+            "ExitProcess",
+            "GetCommandLineA",
+            "GetFullPathNameA",
+            "WriteFile",
+            "lstrlenA",
+            "kernel32.dll",
+            "CloseServiceHandle",
+            "CreateServiceA",
+            "DeleteService",
+            "OpenSCManagerA",
+            "StartServiceA",
+            "advapi32.dll"
+        ],
+        "file": {
+            "advapi32.dll": "Library",
+            "kernel32.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [
+            "7.7.7.7"
+        ],
+        "url": [
+            "http://Www.HuiBian.Com"
+        ]
+    },
+    "time": "0:00:00.614966",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasModified_DOS_Message"
+        }
+    ]
+}

