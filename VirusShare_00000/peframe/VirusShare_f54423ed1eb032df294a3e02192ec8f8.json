@@ -1,0 +1,159 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_f54423ed1eb032df294a3e02192ec8f8",
+    "filesize": 4096,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "f54423ed1eb032df294a3e02192ec8f8",
+        "sha1": "0ee742da6a2a194bf411e786bda5eab29a0ccf3d",
+        "sha256": "4b473873f9f122ed14fe9d965fa275e07db95d6aa6b1edbab0251aafc385fdd6"
+    },
+    "peinfo": {
+        "behavior": [],
+        "breakpoint": [],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {},
+            "relocations": {
+                "Size": 12,
+                "VirtualAddress": 12288,
+                "count": 1,
+                "details": {
+                    "reloc_1": 2
+                }
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 983044,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 2,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 5265997
+            }
+        },
+        "dll": false,
+        "entrypoint": 0,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "",
+        "metadata": {},
+        "sections": {
+            "count": 3,
+            "details": [
+                {
+                    "characteristics": 1610612768,
+                    "data": "b'S\\xbb\\x00 @\\x00S\\xe8\\xf6\\xef\\x00\\x00Y\\x8dC\\x1dP\\",
+                    "entropy": 2.7742838586692975,
+                    "executable": true,
+                    "hash": {
+                        "md5": "ee0d4fa409c8b9ba0872cf059342cc86",
+                        "sha1": "1a2ab973218b87aa567240787f3c94f2ca721571",
+                        "sha256": "21a8a4a92e3785cbc05751e6b0c4308a31c051e74f782335aee0a70316b240ba"
+                    },
+                    "section_name": "CODE",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 4096,
+                    "virtual_size": 4096
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'echo ctty nul > spitfire.bat\\x00echo del *.txt >",
+                    "entropy": 3.5704905866191776,
+                    "executable": false,
+                    "hash": {
+                        "md5": "65fb92c009a7dd7cb8ad50dad2c9d4b6",
+                        "sha1": "fb69f3d50f6e1afb22418558cbfc353d6b28bbbb",
+                        "sha256": "b6f744efdbf69b880184c9f8fd903e106d9131e378f6583f4b07017909248abe"
+                    },
+                    "section_name": "DATA",
+                    "size_of_raw_data": 1024,
+                    "virtual_address": 8192,
+                    "virtual_size": 4096
+                },
+                {
+                    "characteristics": 1342177344,
+                    "data": "b'\\x00\\x10\\x00\\x00\\x0c\\x00\\x00\\x00\\x020\\x00\\x00\\x0",
+                    "entropy": 0.08153941234324169,
+                    "executable": false,
+                    "hash": {
+                        "md5": "130cd6c184ade29fbc708e45585c4fd3",
+                        "sha1": "9ee528a3b978ffe416d91c0828ad5a5a48c7377a",
+                        "sha256": "5ae5f3a5073381bf6e96365f9b0aa509642e6c95ee5f653fa45d3f47b1eef31d"
+                    },
+                    "section_name": ".reloc",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 12288,
+                    "virtual_size": 4096
+                }
+            ]
+        },
+        "timestamp": "2041-12-24 09:19:35"
+    },
+    "strings": {
+        "dump": [
+            "L!This program must be run under Win32",
+            "CODE",
+            "`DATA",
+            ".reloc",
+            "YS<R",
+            "YK[Q",
+            "YCzP",
+            "echo ctty nul > spitfire.bat",
+            "echo del *.txt >> spitfire.bat",
+            "echo del *.doc >> spitfire.bat",
+            "echo del *.xls >> spitfire.bat",
+            "echo del *.com >> spitfire.bat",
+            "echo del *.dll >> spitfire.bat",
+            "echo del *.dot >> spitfire.bat",
+            "echo del *.bin >> spitfire.bat",
+            "echo del *.htm >> spitfire.bat",
+            "echo del *.ppt >> spitfire.bat",
+            "echo del *.avi >> spitfire.bat",
+            "echo del *.mp3 >> spitfire.bat",
+            "echo del *.src >> spitfire.bat",
+            "echo del *.bmp >> spitfire.bat",
+            "echo del *.cfg >> spitfire.bat",
+            "echo del *.mpg >> spitfire.bat",
+            "echo del *.drv >> spitfire.bat",
+            "echo del *.vxd >> spitfire.bat",
+            "echo del *.mdb >> spitfire.bat",
+            "echo ctty con >> spitfire.bat",
+            "spitfire.bat",
+            "del spitfire.bat"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.596167",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasOverlay"
+        },
+        {
+            "packer_compiler_signatures.yar": "ImportTableIsBad"
+        }
+    ]
+}

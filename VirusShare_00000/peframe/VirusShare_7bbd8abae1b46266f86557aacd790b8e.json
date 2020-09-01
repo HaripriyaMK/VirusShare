@@ -1,0 +1,287 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_7bbd8abae1b46266f86557aacd790b8e",
+    "filesize": 4098,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "7bbd8abae1b46266f86557aacd790b8e",
+        "sha1": "6d93499d2ed704d64cd8345398ff0f0ce0ac3666",
+        "sha256": "093af24459c7f90d705ada98598e4415d0bfd7141af79b6ce0663ba70856f003"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "disable_firewall",
+            "win_registry",
+            "win_files_operation"
+        ],
+        "breakpoint": [
+            "CloseHandle",
+            "CreateFileA",
+            "CreateProcessA",
+            "ExitProcess",
+            "GetModuleFileNameA",
+            "GetTempPathA",
+            "GetTickCount",
+            "InternetCloseHandle",
+            "InternetOpenA",
+            "InternetOpenUrlA",
+            "InternetReadFile",
+            "RegCloseKey",
+            "RegOpenKeyA",
+            "RegOpenKeyExA",
+            "WriteFile"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "ADVAPI32.dll": [
+                    {
+                        "function": "RegOpenKeyExA",
+                        "offset": 4198400
+                    },
+                    {
+                        "function": "RegSetValueExA",
+                        "offset": 4198404
+                    },
+                    {
+                        "function": "RegOpenKeyA",
+                        "offset": 4198408
+                    },
+                    {
+                        "function": "RegCloseKey",
+                        "offset": 4198412
+                    }
+                ],
+                "KERNEL32.dll": [
+                    {
+                        "function": "CreateProcessA",
+                        "offset": 4198420
+                    },
+                    {
+                        "function": "CloseHandle",
+                        "offset": 4198424
+                    },
+                    {
+                        "function": "WriteFile",
+                        "offset": 4198428
+                    },
+                    {
+                        "function": "GetTempPathA",
+                        "offset": 4198432
+                    },
+                    {
+                        "function": "GetModuleFileNameA",
+                        "offset": 4198436
+                    },
+                    {
+                        "function": "ExitProcess",
+                        "offset": 4198440
+                    },
+                    {
+                        "function": "lstrlenA",
+                        "offset": 4198444
+                    },
+                    {
+                        "function": "lstrcatA",
+                        "offset": 4198448
+                    },
+                    {
+                        "function": "lstrcpyA",
+                        "offset": 4198452
+                    },
+                    {
+                        "function": "CreateFileA",
+                        "offset": 4198456
+                    },
+                    {
+                        "function": "GetTickCount",
+                        "offset": 4198460
+                    }
+                ],
+                "USER32.dll": [
+                    {
+                        "function": "wsprintfA",
+                        "offset": 4198468
+                    }
+                ],
+                "WININET.dll": [
+                    {
+                        "function": "InternetReadFile",
+                        "offset": 4198476
+                    },
+                    {
+                        "function": "InternetOpenUrlA",
+                        "offset": 4198480
+                    },
+                    {
+                        "function": "InternetOpenA",
+                        "offset": 4198484
+                    },
+                    {
+                        "function": "InternetCloseHandle",
+                        "offset": 4198488
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 5644,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "Microsoft_Visual_Cpp_v50v60_MFC"
+            ],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "8f341740e7098c219375508796b8e68e",
+        "metadata": {},
+        "sections": {
+            "count": 2,
+            "details": [
+                {
+                    "characteristics": 3758358560,
+                    "data": "b'\\xdc\\x17\\x00\\x00\\xfa\\x17\\x00\\x00\\x0c\\x18\\x00\\x00",
+                    "entropy": 5.110163967154086,
+                    "executable": true,
+                    "hash": {
+                        "md5": "d10e83f5dcaea598dad8d13835c04d6c",
+                        "sha1": "7ca98a3d3691fffad6c6a0efbbda8a5d0221a88b",
+                        "sha256": "86eecccea2e646793b5bc1df2f89d87c050a307213eafeab1a06ebcd1d124d44"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 2560,
+                    "virtual_address": 4096,
+                    "virtual_size": 2178
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'\\\\\\x00\\x00\\x00win%s.exe\\x00\\x00\\x00SYSTEM\\\\Curre",
+                    "entropy": 4.869631721836046,
+                    "executable": false,
+                    "hash": {
+                        "md5": "c1fd09c961dd80b623fce41d30beef11",
+                        "sha1": "68c8a813bd006dea86a25ec57145c30623d0e917",
+                        "sha256": "5ca20399800024da9ecc8240bb06983983fc137529837b8cc09180638f844c43"
+                    },
+                    "section_name": ".data",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 8192,
+                    "virtual_size": 688
+                }
+            ]
+        },
+        "timestamp": "2006-06-27 09:40:03"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "q555l\u045075!W\ud4122\ud5527Rich5",
+            ".text",
+            ".data",
+            "]U\uc86c\"@",
+            "i5NZ",
+            "]U %",
+            "UE;Es",
+            "]UQE",
+            "u\u028b]U",
+            "uIRh @",
+            "QRPQ",
+            "RPQj",
+            "h,!@",
+            "h\\!@",
+            "h|!@",
+            "GetTickCount",
+            "lstrcpyA",
+            "lstrcatA",
+            "lstrlenA",
+            "GetTempPathA",
+            "CreateProcessA",
+            "CloseHandle",
+            "WriteFile",
+            "CreateFileA",
+            "GetModuleFileNameA",
+            "ExitProcess",
+            "KERNEL32.dll",
+            "wsprintfA",
+            "USER32.dll",
+            "RegOpenKeyExA",
+            "RegCloseKey",
+            "RegSetValueExA",
+            "RegOpenKeyA",
+            "ADVAPI32.dll",
+            "InternetCloseHandle",
+            "InternetReadFile",
+            "InternetOpenUrlA",
+            "InternetOpenA",
+            "WININET.dll",
+            "win%s.exe",
+            "SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\StandardProfile\\AuthorizedApplications\\List",
+            "%s:*:Enabled:ipsec",
+            "Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings",
+            "GlobalUserOffline",
+            "KUKU v3.02 downloader",
+            "http://www.bandalarga.net/ganjubas/my_home.jpg",
+            "http://www.heydi.no/home.jpg",
+            "http://www.mikov.cz/installer/install.txt"
+        ],
+        "file": {
+            "ADVAPI32.dll": "Library",
+            "KERNEL32.dll": "Library",
+            "USER32.dll": "Library",
+            "WININET.dll": "Library",
+            "http://www.bandalarga.net/ganjubas/my_home.jpg": "Image",
+            "http://www.heydi.no/home.jpg": "Image",
+            "http://www.mikov.cz/installer/install.txt": "Text",
+            "win%s.exe": "Executable"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.mikov.cz/installer/install.txt",
+            "http://www.bandalarga.net/ganjubas/my_home.jpg",
+            "http://www.heydi.no/home.jpg"
+        ]
+    },
+    "time": "0:00:00.597711",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasOverlay"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

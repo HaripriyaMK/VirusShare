@@ -1,0 +1,140 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_4e294a08a2020981f17f5db1f6bbe012",
+    "filesize": 1024,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "4e294a08a2020981f17f5db1f6bbe012",
+        "sha1": "88d93c1b54f3690d539e5c472a0c421300d51d21",
+        "sha256": "4827e3378b318a71ba4e7c337f752dee695e030be5d7e903c40e0cc23e1ee2de"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "network_dropper"
+        ],
+        "breakpoint": [
+            "ExitProcess",
+            "ShellExecuteA",
+            "URLDownloadToFileA"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "kernel32.dll": [
+                    {
+                        "function": "ExitProcess",
+                        "offset": 4198636
+                    }
+                ],
+                "shell32.dll": [
+                    {
+                        "function": "ShellExecuteA",
+                        "offset": 4198708
+                    }
+                ],
+                "urlmon.dll": [
+                    {
+                        "function": "URLDownloadToFileA",
+                        "offset": 4198668
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 1048580,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 1,
+                "SizeOfZeroFill": 320,
+                "StartAddressOfRawData": 8411725
+            }
+        },
+        "dll": false,
+        "entrypoint": 4096,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "f31e31f86c71da77f2b8292432a8a21f",
+        "metadata": {},
+        "sections": {
+            "count": 1,
+            "details": [
+                {
+                    "characteristics": 3758096480,
+                    "data": "b'j\\x00j\\x00\\xe8\\r\\x00\\x00\\x00C:\\\\win32.exe\\x00\\xe",
+                    "entropy": 2.97173667181044,
+                    "executable": true,
+                    "hash": {
+                        "md5": "7c545e4a3b63464cbc20b168b0b13356",
+                        "sha1": "c843cd317957298068c1380356b38048703aa47e",
+                        "sha256": "7485104dc09aaadb65ddfa9b50ccb25f736d5cc5f4c4e1419979560c6376ba86"
+                    },
+                    "section_name": ".flat",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 4096,
+                    "virtual_size": 332
+                }
+            ]
+        },
+        "timestamp": "2011-11-08 09:38:25"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            ".flat",
+            "C:\\win32.exe",
+            "http://www.arbsecret.com/cc.jpg",
+            "C:\\win32.exe",
+            "kernel32.dll",
+            "urlmon.dll",
+            "shell32.dll",
+            "ExitProcess",
+            "URLDownloadToFileA",
+            "ShellExecuteA"
+        ],
+        "file": {
+            "C:\\win32.exe": "Executable",
+            "http://www.arbsecret.com/cc.jpg": "Image",
+            "kernel32.dll": "Library",
+            "shell32.dll": "Library",
+            "urlmon.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.arbsecret.com/cc.jpg"
+        ]
+    },
+    "time": "0:00:00.582494",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "FASM"
+        }
+    ]
+}

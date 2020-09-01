@@ -1,0 +1,81 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "shell32": "May run an executable file or a system command"
+        },
+        "macro": "@echo off\n:menu\necho                    \ufffd\ufffd\ufffd\ufffd                             \ufffd\ufffd\u037b\necho        Creator-DVL \ufffd Win9x and Dos Restart Constructor \ufffd Version 1.0\necho        \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd                             \ufffd\ufffd\u037c \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\necho      It will easily create .bat files with restart and similar commands\necho.\necho                    \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\u037b\necho                    \ufffd Viruses don't harm, ignorance do! \ufffd\necho                    \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\u037c\necho.\necho    Choose your file (press a number):\necho    \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\necho.\necho.\necho    1 - Log Off (req. win95 + ie4.0)\necho    2 - Shut Down (req. win95 + ie4.0)\necho    3 - Reboot (req. win95 + ie4.0)\necho    4 - Force (req. win95 + ie4.0)\necho    5 - Power Off (req. win95 + ie4.0)\necho    6 - Restart pc after 15 seconds (req. win98) \necho.\necho    Q - Quit (Are u sure ???) ... Nevermind ! C yA in version 2 !\necho.\necho.\nchoice /c:123456Q>nul\nif errorlevel 7 goto done\nif errorlevel 6 goto 6\nif errorlevel 5 goto 5\nif errorlevel 4 goto 4\nif errorlevel 3 goto 3\nif errorlevel 2 goto 2\nif errorlevel 1 goto 1\necho CHOICE missing\ngoto done\n:1\n@echo rundll32.exe shell32.dll,SHExitWindowsEx 0 > logoff.bat\ngoto done\n:2\n@echo rundll32.exe shell32.dll,SHExitWindowsEx 1 > shutdown.bat\ngoto done\n:3\n@echo rundll32.exe shell32.dll,SHExitWindowsEx 2 > reboot.bat\ngoto done\n:4\n@echo rundll32.exe shell32.dll,SHExitWindowsEx 4 > force.bat\ngoto done\n:5\n@echo rundll32.exe shell32.dll,SHExitWindowsEx 8 > poweroff.bat\ngoto done\n:6\n@echo runonce.exe -q > restartafter15.bat\ngoto done\n:done\ncls"
+    },
+    "filename": "VirusShare_dbc461823f9263953ff1ab77af247ecb",
+    "filesize": 1658,
+    "filetype": "DOS batch file, ISO-8859 text, with CRLF line terminators",
+    "hashes": {
+        "md5": "dbc461823f9263953ff1ab77af247ecb",
+        "sha1": "6f5ffff512ef45db8a8a3d579a2e3ca3301ad7d4",
+        "sha256": "061414b210002cc2a6d4fa25c0b6726147fd98575f5c0d1a72f8aeac3bf6721b"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            ":menu",
+            "echo                                                 \u037b",
+            "echo        Creator-DVL  Win9x and Dos Restart Constructor  Version 1.0",
+            "echo                                      \u037c ",
+            "echo      It will easily create .bat files with restart and similar commands",
+            "echo.",
+            "echo                    \u037b",
+            "echo                     Viruses don't harm, ignorance do! ",
+            "echo                    \u037c",
+            "echo.",
+            "echo    Choose your file (press a number):",
+            "echo    ",
+            "echo.",
+            "echo.",
+            "echo    1 - Log Off (req. win95 + ie4.0)",
+            "echo    2 - Shut Down (req. win95 + ie4.0)",
+            "echo    3 - Reboot (req. win95 + ie4.0)",
+            "echo    4 - Force (req. win95 + ie4.0)",
+            "echo    5 - Power Off (req. win95 + ie4.0)",
+            "echo    6 - Restart pc after 15 seconds (req. win98) ",
+            "echo.",
+            "echo    Q - Quit (Are u sure ???) ... Nevermind ! C yA in version 2 !",
+            "echo.",
+            "echo.",
+            "choice /c:123456Q>nul",
+            "if errorlevel 7 goto done",
+            "if errorlevel 6 goto 6",
+            "if errorlevel 5 goto 5",
+            "if errorlevel 4 goto 4",
+            "if errorlevel 3 goto 3",
+            "if errorlevel 2 goto 2",
+            "if errorlevel 1 goto 1",
+            "echo CHOICE missing",
+            "goto done",
+            "@echo rundll32.exe shell32.dll,SHExitWindowsEx 0 > logoff.bat",
+            "goto done",
+            "@echo rundll32.exe shell32.dll,SHExitWindowsEx 1 > shutdown.bat",
+            "goto done",
+            "@echo rundll32.exe shell32.dll,SHExitWindowsEx 2 > reboot.bat",
+            "goto done",
+            "@echo rundll32.exe shell32.dll,SHExitWindowsEx 4 > force.bat",
+            "goto done",
+            "@echo rundll32.exe shell32.dll,SHExitWindowsEx 8 > poweroff.bat",
+            "goto done",
+            "@echo runonce.exe -q > restartafter15.bat",
+            "goto done",
+            ":done"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.284618",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

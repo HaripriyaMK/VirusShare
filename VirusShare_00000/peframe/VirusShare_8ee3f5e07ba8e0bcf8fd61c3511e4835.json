@@ -1,0 +1,157 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_8ee3f5e07ba8e0bcf8fd61c3511e4835",
+    "filesize": 1536,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "8ee3f5e07ba8e0bcf8fd61c3511e4835",
+        "sha1": "6e3a709a046b5d47b7d6c026c26370e574e807f6",
+        "sha256": "d69b08fa4899695c03c8b9435df24f919b2617cc14b089e5c3c015b315d75f40"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "network_dropper"
+        ],
+        "breakpoint": [
+            "ExitProcess",
+            "ShellExecuteA",
+            "URLDownloadToFileA"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "kernel32.dll": [
+                    {
+                        "function": "ExitProcess",
+                        "offset": 4202496
+                    }
+                ],
+                "shell32.dll": [
+                    {
+                        "function": "ShellExecuteA",
+                        "offset": 4202504
+                    }
+                ],
+                "urlmon.dll": [
+                    {
+                        "function": "URLDownloadToFileA",
+                        "offset": 4202512
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 4197,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "f9e999875b24ab09d351dd5c6e426e74",
+        "metadata": {},
+        "sections": {
+            "count": 2,
+            "details": [
+                {
+                    "characteristics": 1610612768,
+                    "data": "b'open\\x00windows.exe\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\",
+                    "entropy": 1.5454340602722407,
+                    "executable": true,
+                    "hash": {
+                        "md5": "041e2fb737bf504e5ba711dee111216a",
+                        "sha1": "e979f19fe7f8f0fef0cb9a835c60e28fe5d64d65",
+                        "sha256": "f01ec16960c28720b6ca399a008c2965daac6f35a17c5ada3f09ea686380a94a"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 4096,
+                    "virtual_size": 170
+                },
+                {
+                    "characteristics": 1073741888,
+                    "data": "b'\\x80 \\x00\\x00\\x00\\x00\\x00\\x00\\x9c \\x00\\x00\\x00\\x",
+                    "entropy": 1.7405853311910742,
+                    "executable": false,
+                    "hash": {
+                        "md5": "f2557c7bd0c6e7c2989b618f94d882dc",
+                        "sha1": "d6b414264c4c4d9a1512505f136e51068cf53d46",
+                        "sha256": "777a05936ce817ed49da9db75ca3ac66db7425730a04726ca12957cb6ed9569a"
+                    },
+                    "section_name": ".rdata",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 8192,
+                    "virtual_size": 218
+                }
+            ]
+        },
+        "timestamp": "2004-02-12 00:57:42"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "Rich",
+            ".text",
+            "`.rdata",
+            "open",
+            "windows.exe",
+            "http://www.illmob.org/hueserver.exe",
+            "ExitProcess",
+            "kernel32.dll",
+            "ShellExecuteA",
+            "shell32.dll",
+            "URLDownloadToFileA",
+            "urlmon.dll"
+        ],
+        "file": {
+            "http://www.illmob.org/hueserver.exe": "Executable",
+            "kernel32.dll": "Library",
+            "shell32.dll": "Library",
+            "urlmon.dll": "Library",
+            "windows.exe": "Executable"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.illmob.org/hueserver.exe"
+        ]
+    },
+    "time": "0:00:00.632770",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

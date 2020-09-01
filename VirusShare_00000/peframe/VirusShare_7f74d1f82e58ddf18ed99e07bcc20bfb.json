@@ -1,0 +1,502 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_7f74d1f82e58ddf18ed99e07bcc20bfb",
+    "filesize": 10752,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "7f74d1f82e58ddf18ed99e07bcc20bfb",
+        "sha1": "a3460c436adfc7c9cf2e8cd79c99f8bb5e7aa3cb",
+        "sha256": "ab41b2700910b46529f29cbbf8f1c115038e78c91f8aacefde45f4a624425bfd"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "network_tcp_listen",
+            "network_dropper",
+            "network_tcp_socket",
+            "network_dns",
+            "win_registry",
+            "win_files_operation"
+        ],
+        "breakpoint": [
+            "CloseHandle",
+            "CreateFileA",
+            "CreateToolhelp32Snapshot",
+            "DeleteFileA",
+            "ExitProcess",
+            "GetSystemDirectoryA",
+            "GetWindowsDirectoryA",
+            "OpenProcess",
+            "Process32First",
+            "Process32Next",
+            "RegCloseKey",
+            "RegCreateKeyExA",
+            "Sleep",
+            "TerminateProcess",
+            "WinExec",
+            "WriteFile",
+            "lstrcmpiA"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "advapi32.dll": [
+                    {
+                        "function": "RegSetValueExA",
+                        "offset": 4202496
+                    },
+                    {
+                        "function": "RegCloseKey",
+                        "offset": 4202500
+                    },
+                    {
+                        "function": "RegCreateKeyExA",
+                        "offset": 4202504
+                    }
+                ],
+                "kernel32.dll": [
+                    {
+                        "function": "CreateToolhelp32Snapshot",
+                        "offset": 4202512
+                    },
+                    {
+                        "function": "DeleteFileA",
+                        "offset": 4202516
+                    },
+                    {
+                        "function": "ExitProcess",
+                        "offset": 4202520
+                    },
+                    {
+                        "function": "GetLastError",
+                        "offset": 4202524
+                    },
+                    {
+                        "function": "GetSystemDirectoryA",
+                        "offset": 4202528
+                    },
+                    {
+                        "function": "GetWindowsDirectoryA",
+                        "offset": 4202532
+                    },
+                    {
+                        "function": "OpenProcess",
+                        "offset": 4202536
+                    },
+                    {
+                        "function": "CreateFileA",
+                        "offset": 4202540
+                    },
+                    {
+                        "function": "Process32Next",
+                        "offset": 4202544
+                    },
+                    {
+                        "function": "Sleep",
+                        "offset": 4202548
+                    },
+                    {
+                        "function": "TerminateProcess",
+                        "offset": 4202552
+                    },
+                    {
+                        "function": "WinExec",
+                        "offset": 4202556
+                    },
+                    {
+                        "function": "WriteFile",
+                        "offset": 4202560
+                    },
+                    {
+                        "function": "lstrcatA",
+                        "offset": 4202564
+                    },
+                    {
+                        "function": "lstrcmpiA",
+                        "offset": 4202568
+                    },
+                    {
+                        "function": "lstrlenA",
+                        "offset": 4202572
+                    },
+                    {
+                        "function": "CloseHandle",
+                        "offset": 4202576
+                    },
+                    {
+                        "function": "Process32First",
+                        "offset": 4202580
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 0,
+                "VirtualAddress": 0,
+                "count": 0,
+                "details": {}
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": false,
+        "entrypoint": 4096,
+        "features": {
+            "antidbg": [
+                "GetLastError",
+                "Process32First",
+                "Process32Next",
+                "TerminateProcess"
+            ],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "83136aa6f0a75b2e8ee3b35933446c78",
+        "metadata": {},
+        "sections": {
+            "count": 3,
+            "details": [
+                {
+                    "characteristics": 1610612768,
+                    "data": "b'\\xe8\\xbd\\x02\\x00\\x00\\xb8Z\\x00\\x00\\x00j\\x00j\\x02\\",
+                    "entropy": 3.94557464493998,
+                    "executable": true,
+                    "hash": {
+                        "md5": "72d24f2fdb4b8950653c3b2907ff1874",
+                        "sha1": "fbb824e576a45a2d458220adc28dd0fe8d8412e0",
+                        "sha256": "61c36ee9d648fa11a6e50afe4598596aad7cd776f785f2699d63b176dec6d5eb"
+                    },
+                    "section_name": ".text",
+                    "size_of_raw_data": 1024,
+                    "virtual_address": 4096,
+                    "virtual_size": 802
+                },
+                {
+                    "characteristics": 1073741888,
+                    "data": "b'F\"\\x00\\x00&\"\\x00\\x004\"\\x00\\x00\\x00\\x00\\x00\\x00\\x",
+                    "entropy": 3.207578980984071,
+                    "executable": false,
+                    "hash": {
+                        "md5": "decd73c578a2920cd9d3ca731292de6c",
+                        "sha1": "4780a3d9c510a5a9eee5733fbf62c97a207466d9",
+                        "sha256": "6d8cc778cd11e1ee9bacc0ae0347acc654585c4823da006c5d333a8896345b93"
+                    },
+                    "section_name": ".rdata",
+                    "size_of_raw_data": 1024,
+                    "virtual_address": 8192,
+                    "virtual_size": 614
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'\\\\sachost.exe\\x00\\xeb\\xe4\\xe4\\xeb\\xe7\\xf9\\xeb\\xe",
+                    "entropy": 3.8208045327954707,
+                    "executable": false,
+                    "hash": {
+                        "md5": "856618f4ab3955e2648ef3ee2ad5d659",
+                        "sha1": "d11b5b7cb859a775521e349b9f6369dd54474dae",
+                        "sha256": "b9f5506c399b46652048ca5177639b7402ce583184d28d69c79938285d677731"
+                    },
+                    "section_name": ".data",
+                    "size_of_raw_data": 7680,
+                    "virtual_address": 12288,
+                    "virtual_size": 9337
+                }
+            ]
+        },
+        "timestamp": "2004-05-05 18:19:19"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "uHfH",
+            "uHgH",
+            "uHRich",
+            ".text",
+            "`.rdata",
+            "@.data",
+            "h7L@",
+            "53L@",
+            "3\u024d=[L@",
+            "5?L@",
+            "5?L@",
+            "5?L@",
+            "5?L@",
+            "5?L@",
+            "5?L@",
+            "h7L@",
+            "53L@",
+            "=/L@",
+            "53L@",
+            "hjO@",
+            "hjO@",
+            "@hjO@",
+            "hmP@",
+            "h[0@",
+            "5cN@",
+            "5cN@",
+            "hmP@",
+            "hiP@",
+            "h)0@",
+            "hjO@",
+            "5iP@",
+            "5iP@",
+            "hjO@",
+            "hjO@",
+            "hjO@",
+            "hjO@",
+            "hjO@",
+            "hjO@",
+            "hjO@",
+            "%P @",
+            "%, @",
+            "%  @",
+            "%$ @",
+            "%( @",
+            "%T @",
+            "%0 @",
+            "%4 @",
+            "%8 @",
+            "%< @",
+            "%@ @",
+            "%D @",
+            "%H @",
+            "%L @",
+            "user32.dll",
+            "CloseHandle",
+            "CreateFileA",
+            "CreateToolhelp32Snapshot",
+            "DeleteFileA",
+            "ExitProcess",
+            "GetLastError",
+            "GetSystemDirectoryA",
+            "GetWindowsDirectoryA",
+            "OpenProcess",
+            "Process32First",
+            "Process32Next",
+            "Sleep",
+            "TerminateProcess",
+            "WinExec",
+            "WriteFile",
+            "lstrcatA",
+            "lstrcmpiA",
+            "lstrlenA",
+            "kernel32.dll",
+            "RegCloseKey",
+            "RegCreateKeyExA",
+            "RegSetValueExA",
+            "advapi32.dll",
+            "\\sachost.exe",
+            "Onlune Sarvice",
+            "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+            "1602MZ",
+            "L!This program cannot be run in DOS mode.",
+            "\u06e7)\u7546[Rich",
+            ".text",
+            "`.rdata",
+            "@.data",
+            "U\u0130E0",
+            "5g0@",
+            "hZ4@",
+            "h,4@",
+            "hk0@",
+            "h#9@",
+            "h,4@",
+            "h#9@",
+            "h,4@",
+            "h#9@",
+            "5#:@",
+            "\u01cb?=u!GW",
+            "Ph#9@",
+            "fMZu\t",
+            "h$0@",
+            "tvh5@",
+            "h$0@",
+            "hJ4@",
+            "EPhJ4@",
+            "h,4@",
+            "h,4@",
+            "h=0@",
+            "h,4@",
+            "h=0@",
+            "h,4@",
+            "sKhJ4@",
+            "EPhJ4@",
+            "h,4@",
+            "h,4@",
+            "h=0@",
+            "UhJ4@",
+            "PhJ4@",
+            "hC0@",
+            "tOh5@",
+            "hC0@",
+            "h\\0@",
+            "Ph5@",
+            "h\\0@",
+            "h\\0@",
+            "EPh;@",
+            "EEPuj",
+            "EPh;@",
+            "ujB!",
+            "EEPuu",
+            "t EUr",
+            "h':@",
+            "5#:@",
+            "5#:@",
+            "%| @",
+            "%x @",
+            "%, @",
+            "%0 @",
+            "%4 @",
+            "%8 @",
+            "%< @",
+            "%@ @",
+            "%D @",
+            "%H @",
+            "%L @",
+            "%P @",
+            "%T @",
+            "%X @",
+            "%\\ @",
+            "%` @",
+            "%d @",
+            "%h @",
+            "%( @",
+            "%$ @",
+            "%  @",
+            "%p @",
+            "wsprintfA",
+            "CreateWindowExA",
+            "DefWindowProcA",
+            "DispatchMessageA",
+            "FindWindowA",
+            "GetMessageA",
+            "KillTimer",
+            "PostQuitMessage",
+            "RegisterClassExA",
+            "SetTimer",
+            "TranslateMessage",
+            "user32.dll",
+            "CloseHandle",
+            "CreateFileA",
+            "DeleteFileA",
+            "ExitProcess",
+            "GetCommandLineA",
+            "GetLastError",
+            "GetModuleHandleA",
+            "GetSystemDirectoryA",
+            "GetSystemTime",
+            "GlobalAlloc",
+            "GlobalFree",
+            "GlobalLock",
+            "GlobalUnlock",
+            "ReadFile",
+            "Sleep",
+            "SystemTimeToFileTime",
+            "WinExec",
+            "lstrcatA",
+            "lstrcpyA",
+            "lstrcpynA",
+            "lstrlenA",
+            "kernel32.dll",
+            "RegCloseKey",
+            "RegCreateKeyExA",
+            "RegOpenKeyA",
+            "RegQueryValueExA",
+            "RegSetValueExA",
+            "advapi32.dll",
+            "WSACleanup",
+            "WSAStartup",
+            "bind",
+            "closesocket",
+            "gethostbyname",
+            "htons",
+            "inet_ntoa",
+            "listen",
+            "socket",
+            "wsock32.dll",
+            "DeleteUrlCacheEntryA",
+            "FindFirstUrlCacheEntryA",
+            "FindNextUrlCacheEntryA",
+            "InternetGetConnectedState",
+            "wininet.dll",
+            "URLDownloadToFileA",
+            "urlmon.dll",
+            "kernel32.dll",
+            "RegisterServiceProcess",
+            "SOFTWARE\\Microsoft\\Magdi",
+            "winid",
+            "SOFTWARE\\Microsoft\\Wastg",
+            "Date",
+            "%0.4u",
+            "http://66.205.222.15/mega/filex.php?IP=%s&ID=%s&EXE=mstasks1.exe",
+            "http://66.205.222.15/mega/filex.php?IP=%s&ID=%s&EXE=mstasks2.exe",
+            "http://",
+            "27.0.0.1/file.php?IP=%s&ID=%s&EXE=mstasks3.exe",
+            "gggfgasdfhuo",
+            "rugdfgdf",
+            "%0.12lu%0.12lu",
+            "svchost.exe",
+            "scchost.exe",
+            "sxchost.exe",
+            "szchost.exe",
+            "swchost.exe",
+            "\\notepad.com"
+        ],
+        "file": {
+            "27.0.0.1/file.php?IP=%s&ID=%s&EXE=mstasks3.exe": "Executable",
+            "\\sachost.exe": "Executable",
+            "advapi32.dll": "Library",
+            "http://66.205.222.15/mega/filex.php?IP=%s&ID=%s&EXE=mstasks1.exe": "Executable",
+            "http://66.205.222.15/mega/filex.php?IP=%s&ID=%s&EXE=mstasks2.exe": "Executable",
+            "kernel32.dll": "Library",
+            "scchost.exe": "Executable",
+            "svchost.exe": "Executable",
+            "swchost.exe": "Executable",
+            "sxchost.exe": "Executable",
+            "szchost.exe": "Executable",
+            "urlmon.dll": "Library",
+            "user32.dll": "Library",
+            "wininet.dll": "Library",
+            "wsock32.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [
+            "27.0.0.1",
+            "66.205.222.15"
+        ],
+        "url": [
+            "http://",
+            "http://66.205.222.15/mega/filex.php?IP=%s&ID=%s&EXE=mstasks2.exe",
+            "http://66.205.222.15/mega/filex.php?IP=%s&ID=%s&EXE=mstasks1.exe"
+        ]
+    },
+    "time": "0:00:00.668725",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

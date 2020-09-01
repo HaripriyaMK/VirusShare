@@ -1,0 +1,377 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_f139a09c156288b846c900f7c9035741",
+    "filesize": 5120,
+    "filetype": "PE32 executable (DLL) (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "f139a09c156288b846c900f7c9035741",
+        "sha1": "be5eaaad5091e2f9d8ea037518c667f85dac8527",
+        "sha256": "94df64e7f2faaf3443505cced1847710a2b8ae3a33884c286b143737c96d13a5"
+    },
+    "peinfo": {
+        "behavior": [
+            "Xor",
+            "hijack_network",
+            "win_registry",
+            "win_files_operation"
+        ],
+        "breakpoint": [
+            "CloseHandle",
+            "CreateFileA",
+            "CreateToolhelp32Snapshot",
+            "DeleteFileA",
+            "GetWindowsDirectoryA",
+            "HeapAlloc",
+            "OpenProcess",
+            "Process32First",
+            "Process32Next",
+            "RegCloseKey",
+            "RegDeleteValueA",
+            "RegOpenKeyExA",
+            "TerminateProcess",
+            "WaitForSingleObject",
+            "WriteFile",
+            "lstrcmpiA"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "ADVAPI32.dll": [
+                    {
+                        "function": "RegOpenKeyExA",
+                        "offset": 268439552
+                    },
+                    {
+                        "function": "RegDeleteValueA",
+                        "offset": 268439556
+                    },
+                    {
+                        "function": "RegCloseKey",
+                        "offset": 268439560
+                    },
+                    {
+                        "function": "RegSetValueExA",
+                        "offset": 268439564
+                    }
+                ],
+                "KERNEL32.DLL": [
+                    {
+                        "function": "GetShortPathNameA",
+                        "offset": 268439572
+                    },
+                    {
+                        "function": "lstrcmpiA",
+                        "offset": 268439576
+                    },
+                    {
+                        "function": "Process32First",
+                        "offset": 268439580
+                    },
+                    {
+                        "function": "CreateToolhelp32Snapshot",
+                        "offset": 268439584
+                    },
+                    {
+                        "function": "WriteFile",
+                        "offset": 268439588
+                    },
+                    {
+                        "function": "CloseHandle",
+                        "offset": 268439592
+                    },
+                    {
+                        "function": "DeleteFileA",
+                        "offset": 268439596
+                    },
+                    {
+                        "function": "GetWindowsDirectoryA",
+                        "offset": 268439600
+                    },
+                    {
+                        "function": "HeapAlloc",
+                        "offset": 268439604
+                    },
+                    {
+                        "function": "OpenProcess",
+                        "offset": 268439608
+                    },
+                    {
+                        "function": "TerminateProcess",
+                        "offset": 268439612
+                    },
+                    {
+                        "function": "WaitForSingleObject",
+                        "offset": 268439616
+                    },
+                    {
+                        "function": "CreateFileA",
+                        "offset": 268439620
+                    },
+                    {
+                        "function": "Process32Next",
+                        "offset": 268439624
+                    },
+                    {
+                        "function": "GetProcessHeap",
+                        "offset": 268439628
+                    }
+                ],
+                "comdlg32.dll": [
+                    {
+                        "function": "GetFileTitleA",
+                        "offset": 268439636
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 148,
+                "VirtualAddress": 8192,
+                "count": 1,
+                "details": {
+                    "reloc_1": 70
+                }
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 4,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 3,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 9460301
+            }
+        },
+        "dll": true,
+        "entrypoint": 6602,
+        "features": {
+            "antidbg": [
+                "Process32First",
+                "Process32Next",
+                "TerminateProcess"
+            ],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [
+                "WaitForSingleObject"
+            ],
+            "packer": [
+                "Microsoft_Visual_Cpp_v50v60_MFC",
+                "Borland_Delphi_30_additional",
+                "Borland_Delphi_30_",
+                "Borland_Delphi_v40_v50",
+                "Borland_Delphi_v30",
+                "Borland_Delphi_DLL"
+            ],
+            "xor": {}
+        },
+        "imagebase": 268435456,
+        "imphash": "3d325ec0efdd56947b7439ce88d46b11",
+        "metadata": {},
+        "sections": {
+            "count": 2,
+            "details": [
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'X\\x1c\\x00\\x00h\\x1c\\x00\\x00z\\x1c\\x00\\x00\\x88\\x1c\\",
+                    "entropy": 5.583496952746887,
+                    "executable": false,
+                    "hash": {
+                        "md5": "78dcc2f94bf5fed5c0e7b18feaeeab92",
+                        "sha1": "d103bc5e9556a8cc98dbbfe57fd10a79bfc5747c",
+                        "sha256": "f94f0d0d7d3073357c440513b24cc257838be97747b4fae29d32e79dbc31b2c5"
+                    },
+                    "section_name": ".data",
+                    "size_of_raw_data": 3584,
+                    "virtual_address": 4096,
+                    "virtual_size": 3254
+                },
+                {
+                    "characteristics": 1107296320,
+                    "data": "b\"\\x00\\x10\\x00\\x00\\x94\\x00\\x00\\x00`0\\x7f5\\x905\\xd8",
+                    "entropy": 2.2323748201055627,
+                    "executable": false,
+                    "hash": {
+                        "md5": "3ab76e1746d992b0a016405404d5a5be",
+                        "sha1": "297fbbbf1a1668193e1ad6b1b048365c5b20083b",
+                        "sha256": "fef9d0b108491ebca6e80dee7b9374593417d8d22e5d38f65a09caa7da4ef3fa"
+                    },
+                    "section_name": ".reloc",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 8192,
+                    "virtual_size": 198
+                }
+            ]
+        },
+        "timestamp": "2004-07-07 18:09:42"
+    },
+    "strings": {
+        "dump": [
+            "L!This program cannot be run in DOS mode.",
+            "wdwdwdUowdhwwdwewd1howdRichwd",
+            ".data",
+            ".reloc",
+            "http://213.159.117.134/legal.php",
+            "127.0.0.1 thehun.com",
+            "127.0.0.1 www.thehun.com",
+            "127.0.0.1 thehun.net",
+            "127.0.0.1 www.thehun.net",
+            "127.0.0.1 www.yahoo.com",
+            "127.0.0.1 yahoo.com",
+            "127.0.0.1 www.google.com",
+            "127.0.0.1 google.com",
+            "127.0.0.1 www.altavista.com",
+            "127.0.0.1 altavista.com",
+            "127.0.0.1 search.microsoft.com",
+            "127.0.0.1 search.msn.com",
+            "127.0.0.1 www.msn.com",
+            "127.0.0.1 msn.com",
+            "127.0.0.1 www.search.com",
+            "127.0.0.1 search.com",
+            "127.0.0.1 www.teoma.com",
+            "127.0.0.1 teoma.com",
+            "127.0.0.1 www.alltheweb.com",
+            "127.0.0.1 alltheweb.com",
+            "127.0.0.1 www.wisenut.com",
+            "127.0.0.1 wisenut.com",
+            "127.0.0.1 www.dmoz.org",
+            "127.0.0.1 dmoz.org",
+            "127.0.0.1 www.excite.com",
+            "127.0.0.1 excite.com",
+            "127.0.0.1 www.lycos.com",
+            "127.0.0.1 lycos.com",
+            "127.0.0.1 www.hotbot.com",
+            "127.0.0.1 hotbot.com",
+            "127.0.0.1 www.casino.com",
+            "127.0.0.1 casino.com",
+            "Software\\Microsoft\\Internet Explorer\\Main",
+            "Key2",
+            "ControlPanel",
+            "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+            "serve.exe",
+            "loadclean.exe",
+            "loader.exe",
+            "runddl.exe",
+            "MCUPDATE.EXE",
+            "CFIAUDIT.EXE",
+            "AVXQUAR.EXE",
+            "AUTOUPDATE.EXE",
+            "AUTOTRACE.EXE",
+            "AUTODOWN.EXE",
+            "AUPDATE.EXE",
+            "NUPGRADE.EXE",
+            "UPDATE.EXE",
+            "ICSUPP95.EXE",
+            "ICSSUPPNT.EXE",
+            "DRWEBUPW.EXE",
+            "LUALL.EXE",
+            "AVPUPD.EXE",
+            "AVWUPD32.EXE",
+            "ATUPDATER.EXE",
+            "Default_Page_URL",
+            "Start Page",
+            "Local Page",
+            "\\system32\\drivers\\etc\\hosts",
+            "\\hosts",
+            "P\u0585tIWPPn",
+            "P\u0585t%WPP",
+            "P\u0585u<u",
+            "T_^[u",
+            "u#5|",
+            "UP\u04ffp",
+            "+U\u0443O",
+            "VSWj",
+            "_WUWVW-,",
+            "SWD$,h",
+            "P3IQVt$ ",
+            "SP3IQVU",
+            "?V9h0",
+            "X_^][",
+            "YYVu",
+            "^j Xj",
+            "QPYY",
+            "KERNEL32.DLL",
+            "ADVAPI32.dll",
+            "comdlg32.dll",
+            "GetShortPathNameA",
+            "lstrcmpiA",
+            "Process32First",
+            "CreateToolhelp32Snapshot",
+            "WriteFile",
+            "CloseHandle",
+            "DeleteFileA",
+            "GetWindowsDirectoryA",
+            "HeapAlloc",
+            "OpenProcess",
+            "TerminateProcess",
+            "WaitForSingleObject",
+            "CreateFileA",
+            "Process32Next",
+            "GetProcessHeap",
+            "RegOpenKeyExA",
+            "RegDeleteValueA",
+            "RegCloseKey",
+            "RegSetValueExA",
+            "GetFileTitleA",
+            "555'6@6P6_6l6s666666",
+            "7%7.7=7R777777",
+            "8%8F8P8x88888888888",
+            "9%9/999C9M9]9g9q9{999999999-:8:@:I:h:o:v:"
+        ],
+        "file": {
+            "ADVAPI32.dll": "Library",
+            "ATUPDATER.EXE": "Executable",
+            "AUPDATE.EXE": "Executable",
+            "AUTODOWN.EXE": "Executable",
+            "AUTOTRACE.EXE": "Executable",
+            "AUTOUPDATE.EXE": "Executable",
+            "AVPUPD.EXE": "Executable",
+            "AVWUPD32.EXE": "Executable",
+            "AVXQUAR.EXE": "Executable",
+            "CFIAUDIT.EXE": "Executable",
+            "DRWEBUPW.EXE": "Executable",
+            "ICSSUPPNT.EXE": "Executable",
+            "ICSUPP95.EXE": "Executable",
+            "KERNEL32.DLL": "Library",
+            "LUALL.EXE": "Executable",
+            "MCUPDATE.EXE": "Executable",
+            "NUPGRADE.EXE": "Executable",
+            "UPDATE.EXE": "Executable",
+            "comdlg32.dll": "Library",
+            "http://213.159.117.134/legal.php": "Web Page",
+            "loadclean.exe": "Executable",
+            "loader.exe": "Executable",
+            "runddl.exe": "Executable",
+            "serve.exe": "Executable"
+        },
+        "fuzzing": {},
+        "ip": [
+            "127.0.0.1",
+            "213.159.117.134"
+        ],
+        "url": [
+            "http://213.159.117.134/legal.php"
+        ]
+    },
+    "time": "0:00:00.599083",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsDLL"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasRichSignature"
+        }
+    ]
+}

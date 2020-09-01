@@ -1,0 +1,53 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Hex Strings": "Hex-encoded str were detected, may be used to obfuscate str",
+            "SYSTEM": "May run an executable file or a system command on a Mac"
+        },
+        "macro": "nvsvc32.exe /install /silence\necho off\ndtREG -AddKey HKEY_LOCAL_MACHINE\\SYSTEM\\RAdmin\ndtREG -AddKey HKEY_LOCAL_MACHINE\\SYSTEM\\RAdmin\\v2.0\ndtREG -AddKey HKEY_LOCAL_MACHINE\\SYSTEM\\RAdmin\\v2.0\\Server\ndtREG -AddKey HKEY_LOCAL_MACHINE\\SYSTEM\\RAdmin\\v2.0\\Server\\Parameters\ndtREG -AddKey HKEY_LOCAL_MACHINE\\SYSTEM\\RAdmin\\v2.0\\Server\\iplist\ndtREG -Set REG_BINARY HKEY_LOCAL_MACHINE\\SYSTEM\\RAdmin\\v2.0\\Server\\Parameters\\Port=22130000\ndtREG -Set REG_BINARY HKEY_LOCAL_MACHINE\\SYSTEM\\RAdmin\\v2.0\\Server\\Parameters\\Timeout=0a000000\ndtREG -Set REG_BINARY HKEY_LOCAL_MACHINE\\SYSTEM\\RAdmin\\v2.0\\Server\\Parameters\\EnableLogFile=00000000\ndtREG -Set REG_SZ HKEY_LOCAL_MACHINE\\SYSTEM\\RAdmin\\v2.0\\Server\\Parameters\\LogFilePath=\"c:\\logfile.txt\"\ndtREG -Set REG_BINARY HKEY_LOCAL_MACHINE\\SYSTEM\\RAdmin\\v2.0\\Server\\Parameters\\FilterIp=00000000\ndtREG -Set REG_BINARY HKEY_LOCAL_MACHINE\\SYSTEM\\RAdmin\\v2.0\\Server\\Parameters\\DisableTrayIcon=01000000\ndtREG -Set REG_BINARY HKEY_LOCAL_MACHINE\\SYSTEM\\RAdmin\\v2.0\\Server\\Parameters\\AutoAllow=00000000\ndtREG -Set REG_BINARY HKEY_LOCAL_MACHINE\\SYSTEM\\RAdmin\\v2.0\\Server\\Parameters\\AskUser=00000000\ndtREG -Set REG_BINARY HKEY_LOCAL_MACHINE\\SYSTEM\\RAdmin\\v2.0\\Server\\Parameters\\EnableEventLog=00000000\ndtREG -Set REG_BINARY HKEY_LOCAL_MACHINE\\SYSTEM\\RAdmin\\v2.0\\Server\\Parameters\\Parameter=a3729aba72a15e43c1478d351d658987\necho off\nnet start r_server"
+    },
+    "filename": "VirusShare_65dc4c5a4dea7a3e3d1edca59816ae35",
+    "filesize": 1383,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "65dc4c5a4dea7a3e3d1edca59816ae35",
+        "sha1": "1612070af251baecc211193f3a394a13be583f1f",
+        "sha256": "54a3c2ea5ab93b1fb13c9c4cbd2d5c5053bb7fc6015fef8115829c59eb985dbe"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "nvsvc32.exe /install /silence",
+            "echo off",
+            "dtREG -AddKey HKEY_LOCAL_MACHINE\\SYSTEM\\RAdmin",
+            "dtREG -AddKey HKEY_LOCAL_MACHINE\\SYSTEM\\RAdmin\\v2.0",
+            "dtREG -AddKey HKEY_LOCAL_MACHINE\\SYSTEM\\RAdmin\\v2.0\\Server",
+            "dtREG -AddKey HKEY_LOCAL_MACHINE\\SYSTEM\\RAdmin\\v2.0\\Server\\Parameters",
+            "dtREG -AddKey HKEY_LOCAL_MACHINE\\SYSTEM\\RAdmin\\v2.0\\Server\\iplist",
+            "dtREG -Set REG_BINARY HKEY_LOCAL_MACHINE\\SYSTEM\\RAdmin\\v2.0\\Server\\Parameters\\Port=22130000",
+            "dtREG -Set REG_BINARY HKEY_LOCAL_MACHINE\\SYSTEM\\RAdmin\\v2.0\\Server\\Parameters\\Timeout=0a000000",
+            "dtREG -Set REG_BINARY HKEY_LOCAL_MACHINE\\SYSTEM\\RAdmin\\v2.0\\Server\\Parameters\\EnableLogFile=00000000",
+            "dtREG -Set REG_SZ HKEY_LOCAL_MACHINE\\SYSTEM\\RAdmin\\v2.0\\Server\\Parameters\\LogFilePath=\"c:\\logfile.txt\"",
+            "dtREG -Set REG_BINARY HKEY_LOCAL_MACHINE\\SYSTEM\\RAdmin\\v2.0\\Server\\Parameters\\FilterIp=00000000",
+            "dtREG -Set REG_BINARY HKEY_LOCAL_MACHINE\\SYSTEM\\RAdmin\\v2.0\\Server\\Parameters\\DisableTrayIcon=01000000",
+            "dtREG -Set REG_BINARY HKEY_LOCAL_MACHINE\\SYSTEM\\RAdmin\\v2.0\\Server\\Parameters\\AutoAllow=00000000",
+            "dtREG -Set REG_BINARY HKEY_LOCAL_MACHINE\\SYSTEM\\RAdmin\\v2.0\\Server\\Parameters\\AskUser=00000000",
+            "dtREG -Set REG_BINARY HKEY_LOCAL_MACHINE\\SYSTEM\\RAdmin\\v2.0\\Server\\Parameters\\EnableEventLog=00000000",
+            "dtREG -Set REG_BINARY HKEY_LOCAL_MACHINE\\SYSTEM\\RAdmin\\v2.0\\Server\\Parameters\\Parameter=a3729aba72a15e43c1478d351d658987",
+            "echo off",
+            "net start r_server"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.289006",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

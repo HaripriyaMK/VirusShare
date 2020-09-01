@@ -1,0 +1,342 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_bc4dddbfa551bd722481afc3cef7df83",
+    "filesize": 12288,
+    "filetype": "PE32 executable (console) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "bc4dddbfa551bd722481afc3cef7df83",
+        "sha1": "a2d0b0d77e0914222ab71cb31c02201d30d55edf",
+        "sha256": "b7fb5a20cb5d5f2131face1890cf4d91430472c6b001d59548fdb6c44c7727fa"
+    },
+    "peinfo": {
+        "behavior": [
+            "network_udp_sock",
+            "network_tcp_socket",
+            "win_registry"
+        ],
+        "breakpoint": [
+            "CreateThread",
+            "ExitProcess",
+            "FindWindowA",
+            "GetTickCount",
+            "IcmpSendEcho",
+            "RegCloseKey",
+            "RegOpenKeyA",
+            "RegOpenKeyExA",
+            "Sleep",
+            "WSAStartup",
+            "sendto",
+            "socket"
+        ],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {
+                "ADVAPI32.dll": [
+                    {
+                        "function": "RegOpenKeyExA",
+                        "offset": 4211000
+                    },
+                    {
+                        "function": "RegCloseKey",
+                        "offset": 4211004
+                    },
+                    {
+                        "function": "RegSetValueExA",
+                        "offset": 4211008
+                    },
+                    {
+                        "function": "RegOpenKeyA",
+                        "offset": 4211012
+                    }
+                ],
+                "ICMP.dll": [
+                    {
+                        "function": "IcmpCloseHandle",
+                        "offset": 4210948
+                    },
+                    {
+                        "function": "IcmpSendEcho",
+                        "offset": 4210952
+                    },
+                    {
+                        "function": "IcmpCreateFile",
+                        "offset": 4210956
+                    }
+                ],
+                "KERNEL32.dll": [
+                    {
+                        "function": "GetTickCount",
+                        "offset": 4210980
+                    },
+                    {
+                        "function": "ExitProcess",
+                        "offset": 4210984
+                    },
+                    {
+                        "function": "CreateThread",
+                        "offset": 4210988
+                    },
+                    {
+                        "function": "Sleep",
+                        "offset": 4210992
+                    }
+                ],
+                "MSVFW32.DLL": [
+                    {
+                        "function": "ICSendMessage",
+                        "offset": 4211020
+                    }
+                ],
+                "USER32.dll": [
+                    {
+                        "function": "FindWindowA",
+                        "offset": 4210928
+                    },
+                    {
+                        "function": "PostMessageA",
+                        "offset": 4210932
+                    },
+                    {
+                        "function": "MessageBeep",
+                        "offset": 4210936
+                    },
+                    {
+                        "function": "PeekMessageA",
+                        "offset": 4210940
+                    }
+                ],
+                "WSOCK32.dll": [
+                    {
+                        "function": "sendto",
+                        "offset": 4210964
+                    },
+                    {
+                        "function": "WSAStartup",
+                        "offset": 4210968
+                    },
+                    {
+                        "function": "socket",
+                        "offset": 4210972
+                    }
+                ]
+            },
+            "relocations": {
+                "Size": 108,
+                "VirtualAddress": 20480,
+                "count": 2,
+                "details": {
+                    "reloc_1": 20,
+                    "reloc_2": 26
+                }
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 983044,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 2,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 5265997
+            }
+        },
+        "dll": false,
+        "entrypoint": 10463,
+        "features": {
+            "antidbg": [
+                "FindWindowA"
+            ],
+            "antivm": {},
+            "crypto": [
+                "CRC32_poly_Constant"
+            ],
+            "mutex": [],
+            "packer": [],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "466ecfe481be4b9bd973b97656b3a610",
+        "metadata": {},
+        "sections": {
+            "count": 4,
+            "details": [
+                {
+                    "characteristics": 1610612768,
+                    "data": "b'U\\x8b\\xec\\x83\\xc4\\xcc\\x8dE\\xcc\\x8bU\\x0c\\x89\\x10\\",
+                    "entropy": 3.601289105232381,
+                    "executable": true,
+                    "hash": {
+                        "md5": "0c7ce5ad770ddff693b210c2664b9122",
+                        "sha1": "4dd149bde419c425a09599658203998b35d7534b",
+                        "sha256": "eef087919a3518e74daf742551e2e73c9a9776f1e1daa1d9c850e68ef6a4a492"
+                    },
+                    "section_name": "CODE",
+                    "size_of_raw_data": 1024,
+                    "virtual_address": 4096,
+                    "virtual_size": 4096
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'\\xef\\xbe\\xad\\xde\\xef\\xbe\\xad\\xde\\xef\\xbe\\xad\\xde",
+                    "entropy": 3.2846403831646276,
+                    "executable": false,
+                    "hash": {
+                        "md5": "1f1e68af503c598d9231f301a8ecb0d3",
+                        "sha1": "e30912695bf7bcdde63a0de5821ca30273bcbfab",
+                        "sha256": "3d3f2c6fd01323b0b8baec33b5daed9fbb032277bf80e6cc303315d6c9f21e1e"
+                    },
+                    "section_name": "DATA",
+                    "size_of_raw_data": 5632,
+                    "virtual_address": 8192,
+                    "virtual_size": 8192
+                },
+                {
+                    "characteristics": 3221225536,
+                    "data": "b'\\x8c@\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00TA\\",
+                    "entropy": 3.0447823494427197,
+                    "executable": false,
+                    "hash": {
+                        "md5": "2ede71c10a07d3b0a7a7cd43d6cff4e2",
+                        "sha1": "4115c6dd696ce98bcdaa54334c3f9b05fc78b0ec",
+                        "sha256": "ae899cae772235c0a41e0c50ca56b1e487fdf173444361c6743d249529f4a733"
+                    },
+                    "section_name": ".idata",
+                    "size_of_raw_data": 1024,
+                    "virtual_address": 16384,
+                    "virtual_size": 4096
+                },
+                {
+                    "characteristics": 1342177344,
+                    "data": "b'\\x00\\x10\\x00\\x000\\x00\\x00\\x00\\xd01\\xd61\\xdc1\\xe2",
+                    "entropy": 1.5102266661206025,
+                    "executable": false,
+                    "hash": {
+                        "md5": "d506a1273fdc452d44d07946267a7345",
+                        "sha1": "e5b47bc63dbb5b8dfa11110cd7b648040adefa83",
+                        "sha256": "3ff6bd1bd689cc51382f12ab6fb67a160449cd6c0f45caebf90c572985d2944e"
+                    },
+                    "section_name": ".reloc",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 20480,
+                    "virtual_size": 4096
+                }
+            ]
+        },
+        "timestamp": "1983-10-06 01:39:32"
+    },
+    "strings": {
+        "dump": [
+            "L!This program must be run under Win32",
+            "CODE",
+            "`DATA",
+            ".idata",
+            ".reloc",
+            "U\u030dE\u030bU",
+            "P(M H,U$P0M(H",
+            "U<P j4Ph>@",
+            "U\u030dE\u030bU",
+            "P(M H,U$P0M(H",
+            "U<P j4Ph<@",
+            "U\u030dE\u030bU",
+            "P(M H,U$P0M(H",
+            "U<P j4Ph=@",
+            "UUM ME$Ej",
+            "Rh2@",
+            "PhH@",
+            "%$A@",
+            "%(A@",
+            "%,A@",
+            "%0A@",
+            "%8A@",
+            "%<A@",
+            "%@A@",
+            "%DA@",
+            "%LA@",
+            "\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffad\uffadZone Alarm",
+            "[START PACKET]...\uffad",
+            "EnableAutoDial",
+            "Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings",
+            "Qh&@",
+            "MKu=(@",
+            "hl(@",
+            "4'*@",
+            "j0-*@",
+            "s%*@",
+            "GQRP",
+            "j Ys",
+            "5 Y3",
+            "ZY3 C\u02c65",
+            "teehee!",
+            "`O7B",
+            "*'UB",
+            "KQ@'1nD",
+            "k7E8",
+            "\tCPf",
+            "\\DEST",
+            "\\DEST",
+            "\\DEST",
+            "\\DEST",
+            "USER32.dll",
+            "ICMP.dll",
+            "WSOCK32.dll",
+            "KERNEL32.dll",
+            "ADVAPI32.dll",
+            "MSVFW32.DLL",
+            "FindWindowA",
+            "PostMessageA",
+            "MessageBeep",
+            "PeekMessageA",
+            "IcmpCloseHandle",
+            "IcmpSendEcho",
+            "IcmpCreateFile",
+            "sendto",
+            "WSAStartup",
+            "socket",
+            "GetTickCount",
+            "ExitProcess",
+            "CreateThread",
+            "Sleep",
+            "RegOpenKeyExA",
+            "RegCloseKey",
+            "RegSetValueExA",
+            "RegOpenKeyA",
+            "ICSendMessage",
+            "11111111",
+            "2$2*20262<2",
+            "9:9T9Y9`9e9t999",
+            ": :9999999Y:i:"
+        ],
+        "file": {
+            "ADVAPI32.dll": "Library",
+            "ICMP.dll": "Library",
+            "KERNEL32.dll": "Library",
+            "MSVFW32.DLL": "Library",
+            "USER32.dll": "Library",
+            "WSOCK32.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.597402",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsConsole"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasOverlay"
+        },
+        {
+            "crypto_signatures.yar": "CRC32_poly_Constant"
+        }
+    ]
+}

